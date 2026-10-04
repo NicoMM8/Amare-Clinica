@@ -1,0 +1,505 @@
+@import './styles/cojeev.css';
+
+/* Design System - Centro Amaré (Inspired by 000h by Cojeev & clearly.help) */
+:root {
+  /* Fonts */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Newsreader', Georgia, Cambria, serif;
+  
+  /* Color Tokens - Wellness & Clinical Confidence */
+  --color-canvas: #F5F0E8; /* Base: Hueso */
+  --color-canvas-subtle: #DAB890; /* Cálido: Arena */
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #FCFAF7;
+  
+  --color-ink-primary: #171A30; /* Darker Añil for text */
+  --color-ink-secondary: #4A5173; /* Muted Añil for text */
+  --color-ink-muted: #778F79; /* Secundario: Salvia (used for secondary elements) */
+  
+  /* Brand Primary / Añil noche */
+  --color-plum-900: #22284A; /* Principal */
+  --color-plum-800: #2D3560;
+  --color-plum-700: #3C477D;
+  --color-plum-100: #E6E8F2;
+  --color-plum-50: #F3F5FA;
+  
+  /* Accent / Terracota */
+  --color-clay: #A95A41;
+  --color-clay-hover: #8A4833;
+  --color-clay-subtle: #F6EAE7;
+  --color-clay-border: rgba(169, 90, 65, 0.25);
+  
+  /* Illustration Accent */
+  --color-sage: #778F79;
+  
+  /* Borders & Dividers */
+  --border-hairline: rgba(34, 40, 74, 0.08);
+  --border-subtle: rgba(34, 40, 74, 0.12);
+  --border-focus: #A95A41;
+  
+  /* Radius & Curves */
+  --r-pill: 9999px;
+  --r-2xl: 24px;
+  --r-xl: 18px;
+  --r-lg: 14px;
+  --r-md: 10px;
+  --r-sm: 6px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(35, 18, 33, 0.04), 0 1px 2px rgba(35, 18, 33, 0.02);
+  --shadow-md: 0 4px 14px rgba(35, 18, 33, 0.05), 0 2px 6px rgba(35, 18, 33, 0.03);
+  --shadow-lg: 0 12px 32px rgba(35, 18, 33, 0.08), 0 4px 12px rgba(35, 18, 33, 0.04);
+  --shadow-float: 0 20px 48px -12px rgba(35, 18, 33, 0.15);
+  
+  /* Layout */
+  --container-max: 1200px;
+  --container-narrow: 860px;
+  --header-height: 76px;
+  
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+}
+
+/* CSS Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--color-canvas);
+  color: var(--color-ink-primary);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-canvas);
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(183, 89, 64, 0.03) 0px, transparent 50%),
+    radial-gradient(at 85% 85%, rgba(51, 26, 48, 0.03) 0px, transparent 50%);
+}
+
+/* Typography Utilities */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-ink-primary);
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--color-ink-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Container Structure */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Section Spacing */
+.section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+/* 000h Inspired Badges & Pills */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  background: var(--color-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--color-plum-800);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-fast) ease;
+}
+
+.pill-badge-clay {
+  background: var(--color-clay-subtle);
+  border-color: var(--color-clay-border);
+  color: var(--color-clay-hover);
+}
+
+.pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-clay);
+  animation: pulse-dot 2.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* 000h Primary Buttons & Actions */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--color-plum-900);
+  color: #FFFFFF;
+  padding: 14px 28px;
+  border-radius: var(--r-pill);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+  box-shadow: 0 4px 16px rgba(35, 18, 33, 0.16);
+  transition: all var(--duration-normal) var(--ease-spring);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.btn-primary:hover {
+  background: var(--color-plum-700);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(35, 18, 33, 0.22);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-clay {
+  background: var(--color-clay);
+  box-shadow: 0 4px 16px rgba(183, 89, 64, 0.25);
+}
+
+.btn-clay:hover {
+  background: var(--color-clay-hover);
+  box-shadow: 0 8px 24px rgba(183, 89, 64, 0.35);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--color-surface);
+  color: var(--color-ink-primary);
+  padding: 13px 26px;
+  border-radius: var(--r-pill);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-normal) var(--ease-spring);
+}
+
+.btn-secondary:hover {
+  background: var(--color-surface-hover);
+  border-color: rgba(35, 18, 33, 0.22);
+  transform: translateY(-1px);
+}
+
+/* Surface Cards & Panels */
+.card-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--r-2xl);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-normal) var(--ease-spring);
+}
+
+.card-panel:hover {
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Header & Floating Navigation */
+.navbar-wrapper {
+  position: sticky;
+  top: 16px;
+  z-index: 100;
+  padding: 0 16px;
+  margin-bottom: -16px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  background: var(--color-canvas);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: var(--r-pill);
+  padding: 4px 14px 4px 24px;
+  box-shadow: 0 8px 30px rgba(35, 18, 33, 0.06);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--color-plum-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FAF5F9;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-plum-900);
+  line-height: 1.1;
+}
+
+.brand-sub {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-clay);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink-secondary);
+  transition: color var(--duration-fast) ease;
+}
+
+.nav-link:hover {
+  color: var(--color-plum-900);
+}
+
+/* Interactive Triage Questionnaire (Clearly.help inspiration) */
+.triage-container {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-2xl);
+  box-shadow: var(--shadow-lg);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .triage-container {
+    padding: 24px 20px;
+  }
+}
+
+.triage-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.triage-bar {
+  flex: 1;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-canvas-subtle);
+  overflow: hidden;
+}
+
+.triage-bar-fill {
+  height: 100%;
+  background: var(--color-clay);
+  transition: width 0.4s var(--ease-spring);
+}
+
+.triage-step-counter {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.triage-option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 22px;
+  border-radius: var(--r-xl);
+  border: 1.5px solid var(--border-hairline);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-spring);
+  text-align: left;
+  width: 100%;
+}
+
+.triage-option-card:hover {
+  border-color: var(--color-clay);
+  background: var(--color-clay-subtle);
+  transform: translateY(-1px);
+}
+
+.triage-option-card.selected {
+  border-color: var(--color-plum-900);
+  background: var(--color-plum-50);
+  box-shadow: 0 0 0 1px var(--color-plum-900);
+}
+
+.triage-radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border-subtle);
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-fast) ease;
+}
+
+.triage-option-card.selected .triage-radio-circle {
+  border-color: var(--color-plum-900);
+  background: var(--color-plum-900);
+}
+
+.triage-radio-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFFFFF;
+}
+
+/* Floating WhatsApp Badge */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #25D366;
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: var(--r-pill);
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  transition: all var(--duration-normal) var(--ease-spring);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.5);
+  background: #22bf5b;
+}
+
+/* Accordion FAQ */
+.faq-item {
+  border-bottom: 1px solid var(--border-hairline);
+  padding: 24px 0;
+  transition: all var(--duration-fast) ease;
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-ink-primary);
+  background: transparent;
+  gap: 16px;
+}
+
+.faq-content {
+  padding-top: 14px;
+  font-size: 15px;
+  color: var(--color-ink-secondary);
+  line-height: 1.7;
+}
+
+/* Subtle background accent grids */
+.bg-grid-subtle {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(35, 18, 33, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 18, 33, 0.02) 1px, transparent 1px);
+}

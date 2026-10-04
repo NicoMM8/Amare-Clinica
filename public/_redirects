@@ -1,0 +1,8 @@
+# Netlify Redirects
+# Dominio: terapiadeparejaelsalvador.com
+
+# Redirigir www a non-www (SEO canónico)
+https://www.terapiadeparejaelsalvador.com/* https://terapiadeparejaelsalvador.com/:splat 301!
+
+# SPA fallback — permite rutas directas sin 404
+/*    /index.html   200

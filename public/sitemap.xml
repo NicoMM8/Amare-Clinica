@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 1. Página Principal (Landing de Terapia de Pareja) -->
+  <url>
+    <loc>https://terapiadeparejaelsalvador.com/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/" />
+    <xhtml:link rel="alternate" hreflang="es"    href="https://terapiadeparejaelsalvador.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/" />
+  </url>
+
+  <!-- 2. Test Clínico y Matching de Pareja (Herramienta interactiva) -->
+  <url>
+    <loc>https://terapiadeparejaelsalvador.com/tu-match</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/tu-match" />
+    <xhtml:link rel="alternate" hreflang="es"    href="https://terapiadeparejaelsalvador.com/tu-match" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/tu-match" />
+  </url>
+
+</urlset>

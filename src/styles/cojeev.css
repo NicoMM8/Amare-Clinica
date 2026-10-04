@@ -1,0 +1,510 @@
+/* 000h by Cojeev - Authentic Design Tokens and Component States */
+:root {
+  /* 000h Cojeev Color Palette Tokens */
+  --v-canvas: #FAF7F2;
+  --v-paper: #FFFFFF;
+  --v-beige: #F4ECE4;
+  --v-beige-2: #EFE4D8;
+  --v-cream-pill: #FFFFFF;
+
+  --v-text: #1C1819;
+  --v-text-2: #5D5458;
+  --v-text-3: #8C8287;
+  --v-ink: #1C1819;
+  --v-ink-soft: #5D5458;
+  --v-on-ink: #FAF7F2;
+
+  --v-border: rgba(35, 18, 33, 0.09);
+  --v-edge: rgba(35, 18, 33, 0.16);
+  --v-on-accent: #FFFFFF;
+
+  /* Cojeev Accents tailored for Centro Amaré */
+  --v-pink: #B75940;        /* Rose clay / Warm terracotta */
+  --v-pink-deep: #96422C;
+  --v-pink-soft: #F9ECE8;
+
+  --v-yellow: #D98838;
+  --v-yellow-soft: #FAF0E4;
+
+  --v-blue: #331A30;        /* Deep Amare Plum / Wine */
+  --v-blue-deep: #231221;
+  --v-blue-soft: #F3EAF1;
+
+  --v-olive: #5B6E44;
+  --v-olive-soft: #EDF2E8;
+
+  /* 000h Radii and Geometry */
+  --v-control-radius: 999px;
+  --r-pill: 999px;
+  --r-panel: 24px;
+  --r-card: 18px;
+
+  /* 000h Motion Tokens */
+  --t-micro: 0.12s;
+  --t-element: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  --t-panel: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --t-max: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --enter: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 000h Questionnaire Core Styles */
+.v-quest {
+  display: grid;
+  gap: 28px;
+  width: 100%;
+}
+
+.v-quest__progress {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+  color: var(--v-text-2);
+}
+
+.v-quest__progress b {
+  color: var(--v-text);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.v-quest__progress-bar {
+  flex: 1;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--v-beige);
+  overflow: hidden;
+  position: relative;
+}
+
+.v-quest__progress-fill {
+  height: 100%;
+  background: var(--v-pink);
+  border-radius: 999px;
+  transition: width var(--t-panel);
+}
+
+.v-quest__q {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.v-quest__legend {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--v-text);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.v-quest__opts {
+  display: grid;
+  gap: 10px;
+}
+
+/* 000h Questionnaire Option */
+.v-quest__opt {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--selector-size, 32px);
+  align-items: center;
+  gap: 16px;
+  min-height: 68px;
+  padding: 16px 20px;
+  border-radius: 18px;
+  background: var(--v-paper);
+  border: 1.5px solid var(--v-border);
+  box-shadow: 0 1px 3px rgba(35, 18, 33, 0.03);
+  cursor: pointer;
+  position: relative;
+  transition: background var(--t-element), border-color var(--t-element), transform var(--t-element), box-shadow var(--t-element);
+  user-select: none;
+}
+
+.v-quest__opt:hover {
+  background: var(--v-pink-soft);
+  border-color: var(--v-pink);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(183, 89, 64, 0.08);
+}
+
+.v-quest__opt[data-state="checked"] {
+  background: var(--v-pink-soft);
+  border-color: var(--v-pink);
+  box-shadow: 0 0 0 1px var(--v-pink), 0 4px 14px rgba(183, 89, 64, 0.12);
+}
+
+.v-quest__opt input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.v-quest__opt-body {
+  display: grid;
+  gap: 4px;
+}
+
+.v-quest__opt-body b {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--v-text);
+  line-height: 1.3;
+}
+
+.v-quest__opt-body small {
+  font-size: 13.5px;
+  color: var(--v-text-2);
+  line-height: 1.45;
+}
+
+/* 000h Questionnaire Example & Buttons */
+.v-questionnaire-example {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.v-questionnaire-example__intro {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.v-questionnaire-example__tab {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--v-pink-soft);
+  color: var(--v-pink);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.v-questionnaire-example__intro p {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--v-pink);
+  margin-bottom: 2px;
+}
+
+.v-questionnaire-example__intro h3 {
+  font-size: 22px;
+  font-family: var(--font-serif);
+  color: var(--v-text);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.v-questionnaire-example__heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--v-text);
+}
+
+.v-questionnaire-example__number {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 2px 8px;
+  background: var(--v-beige);
+  border-radius: 6px;
+  color: var(--v-pink-deep);
+}
+
+.v-questionnaire-example__hint {
+  font-size: 14px;
+  color: var(--v-text-2);
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.v-questionnaire-example__footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--v-border);
+}
+
+.v-questionnaire-example__result {
+  margin-top: 14px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--v-text-2);
+}
+
+/* 000h Buttons */
+.v-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--t-element);
+}
+
+.v-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.v-button--accent {
+  background: var(--v-pink);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(183, 89, 64, 0.25);
+}
+
+.v-button--accent:hover:not(:disabled) {
+  background: var(--v-pink-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(183, 89, 64, 0.35);
+}
+
+.v-button--secondary {
+  background: var(--color-plum-900);
+  color: #FFFFFF;
+}
+
+.v-button--secondary:hover:not(:disabled) {
+  background: var(--color-plum-700);
+  transform: translateY(-1px);
+}
+
+.v-button--ghost {
+  background: transparent;
+  color: var(--v-text-2);
+}
+
+.v-button--ghost:hover:not(:disabled) {
+  background: var(--v-beige);
+  color: var(--v-text);
+}
+
+/* 000h Hero Button Styles */
+.v-hero-button {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+  min-width: 230px;
+  padding: 0 24px 0 28px;
+  gap: 18px;
+  border-radius: var(--r-pill);
+  background: var(--v-ink);
+  color: var(--v-on-ink);
+  font-weight: 600;
+  font-size: 15.5px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(35, 18, 33, 0.16);
+  transition: all var(--t-element);
+}
+
+.v-hero-button:hover {
+  background: var(--color-plum-700);
+  box-shadow: 0 8px 24px rgba(35, 18, 33, 0.24);
+  transform: translateY(-1px);
+}
+
+.v-hero-button--clay {
+  background: var(--v-pink);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 20px rgba(183, 89, 64, 0.28);
+}
+
+.v-hero-button--clay:hover {
+  background: var(--v-pink-deep);
+  box-shadow: 0 10px 28px rgba(183, 89, 64, 0.38);
+}
+
+.v-hero-button__window {
+  position: relative;
+  z-index: 1;
+  display: block;
+  overflow: hidden;
+}
+
+.v-hero-button__label {
+  display: block;
+  transition: transform var(--t-element);
+}
+
+.v-hero-button__arrow {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 28px;
+  position: relative;
+  z-index: 1;
+  transition: transform var(--t-element);
+}
+
+.v-hero-button:hover .v-hero-button__arrow {
+  transform: translateX(4px);
+}
+
+/* Sleek, flawless Hero Button with pure pill contour */
+.v-hero-button {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  min-width: 220px;
+  padding: 0 24px;
+  gap: 14px;
+  border-radius: var(--r-pill);
+  background: var(--v-ink);
+  color: var(--v-on-ink);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(35, 18, 33, 0.1);
+  transition: transform var(--t-element), box-shadow var(--t-element), background var(--t-element);
+}
+
+.v-hero-button:hover {
+  background: var(--color-plum-700);
+  box-shadow: 0 8px 20px rgba(35, 18, 33, 0.18);
+  transform: translateY(-1.5px);
+}
+
+.v-hero-button--clay {
+  background: var(--v-pink);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 14px rgba(183, 89, 64, 0.2);
+}
+
+.v-hero-button--clay:hover {
+  background: var(--v-pink-deep);
+  box-shadow: 0 8px 22px rgba(183, 89, 64, 0.3);
+  transform: translateY(-1.5px);
+}
+
+/* Remove any artificial corner flaps or awkward shadows */
+.v-hero-button__paint {
+  display: none !important;
+}
+
+/* 000h Ink Sweep Appearance */
+.v-hero-button[data-hero-appearance="ink-sweep"] {
+  background: var(--color-surface);
+  color: var(--color-plum-900);
+  border: 1.5px solid rgba(34, 40, 74, 0.18);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 3px 12px rgba(35, 18, 33, 0.06);
+}
+
+.v-hero-button[data-hero-appearance="ink-sweep"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-plum-900);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+  border-radius: var(--r-pill);
+}
+
+.v-hero-button[data-hero-appearance="ink-sweep"]:hover::before {
+  transform: scaleX(1);
+}
+
+.v-hero-button[data-hero-appearance="ink-sweep"]:hover {
+  color: #FFFFFF !important;
+  border-color: var(--color-plum-900);
+  box-shadow: 0 8px 24px rgba(34, 40, 74, 0.22);
+  transform: translateY(-1.5px);
+}
+
+.v-hero-button[data-hero-appearance="ink-sweep"] .v-hero-button__window,
+.v-hero-button[data-hero-appearance="ink-sweep"] .v-hero-button__arrow {
+  position: relative;
+  z-index: 1;
+  color: inherit;
+  transition: color 0.25s ease;
+}
+
+.v-hero-button[data-hero-appearance="ink-sweep"] .v-hero-button__arrow svg path {
+  stroke: var(--color-plum-900);
+  transition: stroke 0.25s ease;
+}
+
+.v-hero-button[data-hero-appearance="ink-sweep"]:hover .v-hero-button__arrow svg path {
+  stroke: #FFFFFF !important;
+}
+
+/* 000h Demo container for hero buttons with meta cues */
+.v-hero-demo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.v-hero-demo .v-meta {
+  margin-top: 2px;
+  padding-left: 4px;
+}
+
+/* 000h Atmosphere Pigment Stage */
+.v-pigment-stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.v-pigment-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.12;
+  animation: float-blob 18s ease-in-out infinite alternate;
+}
+
+@keyframes float-blob {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.08); }
+  100% { transform: translate(-20px, 30px) scale(0.95); }
+}

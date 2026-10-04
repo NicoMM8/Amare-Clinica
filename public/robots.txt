@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Bloquear recursos innecesarios para el crawl budget
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /*.mjs$
+
+# Sitemap
+Sitemap: https://terapiadeparejaelsalvador.com/sitemap.xml
+
+# Crawl-delay sugerido para bots menores
+Crawl-delay: 1

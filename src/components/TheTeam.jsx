@@ -21,25 +21,27 @@ export default function TheTeam() {
           {/* Left: Header + credentials */}
           <div>
             <div className="pill-badge" style={{ marginBottom: '20px' }}>
-              <span>La persona detrás de Centro Amaré</span>
+              <span>Dirección Clínica y Confianza</span>
             </div>
 
             <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', marginBottom: '20px', lineHeight: 1.2 }}>
-              Tu proceso empieza con la{' '}
-              <span style={{ fontStyle: 'italic', color: 'var(--color-clay)' }}>confianza</span>
+              Iris Alarcón —{' '}
+              <span style={{ fontStyle: 'italic', color: 'var(--color-clay)' }}>
+                Psicóloga de Pareja y Sexología
+              </span>
             </h2>
 
-            <p style={{ fontSize: '17px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-              Las conversaciones difíciles requieren de alguien con formación, experiencia y que entienda de dónde vienes. Iris te escucha sin prejuicios, sin filtros y con método.
+            <p style={{ fontSize: '17px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '28px' }}>
+              Las conversaciones difíciles requieren de alguien con formación científica, experiencia real y que comprenda tu código cultural. Iris te escucha en un espacio 100% neutral: sin juzgar, sin buscar culpables y con métodos probados.
             </p>
 
             {/* Credentials */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '36px' }}>
               {[
                 { icon: Award, text: 'Máster en Terapia de Pareja y Sexología Clínica' },
-                { icon: BookOpen, text: 'Especialista en TCC (Terapia Cognitivo-Conductual)' },
-                { icon: CheckCircle2, text: 'Más de 9 años en consulta clínica privada' },
-                { icon: CheckCircle2, text: 'Atención a la diáspora en Canadá, EE.UU. y Europa' },
+                { icon: BookOpen, text: 'Lic. en Psicología Clínica · Registro Profesional JVPP El Salvador' },
+                { icon: CheckCircle2, text: 'Más de 9 años en consulta clínica privada (TCC y Pareja Integral)' },
+                { icon: CheckCircle2, text: 'Atención online a El Salvador (San Salvador, Santa Tecla) y Diáspora (Canadá, EE.UU., Europa)' },
               ].map(({ icon: Icon, text }, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                   <div style={{
@@ -62,16 +64,21 @@ export default function TheTeam() {
             </div>
 
             {/* CTA */}
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-              style={{ display: 'inline-flex', gap: '10px', textDecoration: 'none' }}
-            >
-              <MessageCircle size={18} />
-              <span>Hablar con Iris (30 min gratis)</span>
-            </a>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'flex-start' }}>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ display: 'inline-flex', gap: '10px', textDecoration: 'none' }}
+              >
+                <MessageCircle size={18} />
+                <span>Agendar sesión con Iris (30 min gratis)</span>
+              </a>
+              <span style={{ fontSize: '12px', color: 'var(--color-ink-muted)' }}>
+                ✨ Sesión privada por Google Meet · Coordinación por WhatsApp con asistente
+              </span>
+            </div>
           </div>
 
           {/* Right: Profile Card */}
@@ -126,12 +133,17 @@ export default function TheTeam() {
                   overflow: 'hidden',
                   boxShadow: '0 8px 24px rgba(0,0,0,0.18)',
                 }}>
-                  <img
-                    src="/images/hero-therapist.jpg"
-                    alt="Psicóloga Iris Alarcón — Directora Clínica de Centro Amaré"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcSet="/images/hero-therapist-480.webp" type="image/webp" />
+                    <img
+                      src="/images/hero-therapist-480.webp"
+                      alt="Dirección Clínica — Centro Amaré Psicoterapia"
+                      width="120"
+                      height="120"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
               </div>
 

@@ -234,20 +234,20 @@ export function BentoMosaic() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--v-olive)', marginBottom: '14px' }}>
                 <CreditCard size={18} />
                 <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  Financiación Sin Intereses
+                  Tarifa Mensual Accesible
                 </span>
               </div>
               <h4 style={{ fontSize: '19px', fontWeight: 600, color: 'var(--v-text)', marginBottom: '8px' }}>
-                Cuotas Fijas de $100 USD
+                Plan Mensual de $100 USD
               </h4>
               <p style={{ fontSize: '14px', color: 'var(--v-text-2)', lineHeight: 1.6, margin: 0 }}>
-                Hasta 4 sesiones al mes. Distribuye tu tratamiento de 16 sesiones en cuotas mensuales para tu tranquilidad financiera.
+                Hasta 4 sesiones mensuales ($25 USD por sesión). Acompañamiento profesional continuo sin permanencia ni costos ocultos.
               </p>
             </div>
 
             <div style={{ paddingTop: '16px' }}>
-              <LivingLink href="#honorarios">
-                Ver desglose de pagos
+              <LivingLink href="/#honorarios">
+                Ver plan mensual
               </LivingLink>
             </div>
           </motion.div>

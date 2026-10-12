@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Globe, ShieldCheck, HeartHandshake, Sparkles, MessageCircle, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Globe, ShieldCheck, HeartHandshake, Sparkles, MessageCircle, Clock, CheckCircle2, ArrowRight, Star } from 'lucide-react';
 import { HeroButton } from './ui/hero-button';
 import { PigmentAtmosphere } from './cojeev/PigmentAtmosphere';
 
@@ -77,8 +77,8 @@ export default function Hero() {
                 <Globe size={16} style={{ color: 'var(--color-clay)' }} />
                 <span>Desde El Salvador al mundo</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--color-ink-secondary)' }}>
-                <ShieldCheck size={16} style={{ color: 'var(--color-clay)' }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--color-clay)' }}>
+                <ShieldCheck size={16} />
                 <span>100% Confidencial</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--color-ink-secondary)' }}>
@@ -88,7 +88,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ── RIGHT COLUMN: Clean Therapist Photo ─────────── */}
+          {/* ── RIGHT COLUMN: Therapist Photo & Trust Card ── */}
           <div style={{ position: 'relative', width: '100%', maxWidth: '480px', margin: '0 auto' }}>
             {/* Ambient decorative warm glow behind photo card */}
             <div
@@ -114,18 +114,75 @@ export default function Hero() {
                 border: '1px solid rgba(34, 40, 74, 0.08)',
               }}
             >
-              <img
-                src="/images/hero-therapist.jpg"
-                alt="Iris Alarcón — Psicóloga Clínica especialista en Terapia de Pareja, Centro Amaré"
-                className="hero-visual-img"
+              <picture>
+                <source srcSet="/images/hero-therapist-960.webp 960w, /images/hero-therapist-480.webp 480w" sizes="(max-width: 600px) 100vw, 480px" type="image/webp" />
+                <source srcSet="/images/hero-therapist-960.jpg" type="image/jpeg" />
+                <img
+                  src="/images/hero-therapist-960.jpg"
+                  alt="Sesión de psicoterapia de pareja online — Centro Amaré El Salvador"
+                  className="hero-visual-img"
+                  width="480"
+                  height="460"
+                  fetchPriority="high"
+                  style={{
+                    height: '460px',
+                    width: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center top',
+                    display: 'block',
+                  }}
+                />
+              </picture>
+
+              {/* Glassmorphism Floating Trust Card */}
+              <div
                 style={{
-                  height: '460px',
-                  width: '100%',
-                  objectFit: 'cover',
-                  objectPosition: 'center top',
-                  display: 'block',
+                  position: 'absolute',
+                  bottom: '16px',
+                  left: '16px',
+                  right: '16px',
+                  background: 'rgba(255, 255, 255, 0.94)',
+                  backdropFilter: 'blur(12px)',
+                  WebkitBackdropFilter: 'blur(12px)',
+                  borderRadius: '18px',
+                  padding: '14px 18px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 12px 30px rgba(35, 18, 33, 0.14)',
+                  border: '1px solid rgba(255, 255, 255, 0.8)',
+                  zIndex: 2,
                 }}
-              />
+              >
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-plum-900)' }}>
+                      Psicología Clínica de Pareja
+                    </span>
+                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#25D366' }} title="Disponible online" />
+                  </div>
+                  <div style={{ fontSize: '12px', color: 'var(--color-clay)', fontWeight: 600 }}>
+                    Máster en Pareja & Sexología · Enfoque Basado en Evidencia
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    background: 'var(--color-clay-subtle)',
+                    padding: '5px 10px',
+                    borderRadius: 'var(--r-pill)',
+                    fontSize: '12.5px',
+                    fontWeight: 700,
+                    color: 'var(--color-clay)',
+                  }}
+                >
+                  <Sparkles size={13} fill="currentColor" />
+                  <span>Online</span>
+                </div>
+              </div>
             </div>
           </div>
 

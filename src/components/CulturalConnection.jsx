@@ -80,7 +80,7 @@ export default function CulturalConnection() {
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                 <Check size={18} style={{ color: '#1B873F', flexShrink: 0, marginTop: '2px' }} />
-                <span><strong>Tarifa mensual accesible:</strong> Planes en cuotas de $100/mes para que la economía nunca sea una barrera para tu salud mental.</span>
+                <span><strong>Tarifa mensual accesible:</strong> Plan mensual de $100 USD (hasta 4 sesiones al mes) para que el costo nunca sea una barrera para tu salud mental.</span>
               </li>
             </ul>
           </div>

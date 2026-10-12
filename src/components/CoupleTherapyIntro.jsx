@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, MessageCircle, ArrowRight, ShieldCheck } from 'lucide-react';
 
 /* ── 1. Icono Ilustrado: Problemas de comunicación (Mano que sostiene un corazón cálido) ── */
 function IconComunicacion() {
@@ -248,7 +248,7 @@ export default function CoupleTherapyIntro() {
                 marginBottom: '18px',
               }}
             >
-              ¡Quiero comenzar terapia de pareja!
+              ¿Cuándo acudir a terapia de pareja?
             </h2>
 
             <p
@@ -260,7 +260,7 @@ export default function CoupleTherapyIntro() {
                 margin: 0,
               }}
             >
-              Este tratamiento psicológico está orientado a ayudar a las parejas en conflicto, o que atraviesan una crisis, a resolver sus diferencias y lograr recuperar una convivencia feliz.
+              La terapia psicológica de pareja está orientada a ayudar a salvadoreños en el país o en el exterior a resolver sus diferencias, sanar el desgaste acumulado y recuperar una convivencia en calma y complicidad.
             </p>
           </div>
 
@@ -273,18 +273,24 @@ export default function CoupleTherapyIntro() {
             }}
             className="intro-banner-image-container"
           >
-            <img
-              src="/images/terapia-pareja-banner-canvas.jpg"
-              alt="Ilustración de sesión de terapia de pareja en Centro Amaré"
-              style={{
-                width: '100%',
-                maxWidth: '560px',
-                height: 'auto',
-                borderRadius: '24px',
-                display: 'block',
-                mixBlendMode: 'multiply',
-              }}
-            />
+            <picture>
+              <source srcSet="/images/terapia-pareja-banner-1120.webp 1120w, /images/terapia-pareja-banner-560.webp 560w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
+              <img
+                src="/images/terapia-pareja-banner-1120.jpg"
+                alt="Sesión de terapia psicológica de pareja en Centro Amaré"
+                width="560"
+                height="313"
+                loading="lazy"
+                style={{
+                  width: '100%',
+                  maxWidth: '560px',
+                  height: 'auto',
+                  borderRadius: '24px',
+                  display: 'block',
+                  mixBlendMode: 'multiply',
+                }}
+              />
+            </picture>
           </div>
         </div>
 
@@ -401,6 +407,68 @@ export default function CoupleTherapyIntro() {
               );
             })}
           </div>
+
+          {/* ── Banner de Micro-Conversión / Rescate Inmediato ── */}
+          <div
+            style={{
+              marginTop: '44px',
+              background: 'linear-gradient(135deg, var(--color-plum-900) 0%, #1e1724 100%)',
+              borderRadius: '24px',
+              padding: '36px 32px',
+              color: '#FFFFFF',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '28px',
+              flexWrap: 'wrap',
+              boxShadow: '0 16px 36px rgba(35, 18, 33, 0.16)',
+              border: '1px solid rgba(255, 255, 255, 0.1)'
+            }}
+            className="intro-cta-banner"
+          >
+            <div style={{ maxWidth: '580px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.15)', padding: '4px 12px', borderRadius: 'var(--r-pill)', fontSize: '12px', fontWeight: 600, marginBottom: '12px' }}>
+                <ShieldCheck size={14} style={{ color: 'var(--color-clay)' }} />
+                <span>Espacio neutral · Sin juzgar ni buscar culpables</span>
+              </div>
+              <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#FFFFFF', marginBottom: '8px', lineHeight: 1.3 }}>
+                ¿Se sienten identificados con alguna de estas dinámicas?
+              </h4>
+              <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.8)', margin: 0, lineHeight: 1.6 }}>
+                No tienen que resolverlo solos ni esperar a que la relación se rompa. La primera sesión de 30 minutos es gratuita por Google Meet para conocernos y trazar un camino.
+              </p>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-start' }}>
+              <a
+                href={"https://wa.me/50373184781?text=" + encodeURIComponent("Hola Iris, leí los motivos de consulta en la web de Centro Amaré y nos gustaría agendar la sesión inicial gratuita de 30 minutos.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  padding: '14px 26px',
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  borderRadius: 'var(--r-pill)',
+                  background: 'var(--color-clay)',
+                  color: '#FFFFFF',
+                  boxShadow: '0 8px 20px rgba(169, 90, 65, 0.35)'
+                }}
+              >
+                <MessageCircle size={18} />
+                <span>Agendar sesión de encuadre (30 min gratis)</span>
+                <ArrowRight size={16} />
+              </a>
+              <span style={{ fontSize: '11.5px', color: 'rgba(255, 255, 255, 0.65)', paddingLeft: '4px' }}>
+                🔒 Coordinación humana directa por WhatsApp · Sin bots
+              </span>
+            </div>
+          </div>
+
         </div>
 
       </div>

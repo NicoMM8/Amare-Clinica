@@ -50,7 +50,7 @@ export default function MethodologyAndPricing() {
             <span>Metodología Clínica · Sin Improvisaciones</span>
           </div>
           <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '16px', lineHeight: 1.2 }}>
-            Un proceso de pareja estructurado en 4 fases, con resultados medibles
+            Metodología clínica en 4 fases y precios accesibles en El Salvador
           </h2>
           <p style={{ fontSize: '16.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.65 }}>
             No venimos a hablar sin rumbo ni a buscar culpables. Aplicamos protocolos clínicos basados en evidencia (Terapia Integral de Pareja + TCC) diseñados para desactivar el conflicto, reconstruir la intimidad y darles autonomía real.
@@ -172,10 +172,10 @@ export default function MethodologyAndPricing() {
             </div>
             <div>
               <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-plum-900)', marginBottom: '3px' }}>
-                1ª Sesión de 30 min sin coste
+                1ª Sesión de 30 min sin costo
               </strong>
               <span style={{ fontSize: '13px', color: 'var(--color-ink-secondary)', lineHeight: 1.5 }}>
-                Conocen a Iris y evalúan si hay química profesional antes de cualquier compromiso.
+                Conocen a su psicóloga y evalúan la química profesional antes de cualquier compromiso.
               </span>
             </div>
           </div>
@@ -201,12 +201,12 @@ export default function MethodologyAndPricing() {
             
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
               <div>
-                <span className="pricing-badge-popular">Modelo de suscripción en cuotas fijas</span>
+                <span className="pricing-badge-popular">Plan mensual transparente</span>
                 <h3 className="font-serif" style={{ fontSize: '28px', color: 'var(--color-plum-900)', marginBottom: '8px' }}>
                   Plan Mensual Cómodo y Accesible
                 </h3>
                 <p style={{ fontSize: '15px', color: 'var(--color-ink-secondary)', maxWidth: '480px' }}>
-                  El valor habitual de la sesión individual es de $50 USD. Para que el costo nunca frene tu proceso terapéutico, distribuimos la inversión en cuotas mensuales fijas:
+                  Para que la inversión nunca frene su proceso terapéutico, ofrecemos una cuota mensual fija y predecible:
                 </p>
               </div>
 
@@ -216,8 +216,8 @@ export default function MethodologyAndPricing() {
                   <span className="price-amount">100</span>
                   <span className="price-frequency">USD / mes</span>
                 </div>
-                <span style={{ fontSize: '12.5px', color: 'var(--color-ink-muted)' }}>
-                  Hasta 4 sesiones al mes
+                <span style={{ fontSize: '12.5px', color: 'var(--color-clay)', fontWeight: 600 }}>
+                  Hasta 4 sesiones al mes ($25/sesión)
                 </span>
               </div>
             </div>
@@ -226,14 +226,14 @@ export default function MethodologyAndPricing() {
               background: 'var(--color-canvas)', 
               borderRadius: 'var(--r-xl)', 
               padding: '20px 24px', 
-              margin: '28px 0',
+              margin: '28px 0', 
               border: '1px solid var(--border-hairline)'
             }}>
               <strong style={{ display: 'block', fontSize: '14.5px', color: 'var(--color-plum-900)', marginBottom: '6px' }}>
-                ¿Cómo funciona el sistema en cuotas? (Ejemplo práctico):
+                ¿Cómo funciona el plan mensual?:
               </strong>
               <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.6 }}>
-                Si su proceso de pareja requiere <strong>16 sesiones</strong>, las realizarán semanalmente a lo largo de aproximadamente 4 meses. Sin embargo, para su comodidad financiera, el pago se distribuye en <strong>8 cuotas mensuales de $100 USD</strong>. Mismo precio total, pero sin asfixiar la economía del hogar y sin ningún tipo de recargo por financiamiento.
+                Por <strong>$100 USD al mes</strong> reciben hasta 4 sesiones terapéuticas (una sesión semanal de 50 a 60 minutos por Google Meet), lo que equivale a solo <strong>$25 USD por sesión</strong>. Se abona mes a mes durante el tiempo que dure el acompañamiento. <strong>Sin permanencia mínima ni deudas posteriores:</strong> pausan o cierran el proceso cuando consideren oportuno.
               </p>
             </div>
 
@@ -241,11 +241,11 @@ export default function MethodologyAndPricing() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '14px', marginBottom: '32px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
                 <Check size={18} style={{ color: 'var(--color-clay)' }} />
-                <span>1ª Sesión de 30 min sin coste</span>
+                <span>1ª Sesión de 30 min sin costo</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
                 <Check size={18} style={{ color: 'var(--color-clay)' }} />
-                <span>Sesiones de 50-60 min por Google Meet</span>
+                <span>Hasta 4 sesiones mensuales de 50-60 min</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
                 <Check size={18} style={{ color: 'var(--color-clay)' }} />
@@ -261,7 +261,7 @@ export default function MethodologyAndPricing() {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
                 <Check size={18} style={{ color: 'var(--color-clay)' }} />
-                <span>Sin permanencia: pausáis o termináis cuando queráis</span>
+                <span>Sin permanencia: pausan o terminan cuando quieran</span>
               </div>
             </div>
 

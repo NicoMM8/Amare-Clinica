@@ -346,6 +346,21 @@ button {
   color: var(--color-plum-900);
 }
 
+@media (max-width: 900px) {
+  .nav-links {
+    display: none !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .navbar {
+    padding: 2px 10px 2px 16px !important;
+  }
+  .navbar .btn-primary {
+    display: none !important;
+  }
+}
+
 /* Interactive Triage Questionnaire (Clearly.help inspiration) */
 .triage-container {
   background: #FFFFFF;
@@ -446,27 +461,37 @@ button {
 /* Floating WhatsApp Badge */
 .floating-whatsapp {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 20px;
+  right: 20px;
   z-index: 99;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   background: #25D366;
   color: #FFFFFF;
-  padding: 12px 20px;
+  padding: 10px 18px;
   border-radius: var(--r-pill);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
   transition: all var(--duration-normal) var(--ease-spring);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-decoration: none;
 }
 
 .floating-whatsapp:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.5);
-  background: #22bf5b;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
+  background: #20BA5A;
+}
+
+@media (max-width: 480px) {
+  .floating-whatsapp {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px 14px;
+    font-size: 12.5px;
+  }
 }
 
 /* Accordion FAQ */

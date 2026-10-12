@@ -12,15 +12,23 @@ import TheTeam from './components/TheTeam';
 import MethodologyAndPricing from './components/MethodologyAndPricing';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
+import QuizTeaser from './components/QuizTeaser';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Footer from './components/Footer';
 
-function App() {
+// Subpáginas de especialidad y conversión
+import TerapiaParejaPage from './pages/TerapiaParejaPage';
+import SexologiaClinicaPage from './pages/SexologiaClinicaPage';
+import TerapiaIndividualPage from './pages/TerapiaIndividualPage';
+import TerapiaDiasporaPage from './pages/TerapiaDiasporaPage';
+import PreciosPage from './pages/PreciosPage';
+
+function App({ initialPath = '/' }) {
   const [currentPath, setCurrentPath] = useState(() => {
     if (typeof window !== 'undefined') {
       return window.location.pathname;
     }
-    return '/';
+    return initialPath;
   });
 
   useEffect(() => {
@@ -35,11 +43,23 @@ function App() {
       const target = e.target.closest('a');
       if (target) {
         const href = target.getAttribute('href');
-        if (href === '/tu-match' || href === '/') {
-          e.preventDefault();
-          window.history.pushState({}, '', href);
-          setCurrentPath(href);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Si es una ruta interna (no ancla hash puro ni enlace externo)
+        if (href && href.startsWith('/') && !href.startsWith('//')) {
+          const [path, hash] = href.split('#');
+          // Si es navegación a otra página
+          if (path && path !== window.location.pathname) {
+            e.preventDefault();
+            window.history.pushState({}, '', href);
+            setCurrentPath(path);
+            if (hash) {
+              setTimeout(() => {
+                const el = document.getElementById(hash);
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }, 100);
+            } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }
         }
       }
     };
@@ -60,47 +80,70 @@ function App() {
     }
   };
 
-  // ── Si el usuario está en la página del Matching Quiz ─────
+  // ── Enrutamiento por subpáginas ────────────────────────────
   if (currentPath === '/tu-match') {
     return <CoupleMatchingQuiz onGoHome={() => navigateTo('/')} />;
   }
 
-  // ── Landing Page Principal ────────────────────────────────
+  if (currentPath === '/terapia-de-pareja') {
+    return <TerapiaParejaPage />;
+  }
+
+  if (currentPath === '/sexologia-clinica') {
+    return <SexologiaClinicaPage />;
+  }
+
+  if (currentPath === '/terapia-individual') {
+    return <TerapiaIndividualPage />;
+  }
+
+  if (currentPath === '/terapia-salvadorenos-en-el-extranjero') {
+    return <TerapiaDiasporaPage />;
+  }
+
+  if (currentPath === '/precios') {
+    return <PreciosPage />;
+  }
+
+  // ── Landing Page Principal (Estructurada para Máxima Conversión) ─
   return (
     <div className="app-wrapper">
       {/* ── Datos estructurados JSON-LD (SEO + GEO) ─── */}
       <SchemaMarkup />
 
-      {/* Navigation with 000h aesthetic */}
+      {/* Navigation */}
       <Navbar />
 
       {/* Main Content */}
       <main>
-        {/* Hero Section with 000h HeroButton and PigmentAtmosphere */}
+        {/* 1. Hero: Propuesta de valor + CTA de alta intención */}
         <Hero />
 
-        {/* ── Introducción e Ilustración Terapia de Pareja ─── */}
+        {/* 2. Empatía con el problema: 6 motivos y dinámicas frecuentes + Micro-CTA */}
         <CoupleTherapyIntro />
 
-        {/* 000h Bento Grid Architecture (Ecosistema Clínico) */}
-        <BentoMosaic />
-
-        {/* Salvadoran Diaspora & Cultural Belonging Section */}
-        <CulturalConnection />
-
-        {/* Prioritized Clinical Specialties */}
-        <Specialties />
-
-        {/* The Clinicians (Iris Alarcón + Associated Specialist) */}
+        {/* 3. Autoridad y Confianza: Iris Alarcón (Directora Clínica) */}
         <TheTeam />
 
-        {/* Methodology, 30 min Free Intake & $100/mo Installments */}
-        <MethodologyAndPricing />
+        {/* 4. Conexión Cultural: Diáspora salvadoreña (EE.UU., Canadá, Europa) */}
+        <CulturalConnection />
 
-        {/* Patient Stories & Real Diaspora Cases */}
+        {/* 5. Especialidades Interactivas: Elige tu situación */}
+        <Specialties />
+
+        {/* 6. Prueba Social: Testimonios de pacientes antes de hablar de costos */}
         <Testimonials />
 
-        {/* FAQ Accordion */}
+        {/* 7. Metodología Clínica en 4 fases + Plan mensual accesible */}
+        <MethodologyAndPricing />
+
+        {/* 8. Ecosistema Clínico Integral (Bento Mosaic de apoyo) */}
+        <BentoMosaic />
+
+        {/* 9. Quiz Interactivo / Matching Teaser (Captura de tráfico indeciso) */}
+        <QuizTeaser />
+
+        {/* 10. FAQ: Desactivación de objeciones restantes */}
         <FAQ />
       </main>
 

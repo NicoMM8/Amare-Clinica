@@ -206,7 +206,7 @@ export function StressSlider() {
         </HeroButton>
 
         <span style={{ fontSize: '12.5px', color: 'var(--v-text-3)' }}>
-          Evaluación personalizada sin coste por Google Meet
+          Evaluación personalizada sin costo por Google Meet
         </span>
       </div>
     </div>

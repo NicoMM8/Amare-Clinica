@@ -40,7 +40,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       subtitle: 'Selecciona la dificultad que genera mayor desgaste en el día a día.',
       options: [
         { label: 'Problemas de comunicación y discusiones en bucle', sub: 'Hablamos de lo mismo y nunca llegamos a acuerdos' },
-        { label: 'Pérdida de intimidad, afecto o deseo sexual', sub: 'Nos sentimos como compañeros de piso, no como pareja' },
+        { label: 'Pérdida de intimidad, afecto o deseo sexual', sub: 'Nos sentimos como compañeros de casa, no como pareja' },
         { label: 'Crisis tras una infidelidad o pérdida de confianza', sub: 'Necesitamos reparar la herida y saber si es posible volver a confiar' },
         { label: 'Conflictos sobre roles, tareas, finanzas o crianza', sub: 'El desequilibrio en las cargas genera resentimiento diario' },
         { label: 'Celos, hipervigilancia o dinámicas de control', sub: 'La angustia y la sospecha desgastan la tranquilidad mutua' },
@@ -201,8 +201,10 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
               {/* Avatar de Iris en círculo suave */}
               <div style={{ position: 'relative', display: 'inline-block', marginBottom: '20px' }}>
                 <img
-                  src="/images/hero-therapist.jpg"
-                  alt="Iris Alarcón"
+                  src="/images/hero-therapist-480.webp"
+                  alt="Psicología de Pareja"
+                  width="92"
+                  height="92"
                   style={{
                     width: '92px',
                     height: '92px',
@@ -491,8 +493,10 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                 {/* Perfil del Especialista Ideal: Iris Alarcón */}
                 <div style={{ marginBottom: '24px' }}>
                   <img
-                    src="/images/hero-therapist.jpg"
-                    alt="Iris Alarcón"
+                    src="/images/hero-therapist-480.webp"
+                    alt="Especialista en Terapia de Pareja"
+                    width="110"
+                    height="110"
                     style={{
                       width: '110px',
                       height: '110px',

@@ -62,11 +62,11 @@ export default function Footer() {
               Especialidades
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)' }}>
-              <li><a href="#especialidades" style={{ transition: 'color 0.2s' }}>Terapia de Pareja</a></li>
-              <li><a href="#especialidades" style={{ transition: 'color 0.2s' }}>Sexología Clínica</a></li>
-              <li><a href="#especialidades" style={{ transition: 'color 0.2s' }}>Ansiedad y Rumiación</a></li>
-              <li><a href="#especialidades" style={{ transition: 'color 0.2s' }}>Apegos y Rupturas</a></li>
-              <li><a href="#pertenencia" style={{ transition: 'color 0.2s' }}>Atención a la Diáspora</a></li>
+              <li><a href="/terapia-de-pareja" style={{ transition: 'color 0.2s' }}>Terapia de Pareja</a></li>
+              <li><a href="/sexologia-clinica" style={{ transition: 'color 0.2s' }}>Sexología Clínica</a></li>
+              <li><a href="/terapia-individual" style={{ transition: 'color 0.2s' }}>Terapia Individual (TCC)</a></li>
+              <li><a href="/terapia-salvadorenos-en-el-extranjero" style={{ transition: 'color 0.2s' }}>Atención a la Diáspora</a></li>
+              <li><a href="/precios" style={{ transition: 'color 0.2s' }}>Precios y Plan Mensual</a></li>
             </ul>
           </div>
 
@@ -76,11 +76,11 @@ export default function Footer() {
               El Centro
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)' }}>
-              <li><a href="#triage">Evaluador Interactivo</a></li>
-              <li><a href="#equipo">Dirección Clínica (Iris Alarcón)</a></li>
-              <li><a href="#honorarios">Proceso y Cuotas Mensuales</a></li>
-              <li><a href="#faq">Preguntas Frecuentes</a></li>
-              <li><a href={whatsappUrl} target="_blank" rel="noopener noreferrer">Contacto Directo con Asistente</a></li>
+              <li><a href="/tu-match" style={{ color: 'var(--color-clay)', fontWeight: 600 }}>✦ Test de Pareja (2 min)</a></li>
+              <li><a href="/#equipo">Dirección Clínica (Iris Alarcón)</a></li>
+              <li><a href="/precios">Honorarios ($100/mes)</a></li>
+              <li><a href="/#faq">Preguntas Frecuentes</a></li>
+              <li><a href={whatsappUrl} target="_blank" rel="noopener noreferrer">Contacto con Asistente</a></li>
             </ul>
           </div>
 

@@ -14,10 +14,10 @@ import App from './App.jsx'
  * Renderiza la app completa a HTML estático.
  * @returns {string} HTML de la aplicación
  */
-export function render() {
+export function render(url = '/') {
   return renderToString(
     <React.StrictMode>
-      <App />
+      <App initialPath={url} />
     </React.StrictMode>
   )
 }

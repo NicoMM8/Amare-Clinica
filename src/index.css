@@ -243,9 +243,9 @@ button {
   border-radius: var(--r-pill);
   font-family: var(--font-sans);
   font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: none;
   border: 1px solid rgba(255, 255, 255, 0.28);
   box-shadow: 0 8px 24px rgba(170, 90, 64, 0.35);
   transition: all var(--duration-normal) var(--ease-spring);

@@ -1,8 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Globe, HeartHandshake, Clock, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
-import { HeroButton } from './ui/hero-button';
+import { Globe, HeartHandshake, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
 import { PigmentAtmosphere } from './cojeev/PigmentAtmosphere';
 
 function WhatsAppIcon({ size = 20, className = "" }) {
@@ -26,202 +25,168 @@ export default function Hero() {
 
   return (
     <section className="hero-section" id="inicio">
-      {/* Organic drifting pigment clouds (Cojeev atmosphere) */}
       <PigmentAtmosphere />
 
-      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <div className="hero-grid" style={{ alignItems: 'center' }}>
-          
-          {/* ── LEFT COLUMN: Copy & Brand Narrative ──────────── */}
-          <div>
-            {/* Main Headline with SEO H1 wrapper */}
-            <h1 className="hero-headline font-serif" style={{ margin: 0, padding: 0 }}>
-              <span
-                className="pill-badge"
-                style={{
-                  marginBottom: '20px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  backgroundColor: 'var(--color-surface)',
-                  border: '1px solid var(--border-subtle)',
-                  boxShadow: 'var(--shadow-sm)',
-                  fontFamily: 'var(--font-sans, "Nunito Sans", sans-serif)',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                  letterSpacing: 'normal',
-                  textTransform: 'none',
-                  color: 'var(--color-plum-900)'
+      <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1240px' }}>
+        
+        {/* ── SPECTACULAR UNBRAVO-STYLE FRAMED HERO ENCLOSURE ── */}
+        <div className="hero-frame-wrapper">
+          <div className="hero-frame-grid">
+            
+            {/* ── LEFT CARD: Content & Social Proof ── */}
+            <div className="hero-content-card">
+              
+              {/* Main Headline */}
+              <h1 
+                className="hero-headline font-serif" 
+                style={{ 
+                  margin: '0 0 12px 0', 
+                  fontSize: 'clamp(32px, 3.8vw, 46px)', 
+                  lineHeight: 1.1, 
+                  letterSpacing: '-0.025em', 
+                  color: 'var(--color-plum-900)' 
                 }}
               >
-                <span className="pill-dot" style={{ backgroundColor: 'var(--color-clay)' }}></span>
-                <span>Terapia de Pareja en El Salvador y Online para Salvadoreños en el Exterior</span>
-              </span>
-              <span style={{ display: 'block', fontSize: 'inherit', lineHeight: 'inherit' }}>
-                Terapia salvadoreña,{' '}
-                <br />
-                <span style={{ fontStyle: 'italic', color: 'var(--color-clay)' }}>
-                  estés donde estés.
+                Empieza con tu terapeuta online
+              </h1>
+
+              {/* Empathetic & Clear Subtitle */}
+              <p 
+                style={{ 
+                  fontSize: 'clamp(14.5px, 1.5vw, 16px)', 
+                  lineHeight: 1.5, 
+                  color: 'var(--color-ink-secondary)', 
+                  margin: '0 0 16px 0', 
+                  maxWidth: '500px' 
+                }}
+              >
+                Centro Amaré es el espacio de psicología y terapia de pareja para salvadoreños en el país y en el exterior. Para hablar de lo difícil en tu idioma, con método científico y una profesional colegiada al otro lado.
+              </p>
+
+              {/* Social Proof / Rating (Unobravo style) */}
+              <div 
+                style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '8px', 
+                  fontSize: '13.5px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-plum-900)', 
+                  marginBottom: '16px' 
+                }}
+              >
+                <span style={{ color: '#128C7E', fontSize: '17px', lineHeight: 1 }} aria-hidden="true">★</span>
+                <span>Valorado <strong>Excelente</strong> (4.9/5) por parejas y pacientes</span>
+              </div>
+
+              {/* Authority Checklist with Terracotta Circles (Unobravo style) */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '9px', marginBottom: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14px', color: 'var(--color-plum-900)' }}>
+                  <span className="hero-bullet-check" aria-hidden="true">✓</span>
+                  <span><strong>+9 años</strong> de experiencia clínica especializada</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14px', color: 'var(--color-plum-900)' }}>
+                  <span className="hero-bullet-check" aria-hidden="true">✓</span>
+                  <span><strong>Especialista en Pareja y Sexología</strong> (JVPP N.º 47096)</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14px', color: 'var(--color-plum-900)' }}>
+                  <span className="hero-bullet-check" aria-hidden="true">✓</span>
+                  <span><strong>Mismo código cultural:</strong> El Salvador, EE.UU., Canadá y Europa</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14px', color: 'var(--color-plum-900)' }}>
+                  <span className="hero-bullet-check" aria-hidden="true">✓</span>
+                  <span><strong>Videollamada simultánea</strong> si están en ciudades o países distintos</span>
+                </div>
+              </div>
+
+              {/* CTA Action Group */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-start' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                  <a
+                    href="/test-de-pareja"
+                    className="btn-appointment-pill"
+                    style={{
+                      backgroundColor: 'var(--color-clay)',
+                      padding: '13px 22px',
+                      fontSize: '15px',
+                      boxShadow: '0 8px 24px rgba(183, 89, 64, 0.35)',
+                    }}
+                  >
+                    <span>Evaluar nuestro caso de pareja</span>
+                    <ArrowRight size={17} />
+                  </a>
+
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-appointment-pill"
+                    style={{
+                      backgroundColor: 'transparent',
+                      border: '1.5px solid var(--color-plum-900)',
+                      color: 'var(--color-plum-900)',
+                      boxShadow: 'none',
+                      padding: '13px 18px',
+                      fontSize: '14.5px',
+                    }}
+                  >
+                    <span>WhatsApp directo</span>
+                    <WhatsAppIcon size={17} />
+                  </a>
+                </div>
+
+                <span style={{ fontSize: '13px', color: 'var(--color-ink-muted)', marginTop: '4px', marginLeft: '2px' }}>
+                  Primera conversación (30 min sin costo) · Sin compromiso
                 </span>
-              </span>
-            </h1>
+              </div>
 
-            {/* Subtitle with authentic brand copy */}
-            <p className="hero-subtitle" style={{ maxWidth: '520px' }}>
-              Terapia de pareja e individual online. Para hablar de lo difícil en tu idioma, con método científico y siempre con una persona real al otro lado.
-            </p>
-
-            {/* CTAs */}
-            <div className="hero-actions" style={{ marginBottom: '10px' }}>
-              <HeroButton
-                appearance="paper-fold"
-                variant="clay"
-                href="/test-de-pareja"
-              >
-                <span>Evaluar nuestro caso de pareja</span>
-              </HeroButton>
-
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-appointment-pill"
-                style={{
-                  backgroundColor: 'transparent',
-                  border: '1.5px solid var(--color-plum-900)',
-                  color: 'var(--color-plum-900)',
-                  boxShadow: 'none',
-                }}
-              >
-                <span>Escríbenos por WhatsApp</span>
-                <WhatsAppIcon size={19} />
-              </a>
             </div>
 
-            {/* Subtexto aclaratorio */}
-            <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', marginBottom: '24px' }}>
-              Primera conversación de 30 minutos sin costo con la Licda. Iris Alarcón · Sin compromiso.
-            </p>
-
-            {/* Human & Social Proof Row (Iconos en color Salvia) */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '22px', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '7px', fontSize: '13.5px', color: 'var(--color-ink-primary)' }}>
-                <Globe size={16} style={{ color: 'var(--color-sage)' }} />
-                <span>Desde El Salvador al mundo</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '7px', fontSize: '13.5px', color: 'var(--color-ink-primary)' }}>
-                <ShieldCheck size={16} style={{ color: 'var(--color-sage)' }} />
-                <span>Privacidad profesional</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '7px', fontSize: '13.5px', color: 'var(--color-ink-primary)' }}>
-                <Clock size={16} style={{ color: 'var(--color-sage)' }} />
-                <span>A tu ritmo</span>
-              </div>
-            </div>
-          </div>
-
-          {/* ── RIGHT COLUMN: Lifestyle Photo (Daniela profile - Unobravo/Selia aesthetic) ── */}
-          <div style={{ position: 'relative', width: '100%', maxWidth: '480px', margin: '0 auto' }}>
-            {/* Ambient decorative warm glow behind photo card */}
-            <div
-              style={{
-                position: 'absolute',
-                inset: '-8px',
-                background: 'radial-gradient(ellipse 70% 70% at 50% 50%, rgba(170, 90, 64, 0.12) 0%, rgba(217, 184, 147, 0.08) 60%, transparent 100%)',
-                filter: 'blur(20px)',
-                zIndex: 0,
-                borderRadius: '32px',
-                pointerEvents: 'none',
-              }}
-            />
-
-            <div 
-              className="hero-visual-card" 
-              style={{ 
-                position: 'relative', 
-                zIndex: 1,
-                borderRadius: '24px',
-                overflow: 'hidden',
-                boxShadow: '0 16px 40px rgba(34, 40, 74, 0.10)',
-                border: '1px solid rgba(34, 40, 74, 0.08)',
-              }}
-            >
-              <picture>
-                <source srcSet="/images/hero-daniela-960.webp 960w, /images/hero-daniela-480.webp 480w" sizes="(max-width: 600px) 100vw, 480px" type="image/webp" />
+            {/* ── RIGHT CARD: Full Lifestyle Photography ── */}
+            <div className="hero-photo-card">
+              <picture style={{ width: '100%', height: '100%', display: 'block' }}>
+                <source srcSet="/images/hero-daniela-960.webp 960w, /images/hero-daniela-480.webp 480w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
                 <source srcSet="/images/hero-daniela-960.jpg" type="image/jpeg" />
                 <img
                   src="/images/hero-daniela-960.jpg"
-                  alt="Terapia psicológica online para salvadoreños en el exterior — Centro Amaré"
-                  className="hero-visual-img"
-                  width="480"
-                  height="460"
+                  alt="Terapia psicológica online desde casa para salvadoreños — Centro Amaré"
                   fetchPriority="high"
-                  style={{
-                    height: '460px',
-                    width: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                    display: 'block',
-                  }}
+                  width="960"
+                  height="720"
                 />
               </picture>
 
-              {/* Glassmorphism Floating Trust Card */}
+              {/* Subtle Ambient Live Badge in the photo */}
               <div
                 style={{
                   position: 'absolute',
-                  bottom: '16px',
-                  left: '16px',
-                  right: '16px',
+                  bottom: '18px',
+                  left: '18px',
                   background: 'rgba(255, 255, 255, 0.94)',
-                  backdropFilter: 'blur(12px)',
-                  WebkitBackdropFilter: 'blur(12px)',
-                  borderRadius: '18px',
-                  padding: '14px 18px',
-                  display: 'flex',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  borderRadius: 'var(--r-pill)',
+                  padding: '7px 16px',
+                  display: 'inline-flex',
                   alignItems: 'center',
-                  justifyContent: 'space-between',
-                  boxShadow: '0 12px 30px rgba(34, 40, 74, 0.12)',
+                  gap: '8px',
+                  boxShadow: '0 6px 20px rgba(34, 40, 74, 0.14)',
                   border: '1px solid rgba(255, 255, 255, 0.85)',
-                  zIndex: 2,
+                  fontSize: '12.5px',
+                  fontWeight: 600,
+                  color: 'var(--color-plum-900)',
                 }}
               >
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-plum-900)' }}>
-                      Terapia Online en Tu Idioma
-                    </span>
-                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#25D366' }} title="Disponible online" />
-                  </div>
-                  <div style={{ fontSize: '12px', color: 'var(--color-clay)', fontWeight: 600 }}>
-                    Hablamos tu idioma y también tu contexto.
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    background: 'var(--color-clay-subtle)',
-                    padding: '5px 10px',
-                    borderRadius: 'var(--r-pill)',
-                    fontSize: '12.5px',
-                    fontWeight: 700,
-                    color: 'var(--color-clay)',
-                  }}
-                >
-                  <Sparkles size={13} fill="currentColor" />
-                  <span>En vivo</span>
-                </div>
+                <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#25D366' }} />
+                <span>Sesiones online por Google Meet · Sin traslados</span>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
 
-        {/* ── TRUST STRIP: Brand Clinical Pillars ──────────── */}
-        <div className="trust-strip" style={{ marginTop: '56px' }}>
+        {/* ── TRUST STRIP: Brand Clinical Pillars below Frame ── */}
+        <div className="trust-strip" style={{ marginTop: '48px' }}>
           <div className="trust-item">
             <div className="trust-icon-box">
               <Globe size={20} />
@@ -248,7 +213,7 @@ export default function Hero() {
             </div>
             <div>
               <div className="trust-text-title">Método con base científica</div>
-              <div className="trust-text-sub">Herramientas prácticas (TCC, DBT e Integral de Pareja), sin jerga clínica.</div>
+              <div className="trust-text-sub">Herramientas prácticas (TCC, DBT e Integral de Pareja), sin rodeos.</div>
             </div>
           </div>
 

@@ -33,10 +33,10 @@ export default function Navbar() {
             <img 
               src="/images/logo-nav.png" 
               alt="Centro Amaré — Terapia de Pareja" 
-              width="95"
-              height="40"
+              width="114"
+              height="48"
               style={{ 
-                height: '38px', 
+                height: '48px', 
                 width: 'auto', 
                 display: 'block', 
                 objectFit: 'contain' 

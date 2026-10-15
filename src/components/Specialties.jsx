@@ -234,7 +234,7 @@ export default function Specialties() {
                       }}
                     >
                       <MessageCircle size={16} />
-                      <span>Agendar 30 min gratis</span>
+                      <span>Agendar 30 min sin costo</span>
                     </a>
 
                     <a

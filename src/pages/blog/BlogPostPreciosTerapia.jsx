@@ -144,7 +144,7 @@ export default function BlogPostPreciosTerapia() {
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >
                     <MessageCircle size={18} />
-                    <span>Agendar sesión de 30 min gratis</span>
+                    <span>Agendar sesión de 30 min sin costo</span>
                   </a>
                   <a
                     href="/precios"

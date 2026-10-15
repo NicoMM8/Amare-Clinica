@@ -7,7 +7,7 @@ export default function EnlacesBioPage() {
 
   const links = [
     {
-      title: "Agendar 1ª Sesión de 30 min Gratis",
+      title: "Agendar 1ª Sesión de 30 min sin costo",
       subtitle: "Por videollamada de Google Meet · Sin compromiso",
       href: whatsappUrl,
       isExternal: true,
@@ -17,11 +17,11 @@ export default function EnlacesBioPage() {
     },
     {
       title: "✦ Test Clínico de Pareja",
-      subtitle: "Autoevaluación de tu relación en 5 pasos (2 min gratis)",
+      subtitle: "Autoevaluación de tu relación en 5 pasos (2 min sin costo)",
       href: "/test-de-pareja",
       isPrimary: false,
       icon: Sparkles,
-      badge: "Gratis"
+      badge: "Sin costo"
     },
     {
       title: "Honorarios y Plan Mensual ($100 USD)",

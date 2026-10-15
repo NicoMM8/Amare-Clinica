@@ -127,7 +127,7 @@ export default function BlogPostEmigrarPareja() {
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >
                     <MessageCircle size={18} />
-                    <span>Agendar 1ª sesión de 30 min gratis</span>
+                    <span>Agendar 1ª sesión de 30 min sin costo</span>
                   </a>
                   <a
                     href="/test-de-pareja"

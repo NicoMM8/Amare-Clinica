@@ -156,7 +156,7 @@ export default function PreciosPage() {
                   style={{ width: '100%', textAlign: 'center', padding: '13px', borderRadius: 'var(--r-pill)', color: '#fff', textDecoration: 'none', fontWeight: 600 }}
                   onClick={() => trackWhatsAppClick('page_precios_monthly_card', 'Comenzar plan')}
                 >
-                  <span>Iniciar con sesión de 30 min gratis →</span>
+                  <span>Iniciar con sesión de 30 min sin costo →</span>
                 </a>
               </div>
 

@@ -336,7 +336,7 @@ Me gustaría coordinar mi sesión inicial gratuita de 30 minutos por Google Meet
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span>Enviar respuestas y coordinar 30 min gratis</span>
+                    <span>Enviar respuestas y coordinar 30 min sin costo</span>
                   </HeroButton>
 
                   <Button variant="ghost" onClick={startAgain} style={{ alignSelf: "center" }}>

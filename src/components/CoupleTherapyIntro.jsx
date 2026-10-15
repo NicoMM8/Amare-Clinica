@@ -183,32 +183,38 @@ export default function CoupleTherapyIntro() {
   const commonProblems = [
     {
       iconComponent: IconComunicacion,
-      title: '"Hablamos, pero no nos entendemos" (Comunicación)',
+      tag: "COMUNICACIÓN EN PAREJA",
+      title: '"Hablamos, pero no nos entendemos"',
       desc: "Sienten que cualquier conversación cotidiana termina en la misma pelea de siempre, en reproches del pasado o en días enteros de silencio para evitar otro conflicto.",
     },
     {
       iconComponent: IconAceptacion,
-      title: "Querer cambiar al otro (Aceptación)",
+      tag: "ACEPTACIÓN Y DIFERENCIAS",
+      title: "Querer cambiar al otro",
       desc: "El cansancio de sentir que tu pareja no te entiende como antes, o la frustración constante de esperar que reaccione igual que tú.",
     },
     {
       iconComponent: IconRoles,
-      title: "El peso de la rutina, la casa y el dinero (Roles)",
+      tag: "CONVIVENCIA Y ROLES",
+      title: "El peso de la rutina, la casa y el dinero",
       desc: "Sentir que uno de los dos carga con todo el peso mental del hogar, los hijos, las finanzas o el apoyo a la familia en El Salvador, acumulando un resentimiento silencioso.",
     },
     {
       iconComponent: IconSexualidad,
-      title: '"Parecemos compañeros de cuarto" (Sexualidad e intimidad)',
+      tag: "SEXUALIDAD E INTIMIDAD",
+      title: '"Parecemos compañeros de cuarto"',
       desc: "Cuando el cansancio, la rutina o los bloqueos íntimos apagan el deseo. Les cuesta hablar de sexualidad sin incomodidad y extrañan volver a sentirse pareja.",
     },
     {
       iconComponent: IconInfidelidad,
-      title: "Dolor tras una infidelidad o mentira (Confianza)",
+      tag: "INFIDELIDAD Y CONFIANZA",
+      title: "Dolor tras una infidelidad o mentira",
       desc: "Cuando se rompe la confianza y duele seguir, pero también duele soltar. Les acompañamos a sanar la herida y decidir con claridad si es posible reconstruir la relación.",
     },
     {
       iconComponent: IconCelos,
-      title: "Inseguridad, celos y angustia (Control)",
+      tag: "CELOS E INSEGURIDAD",
+      title: "Inseguridad, celos y angustia",
       desc: "Vivir revisando el teléfono, con miedo constante o sintiendo que tienes que dar explicaciones de todo. Les ayudamos a recuperar la paz mental y la libertad en el vínculo.",
     },
   ];
@@ -266,7 +272,7 @@ export default function CoupleTherapyIntro() {
             </p>
           </div>
 
-          {/* Columna Derecha: Ilustración sobre fondo canvas */}
+          {/* Columna Derecha: Fotografía real de pareja en terapia online */}
           <div
             style={{
               display: 'flex',
@@ -275,24 +281,23 @@ export default function CoupleTherapyIntro() {
             }}
             className="intro-banner-image-container"
           >
-            <picture>
-              <source srcSet="/images/terapia-pareja-banner-1120.webp 1120w, /images/terapia-pareja-banner-560.webp 560w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
-              <img
-                src="/images/terapia-pareja-banner-1120.jpg"
-                alt="Sesión de terapia psicológica de pareja en Centro Amaré"
-                width="560"
-                height="313"
-                loading="lazy"
-                style={{
-                  width: '100%',
-                  maxWidth: '560px',
-                  height: 'auto',
-                  borderRadius: '24px',
-                  display: 'block',
-                  mixBlendMode: 'multiply',
-                }}
-              />
-            </picture>
+            <img
+              src="/images/pareja-terapia-online.jpg"
+              alt="Pareja participando en sesión de terapia de pareja online vía videollamada — Centro Amaré"
+              width="560"
+              height="315"
+              loading="lazy"
+              style={{
+                width: '100%',
+                maxWidth: '560px',
+                height: 'auto',
+                borderRadius: '24px',
+                display: 'block',
+                boxShadow: '0 16px 36px rgba(35, 18, 33, 0.12)',
+                border: '1px solid var(--border-subtle)',
+                objectFit: 'cover',
+              }}
+            />
           </div>
         </div>
 
@@ -315,7 +320,7 @@ export default function CoupleTherapyIntro() {
               </span>
             </div>
 
-            <h3
+            <h2
               className="font-serif"
               style={{
                 fontSize: 'clamp(26px, 3.4vw, 38px)',
@@ -326,7 +331,7 @@ export default function CoupleTherapyIntro() {
               }}
             >
               Problemas más comunes que trabajamos en terapia de pareja
-            </h3>
+            </h2>
 
             <p style={{ fontSize: '16.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.65 }}>
               La mayoría de las parejas no llegan a consulta porque se acabó el amor, sino porque llevan meses "aguantando" el desgaste sin saber cómo salir del mismo círculo.
@@ -374,7 +379,7 @@ export default function CoupleTherapyIntro() {
                   {/* Icono de estilo dibujo / ilustración vectorial */}
                   <div
                     style={{
-                      marginBottom: '18px',
+                      marginBottom: '16px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -383,7 +388,26 @@ export default function CoupleTherapyIntro() {
                     <IconComponent />
                   </div>
 
-                  <h4
+                  {/* Etiqueta pequeña (Salvia/Terracota) para SEO y limpieza */}
+                  <span
+                    className="card-tag"
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      letterSpacing: '0.07em',
+                      textTransform: 'uppercase',
+                      color: 'var(--color-clay, #B75940)',
+                      background: 'var(--color-clay-subtle, #FDF0EB)',
+                      padding: '4px 10px',
+                      borderRadius: 'var(--r-pill, 999px)',
+                      marginBottom: '10px',
+                    }}
+                  >
+                    {prob.tag}
+                  </span>
+
+                  <h3
                     style={{
                       fontSize: '18px',
                       fontWeight: 700,
@@ -393,7 +417,7 @@ export default function CoupleTherapyIntro() {
                     }}
                   >
                     {prob.title}
-                  </h4>
+                  </h3>
 
                   <p
                     style={{

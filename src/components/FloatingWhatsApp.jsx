@@ -14,8 +14,8 @@ export default function FloatingWhatsApp() {
       aria-label="Hablar con la asistente de Centro Amaré por WhatsApp"
       onClick={() => trackWhatsAppClick('floating_button', 'WhatsApp flotante')}
     >
-      <MessageCircle size={20} className="floating-whatsapp-icon" />
-      <span className="floating-whatsapp-label">1ª Sesión 30 min gratis</span>
+      <MessageCircle size={18} style={{ color: 'var(--color-clay, #B75940)' }} />
+      <span className="floating-whatsapp-label">1ª conversación sin costo</span>
     </a>
   );
 }

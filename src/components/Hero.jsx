@@ -78,7 +78,7 @@ export default function Hero() {
                 variant="clay"
                 href="/test-de-pareja"
               >
-                <span>Evaluar nuestro caso de pareja →</span>
+                <span>Evaluar nuestro caso de pareja</span>
               </HeroButton>
 
               <a

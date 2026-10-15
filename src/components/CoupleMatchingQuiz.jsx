@@ -349,7 +349,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
               >
                 <span>2 a 3 minutos</span>
                 <span>·</span>
-                <span>Gratis</span>
+                <span>Sin costo</span>
                 <span>·</span>
                 <span>Explora con calma</span>
               </div>

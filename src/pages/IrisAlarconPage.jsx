@@ -155,7 +155,7 @@ export default function IrisAlarconPage() {
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}
                 >
                   <MessageCircle size={18} />
-                  <span>Hablar con Iris en sesión de 30 min gratis</span>
+                  <span>Hablar con Iris en sesión de 30 min sin costo</span>
                 </a>
               </div>
 

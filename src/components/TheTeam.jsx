@@ -60,7 +60,7 @@ export default function TheTeam() {
                   <AnimatedNumber value={30} suffix="m" />
                 </div>
                 <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
-                  1ª charla gratis
+                  1ª charla sin costo
                 </div>
               </div>
               <div style={{ textAlign: 'center' }}>

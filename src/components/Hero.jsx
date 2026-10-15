@@ -60,7 +60,7 @@ export default function Hero() {
                   maxWidth: '500px' 
                 }}
               >
-                Centro Amaré es el espacio de psicología y terapia de pareja para salvadoreños en el país y en el exterior. Para hablar de lo difícil en tu idioma, con método científico y una profesional colegiada al otro lado.
+                Centro Amaré es la clínica de psicología y terapia de pareja para salvadoreños en el país y en el exterior. Para hablar de lo difícil en tu idioma, con método científico y profesionales colegiadas al otro lado.
               </p>
 
               {/* Social Proof / Rating (Unobravo style) */}
@@ -83,11 +83,11 @@ export default function Hero() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '9px', marginBottom: '24px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14px', color: 'var(--color-plum-900)' }}>
                   <span className="hero-bullet-check" aria-hidden="true">✓</span>
-                  <span><strong>+9 años</strong> de experiencia clínica especializada</span>
+                  <span><strong>Equipo clínico colegiado</strong> con +9 años de experiencia especializada</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14px', color: 'var(--color-plum-900)' }}>
                   <span className="hero-bullet-check" aria-hidden="true">✓</span>
-                  <span><strong>Especialista en Pareja y Sexología</strong> (JVPP N.º 47096)</span>
+                  <span><strong>Especialistas en Pareja, Sexología y TCC</strong> (Acreditación JVPP)</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14px', color: 'var(--color-plum-900)' }}>
                   <span className="hero-bullet-check" aria-hidden="true">✓</span>
@@ -136,7 +136,7 @@ export default function Hero() {
                 </div>
 
                 <span style={{ fontSize: '13px', color: 'var(--color-ink-muted)', marginTop: '4px', marginLeft: '2px' }}>
-                  Primera conversación (30 min sin costo) · Sin compromiso
+                  Primera conversación (30 min sin costo) con el equipo clínico · Sin compromiso
                 </span>
               </div>
 

@@ -2,15 +2,15 @@
 
 .hero-section {
   position: relative;
-  padding-top: 96px;
-  padding-bottom: 60px;
+  padding-top: 18px;
+  padding-bottom: 50px;
   overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: 86px;
-    padding-bottom: 40px;
+    padding-top: 14px;
+    padding-bottom: 36px;
   }
 }
 

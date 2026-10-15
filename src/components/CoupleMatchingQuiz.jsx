@@ -18,6 +18,8 @@ import {
 import { Button } from './ui/button';
 import { Icon } from './ui/icon';
 
+const STORAGE_KEY = 'amare_quiz_draft_v1';
+
 export default function CoupleMatchingQuiz({ onGoHome }) {
   const [currentStep, setCurrentStep] = useState(0); // 0: Intro, 1..5: Questions, 6: Result
   const [answers, setAnswers] = useState({
@@ -33,6 +35,35 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
 
   const headings = useRef([]);
   const focusNext = useRef(false);
+
+  // Restaurar progreso previo de localStorage si el usuario recarga la página
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.answers) {
+          setAnswers(parsed.answers);
+        }
+        if (typeof parsed.step === 'number' && parsed.step > 0 && parsed.step <= 6) {
+          setCurrentStep(parsed.step);
+        }
+      }
+    } catch {
+      // Ignorar si localStorage no está disponible
+    }
+  }, []);
+
+  const saveToStorage = (updatedAnswers, nextStep) => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        answers: updatedAnswers,
+        step: nextStep
+      }));
+    } catch {
+      // Ignorar
+    }
+  };
 
   const questions = [
     {
@@ -102,14 +133,19 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
   const move = (next) => {
     focusNext.current = true;
     setCurrentStep(next);
+    saveToStorage(answers, next);
   };
 
   const handleSelectOption = (field, opt) => {
-    setAnswers(prev => ({ 
-      ...prev, 
+    const updatedAnswers = { 
+      ...answers, 
       [field]: opt.label,
       [`${field}Short`]: opt.short || opt.label
-    }));
+    };
+    setAnswers(updatedAnswers);
+
+    const nextStep = currentStep < questions.length ? currentStep + 1 : questions.length + 1;
+    saveToStorage(updatedAnswers, nextStep);
 
     // Micro-delay suave para que el usuario aprecie la animación orgánica Cojeev antes de avanzar
     setTimeout(() => {
@@ -131,6 +167,9 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
     answers.situation.includes('Solo yo tengo iniciativa');
 
   const startAgain = () => {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {}
     setAnswers({
       situation: '',
       reason: '',
@@ -309,7 +348,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     >
                       <Sparkles size={12} style={{ color: 'var(--color-clay)' }} />
                       <span style={{ fontSize: '11.5px', fontWeight: 600, color: 'var(--color-plum-900)' }}>
-                        Especialista en Terapia de Pareja · JVPP N.º 47096
+                        Equipo de Terapia de Pareja · Registro JVPP
                       </span>
                     </div>
                   </div>
@@ -323,7 +362,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                       margin: '14px auto 30px',
                     }}
                   >
-                    Una psicóloga con Máster en Pareja y Sexología que comprende su contexto cultural, el desgaste que atraviesan y la forma en la que quieren sanar su vínculo.
+                    Un equipo clínico con Máster en Pareja y Sexología que comprende su contexto cultural, el desgaste que atraviesan y la forma en la que quieren sanar su vínculo.
                   </p>
 
                   <Button
@@ -602,19 +641,19 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   <h3
                     className="font-serif"
                     style={{
-                      fontSize: '26px',
+                      fontSize: '24px',
                       fontWeight: 700,
                       color: 'var(--v-text)',
                       marginBottom: '4px',
                     }}
                   >
-                    Iris Alarcón
+                    Equipo Clínico de Centro Amaré
                   </h3>
                   <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--v-pink)', marginBottom: '8px' }}>
-                    Psicóloga Clínica Colegiada · Máster en Pareja y Sexología (JVPP N.º 47096)
+                    Dirección Clínica: Licda. Iris Alarcón · Registro JVPP N.º 47096
                   </div>
                   <p style={{ fontSize: '14px', color: 'var(--v-text-2)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.6 }}>
-                    Las respuestas de su autoevaluación indican que su caso se beneficia de un protocolo de intervención en comunicación, acuerdos y reconexión emocional adaptado a su contexto.
+                    Las respuestas de su autoevaluación indican que su caso se beneficia de nuestro protocolo de intervención en comunicación, acuerdos y reconexión emocional. Les asignaremos la terapeuta del equipo idónea según su motivo de consulta y huso horario.
                   </p>
                 </div>
 
@@ -666,7 +705,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   <span>
                     {isIndividualInitiative 
                       ? 'Agendar mi conversación exploratoria (30 min)' 
-                      : 'Agendar nuestra primera conversación (30 min)'}
+                      : 'Agendar nuestra primera conversación con el equipo (30 min)'}
                   </span>
                   <ArrowRight size={18} />
                 </a>

@@ -78,7 +78,7 @@ export default function SexologiaClinicaPage() {
                   <ShieldCheck size={16} style={{ color: 'var(--color-clay)' }} /> Secreto profesional estricto
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <Clock size={16} style={{ color: 'var(--color-clay)' }} /> 30 min de encuadre gratis
+                  <Clock size={16} style={{ color: 'var(--color-clay)' }} /> 1ª conversación sin costo (30 min)
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <Heart size={16} style={{ color: 'var(--color-clay)' }} /> Parejas o individual

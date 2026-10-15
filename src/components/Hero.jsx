@@ -55,7 +55,7 @@ export default function Hero() {
                 }}
               >
                 <span className="pill-dot" style={{ backgroundColor: 'var(--color-clay)' }}></span>
-                <span>Terapia de Pareja en El Salvador, EE. UU. y el Exterior</span>
+                <span>Terapia de Pareja en El Salvador y Online para Salvadoreños en el Exterior</span>
               </span>
               <span style={{ display: 'block', fontSize: 'inherit', lineHeight: 'inherit' }}>
                 Terapia salvadoreña,{' '}
@@ -68,32 +68,39 @@ export default function Hero() {
 
             {/* Subtitle with authentic brand copy */}
             <p className="hero-subtitle" style={{ maxWidth: '520px' }}>
-              Terapia de pareja e individual online. Método con base científica. Siempre con una persona al otro lado.
+              Terapia de pareja e individual online. Para hablar de lo difícil en tu idioma, con método científico y siempre con una persona real al otro lado.
             </p>
 
             {/* CTAs */}
             <div className="hero-actions" style={{ marginBottom: '10px' }}>
+              <HeroButton
+                appearance="paper-fold"
+                variant="clay"
+                href="/test-de-pareja"
+              >
+                <span>Evaluar nuestro caso de pareja →</span>
+              </HeroButton>
+
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-appointment-pill"
+                style={{
+                  backgroundColor: 'transparent',
+                  border: '1.5px solid var(--color-plum-900)',
+                  color: 'var(--color-plum-900)',
+                  boxShadow: 'none',
+                }}
               >
-                <span>Haz tu cita</span>
+                <span>Escríbenos por WhatsApp</span>
                 <WhatsAppIcon size={19} />
               </a>
-
-              <HeroButton
-                appearance="ink-sweep"
-                href="/test-de-pareja"
-              >
-                <span>Evaluar nuestro caso de pareja</span>
-              </HeroButton>
             </div>
 
             {/* Subtexto aclaratorio */}
             <p style={{ fontSize: '13px', color: 'var(--color-ink-secondary)', marginBottom: '24px' }}>
-              30 minutos, sin costo, sin compromiso.
+              Primera conversación de 30 minutos · Sin costo · Sin compromiso.
             </p>
 
             {/* Human & Social Proof Row (Iconos en color Salvia) */}
@@ -187,7 +194,7 @@ export default function Hero() {
                     <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#25D366' }} title="Disponible online" />
                   </div>
                   <div style={{ fontSize: '12px', color: 'var(--color-clay)', fontWeight: 600 }}>
-                    Mismo código cultural · Sin traducir emociones
+                    Hablamos tu idioma y también tu contexto.
                   </div>
                 </div>
 
@@ -220,8 +227,8 @@ export default function Hero() {
               <Globe size={20} />
             </div>
             <div>
-              <div className="trust-text-title">Mismo código cultural</div>
-              <div className="trust-text-sub">Sin explicar el contexto salvadoreño</div>
+              <div className="trust-text-title">Nos entendemos a la primera</div>
+              <div className="trust-text-sub">Sin tener que explicar cómo son nuestras familias o de dónde vienes.</div>
             </div>
           </div>
 
@@ -231,7 +238,7 @@ export default function Hero() {
             </div>
             <div>
               <div className="trust-text-title">Pareja y Sexología Clínica</div>
-              <div className="trust-text-sub">Incluso si están en distintos países</div>
+              <div className="trust-text-sub">Conectados a la vez, vivan en la misma casa o en distintos países.</div>
             </div>
           </div>
 
@@ -240,8 +247,8 @@ export default function Hero() {
               <ShieldCheck size={20} />
             </div>
             <div>
-              <div className="trust-text-title">Basado en evidencia</div>
-              <div className="trust-text-sub">TCC · DBT · Terapia Integral de Parejas</div>
+              <div className="trust-text-title">Método con base científica</div>
+              <div className="trust-text-sub">Herramientas prácticas (TCC, DBT e Integral de Pareja), sin jerga clínica.</div>
             </div>
           </div>
 
@@ -250,8 +257,8 @@ export default function Hero() {
               <Sparkles size={20} />
             </div>
             <div>
-              <div className="trust-text-title">1ª sesión gratuita</div>
-              <div className="trust-text-sub">30 min por Google Meet · Sin compromiso</div>
+              <div className="trust-text-title">1ª conversación sin costo</div>
+              <div className="trust-text-sub">30 min por Google Meet para conocernos, sin ningún compromiso.</div>
             </div>
           </div>
         </div>

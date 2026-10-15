@@ -69,7 +69,7 @@ export default function PreciosPage() {
                     Paso 1 · Sin compromiso
                   </span>
                   <h3 className="font-serif" style={{ fontSize: '26px', color: 'var(--color-plum-900)', marginTop: '16px', marginBottom: '10px' }}>
-                    Sesión de Encuadre
+                    Primera Conversación
                   </h3>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginBottom: '16px' }}>
                     <span style={{ fontSize: '42px', fontWeight: 700, color: 'var(--color-plum-900)' }}>$0</span>

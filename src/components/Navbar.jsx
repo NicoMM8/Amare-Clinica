@@ -29,10 +29,10 @@ export default function Navbar() {
         {/* Desktop Links */}
         <ul className="nav-links">
           <li><a href="/#especialidades" className="nav-link">Especialidades</a></li>
-          <li><a href="/salvadorenos-en-el-exterior" className="nav-link">Viviendo en el Exterior</a></li>
+          <li><a href="/salvadorenos-en-el-exterior" className="nav-link">Salvadoreños en el Exterior</a></li>
           <li><a href="/iris-alarcon" className="nav-link">Iris Alarcón</a></li>
           <li><a href="/precios" className="nav-link">Honorarios</a></li>
-          <li><a href="/blog" className="nav-link">Blog & Guías</a></li>
+          <li><a href="/blog" className="nav-link">Guías</a></li>
           <li><a href="/#faq" className="nav-link">Preguntas</a></li>
         </ul>
 
@@ -46,7 +46,7 @@ export default function Navbar() {
             style={{ padding: '10px 20px', fontSize: '14px' }}
             onClick={() => handleWhatsAppClick('navbar')}
           >
-            <span>Primera sesión gratis →</span>
+            <span>1ª conversación sin costo →</span>
           </a>
 
           {/* Hamburger button */}
@@ -89,10 +89,10 @@ export default function Navbar() {
         }}>
           <a href="/#especialidades" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Especialidades Clínicas</a>
           <a href="/test-de-pareja" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-clay)' }}>Test de Pareja (2 min)</a>
-          <a href="/salvadorenos-en-el-exterior" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Viviendo en el Exterior</a>
+          <a href="/salvadorenos-en-el-exterior" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Salvadoreños en el Exterior</a>
           <a href="/iris-alarcon" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Iris Alarcón (Sobre Mí)</a>
           <a href="/precios" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Honorarios y Modalidades</a>
-          <a href="/blog" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Blog & Guías Clínicas</a>
+          <a href="/blog" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Guías y Recursos</a>
           <a href="/#faq" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Preguntas Frecuentes</a>
           <hr style={{ border: 'none', borderTop: '1px solid var(--border-hairline)', margin: '4px 0' }} />
           <a 
@@ -104,7 +104,7 @@ export default function Navbar() {
             style={{ width: '100%', padding: '14px', borderRadius: 'var(--r-pill)', color: '#fff', textAlign: 'center', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
           >
             <MessageSquare size={18} />
-            <span>Hablar con la asistente</span>
+            <span>1ª conversación sin costo</span>
           </a>
         </div>
       )}

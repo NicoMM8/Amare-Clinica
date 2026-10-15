@@ -183,33 +183,33 @@ export default function CoupleTherapyIntro() {
   const commonProblems = [
     {
       iconComponent: IconComunicacion,
-      title: "Problemas de comunicación",
-      desc: "La dificultad para transmitir necesidades, quejas y deseos sin herirse impide construir acuerdos y conduce a discusiones circulares o silencios defensivos.",
+      title: '"Hablamos, pero no nos entendemos" (Comunicación)',
+      desc: "Sienten que cualquier conversación cotidiana termina en la misma pelea de siempre, en reproches del pasado o en días enteros de silencio para evitar otro conflicto.",
     },
     {
       iconComponent: IconAceptacion,
-      title: "Aceptación del otro",
-      desc: "La no aceptación de las diferencias y características personales de la pareja genera decepción, reproches constantes y resentimiento acumulado.",
+      title: "Querer cambiar al otro (Aceptación)",
+      desc: "El cansancio de sentir que tu pareja no te entiende como antes, o la frustración constante de esperar que reaccione igual que tú.",
     },
     {
       iconComponent: IconRoles,
-      title: "Roles de cada uno",
-      desc: "Conflictos sobre las tareas del hogar, decisiones sobre los hijos, gastos económicos o proyectos de vida son fuentes continuas de fricción.",
+      title: "El peso de la rutina, la casa y el dinero (Roles)",
+      desc: "Sentir que uno de los dos carga con todo el peso mental del hogar, los hijos, las finanzas o el apoyo a la familia en El Salvador, acumulando un resentimiento silencioso.",
     },
     {
       iconComponent: IconSexualidad,
-      title: "Sexualidad e intimidad",
-      desc: "La disminución del deseo o los bloqueos íntimos hacen que la distancia sea cada vez más explícita. Recuperar la conexión erótica es vital para el bienestar.",
+      title: '"Parecemos compañeros de cuarto" (Sexualidad e intimidad)',
+      desc: "Cuando el cansancio, la rutina o los bloqueos íntimos apagan el deseo. Les cuesta hablar de sexualidad sin incomodidad y extrañan volver a sentirse pareja.",
     },
     {
       iconComponent: IconInfidelidad,
-      title: "Infidelidad",
-      desc: "La infidelidad quiebra la seguridad y genera profundo dolor. Cuando se decide perdonar y avanzar, es indispensable reconstruir las bases de una nueva relación.",
+      title: "Dolor tras una infidelidad o mentira (Confianza)",
+      desc: "Cuando se rompe la confianza y duele seguir, pero también duele soltar. Les acompañamos a sanar la herida y decidir con claridad si es posible reconstruir la relación.",
     },
     {
       iconComponent: IconCelos,
-      title: "Celos y control",
-      desc: "Los celos y la hipervigilancia causan angustia en ambas partes. Superarlos es necesario para restaurar la tranquilidad y la confianza mutua.",
+      title: "Inseguridad, celos y angustia (Control)",
+      desc: "Vivir revisando el teléfono, con miedo constante o sintiendo que tienes que dar explicaciones de todo. Les ayudamos a recuperar la paz mental y la libertad en el vínculo.",
     },
   ];
 
@@ -235,7 +235,7 @@ export default function CoupleTherapyIntro() {
           }}
           className="intro-banner-grid"
         >
-          {/* Columna Izquierda: Redacción limpia (sin el párrafo que pediste quitar) */}
+          {/* Columna Izquierda: Redacción limpia */}
           <div className="intro-banner-text">
             <h2
               className="font-serif"
@@ -260,9 +260,9 @@ export default function CoupleTherapyIntro() {
                 margin: 0,
               }}
             >
-              Vivir fuera de El Salvador —o llevar el ritmo de trabajo actual dentro del país— deja poco espacio para hablar con calma. Cuando surgen discusiones repetitivas, distancia afectiva o dificultades en la intimidad, intentar explicarlo en otro idioma o a un profesional que no conoce tus raíces agota el doble.
+              Vivir fuera de El Salvador —entre turnos largos, el cansancio y la distancia con la familia— casi no deja tiempo para sentarse a hablar con calma. Y si viven dentro del país, el ritmo diario y el tráfico hacen que vayan postergando lo importante hasta que el silencio pesa en casa.
               <br /><br />
-              En Centro Amaré ofrecemos un espacio seguro de terapia de pareja online y en El Salvador donde no tienes que traducir tus emociones ni justificar tu historia familiar.
+              Cuando cuesta entenderse o hablar de intimidad, intentar explicárselo en otro idioma a un terapeuta que no conoce tus raíces agota el doble. En Centro Amaré tienes un espacio de terapia de pareja online y en El Salvador donde no necesitas traducir lo que sientes ni justificar tu historia.
             </p>
           </div>
 
@@ -311,7 +311,7 @@ export default function CoupleTherapyIntro() {
             >
               <Sparkles size={14} style={{ color: 'var(--color-clay)' }} />
               <span style={{ fontSize: '12.5px', fontWeight: 600, color: 'var(--color-plum-900)' }}>
-                Motivos de consulta frecuentes
+                Lo que pasa puertas adentro
               </span>
             </div>
 
@@ -325,11 +325,11 @@ export default function CoupleTherapyIntro() {
                 marginBottom: '16px',
               }}
             >
-              Problemas más comunes a solucionar en terapia de pareja
+              Problemas más comunes que trabajamos en terapia de pareja
             </h3>
 
             <p style={{ fontSize: '16.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.65 }}>
-              La mayoría de parejas no llegan a consulta por falta de amor, sino por dinámicas de desgaste que con el acompañamiento adecuado se pueden transformar.
+              La mayoría de las parejas no llegan a consulta porque se acabó el amor, sino porque llevan meses "aguantando" el desgaste sin saber cómo salir del mismo círculo.
             </p>
           </div>
 
@@ -431,19 +431,19 @@ export default function CoupleTherapyIntro() {
             <div style={{ maxWidth: '580px' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.15)', padding: '4px 12px', borderRadius: 'var(--r-pill)', fontSize: '12px', fontWeight: 600, marginBottom: '12px' }}>
                 <ShieldCheck size={14} style={{ color: 'var(--color-clay)' }} />
-                <span>Espacio neutral · Sin juzgar ni buscar culpables</span>
+                <span>Un espacio sin bandos ni culpables</span>
               </div>
               <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#FFFFFF', marginBottom: '8px', lineHeight: 1.3 }}>
-                ¿Se sienten identificados con alguna de estas dinámicas?
+                ¿Sienten que están pasando por algo de esto?
               </h4>
               <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.8)', margin: 0, lineHeight: 1.6 }}>
-                No tienen que resolverlo solos ni esperar a que la relación se rompa. La primera sesión de 30 minutos es gratuita por Google Meet para conocernos y trazar un camino.
+                No tienen que esperar a estar al límite para pedir ayuda. Empiecen con una primera conversación de 30 minutos sin costo por Google Meet para conocernos y ver cómo podemos acompañarles.
               </p>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-start' }}>
               <a
-                href={"https://wa.me/50373184781?text=" + encodeURIComponent("Hola Iris, leí los motivos de consulta en la web de Centro Amaré y nos gustaría agendar la sesión inicial gratuita de 30 minutos.")}
+                href={"https://wa.me/50373184781?text=" + encodeURIComponent("Hola Iris, leí los motivos de consulta en la web de Centro Amaré y queremos empezar con una primera conversación de 30 min sin costo.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -462,11 +462,11 @@ export default function CoupleTherapyIntro() {
                 }}
               >
                 <MessageCircle size={18} />
-                <span>Agendar sesión de encuadre (30 min gratis)</span>
+                <span>Empieza con una primera conversación (30 min sin costo)</span>
                 <ArrowRight size={16} />
               </a>
               <span style={{ fontSize: '11.5px', color: 'rgba(255, 255, 255, 0.65)', paddingLeft: '4px' }}>
-                🔒 Coordinación humana directa por WhatsApp · Sin bots
+                🔒 Te atiende una persona real por WhatsApp · Sin robots
               </span>
             </div>
           </div>

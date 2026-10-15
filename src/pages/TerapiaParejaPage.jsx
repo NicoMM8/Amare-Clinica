@@ -170,9 +170,9 @@ export default function TerapiaParejaPage() {
                 rel="noopener noreferrer"
                 className="btn-clay"
                 style={{ display: 'inline-flex', padding: '14px 28px', borderRadius: 'var(--r-pill)', textDecoration: 'none', color: '#fff', fontWeight: 600 }}
-                onClick={() => trackWhatsAppClick('page_terapia_pareja_mid', 'Agendar 30 min')}
+                onClick={() => trackWhatsAppClick('page_terapia_pareja_mid', 'Primera conversación 30 min')}
               >
-                <span>Agendar sesión de encuadre (30 min gratis) →</span>
+                <span>Empieza con una primera conversación (30 min sin costo) →</span>
               </a>
             </div>
           </div>

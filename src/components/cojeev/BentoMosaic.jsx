@@ -4,14 +4,14 @@ import { HeartHandshake, Brain, Globe, Sparkles, CreditCard, ShieldCheck } from 
 import { LivingLink } from './LivingLink';
 
 export function BentoMosaic() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera agendar mi sesión inicial gratuita de 30 minutos en Centro Amaré.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola Iris, quisiéramos empezar con una primera conversación de 30 min sin costo.");
 
   return (
     <section className="section" style={{ background: 'var(--v-canvas)', position: 'relative' }}>
       <div className="container">
         
         {/* Header */}
-        <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 48px' }}>
+        <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 48px' }}>
           <span style={{ 
             fontSize: '12px', 
             fontWeight: 700, 
@@ -24,25 +24,25 @@ export function BentoMosaic() {
             display: 'inline-block',
             marginBottom: '12px'
           }}>
-            Psicoterapia Online · El Salvador y Diáspora
+            Por qué elegir Centro Amaré
           </span>
           <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '16px', color: 'var(--v-text)' }}>
-            Un ecosistema clínico diseñado para tu vida real
+            Un espacio pensado para tu tranquilidad, vivas donde vivas
           </h2>
           <p style={{ fontSize: '16.5px', color: 'var(--v-text-2)' }}>
-            Cada área de tu proceso terapéutico, atendida con rigor científico y sensibilidad cultural. Desde donde estés.
+            Cada área de tu proceso terapéutico, atendida con rigor científico, calidez humana y sensibilidad cultural. Desde donde estés.
           </p>
         </div>
 
-        {/* 000h Bento Grid Layout */}
+        {/* Bento Grid Layout - 4 Cajas limpias y humanas */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(12, 1fr)',
-          gap: '16px',
+          gap: '20px',
           width: '100%'
         }}>
           
-          {/* Bento Tile 1: Terapia de Parejas (Featured Wide 7 cols) */}
+          {/* Caja 1 (Pareja y Sexología): 7 cols */}
           <motion.div
             whileHover={{ y: -3 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
@@ -57,11 +57,10 @@ export function BentoMosaic() {
               justifyContent: 'space-between',
               position: 'relative',
               overflow: 'hidden',
-              minHeight: '320px'
+              minHeight: '300px'
             }}
             className="bento-tile-responsive"
           >
-            {/* Background geometric wave mark */}
             <div style={{ position: 'absolute', right: '-20px', bottom: '-20px', opacity: 0.08, pointerEvents: 'none' }}>
               <HeartHandshake size={220} />
             </div>
@@ -69,30 +68,30 @@ export function BentoMosaic() {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
                 <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', background: 'rgba(255,255,255,0.18)', padding: '4px 10px', borderRadius: 'var(--r-pill)', textTransform: 'uppercase' }}>
-                  Foco Central 01
+                  Pareja y Sexología
                 </span>
-                <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)' }}>
-                  Máster en Pareja & Sexología
+                <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.75)' }}>
+                  Juntos o a distancia
                 </span>
               </div>
 
-              <h3 style={{ fontSize: '26px', fontWeight: 600, color: '#FFFFFF', marginBottom: '12px', lineHeight: 1.25 }}>
-                Terapia de Pareja y Sexología Clínica
+              <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#FFFFFF', marginBottom: '12px', lineHeight: 1.25 }}>
+                Hablar de intimidad sin tabúes
               </h3>
 
-              <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, maxWidth: '480px' }}>
-                Desactivamos los reproches circulares, restablecemos la intimidad afectiva y abordamos disfunciones sexuales con rigor médico y sin tabúes. Sesiones conjuntas adaptadas a parejas a distancia.
+              <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.88)', lineHeight: 1.6, maxWidth: '500px' }}>
+                Abordamos tanto la comunicación diaria como la vida sexual de la pareja con naturalidad, respeto y base médica.
               </p>
             </div>
 
             <div style={{ paddingTop: '24px' }}>
-              <LivingLink href={whatsappUrl} target="_blank" tone="white" style={{ color: '#FFFFFF' }}>
-                Coordinar sesión para nosotros
+              <LivingLink href="/test-de-pareja" tone="white" style={{ color: '#FFFFFF' }}>
+                Evaluar nuestro caso de pareja
               </LivingLink>
             </div>
           </motion.div>
 
-          {/* Bento Tile 2: Ansiedad y Rumiación (5 cols) */}
+          {/* Caja 2 (Ansiedad y Descanso): 5 cols */}
           <motion.div
             whileHover={{ y: -3 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
@@ -105,7 +104,7 @@ export function BentoMosaic() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '320px'
+              minHeight: '300px'
             }}
             className="bento-tile-responsive"
           >
@@ -113,16 +112,16 @@ export function BentoMosaic() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
                 <Brain size={18} />
                 <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  Neurociencia Clínica 02
+                  Ansiedad y Descanso
                 </span>
               </div>
 
               <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#FFFFFF', marginBottom: '10px', lineHeight: 1.25 }}>
-                Ansiedad y Rumiación Nocturna
+                Poner en orden lo que sientes
               </h3>
 
               <p style={{ fontSize: '14.5px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
-                Herramientas cognitivo-conductuales (TCC) para bajar la hipervigilancia del sistema nervioso y recuperar el descanso mental.
+                Herramientas claras para calmar la ansiedad, dormir mejor y dejar de darle vueltas a todo por la noche.
               </p>
             </div>
 
@@ -133,20 +132,20 @@ export function BentoMosaic() {
             </div>
           </motion.div>
 
-          {/* Bento Tile 3: Diáspora Salvadoreña (4 cols) */}
+          {/* Caja 3 (Pertenencia): 6 cols */}
           <motion.div
             whileHover={{ y: -3 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              gridColumn: 'span 4',
+              gridColumn: 'span 6',
               background: 'var(--v-paper)',
               border: '1.5px solid var(--v-border)',
               borderRadius: '24px',
-              padding: '32px',
+              padding: '34px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '260px',
+              minHeight: '270px',
               boxShadow: 'var(--shadow-sm)'
             }}
             className="bento-tile-responsive"
@@ -155,38 +154,38 @@ export function BentoMosaic() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--v-pink)', marginBottom: '14px' }}>
                 <Globe size={18} />
                 <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  Montreal · L.A. · Madrid
+                  Pertenencia e Identidad Cultural
                 </span>
               </div>
-              <h4 style={{ fontSize: '19px', fontWeight: 600, color: 'var(--v-text)', marginBottom: '8px' }}>
-                Pertenencia Cultural
+              <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--v-text)', marginBottom: '10px' }}>
+                En Estados Unidos, Canadá, Europa o El Salvador
               </h4>
-              <p style={{ fontSize: '14px', color: 'var(--v-text-2)', lineHeight: 1.6, margin: 0 }}>
-                Terapia en tu mismo idioma y código emocional, sin tener que explicar el contexto salvadoreño ni gastar $200/h.
+              <p style={{ fontSize: '14.5px', color: 'var(--v-text-2)', lineHeight: 1.6, margin: 0 }}>
+                Conectas desde tu celular o computadora con alguien que entiende tus raíces sin pagar tarifas de $200 por hora.
               </p>
             </div>
 
-            <div style={{ paddingTop: '16px' }}>
+            <div style={{ paddingTop: '20px' }}>
               <LivingLink href="#pertenencia">
                 Por qué importa la cultura
               </LivingLink>
             </div>
           </motion.div>
 
-          {/* Bento Tile 4: Sesión Inicial 30 min Gratis (4 cols) */}
+          {/* Caja 4 (Primera Conversación): 6 cols */}
           <motion.div
             whileHover={{ y: -3 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              gridColumn: 'span 4',
+              gridColumn: 'span 6',
               background: 'var(--v-yellow-soft)',
               border: '1.5px solid rgba(217, 136, 56, 0.25)',
               borderRadius: '24px',
-              padding: '32px',
+              padding: '34px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '260px'
+              minHeight: '270px'
             }}
             className="bento-tile-responsive"
           >
@@ -194,60 +193,20 @@ export function BentoMosaic() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--v-yellow)', marginBottom: '14px' }}>
                 <Sparkles size={18} />
                 <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  Sin Compromiso Económico
+                  Primera Conversación
                 </span>
               </div>
-              <h4 style={{ fontSize: '19px', fontWeight: 600, color: 'var(--v-text)', marginBottom: '8px' }}>
-                30 Minutos de Encuadre
+              <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--v-text)', marginBottom: '10px' }}>
+                30 minutos sin costo
               </h4>
-              <p style={{ fontSize: '14px', color: 'var(--v-text-2)', lineHeight: 1.6, margin: 0 }}>
-                Conoce a tu psicóloga por Google Meet, expón tu situación y recibe el número exacto de sesiones recomendadas.
+              <p style={{ fontSize: '14.5px', color: 'var(--v-text-2)', lineHeight: 1.6, margin: 0 }}>
+                Antes de pagar nada, conversamos por Google Meet para que nos conozcas, nos cuentes qué te trae y sientas si este es tu lugar.
               </p>
             </div>
 
-            <div style={{ paddingTop: '16px' }}>
+            <div style={{ paddingTop: '20px' }}>
               <LivingLink href={whatsappUrl} target="_blank" tone="clay">
-                Agendar primera media hora
-              </LivingLink>
-            </div>
-          </motion.div>
-
-          {/* Bento Tile 5: Modelo en Cuotas de $100/mes (4 cols) */}
-          <motion.div
-            whileHover={{ y: -3 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              gridColumn: 'span 4',
-              background: 'var(--v-paper)',
-              border: '1.5px solid var(--v-border)',
-              borderRadius: '24px',
-              padding: '32px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              minHeight: '260px',
-              boxShadow: 'var(--shadow-sm)'
-            }}
-            className="bento-tile-responsive"
-          >
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--v-olive)', marginBottom: '14px' }}>
-                <CreditCard size={18} />
-                <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  Tarifa Mensual Accesible
-                </span>
-              </div>
-              <h4 style={{ fontSize: '19px', fontWeight: 600, color: 'var(--v-text)', marginBottom: '8px' }}>
-                Plan Mensual de $100 USD
-              </h4>
-              <p style={{ fontSize: '14px', color: 'var(--v-text-2)', lineHeight: 1.6, margin: 0 }}>
-                Hasta 4 sesiones mensuales ($25 USD por sesión). Acompañamiento profesional continuo sin permanencia ni costos ocultos.
-              </p>
-            </div>
-
-            <div style={{ paddingTop: '16px' }}>
-              <LivingLink href="/#honorarios">
-                Ver plan mensual
+                Primera conversación (30 min sin costo)
               </LivingLink>
             </div>
           </motion.div>

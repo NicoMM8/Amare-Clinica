@@ -13,30 +13,11 @@ export default function CulturalConnection() {
             <span>Pertenencia e Identidad Cultural</span>
           </div>
           <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '18px', color: 'var(--color-plum-900)' }}>
-            Lo que sientes importa.
+            Lo que sientes importa. Y decirlo con tus propias palabras, también.
           </h2>
-          <p style={{ fontSize: '18px', lineHeight: 1.7, color: 'var(--color-ink-secondary)', marginBottom: '28px' }}>
-            Si vives lejos de casa, sabemos que el día a día entre el trabajo y la distancia no deja tiempo para pausas. Aquí te entendemos, y sabemos cómo acompañarte. Hablamos tu idioma, y también tu contexto.
+          <p style={{ fontSize: '18px', lineHeight: 1.7, color: 'var(--color-ink-secondary)', margin: 0 }}>
+            Quienes hemos crecido en El Salvador tenemos códigos familiares, formas de querer y silencios que no siempre se entienden desde fuera.
           </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginTop: '24px' }}>
-            <div style={{ background: 'var(--color-canvas)', padding: '24px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-plum-900)', marginBottom: '10px' }}>
-                Dos husos horarios, una misma conversación.
-              </h3>
-              <p style={{ fontSize: '15px', lineHeight: 1.6, color: 'var(--color-ink-secondary)' }}>
-                Terapia de pareja online para hablar de lo difícil en tu idioma. Porque elegirnos también es aprender a encontrarnos.
-              </p>
-            </div>
-            <div style={{ background: 'var(--color-canvas)', padding: '24px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-plum-900)', marginBottom: '10px' }}>
-                Poner límites y dejar de repetir patrones.
-              </h3>
-              <p style={{ fontSize: '15px', lineHeight: 1.6, color: 'var(--color-ink-secondary)' }}>
-                Terapia individual para entenderte y cuidar tu bienestar emocional, sin tener que explicar de dónde vienes.
-              </p>
-            </div>
-          </div>
         </div>
 
         {/* Comparison Grid */}
@@ -47,26 +28,26 @@ export default function CulturalConnection() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-ink-muted)', marginBottom: '16px' }}>
               <ShieldAlert size={20} />
               <span style={{ fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                Hacer terapia con un profesional extranjero
+                Hacer terapia en otro idioma o cultura
               </span>
             </div>
 
             <h3 style={{ fontSize: '20px', marginBottom: '16px', color: 'var(--color-ink-primary)' }}>
-              La barrera invisible del contexto
+              El cansancio de tener que explicarlo todo
             </h3>
 
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '14.5px', color: 'var(--color-ink-secondary)' }}>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                 <X size={18} style={{ color: '#C0392B', flexShrink: 0, marginTop: '2px' }} />
-                <span>Tienes que traducir tus emociones o buscar palabras en otro idioma que no transmiten la misma profundidad.</span>
+                <span>Tener que traducir lo que sientes o buscar palabras neutras porque en otro idioma tus emociones no suenan igual.</span>
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                 <X size={18} style={{ color: '#C0392B', flexShrink: 0, marginTop: '2px' }} />
-                <span>Poco entendimiento de las dinámicas familiares de El Salvador, el esfuerzo del migrante o los modismos culturales.</span>
+                <span>Invertir media sesión explicando cómo es tu familia en El Salvador, la culpa por estar lejos o el peso de salir adelante fuera.</span>
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                 <X size={18} style={{ color: '#C0392B', flexShrink: 0, marginTop: '2px' }} />
-                <span>Costos excesivos en Norteamérica o Europa ($150 - $250 USD por sesión) que hacen inviable sostener el proceso completo.</span>
+                <span>Consultas privadas en EE. UU., Canadá o Europa de $150 a $250 USD por sesión que obligan a abandonar el proceso a la mitad.</span>
               </li>
             </ul>
           </div>
@@ -78,26 +59,26 @@ export default function CulturalConnection() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-clay)', marginBottom: '16px' }}>
               <Sparkles size={20} />
               <span style={{ fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                Tu terapeuta salvadoreño/a en línea
+                El Enfoque de Centro Amaré
               </span>
             </div>
 
             <h3 style={{ fontSize: '20px', marginBottom: '16px', color: 'var(--color-plum-900)' }}>
-              Mismo código cultural, máximo rigor científico
+              Terapia salvadoreña con rigor científico
             </h3>
 
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '14.5px', color: 'var(--color-ink-primary)' }}>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                 <Check size={18} style={{ color: '#1B873F', flexShrink: 0, marginTop: '2px' }} />
-                <span><strong>Hablamos tu mismo idioma sin filtros:</strong> Te expresas con naturalidad y con los matices propios de nuestra tierra.</span>
+                <span>Hablas como hablas en casa: sin filtros, con tus expresiones y con alguien que entiende de dónde vienes desde el primer minuto.</span>
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                 <Check size={18} style={{ color: '#1B873F', flexShrink: 0, marginTop: '2px' }} />
-                <span><strong>Especial para parejas transnacionales:</strong> Sesiones simultáneas por Google Meet aunque uno esté en Montreal y el otro en San Salvador.</span>
+                <span>Pensado para parejas dentro y fuera del país: se conectan al mismo enlace de Google Meet, vivan juntos o en husos horarios distintos.</span>
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                 <Check size={18} style={{ color: '#1B873F', flexShrink: 0, marginTop: '2px' }} />
-                <span><strong>Tarifa mensual accesible:</strong> Plan mensual de $100 USD (hasta 4 sesiones al mes) para que el costo nunca sea una barrera para tu salud mental.</span>
+                <span>Un costo justo para sostener tu proceso: Plan mensual de $100 USD (hasta 4 sesiones al mes, $25 por sesión), sin ataduras.</span>
               </li>
             </ul>
           </div>

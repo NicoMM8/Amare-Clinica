@@ -154,9 +154,9 @@ const medicalBusinessSchema = {
     itemListElement: [
       {
         '@type': 'Offer',
-        name: 'Sesión Inicial de Encuadre — Gratuita (30 min)',
+        name: 'Primera conversación de valoración — Sin costo (30 min)',
         description:
-          'Primera sesión gratuita de 30 minutos por Google Meet. La psicóloga evalúa tu caso y te explica el plan terapéutico. Sin compromiso.',
+          'Primera conversación de 30 minutos sin costo por Google Meet. La psicóloga evalúa tu caso y te explica el plan de trabajo con honestidad. Sin compromiso.',
         price: '0',
         priceCurrency: 'USD',
         eligibleRegion: [

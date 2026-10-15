@@ -53,13 +53,13 @@ export default function Specialties() {
         {/* Header con H2 exacto para posicionamiento SEO */}
         <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
           <div className="pill-badge pill-badge-clay" style={{ marginBottom: '14px' }}>
-            <span>Especialidades Clínicas · El Salvador y Diáspora</span>
+            <span>Nuestras Áreas de Atención</span>
           </div>
           <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '16px', color: 'var(--color-plum-900)' }}>
-            Especialidades clínicas en psicología de pareja e individual
+            Especialidades en terapia de pareja, sexología y psicología individual
           </h2>
           <p style={{ fontSize: '16.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6 }}>
-            Atención psicológica especializada para personas y parejas en El Salvador, Estados Unidos, Canadá y el exterior. Espacio seguro, con base científica y en tu propio código cultural:
+            Acompañamiento psicológico online para personas y parejas en El Salvador, Estados Unidos, Canadá y Europa:
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export default function Specialties() {
             margin: '0 auto 52px' 
           }}
         >
-          {/* Tarjeta 1: Terapia de Pareja y Sexualidad */}
+          {/* Tarjeta 1: Terapia de Pareja y Sexología Clínica */}
           <div 
             className="card-panel" 
             style={{ 
@@ -93,20 +93,20 @@ export default function Specialties() {
                   <HeartHandshake size={24} style={{ color: 'var(--color-clay)' }} />
                 </div>
                 <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', background: 'var(--color-canvas)', padding: '5px 12px', borderRadius: 'var(--r-pill)' }}>
-                  Parejas & Diáspora
+                  Para Parejas (Juntas o a Distancia)
                 </span>
               </div>
 
               <h3 className="font-serif" style={{ fontSize: '24px', color: 'var(--color-plum-900)', marginBottom: '14px', lineHeight: 1.3 }}>
-                Terapia de Pareja y Sexualidad
+                Terapia de Pareja y Sexología Clínica
               </h3>
 
               <p style={{ fontSize: '15px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '22px' }}>
-                Abordamos problemas de comunicación, crisis por migración y adaptación cultural, infidelidad, celos, monotonía y sexualidad clínica. Dejen de "aguantar" las discusiones y aprendan a escucharse con herramientas prácticas.
+                Para parejas que sienten que solo discuten, que han perdido el deseo o la complicidad, que atraviesan una infidelidad o que sufren el desgaste de emigrar. Dejen de "aguantar" y aprendan a comunicarse con calma.
               </p>
 
               <div style={{ fontSize: '13px', color: 'var(--color-plum-900)', background: 'var(--color-canvas)', padding: '10px 14px', borderRadius: '12px', marginBottom: '24px' }}>
-                <strong>Enfoque clínico:</strong> Terapia Integral de Pareja (IBCT) + Sexología Médica
+                <strong>Base científica:</strong> Terapia Integral de Pareja (IBCT) y Sexología Clínica
               </div>
             </div>
 
@@ -119,19 +119,19 @@ export default function Specialties() {
                 style={{ fontSize: '13.5px', padding: '10px 20px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
               >
                 <MessageCircle size={16} />
-                <span>30 min gratis</span>
+                <span>1ª conversación sin costo</span>
               </a>
 
               <a
                 href="/terapia-de-pareja"
                 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-clay)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
               >
-                <span>Conocer protocolo →</span>
+                <span>Conocer cómo trabajamos en pareja →</span>
               </a>
             </div>
           </div>
 
-          {/* Tarjeta 2: Terapia Individual para Adultos y Migrantes */}
+          {/* Tarjeta 2: Terapia Individual para Adultos y Salvadoreños en el Exterior */}
           <div 
             className="card-panel" 
             style={{ 
@@ -151,20 +151,20 @@ export default function Specialties() {
                   <Brain size={24} style={{ color: 'var(--color-clay)' }} />
                 </div>
                 <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', background: 'var(--color-canvas)', padding: '5px 12px', borderRadius: 'var(--r-pill)' }}>
-                  Individual & Migrantes
+                  Para Ti (Proceso Individual)
                 </span>
               </div>
 
               <h3 className="font-serif" style={{ fontSize: '24px', color: 'var(--color-plum-900)', marginBottom: '14px', lineHeight: 1.3 }}>
-                Terapia Individual para Adultos y Migrantes
+                Terapia Individual para Adultos y Salvadoreños en el Exterior
               </h3>
 
               <p style={{ fontSize: '15px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '22px' }}>
-                Para quienes viven lejos de casa o atraviesan etapas de cambio. Trabajamos ansiedad, insomnio, duelo migratorio, autoestima, apego y la dificultad para poner límites a la familia sin sentir culpa.
+                Para cuando el sobrepensamiento no te deja dormir, sientes que cargas con todo el mundo, te cuesta poner límites a tu familia sin sentir culpa o repites siempre los mismos patrones en tus relaciones.
               </p>
 
               <div style={{ fontSize: '13px', color: 'var(--color-plum-900)', background: 'var(--color-canvas)', padding: '10px 14px', borderRadius: '12px', marginBottom: '24px' }}>
-                <strong>Enfoque clínico:</strong> TCC (Cognitivo-Conductual) + DBT y Regulación Emocional
+                <strong>Base científica:</strong> Terapia Cognitivo-Conductual (TCC) y Regulación Emocional (DBT)
               </div>
             </div>
 
@@ -177,14 +177,14 @@ export default function Specialties() {
                 style={{ fontSize: '13.5px', padding: '10px 20px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
               >
                 <MessageCircle size={16} />
-                <span>30 min gratis</span>
+                <span>1ª conversación sin costo</span>
               </a>
 
               <a
                 href="/terapia-individual"
                 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-clay)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
               >
-                <span>Conocer terapia individual →</span>
+                <span>Conocer la terapia individual →</span>
               </a>
             </div>
           </div>

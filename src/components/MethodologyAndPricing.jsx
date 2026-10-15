@@ -5,55 +5,55 @@ import { HeroButton } from './cojeev/HeroButton';
 const clinicalPhases = [
   {
     number: "1",
-    tag: "Diagnóstico sin juicios",
+    tag: "Entender qué está pasando",
     timeline: "Sesiones 1 a 3",
-    title: "Evaluación y Mapa del Vínculo",
-    description: "Analizamos en profundidad la historia de la pareja, las heridas previas y el ciclo exacto donde quedan atrapados al discutir. La psicóloga no busca culpables ni toma partido: mapea cómo funciona su relación.",
-    result: "Mapa claro de qué alimenta el conflicto y hoja de ruta con objetivos compartidos."
+    title: "Escuchar a ambos sin buscar culpables",
+    description: "Conocemos su historia y detectamos exactamente en qué punto se estancan cuando discuten. Aquí nadie viene a recibir regaños: venimos a entender por qué duele.",
+    result: "Claridad sobre la dinámica de conflicto y mapa de trabajo conjunto sin juzgar."
   },
   {
     number: "2",
-    tag: "Detener el desgaste",
+    tag: "Bajar la tensión en casa",
     timeline: "Sesiones 4 a 8",
-    title: "Desescalada y Regulación Emocional",
-    description: "Entrenamos pautas inmediatas para frenar las discusiones circulares, los reproches automáticos y los silencios que distancian. Aprenden a expresar necesidades emocionales sin atacar ni ponerse a la defensiva.",
-    result: "Disminución notable de la reactividad y recuperación de la calma en el hogar."
+    title: "Frenar las peleas circulares y el silencio",
+    description: "Se llevan herramientas prácticas desde el primer mes para hablar de lo difícil sin herirse, calmar la ansiedad y detener las discusiones antes de que escalen.",
+    result: "Disminución inmediata de la reactividad y regreso de la calma cotidiana."
   },
   {
     number: "3",
-    tag: "Intimidad y complicidad",
+    tag: "Volver a encontrarse",
     timeline: "Sesiones 9 a 13",
-    title: "Reconstrucción y Acuerdos Reales",
-    description: "Abordamos los temas de fondo: afecto, sexualidad, corresponsabilidad cotidiana, límites familiares o reconstrucción de confianza tras crisis e infidelidades. Construimos acuerdos claros, equitativos y sostenibles.",
-    result: "Recuperación de la complicidad y la certeza de volver a sentirse un equipo."
+    title: "Acuerdos reales, intimidad y confianza",
+    description: "Vamos a la raíz: sexualidad, reparto de cargas, límites con las familias o cómo sanar heridas pasadas. Construimos acuerdos reales que sí puedan cumplir en su día a día.",
+    result: "Reconexión afectiva, intimidad segura y acuerdos duraderos que sí se cumplen."
   },
   {
     number: "4",
-    tag: "Autonomía sostenible",
+    tag: "Seguir solos como equipo",
     timeline: "Sesiones 14 a 16",
-    title: "Consolidación y Alta Terapéutica",
-    description: "Afianzamos las herramientas adquiridas, prevenimos recaídas ante futuras crisis o cambios de vida y cerramos el tratamiento. Nuestro compromiso ético es que sigan su camino sin depender de la terapia.",
-    result: "Alta clínica definitiva y plena autonomía, con sesión de refuerzo a los 3 meses si la necesitan."
+    title: "Cierre del proceso y autonomía",
+    description: "Nuestra meta no es que se queden en terapia toda la vida. Cuando ya tienen las herramientas y la calma de vuelta, cerramos el proceso. Y a los 3 meses tienen una sesión de refuerzo incluida por si la necesitan.",
+    result: "Autonomía completa y tranquilidad, con sesión de refuerzo a los 3 meses."
   }
 ];
 
 export default function MethodologyAndPricing() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar una primera conversación.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola Iris, quisiéramos empezar con una primera conversación de 30 min sin costo.");
 
   return (
     <section className="section" id="honorarios">
       <div className="container">
         
-        {/* ── SECCIÓN 4: METODOLOGÍA Y AUTORIDAD MÉDICA (E-E-A-T & GEO) ── */}
+        {/* ── SECCIÓN 4: METODOLOGÍA Y AUTORIDAD CLÍNICA ── */}
         <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 48px' }}>
           <div className="pill-badge pill-badge-clay" style={{ marginBottom: '14px' }}>
-            <span>Evidencia Clínica · Rigor Científico</span>
+            <span>Ciencia con trato humano</span>
           </div>
           <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '16px', lineHeight: 1.25, color: 'var(--color-plum-900)' }}>
-            Cómo trabajamos: Psicología con base científica, sin jerga innecesaria
+            Cómo trabajamos: Psicología con base científica, explicada con claridad
           </h2>
           <p style={{ fontSize: '17px', color: 'var(--color-ink-secondary)', lineHeight: 1.65, marginBottom: '28px' }}>
-            No damos consejos genéricos ni prometemos milagros. Nuestro método combina calidez humana con los cuatro enfoques psicológicos de mayor evidencia clínica internacional:
+            Sin promesas mágicas ni palabras raras. Sabrás qué estamos trabajando en cada etapa para que avances a tu propio ritmo:
           </p>
 
           {/* 4 Core Pillars of Clinical Evidence */}

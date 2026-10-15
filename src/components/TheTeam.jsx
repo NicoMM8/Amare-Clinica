@@ -2,7 +2,7 @@ import React from 'react';
 import { CheckCircle2, MessageCircle, Award, BookOpen } from 'lucide-react';
 
 export default function TheTeam() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera agendar mi sesión inicial gratuita con la psicóloga Iris Alarcón.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola Iris, quisiera hablar contigo en una primera conversación de 30 min sin costo.");
 
   return (
     <section className="section" id="equipo" style={{ background: 'var(--color-surface)' }}>
@@ -21,7 +21,7 @@ export default function TheTeam() {
           {/* Left: Header + credentials */}
           <div>
             <div className="pill-badge" style={{ marginBottom: '20px' }}>
-              <span>E-E-A-T & Autoridad Sanitaria · JVPP El Salvador</span>
+              <span>Respaldo Clínico Oficial · Registro JVPP El Salvador</span>
             </div>
 
             <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', marginBottom: '20px', lineHeight: 1.25 }}>
@@ -32,16 +32,16 @@ export default function TheTeam() {
             </h2>
 
             <p style={{ fontSize: '17px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '28px' }}>
-              Las conversaciones difíciles requieren de alguien con formación científica, experiencia real y que comprenda tu código cultural. Iris Alarcón es psicóloga clínica colegiada con registro profesional ante la <strong>Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP)</strong>. Te escucha en un espacio 100% neutral y legalmente avalado: sin juzgar, sin buscar culpables y con métodos probados.
+              Hablar de tu relación o de tu vida íntima requiere confianza. Soy Iris Alarcón, psicóloga clínica salvadoreña colegiada ante la Junta de Vigilancia de la Profesión en Psicología (JVPP). Mi trabajo no es hacer de juez ni decirte quién tiene la razón, sino darles un espacio seguro y herramientas científicas claras para que vuelvan a escucharse.
             </p>
 
             {/* Credentials */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '36px' }}>
               {[
                 { icon: Award, text: 'Máster en Terapia de Pareja y Sexología Clínica' },
-                { icon: BookOpen, text: 'Lic. en Psicología Clínica · Registro Profesional JVPP El Salvador' },
-                { icon: CheckCircle2, text: 'Más de 9 años en consulta clínica privada (TCC y Pareja Integral IBCT)' },
-                { icon: CheckCircle2, text: 'Atención online a El Salvador (San Salvador, Santa Tecla) y Diáspora (Canadá, EE.UU., Europa)' },
+                { icon: BookOpen, text: 'Licenciada en Psicología Clínica · Colegiada JVPP El Salvador' },
+                { icon: CheckCircle2, text: 'Más de 9 años acompañando a adultos y parejas en consulta privada' },
+                { icon: CheckCircle2, text: 'Atención online para El Salvador y salvadoreños en EE. UU., Canadá y Europa' },
               ].map(({ icon: Icon, text }, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                   <div style={{
@@ -74,7 +74,7 @@ export default function TheTeam() {
                   style={{ display: 'inline-flex', gap: '10px', textDecoration: 'none' }}
                 >
                   <MessageCircle size={18} />
-                  <span>Agendar sesión con Iris (30 min gratis)</span>
+                  <span>Hablar con Iris (1ª conversación sin costo)</span>
                 </a>
 
                 <a
@@ -93,7 +93,7 @@ export default function TheTeam() {
                 </a>
               </div>
               <span style={{ fontSize: '12px', color: 'var(--color-ink-muted)' }}>
-                ✨ Sesión privada por Google Meet · Coordinación por WhatsApp con asistente
+                ✨ 30 minutos sin costo · Coordinación humana directa por WhatsApp
               </span>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function TheTeam() {
                   color: 'var(--color-plum-900)',
                   lineHeight: 1.6
                 }}>
-                  "La psicología no se trata de decirte qué hacer con tu vida, sino de darte las herramientas científicas para que dejes de sufrir por lo que sí puedes transformar."
+                  "Ir a terapia no es que te digan qué hacer con tu vida. Es entender por qué repites ciertos caminos y tener herramientas reales para elegir distinto."
                 </div>
               </div>
             </div>

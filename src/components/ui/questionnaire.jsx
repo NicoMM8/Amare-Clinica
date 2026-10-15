@@ -5,19 +5,42 @@ import { motion, AnimatePresence } from "motion/react";
 import { Button } from "./button";
 import { Icon } from "./icon";
 
-// Shape paths for the SelectorGlyph
+// Shape paths for the Cojeev SelectorGlyph
 const leafPath = "M 50 10 C 78 10 92 36 88 64 C 84 82 66 90 50 90 C 34 90 16 82 12 64 C 8 36 22 10 50 10 Z";
 const organicPath = "M 91 50 C 91 65 78 85 58 89 C 38 93 18 80 12 60 C 6 40 18 18 38 12 C 58 6 91 35 91 50 Z";
 const roundedPath = "M 88 50 C 88 71 70 88 50 88 C 29 88 12 70 12 48 C 12 28 30 12 52 12 C 72 12 88 29 88 50 Z";
+const circlePath = "M 50 12 C 71 12 88 29 88 50 C 88 71 71 88 50 88 C 29 88 12 71 12 50 C 12 29 29 12 50 12 Z";
+const pebblePath = "M 46 12 C 74 10 92 28 89 54 C 86 78 68 88 44 88 C 22 88 10 74 12 50 C 14 26 24 14 46 12 Z";
+const flowerPath = "M 50 16 C 54 26 62 26 72 20 C 78 28 74 36 82 44 C 74 52 78 60 72 68 C 62 62 54 62 50 72 C 46 62 38 62 28 68 C 22 60 26 52 18 44 C 26 36 22 28 28 20 C 38 26 46 26 50 16 Z";
+
+const getShapePath = (shapeName) => {
+  switch (shapeName) {
+    case "organic": return organicPath;
+    case "rounded": return roundedPath;
+    case "circle": return circlePath;
+    case "pebble": return pebblePath;
+    case "flower": return flowerPath;
+    case "leaf":
+    default:
+      return organicPath;
+  }
+};
+
+const getToneColor = (toneName) => {
+  if (toneName === "blue" || toneName === "ink") return "var(--color-plum-900, #22284A)";
+  if (toneName === "olive") return "var(--color-moss, #768B78)";
+  if (toneName === "yellow") return "var(--color-gold, #D4A373)";
+  return "var(--color-clay, #AA5A40)";
+};
 
 // Context for QuestionnaireOptions
 const OptionsContext = React.createContext({
   name: "",
   value: "",
   onValueChange: () => {},
-  selectorShape: "leaf",
+  selectorShape: "organic",
   selectorSize: "default",
-  selectorIndicator: "auto",
+  selectorIndicator: "flower",
   showSelectorIndicator: true,
   selectorTone: "pink"
 });
@@ -39,10 +62,10 @@ export function Questionnaire({
   );
 }
 
-export function QuestionnaireProgress({ value, total, className = "" }) {
+export function QuestionnaireProgress({ value, total, label = "Preguntas respondidas", className = "" }) {
   const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
   return (
-    <div className={`v-quest__progress ${className}`.trim()}>
+    <div className={`v-quest__progress ${className}`.trim()} role="progressbar" aria-valuenow={value} aria-valuemin={0} aria-valuemax={total} aria-label={label}>
       <span className="v-quest__progress-text">
         Paso <b>{value}</b> de <b>{total}</b>
       </span>
@@ -82,9 +105,9 @@ export function QuestionnaireOptions({
   name,
   value,
   onValueChange,
-  selectorShape = "leaf",
+  selectorShape = "organic",
   selectorSize = "default",
-  selectorIndicator = "auto",
+  selectorIndicator = "flower",
   showSelectorIndicator = true,
   selectorTone = "pink",
   className = "",
@@ -105,6 +128,7 @@ export function QuestionnaireOptions({
     >
       <div
         className={`v-quest__opts ${className}`.trim()}
+        data-tone={selectorTone}
         role="radiogroup"
         {...props}
       >
@@ -118,11 +142,22 @@ export function QuestionnaireOption({
   children,
   value: optionValue,
   disabled = false,
+  selectorShape,
+  selectorTone,
+  selectorSize,
+  selectorIndicator,
+  showSelectorIndicator,
   inputProps = {},
   className = ""
 }) {
   const ctx = React.useContext(OptionsContext);
   const isSelected = ctx.value === optionValue;
+  const shape = selectorShape || ctx.selectorShape || "organic";
+  const tone = selectorTone || ctx.selectorTone || "pink";
+  const size = selectorSize || ctx.selectorSize || "default";
+  const indicator = selectorIndicator || ctx.selectorIndicator || "flower";
+  const showIndicator = showSelectorIndicator !== undefined ? showSelectorIndicator : (ctx.showSelectorIndicator !== false);
+  const sizePx = size === "sm" ? 26 : size === "lg" ? 38 : 32;
 
   const handleClick = () => {
     if (!disabled && ctx.onValueChange) {
@@ -130,15 +165,64 @@ export function QuestionnaireOption({
     }
   };
 
-  const getToneColor = () => {
-    if (ctx.selectorTone === "blue") return "var(--color-plum-900, #331A30)";
-    return "var(--color-clay, #B75940)";
-  };
-
-  const getShapePath = () => {
-    if (ctx.selectorShape === "organic") return organicPath;
-    if (ctx.selectorShape === "rounded") return roundedPath;
-    return leafPath;
+  const renderIndicatorGlyph = () => {
+    if (indicator === "flower") {
+      return (
+        <motion.g
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0, opacity: 0 }}
+          transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <circle cx="50" cy="50" r="6" fill="#FFFFFF" />
+          <circle cx="50" cy="35" r="5" fill="#FFFFFF" />
+          <circle cx="50" cy="65" r="5" fill="#FFFFFF" />
+          <circle cx="35" cy="50" r="5" fill="#FFFFFF" />
+          <circle cx="65" cy="50" r="5" fill="#FFFFFF" />
+        </motion.g>
+      );
+    }
+    if (indicator === "dot") {
+      return (
+        <motion.circle
+          cx="50"
+          cy="50"
+          r="9"
+          fill="#FFFFFF"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0, opacity: 0 }}
+          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        />
+      );
+    }
+    if (indicator === "diamond") {
+      return (
+        <motion.path
+          d="M 50 30 L 70 50 L 50 70 L 30 50 Z"
+          fill="#FFFFFF"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0, opacity: 0 }}
+          transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+        />
+      );
+    }
+    // checkmark or auto
+    return (
+      <motion.path
+        d="M 28 50 L 43 65 L 72 34"
+        fill="none"
+        stroke="#FFFFFF"
+        strokeWidth="7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        exit={{ pathLength: 0, opacity: 0 }}
+        transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+      />
+    );
   };
 
   return (
@@ -149,6 +233,7 @@ export function QuestionnaireOption({
       tabIndex={disabled ? -1 : 0}
       data-state={isSelected ? "checked" : "unchecked"}
       data-disabled={disabled || undefined}
+      data-tone={tone}
       className={`v-quest__opt ${isSelected ? "v-quest__opt--selected" : ""} ${disabled ? "v-quest__opt--disabled" : ""} ${className}`.trim()}
       onClick={handleClick}
       onKeyDown={(e) => {
@@ -157,27 +242,41 @@ export function QuestionnaireOption({
           handleClick();
         }
       }}
+      style={{
+        "--selector-size": `${sizePx}px`,
+      }}
     >
+      <input
+        type="radio"
+        name={ctx.name}
+        value={optionValue}
+        checked={isSelected}
+        onChange={() => {}}
+        disabled={disabled}
+        tabIndex={-1}
+        aria-hidden="true"
+        {...inputProps}
+      />
       <div className="v-quest__opt-content">
         {children}
       </div>
 
-      {ctx.showSelectorIndicator && (
+      {showIndicator && (
         <span
           className="v-quest__opt-indicator"
           style={{
-            width: "32px",
-            height: "32px",
+            width: `${sizePx}px`,
+            height: `${sizePx}px`,
             display: "grid",
             placeItems: "center",
             flexShrink: 0
           }}
         >
-          <svg viewBox="0 0 100 100" width="30" height="30" style={{ overflow: "visible" }}>
+          <svg viewBox="0 0 100 100" width={sizePx} height={sizePx} style={{ overflow: "visible" }}>
             <motion.path
-              d={getShapePath()}
-              fill={isSelected ? getToneColor() : "var(--v-canvas, #FAF7F2)"}
-              stroke={isSelected ? getToneColor() : "var(--border-subtle, rgba(35, 18, 33, 0.16))"}
+              d={getShapePath(shape)}
+              fill={isSelected ? getToneColor(tone) : "var(--v-canvas, #FAF7F2)"}
+              stroke={isSelected ? getToneColor(tone) : "var(--border-subtle, rgba(35, 18, 33, 0.16))"}
               strokeWidth="4"
               initial={false}
               animate={{
@@ -186,20 +285,7 @@ export function QuestionnaireOption({
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             />
             <AnimatePresence>
-              {isSelected && (
-                <motion.path
-                  d="M 28 50 L 43 65 L 72 34"
-                  fill="none"
-                  stroke="#FFFFFF"
-                  strokeWidth="7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  initial={{ pathLength: 0, opacity: 0 }}
-                  animate={{ pathLength: 1, opacity: 1 }}
-                  exit={{ pathLength: 0, opacity: 0 }}
-                  transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                />
-              )}
+              {isSelected && renderIndicatorGlyph()}
             </AnimatePresence>
           </svg>
         </span>

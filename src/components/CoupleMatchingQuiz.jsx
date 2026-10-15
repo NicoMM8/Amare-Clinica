@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { 
-  ArrowLeft, 
-  ArrowRight, 
-  CheckCircle2, 
-  Sparkles, 
   Heart, 
-  Globe, 
-  ShieldCheck, 
-  MessageSquare,
-  Clock,
-  RotateCcw
+  Sparkles, 
+  CheckCircle2, 
+  RotateCcw,
+  ShieldCheck,
+  ArrowRight
 } from 'lucide-react';
+import {
+  Questionnaire,
+  QuestionnaireProgress,
+  QuestionnaireQuestion,
+  QuestionnaireOptions,
+  QuestionnaireOption,
+  QuestionnaireOptionBody,
+} from './ui/questionnaire';
+import { Button } from './ui/button';
+import { Icon } from './ui/icon';
 
 export default function CoupleMatchingQuiz({ onGoHome }) {
   const [currentStep, setCurrentStep] = useState(0); // 0: Intro, 1..5: Questions, 6: Result
@@ -24,6 +30,9 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
     goal: '',
     goalShort: '',
   });
+
+  const headings = useRef([]);
+  const focusNext = useRef(false);
 
   const questions = [
     {
@@ -83,22 +92,57 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
     },
   ];
 
+  useEffect(() => {
+    if (focusNext.current && currentStep >= 1 && currentStep <= questions.length) {
+      headings.current[currentStep - 1]?.focus();
+      focusNext.current = false;
+    }
+  }, [currentStep, questions.length]);
+
+  const move = (next) => {
+    focusNext.current = true;
+    setCurrentStep(next);
+  };
+
   const handleSelectOption = (field, opt) => {
     setAnswers(prev => ({ 
       ...prev, 
       [field]: opt.label,
       [`${field}Short`]: opt.short || opt.label
     }));
-    if (currentStep < questions.length) {
-      setCurrentStep(prev => prev + 1);
-    }
+
+    // Micro-delay suave para que el usuario aprecie la animación orgánica Cojeev antes de avanzar
+    setTimeout(() => {
+      setCurrentStep(prev => {
+        if (prev < questions.length) {
+          focusNext.current = true;
+          return prev + 1;
+        } else {
+          return questions.length + 1; // Pantalla de resultado
+        }
+      });
+    }, 320);
   };
 
-  const currentQ = questions[currentStep - 1];
+  const currentQ = questions[currentStep - 1] || questions[0];
 
   const isIndividualInitiative = 
     answers.situationShort === 'Iniciativa individual (pareja con dudas)' || 
     answers.situation.includes('Solo yo tengo iniciativa');
+
+  const startAgain = () => {
+    setAnswers({
+      situation: '',
+      reason: '',
+      duration: '',
+      durationShort: '',
+      location: '',
+      locationShort: '',
+      goal: '',
+      goalShort: '',
+    });
+    move(0);
+  };
 
   const buildWhatsAppMessage = () => {
     const greeting = isIndividualInitiative
@@ -134,17 +178,17 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       <header
         style={{
           borderBottom: '1px solid var(--border-subtle)',
-          backgroundColor: 'rgba(245, 240, 232, 0.92)',
+          backgroundColor: 'rgba(250, 247, 242, 0.94)',
           backdropFilter: 'blur(10px)',
           position: 'sticky',
           top: 0,
           zIndex: 50,
-          padding: '14px 24px',
+          padding: '12px 24px',
         }}
       >
         <div
           style={{
-            maxWidth: '960px',
+            maxWidth: '840px',
             margin: '0 auto',
             display: 'flex',
             alignItems: 'center',
@@ -165,19 +209,19 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
               textDecoration: 'none',
               color: 'var(--color-plum-900)',
               fontWeight: 700,
-              fontSize: '17px',
+              fontSize: '16.5px',
             }}
           >
             <img
               src="/favicon.png"
               alt="Centro Amaré"
-              style={{ width: '32px', height: '32px', display: 'block' }}
+              style={{ width: '30px', height: '30px', display: 'block' }}
             />
             <span>Centro Amaré</span>
           </a>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <span style={{ fontSize: '13px', color: 'var(--color-ink-secondary)' }}>
+            <span style={{ fontSize: '13px', color: 'var(--color-ink-secondary)', display: 'none', md: 'inline' }}>
               Evaluación de Pareja · Test Clínico
             </span>
             <a
@@ -213,303 +257,288 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
           padding: '40px 20px 80px',
         }}
       >
-        <div style={{ width: '100%', maxWidth: '680px', margin: '0 auto' }}>
+        <div style={{ width: '100%', maxWidth: '720px', margin: '0 auto' }}>
 
-          {/* ══════════════ STEP 0: PANTALLA INICIAL ══════════════ */}
+          {/* ══════════════ STEP 0: INTRO ESTILO COJEEV UI ══════════════ */}
           {currentStep === 0 && (
-            <div style={{ textAlign: 'center' }}>
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                backgroundColor: 'rgba(169, 90, 65, 0.1)',
-                color: 'var(--color-clay)',
-                padding: '6px 16px',
-                borderRadius: 'var(--r-pill)',
-                fontSize: '13px',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.06em',
-                marginBottom: '20px'
-              }}>
-                <Heart size={14} />
-                <span>Test Clínico de Pareja · 5 Preguntas Clave</span>
-              </div>
-
-              {/* Avatar de Iris en círculo suave */}
-              <div style={{ position: 'relative', display: 'inline-block', marginBottom: '20px' }}>
-                <img
-                  src="/images/hero-therapist-480.webp"
-                  alt="Psicología de Pareja"
-                  width="92"
-                  height="92"
-                  style={{
-                    width: '92px',
-                    height: '92px',
-                    borderRadius: '50%',
-                    objectFit: 'cover',
-                    border: '3px solid #FFFFFF',
-                    boxShadow: '0 8px 24px rgba(34, 40, 74, 0.14)',
-                  }}
-                />
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '-10px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--r-pill)',
-                    padding: '3px 12px',
-                    boxShadow: 'var(--shadow-sm)',
-                    whiteSpace: 'nowrap',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '5px',
-                  }}
-                >
-                  <Sparkles size={12} style={{ color: 'var(--color-clay)' }} />
-                  <span style={{ fontSize: '11.5px', fontWeight: 600, color: 'var(--color-plum-900)' }}>
-                    Especialista en Terapia de Pareja
+            <div className="v-questionnaire-example" style={{ maxWidth: '680px', margin: '0 auto' }}>
+              <Questionnaire presentation="journey">
+                <header className="v-questionnaire-example__intro">
+                  <span className="v-questionnaire-example__tab" aria-hidden="true">
+                    <Heart size={20} style={{ color: 'var(--v-pink)' }} />
                   </span>
+                  <div>
+                    <p>Test Clínico de Pareja (2-3 min)</p>
+                    <h3>Merecen una especialista que realmente entienda su historia de pareja</h3>
+                  </div>
+                </header>
+
+                {/* Avatar cápsula Iris Alarcón */}
+                <div style={{ textAlign: 'center', margin: '20px 0 16px' }}>
+                  <div style={{ position: 'relative', display: 'inline-block', marginBottom: '16px' }}>
+                    <img
+                      src="/images/hero-therapist-480.webp"
+                      alt="Iris Alarcón - Psicóloga y Sexóloga Clínica"
+                      width="96"
+                      height="96"
+                      style={{
+                        width: '96px',
+                        height: '96px',
+                        borderRadius: '50%',
+                        objectFit: 'cover',
+                        border: '3px solid #FFFFFF',
+                        boxShadow: '0 8px 24px rgba(34, 40, 74, 0.14)',
+                      }}
+                    />
+                    <div
+                      style={{
+                        position: 'absolute',
+                        bottom: '-10px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        backgroundColor: '#FFFFFF',
+                        border: '1px solid var(--border-subtle)',
+                        borderRadius: 'var(--r-pill)',
+                        padding: '3px 12px',
+                        boxShadow: 'var(--shadow-sm)',
+                        whiteSpace: 'nowrap',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                      }}
+                    >
+                      <Sparkles size={12} style={{ color: 'var(--color-clay)' }} />
+                      <span style={{ fontSize: '11.5px', fontWeight: 600, color: 'var(--color-plum-900)' }}>
+                        Especialista en Terapia de Pareja · JVPP N.º 47096
+                      </span>
+                    </div>
+                  </div>
+
+                  <p
+                    style={{
+                      fontSize: '16px',
+                      color: 'var(--color-ink-secondary)',
+                      lineHeight: 1.6,
+                      maxWidth: '540px',
+                      margin: '14px auto 30px',
+                    }}
+                  >
+                    Una psicóloga con Máster en Pareja y Sexología que comprende su contexto cultural, el desgaste que atraviesan y la forma en la que quieren sanar su vínculo.
+                  </p>
+
+                  <Button
+                    variant="accent"
+                    size="lg"
+                    onClick={() => move(1)}
+                    style={{
+                      padding: '16px 36px',
+                      fontSize: '16px',
+                      boxShadow: '0 8px 24px rgba(183, 89, 64, 0.28)',
+                    }}
+                  >
+                    Evaluar nuestro caso de pareja
+                    <Icon name="arrow-right" size="sm" />
+                  </Button>
+
+                  <div
+                    style={{
+                      fontSize: '13px',
+                      color: 'var(--color-ink-muted)',
+                      marginTop: '20px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '12px',
+                    }}
+                  >
+                    <span>2 a 3 minutos</span>
+                    <span>·</span>
+                    <span>Sin costo</span>
+                    <span>·</span>
+                    <span>Explora con calma</span>
+                  </div>
                 </div>
-              </div>
-
-              {/* Titular enfocado 100% en parejas */}
-              <h1
-                className="font-serif"
-                style={{
-                  fontSize: 'clamp(32px, 4.8vw, 48px)',
-                  fontWeight: 600,
-                  color: 'var(--color-plum-900)',
-                  lineHeight: 1.15,
-                  letterSpacing: '-0.025em',
-                  marginBottom: '18px',
-                  marginTop: '16px',
-                }}
-              >
-                Merecen una especialista que realmente entienda su historia de pareja
-              </h1>
-
-              <p
-                style={{
-                  fontSize: 'clamp(16px, 1.8vw, 18.5px)',
-                  color: 'var(--color-ink-secondary)',
-                  lineHeight: 1.6,
-                  maxWidth: '560px',
-                  margin: '0 auto 36px',
-                }}
-              >
-                Una psicóloga con Máster en Pareja y Sexología que comprende su contexto cultural, el desgaste que atraviesan y la forma en la que quieren sanar su vínculo.
-              </p>
-
-              {/* Botón de inicio */}
-              <button
-                type="button"
-                onClick={() => setCurrentStep(1)}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  backgroundColor: 'var(--color-plum-900)',
-                  color: '#FFFFFF',
-                  padding: '16px 36px',
-                  borderRadius: 'var(--r-pill)',
-                  fontWeight: 700,
-                  fontSize: '16px',
-                  boxShadow: '0 8px 24px rgba(34, 40, 74, 0.25)',
-                  transition: 'all 0.2s ease',
-                  cursor: 'pointer',
-                  border: 'none',
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = 'var(--color-plum-700)';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = 'var(--color-plum-900)';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <span>Evaluar nuestro caso de pareja</span>
-                <ArrowRight size={18} />
-              </button>
-
-              <div
-                style={{
-                  fontSize: '13px',
-                  color: 'var(--color-ink-muted)',
-                  marginTop: '20px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '12px',
-                }}
-              >
-                <span>2 a 3 minutos</span>
-                <span>·</span>
-                <span>Sin costo</span>
-                <span>·</span>
-                <span>Explora con calma</span>
-              </div>
+              </Questionnaire>
             </div>
           )}
 
-          {/* ══════════════ STEPS 1 a 5: PREGUNTAS INTERACTIVAS ══════════════ */}
+          {/* ══════════════ STEPS 1 a 5: PREGUNTAS EN FORMATO COJEEV UI ══════════════ */}
           {currentStep >= 1 && currentStep <= questions.length && (
-            <div>
-              {/* Barra de progreso */}
-              <div style={{ marginBottom: '32px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                  <button
-                    type="button"
-                    onClick={() => setCurrentStep(prev => prev - 1)}
-                    style={{
-                      background: 'transparent',
-                      border: 'none',
-                      color: 'var(--color-ink-secondary)',
-                      fontSize: '13px',
-                      fontWeight: 600,
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      cursor: 'pointer',
-                      padding: 0,
-                    }}
-                  >
-                    <ArrowLeft size={16} />
-                    <span>Atrás</span>
-                  </button>
-                  <span style={{ fontSize: '12.5px', fontWeight: 600, color: 'var(--color-ink-muted)' }}>
-                    Paso {currentStep} de {questions.length}
-                  </span>
-                </div>
+            <div className="v-questionnaire-example" style={{ maxWidth: '680px', margin: '0 auto', width: '100%' }}>
+              <form
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  if (currentStep < questions.length) {
+                    move(currentStep + 1);
+                  } else {
+                    move(questions.length + 1);
+                  }
+                }}
+                onReset={startAgain}
+              >
+                <Questionnaire presentation="journey">
+                  <header className="v-questionnaire-example__intro">
+                    <span className="v-questionnaire-example__tab" aria-hidden="true">
+                      <Heart size={20} style={{ color: 'var(--v-pink)' }} />
+                    </span>
+                    <div>
+                      <p>Evaluación Clínica de Pareja</p>
+                      <h3>Encuentra el camino clínico adecuado para su vínculo.</h3>
+                    </div>
+                  </header>
 
-                <div
-                  style={{
-                    height: '5px',
-                    borderRadius: '999px',
-                    backgroundColor: 'var(--color-canvas-subtle)',
-                    overflow: 'hidden',
-                  }}
-                >
-                  <div
-                    style={{
-                      height: '100%',
-                      backgroundColor: 'var(--color-clay)',
-                      width: `${(currentStep / questions.length) * 100}%`,
-                      transition: 'width 0.3s ease',
-                    }}
-                  />
-                </div>
-              </div>
+                  {/* Barra de progreso Cojeev */}
+                  <QuestionnaireProgress value={currentStep} total={questions.length} />
 
-              {/* Título de la pregunta */}
-              <div style={{ marginBottom: '28px' }}>
-                <h2
-                  className="font-serif"
-                  style={{
-                    fontSize: 'clamp(24px, 3.2vw, 32px)',
-                    fontWeight: 600,
-                    color: 'var(--color-plum-900)',
-                    lineHeight: 1.25,
-                    marginBottom: '10px',
-                  }}
-                >
-                  {currentQ.title}
-                </h2>
-                <p style={{ fontSize: '15px', color: 'var(--color-ink-secondary)', margin: 0 }}>
-                  {currentQ.subtitle}
-                </p>
-              </div>
-
-              {/* Opciones */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                {currentQ.options.map((opt, idx) => {
-                  const isSelected = answers[currentQ.id] === opt.label;
-                  return (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => handleSelectOption(currentQ.id, opt)}
-                      style={{
-                        backgroundColor: isSelected ? 'var(--color-clay-subtle)' : 'var(--color-surface)',
-                        border: isSelected ? '2px solid var(--color-clay)' : '1.5px solid var(--border-subtle)',
-                        borderRadius: 'var(--r-xl)',
-                        padding: '18px 22px',
-                        textAlign: 'left',
-                        cursor: 'pointer',
-                        transition: 'all 0.2s ease',
-                        boxShadow: 'var(--shadow-sm)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        gap: '16px',
-                      }}
-                      onMouseOver={(e) => {
-                        if (!isSelected) {
-                          e.currentTarget.style.borderColor = 'var(--color-clay)';
-                          e.currentTarget.style.transform = 'translateY(-2px)';
-                        }
-                      }}
-                      onMouseOut={(e) => {
-                        if (!isSelected) {
-                          e.currentTarget.style.borderColor = 'var(--border-subtle)';
-                          e.currentTarget.style.transform = 'translateY(0)';
-                        }
-                      }}
-                    >
-                      <div>
-                        <div
-                          style={{
-                            fontSize: '16px',
-                            fontWeight: 600,
-                            color: 'var(--color-plum-900)',
-                            lineHeight: 1.3,
-                            marginBottom: '4px',
-                          }}
+                  <div className="v-questionnaire-example__questions">
+                    {questions.map((question, index) => {
+                      const isCurrent = currentStep === (index + 1);
+                      return (
+                        <QuestionnaireQuestion
+                          key={question.id}
+                          hidden={!isCurrent}
+                          inert={!isCurrent}
                         >
-                          {opt.label}
-                        </div>
-                        <div style={{ fontSize: '13px', color: 'var(--color-ink-secondary)' }}>
-                          {opt.sub}
-                        </div>
-                      </div>
+                          <legend
+                            id={`quiz-question-${index}`}
+                            tabIndex={-1}
+                            ref={(node) => {
+                              headings.current[index] = node;
+                            }}
+                            style={{ outline: 'none', border: 'none', padding: 0, marginBottom: '6px' }}
+                          >
+                            <span className="v-questionnaire-example__heading">
+                              <span
+                                className="v-questionnaire-example__number"
+                                aria-hidden="true"
+                              >
+                                {String(index + 1).padStart(2, '0')}
+                              </span>
+                              <span className="v-questionnaire-example__title font-serif">
+                                {question.title}
+                              </span>
+                            </span>
+                          </legend>
 
-                      <div
-                        style={{
-                          width: '22px',
-                          height: '22px',
-                          borderRadius: '50%',
-                          border: isSelected ? '6px solid var(--color-clay)' : '2px solid var(--border-subtle)',
-                          backgroundColor: '#FFFFFF',
-                          flexShrink: 0,
-                          transition: 'all 0.2s ease',
-                        }}
-                      />
-                    </button>
-                  );
-                })}
-              </div>
+                          <p
+                            className="v-questionnaire-example__hint"
+                            id={`quiz-hint-${index}`}
+                          >
+                            {question.subtitle}
+                          </p>
+
+                          <QuestionnaireOptions
+                            name={`quiz-answer-${question.id}`}
+                            aria-labelledby={`quiz-question-${index}`}
+                            aria-describedby={`quiz-hint-${index}`}
+                            value={answers[question.id]}
+                            onValueChange={(selectedLabel) => {
+                              const foundOpt = question.options.find(o => o.label === selectedLabel);
+                              if (foundOpt) {
+                                handleSelectOption(question.id, foundOpt);
+                              }
+                            }}
+                            selectorShape="organic"
+                            selectorSize="default"
+                            selectorIndicator="flower"
+                            showSelectorIndicator={true}
+                            selectorTone={index % 2 === 0 ? "pink" : "blue"}
+                          >
+                            {question.options.map((opt) => (
+                              <QuestionnaireOption
+                                key={opt.label}
+                                value={opt.label}
+                                inputProps={{ required: true }}
+                              >
+                                <QuestionnaireOptionBody>
+                                  <b>{opt.label}</b>
+                                  <small>{opt.sub}</small>
+                                </QuestionnaireOptionBody>
+                              </QuestionnaireOption>
+                            ))}
+                          </QuestionnaireOptions>
+                        </QuestionnaireQuestion>
+                      );
+                    })}
+                  </div>
+
+                  {/* Footer de navegación Cojeev UI */}
+                  <footer className="v-questionnaire-example__footer">
+                    <Button
+                      variant="ghost"
+                      onClick={() => move(currentStep - 1)}
+                    >
+                      <Icon name="arrow-left" size="sm" />
+                      Atrás
+                    </Button>
+
+                    {currentStep < questions.length ? (
+                      <Button
+                        variant="secondary"
+                        onClick={() => move(currentStep + 1)}
+                        disabled={!answers[currentQ.id]}
+                      >
+                        Siguiente pregunta
+                        <Icon name="arrow-right" size="sm" />
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="accent"
+                        type="submit"
+                        disabled={!answers[currentQ.id]}
+                      >
+                        Ver resultado y especialista
+                        <Icon name="arrow-up-right" size="sm" />
+                      </Button>
+                    )}
+
+                    <Button
+                      variant="ghost"
+                      type="reset"
+                    >
+                      Reiniciar
+                    </Button>
+                  </footer>
+
+                  <p className="v-questionnaire-example__result" role="status">
+                    {currentStep === questions.length && answers[currentQ.id]
+                      ? "Tus 5 respuestas están listas. Pulsa para ver tu perfil y especialista recomendada."
+                      : `Paso ${currentStep} de ${questions.length} · ${questions.length - currentStep} ${questions.length - currentStep === 1 ? 'pregunta restante' : 'preguntas restantes'}. Puedes cambiar cualquier respuesta.`}
+                  </p>
+                </Questionnaire>
+              </form>
             </div>
           )}
 
           {/* ══════════════ STEP 6: RESULTADO (MATCH CONFIRMADO) ══════════════ */}
           {currentStep > questions.length && (
-            <div>
-              {/* Tarjeta de resultado */}
+            <div className="v-questionnaire-example" style={{ maxWidth: '680px', margin: '0 auto' }}>
               <div
                 style={{
-                  backgroundColor: 'var(--color-surface)',
+                  backgroundColor: 'var(--v-paper)',
                   borderRadius: '28px',
                   padding: '40px 32px',
-                  boxShadow: 'var(--shadow-lg)',
-                  border: '1px solid var(--border-subtle)',
+                  boxShadow: '0 12px 36px rgba(35, 18, 33, 0.08)',
+                  border: '1px solid var(--v-border)',
                   textAlign: 'center',
                 }}
               >
-                {/* Badge de coincidencia */}
+                {/* Header intro Cojeev */}
+                <header className="v-questionnaire-example__intro" style={{ marginBottom: '24px', justifyContent: 'center' }}>
+                  <span className="v-questionnaire-example__tab" aria-hidden="true" style={{ background: 'var(--v-pink-soft)', color: 'var(--v-pink)' }}>
+                    <Sparkles size={20} />
+                  </span>
+                  <div style={{ textAlign: 'left' }}>
+                    <p style={{ margin: 0, fontSize: '13px', fontWeight: 700, color: 'var(--v-pink)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                      Evaluación Completada · 100%
+                    </p>
+                    <h3 className="font-serif" style={{ margin: 0, fontSize: '22px', color: 'var(--v-text)' }}>
+                      Su caso es apto para abordaje en terapia de pareja
+                    </h3>
+                  </div>
+                </header>
+
+                {/* Badge de coincidencia clínica */}
                 <div
                   style={{
                     display: 'inline-flex',
@@ -524,27 +553,27 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                 >
                   <Sparkles size={16} style={{ color: '#128C7E' }} />
                   <span style={{ fontSize: '13px', fontWeight: 700, color: '#128C7E' }}>
-                    ✦ Evaluación completada: Su caso es apto para abordaje en terapia de pareja
+                    ✦ Evaluación completada: Protocolo adaptado a su historia vincular
                   </span>
                 </div>
 
-                {/* Micro-ajuste 1: Nota clínica dinámica para Opción B (Iniciativa individual) */}
+                {/* Nota clínica personalizada para Opción B (Iniciativa individual) */}
                 {isIndividualInitiative && (
                   <div
                     style={{
-                      backgroundColor: 'rgba(169, 90, 65, 0.08)',
-                      border: '1px solid rgba(169, 90, 65, 0.25)',
-                      borderRadius: 'var(--r-lg)',
-                      padding: '14px 18px',
-                      maxWidth: '540px',
+                      backgroundColor: 'rgba(183, 89, 64, 0.08)',
+                      border: '1px solid rgba(183, 89, 64, 0.25)',
+                      borderRadius: 'var(--r-card)',
+                      padding: '16px 20px',
+                      maxWidth: '560px',
                       margin: '0 auto 24px',
                       textAlign: 'left',
                       fontSize: '13.5px',
                       lineHeight: 1.55,
-                      color: 'var(--color-plum-900)',
+                      color: 'var(--v-text)',
                     }}
                   >
-                    <div style={{ fontWeight: 700, color: 'var(--color-clay)', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <div style={{ fontWeight: 700, color: 'var(--v-pink)', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
                       <Sparkles size={15} />
                       <span>Nota clínica personalizada:</span>
                     </div>
@@ -553,10 +582,10 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                 )}
 
                 {/* Perfil del Especialista Ideal: Iris Alarcón */}
-                <div style={{ marginBottom: '24px' }}>
+                <div style={{ marginBottom: '28px' }}>
                   <img
                     src="/images/hero-therapist-480.webp"
-                    alt="Especialista en Terapia de Pareja"
+                    alt="Iris Alarcón - Especialista en Terapia de Pareja"
                     width="110"
                     height="110"
                     style={{
@@ -565,7 +594,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                       borderRadius: '50%',
                       objectFit: 'cover',
                       margin: '0 auto 16px',
-                      border: '4px solid var(--color-canvas)',
+                      border: '4px solid var(--v-canvas)',
                       boxShadow: '0 8px 24px rgba(34, 40, 74, 0.14)',
                       display: 'block',
                     }}
@@ -575,16 +604,16 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     style={{
                       fontSize: '26px',
                       fontWeight: 700,
-                      color: 'var(--color-plum-900)',
+                      color: 'var(--v-text)',
                       marginBottom: '4px',
                     }}
                   >
                     Iris Alarcón
                   </h3>
-                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-clay)', marginBottom: '8px' }}>
-                    Psicóloga Clínica Colegiada · Máster en Pareja y Sexología (JVPP)
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--v-pink)', marginBottom: '8px' }}>
+                    Psicóloga Clínica Colegiada · Máster en Pareja y Sexología (JVPP N.º 47096)
                   </div>
-                  <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: '14px', color: 'var(--v-text-2)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.6 }}>
                     Las respuestas de su autoevaluación indican que su caso se beneficia de un protocolo de intervención en comunicación, acuerdos y reconexión emocional adaptado a su contexto.
                   </p>
                 </div>
@@ -592,8 +621,8 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                 {/* Resumen del plan sugerido */}
                 <div
                   style={{
-                    backgroundColor: 'var(--color-canvas)',
-                    borderRadius: 'var(--r-xl)',
+                    backgroundColor: 'var(--v-canvas)',
+                    borderRadius: 'var(--r-card)',
                     padding: '20px 24px',
                     textAlign: 'left',
                     marginBottom: '32px',
@@ -601,19 +630,20 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     flexDirection: 'column',
                     gap: '10px',
                     fontSize: '13.5px',
+                    border: '1px solid var(--v-border)',
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <CheckCircle2 size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
+                    <CheckCircle2 size={16} style={{ color: 'var(--v-pink)', flexShrink: 0 }} />
                     <span><strong>Enfoque recomendado:</strong> Terapia Integral de Parejas (IBCT) + TCC Vincular</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <CheckCircle2 size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
+                    <CheckCircle2 size={16} style={{ color: 'var(--v-pink)', flexShrink: 0 }} />
                     <span><strong>Modalidad:</strong> Online por Google Meet (ambos juntos o en videollamada simultánea)</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <CheckCircle2 size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
-                    <span><strong>Primer paso:</strong> Sesión inicial gratuita de 30 minutos sin compromiso económico</span>
+                    <CheckCircle2 size={16} style={{ color: 'var(--v-pink)', flexShrink: 0 }} />
+                    <span><strong>Primer paso:</strong> Sesión inicial de 30 minutos sin costo ni compromiso económico</span>
                   </div>
                 </div>
 
@@ -622,31 +652,15 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   href={whatsappMatchUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="v-button v-button--accent"
                   style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '10px',
-                    backgroundColor: 'var(--color-clay)',
-                    color: '#FFFFFF',
                     padding: '16px 32px',
-                    borderRadius: 'var(--r-pill)',
-                    fontWeight: 700,
                     fontSize: '16px',
                     textDecoration: 'none',
-                    boxShadow: '0 8px 24px rgba(169, 90, 65, 0.35)',
-                    transition: 'all 0.2s ease',
                     width: '100%',
-                    maxWidth: '440px',
+                    maxWidth: '460px',
                     marginBottom: '16px',
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--color-clay-hover)';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--color-clay)';
-                    e.currentTarget.style.transform = 'translateY(0)';
+                    display: 'inline-flex',
                   }}
                 >
                   <span>
@@ -657,23 +671,23 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   <ArrowRight size={18} />
                 </a>
 
-                {/* Micro-ajuste 3: Botón de respaldo para Desktop sin WhatsApp Web */}
+                {/* Botón de respaldo para Desktop sin WhatsApp Web */}
                 <div
                   style={{
-                    maxWidth: '460px',
+                    maxWidth: '480px',
                     margin: '0 auto 16px',
                     padding: '12px 16px',
                     backgroundColor: '#FFFFFF',
                     borderRadius: '12px',
-                    border: '1px solid var(--border-subtle)',
+                    border: '1px solid var(--v-border)',
                     fontSize: '12.5px',
-                    color: 'var(--color-ink-secondary)',
+                    color: 'var(--v-text-2)',
                     lineHeight: 1.55,
                     textAlign: 'center',
-                    boxShadow: 'var(--shadow-sm)',
+                    boxShadow: '0 1px 3px rgba(35, 18, 33, 0.04)',
                   }}
                 >
-                  <span style={{ fontWeight: 600, color: 'var(--color-plum-900)' }}>
+                  <span style={{ fontWeight: 600, color: 'var(--v-text)' }}>
                     💻 ¿Estás desde una computadora sin WhatsApp Web?
                   </span>
                   <div style={{ marginTop: '4px' }}>
@@ -682,14 +696,14 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                       href="https://wa.me/50373184781"
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: 'var(--color-clay)', fontWeight: 700, textDecoration: 'none' }}
+                      style={{ color: 'var(--v-pink)', fontWeight: 700, textDecoration: 'none' }}
                     >
                       +503 7318 4781
                     </a>
                     {' '}o agenda por correo a{' '}
                     <a
                       href="mailto:contacto@terapiadeparejaelsalvador.com?subject=Consulta%20Test%20de%20Pareja"
-                      style={{ color: 'var(--color-plum-900)', textDecoration: 'underline', fontWeight: 600 }}
+                      style={{ color: 'var(--v-text)', textDecoration: 'underline', fontWeight: 600 }}
                     >
                       contacto@terapiadeparejaelsalvador.com
                     </a>
@@ -698,34 +712,34 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
 
                 {/* Garantía de Confidencialidad y Privacidad YMYL */}
                 <div style={{
-                  maxWidth: '460px',
-                  margin: '0 auto 16px',
+                  maxWidth: '480px',
+                  margin: '0 auto 20px',
                   padding: '12px 16px',
                   backgroundColor: 'rgba(34, 40, 74, 0.04)',
                   borderRadius: '12px',
                   border: '1px solid rgba(34, 40, 74, 0.08)',
                   fontSize: '12.5px',
-                  color: 'var(--color-ink-secondary)',
+                  color: 'var(--v-text-2)',
                   lineHeight: 1.5,
                   textAlign: 'center'
                 }}>
-                  🔒 <strong>Confidencialidad médica garantizada:</strong> Tus respuestas se evalúan en privado dentro de tu navegador y no se guardan en servidores públicos. Solo se envían a la terapeuta si decides remitir el mensaje vía WhatsApp. Consulta nuestra <a href="/privacidad" style={{ color: 'var(--color-clay)', textDecoration: 'underline', fontWeight: 600 }}>Política de Privacidad y Secreto Clínico</a>.
+                  🔒 <strong>Confidencialidad médica garantizada:</strong> Tus respuestas se evalúan en privado dentro de tu navegador y no se guardan en servidores públicos. Solo se envían a la terapeuta si decides remitir el mensaje vía WhatsApp. Consulta nuestra <a href="/privacidad" style={{ color: 'var(--v-pink)', textDecoration: 'underline', fontWeight: 600 }}>Política de Privacidad y Secreto Clínico</a>.
                 </div>
 
                 {/* Reiniciar o volver */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', marginTop: '12px' }}>
                   <button
                     type="button"
-                    onClick={() => setCurrentStep(1)}
+                    onClick={startAgain}
                     style={{
                       background: 'none',
                       border: 'none',
-                      color: 'var(--color-ink-muted)',
+                      color: 'var(--v-text-3)',
                       fontSize: '13px',
                       cursor: 'pointer',
                       display: 'inline-flex',
                       alignItems: 'center',
-                      gap: '4px',
+                      gap: '6px',
                     }}
                   >
                     <RotateCcw size={14} />
@@ -740,7 +754,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                       else window.location.href = '/';
                     }}
                     style={{
-                      color: 'var(--color-plum-900)',
+                      color: 'var(--v-text)',
                       fontSize: '13px',
                       fontWeight: 600,
                       textDecoration: 'none',

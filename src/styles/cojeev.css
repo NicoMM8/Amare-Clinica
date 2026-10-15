@@ -137,6 +137,24 @@
   box-shadow: 0 0 0 1px var(--v-pink), 0 4px 14px rgba(183, 89, 64, 0.12);
 }
 
+.v-quest__opts[data-tone="blue"] .v-quest__opt:hover,
+.v-quest__opts[data-tone="ink"] .v-quest__opt:hover,
+.v-quest__opt[data-tone="blue"]:hover,
+.v-quest__opt[data-tone="ink"]:hover {
+  background: var(--v-blue-soft);
+  border-color: var(--color-plum-900);
+  box-shadow: 0 4px 12px rgba(34, 40, 74, 0.08);
+}
+
+.v-quest__opts[data-tone="blue"] .v-quest__opt[data-state="checked"],
+.v-quest__opts[data-tone="ink"] .v-quest__opt[data-state="checked"],
+.v-quest__opt[data-tone="blue"][data-state="checked"],
+.v-quest__opt[data-tone="ink"][data-state="checked"] {
+  background: var(--v-blue-soft);
+  border-color: var(--color-plum-900);
+  box-shadow: 0 0 0 1px var(--color-plum-900), 0 4px 14px rgba(34, 40, 74, 0.12);
+}
+
 .v-quest__opt input[type="radio"] {
   position: absolute;
   width: 1px;

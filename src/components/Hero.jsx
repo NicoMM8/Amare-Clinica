@@ -29,160 +29,168 @@ export default function Hero() {
 
       <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1240px' }}>
         
-        {/* ── SPECTACULAR UNBRAVO-STYLE FRAMED HERO ENCLOSURE ── */}
-        <div className="hero-frame-wrapper">
-          <div className="hero-frame-grid">
+        {/* ── TWO-COLUMN HERO GRID (Clean, airy & borderless) ── */}
+        <div className="hero-grid">
+          
+          {/* ── LEFT COLUMN: Content & Social Proof ── */}
+          <div className="hero-content">
             
-            {/* ── LEFT CARD: Content & Social Proof ── */}
-            <div className="hero-content-card">
-              
-              {/* Main Headline */}
-              <h1 
-                className="hero-headline font-serif" 
-                style={{ 
-                  margin: '0 0 12px 0', 
-                  fontSize: 'clamp(32px, 3.8vw, 46px)', 
-                  lineHeight: 1.1, 
-                  letterSpacing: '-0.025em', 
-                  color: 'var(--color-plum-900)' 
-                }}
-              >
-                Empieza con tu terapeuta online
-              </h1>
-
-              {/* Empathetic & Clear Subtitle */}
-              <p 
-                style={{ 
-                  fontSize: 'clamp(14.5px, 1.5vw, 16px)', 
-                  lineHeight: 1.5, 
-                  color: 'var(--color-ink-secondary)', 
-                  margin: '0 0 16px 0', 
-                  maxWidth: '500px' 
-                }}
-              >
-                Centro Amaré es la clínica de psicología y terapia de pareja para salvadoreños en el país y en el exterior. Para hablar de lo difícil en tu idioma, con método científico y profesionales colegiadas al otro lado.
-              </p>
-
-              {/* Social Proof / Rating (Unobravo style) */}
-              <div 
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  gap: '8px', 
-                  fontSize: '13.5px', 
-                  fontWeight: 600, 
-                  color: 'var(--color-plum-900)', 
-                  marginBottom: '16px' 
-                }}
-              >
-                <span style={{ color: '#128C7E', fontSize: '17px', lineHeight: 1 }} aria-hidden="true">★</span>
-                <span>Valorado <strong>Excelente</strong> (4.9/5) por parejas y pacientes</span>
-              </div>
-
-              {/* Authority Checklist with Terracotta Circles (Unobravo style) */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '9px', marginBottom: '24px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14px', color: 'var(--color-plum-900)' }}>
-                  <span className="hero-bullet-check" aria-hidden="true">✓</span>
-                  <span><strong>Equipo clínico colegiado</strong> con +9 años de experiencia especializada</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14px', color: 'var(--color-plum-900)' }}>
-                  <span className="hero-bullet-check" aria-hidden="true">✓</span>
-                  <span><strong>Especialistas en Pareja, Sexología y TCC</strong> (Acreditación JVPP)</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14px', color: 'var(--color-plum-900)' }}>
-                  <span className="hero-bullet-check" aria-hidden="true">✓</span>
-                  <span><strong>Mismo código cultural:</strong> El Salvador, EE.UU., Canadá y Europa</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14px', color: 'var(--color-plum-900)' }}>
-                  <span className="hero-bullet-check" aria-hidden="true">✓</span>
-                  <span><strong>Videollamada simultánea</strong> si están en ciudades o países distintos</span>
-                </div>
-              </div>
-
-              {/* CTA Action Group */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-start' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                  <a
-                    href="/test-de-pareja"
-                    className="btn-appointment-pill"
-                    style={{
-                      backgroundColor: 'var(--color-clay)',
-                      padding: '13px 22px',
-                      fontSize: '15px',
-                      boxShadow: '0 8px 24px rgba(183, 89, 64, 0.35)',
-                    }}
-                  >
-                    <span>Evaluar nuestro caso de pareja</span>
-                    <ArrowRight size={17} />
-                  </a>
-
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-appointment-pill"
-                    style={{
-                      backgroundColor: 'transparent',
-                      border: '1.5px solid var(--color-plum-900)',
-                      color: 'var(--color-plum-900)',
-                      boxShadow: 'none',
-                      padding: '13px 18px',
-                      fontSize: '14.5px',
-                    }}
-                  >
-                    <span>WhatsApp directo</span>
-                    <WhatsAppIcon size={17} />
-                  </a>
-                </div>
-
-                <span style={{ fontSize: '13px', color: 'var(--color-ink-muted)', marginTop: '4px', marginLeft: '2px' }}>
-                  Primera conversación (30 min sin costo) con el equipo clínico · Sin compromiso
-                </span>
-              </div>
-
+            {/* Clinical Specialty Pill */}
+            <div className="badge-pill" style={{ marginBottom: '14px', alignSelf: 'flex-start' }}>
+              <span className="badge-dot" />
+              <span>Terapia de Pareja y Sexología Clínica Online</span>
             </div>
 
-            {/* ── RIGHT CARD: Full Lifestyle Photography ── */}
-            <div className="hero-photo-card">
-              <picture style={{ width: '100%', height: '100%', display: 'block' }}>
-                <source srcSet="/images/hero-daniela-960.webp 960w, /images/hero-daniela-480.webp 480w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
-                <source srcSet="/images/hero-daniela-960.jpg" type="image/jpeg" />
-                <img
-                  src="/images/hero-daniela-960.jpg"
-                  alt="Terapia psicológica online desde casa para salvadoreños — Centro Amaré"
-                  fetchPriority="high"
-                  width="960"
-                  height="720"
-                />
-              </picture>
+            {/* Main Headline */}
+            <h1 
+              className="hero-headline font-serif" 
+              style={{ 
+                margin: '0 0 14px 0', 
+                fontSize: 'clamp(34px, 4vw, 52px)', 
+                lineHeight: 1.12, 
+                letterSpacing: '-0.025em', 
+                color: 'var(--color-plum-900)' 
+              }}
+            >
+              Empieza con tu terapeuta online
+            </h1>
 
-              {/* Subtle Ambient Live Badge in the photo */}
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: '18px',
-                  left: '18px',
-                  background: 'rgba(255, 255, 255, 0.94)',
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
-                  borderRadius: 'var(--r-pill)',
-                  padding: '7px 16px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  boxShadow: '0 6px 20px rgba(34, 40, 74, 0.14)',
-                  border: '1px solid rgba(255, 255, 255, 0.85)',
-                  fontSize: '12.5px',
-                  fontWeight: 600,
-                  color: 'var(--color-plum-900)',
-                }}
-              >
-                <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#25D366' }} />
-                <span>Sesiones online por Google Meet · Sin traslados</span>
+            {/* Empathetic & Clear Subtitle */}
+            <p 
+              style={{ 
+                fontSize: 'clamp(15px, 1.6vw, 17.5px)', 
+                lineHeight: 1.6, 
+                color: 'var(--color-ink-secondary)', 
+                margin: '0 0 18px 0', 
+                maxWidth: '520px' 
+              }}
+            >
+              Centro Amaré es la clínica de psicología y terapia de pareja para salvadoreños en el país y en el exterior. Para hablar de lo difícil en tu idioma, con método científico y profesionales colegiadas al otro lado.
+            </p>
+
+            {/* Social Proof / Rating */}
+            <div 
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '8px', 
+                fontSize: '14px', 
+                fontWeight: 600, 
+                color: 'var(--color-plum-900)', 
+                marginBottom: '20px' 
+              }}
+            >
+              <span style={{ color: '#128C7E', fontSize: '18px', lineHeight: 1 }} aria-hidden="true">★</span>
+              <span>Valorado <strong>Excelente</strong> (4.9/5) por parejas y pacientes</span>
+            </div>
+
+            {/* Authority Checklist */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '9px', marginBottom: '26px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14.5px', color: 'var(--color-plum-900)' }}>
+                <span className="hero-bullet-check" aria-hidden="true">✓</span>
+                <span><strong>Equipo clínico colegiado</strong> con +9 años de experiencia (Dirección: Licda. Iris Alarcón · JVPP N.º 47096)</span>
               </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14.5px', color: 'var(--color-plum-900)' }}>
+                <span className="hero-bullet-check" aria-hidden="true">✓</span>
+                <span><strong>Mismo código cultural:</strong> El Salvador, EE.UU., Canadá y Europa</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14.5px', color: 'var(--color-plum-900)' }}>
+                <span className="hero-bullet-check" aria-hidden="true">✓</span>
+                <span><strong>Videollamada simultánea</strong> si están en ciudades o países distintos</span>
+              </div>
+            </div>
+
+            {/* CTA Action Group */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+                <a
+                  href="/test-de-pareja"
+                  className="btn-appointment-pill"
+                  style={{
+                    backgroundColor: 'var(--color-clay)',
+                    padding: '14px 26px',
+                    fontSize: '15.5px',
+                    boxShadow: '0 8px 24px rgba(183, 89, 64, 0.35)',
+                  }}
+                >
+                  <span>Evaluar nuestro caso de pareja</span>
+                  <ArrowRight size={17} />
+                </a>
+
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-appointment-pill"
+                  style={{
+                    backgroundColor: '#FFFFFF',
+                    border: '1.5px solid var(--color-plum-900)',
+                    color: 'var(--color-plum-900)',
+                    boxShadow: '0 4px 14px rgba(34, 40, 74, 0.08)',
+                    padding: '14px 22px',
+                    fontSize: '15px',
+                  }}
+                >
+                  <span>WhatsApp directo</span>
+                  <WhatsAppIcon size={18} />
+                </a>
+              </div>
+
+              <span style={{ fontSize: '13px', color: 'var(--color-ink-muted)', marginTop: '4px', marginLeft: '2px' }}>
+                Primera conversación (30 min sin costo) con el equipo clínico · Sin compromiso
+              </span>
             </div>
 
           </div>
+
+          {/* ── RIGHT COLUMN: Full Lifestyle Photography ── */}
+          <div className="hero-visual-card">
+            <picture style={{ width: '100%', height: '100%', display: 'block' }}>
+              <source srcSet="/images/hero-daniela-960.webp 960w, /images/hero-daniela-480.webp 480w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
+              <source srcSet="/images/hero-daniela-960.jpg" type="image/jpeg" />
+              <img
+                src="/images/hero-daniela-960.jpg"
+                alt="Terapia psicológica online desde casa para salvadoreños — Centro Amaré"
+                className="hero-visual-img"
+                fetchPriority="high"
+                width="960"
+                height="720"
+                style={{
+                  width: '100%',
+                  height: '470px',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  display: 'block',
+                }}
+              />
+            </picture>
+
+            {/* Subtle Ambient Live Badge in the photo */}
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '18px',
+                left: '18px',
+                background: 'rgba(255, 255, 255, 0.94)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                borderRadius: 'var(--r-pill)',
+                padding: '8px 18px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 8px 24px rgba(34, 40, 74, 0.14)',
+                border: '1px solid rgba(255, 255, 255, 0.85)',
+                fontSize: '13px',
+                fontWeight: 600,
+                color: 'var(--color-plum-900)',
+              }}
+            >
+              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#25D366' }} />
+              <span>Sesiones online por Google Meet · Sin traslados</span>
+            </div>
+          </div>
+
         </div>
 
         {/* ── TRUST STRIP: Brand Clinical Pillars below Frame ── */}

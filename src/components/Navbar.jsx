@@ -15,13 +15,32 @@ export default function Navbar() {
     <div className="navbar-wrapper">
       <nav className="navbar">
         {/* Brand */}
-        <a href="/" className="brand-logo" style={{ display: 'flex', alignItems: 'center', height: '56px', overflow: 'hidden' }}>
-          <picture>
-            <source srcSet="/images/logo-transparent.webp" type="image/webp" />
+        <a 
+          href="/" 
+          className="brand-logo" 
+          aria-label="Centro Amaré — Inicio"
+          style={{ 
+            display: 'inline-flex', 
+            alignItems: 'center', 
+            justifyContent: 'center',
+            lineHeight: 1,
+            padding: 0,
+            margin: 0
+          }}
+        >
+          <picture style={{ display: 'flex', alignItems: 'center' }}>
+            <source srcSet="/images/logo-nav.webp" type="image/webp" />
             <img 
-              src="/images/logo-transparent.png" 
+              src="/images/logo-nav.png" 
               alt="Centro Amaré — Terapia de Pareja" 
-              style={{ height: '160px', width: 'auto', objectFit: 'contain', marginLeft: '-16px' }}
+              width="95"
+              height="40"
+              style={{ 
+                height: '38px', 
+                width: 'auto', 
+                display: 'block', 
+                objectFit: 'contain' 
+              }}
             />
           </picture>
         </a>

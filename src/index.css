@@ -328,7 +328,7 @@ button {
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border-subtle, rgba(35, 18, 33, 0.08));
   border-radius: var(--r-pill);
-  padding: 4px 14px 4px 24px;
+  padding: 6px 14px 6px 24px;
   box-shadow: 0 8px 30px rgba(35, 18, 33, 0.08);
 }
 

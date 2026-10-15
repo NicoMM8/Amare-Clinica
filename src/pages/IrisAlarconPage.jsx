@@ -2,12 +2,13 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
+import Testimonials from '../components/Testimonials';
 import { HeroButton } from '../components/ui/hero-button';
 import { Award, BookOpen, CheckCircle2, ShieldCheck, HeartHandshake, Brain, Clock, MessageCircle, Star } from 'lucide-react';
 import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function IrisAlarconPage() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar la sesión inicial gratuita de 30 minutos con la psicóloga Iris Alarcón.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar la primera conversación de 30 minutos sin costo con la psicóloga Iris Alarcón.");
 
   return (
     <div className="app-wrapper">
@@ -159,6 +160,9 @@ export default function IrisAlarconPage() {
             </div>
           </div>
         </section>
+
+        {/* Verified Reviews Section */}
+        <Testimonials />
 
         {/* Clinical Framework & Guarantee */}
         <section className="section" style={{ paddingTop: '72px', paddingBottom: '72px' }}>

@@ -142,6 +142,84 @@ const medicalBusinessSchema = {
   medicalSpecialty: [
     'https://schema.org/MentalHealth',
   ],
+  sameAs: [
+    'https://www.psico.org/centro-47096',
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '6',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Roberto' },
+      datePublished: '2025-11-18',
+      reviewBody: 'Trabaje junto con mi esposa varios temas que no lograbamos resolver por nuestra cuenta y con las herramientas que Iris nos brindo pudimos salir adelante y sentirnos de nuevo fuertes como pareja',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+      },
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Adriana' },
+      datePublished: '2025-11-05',
+      reviewBody: 'Excelente psicóloga, muy profesional y humana. Desde la primera sesión me hizo sentir cómoda y en confianza. Sus consejos y técnicas me han ayudado muchísimo a manejar la ansiedad y mejorar mi bienestar. La recomiendo con todo mi corazón.',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+      },
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Stephanie A' },
+      datePublished: '2025-03-03',
+      reviewBody: 'Me sentí muy cómoda en las sesiones con Iris, comprendida lo que me dejo ser abierta con ella para que me apoyara con unos problemas personales que tenia',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+      },
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'A.G.S' },
+      datePublished: '2024-06-26',
+      reviewBody: 'Me ayudó mucho en mi proceso de separación, la recomiendo mucho, muy buena terapeuta',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+      },
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'DIANA DIAZ' },
+      datePublished: '2025-11-18',
+      reviewBody: 'Muy recomendada, me ayudo mucho con mi crecimiento personal, excelente profesional',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+      },
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Laura' },
+      datePublished: '2025-11-18',
+      reviewBody: 'me ayudo muchísimo y la recomiendo 100%',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+      },
+    },
+  ],
   priceRange: '$$',
   currenciesAccepted: 'USD',
   paymentAccepted: 'Credit Card, Debit Card, Bank Transfer (Banco Agrícola, BAC, Cuscatlán), International Transfer',
@@ -238,9 +316,12 @@ const personSchema = {
   familyName: 'Alarcón',
   jobTitle: 'Psicóloga Clínica y Directora Clínica',
   description:
-    'Psicóloga Clínica salvadoreña con Máster en Terapia de Pareja y Sexología Clínica. Especialista en TCC, terapia de pareja transnacional y atención a la diáspora salvadoreña.',
-  image: `${SITE_URL}/images/hero-therapist-960.jpg`,
+    'Psicóloga Clínica salvadoreña con Máster en Terapia de Pareja y Sexología Clínica. Especialista en TCC, terapia de pareja transnacional y atención a personas y parejas en El Salvador y en el exterior.',
+  image: `${SITE_URL}/images/iris-alarcon.jpg`,
   url: `${SITE_URL}/#equipo`,
+  sameAs: [
+    'https://www.psico.org/centro-47096',
+  ],
   worksFor: {
     '@id': `${SITE_URL}/#organization`,
   },

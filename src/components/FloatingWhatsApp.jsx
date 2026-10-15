@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react';
 import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function FloatingWhatsApp() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar mi sesión inicial gratuita de 30 minutos en Centro Amaré.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, tengo una consulta rápida sobre la terapia online en Centro Amaré.");
 
   return (
     <a 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, ShieldCheck, Clock, CreditCard, Sparkles, UserCheck, HeartHandshake, Compass, ArrowRight, Shield } from 'lucide-react';
+import { Check, Clock, Sparkles, Shield } from 'lucide-react';
 import { HeroButton } from './cojeev/HeroButton';
 
 const clinicalPhases = [
@@ -38,23 +38,68 @@ const clinicalPhases = [
 ];
 
 export default function MethodologyAndPricing() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera agendar mi primera sesión de encuadre gratuita de 30 minutos en Centro Amaré.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar una primera conversación.");
 
   return (
     <section className="section" id="honorarios">
       <div className="container">
         
-        {/* Header */}
-        <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 52px' }}>
+        {/* ── SECCIÓN 4: METODOLOGÍA Y AUTORIDAD MÉDICA (E-E-A-T & GEO) ── */}
+        <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 48px' }}>
           <div className="pill-badge pill-badge-clay" style={{ marginBottom: '14px' }}>
-            <span>Metodología Clínica · Sin Improvisaciones</span>
+            <span>Evidencia Clínica · Rigor Científico</span>
           </div>
-          <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '16px', lineHeight: 1.2 }}>
-            Metodología clínica en 4 fases y precios accesibles en El Salvador
+          <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '16px', lineHeight: 1.25, color: 'var(--color-plum-900)' }}>
+            Cómo trabajamos: Psicología con base científica, sin jerga innecesaria
           </h2>
-          <p style={{ fontSize: '16.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.65 }}>
-            No venimos a hablar sin rumbo ni a buscar culpables. Aplicamos protocolos clínicos basados en evidencia (Terapia Integral de Pareja + TCC) diseñados para desactivar el conflicto, reconstruir la intimidad y darles autonomía real.
+          <p style={{ fontSize: '17px', color: 'var(--color-ink-secondary)', lineHeight: 1.65, marginBottom: '28px' }}>
+            No damos consejos genéricos ni prometemos milagros. Nuestro método combina calidez humana con los cuatro enfoques psicológicos de mayor evidencia clínica internacional:
           </p>
+
+          {/* 4 Core Pillars of Clinical Evidence */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '16px',
+            textAlign: 'left',
+            marginBottom: '40px'
+          }}>
+            <div style={{ background: '#FFFFFF', padding: '22px 20px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
+              <strong style={{ display: 'block', color: 'var(--color-plum-900)', fontSize: '15px', marginBottom: '8px' }}>
+                Terapia Integral de Pareja (IBCT)
+              </strong>
+              <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.55, margin: 0 }}>
+                Para transformar patrones de discusión repetitivos y reconstruir la aceptación mutua y el afecto.
+              </p>
+            </div>
+
+            <div style={{ background: '#FFFFFF', padding: '22px 20px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
+              <strong style={{ display: 'block', color: 'var(--color-plum-900)', fontSize: '15px', marginBottom: '8px' }}>
+                Terapia Cognitivo-Conductual (TCC)
+              </strong>
+              <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.55, margin: 0 }}>
+                Herramientas claras para gestionar pensamientos intrusivos, rumiación, sobrepensamiento y ansiedad.
+              </p>
+            </div>
+
+            <div style={{ background: '#FFFFFF', padding: '22px 20px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
+              <strong style={{ display: 'block', color: 'var(--color-plum-900)', fontSize: '15px', marginBottom: '8px' }}>
+                Terapia Dialéctico-Conductual (DBT)
+              </strong>
+              <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.55, margin: 0 }}>
+                Enfocada en la regulación emocional, desescalada de reactividad y tolerancia al malestar.
+              </p>
+            </div>
+
+            <div style={{ background: '#FFFFFF', padding: '22px 20px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
+              <strong style={{ display: 'block', color: 'var(--color-plum-900)', fontSize: '15px', marginBottom: '8px' }}>
+                Enfoque Humanista
+              </strong>
+              <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.55, margin: 0 }}>
+                Porque detrás de cada pantalla siempre hay una persona real que te escucha con empatía y sin juzgar.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* 4 Clinical Phases Pathway */}
@@ -195,6 +240,106 @@ export default function MethodologyAndPricing() {
           </div>
         </div>
 
+        {/* ── SECCIÓN 6: TABLA COMPARATIVA Y HONORARIOS (GEO & FEATURED SNIPPETS) ── */}
+        <div style={{ maxWidth: '920px', margin: '0 auto 40px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+            <div className="pill-badge pill-badge-clay" style={{ marginBottom: '12px' }}>
+              <span>Transparencia Total · Sin Letra Pequeña</span>
+            </div>
+            <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 3.8vw, 42px)', color: 'var(--color-plum-900)', marginBottom: '12px' }}>
+              Honorarios y modalidades de atención psicológica
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-ink-secondary)', maxWidth: '640px', margin: '0 auto' }}>
+              Tarifas claras en dólares estadounidenses (USD) para El Salvador y la diáspora en el exterior:
+            </p>
+          </div>
+
+          {/* Tabla Estructurada para Google Featured Snippets y Motores de IA */}
+          <div style={{ 
+            overflowX: 'auto', 
+            background: '#FFFFFF', 
+            borderRadius: '24px', 
+            border: '1px solid var(--border-subtle)', 
+            boxShadow: 'var(--shadow-sm)', 
+            padding: '20px 24px', 
+            marginBottom: '40px' 
+          }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '640px' }}>
+              <thead>
+                <tr style={{ borderBottom: '2px solid var(--border-subtle)' }}>
+                  <th style={{ padding: '16px 18px', color: 'var(--color-plum-900)', fontSize: '14.5px', fontWeight: 700 }}>Modalidad</th>
+                  <th style={{ padding: '16px 18px', color: 'var(--color-plum-900)', fontSize: '14.5px', fontWeight: 700 }}>Duración</th>
+                  <th style={{ padding: '16px 18px', color: 'var(--color-plum-900)', fontSize: '14.5px', fontWeight: 700 }}>Incluye</th>
+                  <th style={{ padding: '16px 18px', color: 'var(--color-plum-900)', fontSize: '14.5px', fontWeight: 700 }}>Inversión</th>
+                </tr>
+              </thead>
+              <tbody style={{ fontSize: '14px', color: 'var(--color-ink-secondary)' }}>
+                <tr style={{ borderBottom: '1px solid var(--border-hairline)' }}>
+                  <td style={{ padding: '18px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
+                    Primera conversación exploratoria
+                  </td>
+                  <td style={{ padding: '18px' }}>30 minutos</td>
+                  <td style={{ padding: '18px' }}>
+                    Conocernos, evaluar tu caso y definir el plan terapéutico
+                  </td>
+                  <td style={{ padding: '18px' }}>
+                    <span style={{ color: '#27AE60', fontWeight: 700, background: 'rgba(39, 174, 96, 0.12)', padding: '5px 12px', borderRadius: 'var(--r-pill)', display: 'inline-block' }}>
+                      Sin costo ($0 USD)
+                    </span>
+                  </td>
+                </tr>
+
+                <tr style={{ borderBottom: '1px solid var(--border-hairline)' }}>
+                  <td style={{ padding: '18px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
+                    Sesión de Terapia de Pareja Online
+                  </td>
+                  <td style={{ padding: '18px' }}>50 - 60 min</td>
+                  <td style={{ padding: '18px' }}>
+                    Videollamada privada para ambos miembros (incluso desde distintos dispositivos o husos horarios)
+                  </td>
+                  <td style={{ padding: '18px' }}>
+                    <strong style={{ color: 'var(--color-plum-900)', fontSize: '15px' }}>$25 USD / sesión</strong>
+                    <span style={{ display: 'block', fontSize: '12px', color: 'var(--color-ink-muted)' }}>
+                      en Plan Mensual ($100 USD / hasta 4 sesiones)
+                    </span>
+                  </td>
+                </tr>
+
+                <tr style={{ borderBottom: '1px solid var(--border-hairline)' }}>
+                  <td style={{ padding: '18px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
+                    Sesión de Terapia Individual Online
+                  </td>
+                  <td style={{ padding: '18px' }}>50 minutos</td>
+                  <td style={{ padding: '18px' }}>
+                    Atención 1 a 1 personalizada y material de trabajo práctico
+                  </td>
+                  <td style={{ padding: '18px' }}>
+                    <strong style={{ color: 'var(--color-plum-900)', fontSize: '15px' }}>$25 USD / sesión</strong>
+                    <span style={{ display: 'block', fontSize: '12px', color: 'var(--color-ink-muted)' }}>
+                      en Plan Mensual ($100 USD / hasta 4 sesiones)
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style={{ padding: '18px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
+                    Sesión de Refuerzo Post-Proceso
+                  </td>
+                  <td style={{ padding: '18px' }}>50 minutos</td>
+                  <td style={{ padding: '18px' }}>
+                    Seguimiento a los 3 meses del alta para afianzar avances
+                  </td>
+                  <td style={{ padding: '18px' }}>
+                    <span style={{ color: 'var(--color-clay)', fontWeight: 600, background: 'var(--color-clay-subtle)', padding: '5px 12px', borderRadius: 'var(--r-pill)', display: 'inline-block' }}>
+                      Opcional a tu ritmo (Incluida)
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* Pricing Card Section */}
         <div style={{ maxWidth: '840px', margin: '0 auto' }}>
           <div className="pricing-card">
@@ -274,7 +419,7 @@ export default function MethodologyAndPricing() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>Agendar sesión inicial gratuita (30 min)</span>
+                <span>Escríbenos por WhatsApp</span>
               </HeroButton>
 
               <span style={{ fontSize: '13px', color: 'var(--color-ink-muted)' }}>

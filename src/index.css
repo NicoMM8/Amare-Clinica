@@ -3,34 +3,35 @@
 /* Design System - Centro Amaré (Inspired by 000h by Cojeev & clearly.help) */
 :root {
   /* Fonts */
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'Newsreader', Georgia, Cambria, serif;
+  --font-sans: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
   
   /* Color Tokens - Wellness & Clinical Confidence */
-  --color-canvas: #F5F0E8; /* Base: Hueso */
-  --color-canvas-subtle: #DAB890; /* Cálido: Arena */
+  --color-canvas: #F3F0E8; /* Base: Hueso */
+  --color-canvas-subtle: #D9B893; /* Cálido: Arena */
   --color-surface: #FFFFFF;
   --color-surface-hover: #FCFAF7;
   
-  --color-ink-primary: #171A30; /* Darker Añil for text */
-  --color-ink-secondary: #4A5173; /* Muted Añil for text */
-  --color-ink-muted: #778F79; /* Secundario: Salvia (used for secondary elements) */
+  --color-ink-primary: #22284A; /* Añil noche para contraste óptimo */
+  --color-ink-secondary: #3D456E; /* Añil atenuado */
+  --color-ink-muted: #768B78; /* Secundario: Salvia */
   
   /* Brand Primary / Añil noche */
-  --color-plum-900: #22284A; /* Principal */
-  --color-plum-800: #2D3560;
+  --color-plum-900: #22284A; /* Añil noche principal */
+  --color-plum-800: #2C345F;
   --color-plum-700: #3C477D;
   --color-plum-100: #E6E8F2;
   --color-plum-50: #F3F5FA;
   
   /* Accent / Terracota */
-  --color-clay: #A95A41;
-  --color-clay-hover: #8A4833;
+  --color-clay: #AA5A40;
+  --color-clay-hover: #8D4731;
   --color-clay-subtle: #F6EAE7;
-  --color-clay-border: rgba(169, 90, 65, 0.25);
+  --color-clay-border: rgba(170, 90, 64, 0.25);
   
   /* Illustration Accent */
-  --color-sage: #778F79;
+  --color-sage: #768B78;
   
   /* Borders & Dividers */
   --border-hairline: rgba(34, 40, 74, 0.08);
@@ -99,6 +100,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
   color: var(--color-ink-primary);
   line-height: 1.25;
   font-weight: 600;
@@ -227,6 +229,40 @@ button {
 .btn-clay:hover {
   background: var(--color-clay-hover);
   box-shadow: 0 8px 24px rgba(183, 89, 64, 0.35);
+}
+
+/* Custom Pill Appointment Button (Opción A: Terracota cálido con texto blanco e icono WhatsApp) */
+.btn-appointment-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--color-clay); /* Terracota oficial #AA5A40 */
+  color: #FFFFFF;
+  padding: 14px 30px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 8px 24px rgba(170, 90, 64, 0.35);
+  transition: all var(--duration-normal) var(--ease-spring);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-appointment-pill:hover {
+  background: var(--color-clay-hover); /* #8D4731 */
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(170, 90, 64, 0.48);
+}
+
+.btn-appointment-pill:active {
+  transform: translateY(0);
 }
 
 .btn-secondary {

@@ -21,18 +21,18 @@ export default function TheTeam() {
           {/* Left: Header + credentials */}
           <div>
             <div className="pill-badge" style={{ marginBottom: '20px' }}>
-              <span>Dirección Clínica y Confianza</span>
+              <span>E-E-A-T & Autoridad Sanitaria · JVPP El Salvador</span>
             </div>
 
-            <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', marginBottom: '20px', lineHeight: 1.2 }}>
-              Iris Alarcón —{' '}
+            <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', marginBottom: '20px', lineHeight: 1.25 }}>
+              Conoce a Iris Alarcón ·{' '}
               <span style={{ fontStyle: 'italic', color: 'var(--color-clay)' }}>
-                Psicóloga de Pareja y Sexología
+                Psicóloga Clínica y Terapeuta de Pareja
               </span>
             </h2>
 
             <p style={{ fontSize: '17px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '28px' }}>
-              Las conversaciones difíciles requieren de alguien con formación científica, experiencia real y que comprenda tu código cultural. Iris te escucha en un espacio 100% neutral: sin juzgar, sin buscar culpables y con métodos probados.
+              Las conversaciones difíciles requieren de alguien con formación científica, experiencia real y que comprenda tu código cultural. Iris Alarcón es psicóloga clínica colegiada con registro profesional ante la <strong>Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP)</strong>. Te escucha en un espacio 100% neutral y legalmente avalado: sin juzgar, sin buscar culpables y con métodos probados.
             </p>
 
             {/* Credentials */}
@@ -40,7 +40,7 @@ export default function TheTeam() {
               {[
                 { icon: Award, text: 'Máster en Terapia de Pareja y Sexología Clínica' },
                 { icon: BookOpen, text: 'Lic. en Psicología Clínica · Registro Profesional JVPP El Salvador' },
-                { icon: CheckCircle2, text: 'Más de 9 años en consulta clínica privada (TCC y Pareja Integral)' },
+                { icon: CheckCircle2, text: 'Más de 9 años en consulta clínica privada (TCC y Pareja Integral IBCT)' },
                 { icon: CheckCircle2, text: 'Atención online a El Salvador (San Salvador, Santa Tecla) y Diáspora (Canadá, EE.UU., Europa)' },
               ].map(({ icon: Icon, text }, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
@@ -64,17 +64,34 @@ export default function TheTeam() {
             </div>
 
             {/* CTA */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'flex-start' }}>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-                style={{ display: 'inline-flex', gap: '10px', textDecoration: 'none' }}
-              >
-                <MessageCircle size={18} />
-                <span>Agendar sesión con Iris (30 min gratis)</span>
-              </a>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                  style={{ display: 'inline-flex', gap: '10px', textDecoration: 'none' }}
+                >
+                  <MessageCircle size={18} />
+                  <span>Agendar sesión con Iris (30 min gratis)</span>
+                </a>
+
+                <a
+                  href="/iris-alarcon"
+                  style={{
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    color: 'var(--color-clay)',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}
+                >
+                  <span>Ver perfil y credenciales completas →</span>
+                </a>
+              </div>
               <span style={{ fontSize: '12px', color: 'var(--color-ink-muted)' }}>
                 ✨ Sesión privada por Google Meet · Coordinación por WhatsApp con asistente
               </span>

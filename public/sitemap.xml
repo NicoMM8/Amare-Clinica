@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- 1. Home — Centro Amaré -->
+  <!-- 1. Home — Centro Amaré (EMD Principal) -->
   <url>
     <loc>https://terapiadeparejaelsalvador.com/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/" />
@@ -13,43 +13,65 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/" />
   </url>
 
-  <!-- 2. Test Clínico y Matching de Pareja -->
+  <!-- 2. Diáspora Salvadoreña Online (EE. UU., Canadá y Europa) -->
   <url>
-    <loc>https://terapiadeparejaelsalvador.com/tu-match</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/tu-match" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/tu-match" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/tu-match" />
-  </url>
-
-  <!-- 3. Terapia de Pareja -->
-  <url>
-    <loc>https://terapiadeparejaelsalvador.com/terapia-de-pareja</loc>
-    <lastmod>2026-10-12</lastmod>
+    <loc>https://terapiadeparejaelsalvador.com/diaspora-salvadorena</loc>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/diaspora-salvadorena" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/diaspora-salvadorena" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/diaspora-salvadorena" />
+  </url>
+
+  <!-- 3. Precios y Honorarios Transparentes -->
+  <url>
+    <loc>https://terapiadeparejaelsalvador.com/precios</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/precios" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/precios" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/precios" />
+  </url>
+
+  <!-- 4. Iris Alarcón — Perfil & Autoridad JVPP -->
+  <url>
+    <loc>https://terapiadeparejaelsalvador.com/iris-alarcon</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/iris-alarcon" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/iris-alarcon" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/iris-alarcon" />
+  </url>
+
+  <!-- 5. Test Clínico de Pareja (Autoevaluación) -->
+  <url>
+    <loc>https://terapiadeparejaelsalvador.com/test-de-pareja</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/test-de-pareja" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/test-de-pareja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/test-de-pareja" />
+  </url>
+
+  <!-- 6. Protocolo de Terapia de Pareja -->
+  <url>
+    <loc>https://terapiadeparejaelsalvador.com/terapia-de-pareja</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/terapia-de-pareja" />
     <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/terapia-de-pareja" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/terapia-de-pareja" />
   </url>
 
-  <!-- 4. Sexología Clínica -->
-  <url>
-    <loc>https://terapiadeparejaelsalvador.com/sexologia-clinica</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/sexologia-clinica" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/sexologia-clinica" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/sexologia-clinica" />
-  </url>
-
-  <!-- 5. Terapia Individual -->
+  <!-- 7. Terapia Individual (TCC) -->
   <url>
     <loc>https://terapiadeparejaelsalvador.com/terapia-individual</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/terapia-individual" />
@@ -57,26 +79,70 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/terapia-individual" />
   </url>
 
-  <!-- 6. Diáspora Salvadoreña en el Extranjero -->
+  <!-- 8. Sexología Clínica -->
   <url>
-    <loc>https://terapiadeparejaelsalvador.com/terapia-salvadorenos-en-el-extranjero</loc>
-    <lastmod>2026-10-12</lastmod>
+    <loc>https://terapiadeparejaelsalvador.com/sexologia-clinica</loc>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/terapia-salvadorenos-en-el-extranjero" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/terapia-salvadorenos-en-el-extranjero" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/terapia-salvadorenos-en-el-extranjero" />
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/sexologia-clinica" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/sexologia-clinica" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/sexologia-clinica" />
   </url>
 
-  <!-- 7. Precios y Honorarios -->
+  <!-- 9. Blog Hub & Recursos -->
   <url>
-    <loc>https://terapiadeparejaelsalvador.com/precios</loc>
-    <lastmod>2026-10-12</lastmod>
+    <loc>https://terapiadeparejaelsalvador.com/blog</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/blog" />
+  </url>
+
+  <!-- 10. Pilar 1: Cuánto cuesta una terapia de pareja en El Salvador -->
+  <url>
+    <loc>https://terapiadeparejaelsalvador.com/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador</loc>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/precios" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/precios" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/precios" />
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador" />
+  </url>
+
+  <!-- 11. Pilar 2: Cómo afecta emigrar a la relación de pareja -->
+  <url>
+    <loc>https://terapiadeparejaelsalvador.com/blog/como-afecta-emigrar-a-la-relacion-de-pareja</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/blog/como-afecta-emigrar-a-la-relacion-de-pareja" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/blog/como-afecta-emigrar-a-la-relacion-de-pareja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/blog/como-afecta-emigrar-a-la-relacion-de-pareja" />
+  </url>
+
+  <!-- 12. Pilar 3: Cómo poner límites a tu familia desde la distancia -->
+  <url>
+    <loc>https://terapiadeparejaelsalvador.com/blog/como-poner-limites-a-tu-familia-desde-la-distancia</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/blog/como-poner-limites-a-tu-familia-desde-la-distancia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/blog/como-poner-limites-a-tu-familia-desde-la-distancia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/blog/como-poner-limites-a-tu-familia-desde-la-distancia" />
+  </url>
+
+  <!-- 13. Política de Privacidad y Confidencialidad Clínica (YMYL) -->
+  <url>
+    <loc>https://terapiadeparejaelsalvador.com/privacidad</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/privacidad" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/privacidad" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/privacidad" />
   </url>
 
 </urlset>

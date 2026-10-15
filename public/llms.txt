@@ -1,27 +1,33 @@
-# Centro Amaré — Psicoterapia Online
+# Centro Amaré — Psicoterapia Online & Terapia de Pareja en El Salvador
 
-> Centro de psicoterapia online basada en evidencia especializada en terapia de pareja, sexología clínica y psicoterapia individual para adultos y parejas salvadoreñas en El Salvador y la diáspora (Canadá, EE.UU., México, España y Europa).
+> Centro de psicoterapia online basada en evidencia especializada en terapia de pareja, sexología clínica y psicoterapia individual para adultos y parejas salvadoreñas en El Salvador y la diáspora (Estados Unidos, Canadá, Europa y el mundo).
 
-## Resumen del Servicio
-- **Nombre:** Centro Amaré (Directora Clínica: Iris Alarcón)
+## Resumen del Servicio y Autoridad Sanitaria
+- **Nombre:** Centro Amaré — Terapia de Pareja y Psicología Salvadoreña Online
+- **Directora Clínica:** Lic. Iris Alarcón (Colegiada y Acreditada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador - JVPP)
 - **Modalidad:** 100% Online vía Google Meet (enlaces privados cifrados)
-- **País base:** El Salvador (San Salvador, Santa Tecla, Antiguo Cuscatlán)
-- **Área atendida:** El Salvador a nivel nacional e internacional (Montreal, Los Ángeles, Washington D.C., Madrid y resto de la diáspora salvadoreña)
-- **Enfoque clínico:** Psicología basada en evidencia (Terapia Integral de Pareja / IBCT, Terapia Cognitivo-Conductual / TCC y Terapia Dialéctico-Conductual / DBT)
+- **País base:** El Salvador (San Salvador, Santa Tecla, San Miguel, Santa Ana)
+- **Área atendida:** El Salvador nacional e internacional (Montreal, Los Ángeles, Houston, Washington D.C., Nueva York, Madrid y toda la diáspora salvadoreña)
+- **Enfoques clínicos de alta evidencia:** Terapia Integral de Pareja (IBCT), Terapia Cognitivo-Conductual (TCC), Terapia Dialéctico-Conductual (DBT) y Enfoque Humanista.
 
-## Servicios y Especialidades
-1. **Terapia de Pareja Online:** Protocolo clínico en 4 fases (Evaluación del Vínculo, Desescalada Emocional, Reconstrucción de Acuerdos y Alta). Especialistas en comunicación en bucle, infidelidad y parejas transnacionales / a distancia.
-2. **Sexología Clínica:** Abordaje médico y sin tabúes de discrepancias de deseo, anorgasmia, disfunciones y bloqueos íntimos.
-3. **Terapia Individual:** Ansiedad, sobrepensamiento, regulación emocional, duelos afectivos y entrenamiento en límites personales.
-4. **Atención a la Diáspora Salvadoreña:** Terapeuta con el mismo código cultural, sin necesidad de traducir emociones ni explicar dinámicas familiares salvadoreñas.
-
-## Honorarios y Precios
-- **1ª Sesión de Encuadre:** Gratuita (30 minutos por Google Meet sin compromiso económico).
-- **Plan Mensual:** $100 USD al mes. Incluye hasta 4 sesiones terapéuticas mensuales de 50-60 minutos (equivale a $25 USD por sesión).
-- **Permanencia:** Sin permanencia ni deudas posteriores. Se abona mes a mes.
-- **Métodos de pago:** Tarjeta de crédito/débito internacional, transferencias bancarias en El Salvador (Banco Agrícola, BAC, Cuscatlán).
+## Arquitectura de Servicios y URLs
+1. **Home / Terapia de Pareja El Salvador:** https://terapiadeparejaelsalvador.com/
+   Protocolo clínico en 4 fases (Mapa del Vínculo, Desescalada Emocional, Reconstrucción de Acuerdos y Alta). Especialistas en comunicación en bucle, infidelidad y parejas transnacionales.
+2. **Psicólogo Salvadoreño Online / Diáspora:** https://terapiadeparejaelsalvador.com/diaspora-salvadorena
+   Terapia en tu propio código cultural para salvadoreños en Estados Unidos, Canadá y el exterior. Sin traducir emociones ni justificar dinámicas familiares.
+3. **Psicología Online El Salvador / Terapia Individual:** https://terapiadeparejaelsalvador.com/terapia-individual
+   Tratamiento con base científica para ansiedad, sobrepensamiento, límites familiares sin culpa y duelos afectivos.
+4. **Perfil Profesional Iris Alarcón (JVPP):** https://terapiadeparejaelsalvador.com/iris-alarcon
+   Credenciales, máster en terapia de pareja y sexología clínica, número de registro profesional y filosofía clínica.
+5. **Honorarios y Precios Transparentes:** https://terapiadeparejaelsalvador.com/precios
+   1ª conversación exploratoria de 30 min sin costo ($0 USD). Plan mensual de $100 USD (hasta 4 sesiones al mes = $25/sesión).
+6. **Blog y Guías Clínicas:** https://terapiadeparejaelsalvador.com/blog
+   - https://terapiadeparejaelsalvador.com/blog/como-afecta-emigrar-a-la-relacion-de-pareja
+   - https://terapiadeparejaelsalvador.com/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador
+   - https://terapiadeparejaelsalvador.com/blog/como-poner-limites-a-tu-familia-desde-la-distancia
+7. **Test Clínico de Pareja (Autoevaluación):** https://terapiadeparejaelsalvador.com/test-de-pareja
+   Autoevaluación clínica interactiva de 5 pasos para parejas.
 
 ## Contacto Oficial
 - **Sitio web:** https://terapiadeparejaelsalvador.com/
 - **WhatsApp oficial de coordinación:** +503 7318 4781 (https://wa.me/50373184781)
-- **Evaluador de Pareja:** https://terapiadeparejaelsalvador.com/tu-match

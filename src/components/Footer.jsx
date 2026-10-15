@@ -2,12 +2,49 @@ import React from 'react';
 import { ArrowUpRight, MessageCircle, Shield } from 'lucide-react';
 
 export default function Footer() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera información sobre las sesiones en Centro Amaré.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera dar el primer paso y agendar una primera conversación.");
 
   return (
     <footer style={{ background: 'var(--color-plum-900)', color: '#FFFFFF', paddingTop: '72px', paddingBottom: '40px' }}>
       <div className="container">
         
+        {/* Footer CTA Banner (Brand Guide) */}
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.04)',
+          border: '1px solid rgba(255, 255, 255, 0.12)',
+          borderRadius: 'var(--r-2xl)',
+          padding: '44px 32px',
+          textAlign: 'center',
+          maxWidth: '780px',
+          margin: '0 auto 64px'
+        }}>
+          <h2 className="font-serif" style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', color: '#FFFFFF', marginBottom: '12px' }}>
+            No eres la única persona que atraviesa esto.
+          </h2>
+          <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '17px', marginBottom: '26px' }}>
+            Da el primer paso hacia relaciones más sanas.
+          </p>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-clay"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '10px',
+              padding: '14px 28px',
+              borderRadius: 'var(--r-pill)',
+              color: '#FFFFFF',
+              fontWeight: 600,
+              fontSize: '15px',
+              textDecoration: 'none'
+            }}
+          >
+            <span>Empieza con una primera conversación</span>
+          </a>
+        </div>
+
         {/* Main Footer Row */}
         <div style={{ 
           display: 'grid', 
@@ -65,36 +102,40 @@ export default function Footer() {
               <li><a href="/terapia-de-pareja" style={{ transition: 'color 0.2s' }}>Terapia de Pareja</a></li>
               <li><a href="/sexologia-clinica" style={{ transition: 'color 0.2s' }}>Sexología Clínica</a></li>
               <li><a href="/terapia-individual" style={{ transition: 'color 0.2s' }}>Terapia Individual (TCC)</a></li>
-              <li><a href="/terapia-salvadorenos-en-el-extranjero" style={{ transition: 'color 0.2s' }}>Atención a la Diáspora</a></li>
-              <li><a href="/precios" style={{ transition: 'color 0.2s' }}>Precios y Plan Mensual</a></li>
+              <li><a href="/diaspora-salvadorena" style={{ transition: 'color 0.2s' }}>Diáspora Salvadoreña Online</a></li>
+              <li><a href="/precios" style={{ transition: 'color 0.2s' }}>Precios y Honorarios</a></li>
             </ul>
           </div>
 
-          {/* Col 3: Navegación */}
+          {/* Col 3: Navegación & Blog */}
           <div>
             <h4 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-clay)', marginBottom: '16px' }}>
-              El Centro
+              El Centro & Recursos
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)' }}>
-              <li><a href="/tu-match" style={{ color: 'var(--color-clay)', fontWeight: 600 }}>✦ Test de Pareja (2 min)</a></li>
-              <li><a href="/#equipo">Dirección Clínica (Iris Alarcón)</a></li>
-              <li><a href="/precios">Honorarios ($100/mes)</a></li>
+              <li><a href="/test-de-pareja" style={{ color: 'var(--color-clay)', fontWeight: 600 }}>✦ Test de Pareja (2 min)</a></li>
+              <li><a href="/iris-alarcon">Iris Alarcón (Sobre Mí)</a></li>
+              <li><a href="/blog">Blog & Guías Clínicas</a></li>
+              <li><a href="/privacidad">Privacidad y Secreto Clínico</a></li>
               <li><a href="/#faq">Preguntas Frecuentes</a></li>
               <li><a href={whatsappUrl} target="_blank" rel="noopener noreferrer">Contacto con Asistente</a></li>
             </ul>
           </div>
 
-          {/* Col 4: Compromiso Ético */}
+          {/* Col 4: Compromiso Ético y JVPP */}
           <div>
             <h4 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-clay)', marginBottom: '16px' }}>
-              Compromiso Clínico
+              Acreditación Sanitaria JVPP
             </h4>
-            <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '13px', lineHeight: 1.6, marginBottom: '12px' }}>
-              Todos los procesos se fundamentan en enfoques con aval científico (TCC, DBT y Terapia Integral de Parejas).
+            <p style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '13px', lineHeight: 1.6, marginBottom: '12px' }}>
+              Directora Clínica: <strong>Lic. Iris Alarcón</strong>, Psicóloga Colegiada con registro ante la <strong>Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP)</strong>.
             </p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'rgba(255, 255, 255, 0.85)', fontSize: '12.5px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'rgba(255, 255, 255, 0.9)', fontSize: '12.5px', marginBottom: '8px' }}>
               <Shield size={16} style={{ color: 'var(--color-clay)' }} />
-              <span>Confidencialidad Médica Garantizada</span>
+              <span>Clínica Legalmente Acreditada en El Salvador</span>
+            </div>
+            <div style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.6)' }}>
+              Procesos avalados: TCC, DBT, Sexología y Terapia Integral de Parejas (IBCT).
             </div>
           </div>
 
@@ -105,7 +146,7 @@ export default function Footer() {
           Aviso importante: El servicio de Centro Amaré se orienta a psicoterapia ambulatoria para adultos. No constituye un servicio de urgencias médicas ni psiquiátricas de riesgo vital. Si te encuentras en una crisis de riesgo inminente, por favor ponte en contacto inmediato con el número de emergencias o de prevención de tu país o ciudad de residencia.
         </div>
 
-        {/* Copyright */}
+        {/* Copyright & Legal JVPP Registry */}
         <div style={{ 
           display: 'flex', 
           alignItems: 'center', 
@@ -116,10 +157,10 @@ export default function Footer() {
           color: 'rgba(255, 255, 255, 0.6)'
         }}>
           <div>
-            © {new Date().getFullYear()} Centro Amaré · Todos los derechos reservados.
+            © {new Date().getFullYear()} Centro Amaré · Todos los derechos reservados · Registro Profesional JVPP El Salvador · <a href="/privacidad" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Privacidad y Secreto Clínico</a>
           </div>
           <div>
-            El Salvador · Sesiones 100% Online vía Google Meet
+            terapiadeparejaelsalvador.com · San Salvador, El Salvador · Sesiones 100% Online vía Google Meet
           </div>
         </div>
 

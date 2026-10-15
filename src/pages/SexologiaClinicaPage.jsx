@@ -67,9 +67,9 @@ export default function SexologiaClinicaPage() {
 
                 <HeroButton
                   appearance="ink-sweep"
-                  href="/tu-match"
+                  href="/test-de-pareja"
                 >
-                  <span>Evaluar nuestra intimidad (2 min)</span>
+                  <span>Test de pareja e intimidad (2 min)</span>
                 </HeroButton>
               </div>
 

@@ -22,6 +22,13 @@ import SexologiaClinicaPage from './pages/SexologiaClinicaPage';
 import TerapiaIndividualPage from './pages/TerapiaIndividualPage';
 import TerapiaDiasporaPage from './pages/TerapiaDiasporaPage';
 import PreciosPage from './pages/PreciosPage';
+import IrisAlarconPage from './pages/IrisAlarconPage';
+import BlogHubPage from './pages/BlogHubPage';
+import BlogPostEmigrarPareja from './pages/blog/BlogPostEmigrarPareja';
+import BlogPostPreciosTerapia from './pages/blog/BlogPostPreciosTerapia';
+import BlogPostLimitesFamilia from './pages/blog/BlogPostLimitesFamilia';
+import EnlacesBioPage from './pages/EnlacesBioPage';
+import PrivacidadPage from './pages/PrivacidadPage';
 
 function App({ initialPath = '/' }) {
   const [currentPath, setCurrentPath] = useState(() => {
@@ -81,7 +88,7 @@ function App({ initialPath = '/' }) {
   };
 
   // ── Enrutamiento por subpáginas ────────────────────────────
-  if (currentPath === '/tu-match') {
+  if (currentPath === '/test-de-pareja' || currentPath === '/tu-match' || currentPath === '/evaluacion-de-pareja') {
     return <CoupleMatchingQuiz onGoHome={() => navigateTo('/')} />;
   }
 
@@ -97,12 +104,40 @@ function App({ initialPath = '/' }) {
     return <TerapiaIndividualPage />;
   }
 
-  if (currentPath === '/terapia-salvadorenos-en-el-extranjero') {
+  if (currentPath === '/diaspora-salvadorena' || currentPath === '/terapia-salvadorenos-en-el-extranjero') {
     return <TerapiaDiasporaPage />;
+  }
+
+  if (currentPath === '/iris-alarcon') {
+    return <IrisAlarconPage />;
   }
 
   if (currentPath === '/precios') {
     return <PreciosPage />;
+  }
+
+  if (currentPath === '/blog' || currentPath === '/recursos') {
+    return <BlogHubPage />;
+  }
+
+  if (currentPath === '/blog/como-afecta-emigrar-a-la-relacion-de-pareja') {
+    return <BlogPostEmigrarPareja />;
+  }
+
+  if (currentPath === '/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador') {
+    return <BlogPostPreciosTerapia />;
+  }
+
+  if (currentPath === '/blog/como-poner-limites-a-tu-familia-desde-la-distancia') {
+    return <BlogPostLimitesFamilia />;
+  }
+
+  if (currentPath === '/enlaces' || currentPath === '/links') {
+    return <EnlacesBioPage />;
+  }
+
+  if (currentPath === '/privacidad' || currentPath === '/politica-de-privacidad') {
+    return <PrivacidadPage />;
   }
 
   // ── Landing Page Principal (Estructurada para Máxima Conversión) ─

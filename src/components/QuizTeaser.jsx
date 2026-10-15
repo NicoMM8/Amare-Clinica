@@ -115,7 +115,7 @@ export default function QuizTeaser() {
               </p>
 
               <a
-                href="/tu-match"
+                href="/test-de-pareja"
                 className="btn-primary"
                 style={{
                   display: 'inline-flex',

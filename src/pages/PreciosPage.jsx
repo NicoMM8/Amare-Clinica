@@ -7,7 +7,7 @@ import { CreditCard, Check, ShieldCheck, Clock, HelpCircle, ArrowRight } from 'l
 import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function PreciosPage() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera agendar mi primera sesión gratuita de 30 minutos y consultar sobre el plan de $100 USD/mes.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vi el Plan Mensual en la web y me gustaría agendar la primera conversación.");
 
   return (
     <div className="app-wrapper">
@@ -48,9 +48,9 @@ export default function PreciosPage() {
 
                 <HeroButton
                   appearance="ink-sweep"
-                  href="/tu-match"
+                  href="/test-de-pareja"
                 >
-                  <span>Test clínico inicial</span>
+                  <span>Test de pareja (2 min)</span>
                 </HeroButton>
               </div>
             </div>

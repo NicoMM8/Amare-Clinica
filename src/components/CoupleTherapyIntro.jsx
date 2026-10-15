@@ -243,12 +243,12 @@ export default function CoupleTherapyIntro() {
                 fontSize: 'clamp(28px, 3.2vw, 42px)',
                 fontWeight: 600,
                 color: 'var(--color-plum-900)',
-                lineHeight: 1.2,
+                lineHeight: 1.25,
                 letterSpacing: '-0.025em',
                 marginBottom: '18px',
               }}
             >
-              ¿Cuándo acudir a terapia de pareja?
+              Dos husos horarios, una misma conversación: Terapia de pareja en tu propio código cultural
             </h2>
 
             <p
@@ -256,11 +256,13 @@ export default function CoupleTherapyIntro() {
                 fontSize: 'clamp(16px, 1.4vw, 17.5px)',
                 color: 'var(--color-ink-secondary)',
                 lineHeight: 1.7,
-                maxWidth: '540px',
+                maxWidth: '560px',
                 margin: 0,
               }}
             >
-              La terapia psicológica de pareja está orientada a ayudar a salvadoreños en el país o en el exterior a resolver sus diferencias, sanar el desgaste acumulado y recuperar una convivencia en calma y complicidad.
+              Vivir fuera de El Salvador —o llevar el ritmo de trabajo actual dentro del país— deja poco espacio para hablar con calma. Cuando surgen discusiones repetitivas, distancia afectiva o dificultades en la intimidad, intentar explicarlo en otro idioma o a un profesional que no conoce tus raíces agota el doble.
+              <br /><br />
+              En Centro Amaré ofrecemos un espacio seguro de terapia de pareja online y en El Salvador donde no tienes que traducir tus emociones ni justificar tu historia familiar.
             </p>
           </div>
 

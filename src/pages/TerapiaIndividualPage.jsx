@@ -39,18 +39,18 @@ export default function TerapiaIndividualPage() {
             <div style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
               <div className="pill-badge pill-badge-clay" style={{ marginBottom: '18px' }}>
                 <Brain size={15} style={{ color: 'var(--color-clay)' }} />
-                <span>Psicoterapia Cognitivo Conductual (TCC) · Adultos</span>
+                <span>Psicología Online El Salvador · Psicóloga Clínica Colegiada JVPP</span>
               </div>
 
               <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 4.5vw, 54px)', lineHeight: 1.18, color: 'var(--color-plum-900)', marginBottom: '22px' }}>
-                Terapia Individual Online <br />
+                Psicología Online El Salvador · Terapia Individual <br />
                 <span style={{ fontStyle: 'italic', color: 'var(--color-clay)' }}>
-                  Herramientas Clínicas para Vivir en Calma
+                  Terapia para Ansiedad y Límites Online
                 </span>
               </h1>
 
               <p style={{ fontSize: '18px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-                No necesitas estar al límite para pedir ayuda. Psicoterapia individual basada en ciencia (TCC y DBT) para dejar de sobrepensar, poner límites saludables y reencontrarte con tu bienestar.
+                Consulta con psicóloga clínica en El Salvador para adultos en el país y en el exterior. Terapia para ansiedad y límites online con base científica (TCC y DBT): herramientas prácticas para dejar de sobrepensar, poner límites sin culpa y recuperar tu bienestar.
               </p>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '36px' }}>

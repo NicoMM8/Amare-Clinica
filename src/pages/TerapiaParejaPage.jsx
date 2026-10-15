@@ -50,14 +50,14 @@ export default function TerapiaParejaPage() {
               </div>
 
               <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 4.5vw, 54px)', lineHeight: 1.18, color: 'var(--color-plum-900)', marginBottom: '22px' }}>
-                Terapia de Pareja en El Salvador <br />
+                Protocolo Clínico de Terapia de Pareja <br />
                 <span style={{ fontStyle: 'italic', color: 'var(--color-clay)' }}>
-                  Online y Basada en Evidencia
+                  Psicología Basada en Evidencia (IBCT & TCC)
                 </span>
               </h1>
 
               <p style={{ fontSize: '18px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-                Acompañamiento psicológico riguroso para desactivar el conflicto, sanar el desgaste acumulado y recuperar la complicidad. Con una psicóloga salvadoreña que comprende su realidad cultural.
+                Nuestro servicio especializado de <a href="/" style={{ color: 'var(--color-clay)', fontWeight: 600, textDecoration: 'underline' }}>terapia de pareja en El Salvador</a> y online para la diáspora ofrece un acompañamiento riguroso para desactivar el conflicto, sanar el desgaste acumulado y recuperar la complicidad con una psicóloga clínica acreditada por la JVPP.
               </p>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '36px' }}>
@@ -74,9 +74,9 @@ export default function TerapiaParejaPage() {
 
                 <HeroButton
                   appearance="ink-sweep"
-                  href="/tu-match"
+                  href="/test-de-pareja"
                 >
-                  <span>Hacer test de compatibilidad (2 min)</span>
+                  <span>Hacer test de pareja (2 min)</span>
                 </HeroButton>
               </div>
 

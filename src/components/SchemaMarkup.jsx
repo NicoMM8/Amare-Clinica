@@ -36,10 +36,10 @@ const websiteSchema = {
   hasPart: [
     {
       '@type': 'WebPage',
-      '@id': `${SITE_URL}/tu-match`,
-      name: 'Evaluación y Matching de Pareja Online',
+      '@id': `${SITE_URL}/test-de-pareja`,
+      name: 'Test de Pareja Online: Autoevaluación Clínica',
       description: 'Cuestionario clínico interactivo de 5 pasos para evaluar la situación de la pareja y recibir una recomendación terapéutica personalizada.',
-      url: `${SITE_URL}/tu-match`,
+      url: `${SITE_URL}/test-de-pareja`,
     },
     {
       '@type': 'WebPage',
@@ -61,15 +61,27 @@ const websiteSchema = {
     },
     {
       '@type': 'WebPage',
-      '@id': `${SITE_URL}/terapia-salvadorenos-en-el-extranjero`,
-      name: 'Terapia para Salvadoreños en el Extranjero y Diáspora',
-      url: `${SITE_URL}/terapia-salvadorenos-en-el-extranjero`,
+      '@id': `${SITE_URL}/diaspora-salvadorena`,
+      name: 'Psicólogo Salvadoreño Online · Diáspora en el Exterior',
+      url: `${SITE_URL}/diaspora-salvadorena`,
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/iris-alarcon`,
+      name: 'Psicóloga Iris Alarcón El Salvador (JVPP)',
+      url: `${SITE_URL}/iris-alarcon`,
     },
     {
       '@type': 'WebPage',
       '@id': `${SITE_URL}/precios`,
       name: 'Precios y Honorarios — Terapia de Pareja El Salvador',
       url: `${SITE_URL}/precios`,
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/blog`,
+      name: 'Blog y Guías Clínicas de Psicología',
+      url: `${SITE_URL}/blog`,
     }
   ]
 };

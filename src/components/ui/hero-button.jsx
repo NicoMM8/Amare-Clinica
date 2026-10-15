@@ -102,7 +102,11 @@ export function HeroButton({
   }[size] || "";
 
   const effectiveVariant = (isInkSweep && variant === "clay") ? "ink" : variant;
-  const variantClass = effectiveVariant === "clay" ? "v-hero-button--clay" : "";
+  const variantClass = effectiveVariant === "clay" 
+    ? "v-hero-button--clay" 
+    : (effectiveVariant === "whatsapp" || effectiveVariant === "green") 
+      ? "v-hero-button--whatsapp" 
+      : "";
   const btnClass = `v-hero-button ${variantClass} ${sizeClasses} ${className}`.trim();
 
   const buttonContent = (

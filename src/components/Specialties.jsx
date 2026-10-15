@@ -34,7 +34,7 @@ const clinicalSpecialties = [
     label: "Duelo migratorio y desarraigo.",
     description: "Para conciliar tus dos vidas: tu proyecto fuera con la distancia de tus raíces en El Salvador.",
     approach: "Psicoterapia Transcultural",
-    href: "/terapia-salvadorenos-en-el-extranjero",
+    href: "/diaspora-salvadorena",
     moreLabel: "Ver detalles de atención a la diáspora →",
   }
 ];
@@ -42,37 +42,172 @@ const clinicalSpecialties = [
 export default function Specialties() {
   const [selectedIdx, setSelectedIdx] = useState(0);
   const activeSpec = clinicalSpecialties[selectedIdx];
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent(`Hola, me interesa consultar sobre ${activeSpec.label} en Centro Amaré.`);
+
+  const whatsappPareja = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar la sesión exploratoria de 30 minutos sin costo para Terapia de Pareja.");
+  const whatsappIndividual = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar la sesión exploratoria de 30 minutos sin costo para Terapia Individual.");
 
   return (
-    <section className="section" id="especialidades">
+    <section className="section" id="especialidades" style={{ background: 'var(--color-surface)' }}>
       <div className="container">
         
-        {/* Header */}
-        <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 48px' }}>
+        {/* Header con H2 exacto para posicionamiento SEO */}
+        <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
           <div className="pill-badge pill-badge-clay" style={{ marginBottom: '14px' }}>
-            <span>¿Cuál es tu situación? · Elige tu área</span>
+            <span>Especialidades Clínicas · El Salvador y Diáspora</span>
           </div>
-          <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '16px' }}>
-            Identifica tu situación y empieza a sanar hoy
+          <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '16px', color: 'var(--color-plum-900)' }}>
+            Especialidades clínicas en psicología de pareja e individual
           </h2>
-          <p style={{ fontSize: '16.5px', color: 'var(--color-ink-secondary)' }}>
-            Selecciona el área que mejor describe lo que estás viviendo. Descubre cómo nuestro enfoque clínico comprobado puede ayudarte a recuperar tu bienestar:
+          <p style={{ fontSize: '16.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6 }}>
+            Atención psicológica especializada para personas y parejas en El Salvador, Estados Unidos, Canadá y el exterior. Espacio seguro, con base científica y en tu propio código cultural:
           </p>
         </div>
 
-        {/* Option Wheel Interactive Container */}
-        <div style={{ maxWidth: '800px', margin: '0 auto 60px' }}>
+        {/* ── 2 TARJETAS PILAR (H3 con Keywords exactas de Cola Larga) ── */}
+        <div 
+          style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+            gap: '28px', 
+            maxWidth: '1020px', 
+            margin: '0 auto 52px' 
+          }}
+        >
+          {/* Tarjeta 1: Terapia de Pareja y Sexualidad */}
+          <div 
+            className="card-panel" 
+            style={{ 
+              background: '#FFFFFF', 
+              padding: '36px 32px', 
+              borderRadius: '24px', 
+              border: '1px solid var(--border-subtle)',
+              boxShadow: 'var(--shadow-sm)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}
+          >
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: 'var(--color-clay-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <HeartHandshake size={24} style={{ color: 'var(--color-clay)' }} />
+                </div>
+                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', background: 'var(--color-canvas)', padding: '5px 12px', borderRadius: 'var(--r-pill)' }}>
+                  Parejas & Diáspora
+                </span>
+              </div>
+
+              <h3 className="font-serif" style={{ fontSize: '24px', color: 'var(--color-plum-900)', marginBottom: '14px', lineHeight: 1.3 }}>
+                Terapia de Pareja y Sexualidad
+              </h3>
+
+              <p style={{ fontSize: '15px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '22px' }}>
+                Abordamos problemas de comunicación, crisis por migración y adaptación cultural, infidelidad, celos, monotonía y sexualidad clínica. Dejen de "aguantar" las discusiones y aprendan a escucharse con herramientas prácticas.
+              </p>
+
+              <div style={{ fontSize: '13px', color: 'var(--color-plum-900)', background: 'var(--color-canvas)', padding: '10px 14px', borderRadius: '12px', marginBottom: '24px' }}>
+                <strong>Enfoque clínico:</strong> Terapia Integral de Pareja (IBCT) + Sexología Médica
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', paddingTop: '16px', borderTop: '1px solid var(--border-hairline)' }}>
+              <a
+                href={whatsappPareja}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ fontSize: '13.5px', padding: '10px 20px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+              >
+                <MessageCircle size={16} />
+                <span>30 min gratis</span>
+              </a>
+
+              <a
+                href="/terapia-de-pareja"
+                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-clay)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+              >
+                <span>Conocer protocolo →</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Tarjeta 2: Terapia Individual para Adultos y Migrantes */}
+          <div 
+            className="card-panel" 
+            style={{ 
+              background: '#FFFFFF', 
+              padding: '36px 32px', 
+              borderRadius: '24px', 
+              border: '1px solid var(--border-subtle)',
+              boxShadow: 'var(--shadow-sm)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}
+          >
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: 'var(--color-clay-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Brain size={24} style={{ color: 'var(--color-clay)' }} />
+                </div>
+                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', background: 'var(--color-canvas)', padding: '5px 12px', borderRadius: 'var(--r-pill)' }}>
+                  Individual & Migrantes
+                </span>
+              </div>
+
+              <h3 className="font-serif" style={{ fontSize: '24px', color: 'var(--color-plum-900)', marginBottom: '14px', lineHeight: 1.3 }}>
+                Terapia Individual para Adultos y Migrantes
+              </h3>
+
+              <p style={{ fontSize: '15px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '22px' }}>
+                Para quienes viven lejos de casa o atraviesan etapas de cambio. Trabajamos ansiedad, insomnio, duelo migratorio, autoestima, apego y la dificultad para poner límites a la familia sin sentir culpa.
+              </p>
+
+              <div style={{ fontSize: '13px', color: 'var(--color-plum-900)', background: 'var(--color-canvas)', padding: '10px 14px', borderRadius: '12px', marginBottom: '24px' }}>
+                <strong>Enfoque clínico:</strong> TCC (Cognitivo-Conductual) + DBT y Regulación Emocional
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', paddingTop: '16px', borderTop: '1px solid var(--border-hairline)' }}>
+              <a
+                href={whatsappIndividual}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ fontSize: '13.5px', padding: '10px 20px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+              >
+                <MessageCircle size={16} />
+                <span>30 min gratis</span>
+              </a>
+
+              <a
+                href="/terapia-individual"
+                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-clay)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+              >
+                <span>Conocer terapia individual →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Explorador interactivo complementario (Option Wheel) */}
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+            <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-ink-muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              ✦ Explorar todas las áreas de atención
+            </span>
+          </div>
+
           <OptionWheel
             presentation="arc"
             side="left"
             selectedIndex={selectedIdx}
             onSelectionChange={setSelectedIdx}
-            items={clinicalSpecialties.map((spec, index) => ({
+            items={clinicalSpecialties.map((spec) => ({
               id: spec.id,
               label: spec.label,
               description: spec.description,
-              renderDetail: (activeItem) => (
+              renderDetail: () => (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
                   <p style={{ fontSize: '15.5px', color: 'var(--color-ink-primary, #1C1819)', maxWidth: '480px', lineHeight: 1.5 }}>
                     {spec.description}

@@ -20,13 +20,13 @@ export default function FAQ() {
         <div style={{ textAlign: 'center', marginBottom: '56px' }}>
           <div className="pill-badge" style={{ marginBottom: '14px' }}>
             <HelpCircle size={14} style={{ color: 'var(--color-clay)' }} />
-            <span>Respuestas Claras</span>
+            <span>Respuestas Claras · Modalidad Online & Pagos</span>
           </div>
-          <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 42px)', marginBottom: '16px' }}>
-            Preguntas frecuentes antes de comenzar
+          <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 42px)', marginBottom: '16px', color: 'var(--color-plum-900)' }}>
+            Preguntas frecuentes sobre nuestra terapia online desde El Salvador
           </h2>
-          <p style={{ fontSize: '16.5px', color: 'var(--color-ink-secondary)' }}>
-            Resolver sus dudas con claridad es el primer paso para sentirse en un lugar seguro y profesional.
+          <p style={{ fontSize: '16.5px', color: 'var(--color-ink-secondary)', maxWidth: '640px', margin: '0 auto' }}>
+            Resolver tus dudas sobre husos horarios, pagos internacionales y confidencialidad médica con total claridad:
           </p>
         </div>
 
@@ -43,9 +43,18 @@ export default function FAQ() {
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${idx}`}
                 >
-                  <span style={{ color: isOpen ? 'var(--color-clay)' : 'var(--color-plum-900)', transition: 'color 0.2s ease' }}>
+                  <h3 style={{ 
+                    margin: 0, 
+                    fontSize: '16.5px', 
+                    fontWeight: 600, 
+                    textAlign: 'left', 
+                    color: isOpen ? 'var(--color-clay)' : 'var(--color-plum-900)', 
+                    transition: 'color 0.2s ease',
+                    fontFamily: 'inherit',
+                    lineHeight: 1.4
+                  }}>
                     {faq.q}
-                  </span>
+                  </h3>
                   <div style={{ 
                     width: '32px', 
                     height: '32px', 

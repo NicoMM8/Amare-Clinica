@@ -18,8 +18,11 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
     situation: '',
     reason: '',
     duration: '',
+    durationShort: '',
     location: '',
+    locationShort: '',
     goal: '',
+    goalShort: '',
   });
 
   const questions = [
@@ -28,10 +31,10 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       title: '¿Cuál es la situación actual para iniciar el proceso?',
       subtitle: 'Esto nos permite adaptar el encuadre clínico inicial según la disposición de ambos.',
       options: [
-        { label: 'Ambos queremos participar en la terapia de pareja', sub: 'Queremos trabajar juntos en la relación' },
-        { label: 'Solo yo tengo iniciativa por ahora (mi pareja tiene dudas)', sub: 'Podemos comenzar con enfoque individual vincular' },
-        { label: 'Estamos en una crisis severa y dudamos si continuar juntos', sub: 'Buscamos claridad para decidir con madurez y respeto' },
-        { label: 'Queremos fortalecer la relación de manera preventiva', sub: 'Antes de convivir, casarnos o asumir una nueva etapa' },
+        { label: 'Ambos queremos participar en la terapia de pareja', sub: 'Queremos trabajar juntos en la relación', short: 'Ambos queremos participar' },
+        { label: 'Solo yo tengo iniciativa por ahora (mi pareja tiene dudas)', sub: 'Podemos comenzar con enfoque individual vincular', short: 'Iniciativa individual (pareja con dudas)' },
+        { label: 'Estamos en una crisis severa y dudamos si continuar juntos', sub: 'Buscamos claridad para decidir con madurez y respeto', short: 'Crisis severa / evaluar continuidad' },
+        { label: 'Queremos fortalecer la relación de manera preventiva', sub: 'Antes de convivir, casarnos o asumir una nueva etapa', short: 'Fortalecimiento preventivo del vínculo' },
       ],
     },
     {
@@ -39,12 +42,12 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       title: '¿Cuál es el principal motivo que sienten que deben resolver?',
       subtitle: 'Selecciona la dificultad que genera mayor desgaste en el día a día.',
       options: [
-        { label: 'Problemas de comunicación y discusiones en bucle', sub: 'Hablamos de lo mismo y nunca llegamos a acuerdos' },
-        { label: 'Pérdida de intimidad, afecto o deseo sexual', sub: 'Nos sentimos como compañeros de casa, no como pareja' },
-        { label: 'Crisis tras una infidelidad o pérdida de confianza', sub: 'Necesitamos reparar la herida y saber si es posible volver a confiar' },
-        { label: 'Conflictos sobre roles, tareas, finanzas o crianza', sub: 'El desequilibrio en las cargas genera resentimiento diario' },
-        { label: 'Celos, hipervigilancia o dinámicas de control', sub: 'La angustia y la sospecha desgastan la tranquilidad mutua' },
-        { label: 'Desgaste por la distancia o el estrés migratorio', sub: 'La lejanía o la adaptación han enfriado el vínculo' },
+        { label: 'Problemas de comunicación y discusiones en bucle', sub: 'Hablamos de lo mismo y nunca llegamos a acuerdos', short: 'Comunicación y discusiones' },
+        { label: 'Pérdida de intimidad, afecto o deseo sexual', sub: 'Nos sentimos como compañeros de casa, no como pareja', short: 'Intimidad y deseo sexual' },
+        { label: 'Crisis tras una infidelidad o pérdida de confianza', sub: 'Necesitamos reparar la herida y saber si es posible volver a confiar', short: 'Infidelidad / pérdida de confianza' },
+        { label: 'Conflictos sobre roles, tareas, finanzas o crianza', sub: 'El desequilibrio en las cargas genera resentimiento diario', short: 'Roles, finanzas o crianza' },
+        { label: 'Celos, hipervigilancia o dinámicas de control', sub: 'La angustia y la sospecha desgastan la tranquilidad mutua', short: 'Celos y desconfianza' },
+        { label: 'Desgaste por la distancia o el estrés migratorio', sub: 'La lejanía o la adaptación han enfriado el vínculo', short: 'Distancia y estrés migratorio' },
       ],
     },
     {
@@ -52,9 +55,9 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       title: '¿Cuánto tiempo llevan sintiendo este desgaste?',
       subtitle: 'Conocer la duración ayuda a dimensionar la intervención terapéutica.',
       options: [
-        { label: 'Menos de 6 meses', sub: 'Es una crisis reciente o un problema específico' },
-        { label: 'Entre 6 meses y 2 años', sub: 'Los patrones se han vuelto repetitivos y crónicos' },
-        { label: 'Más de 2 años', sub: 'Hemos intentado todo y necesitamos orientación profesional' },
+        { label: 'Menos de 6 meses', sub: 'Es una crisis reciente o un problema específico', short: 'Menos de 6 meses' },
+        { label: 'Entre 6 meses y 2 años', sub: 'Los patrones se han vuelto repetitivos y crónicos', short: 'De 6 meses a 2 años' },
+        { label: 'Más de 2 años', sub: 'Hemos intentado todo y necesitamos orientación profesional', short: 'Más de 2 años' },
       ],
     },
     {
@@ -62,9 +65,9 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       title: '¿Dónde se encuentran ubicados actualmente?',
       subtitle: 'Ofrecemos cobertura online flexible adaptada a diferentes husos horarios.',
       options: [
-        { label: 'Ambos vivimos en El Salvador', sub: 'Sesiones online cómodas sin traslados ni tráfico' },
-        { label: 'Ambos vivimos en el extranjero (EE.UU., Canadá, Europa)', sub: 'Mismo código cultural salvadoreño sin tarifas de $200/h' },
-        { label: 'Pareja a distancia / transnacional', sub: 'Uno en El Salvador y el otro en el exterior conectándose a la vez' },
+        { label: 'Ambos vivimos en El Salvador', sub: 'Sesiones online cómodas sin traslados ni tráfico', short: 'En El Salvador' },
+        { label: 'Ambos vivimos en el extranjero (EE.UU., Canadá, Europa)', sub: 'Mismo código cultural salvadoreño sin tarifas de $200/h', short: 'En el extranjero (EE.UU. / Canadá / Europa)' },
+        { label: 'Pareja a distancia / transnacional', sub: 'Uno en El Salvador y el otro en el exterior conectándose a la vez', short: 'Pareja a distancia / transnacional' },
       ],
     },
     {
@@ -72,16 +75,20 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       title: '¿Cuál es su mayor prioridad con esta terapia?',
       subtitle: 'Tu objetivo será la guía central en la planificación de las sesiones.',
       options: [
-        { label: 'Aprender a comunicarnos y resolver diferencias sin destruirnos', sub: 'Desactivar reproches y hablar con asertividad' },
-        { label: 'Recuperar la complicidad, el afecto y la vida íntima', sub: 'Volver a sentirnos un equipo cercano y amoroso' },
-        { label: 'Sanar el dolor del pasado y reconstruir la confianza', sub: 'Cerrar heridas y establecer acuerdos sólidos' },
-        { label: 'Tomar una decisión honesta y madura sobre nuestro futuro', sub: 'Decidir desde la tranquilidad y no desde el miedo' },
+        { label: 'Aprender a comunicarnos y resolver diferencias sin destruirnos', sub: 'Desactivar reproches y hablar con asertividad', short: 'Comunicarnos sin reproches' },
+        { label: 'Recuperar la complicidad, el afecto y la vida íntima', sub: 'Volver a sentirnos un equipo cercano y amoroso', short: 'Recuperar complicidad e intimidad' },
+        { label: 'Sanar el dolor del pasado y reconstruir la confianza', sub: 'Cerrar heridas y establecer acuerdos sólidos', short: 'Sanar heridas y reconstruir confianza' },
+        { label: 'Tomar una decisión honesta y madura sobre nuestro futuro', sub: 'Decidir desde la tranquilidad y no desde el miedo', short: 'Decidir con madurez nuestro futuro' },
       ],
     },
   ];
 
-  const handleSelectOption = (field, value) => {
-    setAnswers(prev => ({ ...prev, [field]: value }));
+  const handleSelectOption = (field, opt) => {
+    setAnswers(prev => ({ 
+      ...prev, 
+      [field]: opt.label,
+      [`${field}Short`]: opt.short || opt.label
+    }));
     if (currentStep < questions.length) {
       setCurrentStep(prev => prev + 1);
     }
@@ -89,12 +96,25 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
 
   const currentQ = questions[currentStep - 1];
 
+  const isIndividualInitiative = 
+    answers.situationShort === 'Iniciativa individual (pareja con dudas)' || 
+    answers.situation.includes('Solo yo tengo iniciativa');
+
   const buildWhatsAppMessage = () => {
-    let msg = `Hola Iris, completé el Test de Matching en la web de Centro Amaré:\n`;
-    if (answers.reason) msg += `• Motivo: ${answers.reason}\n`;
-    if (answers.situation) msg += `• Disposición: ${answers.situation}\n`;
-    if (answers.location) msg += `• Ubicación: ${answers.location}\n`;
-    msg += `Me gustaría agendar mi primera sesión de 30 min gratuita.`;
+    const greeting = isIndividualInitiative
+      ? 'Hola, completé el Test de Pareja en la web y me gustaría agendar la primera conversación de 30 min sin costo.'
+      : 'Hola, acabamos de completar el Test de Pareja en la web y nos gustaría agendar la primera conversación de 30 min sin costo.';
+
+    let msg = `${greeting}\n\n`;
+    if (answers.situationShort || answers.situation) {
+      msg += `• Situación: ${answers.situationShort || answers.situation}\n`;
+    }
+    if (answers.reasonShort || answers.reason) {
+      msg += `• Motivo principal: ${answers.reasonShort || answers.reason}\n`;
+    }
+    if (answers.locationShort || answers.location) {
+      msg += `• Ubicación: ${answers.locationShort || answers.location}\n`;
+    }
     return encodeURIComponent(msg);
   };
 
@@ -158,7 +178,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <span style={{ fontSize: '13px', color: 'var(--color-ink-secondary)' }}>
-              Matching Clínico · Parejas
+              Evaluación de Pareja · Test Clínico
             </span>
             <a
               href="/"
@@ -195,9 +215,27 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       >
         <div style={{ width: '100%', maxWidth: '680px', margin: '0 auto' }}>
 
-          {/* ══════════════ STEP 0: PANTALLA INICIAL (ESTILO SELIA) ══════════════ */}
+          {/* ══════════════ STEP 0: PANTALLA INICIAL ══════════════ */}
           {currentStep === 0 && (
             <div style={{ textAlign: 'center' }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                backgroundColor: 'rgba(169, 90, 65, 0.1)',
+                color: 'var(--color-clay)',
+                padding: '6px 16px',
+                borderRadius: 'var(--r-pill)',
+                fontSize: '13px',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                marginBottom: '20px'
+              }}>
+                <Heart size={14} />
+                <span>Test Clínico de Pareja · 5 Preguntas Clave</span>
+              </div>
+
               {/* Avatar de Iris en círculo suave */}
               <div style={{ position: 'relative', display: 'inline-block', marginBottom: '20px' }}>
                 <img
@@ -394,7 +432,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     <button
                       key={idx}
                       type="button"
-                      onClick={() => handleSelectOption(currentQ.id, opt.label)}
+                      onClick={() => handleSelectOption(currentQ.id, opt)}
                       style={{
                         backgroundColor: isSelected ? 'var(--color-clay-subtle)' : 'var(--color-surface)',
                         border: isSelected ? '2px solid var(--color-clay)' : '1.5px solid var(--border-subtle)',
@@ -486,9 +524,33 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                 >
                   <Sparkles size={16} style={{ color: '#128C7E' }} />
                   <span style={{ fontSize: '13px', fontWeight: 700, color: '#128C7E' }}>
-                    ✦ 98% de compatibilidad clínica encontrada
+                    ✦ Evaluación completada: Su caso es apto para abordaje en terapia de pareja
                   </span>
                 </div>
+
+                {/* Micro-ajuste 1: Nota clínica dinámica para Opción B (Iniciativa individual) */}
+                {isIndividualInitiative && (
+                  <div
+                    style={{
+                      backgroundColor: 'rgba(169, 90, 65, 0.08)',
+                      border: '1px solid rgba(169, 90, 65, 0.25)',
+                      borderRadius: 'var(--r-lg)',
+                      padding: '14px 18px',
+                      maxWidth: '540px',
+                      margin: '0 auto 24px',
+                      textAlign: 'left',
+                      fontSize: '13.5px',
+                      lineHeight: 1.55,
+                      color: 'var(--color-plum-900)',
+                    }}
+                  >
+                    <div style={{ fontWeight: 700, color: 'var(--color-clay)', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <Sparkles size={15} />
+                      <span>Nota clínica personalizada:</span>
+                    </div>
+                    No necesitas que tu pareja esté convencida hoy. Podemos iniciar con la conversación exploratoria de 30 min contigo (enfoque individual vincular) para darte herramientas y evaluar cómo invitarle sin presión.
+                  </div>
+                )}
 
                 {/* Perfil del Especialista Ideal: Iris Alarcón */}
                 <div style={{ marginBottom: '24px' }}>
@@ -520,10 +582,10 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     Iris Alarcón
                   </h3>
                   <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-clay)', marginBottom: '8px' }}>
-                    Psicóloga Clínica Colegiada · Máster en Pareja y Sexología
+                    Psicóloga Clínica Colegiada · Máster en Pareja y Sexología (JVPP)
                   </div>
-                  <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', maxWidth: '480px', margin: '0 auto', lineHeight: 1.6 }}>
-                    Tu perfil encaja con su especialidad en terapia de vínculos, comunicación afectiva y resolución de crisis en parejas salvadoreñas e internacionales.
+                  <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.6 }}>
+                    Las respuestas de su autoevaluación indican que su caso se beneficia de un protocolo de intervención en comunicación, acuerdos y reconexión emocional adaptado a su contexto.
                   </p>
                 </div>
 
@@ -587,9 +649,68 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  <span>Agendar mi sesión inicial gratuita (30 min)</span>
+                  <span>
+                    {isIndividualInitiative 
+                      ? 'Agendar mi conversación exploratoria (30 min)' 
+                      : 'Agendar nuestra primera conversación (30 min)'}
+                  </span>
                   <ArrowRight size={18} />
                 </a>
+
+                {/* Micro-ajuste 3: Botón de respaldo para Desktop sin WhatsApp Web */}
+                <div
+                  style={{
+                    maxWidth: '460px',
+                    margin: '0 auto 16px',
+                    padding: '12px 16px',
+                    backgroundColor: '#FFFFFF',
+                    borderRadius: '12px',
+                    border: '1px solid var(--border-subtle)',
+                    fontSize: '12.5px',
+                    color: 'var(--color-ink-secondary)',
+                    lineHeight: 1.55,
+                    textAlign: 'center',
+                    boxShadow: 'var(--shadow-sm)',
+                  }}
+                >
+                  <span style={{ fontWeight: 600, color: 'var(--color-plum-900)' }}>
+                    💻 ¿Estás desde una computadora sin WhatsApp Web?
+                  </span>
+                  <div style={{ marginTop: '4px' }}>
+                    Escríbenos directo desde tu celular al{' '}
+                    <a
+                      href="https://wa.me/50373184781"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: 'var(--color-clay)', fontWeight: 700, textDecoration: 'none' }}
+                    >
+                      +503 7318 4781
+                    </a>
+                    {' '}o agenda por correo a{' '}
+                    <a
+                      href="mailto:contacto@terapiadeparejaelsalvador.com?subject=Consulta%20Test%20de%20Pareja"
+                      style={{ color: 'var(--color-plum-900)', textDecoration: 'underline', fontWeight: 600 }}
+                    >
+                      contacto@terapiadeparejaelsalvador.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* Garantía de Confidencialidad y Privacidad YMYL */}
+                <div style={{
+                  maxWidth: '460px',
+                  margin: '0 auto 16px',
+                  padding: '12px 16px',
+                  backgroundColor: 'rgba(34, 40, 74, 0.04)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(34, 40, 74, 0.08)',
+                  fontSize: '12.5px',
+                  color: 'var(--color-ink-secondary)',
+                  lineHeight: 1.5,
+                  textAlign: 'center'
+                }}>
+                  🔒 <strong>Confidencialidad médica garantizada:</strong> Tus respuestas se evalúan en privado dentro de tu navegador y no se guardan en servidores públicos. Solo se envían a la terapeuta si decides remitir el mensaje vía WhatsApp. Consulta nuestra <a href="/privacidad" style={{ color: 'var(--color-clay)', textDecoration: 'underline', fontWeight: 600 }}>Política de Privacidad y Secreto Clínico</a>.
+                </div>
 
                 {/* Reiniciar o volver */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', marginTop: '12px' }}>

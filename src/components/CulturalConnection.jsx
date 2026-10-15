@@ -7,19 +7,36 @@ export default function CulturalConnection() {
       <div className="container">
         
         {/* Section Heading */}
-        <div style={{ maxWidth: '780px', marginBottom: '56px' }}>
+        <div style={{ maxWidth: '820px', marginBottom: '48px' }}>
           <div className="pill-badge" style={{ marginBottom: '16px' }}>
             <Globe size={14} style={{ color: 'var(--color-clay)' }} />
             <span>Pertenencia e Identidad Cultural</span>
           </div>
-          <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '18px' }}>
-            La cultura no es un detalle secundario: es el idioma en el que sienten tus emociones.
+          <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '18px', color: 'var(--color-plum-900)' }}>
+            Lo que sientes importa.
           </h2>
-          <p style={{ fontSize: '17px', lineHeight: 1.7, color: 'var(--color-ink-secondary)' }}>
-            Vivir en Montreal, Los Ángeles, Washington o Madrid implica un esfuerzo diario de adaptación que desgasta. 
-            Cuando buscas terapia, lo último que necesitas es invertir la mitad de tu sesión explicando el contexto salvadoreño, 
-            el valor de la familia extendida o la culpa de haber migrado.
+          <p style={{ fontSize: '18px', lineHeight: 1.7, color: 'var(--color-ink-secondary)', marginBottom: '28px' }}>
+            Si vives lejos de casa, sabemos que el día a día entre el trabajo y la distancia no deja tiempo para pausas. Aquí te entendemos, y sabemos cómo acompañarte. Hablamos tu idioma, y también tu contexto.
           </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginTop: '24px' }}>
+            <div style={{ background: 'var(--color-canvas)', padding: '24px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)' }}>
+              <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-plum-900)', marginBottom: '10px' }}>
+                Dos husos horarios, una misma conversación.
+              </h3>
+              <p style={{ fontSize: '15px', lineHeight: 1.6, color: 'var(--color-ink-secondary)' }}>
+                Terapia de pareja online para hablar de lo difícil en tu idioma. Porque elegirnos también es aprender a encontrarnos.
+              </p>
+            </div>
+            <div style={{ background: 'var(--color-canvas)', padding: '24px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)' }}>
+              <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-plum-900)', marginBottom: '10px' }}>
+                Poner límites y dejar de repetir patrones.
+              </h3>
+              <p style={{ fontSize: '15px', lineHeight: 1.6, color: 'var(--color-ink-secondary)' }}>
+                Terapia individual para entenderte y cuidar tu bienestar emocional, sin tener que explicar de dónde vienes.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Comparison Grid */}

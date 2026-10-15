@@ -20,18 +20,18 @@ export default function TerapiaDiasporaPage() {
             <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
               <div className="pill-badge pill-badge-clay" style={{ marginBottom: '18px' }}>
                 <Globe size={15} style={{ color: 'var(--color-clay)' }} />
-                <span>Atención a la Diáspora · EE.UU., Canadá y Europa</span>
+                <span>Psicólogo Salvadoreño Online · Estados Unidos, Canadá y Europa</span>
               </div>
 
               <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 4.5vw, 54px)', lineHeight: 1.18, color: 'var(--color-plum-900)', marginBottom: '22px' }}>
-                Terapia para Salvadoreños en el Extranjero <br />
+                Psicólogo Salvadoreño Online para la Diáspora <br />
                 <span style={{ fontStyle: 'italic', color: 'var(--color-clay)' }}>
                   Tu Mismo Código Cultural, Sin Filtros
                 </span>
               </h1>
 
               <p style={{ fontSize: '18px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-                Vivir fuera de El Salvador ya implica suficiente desgaste de adaptación. Cuando necesitas terapia de pareja o individual, lo último que deseas es gastar la mitad de tu sesión traduciendo tus emociones o explicando cómo funciona la familia salvadoreña.
+                Terapia para salvadoreños en Estados Unidos, Canadá y el exterior. Psicólogos salvadoreños en el exterior especializados en terapia de pareja e individual online. Vivir fuera ya implica suficiente adaptación: en Centro Amaré no tienes que traducir tus emociones ni explicar la dinámica de la familia salvadoreña.
               </p>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '36px' }}>
@@ -48,7 +48,7 @@ export default function TerapiaDiasporaPage() {
 
                 <HeroButton
                   appearance="ink-sweep"
-                  href="/tu-match"
+                  href="/test-de-pareja"
                 >
                   <span>Hacer test de pareja online</span>
                 </HeroButton>

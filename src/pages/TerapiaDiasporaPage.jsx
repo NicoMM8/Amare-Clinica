@@ -124,6 +124,73 @@ export default function TerapiaDiasporaPage() {
           </div>
         </section>
 
+        {/* GEO & Timezone Adaptability Section */}
+        <section className="section" style={{ backgroundColor: 'var(--color-canvas)', paddingTop: '64px', paddingBottom: '64px' }}>
+          <div className="container" style={{ maxWidth: '960px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+              <div className="pill-badge pill-badge-clay" style={{ marginBottom: '12px' }}>
+                <span>Cobertura Internacional y Flexibilidad</span>
+              </div>
+              <h2 className="font-serif" style={{ fontSize: 'clamp(26px, 3.5vw, 38px)', color: 'var(--color-plum-900)', marginBottom: '12px' }}>
+                Horarios vespertinos y de fin de semana adaptados a EST, CST, PST y CET
+              </h2>
+              <p style={{ fontSize: '15.5px', color: 'var(--color-ink-secondary)', maxWidth: '680px', margin: '0 auto' }}>
+                Coordinamos las sesiones privadas por Google Meet teniendo en cuenta tu jornada laboral y huso horario, sin importar en qué ciudad del mundo residas.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', padding: '22px', borderRadius: '18px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
+                <h3 className="font-serif" style={{ fontSize: '18px', color: 'var(--color-plum-900)', marginBottom: '8px' }}>
+                  Zona Este (EST)
+                </h3>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', marginBottom: '10px', lineHeight: 1.5 }}>
+                  <strong>Montreal, Washington D.C., Nueva York, Miami.</strong>
+                </p>
+                <span style={{ fontSize: '12.5px', color: 'var(--color-clay)', fontWeight: 600 }}>
+                  Sesiones desde las 6:00 PM o mañanas de sábado.
+                </span>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '22px', borderRadius: '18px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
+                <h3 className="font-serif" style={{ fontSize: '18px', color: 'var(--color-plum-900)', marginBottom: '8px' }}>
+                  Zona Centro (CST)
+                </h3>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', marginBottom: '10px', lineHeight: 1.5 }}>
+                  <strong>Houston, Dallas, Chicago, San Salvador.</strong>
+                </p>
+                <span style={{ fontSize: '12.5px', color: 'var(--color-clay)', fontWeight: 600 }}>
+                  Mismo huso horario o 1 hora de diferencia.
+                </span>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '22px', borderRadius: '18px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
+                <h3 className="font-serif" style={{ fontSize: '18px', color: 'var(--color-plum-900)', marginBottom: '8px' }}>
+                  Zona Pacífico (PST)
+                </h3>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', marginBottom: '10px', lineHeight: 1.5 }}>
+                  <strong>Los Ángeles, San Francisco, Seattle.</strong>
+                </p>
+                <span style={{ fontSize: '12.5px', color: 'var(--color-clay)', fontWeight: 600 }}>
+                  Horarios de tarde y fin de semana disponibles.
+                </span>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '22px', borderRadius: '18px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
+                <h3 className="font-serif" style={{ fontSize: '18px', color: 'var(--color-plum-900)', marginBottom: '8px' }}>
+                  Europa Central (CET)
+                </h3>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', marginBottom: '10px', lineHeight: 1.5 }}>
+                  <strong>Madrid, Barcelona, Milán, París.</strong>
+                </p>
+                <span style={{ fontSize: '12.5px', color: 'var(--color-clay)', fontWeight: 600 }}>
+                  Franjas adaptadas al mediodía y tarde noche europea.
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Bento Mosaic Transcultural & Especialidades */}
         <BentoMosaic />
 

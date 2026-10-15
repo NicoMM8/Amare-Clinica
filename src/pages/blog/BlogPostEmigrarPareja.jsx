@@ -116,7 +116,7 @@ export default function BlogPostEmigrarPareja() {
                   ¿Están viviendo este desgaste en su relación?
                 </h3>
                 <p style={{ fontSize: '15.5px', color: 'var(--color-ink-secondary)', maxWidth: '580px', margin: '0 auto 24px', lineHeight: 1.6 }}>
-                  En Centro Amaré ofrecemos terapia de pareja online adaptada a tu huso horario en EE. UU., Canadá o Europa, con una profesional salvadoreña acreditada por la JVPP.
+                  En Centro Amaré ofrecemos terapia de pareja online con horarios vespertinos y de fin de semana adaptados a EST/CST/PST (Estados Unidos y Canadá) y CET (España), con la psicóloga clínica Iris Alarcón, acreditada ante la JVPP (Reg. N.º 47096).
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
                   <a

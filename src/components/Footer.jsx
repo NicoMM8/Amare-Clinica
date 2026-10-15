@@ -125,10 +125,10 @@ export default function Footer() {
           {/* Col 4: Compromiso Ético y JVPP */}
           <div>
             <h4 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-clay)', marginBottom: '16px' }}>
-              Acreditación Sanitaria JVPP
+              Acreditación Sanitaria JVPP N.º 47096
             </h4>
             <p style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '13px', lineHeight: 1.6, marginBottom: '12px' }}>
-              Directora Clínica: <strong>Lic. Iris Alarcón</strong>, Psicóloga Colegiada con registro ante la <strong>Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP)</strong>.
+              Directora Clínica: <strong>Lic. Iris Alarcón</strong>, Psicóloga Colegiada con <strong>Registro Profesional JVPP N.º 47096</strong> (Junta de Vigilancia de la Profesión en Psicología de El Salvador).
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'rgba(255, 255, 255, 0.9)', fontSize: '12.5px', marginBottom: '8px' }}>
               <Shield size={16} style={{ color: 'var(--color-clay)' }} />
@@ -157,7 +157,7 @@ export default function Footer() {
           color: 'rgba(255, 255, 255, 0.6)'
         }}>
           <div>
-            © {new Date().getFullYear()} Centro Amaré · Todos los derechos reservados · Registro Profesional JVPP El Salvador · <a href="/privacidad" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Privacidad y Secreto Clínico</a>
+            © {new Date().getFullYear()} Centro Amaré · Todos los derechos reservados · Registro Profesional JVPP N.º 47096 · <a href="/privacidad" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Privacidad y Secreto Clínico</a>
           </div>
           <div>
             terapiadeparejaelsalvador.com · San Salvador, El Salvador · Sesiones 100% Online vía Google Meet

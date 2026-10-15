@@ -75,9 +75,22 @@ export default function PreciosPage() {
                     <span style={{ fontSize: '42px', fontWeight: 700, color: 'var(--color-plum-900)' }}>$0</span>
                     <span style={{ fontSize: '15px', color: 'var(--color-ink-muted)' }}>USD / 30 minutos</span>
                   </div>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, marginBottom: '16px' }}>
                     Espacio privado por Google Meet para conocernos, escuchar su motivo de consulta y explicarles con claridad la hoja de ruta recomendada.
                   </p>
+
+                  <div style={{
+                    background: 'var(--color-canvas)',
+                    borderRadius: '12px',
+                    padding: '12px 14px',
+                    marginBottom: '20px',
+                    border: '1px dashed var(--color-clay-border)',
+                    fontSize: '12.5px',
+                    color: 'var(--color-ink-secondary)',
+                    lineHeight: 1.5
+                  }}>
+                    <strong>¿Qué pasa en estos 30 min?</strong> No tienes que contarlo todo de golpe. Nos conocemos por videollamada, me cuentan brevemente qué les preocupa y vemos si hacen "clic" conmigo antes de decidir empezar.
+                  </div>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
@@ -124,14 +137,18 @@ export default function PreciosPage() {
                     <span style={{ fontSize: '42px', fontWeight: 700, color: 'var(--color-clay)' }}>$100</span>
                     <span style={{ fontSize: '15px', color: 'var(--color-ink-muted)' }}>USD / mes</span>
                   </div>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                    Hasta 4 sesiones mensuales de 50 a 60 minutos (equivalente a <strong>$25 USD por sesión</strong>). Pago mensual continuo sin letras pequeñas.
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+                    Hasta 4 sesiones mensuales de 50 a 60 minutos (equivalente a <strong>$25 USD por sesión</strong>). <strong>Misma tarifa fija para Terapia de Pareja o Individual</strong>, sin costes ocultos ni permanencia.
                   </p>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
                       <Check size={18} style={{ color: 'var(--color-clay)' }} />
                       <span>Hasta 4 sesiones al mes de 50-60 min</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
+                      <Check size={18} style={{ color: 'var(--color-clay)' }} />
+                      <span>Válido para Parejas o Individual</span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
                       <Check size={18} style={{ color: 'var(--color-clay)' }} />
@@ -141,9 +158,20 @@ export default function PreciosPage() {
                       <Check size={18} style={{ color: 'var(--color-clay)' }} />
                       <span>Sin permanencia: pausan cuando quieran</span>
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
-                      <Check size={18} style={{ color: 'var(--color-clay)' }} />
-                      <span>Pago seguro local e internacional</span>
+                  </div>
+
+                  {/* Métodos de Pago */}
+                  <div style={{ marginBottom: '24px' }}>
+                    <span style={{ display: 'block', fontSize: '11.5px', fontWeight: 600, color: 'var(--color-ink-muted)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                      Pagos sin comisiones de remesa:
+                    </span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#1A1F71', background: '#F0F3FA', border: '1px solid rgba(26, 31, 113, 0.15)', padding: '3px 8px', borderRadius: '5px' }}>VISA</span>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#EB001B', background: '#FDF1F0', border: '1px solid rgba(235, 0, 27, 0.15)', padding: '3px 8px', borderRadius: '5px' }}>Mastercard</span>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#635BFF', background: '#F2F1FF', border: '1px solid rgba(99, 91, 255, 0.15)', padding: '3px 8px', borderRadius: '5px' }}>Stripe</span>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#003087', background: '#EDF4FC', border: '1px solid rgba(0, 48, 135, 0.15)', padding: '3px 8px', borderRadius: '5px' }}>PayPal</span>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#7414CA', background: '#F7EDFC', border: '1px solid rgba(116, 20, 202, 0.15)', padding: '3px 8px', borderRadius: '5px' }}>Zelle</span>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#D97706', background: '#FEF3C7', border: '1px solid rgba(217, 119, 6, 0.15)', padding: '3px 8px', borderRadius: '5px' }}>Bitcoin / Chivo</span>
                     </div>
                   </div>
                 </div>

@@ -11,7 +11,10 @@ export function AnimatedNumber({
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-40px' });
-  const [displayValue, setDisplayValue] = useState(0);
+  
+  // Start with the target value so SSR / SSG / SEO / no-JS pre-renders the real numbers (9+, 30 min, $25)
+  const [displayValue, setDisplayValue] = useState(value);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {
@@ -20,17 +23,20 @@ export function AnimatedNumber({
   });
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true);
+      motionValue.set(0);
       motionValue.set(value);
     }
-  }, [isInView, value, motionValue]);
+  }, [isInView, value, motionValue, hasAnimated]);
 
   useEffect(() => {
+    if (!hasAnimated) return;
     const unsubscribe = springValue.on('change', (latest) => {
       setDisplayValue(Math.floor(latest));
     });
     return () => unsubscribe();
-  }, [springValue]);
+  }, [springValue, hasAnimated]);
 
   return (
     <span
@@ -45,7 +51,7 @@ export function AnimatedNumber({
       }}
     >
       {prefix}
-      {isInView ? displayValue : 0}
+      {displayValue}
       {suffix}
     </span>
   );

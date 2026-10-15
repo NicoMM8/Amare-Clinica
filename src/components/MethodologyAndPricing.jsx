@@ -358,23 +358,40 @@ export default function MethodologyAndPricing() {
                   background: 'var(--color-canvas)', 
                   borderRadius: 'var(--r-lg)', 
                   padding: '14px 18px', 
-                  marginBottom: '20px', 
+                  marginBottom: '16px', 
                   border: '1px solid var(--border-hairline)'
                 }}>
                   <p style={{ fontSize: '13px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.55 }}>
-                    <strong>Sin permanencia ni deudas posteriores:</strong> Cuota mensual fija con hasta 4 sesiones semanales de 50 a 60 minutos por Google Meet. Pausan o terminan cuando quieran.
+                    <strong>Misma tarifa para Pareja o Individual:</strong> $100 USD al mes incluye hasta 4 sesiones semanales de 50 a 60 minutos por Google Meet ($25/sesión). Sin recargo adicional para terapia de pareja y sin permanencia: pausan o terminan cuando quieran.
+                  </p>
+                </div>
+
+                {/* Línea tranquilizadora sobre los 30 min sin costo */}
+                <div style={{
+                  background: 'rgba(255, 255, 255, 0.95)',
+                  borderRadius: 'var(--r-lg)',
+                  padding: '12px 16px',
+                  marginBottom: '18px',
+                  border: '1px dashed var(--color-clay-border)',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '10px'
+                }}>
+                  <Sparkles size={16} style={{ color: 'var(--color-clay)', flexShrink: 0, marginTop: '2px' }} />
+                  <p style={{ fontSize: '12.5px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.5 }}>
+                    <strong>¿Qué pasa en esos primeros 30 minutos?</strong> No tienes que contarlo todo de golpe. Nos conocemos por Google Meet, me cuentan brevemente qué les preocupa, resolvemos dudas y vemos si hacen "clic" conmigo antes de decidir empezar.
                   </p>
                 </div>
 
                 {/* Checklist */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px', marginBottom: '24px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px', marginBottom: '20px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--color-ink-primary)' }}>
                     <Check size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
                     <span>1ª conversación sin costo</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--color-ink-primary)' }}>
                     <Check size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
-                    <span>Hasta 4 sesiones de 50-60 min</span>
+                    <span>Válido para Parejas o Individual</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--color-ink-primary)' }}>
                     <Check size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
@@ -383,6 +400,33 @@ export default function MethodologyAndPricing() {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--color-ink-primary)' }}>
                     <Check size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
                     <span>Sin permanencia: pausan libremente</span>
+                  </div>
+                </div>
+
+                {/* Métodos de Pago Internacionales */}
+                <div style={{ marginBottom: '16px' }}>
+                  <span style={{ display: 'block', fontSize: '11.5px', fontWeight: 600, color: 'var(--color-ink-muted)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                    Pagos directos sin comisiones de remesa:
+                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: '#1A1F71', background: '#F0F3FA', border: '1px solid rgba(26, 31, 113, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>
+                      VISA
+                    </span>
+                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: '#EB001B', background: '#FDF1F0', border: '1px solid rgba(235, 0, 27, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>
+                      Mastercard
+                    </span>
+                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: '#635BFF', background: '#F2F1FF', border: '1px solid rgba(99, 91, 255, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>
+                      Stripe
+                    </span>
+                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: '#003087', background: '#EDF4FC', border: '1px solid rgba(0, 48, 135, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>
+                      PayPal
+                    </span>
+                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: '#7414CA', background: '#F7EDFC', border: '1px solid rgba(116, 20, 202, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>
+                      Zelle / Transferencia
+                    </span>
+                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: '#D97706', background: '#FEF3C7', border: '1px solid rgba(217, 119, 6, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>
+                      Bitcoin / Chivo
+                    </span>
                   </div>
                 </div>
               </div>

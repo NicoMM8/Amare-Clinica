@@ -340,6 +340,15 @@ const personSchema = {
   hasCredential: [
     {
       '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'license',
+      name: 'Registro Profesional Sanitario JVPP N.º 47096',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP)',
+      },
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
       credentialCategory: 'degree',
       name: 'Licenciatura en Psicología Clínica',
       recognizedBy: {

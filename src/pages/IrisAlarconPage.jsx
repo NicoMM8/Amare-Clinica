@@ -21,7 +21,7 @@ export default function IrisAlarconPage() {
             <div style={{ maxWidth: '860px', margin: '0 auto', textAlign: 'center' }}>
               <div className="pill-badge pill-badge-clay" style={{ marginBottom: '18px' }}>
                 <Award size={15} style={{ color: 'var(--color-clay)' }} />
-                <span>Dirección Clínica · Registro Profesional JVPP El Salvador</span>
+                <span>Dirección Clínica · Registro Profesional JVPP N.º 47096 El Salvador</span>
               </div>
 
               <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 4.5vw, 54px)', lineHeight: 1.18, color: 'var(--color-plum-900)', marginBottom: '22px' }}>
@@ -32,7 +32,7 @@ export default function IrisAlarconPage() {
               </h1>
 
               <p style={{ fontSize: '18px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-                Directora Clínica de Centro Amaré. Psicóloga clínica colegiada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP). Con más de 9 años de experiencia en consulta privada y máster especializado, brindo un espacio seguro, neutral y con rigor científico para parejas e individuos en El Salvador y en el exterior.
+                Directora Clínica de Centro Amaré. Psicóloga clínica colegiada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (Registro Profesional JVPP N.º 47096). Con más de 9 años de experiencia en consulta privada y máster especializado, brindo un espacio seguro, neutral y con rigor científico para parejas e individuos en El Salvador y en el exterior.
               </p>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '36px' }}>
@@ -57,7 +57,7 @@ export default function IrisAlarconPage() {
 
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap', fontSize: '13.5px', color: 'var(--color-ink-secondary)' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <ShieldCheck size={16} style={{ color: 'var(--color-clay)' }} /> Registro Profesional JVPP
+                  <ShieldCheck size={16} style={{ color: 'var(--color-clay)' }} /> Registro Profesional JVPP N.º 47096
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <Clock size={16} style={{ color: 'var(--color-clay)' }} /> +9 años de experiencia clínica
@@ -106,7 +106,7 @@ export default function IrisAlarconPage() {
                     Lic. Iris Alarcón
                   </h2>
                   <p style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '14px' }}>
-                    Psicóloga Clínica Colegiada · JVPP El Salvador
+                    Psicóloga Clínica Colegiada · Registro JVPP N.º 47096 El Salvador
                   </p>
                   <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
                     Especialista en Terapia Integral de Parejas (IBCT), Terapia Cognitivo-Conductual (TCC) y Sexología Clínica.
@@ -129,7 +129,7 @@ export default function IrisAlarconPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '28px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14.5px', color: 'var(--color-plum-900)' }}>
                     <CheckCircle2 size={18} style={{ color: 'var(--color-clay)' }} />
-                    <span><strong>Acreditación Sanitaria Legal:</strong> Colegiada ante la JVPP de El Salvador.</span>
+                    <span><strong>Acreditación Sanitaria Legal:</strong> Colegiada ante la JVPP de El Salvador (Reg. N.º 47096).</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14.5px', color: 'var(--color-plum-900)' }}>
                     <CheckCircle2 size={18} style={{ color: 'var(--color-clay)' }} />

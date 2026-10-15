@@ -98,10 +98,46 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Subtexto aclaratorio */}
-            <p style={{ fontSize: '13px', color: 'var(--color-ink-secondary)', marginBottom: '24px' }}>
-              Primera conversación de 30 minutos · Sin costo · Sin compromiso.
-            </p>
+            {/* Trust capsule con avatar de Licda. Iris Alarcón */}
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '12px',
+                background: 'rgba(255, 255, 255, 0.85)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: 'var(--r-pill)',
+                padding: '6px 16px 6px 6px',
+                marginBottom: '24px',
+                boxShadow: 'var(--shadow-sm)'
+              }}
+            >
+              <img
+                src="/images/iris-alarcon-clinica.webp"
+                alt="Licda. Iris Alarcón — Directora Clínica y Psicóloga Colegiada"
+                width="40"
+                height="40"
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  border: '2px solid #FFFFFF',
+                  boxShadow: '0 2px 6px rgba(34, 40, 74, 0.15)',
+                  flexShrink: 0
+                }}
+              />
+              <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', lineHeight: 1.25 }}>
+                <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-plum-900)' }}>
+                  1ª conversación de 30 min sin costo con la Licda. Iris Alarcón
+                </span>
+                <span style={{ fontSize: '11.5px', color: 'var(--color-ink-muted)' }}>
+                  Psicóloga Clínica Colegiada · Registro JVPP N.º 47096 · Vía Google Meet
+                </span>
+              </div>
+            </div>
 
             {/* Human & Social Proof Row (Iconos en color Salvia) */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '22px', flexWrap: 'wrap' }}>

@@ -22,7 +22,7 @@ export default function TheTeam() {
           {/* Left: Header + credentials */}
           <div>
             <div className="pill-badge" style={{ marginBottom: '20px' }}>
-              <span>Respaldo Clínico Oficial · Registro JVPP El Salvador</span>
+              <span>Respaldo Clínico Oficial · Registro JVPP N.º 47096 El Salvador</span>
             </div>
 
             <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', marginBottom: '20px', lineHeight: 1.25 }}>
@@ -33,7 +33,7 @@ export default function TheTeam() {
             </h2>
 
             <p style={{ fontSize: '17px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '24px' }}>
-              Hablar de tu relación o de tu vida íntima requiere confianza. Soy Iris Alarcón, psicóloga clínica salvadoreña colegiada ante la Junta de Vigilancia de la Profesión en Psicología (JVPP). Mi trabajo no es hacer de juez ni decirte quién tiene la razón, sino darles un espacio seguro y herramientas científicas claras para que vuelvan a escucharse.
+              Hablar de tu relación o de tu vida íntima requiere confianza. Soy Iris Alarcón, psicóloga clínica salvadoreña colegiada ante la Junta de Vigilancia de la Profesión en Psicología (Registro Profesional JVPP N.º 47096). Mi trabajo no es hacer de juez ni decirte quién tiene la razón, sino darles un espacio seguro y herramientas científicas claras para que vuelvan a escucharse.
             </p>
 
             {/* 000h Animated Clinical Metrics */}
@@ -72,11 +72,11 @@ export default function TheTeam() {
                 </div>
               </div>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '20px', color: 'var(--color-clay)', lineHeight: 1, fontWeight: 700, letterSpacing: '0.02em' }}>
-                  JVPP
+                <div style={{ fontSize: '17px', color: 'var(--color-clay)', lineHeight: 1, fontWeight: 700, letterSpacing: '0.02em' }}>
+                  N.º 47096
                 </div>
                 <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
-                  Secreto profesional
+                  Registro JVPP
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function TheTeam() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '36px' }}>
               {[
                 { icon: Award, text: 'Máster en Terapia de Pareja y Sexología Clínica' },
-                { icon: BookOpen, text: 'Licenciada en Psicología Clínica · Colegiada JVPP El Salvador' },
+                { icon: BookOpen, text: 'Licenciada en Psicología Clínica · Registro JVPP N.º 47096 El Salvador' },
                 { icon: CheckCircle2, text: 'Más de 9 años acompañando a adultos y parejas en consulta privada' },
                 { icon: CheckCircle2, text: 'Atención online para El Salvador y salvadoreños en EE. UU., Canadá y Europa' },
               ].map(({ icon: Icon, text }, i) => (
@@ -212,9 +212,12 @@ export default function TheTeam() {
                 <h3 style={{ fontSize: '26px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '4px' }}>
                   Iris Alarcón
                 </h3>
-                <p style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '16px' }}>
+                <p style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
                   Psicóloga Clínica · Máster en Pareja y Sexología
                 </p>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', fontWeight: 600, color: 'var(--color-plum-900)', background: 'var(--color-clay-subtle)', padding: '3px 10px', borderRadius: 'var(--r-pill)', marginBottom: '16px' }}>
+                  <span>Registro Profesional JVPP N.º 47096</span>
+                </div>
 
                 <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.65, marginBottom: '24px' }}>
                   Con más de 9 años de experiencia en consulta clínica privada. Especializada en Terapia Cognitivo Conductual y abordaje integral para parejas salvadoreñas. Te ayudo a dejar de sobrevivir y empezar a vivir.

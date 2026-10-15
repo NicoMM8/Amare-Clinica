@@ -15,6 +15,8 @@ import FAQ from './components/FAQ';
 import QuizTeaser from './components/QuizTeaser';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Footer from './components/Footer';
+import { CityMarquee } from './components/cojeev/CityMarquee';
+import { StressSlider } from './components/cojeev/StressSlider';
 
 // Subpáginas de especialidad y conversión
 import TerapiaParejaPage from './pages/TerapiaParejaPage';
@@ -154,6 +156,9 @@ function App({ initialPath = '/' }) {
         {/* 1. Hero: Propuesta de valor + CTA de alta intención */}
         <Hero />
 
+        {/* 000h Marquee: Presencia transnacional y sellos de confianza */}
+        <CityMarquee />
+
         {/* 2. Empatía con el problema: 6 motivos y dinámicas frecuentes + Micro-CTA */}
         <CoupleTherapyIntro />
 
@@ -174,6 +179,13 @@ function App({ initialPath = '/' }) {
 
         {/* 8. Ecosistema Clínico Integral (Bento Mosaic de apoyo) */}
         <BentoMosaic />
+
+        {/* 000h Interactive Stress & Tension Calibrator */}
+        <section className="section" style={{ paddingTop: '20px', paddingBottom: '40px' }}>
+          <div className="container-narrow">
+            <StressSlider />
+          </div>
+        </section>
 
         {/* 9. Quiz Interactivo / Matching Teaser (Captura de tráfico indeciso) */}
         <QuizTeaser />

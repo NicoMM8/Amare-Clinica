@@ -3,21 +3,22 @@ import { ChevronDown, HelpCircle, MessageSquare } from 'lucide-react';
 import { FAQS } from '../data/faqs';
 import { trackWhatsAppClick } from '../lib/analytics';
 
+import { Accordion } from './cojeev/Accordion';
+
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, tengo una pregunta antes de agendar mi primera conversación sin costo en Centro Amaré.");
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? -1 : index);
-  };
-
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, tengo una pregunta antes de agendar mi sesión en Centro Amaré.");
+  const accordionItems = FAQS.map((faq) => ({
+    title: faq.q,
+    content: faq.a,
+  }));
 
   return (
     <section className="section" id="faq">
       <div className="container-narrow">
         
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <div className="pill-badge" style={{ marginBottom: '14px' }}>
             <HelpCircle size={14} style={{ color: 'var(--color-clay)' }} />
             <span>Respuestas Claras · Modalidad Online & Pagos</span>
@@ -30,69 +31,8 @@ export default function FAQ() {
           </p>
         </div>
 
-        {/* FAQ List */}
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {FAQS.map((faq, idx) => {
-            const isOpen = openIndex === idx;
-            return (
-              <div key={idx} className={`faq-item ${isOpen ? 'faq-item-open' : ''}`}>
-                <button 
-                  type="button" 
-                  className="faq-trigger" 
-                  onClick={() => toggleFAQ(idx)}
-                  aria-expanded={isOpen}
-                  aria-controls={`faq-answer-${idx}`}
-                >
-                  <h3 style={{ 
-                    margin: 0, 
-                    fontSize: '16.5px', 
-                    fontWeight: 600, 
-                    textAlign: 'left', 
-                    color: isOpen ? 'var(--color-clay)' : 'var(--color-plum-900)', 
-                    transition: 'color 0.2s ease',
-                    fontFamily: 'inherit',
-                    lineHeight: 1.4
-                  }}>
-                    {faq.q}
-                  </h3>
-                  <div style={{ 
-                    width: '32px', 
-                    height: '32px', 
-                    borderRadius: '50%', 
-                    background: isOpen ? 'var(--color-clay-subtle)' : 'var(--color-canvas-subtle)', 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    transition: 'all 0.2s ease'
-                  }}>
-                    <ChevronDown 
-                      size={18} 
-                      style={{ 
-                        color: isOpen ? 'var(--color-clay)' : 'var(--color-ink-secondary)',
-                        transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                        transition: 'transform 0.25s ease'
-                      }} 
-                    />
-                  </div>
-                </button>
-
-                {/* Always present in the DOM for Googlebot & LLM scrapers */}
-                <div 
-                  id={`faq-answer-${idx}`}
-                  className="faq-content"
-                  style={{
-                    display: isOpen ? 'block' : 'none',
-                  }}
-                >
-                  <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7, color: 'var(--color-ink-secondary)' }}>
-                    {faq.a}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        {/* 000h Animated Accordion */}
+        <Accordion items={accordionItems} defaultOpenIndex={0} />
 
         {/* Support Note */}
         <div style={{ 

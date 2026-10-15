@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle2, MessageCircle, Award, BookOpen } from 'lucide-react';
+import { AnimatedNumber } from './cojeev/AnimatedNumber';
 
 export default function TheTeam() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola Iris, quisiera hablar contigo en una primera conversación de 30 min sin costo.");
@@ -31,9 +32,54 @@ export default function TheTeam() {
               </span>
             </h2>
 
-            <p style={{ fontSize: '17px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '28px' }}>
+            <p style={{ fontSize: '17px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '24px' }}>
               Hablar de tu relación o de tu vida íntima requiere confianza. Soy Iris Alarcón, psicóloga clínica salvadoreña colegiada ante la Junta de Vigilancia de la Profesión en Psicología (JVPP). Mi trabajo no es hacer de juez ni decirte quién tiene la razón, sino darles un espacio seguro y herramientas científicas claras para que vuelvan a escucharse.
             </p>
+
+            {/* 000h Animated Clinical Metrics */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(72px, 1fr))',
+              gap: '10px',
+              background: 'var(--v-beige, #F4ECE4)',
+              borderRadius: '16px',
+              padding: '16px 14px',
+              marginBottom: '28px',
+              border: '1px solid var(--v-border, rgba(35, 18, 33, 0.08))'
+            }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '22px', color: 'var(--color-clay)', lineHeight: 1 }}>
+                  <AnimatedNumber value={9} suffix="+" />
+                </div>
+                <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
+                  Años experiencia
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '22px', color: 'var(--color-clay)', lineHeight: 1 }}>
+                  <AnimatedNumber value={30} suffix="m" />
+                </div>
+                <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
+                  1ª charla gratis
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '22px', color: 'var(--color-clay)', lineHeight: 1 }}>
+                  <AnimatedNumber value={25} prefix="$" />
+                </div>
+                <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
+                  USD / sesión
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '22px', color: 'var(--color-clay)', lineHeight: 1 }}>
+                  <AnimatedNumber value={100} suffix="%" />
+                </div>
+                <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
+                  Confidencial
+                </div>
+              </div>
+            </div>
 
             {/* Credentials */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '36px' }}>

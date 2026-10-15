@@ -62,10 +62,10 @@ export function StressSlider() {
             display: 'inline-block',
             marginBottom: '6px'
           }}>
-            000h Interactive Slider
+            Herramienta Interactiva · Auto-Calibración
           </span>
           <h3 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--v-text)', margin: 0 }}>
-            Termómetro de Desgaste Emocional
+            Termómetro de Desgaste Emocional y Pareja
           </h3>
         </div>
 
@@ -202,11 +202,11 @@ export function StressSlider() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>Agendar para este nivel ({value}%)</span>
+          <span>Primera conversación (30 min sin costo)</span>
         </HeroButton>
 
         <span style={{ fontSize: '12.5px', color: 'var(--v-text-3)' }}>
-          Evaluación personalizada sin costo por Google Meet
+          Conversación privada sin costo por Google Meet
         </span>
       </div>
     </div>

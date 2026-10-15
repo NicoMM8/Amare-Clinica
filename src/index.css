@@ -571,3 +571,41 @@ button {
     linear-gradient(to right, rgba(35, 18, 33, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(35, 18, 33, 0.02) 1px, transparent 1px);
 }
+
+/* 4 Column Methodology Pillars */
+.methodology-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 960px) {
+  .methodology-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .methodology-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Pricing Dual Column (Table + $100 Plan Card) */
+.pricing-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: stretch;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .pricing-dual-grid {
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 32px;
+  }
+}

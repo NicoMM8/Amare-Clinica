@@ -31,7 +31,7 @@ export default function IrisAlarconPage() {
               </h1>
 
               <p style={{ fontSize: '18px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-                Directora Clínica de Centro Amaré. Psicóloga clínica colegiada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP). Con más de 9 años de experiencia en consulta privada y máster especializado, brindo un espacio seguro, neutral y con rigor científico para parejas e individuos en El Salvador y la diáspora.
+                Directora Clínica de Centro Amaré. Psicóloga clínica colegiada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP). Con más de 9 años de experiencia en consulta privada y máster especializado, brindo un espacio seguro, neutral y con rigor científico para parejas e individuos en El Salvador y en el exterior.
               </p>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '36px' }}>
@@ -93,16 +93,13 @@ export default function IrisAlarconPage() {
                     margin: '0 auto 20px',
                     boxShadow: '0 8px 24px rgba(0,0,0,0.12)'
                   }}>
-                    <picture>
-                      <source srcSet="/images/hero-therapist-480.webp" type="image/webp" />
-                      <img
-                        src="/images/hero-therapist-480.webp"
-                        alt="Psicóloga Iris Alarcón El Salvador — Terapeuta de Pareja Certificada"
-                        width="180"
-                        height="180"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                      />
-                    </picture>
+                    <img
+                      src="/images/iris-alarcon.jpg"
+                      alt="Licda. Iris Alarcón — Psicóloga Clínica Colegiada JVPP El Salvador"
+                      width="180"
+                      height="180"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
                   </div>
                   <h2 className="font-serif" style={{ fontSize: '24px', color: 'var(--color-plum-900)', marginBottom: '4px' }}>
                     Lic. Iris Alarcón

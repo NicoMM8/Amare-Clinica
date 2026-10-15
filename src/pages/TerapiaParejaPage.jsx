@@ -57,7 +57,7 @@ export default function TerapiaParejaPage() {
               </h1>
 
               <p style={{ fontSize: '18px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-                Nuestro servicio especializado de <a href="/" style={{ color: 'var(--color-clay)', fontWeight: 600, textDecoration: 'underline' }}>terapia de pareja en El Salvador</a> y online para la diáspora ofrece un acompañamiento riguroso para desactivar el conflicto, sanar el desgaste acumulado y recuperar la complicidad con una psicóloga clínica acreditada por la JVPP.
+                Nuestro servicio especializado de <a href="/" style={{ color: 'var(--color-clay)', fontWeight: 600, textDecoration: 'underline' }}>terapia de pareja en El Salvador</a> y online para quienes viven en el exterior ofrece un acompañamiento riguroso para desactivar el conflicto, sanar el desgaste acumulado y recuperar la complicidad con una psicóloga clínica acreditada por la JVPP.
               </p>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '36px' }}>

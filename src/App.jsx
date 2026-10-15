@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import CoupleTherapyIntro from './components/CoupleTherapyIntro';
 import CoupleMatchingQuiz from './components/CoupleMatchingQuiz';
-import { BentoMosaic } from './components/cojeev/BentoMosaic';
 import CulturalConnection from './components/CulturalConnection';
 import Specialties from './components/Specialties';
 import TheTeam from './components/TheTeam';
@@ -176,9 +175,6 @@ function App({ initialPath = '/' }) {
 
         {/* 7. Metodología Clínica en 4 fases + Plan mensual accesible */}
         <MethodologyAndPricing />
-
-        {/* 8. Ecosistema Clínico Integral (Bento Mosaic de apoyo) */}
-        <BentoMosaic />
 
         {/* 000h Interactive Stress & Tension Calibrator */}
         <section className="section" style={{ paddingTop: '20px', paddingBottom: '40px' }}>

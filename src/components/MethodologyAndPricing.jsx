@@ -45,67 +45,63 @@ export default function MethodologyAndPricing() {
       <div className="container">
         
         {/* ── SECCIÓN 4: METODOLOGÍA Y AUTORIDAD CLÍNICA ── */}
-        <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 48px' }}>
-          <div className="pill-badge pill-badge-clay" style={{ marginBottom: '14px' }}>
-            <span>Ciencia con trato humano</span>
+        <div style={{ textAlign: 'center', maxWidth: '1120px', margin: '0 auto 48px' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <div className="pill-badge pill-badge-clay" style={{ marginBottom: '14px' }}>
+              <span>Ciencia con trato humano</span>
+            </div>
+            <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '16px', lineHeight: 1.25, color: 'var(--color-plum-900)' }}>
+              Cómo trabajamos: Psicología con base científica, explicada con claridad
+            </h2>
+            <p style={{ fontSize: '17px', color: 'var(--color-ink-secondary)', lineHeight: 1.65, marginBottom: '28px' }}>
+              Sin promesas mágicas ni palabras raras. Sabrás qué estamos trabajando en cada etapa para que avances a tu propio ritmo:
+            </p>
           </div>
-          <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '16px', lineHeight: 1.25, color: 'var(--color-plum-900)' }}>
-            Cómo trabajamos: Psicología con base científica, explicada con claridad
-          </h2>
-          <p style={{ fontSize: '17px', color: 'var(--color-ink-secondary)', lineHeight: 1.65, marginBottom: '28px' }}>
-            Sin promesas mágicas ni palabras raras. Sabrás qué estamos trabajando en cada etapa para que avances a tu propio ritmo:
-          </p>
 
-          {/* 4 Core Pillars of Clinical Evidence */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '16px',
-            textAlign: 'left',
-            marginBottom: '40px'
-          }}>
-            <div style={{ background: '#FFFFFF', padding: '22px 20px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
-              <strong style={{ display: 'block', color: 'var(--color-plum-900)', fontSize: '15px', marginBottom: '8px' }}>
+          {/* 4 Core Pillars of Clinical Evidence en 1 sola fila de 4 columnas */}
+          <div className="methodology-pillars-grid">
+            <div style={{ background: '#FFFFFF', padding: '20px 18px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
+              <strong style={{ display: 'block', color: 'var(--color-plum-900)', fontSize: '14.5px', marginBottom: '8px' }}>
                 Terapia Integral de Pareja (IBCT)
               </strong>
-              <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.55, margin: 0 }}>
+              <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.5, margin: 0 }}>
                 Para transformar patrones de discusión repetitivos y reconstruir la aceptación mutua y el afecto.
               </p>
             </div>
 
-            <div style={{ background: '#FFFFFF', padding: '22px 20px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
-              <strong style={{ display: 'block', color: 'var(--color-plum-900)', fontSize: '15px', marginBottom: '8px' }}>
+            <div style={{ background: '#FFFFFF', padding: '20px 18px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
+              <strong style={{ display: 'block', color: 'var(--color-plum-900)', fontSize: '14.5px', marginBottom: '8px' }}>
                 Terapia Cognitivo-Conductual (TCC)
               </strong>
-              <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.55, margin: 0 }}>
+              <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.5, margin: 0 }}>
                 Herramientas claras para gestionar pensamientos intrusivos, rumiación, sobrepensamiento y ansiedad.
               </p>
             </div>
 
-            <div style={{ background: '#FFFFFF', padding: '22px 20px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
-              <strong style={{ display: 'block', color: 'var(--color-plum-900)', fontSize: '15px', marginBottom: '8px' }}>
+            <div style={{ background: '#FFFFFF', padding: '20px 18px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
+              <strong style={{ display: 'block', color: 'var(--color-plum-900)', fontSize: '14.5px', marginBottom: '8px' }}>
                 Terapia Dialéctico-Conductual (DBT)
               </strong>
-              <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.55, margin: 0 }}>
+              <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.5, margin: 0 }}>
                 Enfocada en la regulación emocional, desescalada de reactividad y tolerancia al malestar.
               </p>
             </div>
 
-            <div style={{ background: '#FFFFFF', padding: '22px 20px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
-              <strong style={{ display: 'block', color: 'var(--color-plum-900)', fontSize: '15px', marginBottom: '8px' }}>
+            <div style={{ background: '#FFFFFF', padding: '20px 18px', borderRadius: 'var(--r-xl)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)' }}>
+              <strong style={{ display: 'block', color: 'var(--color-plum-900)', fontSize: '14.5px', marginBottom: '8px' }}>
                 Enfoque Humanista
               </strong>
-              <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.55, margin: 0 }}>
+              <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.5, margin: 0 }}>
                 Porque detrás de cada pantalla siempre hay una persona real que te escucha con empatía y sin juzgar.
               </p>
             </div>
           </div>
         </div>
 
-        {/* 4 Clinical Phases Pathway */}
+        {/* 4 Clinical Phases Pathway (Compacto, sin cajitas de resultado para ahorrar altura) */}
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', 
           gap: '20px', 
           marginBottom: '40px' 
         }}>
@@ -114,73 +110,55 @@ export default function MethodologyAndPricing() {
               key={idx} 
               className="card-panel" 
               style={{ 
-                padding: '28px 24px',
+                padding: '24px 20px',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
+                justifyContent: 'flex-start',
                 background: '#FFFFFF',
                 position: 'relative'
               }}
             >
-              <div>
-                {/* Header row with step number and timeline */}
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                  <div style={{ 
-                    width: '38px', 
-                    height: '38px', 
-                    borderRadius: '12px', 
-                    background: 'var(--color-plum-900)', 
-                    color: '#fff', 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center', 
-                    fontWeight: 700, 
-                    fontSize: '16px',
-                    boxShadow: '0 4px 10px rgba(34, 40, 74, 0.2)'
-                  }}>
-                    {phase.number}
-                  </div>
-                  <span style={{ 
-                    fontSize: '12px', 
-                    fontWeight: 700, 
-                    color: 'var(--color-clay)', 
-                    background: 'var(--color-clay-subtle)',
-                    padding: '4px 10px',
-                    borderRadius: 'var(--r-pill)',
-                    letterSpacing: '0.02em'
-                  }}>
-                    {phase.timeline}
-                  </span>
+              {/* Header row with step number and timeline */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+                <div style={{ 
+                  width: '36px', 
+                  height: '36px', 
+                  borderRadius: '10px', 
+                  background: 'var(--color-plum-900)', 
+                  color: '#fff', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  fontWeight: 700, 
+                  fontSize: '15px',
+                  boxShadow: '0 4px 10px rgba(34, 40, 74, 0.2)'
+                }}>
+                  {phase.number}
                 </div>
-
-                <div style={{ fontSize: '11.5px', fontWeight: 600, color: 'var(--color-ink-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
-                  {phase.tag}
-                </div>
-
-                <h3 style={{ fontSize: '18.5px', marginBottom: '12px', color: 'var(--color-plum-900)', lineHeight: 1.3 }}>
-                  {phase.title}
-                </h3>
-
-                <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
-                  {phase.description}
-                </p>
+                <span style={{ 
+                  fontSize: '11.5px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-clay)', 
+                  background: 'var(--color-clay-subtle)',
+                  padding: '3px 9px',
+                  borderRadius: 'var(--r-pill)',
+                  letterSpacing: '0.02em'
+                }}>
+                  {phase.timeline}
+                </span>
               </div>
 
-              {/* Tangible outcome box (Psiky Brand standard) */}
-              <div style={{
-                background: 'var(--color-canvas)',
-                padding: '12px 14px',
-                borderRadius: 'var(--r-md)',
-                borderLeft: '3px solid var(--color-clay)',
-                fontSize: '12.5px',
-                lineHeight: 1.5,
-                color: 'var(--color-plum-900)'
-              }}>
-                <strong style={{ display: 'block', color: 'var(--color-clay)', marginBottom: '2px', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                  Resultado esperado:
-                </strong>
-                {phase.result}
+              <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-ink-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
+                {phase.tag}
               </div>
+
+              <h3 style={{ fontSize: '17px', marginBottom: '10px', color: 'var(--color-plum-900)', lineHeight: 1.3 }}>
+                {phase.title}
+              </h3>
+
+              <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.55, margin: 0 }}>
+                {phase.description}
+              </p>
             </div>
           ))}
         </div>
@@ -241,7 +219,7 @@ export default function MethodologyAndPricing() {
         </div>
 
         {/* ── SECCIÓN 6: TABLA COMPARATIVA Y HONORARIOS (GEO & FEATURED SNIPPETS) ── */}
-        <div style={{ maxWidth: '920px', margin: '0 auto 40px' }}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto 40px' }}>
           <div style={{ textAlign: 'center', marginBottom: '36px' }}>
             <div className="pill-badge pill-badge-clay" style={{ marginBottom: '12px' }}>
               <span>Transparencia Total · Sin Letra Pequeña</span>
@@ -250,181 +228,181 @@ export default function MethodologyAndPricing() {
               Honorarios y modalidades de atención psicológica
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-ink-secondary)', maxWidth: '640px', margin: '0 auto' }}>
-              Tarifas claras en dólares estadounidenses (USD) para El Salvador y la diáspora en el exterior:
+              Tarifas claras en dólares estadounidenses (USD) para quienes viven en El Salvador o en el exterior:
             </p>
           </div>
 
-          {/* Tabla Estructurada para Google Featured Snippets y Motores de IA */}
-          <div style={{ 
-            overflowX: 'auto', 
-            background: '#FFFFFF', 
-            borderRadius: '24px', 
-            border: '1px solid var(--border-subtle)', 
-            boxShadow: 'var(--shadow-sm)', 
-            padding: '20px 24px', 
-            marginBottom: '40px' 
-          }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '640px' }}>
-              <thead>
-                <tr style={{ borderBottom: '2px solid var(--border-subtle)' }}>
-                  <th style={{ padding: '16px 18px', color: 'var(--color-plum-900)', fontSize: '14.5px', fontWeight: 700 }}>Modalidad</th>
-                  <th style={{ padding: '16px 18px', color: 'var(--color-plum-900)', fontSize: '14.5px', fontWeight: 700 }}>Duración</th>
-                  <th style={{ padding: '16px 18px', color: 'var(--color-plum-900)', fontSize: '14.5px', fontWeight: 700 }}>Incluye</th>
-                  <th style={{ padding: '16px 18px', color: 'var(--color-plum-900)', fontSize: '14.5px', fontWeight: 700 }}>Inversión</th>
-                </tr>
-              </thead>
-              <tbody style={{ fontSize: '14px', color: 'var(--color-ink-secondary)' }}>
-                <tr style={{ borderBottom: '1px solid var(--border-hairline)' }}>
-                  <td style={{ padding: '18px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
-                    Primera conversación exploratoria
-                  </td>
-                  <td style={{ padding: '18px' }}>30 minutos</td>
-                  <td style={{ padding: '18px' }}>
-                    Conocernos, evaluar tu caso y definir el plan terapéutico
-                  </td>
-                  <td style={{ padding: '18px' }}>
-                    <span style={{ color: '#27AE60', fontWeight: 700, background: 'rgba(39, 174, 96, 0.12)', padding: '5px 12px', borderRadius: 'var(--r-pill)', display: 'inline-block' }}>
-                      Sin costo ($0 USD)
-                    </span>
-                  </td>
-                </tr>
-
-                <tr style={{ borderBottom: '1px solid var(--border-hairline)' }}>
-                  <td style={{ padding: '18px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
-                    Sesión de Terapia de Pareja Online
-                  </td>
-                  <td style={{ padding: '18px' }}>50 - 60 min</td>
-                  <td style={{ padding: '18px' }}>
-                    Videollamada privada para ambos miembros (incluso desde distintos dispositivos o husos horarios)
-                  </td>
-                  <td style={{ padding: '18px' }}>
-                    <strong style={{ color: 'var(--color-plum-900)', fontSize: '15px' }}>$25 USD / sesión</strong>
-                    <span style={{ display: 'block', fontSize: '12px', color: 'var(--color-ink-muted)' }}>
-                      en Plan Mensual ($100 USD / hasta 4 sesiones)
-                    </span>
-                  </td>
-                </tr>
-
-                <tr style={{ borderBottom: '1px solid var(--border-hairline)' }}>
-                  <td style={{ padding: '18px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
-                    Sesión de Terapia Individual Online
-                  </td>
-                  <td style={{ padding: '18px' }}>50 minutos</td>
-                  <td style={{ padding: '18px' }}>
-                    Atención 1 a 1 personalizada y material de trabajo práctico
-                  </td>
-                  <td style={{ padding: '18px' }}>
-                    <strong style={{ color: 'var(--color-plum-900)', fontSize: '15px' }}>$25 USD / sesión</strong>
-                    <span style={{ display: 'block', fontSize: '12px', color: 'var(--color-ink-muted)' }}>
-                      en Plan Mensual ($100 USD / hasta 4 sesiones)
-                    </span>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style={{ padding: '18px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
-                    Sesión de Refuerzo Post-Proceso
-                  </td>
-                  <td style={{ padding: '18px' }}>50 minutos</td>
-                  <td style={{ padding: '18px' }}>
-                    Seguimiento a los 3 meses del alta para afianzar avances
-                  </td>
-                  <td style={{ padding: '18px' }}>
-                    <span style={{ color: 'var(--color-clay)', fontWeight: 600, background: 'var(--color-clay-subtle)', padding: '5px 12px', borderRadius: 'var(--r-pill)', display: 'inline-block' }}>
-                      Opcional a tu ritmo (Incluida)
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        {/* Pricing Card Section */}
-        <div style={{ maxWidth: '840px', margin: '0 auto' }}>
-          <div className="pricing-card">
+          {/* 2-Column Desktop Grid: Tabla Comparativa + Plan Mensual $100 */}
+          <div className="pricing-dual-grid">
             
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
+            {/* Columna Izquierda: Tabla Estructurada para Google Featured Snippets y Motores de IA */}
+            <div style={{ 
+              overflowX: 'auto', 
+              background: '#FFFFFF', 
+              borderRadius: '24px', 
+              border: '1px solid var(--border-subtle)', 
+              boxShadow: 'var(--shadow-sm)', 
+              padding: '28px 24px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}>
               <div>
-                <span className="pricing-badge-popular">Plan mensual transparente</span>
-                <h3 className="font-serif" style={{ fontSize: '28px', color: 'var(--color-plum-900)', marginBottom: '8px' }}>
-                  Plan Mensual Cómodo y Accesible
+                <h3 className="font-serif" style={{ fontSize: '20px', color: 'var(--color-plum-900)', marginBottom: '16px' }}>
+                  Modalidades de consulta
                 </h3>
-                <p style={{ fontSize: '15px', color: 'var(--color-ink-secondary)', maxWidth: '480px' }}>
-                  Para que la inversión nunca frene su proceso terapéutico, ofrecemos una cuota mensual fija y predecible:
-                </p>
+                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+                  <thead>
+                    <tr style={{ borderBottom: '2px solid var(--border-subtle)' }}>
+                      <th style={{ padding: '12px 14px', color: 'var(--color-plum-900)', fontSize: '13.5px', fontWeight: 700 }}>Modalidad</th>
+                      <th style={{ padding: '12px 14px', color: 'var(--color-plum-900)', fontSize: '13.5px', fontWeight: 700 }}>Duración</th>
+                      <th style={{ padding: '12px 14px', color: 'var(--color-plum-900)', fontSize: '13.5px', fontWeight: 700 }}>Inversión</th>
+                    </tr>
+                  </thead>
+                  <tbody style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)' }}>
+                    <tr style={{ borderBottom: '1px solid var(--border-hairline)' }}>
+                      <td style={{ padding: '14px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
+                        1ª conversación exploratoria
+                        <span style={{ display: 'block', fontSize: '12px', color: 'var(--color-ink-muted)', fontWeight: 400 }}>
+                          Evaluación de tu caso y encuadre
+                        </span>
+                      </td>
+                      <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>30 min</td>
+                      <td style={{ padding: '14px' }}>
+                        <span style={{ color: '#27AE60', fontWeight: 700, background: 'rgba(39, 174, 96, 0.12)', padding: '4px 10px', borderRadius: 'var(--r-pill)', display: 'inline-block', fontSize: '12px' }}>
+                          Sin costo ($0)
+                        </span>
+                      </td>
+                    </tr>
+
+                    <tr style={{ borderBottom: '1px solid var(--border-hairline)' }}>
+                      <td style={{ padding: '14px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
+                        Terapia de Pareja Online
+                        <span style={{ display: 'block', fontSize: '12px', color: 'var(--color-ink-muted)', fontWeight: 400 }}>
+                          Ambos en videollamada privada
+                        </span>
+                      </td>
+                      <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>50 - 60 min</td>
+                      <td style={{ padding: '14px' }}>
+                        <strong style={{ color: 'var(--color-plum-900)', fontSize: '14px' }}>$25 USD / sesión</strong>
+                        <span style={{ display: 'block', fontSize: '11.5px', color: 'var(--color-ink-muted)' }}>
+                          en plan mensual ($100/mes)
+                        </span>
+                      </td>
+                    </tr>
+
+                    <tr style={{ borderBottom: '1px solid var(--border-hairline)' }}>
+                      <td style={{ padding: '14px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
+                        Terapia Individual Online
+                        <span style={{ display: 'block', fontSize: '12px', color: 'var(--color-ink-muted)', fontWeight: 400 }}>
+                          1 a 1 personalizada con tareas
+                        </span>
+                      </td>
+                      <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>50 min</td>
+                      <td style={{ padding: '14px' }}>
+                        <strong style={{ color: 'var(--color-plum-900)', fontSize: '14px' }}>$25 USD / sesión</strong>
+                        <span style={{ display: 'block', fontSize: '11.5px', color: 'var(--color-ink-muted)' }}>
+                          en plan mensual ($100/mes)
+                        </span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td style={{ padding: '14px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
+                        Sesión de Refuerzo Post-Proceso
+                        <span style={{ display: 'block', fontSize: '12px', color: 'var(--color-ink-muted)', fontWeight: 400 }}>
+                          Seguimiento a los 3 meses
+                        </span>
+                      </td>
+                      <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>50 min</td>
+                      <td style={{ padding: '14px' }}>
+                        <span style={{ color: 'var(--color-clay)', fontWeight: 600, background: 'var(--color-clay-subtle)', padding: '4px 10px', borderRadius: 'var(--r-pill)', display: 'inline-block', fontSize: '12px' }}>
+                          Incluida en plan
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 
-              <div style={{ textAlign: 'right' }}>
-                <div className="price-display" style={{ justifyContent: 'flex-end', margin: '0 0 4px' }}>
-                  <span className="price-currency">$</span>
-                  <span className="price-amount">100</span>
-                  <span className="price-frequency">USD / mes</span>
+              <div style={{ marginTop: '20px', paddingTop: '16px', borderTop: '1px solid var(--border-hairline)', fontSize: '12.5px', color: 'var(--color-ink-muted)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Shield size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
+                <span>Precios en USD para El Salvador, Estados Unidos, Canadá y Europa.</span>
+              </div>
+            </div>
+
+            {/* Columna Derecha: Tarjeta Plan Mensual $100 USD */}
+            <div className="pricing-card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '32px' }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '16px', marginBottom: '14px' }}>
+                  <div>
+                    <span className="pricing-badge-popular">Plan mensual transparente</span>
+                    <h3 className="font-serif" style={{ fontSize: '24px', color: 'var(--color-plum-900)', marginTop: '4px', marginBottom: '6px' }}>
+                      Plan Mensual Cómodo y Accesible
+                    </h3>
+                  </div>
+
+                  <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                    <div className="price-display" style={{ justifyContent: 'flex-end', margin: '0 0 2px' }}>
+                      <span className="price-currency" style={{ fontSize: '22px' }}>$</span>
+                      <span className="price-amount" style={{ fontSize: '44px' }}>100</span>
+                      <span className="price-frequency" style={{ fontSize: '13px' }}>USD / mes</span>
+                    </div>
+                    <span style={{ fontSize: '12px', color: 'var(--color-clay)', fontWeight: 600 }}>
+                      Hasta 4 sesiones ($25/sesión)
+                    </span>
+                  </div>
                 </div>
-                <span style={{ fontSize: '12.5px', color: 'var(--color-clay)', fontWeight: 600 }}>
-                  Hasta 4 sesiones al mes ($25/sesión)
+
+                <div style={{ 
+                  background: 'var(--color-canvas)', 
+                  borderRadius: 'var(--r-lg)', 
+                  padding: '14px 18px', 
+                  marginBottom: '20px', 
+                  border: '1px solid var(--border-hairline)'
+                }}>
+                  <p style={{ fontSize: '13px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.55 }}>
+                    <strong>Sin permanencia ni deudas posteriores:</strong> Cuota mensual fija con hasta 4 sesiones semanales de 50 a 60 minutos por Google Meet. Pausan o terminan cuando quieran.
+                  </p>
+                </div>
+
+                {/* Checklist */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px', marginBottom: '24px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--color-ink-primary)' }}>
+                    <Check size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
+                    <span>1ª conversación sin costo</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--color-ink-primary)' }}>
+                    <Check size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
+                    <span>Hasta 4 sesiones de 50-60 min</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--color-ink-primary)' }}>
+                    <Check size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
+                    <span>Ejercicios clínicos entre sesiones</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--color-ink-primary)' }}>
+                    <Check size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
+                    <span>Sin permanencia: pausan libremente</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Main Action */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', paddingTop: '16px', borderTop: '1px solid var(--border-hairline)' }}>
+                <HeroButton
+                  appearance="paper-fold"
+                  variant="clay"
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Escríbenos por WhatsApp</span>
+                </HeroButton>
+
+                <span style={{ fontSize: '12px', color: 'var(--color-ink-muted)' }}>
+                  Coordinación directa por WhatsApp
                 </span>
               </div>
-            </div>
-
-            <div style={{ 
-              background: 'var(--color-canvas)', 
-              borderRadius: 'var(--r-xl)', 
-              padding: '20px 24px', 
-              margin: '28px 0', 
-              border: '1px solid var(--border-hairline)'
-            }}>
-              <strong style={{ display: 'block', fontSize: '14.5px', color: 'var(--color-plum-900)', marginBottom: '6px' }}>
-                ¿Cómo funciona el plan mensual?:
-              </strong>
-              <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.6 }}>
-                Por <strong>$100 USD al mes</strong> reciben hasta 4 sesiones terapéuticas (una sesión semanal de 50 a 60 minutos por Google Meet), lo que equivale a solo <strong>$25 USD por sesión</strong>. Se abona mes a mes durante el tiempo que dure el acompañamiento. <strong>Sin permanencia mínima ni deudas posteriores:</strong> pausan o cierran el proceso cuando consideren oportuno.
-              </p>
-            </div>
-
-            {/* Checklist of what is included */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '14px', marginBottom: '32px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
-                <Check size={18} style={{ color: 'var(--color-clay)' }} />
-                <span>1ª Sesión de 30 min sin costo</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
-                <Check size={18} style={{ color: 'var(--color-clay)' }} />
-                <span>Hasta 4 sesiones mensuales de 50-60 min</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
-                <Check size={18} style={{ color: 'var(--color-clay)' }} />
-                <span>Pautas y ejercicios prácticos entre sesiones</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
-                <Check size={18} style={{ color: 'var(--color-clay)' }} />
-                <span>Coordinación ágil y directa con asistente</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
-                <Check size={18} style={{ color: 'var(--color-clay)' }} />
-                <span>Pago seguro internacional (tarjeta o transferencia)</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
-                <Check size={18} style={{ color: 'var(--color-clay)' }} />
-                <span>Sin permanencia: pausan o terminan cuando quieran</span>
-              </div>
-            </div>
-
-            {/* Main Action */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
-              <HeroButton
-                appearance="paper-fold"
-                variant="clay"
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>Escríbenos por WhatsApp</span>
-              </HeroButton>
-
-              <span style={{ fontSize: '13px', color: 'var(--color-ink-muted)' }}>
-                Coordinación directa por WhatsApp · Google Meet privado
-              </span>
             </div>
 
           </div>

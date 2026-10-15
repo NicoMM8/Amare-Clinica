@@ -1,48 +1,9 @@
 "use client";
 
-import React, { useState } from 'react';
-import { HeartHandshake, Brain, HeartCrack, Sparkles, Check, ArrowRight, MessageCircle } from 'lucide-react';
-import { OptionWheel } from './ui/option-wheel';
-
-const clinicalSpecialties = [
-  {
-    id: "pareja",
-    label: "Dos husos horarios, una misma conversación.",
-    description: "Terapia de pareja online con una terapeuta salvadoreña. Para hablar de lo difícil en tu idioma.",
-    approach: "Terapia Integral de Pareja + Apego",
-    href: "/terapia-de-pareja",
-    moreLabel: "Ver detalles de terapia de pareja →",
-  },
-  {
-    id: "individual",
-    label: "Poner límites, entenderte y dejar de repetir patrones.",
-    description: "Terapia individual para quienes viven lejos de casa y quieren cuidar su bienestar emocional.",
-    approach: "TCC y Regulación Emocional",
-    href: "/terapia-individual",
-    moreLabel: "Ver detalles de terapia individual →",
-  },
-  {
-    id: "sexologia",
-    label: "Sexología e intimidad clínica.",
-    description: "Abordaje riguroso, científico y sin tabúes de la sexualidad. Un espacio 100% libre de juicios.",
-    approach: "Sexología Clínica Médica",
-    href: "/sexologia-clinica",
-    moreLabel: "Ver detalles de sexología clínica →",
-  },
-  {
-    id: "exterior",
-    label: "Duelo migratorio y vivir en el exterior.",
-    description: "Para conciliar tus dos vidas: tu proyecto fuera con la distancia de tus raíces en El Salvador.",
-    approach: "Psicoterapia Transcultural",
-    href: "/salvadorenos-en-el-exterior",
-    moreLabel: "Ver terapia para salvadoreños en el exterior →",
-  }
-];
+import React from 'react';
+import { HeartHandshake, Brain, MessageCircle } from 'lucide-react';
 
 export default function Specialties() {
-  const [selectedIdx, setSelectedIdx] = useState(0);
-  const activeSpec = clinicalSpecialties[selectedIdx];
-
   const whatsappPareja = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar la sesión exploratoria de 30 minutos sin costo para Terapia de Pareja.");
   const whatsappIndividual = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar la sesión exploratoria de 30 minutos sin costo para Terapia Individual.");
 
@@ -189,75 +150,6 @@ export default function Specialties() {
             </div>
           </div>
         </div>
-
-        {/* Explorador interactivo complementario (Option Wheel) */}
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-            <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-ink-muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              ✦ Explorar todas las áreas de atención
-            </span>
-          </div>
-
-          <OptionWheel
-            presentation="arc"
-            side="left"
-            selectedIndex={selectedIdx}
-            onSelectionChange={setSelectedIdx}
-            items={clinicalSpecialties.map((spec) => ({
-              id: spec.id,
-              label: spec.label,
-              description: spec.description,
-              renderDetail: () => (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
-                  <p style={{ fontSize: '15.5px', color: 'var(--color-ink-primary, #1C1819)', maxWidth: '480px', lineHeight: 1.5 }}>
-                    {spec.description}
-                  </p>
-                  
-                  <div style={{ fontSize: '13px', color: 'var(--color-ink-secondary)' }}>
-                    <strong>Enfoque:</strong> {spec.approach}
-                  </div>
-
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '6px' }}>
-                    <a
-                      href={"https://wa.me/50373184781?text=" + encodeURIComponent(`Hola, me interesa consultar sobre ${spec.label} en Centro Amaré.`)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        padding: '10px 20px',
-                        fontSize: '14px',
-                        borderRadius: 'var(--r-pill)',
-                        textDecoration: 'none'
-                      }}
-                    >
-                      <MessageCircle size={16} />
-                      <span>Agendar 30 min sin costo</span>
-                    </a>
-
-                    <a
-                      href={spec.href}
-                      style={{
-                        fontSize: '13.5px',
-                        fontWeight: 600,
-                        color: 'var(--color-clay)',
-                        textDecoration: 'none',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '4px'
-                      }}
-                    >
-                      <span>{spec.moreLabel}</span>
-                    </a>
-                  </div>
-                </div>
-              )
-            }))}
-          />
-        </div>
-
       </div>
     </section>
   );

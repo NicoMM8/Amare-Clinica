@@ -52,15 +52,15 @@ export default function TheTeam() {
                   <AnimatedNumber value={9} suffix="+" />
                 </div>
                 <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
-                  Años experiencia
+                  Años de experiencia
                 </div>
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: '22px', color: 'var(--color-clay)', lineHeight: 1 }}>
-                  <AnimatedNumber value={30} suffix="m" />
+                  <AnimatedNumber value={30} suffix=" min" />
                 </div>
                 <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
-                  1ª charla sin costo
+                  1ª conversación sin costo
                 </div>
               </div>
               <div style={{ textAlign: 'center' }}>
@@ -68,15 +68,15 @@ export default function TheTeam() {
                   <AnimatedNumber value={25} prefix="$" />
                 </div>
                 <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
-                  USD / sesión
+                  USD / sesión en plan
                 </div>
               </div>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '22px', color: 'var(--color-clay)', lineHeight: 1 }}>
-                  <AnimatedNumber value={100} suffix="%" />
+                <div style={{ fontSize: '20px', color: 'var(--color-clay)', lineHeight: 1, fontWeight: 700, letterSpacing: '0.02em' }}>
+                  JVPP
                 </div>
                 <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
-                  Confidencial
+                  Secreto profesional
                 </div>
               </div>
             </div>
@@ -196,17 +196,14 @@ export default function TheTeam() {
                   overflow: 'hidden',
                   boxShadow: '0 8px 24px rgba(0,0,0,0.18)',
                 }}>
-                  <picture>
-                    <source srcSet="/images/hero-therapist-480.webp" type="image/webp" />
-                    <img
-                      src="/images/hero-therapist-480.webp"
-                      alt="Dirección Clínica — Centro Amaré Psicoterapia"
-                      width="120"
-                      height="120"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                      loading="lazy"
-                    />
-                  </picture>
+                  <img
+                    src="/images/iris-alarcon.jpg"
+                    alt="Licda. Iris Alarcón — Directora Clínica y Psicóloga Colegiada JVPP"
+                    width="120"
+                    height="120"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    loading="lazy"
+                  />
                 </div>
               </div>
 

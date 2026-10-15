@@ -3,11 +3,12 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import { HeroButton } from '../components/ui/hero-button';
+import { BentoMosaic } from '../components/cojeev/BentoMosaic';
 import { Globe, ShieldCheck, CheckCircle2, Clock, Check, X, ArrowRight } from 'lucide-react';
 import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function TerapiaDiasporaPage() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vivo en el extranjero y quisiera información para agendar la sesión inicial gratuita de 30 minutos en Centro Amaré.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vivo en el extranjero y quisiera información para agendar la sesión inicial sin costo de 30 minutos en Centro Amaré.");
 
   return (
     <div className="app-wrapper">
@@ -122,6 +123,9 @@ export default function TerapiaDiasporaPage() {
             </div>
           </div>
         </section>
+
+        {/* Bento Mosaic Transcultural & Especialidades */}
+        <BentoMosaic />
 
         {/* Banner CTA */}
         <section className="section" style={{ paddingTop: '72px', paddingBottom: '72px' }}>

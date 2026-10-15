@@ -88,56 +88,59 @@ function App({ initialPath = '/' }) {
     }
   };
 
+  // ── Normalización de ruta (soporta con o sin barra final '/') ──
+  const cleanPath = (currentPath || '').replace(/\/+$/, '') || '/';
+
   // ── Enrutamiento por subpáginas ────────────────────────────
-  if (currentPath === '/test-de-pareja' || currentPath === '/tu-match' || currentPath === '/evaluacion-de-pareja') {
+  if (cleanPath === '/test-de-pareja' || cleanPath === '/tu-match' || cleanPath === '/evaluacion-de-pareja') {
     return <CoupleMatchingQuiz onGoHome={() => navigateTo('/')} />;
   }
 
-  if (currentPath === '/terapia-de-pareja') {
+  if (cleanPath === '/terapia-de-pareja') {
     return <TerapiaParejaPage />;
   }
 
-  if (currentPath === '/sexologia-clinica') {
+  if (cleanPath === '/sexologia-clinica') {
     return <SexologiaClinicaPage />;
   }
 
-  if (currentPath === '/terapia-individual') {
+  if (cleanPath === '/terapia-individual') {
     return <TerapiaIndividualPage />;
   }
 
-  if (currentPath === '/salvadorenos-en-el-exterior' || currentPath === '/diaspora-salvadorena' || currentPath === '/terapia-salvadorenos-en-el-extranjero') {
+  if (cleanPath === '/salvadorenos-en-el-exterior' || cleanPath === '/diaspora-salvadorena' || cleanPath === '/terapia-salvadorenos-en-el-extranjero') {
     return <TerapiaDiasporaPage />;
   }
 
-  if (currentPath === '/iris-alarcon') {
+  if (cleanPath === '/iris-alarcon') {
     return <IrisAlarconPage />;
   }
 
-  if (currentPath === '/precios') {
+  if (cleanPath === '/precios') {
     return <PreciosPage />;
   }
 
-  if (currentPath === '/blog' || currentPath === '/recursos') {
+  if (cleanPath === '/blog' || cleanPath === '/recursos') {
     return <BlogHubPage />;
   }
 
-  if (currentPath === '/blog/como-afecta-emigrar-a-la-relacion-de-pareja') {
+  if (cleanPath === '/blog/como-afecta-emigrar-a-la-relacion-de-pareja') {
     return <BlogPostEmigrarPareja />;
   }
 
-  if (currentPath === '/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador') {
+  if (cleanPath === '/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador') {
     return <BlogPostPreciosTerapia />;
   }
 
-  if (currentPath === '/blog/como-poner-limites-a-tu-familia-desde-la-distancia') {
+  if (cleanPath === '/blog/como-poner-limites-a-tu-familia-desde-la-distancia') {
     return <BlogPostLimitesFamilia />;
   }
 
-  if (currentPath === '/enlaces' || currentPath === '/links') {
+  if (cleanPath === '/enlaces' || cleanPath === '/links') {
     return <EnlacesBioPage />;
   }
 
-  if (currentPath === '/privacidad' || currentPath === '/politica-de-privacidad') {
+  if (cleanPath === '/privacidad' || cleanPath === '/politica-de-privacidad') {
     return <PrivacidadPage />;
   }
 

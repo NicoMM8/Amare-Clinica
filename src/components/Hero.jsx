@@ -55,7 +55,7 @@ export default function Hero() {
                 }}
               >
                 <span className="pill-dot" style={{ backgroundColor: 'var(--color-clay)' }}></span>
-                <span>Terapia de Pareja en El Salvador y Online para la Diáspora</span>
+                <span>Terapia de Pareja en El Salvador, EE. UU. y el Exterior</span>
               </span>
               <span style={{ display: 'block', fontSize: 'inherit', lineHeight: 'inherit' }}>
                 Terapia salvadoreña,{' '}

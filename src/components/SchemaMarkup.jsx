@@ -61,9 +61,9 @@ const websiteSchema = {
     },
     {
       '@type': 'WebPage',
-      '@id': `${SITE_URL}/diaspora-salvadorena`,
-      name: 'Psicólogo Salvadoreño Online · Diáspora en el Exterior',
-      url: `${SITE_URL}/diaspora-salvadorena`,
+      '@id': `${SITE_URL}/salvadorenos-en-el-exterior`,
+      name: 'Psicólogos Salvadoreños Online | Terapia en EE. UU., Canadá y el Exterior',
+      url: `${SITE_URL}/salvadorenos-en-el-exterior`,
     },
     {
       '@type': 'WebPage',

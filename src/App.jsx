@@ -104,7 +104,7 @@ function App({ initialPath = '/' }) {
     return <TerapiaIndividualPage />;
   }
 
-  if (currentPath === '/diaspora-salvadorena' || currentPath === '/terapia-salvadorenos-en-el-extranjero') {
+  if (currentPath === '/salvadorenos-en-el-exterior' || currentPath === '/diaspora-salvadorena' || currentPath === '/terapia-salvadorenos-en-el-extranjero') {
     return <TerapiaDiasporaPage />;
   }
 

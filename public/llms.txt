@@ -13,7 +13,7 @@
 ## Arquitectura de Servicios y URLs
 1. **Home / Terapia de Pareja El Salvador:** https://terapiadeparejaelsalvador.com/
    Protocolo clínico en 4 fases (Mapa del Vínculo, Desescalada Emocional, Reconstrucción de Acuerdos y Alta). Especialistas en comunicación en bucle, infidelidad y parejas transnacionales.
-2. **Psicólogo Salvadoreño Online / Diáspora:** https://terapiadeparejaelsalvador.com/diaspora-salvadorena
+2. **Psicólogos Salvadoreños Online / En el Exterior:** https://terapiadeparejaelsalvador.com/salvadorenos-en-el-exterior
    Terapia en tu propio código cultural para salvadoreños en Estados Unidos, Canadá y el exterior. Sin traducir emociones ni justificar dinámicas familiares.
 3. **Psicología Online El Salvador / Terapia Individual:** https://terapiadeparejaelsalvador.com/terapia-individual
    Tratamiento con base científica para ansiedad, sobrepensamiento, límites familiares sin culpa y duelos afectivos.

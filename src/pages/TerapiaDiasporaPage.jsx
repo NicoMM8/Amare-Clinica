@@ -20,18 +20,15 @@ export default function TerapiaDiasporaPage() {
             <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
               <div className="pill-badge pill-badge-clay" style={{ marginBottom: '18px' }}>
                 <Globe size={15} style={{ color: 'var(--color-clay)' }} />
-                <span>Psicólogo Salvadoreño Online · Estados Unidos, Canadá y Europa</span>
+                <span>Psicólogos Salvadoreños Online · EE. UU., Canadá y el Exterior</span>
               </div>
 
-              <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 4.5vw, 54px)', lineHeight: 1.18, color: 'var(--color-plum-900)', marginBottom: '22px' }}>
-                Psicólogo Salvadoreño Online para la Diáspora <br />
-                <span style={{ fontStyle: 'italic', color: 'var(--color-clay)' }}>
-                  Tu Mismo Código Cultural, Sin Filtros
-                </span>
+              <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 4.5vw, 52px)', lineHeight: 1.18, color: 'var(--color-plum-900)', marginBottom: '22px' }}>
+                Psicólogos salvadoreños online para quienes viven lejos de casa
               </h1>
 
               <p style={{ fontSize: '18px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-                Terapia para salvadoreños en Estados Unidos, Canadá y el exterior. Psicólogos salvadoreños en el exterior especializados en terapia de pareja e individual online. Vivir fuera ya implica suficiente adaptación: en Centro Amaré no tienes que traducir tus emociones ni explicar la dinámica de la familia salvadoreña.
+                Vivas en Estados Unidos, Canadá, Europa o en El Salvador, aquí hablamos tu idioma y entendemos tu contexto sin que tengas que explicar de dónde vienes. Atención psicológica con psicóloga clínica colegiada (JVPP), adaptada a tu huso horario y en tu mismo código cultural.
               </p>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '36px' }}>
@@ -74,7 +71,7 @@ export default function TerapiaDiasporaPage() {
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 48px' }}>
               <h2 className="font-serif" style={{ fontSize: '34px', color: 'var(--color-plum-900)', marginBottom: '14px' }}>
-                La diferencia de hacer terapia en tu propia cultura
+                Cerca de tus raíces, aunque vivas a miles de kilómetros
               </h2>
               <p style={{ fontSize: '16px', color: 'var(--color-ink-secondary)' }}>
                 Las emociones más profundas se sienten y se sanan en la lengua materna y con los códigos compartidos de tu tierra.

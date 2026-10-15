@@ -13,15 +13,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/" />
   </url>
 
-  <!-- 2. Diáspora Salvadoreña Online (EE. UU., Canadá y Europa) -->
+  <!-- 2. Salvadoreños en el Exterior (EE. UU., Canadá y Europa) -->
   <url>
-    <loc>https://terapiadeparejaelsalvador.com/diaspora-salvadorena</loc>
+    <loc>https://terapiadeparejaelsalvador.com/salvadorenos-en-el-exterior</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/diaspora-salvadorena" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/diaspora-salvadorena" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/diaspora-salvadorena" />
+    <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/salvadorenos-en-el-exterior" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://terapiadeparejaelsalvador.com/salvadorenos-en-el-exterior" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapiadeparejaelsalvador.com/salvadorenos-en-el-exterior" />
   </url>
 
   <!-- 3. Precios y Honorarios Transparentes -->

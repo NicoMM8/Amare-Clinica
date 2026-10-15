@@ -102,7 +102,7 @@ export default function Footer() {
               <li><a href="/terapia-de-pareja" style={{ transition: 'color 0.2s' }}>Terapia de Pareja</a></li>
               <li><a href="/sexologia-clinica" style={{ transition: 'color 0.2s' }}>Sexología Clínica</a></li>
               <li><a href="/terapia-individual" style={{ transition: 'color 0.2s' }}>Terapia Individual (TCC)</a></li>
-              <li><a href="/diaspora-salvadorena" style={{ transition: 'color 0.2s' }}>Diáspora Salvadoreña Online</a></li>
+              <li><a href="/salvadorenos-en-el-exterior" style={{ transition: 'color 0.2s' }}>Salvadoreños en el Exterior</a></li>
               <li><a href="/precios" style={{ transition: 'color 0.2s' }}>Precios y Honorarios</a></li>
             </ul>
           </div>

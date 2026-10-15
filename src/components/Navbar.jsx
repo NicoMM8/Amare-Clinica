@@ -29,7 +29,7 @@ export default function Navbar() {
         {/* Desktop Links */}
         <ul className="nav-links">
           <li><a href="/#especialidades" className="nav-link">Especialidades</a></li>
-          <li><a href="/diaspora-salvadorena" className="nav-link">Diáspora Salvadoreña</a></li>
+          <li><a href="/salvadorenos-en-el-exterior" className="nav-link">Viviendo en el Exterior</a></li>
           <li><a href="/iris-alarcon" className="nav-link">Iris Alarcón</a></li>
           <li><a href="/precios" className="nav-link">Honorarios</a></li>
           <li><a href="/blog" className="nav-link">Blog & Guías</a></li>
@@ -89,7 +89,7 @@ export default function Navbar() {
         }}>
           <a href="/#especialidades" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Especialidades Clínicas</a>
           <a href="/test-de-pareja" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-clay)' }}>Test de Pareja (2 min)</a>
-          <a href="/diaspora-salvadorena" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Diáspora Salvadoreña Online</a>
+          <a href="/salvadorenos-en-el-exterior" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Viviendo en el Exterior</a>
           <a href="/iris-alarcon" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Iris Alarcón (Sobre Mí)</a>
           <a href="/precios" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Honorarios y Modalidades</a>
           <a href="/blog" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Blog & Guías Clínicas</a>

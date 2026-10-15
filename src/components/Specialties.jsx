@@ -30,12 +30,12 @@ const clinicalSpecialties = [
     moreLabel: "Ver detalles de sexología clínica →",
   },
   {
-    id: "diaspora",
-    label: "Duelo migratorio y desarraigo.",
+    id: "exterior",
+    label: "Duelo migratorio y vivir en el exterior.",
     description: "Para conciliar tus dos vidas: tu proyecto fuera con la distancia de tus raíces en El Salvador.",
     approach: "Psicoterapia Transcultural",
-    href: "/diaspora-salvadorena",
-    moreLabel: "Ver detalles de atención a la diáspora →",
+    href: "/salvadorenos-en-el-exterior",
+    moreLabel: "Ver terapia para salvadoreños en el exterior →",
   }
 ];
 

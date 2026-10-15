@@ -38,9 +38,9 @@ export default function EnlacesBioPage() {
       icon: BookOpen,
     },
     {
-      title: "Atención a la Diáspora (EE. UU., Canadá, Europa)",
+      title: "Salvadoreños en el Exterior (EE. UU., Canadá, Europa)",
       subtitle: "Psicólogo salvadoreño online en tu mismo código cultural",
-      href: "/diaspora-salvadorena",
+      href: "/salvadorenos-en-el-exterior",
       isPrimary: false,
       icon: Globe,
     },

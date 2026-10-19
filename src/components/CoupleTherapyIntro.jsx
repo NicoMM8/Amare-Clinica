@@ -298,7 +298,7 @@ export default function CoupleTherapyIntro() {
               <source srcSet="/images/pareja-terapia-online.webp" type="image/webp" />
               <img
                 src="/images/pareja-terapia-online.jpg"
-                alt="Pareja participando en sesión de terapia de pareja online vía Google Meet — Centro Amaré"
+                alt="Ilustración tradicional salvadoreña estilo La Palma — Terapia de pareja y pertenencia cultural en Centro Amaré"
                 width="990"
                 height="768"
                 loading="lazy"
@@ -322,7 +322,7 @@ export default function CoupleTherapyIntro() {
               style={{
                 position: 'absolute',
                 bottom: '16px',
-                right: '16px',
+                left: '16px',
                 background: 'rgba(255, 255, 255, 0.96)',
                 backdropFilter: 'blur(12px)',
                 WebkitBackdropFilter: 'blur(12px)',

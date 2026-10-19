@@ -5,7 +5,8 @@ import {
   CheckCircle2, 
   RotateCcw,
   ShieldCheck,
-  ArrowRight
+  ArrowRight,
+  Laptop
 } from 'lucide-react';
 import {
   Questionnaire,
@@ -592,7 +593,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                 >
                   <Sparkles size={16} style={{ color: '#128C7E' }} />
                   <span style={{ fontSize: '13px', fontWeight: 700, color: '#128C7E' }}>
-                    ✦ Evaluación completada: Protocolo adaptado a su historia vincular
+                    Evaluación completada: Protocolo adaptado a su historia vincular
                   </span>
                 </div>
 
@@ -726,8 +727,9 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     boxShadow: '0 1px 3px rgba(35, 18, 33, 0.04)',
                   }}
                 >
-                  <span style={{ fontWeight: 600, color: 'var(--v-text)' }}>
-                    💻 ¿Estás desde una computadora sin WhatsApp Web?
+                  <span style={{ fontWeight: 600, color: 'var(--v-text)', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                    <Laptop size={15} style={{ color: 'var(--v-text-2)' }} />
+                    <span>¿Estás desde una computadora sin WhatsApp Web?</span>
                   </span>
                   <div style={{ marginTop: '4px' }}>
                     Escríbenos directo desde tu celular al{' '}
@@ -762,7 +764,10 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   lineHeight: 1.5,
                   textAlign: 'center'
                 }}>
-                  🔒 <strong>Confidencialidad médica garantizada:</strong> Tus respuestas se evalúan en privado dentro de tu navegador y no se guardan en servidores públicos. Solo se envían a la terapeuta si decides remitir el mensaje vía WhatsApp. Consulta nuestra <a href="/privacidad" style={{ color: 'var(--v-pink)', textDecoration: 'underline', fontWeight: 600 }}>Política de Privacidad y Secreto Clínico</a>.
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: '6px' }}>
+                    <ShieldCheck size={16} style={{ color: 'var(--v-pink)', flexShrink: 0, marginTop: '2px' }} />
+                    <span><strong>Confidencialidad médica garantizada:</strong> Tus respuestas se evalúan en privado dentro de tu navegador y no se guardan en servidores públicos. Solo se envían a la terapeuta si decides remitir el mensaje vía WhatsApp. Consulta nuestra <a href="/privacidad" style={{ color: 'var(--v-pink)', textDecoration: 'underline', fontWeight: 600 }}>Política de Privacidad y Secreto Clínico</a>.</span>
+                  </div>
                 </div>
 
                 {/* Reiniciar o volver */}

@@ -15,7 +15,6 @@ import QuizTeaser from './components/QuizTeaser';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Footer from './components/Footer';
 import { CityMarquee } from './components/cojeev/CityMarquee';
-import { StressSlider } from './components/cojeev/StressSlider';
 import RelationshipPulse from './components/RelationshipPulse';
 
 // Subpáginas de especialidad y conversión
@@ -202,13 +201,6 @@ function App({ initialPath = '/' }) {
 
         {/* 7. Metodología Clínica en 4 fases + Plan mensual accesible */}
         <MethodologyAndPricing />
-
-        {/* 000h Interactive Stress & Tension Calibrator */}
-        <section className="section" style={{ paddingTop: '20px', paddingBottom: '40px' }}>
-          <div className="container-narrow">
-            <StressSlider />
-          </div>
-        </section>
 
         {/* 9. Quiz Interactivo / Matching Teaser (Captura de tráfico indeciso) */}
         <QuizTeaser />

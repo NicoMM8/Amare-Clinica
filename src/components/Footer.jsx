@@ -116,7 +116,7 @@ export default function Footer() {
               El Centro & Recursos
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)' }}>
-              <li><a href="/test-de-pareja" style={{ color: 'var(--color-clay)', fontWeight: 600 }}>✦ Test de Pareja (2 min)</a></li>
+              <li><a href="/test-de-pareja" style={{ color: 'var(--color-clay)', fontWeight: 600 }}>Test de Pareja (2 min)</a></li>
               <li><a href="/iris-alarcon">Iris Alarcón (Sobre Mí)</a></li>
               <li><a href="/blog">Blog & Guías Clínicas</a></li>
               <li><a href="/privacidad">Privacidad y Secreto Clínico</a></li>

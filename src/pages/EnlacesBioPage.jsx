@@ -16,7 +16,7 @@ export default function EnlacesBioPage() {
       badge: "Recomendado"
     },
     {
-      title: "✦ Test Clínico de Pareja",
+      title: "Test Clínico de Pareja",
       subtitle: "Autoevaluación de tu relación en 5 pasos (2 min sin costo)",
       href: "/test-de-pareja",
       isPrimary: false,

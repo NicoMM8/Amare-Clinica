@@ -139,7 +139,7 @@ export default function TheTeam() {
                 </a>
               </div>
               <span style={{ fontSize: '12px', color: 'var(--color-ink-muted)' }}>
-                ✨ 30 minutos sin costo · Coordinación humana directa por WhatsApp
+                30 minutos sin costo · Coordinación humana directa por WhatsApp
               </span>
             </div>
           </div>

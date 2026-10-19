@@ -134,39 +134,33 @@ export function BitcoinLogo({ height = 15, className = "" }) {
 }
 
 /**
- * Reusable Payment Badges strip showcasing authentic logos in a balanced 3x2 grid.
+ * Reusable Payment Badges strip showcasing authentic logos in a balanced 5-column row.
+ * Displays Visa, Mastercard, Stripe, PayPal, and Zelle.
  */
 export function PaymentMethodBadges({ compact = false }) {
   const items = [
     { 
       name: "Visa", 
       title: "Tarjetas Visa (débito y crédito)",
-      content: <VisaLogo height={compact ? 13 : 15} /> 
+      content: <VisaLogo height={compact ? 12 : 13} /> 
     },
     { 
       name: "Mastercard", 
       title: "Tarjetas Mastercard (débito y crédito)",
-      content: (
-        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-          <MastercardLogo height={compact ? 13 : 15} />
-          <span style={{ fontSize: compact ? '10px' : '11px', fontWeight: 700, color: '#1E293B', letterSpacing: '-0.02em' }}>
-            mastercard
-          </span>
-        </span>
-      ) 
+      content: <MastercardLogo height={compact ? 14 : 16} /> 
     },
     { 
       name: "Stripe", 
       title: "Procesamiento seguro con Stripe (cobro internacional)",
-      content: <StripeLogo height={compact ? 12 : 14} /> 
+      content: <StripeLogo height={compact ? 11 : 13} /> 
     },
     { 
       name: "PayPal", 
       title: "Pagos y transferencias por PayPal",
       content: (
-        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-          <PayPalLogo height={compact ? 13 : 15} />
-          <span style={{ fontSize: compact ? '10px' : '11px', fontWeight: 700, color: '#003087', letterSpacing: '-0.02em' }}>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+          <PayPalLogo height={compact ? 12 : 14} />
+          <span style={{ fontSize: compact ? '9.5px' : '10.5px', fontWeight: 700, color: '#003087', letterSpacing: '-0.02em' }}>
             PayPal
           </span>
         </span>
@@ -176,22 +170,10 @@ export function PaymentMethodBadges({ compact = false }) {
       name: "Zelle", 
       title: "Transferencias directas por Zelle (EE. UU.)",
       content: (
-        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-          <ZelleLogo height={compact ? 12 : 14} />
-          <span style={{ fontSize: compact ? '10px' : '11px', fontWeight: 700, color: '#7414CA', letterSpacing: '-0.01em' }}>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+          <ZelleLogo height={compact ? 11 : 13} />
+          <span style={{ fontSize: compact ? '9.5px' : '10.5px', fontWeight: 700, color: '#7414CA', letterSpacing: '-0.01em' }}>
             zelle
-          </span>
-        </span>
-      ) 
-    },
-    { 
-      name: "Bitcoin / Chivo", 
-      title: "Bitcoin y Chivo Wallet (sin comisiones)",
-      content: (
-        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-          <BitcoinLogo height={compact ? 13 : 15} />
-          <span style={{ fontSize: compact ? '10px' : '11px', fontWeight: 600, color: '#D97706', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>
-            Bitcoin · Chivo
           </span>
         </span>
       ) 
@@ -203,8 +185,8 @@ export function PaymentMethodBadges({ compact = false }) {
       className="payment-badges-grid"
       style={{ 
         display: 'grid', 
-        gridTemplateColumns: 'repeat(3, 1fr)', 
-        gap: compact ? '6px' : '8px', 
+        gridTemplateColumns: 'repeat(5, 1fr)', 
+        gap: compact ? '4px' : '6px', 
         width: '100%',
       }}
     >
@@ -218,11 +200,10 @@ export function PaymentMethodBadges({ compact = false }) {
             justifyContent: 'center',
             backgroundColor: '#FFFFFF',
             border: '1px solid rgba(34, 40, 74, 0.12)',
-            padding: compact ? '4px 6px' : '6px 8px',
-            borderRadius: '8px',
+            padding: compact ? '3px 4px' : '4px 6px',
+            borderRadius: '6px',
             boxShadow: '0 1px 2px rgba(34, 40, 74, 0.04)',
-            height: compact ? '30px' : '34px',
-            transition: 'transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease, border-color 0.18s ease',
+            height: compact ? '28px' : '32px',
             cursor: 'default',
           }}
           className="payment-badge-pill"
@@ -235,3 +216,4 @@ export function PaymentMethodBadges({ compact = false }) {
 }
 
 export default PaymentMethodBadges;
+

@@ -543,8 +543,8 @@
 /* 000h Payment Method Badges Grid & Capsules */
 .payment-badges-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
   width: 100%;
 }
 
@@ -559,9 +559,10 @@
   box-shadow: 0 4px 10px rgba(34, 40, 74, 0.08) !important;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 400px) {
   .payment-badges-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 }
+
 

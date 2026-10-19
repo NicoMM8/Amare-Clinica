@@ -177,7 +177,7 @@ export default function PrivacidadPage() {
           </ul>
 
           <h2 className="font-serif" style={{ fontSize: '22px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '12px' }}>
-            3. Seguridad en las Sesiones Online y Protección de la Diáspora
+            3. Seguridad en las Sesiones Online y Protección de Pacientes en el Exterior
           </h2>
           <p style={{ marginBottom: '24px' }}>
             Para pacientes residentes en El Salvador, Estados Unidos, Canadá o Europa:

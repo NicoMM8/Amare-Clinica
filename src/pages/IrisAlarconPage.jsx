@@ -32,7 +32,7 @@ export default function IrisAlarconPage() {
               </h1>
 
               <p style={{ fontSize: '18px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-                Directora Clínica de Centro Amaré. Psicóloga clínica colegiada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (Registro Profesional JVPP N.º 47096). Con más de 9 años de experiencia en consulta privada y máster especializado, brindo un espacio seguro, neutral y con rigor científico para parejas e individuos en El Salvador y en el exterior.
+                Soy psicóloga clínica salvadoreña acreditada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (Registro Profesional JVPP N.° 47096). Con más de 9 años de experiencia en consulta privada y máster especializado, brindo un espacio seguro, neutral y con rigor científico para parejas y adultos en El Salvador y en el exterior.
               </p>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '36px' }}>

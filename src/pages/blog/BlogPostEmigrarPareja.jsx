@@ -24,7 +24,7 @@ export default function BlogPostEmigrarPareja() {
             </a>
 
             <div className="pill-badge pill-badge-clay" style={{ marginBottom: '16px' }}>
-              <span>Diáspora Salvadoreña & Pareja</span>
+              <span>Pareja y Migración</span>
             </div>
 
             <h1 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 46px)', lineHeight: 1.22, color: 'var(--color-plum-900)', marginBottom: '18px' }}>

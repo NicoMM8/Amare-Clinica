@@ -31,7 +31,7 @@ export default function QuizTeaser() {
               }}
             >
               <Sparkles size={14} style={{ color: 'var(--color-clay)' }} />
-              <span>Autoevaluación Gratuita · 2 minutos</span>
+              <span>Autoevaluación sin costo · 2 minutos</span>
             </div>
 
             <h3

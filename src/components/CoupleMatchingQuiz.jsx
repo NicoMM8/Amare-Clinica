@@ -70,7 +70,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
     {
       id: 'situation',
       title: '¿Cuál es la situación actual para iniciar el proceso?',
-      subtitle: 'Esto nos permite adaptar el encuadre clínico inicial según la disposición de ambos.',
+      subtitle: 'Esto nos permite adaptar el primer paso según el momento en que se encuentre cada uno.',
       options: [
         { label: 'Ambos queremos participar en la terapia de pareja', sub: 'Queremos trabajar juntos en la relación', short: 'Ambos queremos participar' },
         { label: 'Solo yo tengo iniciativa por ahora (mi pareja tiene dudas)', sub: 'Podemos comenzar con enfoque individual vincular', short: 'Iniciativa individual (pareja con dudas)' },

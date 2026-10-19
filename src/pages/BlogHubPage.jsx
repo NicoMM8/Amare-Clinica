@@ -10,7 +10,7 @@ export const BLOG_POSTS = [
     title: 'Cómo afecta emigrar a la relación de pareja: Guía para salvadoreños en EE. UU. y Canadá',
     excerpt: 'El choque cultural, el ritmo laboral extenuante y la soledad en el extranjero ponen a prueba el vínculo amoroso. Claves clínicas para sanar la desconexión afectiva.',
     readTime: '6 min de lectura',
-    category: 'Diáspora & Pareja',
+    category: 'Pareja y Migración',
     date: 'Actualizado 2026',
     author: 'Lic. Iris Alarcón (JVPP)',
     icon: Compass
@@ -55,7 +55,7 @@ export default function BlogHubPage() {
               <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 4.5vw, 52px)', lineHeight: 1.18, color: 'var(--color-plum-900)', marginBottom: '20px' }}>
                 Blog & Guías de Psicología <br />
                 <span style={{ fontStyle: 'italic', color: 'var(--color-clay)' }}>
-                  Para El Salvador y la Diáspora
+                  para El Salvador y el Exterior
                 </span>
               </h1>
 

@@ -205,9 +205,22 @@ export function BentoMosaic() {
             </div>
 
             <div style={{ paddingTop: '20px' }}>
-              <LivingLink href={whatsappUrl} target="_blank" tone="clay">
-                Primera conversación (30 min sin costo)
-              </LivingLink>
+              <a 
+                href={whatsappUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  color: 'var(--v-pink)',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  fontSize: '15px'
+                }}
+              >
+                <span>Primera conversación (30 min sin costo) →</span>
+              </a>
             </div>
           </motion.div>
 

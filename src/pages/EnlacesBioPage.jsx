@@ -123,7 +123,7 @@ export default function EnlacesBioPage() {
         </div>
 
         <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.5, marginTop: '14px', marginBottom: 0 }}>
-          Atención psicológica online para parejas y adultos en El Salvador y la diáspora (EE. UU., Canadá, Europa).
+          Atención psicológica online para parejas y adultos en El Salvador y el exterior (EE. UU., Canadá, Europa).
         </p>
       </div>
 

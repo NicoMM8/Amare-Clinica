@@ -56,16 +56,16 @@ export default function Navbar() {
         </ul>
 
         {/* Action Button & Menu */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <a 
             href={whatsappUrl} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="btn-primary"
-            style={{ padding: '10px 20px', fontSize: '14px' }}
+            className="btn-primary nav-cta-btn"
             onClick={() => handleWhatsAppClick('navbar')}
           >
-            <span>1ª conversación sin costo →</span>
+            <span className="nav-cta-text-desktop">1ª conversación sin costo →</span>
+            <span className="nav-cta-text-mobile">Agendar</span>
           </a>
 
           {/* Hamburger button (Solo visible en móvil/tablet) */}
@@ -75,16 +75,8 @@ export default function Navbar() {
             aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            style={{ 
-              padding: '8px', 
-              color: 'var(--color-plum-900)',
-              borderRadius: '8px',
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer'
-            }}
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </nav>

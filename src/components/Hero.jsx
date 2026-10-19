@@ -57,7 +57,7 @@ export default function Hero() {
             >
               {/* Eyebrow con Palabras Clave SEO: Terapia de Pareja y Sexología Clínica Online en El Salvador y el Exterior */}
               <span 
-                className="badge-pill font-sans" 
+                className="badge-pill font-sans hero-eyebrow-pill" 
                 style={{ 
                   fontSize: '13px', 
                   fontWeight: 600, 
@@ -70,7 +70,8 @@ export default function Hero() {
                 }}
               >
                 <span className="badge-dot" aria-hidden="true" />
-                <span>Terapia de Pareja y Sexología Clínica Online en El Salvador y el Exterior</span>
+                <span className="hero-eyebrow-desktop">Terapia de Pareja y Sexología Clínica Online en El Salvador y el Exterior</span>
+                <span className="hero-eyebrow-mobile">Terapia de Pareja y Sexología Clínica</span>
               </span>
 
               {/* Titular Emocional de Marca con 'importa' Animado */}
@@ -166,22 +167,8 @@ export default function Hero() {
             </div>
 
             {/* CTA Action Group */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-start' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
-                <HeroButton
-                  href="/test-de-pareja"
-                  appearance="paper-fold"
-                  variant="clay"
-                  style={{
-                    height: '52px',
-                    padding: '0 26px',
-                    fontSize: '15.5px',
-                    boxShadow: '0 8px 24px rgba(183, 89, 64, 0.32)',
-                  }}
-                >
-                  Evaluar nuestro caso de pareja
-                </HeroButton>
-
+            <div className="hero-cta-group">
+              <div className="hero-action-buttons">
                 <HeroButton
                   href={whatsappUrl}
                   target="_blank"
@@ -199,16 +186,23 @@ export default function Hero() {
                     <span>WhatsApp directo</span>
                   </span>
                 </HeroButton>
+
+                <HeroButton
+                  href="/test-de-pareja"
+                  appearance="paper-fold"
+                  variant="clay"
+                  style={{
+                    height: '52px',
+                    padding: '0 26px',
+                    fontSize: '15.5px',
+                    boxShadow: '0 8px 24px rgba(183, 89, 64, 0.32)',
+                  }}
+                >
+                  Evaluar nuestro caso de pareja
+                </HeroButton>
               </div>
 
-              <span style={{ 
-                fontSize: '13.5px', 
-                fontWeight: 500, 
-                color: 'rgba(34, 40, 74, 0.75)', 
-                marginTop: '6px', 
-                marginLeft: '2px',
-                lineHeight: 1.45
-              }}>
+              <span className="hero-cta-guarantee">
                 Primera conversación (30 min sin costo) con el equipo clínico · Sin compromiso
               </span>
             </div>

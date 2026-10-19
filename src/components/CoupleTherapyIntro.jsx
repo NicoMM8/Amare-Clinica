@@ -1,180 +1,193 @@
 import React from 'react';
 import { Sparkles, MessageCircle, ArrowRight, ShieldCheck } from 'lucide-react';
 
-/* ── 1. Icono Ilustrado: Problemas de comunicación (Mano que sostiene un corazón cálido) ── */
+/* ── 1. Icono La Palma: Comunicación (Dos Torogoces frente a frente con flor de diálogo) ── */
 function IconComunicacion() {
   return (
-    <svg width="86" height="86" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Fondo orgánico suave */}
-      <circle cx="40" cy="40" r="36" fill="#FDF0EB" />
-      {/* Resplandor suave */}
-      <circle cx="40" cy="36" r="22" fill="#FCE4D9" opacity="0.6" />
-      {/* Corazón en terracota cálida */}
-      <path
-        d="M40 31C37 23 25.5 23 23.5 31C21 41 35 48.5 40 51.5C45 48.5 59 41 56.5 31C54.5 23 43 23 40 31Z"
-        fill="#B75940"
-      />
-      {/* Reflejo / brillo en el corazón */}
-      <path
-        d="M27.5 30C28.5 26 33.5 26 35.5 29.5"
-        stroke="#FFFFFF"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        opacity="0.8"
-      />
-      {/* Mano estilizada en perspectiva que abraza el corazón */}
-      <path
-        d="M17 56C22 53.5 27 52.5 33 54.5C38 56 43 54.5 47 50C49 48 52 49 52 51.5C50 56.5 44 59.5 38 60C30 60.5 23 59 17 56Z"
-        fill="#E5B59D"
-      />
-      {/* Manga en tono salvia */}
-      <path
-        d="M13 59C17 57 21 56.5 25 58L23 63C19 62 15 61.5 13 59Z"
-        fill="#778F79"
-      />
-      {/* Líneas suaves de expresión / comunicación */}
-      <path d="M57 22C60 24 61.5 27 61.5 30" stroke="#B75940" strokeWidth="2" strokeLinecap="round" opacity="0.75" />
-      <path d="M62 18C66 21 68 25 68 30" stroke="#B75940" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
+    <svg width="86" height="86" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Medallón artesanal La Palma */}
+      <circle cx="42" cy="42" r="39" fill="#FFF8F0" stroke="#E29D38" strokeWidth="2" strokeDasharray="3 3" />
+      <circle cx="42" cy="42" r="35" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.5" />
+      
+      {/* Sol naciente en el fondo */}
+      <path d="M30 42C30 35.37 35.37 30 42 30C48.63 30 54 42 54 42H30Z" fill="#F4CF68" />
+      
+      {/* Ave Torogoz izquierda */}
+      <path d="M19 46C19 39 24 35 28 36C32 37 33 42 33 47C33 52 27 54 23 54C20 54 19 50 19 46Z" fill="#3B5B88" stroke="#2A2128" strokeWidth="1.6" />
+      <path d="M28 36L34 35L30 38" stroke="#2A2128" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="#E29D38" />
+      <circle cx="26" cy="38" r="1.5" fill="#2A2128" />
+      {/* Ala izquierda */}
+      <path d="M22 44C24 44 27 46 26 50C23 50 21 47 22 44Z" fill="#5F7D64" stroke="#2A2128" strokeWidth="1.2" />
+      
+      {/* Ave Torogoz derecha */}
+      <path d="M65 46C65 39 60 35 56 36C52 37 51 42 51 47C51 52 57 54 61 54C64 54 65 50 65 46Z" fill="#5F7D64" stroke="#2A2128" strokeWidth="1.6" />
+      <path d="M56 36L50 35L54 38" stroke="#2A2128" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="#E29D38" />
+      <circle cx="58" cy="38" r="1.5" fill="#2A2128" />
+      {/* Ala derecha */}
+      <path d="M62 44C60 44 57 46 58 50C61 50 63 47 62 44Z" fill="#3B5B88" stroke="#2A2128" strokeWidth="1.2" />
+      
+      {/* Corazón / Flor central de conexión */}
+      <path d="M42 34C40.5 30 35.5 30 34.5 34C33 40 40 44.5 42 46.5C44 44.5 51 40 49.5 34C48.5 30 43.5 30 42 34Z" fill="#B75940" stroke="#2A2128" strokeWidth="1.5" />
+      
+      {/* Rama de cafeto en la base */}
+      <path d="M22 60C32 57 52 57 62 60" stroke="#2A2128" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="34" cy="58" r="2.5" fill="#B75940" stroke="#2A2128" strokeWidth="1" />
+      <circle cx="50" cy="58" r="2.5" fill="#B75940" stroke="#2A2128" strokeWidth="1" />
+      <path d="M42 58V50" stroke="#5F7D64" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }
 
-/* ── 2. Icono Ilustrado: Aceptación del otro (Manos entrelazadas formando corazón) ── */
+/* ── 2. Icono La Palma: Aceptación y Diferencias (Dos perfiles folclóricos y sol de armonía) ── */
 function IconAceptacion() {
   return (
-    <svg width="86" height="86" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Fondo suave */}
-      <circle cx="40" cy="40" r="36" fill="#FFF5EC" />
-      {/* Aura central cálida */}
-      <circle cx="40" cy="38" r="20" fill="#FCE7D6" opacity="0.8" />
-      {/* Silueta del corazón en el centro de las manos */}
-      <path
-        d="M40 33C38 27.5 30 27 28 33C26 39.5 36.5 46 40 48.5C43.5 46 54 39.5 52 33C50 27 42 27.5 40 33Z"
-        fill="#B75940"
-      />
-      {/* Mano izquierda (tono piel cálido) */}
-      <path
-        d="M16 42C20 37 28 33 34 38C36.5 40 37 43.5 34.5 46L27 53.5C23.5 56 18.5 52 16 48C14.5 46 14.5 43.5 16 42Z"
-        fill="#E8BAA2"
-      />
-      {/* Mano derecha (tono complementario) */}
-      <path
-        d="M64 42C60 37 52 33 46 38C43.5 40 43 43.5 45.5 46L53 53.5C56.5 56 61.5 52 64 48C65.5 46 65.5 43.5 64 42Z"
-        fill="#DCA990"
-      />
-      {/* Unión de dedos / pulgares con contorno suave */}
-      <path
-        d="M34 38C37 41 43 41 46 38"
-        stroke="#C68972"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-      />
+    <svg width="86" height="86" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Medallón artesanal La Palma */}
+      <circle cx="42" cy="42" r="39" fill="#FFF8F0" stroke="#B75940" strokeWidth="2" strokeDasharray="3 3" />
+      <circle cx="42" cy="42" r="35" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.5" />
+
+      {/* Sol de La Palma en la cima */}
+      <circle cx="42" cy="24" r="7" fill="#F4CF68" stroke="#2A2128" strokeWidth="1.5" />
+      <path d="M42 13V16M33 18L35 20M51 18L49 20M42 32V34" stroke="#2A2128" strokeWidth="1.5" strokeLinecap="round" />
+
+      {/* Perfil izquierdo (mujer / cabello estilizado) */}
+      <path d="M24 58C24 48 29 42 34 42C35 45 35 48 33 50C31 52 30 55 31 58H24Z" fill="#3B5B88" stroke="#2A2128" strokeWidth="1.5" />
+      <circle cx="30" cy="46" r="1.5" fill="#FFF8F0" />
+
+      {/* Perfil derecho (hombre / sombrero campesino) */}
+      <path d="M60 58C60 48 55 42 50 42C49 45 49 48 51 50C53 52 54 55 53 58H60Z" fill="#5F7D64" stroke="#2A2128" strokeWidth="1.5" />
+      <circle cx="54" cy="46" r="1.5" fill="#FFF8F0" />
+      <path d="M48 40C52 38 56 38 60 40" stroke="#2A2128" strokeWidth="1.8" strokeLinecap="round" />
+
+      {/* Corazón artesanal en el centro que une ambos */}
+      <path d="M42 42C40.5 37 34 37 33 42C31.5 48 40 54 42 56C44 54 52.5 48 51 42C50 37 43.5 37 42 42Z" fill="#B75940" stroke="#2A2128" strokeWidth="1.5" />
+      <path d="M42 40V55" stroke="#FAF0E6" strokeWidth="1.4" strokeDasharray="2 2" />
+
+      {/* Base de tierra / colina */}
+      <path d="M18 64C30 60 54 60 66 64" stroke="#2A2128" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
 
-/* ── 3. Icono Ilustrado: Roles de cada uno (Poste indicador con flechas) ── */
+/* ── 3. Icono La Palma: Convivencia y Roles (Casita tradicional de teja y cafetal en flor) ── */
 function IconRoles() {
   return (
-    <svg width="86" height="86" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Fondo suave */}
-      <circle cx="40" cy="40" r="36" fill="#EEF4F0" />
-      {/* Pequeña colina / base */}
-      <ellipse cx="40" cy="62" rx="22" ry="5.5" fill="#DCE7E0" />
-      {/* Poste de madera */}
-      <rect x="37.5" y="16" width="5" height="46" rx="2.5" fill="#9C7A60" />
-      {/* Cartel superior apuntando a la derecha (Salvia) */}
-      <path
-        d="M27 22H50L56 28L50 34H27V22Z"
-        fill="#6E8A71"
-      />
-      <rect x="31" y="26.5" width="16" height="3" rx="1.5" fill="#FFFFFF" opacity="0.75" />
-      {/* Cartel inferior apuntando a la izquierda (Terracota) */}
-      <path
-        d="M53 36H30L24 42L30 48H53V36Z"
-        fill="#B75940"
-      />
-      <rect x="33" y="40.5" width="16" height="3" rx="1.5" fill="#FFFFFF" opacity="0.75" />
-      {/* Pequeña plantita en la base */}
-      <path d="M31 61C31 57 34 54 36 53" stroke="#5F7561" strokeWidth="2" strokeLinecap="round" />
-      <path d="M48 61C48 57 45 55 43 54" stroke="#5F7561" strokeWidth="2" strokeLinecap="round" />
+    <svg width="86" height="86" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Medallón artesanal La Palma */}
+      <circle cx="42" cy="42" r="39" fill="#FFF8F0" stroke="#5F7D64" strokeWidth="2" strokeDasharray="3 3" />
+      <circle cx="42" cy="42" r="35" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.5" />
+
+      {/* Techo de teja tradicional */}
+      <path d="M26 36L42 22L58 36H26Z" fill="#B75940" stroke="#2A2128" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M34 29L38 36M46 29L42 36M50 33L54 36" stroke="#FAF0E6" strokeWidth="1.2" strokeLinecap="round" />
+
+      {/* Fachada de la casita */}
+      <rect x="30" y="36" width="24" height="24" fill="#FFF8F0" stroke="#2A2128" strokeWidth="1.8" />
+      {/* Puerta rústica con arco */}
+      <path d="M38 60V48C38 46 40 44 42 44C44 44 46 46 46 48V60H38Z" fill="#3B5B88" stroke="#2A2128" strokeWidth="1.4" />
+      
+      {/* Cafeto izquierdo con fruto */}
+      <path d="M23 60V46C23 44 26 42 28 44" stroke="#5F7D64" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="24" cy="48" r="2.2" fill="#B75940" stroke="#2A2128" strokeWidth="1" />
+      <circle cx="28" cy="44" r="2.2" fill="#B75940" stroke="#2A2128" strokeWidth="1" />
+
+      {/* Cafeto derecho con fruto */}
+      <path d="M61 60V46C61 44 58 42 56 44" stroke="#5F7D64" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="60" cy="48" r="2.2" fill="#B75940" stroke="#2A2128" strokeWidth="1" />
+      <circle cx="56" cy="44" r="2.2" fill="#B75940" stroke="#2A2128" strokeWidth="1" />
+
+      {/* Suelo / colina base */}
+      <path d="M16 63C28 60 56 60 68 63" stroke="#2A2128" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
 
-/* ── 4. Icono Ilustrado: Sexualidad e intimidad (Corazón con cerradura/chispa) ── */
+/* ── 4. Icono La Palma: Sexualidad e Intimidad (Flor tradicional en floración y luna de La Palma) ── */
 function IconSexualidad() {
   return (
-    <svg width="86" height="86" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Fondo suave */}
-      <circle cx="40" cy="40" r="36" fill="#FDF0EB" />
-      {/* Resplandor cálido */}
-      <circle cx="40" cy="38" r="22" fill="#FCE0D2" opacity="0.8" />
-      {/* Corazón principal en terracota vibrante */}
-      <path
-        d="M40 25C36 17 22 17 19.5 27C16.5 38.5 34 48.5 40 52.5C46 48.5 63.5 38.5 60.5 27C58 17 44 17 40 25Z"
-        fill="#B75940"
-      />
-      {/* Cerradura / punto de intimidad central */}
-      <circle cx="40" cy="33.5" r="5" fill="#FFF9F5" />
-      <path
-        d="M38 36L37 44H43L42 36"
-        fill="#FFF9F5"
-      />
-      <circle cx="40" cy="34.5" r="2.5" fill="#D98838" />
-      {/* Destellos de conexión y complicidad */}
-      <path d="M56 19L58.5 15L61 19L58 17.5L56 19Z" fill="#D98838" />
-      <path d="M22 20L24.5 16.5L27 20L24.5 18L22 20Z" fill="#D98838" />
-      <path d="M40 57V61" stroke="#A95A41" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+    <svg width="86" height="86" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Medallón artesanal La Palma */}
+      <circle cx="42" cy="42" r="39" fill="#FFF8F0" stroke="#B75940" strokeWidth="2" strokeDasharray="3 3" />
+      <circle cx="42" cy="42" r="35" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.5" />
+
+      {/* Luna dorada artesanal en la esquina superior */}
+      <path d="M54 20C50 20 46 23 46 27C46 31 50 34 54 34C51 34 49 31 49 27C49 23 51 20 54 20Z" fill="#F4CF68" stroke="#2A2128" strokeWidth="1.4" />
+      <circle cx="34" cy="24" r="1.5" fill="#E29D38" />
+      <circle cx="38" cy="28" r="1.2" fill="#E29D38" />
+
+      {/* Flor central estilizada de La Palma */}
+      {/* Pétalo central */}
+      <path d="M42 34C39 40 39 48 42 54C45 48 45 40 42 34Z" fill="#B75940" stroke="#2A2128" strokeWidth="1.5" />
+      {/* Pétalos laterales izquierdos */}
+      <path d="M40 44C32 40 27 46 32 52C36 53 39 48 40 44Z" fill="#E29D38" stroke="#2A2128" strokeWidth="1.4" />
+      {/* Pétalos laterales derechos */}
+      <path d="M44 44C52 40 57 46 52 52C48 53 45 48 44 44Z" fill="#E29D38" stroke="#2A2128" strokeWidth="1.4" />
+      {/* Corazón en el núcleo de la flor */}
+      <circle cx="42" cy="46" r="4.5" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.4" />
+      <circle cx="42" cy="46" r="2" fill="#B75940" />
+
+      {/* Hojas verdes en la base */}
+      <path d="M42 54V64M34 58C37 57 40 58 42 61M50 58C47 57 44 58 42 61" stroke="#5F7D64" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
 
-/* ── 5. Icono Ilustrado: Infidelidad (Corazón quebrado con fractura visible) ── */
+/* ── 5. Icono La Palma: Infidelidad y Confianza (Corazón artesanal restaurado con brote de vida) ── */
 function IconInfidelidad() {
   return (
-    <svg width="86" height="86" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Fondo suave */}
-      <circle cx="40" cy="40" r="36" fill="#FDEEEF" />
-      {/* Mitad izquierda del corazón (desplazada) */}
-      <path
-        d="M36 26C32 18.5 19 18.5 16.5 27.5C13.5 38 28 47.5 34.5 52L37 45.5L32 39.5L38.5 35L34.5 30.5L36 26Z"
-        fill="#B75940"
-      />
-      {/* Mitad derecha del corazón (separada con zigzag) */}
-      <path
-        d="M41 26L39.5 30.5L43.5 35L38 39.5L42.5 45.5L40 52C46.5 47.5 61 38 58 27.5C55.5 18.5 42.5 18.5 38.5 26H41Z"
-        fill="#C86A50"
-      />
-      {/* Pequeños puntos de sutura para sanar la herida */}
-      <path d="M35 32L42 31" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" opacity="0.85" />
-      <path d="M33 40L40 39" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" opacity="0.85" />
-      <path d="M35 48L42 47" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" opacity="0.85" />
+    <svg width="86" height="86" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Medallón artesanal La Palma */}
+      <circle cx="42" cy="42" r="39" fill="#FFF8F0" stroke="#3B5B88" strokeWidth="2" strokeDasharray="3 3" />
+      <circle cx="42" cy="42" r="35" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.5" />
+
+      {/* Mitad izquierda del corazón (añil/terracota) */}
+      <path d="M40 28C35 22 25 24 23 32C20 42 34 52 40 58V28Z" fill="#B75940" stroke="#2A2128" strokeWidth="1.6" />
+      {/* Mitad derecha del corazón (añil suave) */}
+      <path d="M44 28C49 22 59 24 61 32C64 42 50 52 44 58V28Z" fill="#D97A62" stroke="#2A2128" strokeWidth="1.6" />
+
+      {/* Puntadas artesanales de reparación (Kintsugi / bordado salvadoreño) */}
+      <path d="M38 34L46 32M37 42L47 40M39 50L45 48" stroke="#FAF0E6" strokeWidth="2" strokeLinecap="round" />
+
+      {/* Brote verde que renace del centro */}
+      <path d="M42 26V16" stroke="#5F7D64" strokeWidth="2" strokeLinecap="round" />
+      <path d="M42 18C38 16 38 13 41 13C43 13 43 16 42 18Z" fill="#5F7D64" stroke="#2A2128" strokeWidth="1.2" />
+      <path d="M42 16C46 14 46 11 43 11C41 11 41 14 42 16Z" fill="#5F7D64" stroke="#2A2128" strokeWidth="1.2" />
+
+      {/* Base decorativa */}
+      <path d="M24 64C34 61 50 61 60 64" stroke="#2A2128" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
 
-/* ── 6. Icono Ilustrado: Celos y control (Burbuja de mensaje con alerta) ── */
+/* ── 6. Icono La Palma: Celos e Inseguridad (Ventana artesanal que se abre hacia la libertad y calma) ── */
 function IconCelos() {
   return (
-    <svg width="86" height="86" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Fondo suave */}
-      <circle cx="40" cy="40" r="36" fill="#EEF2F8" />
-      {/* Rayos de alerta de hipervigilancia */}
-      <path d="M40 13V17" stroke="#22284A" strokeWidth="2.4" strokeLinecap="round" />
-      <path d="M28 17L30.5 20.5" stroke="#22284A" strokeWidth="2" strokeLinecap="round" />
-      <path d="M52 17L49.5 20.5" stroke="#22284A" strokeWidth="2" strokeLinecap="round" />
-      {/* Burbuja de diálogo */}
-      <path
-        d="M20 27C20 22.5 24 19 29 19H51C56 19 60 22.5 60 27V42C60 46.5 56 50 51 50H32L22 57V50C20.5 48.5 20 45.5 20 42V27Z"
-        fill="#CBD7EA"
-      />
-      {/* Sobre dentro de la burbuja */}
-      <rect x="27" y="28" width="26" height="16" rx="3" fill="#FFFFFF" />
-      {/* Pliegue del sobre */}
-      <path d="M27 29L40 38L53 29" stroke="#B75940" strokeWidth="1.8" strokeLinejoin="round" />
-      {/* Pequeño sello de candado */}
-      <circle cx="40" cy="37" r="3" fill="#B75940" />
+    <svg width="86" height="86" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Medallón artesanal La Palma */}
+      <circle cx="42" cy="42" r="39" fill="#FFF8F0" stroke="#E29D38" strokeWidth="2" strokeDasharray="3 3" />
+      <circle cx="42" cy="42" r="35" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.5" />
+
+      {/* Sol radiante de fondo */}
+      <circle cx="56" cy="24" r="6" fill="#F4CF68" stroke="#2A2128" strokeWidth="1.4" />
+      <path d="M56 15V17M48 20L50 21M63 20L61 21" stroke="#2A2128" strokeWidth="1.3" strokeLinecap="round" />
+
+      {/* Paloma de La Palma volando libre */}
+      <path d="M48 30C48 26 43 23 39 24C36 25 35 28 36 31C37 34 42 36 45 35L48 30Z" fill="#FFF8F0" stroke="#2A2128" strokeWidth="1.5" />
+      {/* Ala alzada */}
+      <path d="M42 27L46 18C42 18 39 22 42 27Z" fill="#FFF8F0" stroke="#2A2128" strokeWidth="1.4" />
+      <circle cx="39" cy="26" r="1.2" fill="#2A2128" />
+
+      {/* Ventana / cerrojo rústico abierto abajo */}
+      <rect x="26" y="44" width="32" height="18" rx="2" fill="#FFF8F0" stroke="#2A2128" strokeWidth="1.6" />
+      {/* postigo izquierdo abierto */}
+      <path d="M26 44L18 42V60L26 62V44Z" fill="#3B5B88" stroke="#2A2128" strokeWidth="1.5" />
+      {/* postigo derecho abierto */}
+      <path d="M58 44L66 42V60L58 62V44Z" fill="#3B5B88" stroke="#2A2128" strokeWidth="1.5" />
+      {/* corazón central en la ventana */}
+      <path d="M42 49C40.5 46 37 46 36 49C35 53 41 57 42 58C43 57 49 53 48 49C47 46 43.5 46 42 49Z" fill="#B75940" />
+
+      {/* Suelo */}
+      <path d="M18 64C30 62 54 62 66 64" stroke="#2A2128" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }

@@ -147,6 +147,74 @@
   margin-bottom: 32px;
 }
 
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.hero-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-cta-guarantee {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(34, 40, 74, 0.75);
+  margin-top: 6px;
+  margin-left: 2px;
+  line-height: 1.45;
+}
+
+.hero-eyebrow-mobile {
+  display: none;
+}
+
+.hero-eyebrow-desktop {
+  display: inline;
+}
+
+@media (max-width: 600px) {
+  .hero-eyebrow-desktop {
+    display: none !important;
+  }
+  .hero-eyebrow-mobile {
+    display: inline !important;
+  }
+  .hero-eyebrow-pill {
+    white-space: normal !important;
+    max-width: 100% !important;
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+  }
+  .hero-cta-group {
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+  .hero-action-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+  .hero-action-buttons .v-hero-button {
+    width: 100% !important;
+    min-width: 100% !important;
+    justify-content: center !important;
+    height: 52px !important;
+    padding: 0 18px !important;
+  }
+  .hero-cta-guarantee {
+    text-align: center !important;
+    margin-left: 0 !important;
+    font-size: 12.5px !important;
+  }
+}
+
 .hero-visual-card {
   position: relative;
   border-radius: 28px;

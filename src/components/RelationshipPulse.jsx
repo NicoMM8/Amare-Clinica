@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
-import { Sparkles, ArrowRight, ShieldCheck, HeartHandshake, CheckCircle2 } from 'lucide-react';
+import { 
+  RotateCcw, 
+  HeartCrack, 
+  Globe, 
+  Flame, 
+  Sprout, 
+  Sparkles, 
+  ArrowRight, 
+  ShieldCheck, 
+  HeartHandshake, 
+  CheckCircle2 
+} from 'lucide-react';
 
 const MOODS = [
   {
     id: 'loop',
     title: 'Discusiones en bucle',
-    icon: '🌀',
+    icon: RotateCcw,
     summary: 'Peleamos por lo mismo y terminamos distanciados',
     method: 'Terapia Integral de Pareja (IBCT)',
     tagColor: '#BA5E45',
@@ -16,7 +27,7 @@ const MOODS = [
   {
     id: 'trust',
     title: 'Herida por infidelidad',
-    icon: '💔',
+    icon: HeartCrack,
     summary: 'Dudas sobre si perdonar o cómo volver a confiar',
     method: 'Protocolo de Reparación del Vínculo',
     tagColor: '#C2654D',
@@ -27,7 +38,7 @@ const MOODS = [
   {
     id: 'distance',
     title: 'Amor a distancia / Diáspora',
-    icon: '🌍',
+    icon: Globe,
     summary: 'Uno está en EE.UU./Canadá o ambos emigraron',
     method: 'Enfoque Transnacional e Identidad',
     tagColor: '#3D5A80',
@@ -38,7 +49,7 @@ const MOODS = [
   {
     id: 'intimacy',
     title: 'Frialdad y rutina íntima',
-    icon: '❄️',
+    icon: Flame,
     summary: 'Poco afecto o nos sentimos como compañeros de casa',
     method: 'Sexología Clínica y TCC Afectiva',
     tagColor: '#8D5B4C',
@@ -49,7 +60,7 @@ const MOODS = [
   {
     id: 'preventive',
     title: 'Prevenir y consolidar',
-    icon: '🌱',
+    icon: Sprout,
     summary: 'Estamos bien y queremos alinear el futuro juntos',
     method: 'Fortalecimiento Vincular Preventivo',
     tagColor: '#2E7D32',
@@ -68,7 +79,7 @@ export default function RelationshipPulse() {
   };
 
   return (
-    <section className="section" style={{ paddingTop: '20px', paddingBottom: '60px' }}>
+    <section className="section" style={{ paddingTop: '16px', paddingBottom: '60px' }}>
       <div className="container" style={{ maxWidth: '1180px' }}>
         
         {/* Main interactive wrapper card */}
@@ -98,7 +109,7 @@ export default function RelationshipPulse() {
           />
 
           {/* Header */}
-          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 32px' }}>
+          <div style={{ textAlign: 'center', maxWidth: '740px', margin: '0 auto 32px' }}>
             <div 
               className="badge-pill" 
               style={{ 
@@ -110,7 +121,7 @@ export default function RelationshipPulse() {
               }}
             >
               <Sparkles size={14} style={{ color: 'var(--color-clay)' }} />
-              <span>Autoevaluación Guiada en 1 Clic</span>
+              <span>Autoevaluación Clínica en 1 Clic</span>
             </div>
 
             <h2 
@@ -126,7 +137,7 @@ export default function RelationshipPulse() {
             </h2>
 
             <p style={{ fontSize: '15.5px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.55 }}>
-              Sin registros ni correo. Elige una situación para ver el abordaje clínico recomendado por el equipo:
+              Sin registros ni correo. Selecciona una situación para conocer el abordaje terapéutico recomendado por el equipo:
             </p>
           </div>
 
@@ -143,6 +154,7 @@ export default function RelationshipPulse() {
           >
             {MOODS.map((mood) => {
               const isSelected = mood.id === selectedId;
+              const MoodIcon = mood.icon;
               return (
                 <button
                   key={mood.id}
@@ -171,13 +183,27 @@ export default function RelationshipPulse() {
                       : '0 2px 8px rgba(0, 0, 0, 0.02)',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginBottom: '8px' }}>
-                    <span style={{ fontSize: '24px', lineHeight: 1 }}>{mood.icon}</span>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginBottom: '10px' }}>
+                    <div 
+                      style={{
+                        width: '36px',
+                        height: '36px',
+                        borderRadius: '10px',
+                        background: isSelected ? 'var(--color-clay)' : 'var(--color-clay-subtle)',
+                        color: isSelected ? '#FFFFFF' : 'var(--color-clay)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        transition: 'all 0.25s ease'
+                      }}
+                    >
+                      <MoodIcon size={18} />
+                    </div>
                     {isSelected && (
                       <span 
                         style={{ 
-                          width: '8px', 
-                          height: '8px', 
+                          width: '7px', 
+                          height: '7px', 
                           borderRadius: '50%', 
                           background: 'var(--color-clay)' 
                         }} 

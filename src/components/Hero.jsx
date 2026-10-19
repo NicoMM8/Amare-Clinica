@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Globe, HeartHandshake, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
+import { Globe, HeartHandshake, ShieldCheck, Sparkles, ArrowRight, Clock } from 'lucide-react';
 import { PigmentAtmosphere } from './cojeev/PigmentAtmosphere';
 
 function WhatsAppIcon({ size = 20, className = "" }) {
@@ -188,7 +188,7 @@ export default function Hero() {
                 zIndex: 2,
               }}
             >
-              <span style={{ fontSize: '13px' }}>💬</span>
+              <Clock size={14} style={{ color: 'var(--color-clay)' }} />
               <span>Atención en tu propio huso horario</span>
             </div>
 

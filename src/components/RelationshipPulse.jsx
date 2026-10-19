@@ -72,10 +72,21 @@ const MOODS = [
 
 export default function RelationshipPulse() {
   const [selectedId, setSelectedId] = useState('loop');
-  const activeMood = MOODS.find(m => m.id === selectedId) || MOODS[0];
 
   const getWhatsAppUrl = (msg) => {
     return `https://wa.me/50373184781?text=${encodeURIComponent(msg)}`;
+  };
+
+  const handleSelectMood = (moodId) => {
+    setSelectedId(moodId);
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      setTimeout(() => {
+        const diagnosticEl = document.getElementById('relationship-diagnostic-card');
+        if (diagnosticEl) {
+          diagnosticEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 60);
+    }
   };
 
   return (
@@ -115,9 +126,15 @@ export default function RelationshipPulse() {
               style={{ 
                 marginBottom: '14px', 
                 display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '6px 16px',
+                borderRadius: '999px',
                 background: 'rgba(186, 94, 69, 0.08)',
                 color: 'var(--color-clay)',
-                border: '1px solid rgba(186, 94, 69, 0.2)'
+                border: '1px solid rgba(186, 94, 69, 0.2)',
+                fontSize: '13px',
+                fontWeight: 600
               }}
             >
               <Sparkles size={14} style={{ color: 'var(--color-clay)' }} />
@@ -141,16 +158,11 @@ export default function RelationshipPulse() {
             </p>
           </div>
 
-          {/* Interactive Mood Selector Buttons */}
+          {/* Interactive Mood Selector Buttons (Grid en Desktop, Carrusel Horizontal en Móvil) */}
           <div 
             role="tablist"
             aria-label="Selecciona la situación de tu pareja"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
-              gap: '12px',
-              marginBottom: '28px'
-            }}
+            className="pulse-mood-grid"
           >
             {MOODS.map((mood) => {
               const isSelected = mood.id === selectedId;
@@ -160,8 +172,11 @@ export default function RelationshipPulse() {
                   key={mood.id}
                   type="button"
                   role="tab"
+                  id={`tab-${mood.id}`}
+                  aria-controls={`diagnostic-panel-${mood.id}`}
                   aria-selected={isSelected}
-                  onClick={() => setSelectedId(mood.id)}
+                  onClick={() => handleSelectMood(mood.id)}
+                  className="pulse-mood-card"
                   style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -221,124 +236,134 @@ export default function RelationshipPulse() {
             })}
           </div>
 
-          {/* Dynamic Animated Clinical Guidance Card */}
-          <div 
-            key={activeMood.id}
-            className="animate-slide-up"
-            style={{
-              background: '#FFFFFF',
-              borderRadius: '22px',
-              padding: 'clamp(22px, 3vw, 32px)',
-              border: '1.5px solid rgba(186, 94, 69, 0.25)',
-              boxShadow: '0 12px 30px rgba(34, 40, 74, 0.08)',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '24px',
-              alignItems: 'center'
-            }}
-          >
-            {/* Left: Clinical Diagnosis & Guidance */}
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '12px' }}>
-                <span 
+          {/* Diagnostic Guidance Cards (Todos renderizados en el DOM para Indexación SEO y Motores de IA) */}
+          <div id="relationship-diagnostic-card">
+            {MOODS.map((mood) => {
+              const isActive = mood.id === selectedId;
+              return (
+                <div 
+                  key={mood.id}
+                  id={`diagnostic-panel-${mood.id}`}
+                  role="tabpanel"
+                  aria-labelledby={`tab-${mood.id}`}
+                  aria-hidden={!isActive}
+                  className={isActive ? "animate-slide-up" : ""}
                   style={{
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    color: '#FFFFFF',
-                    background: activeMood.tagColor,
-                    padding: '4px 12px',
-                    borderRadius: 'var(--r-pill)',
-                    letterSpacing: '0.02em'
+                    display: isActive ? 'grid' : 'none',
+                    background: '#FFFFFF',
+                    borderRadius: '22px',
+                    padding: 'clamp(22px, 3vw, 32px)',
+                    border: '1.5px solid rgba(186, 94, 69, 0.25)',
+                    boxShadow: '0 12px 30px rgba(34, 40, 74, 0.08)',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    gap: '24px',
+                    alignItems: 'center'
                   }}
                 >
-                  {activeMood.method}
-                </span>
-                <span style={{ fontSize: '12.5px', color: 'var(--color-ink-muted)', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-                  <ShieldCheck size={14} style={{ color: '#27AE60' }} />
-                  Protocolo basado en evidencia (JVPP)
-                </span>
-              </div>
+                  {/* Left: Clinical Diagnosis & Guidance */}
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '12px' }}>
+                      <span 
+                        style={{
+                          fontSize: '12px',
+                          fontWeight: 700,
+                          color: '#FFFFFF',
+                          background: mood.tagColor,
+                          padding: '4px 12px',
+                          borderRadius: 'var(--r-pill)',
+                          letterSpacing: '0.02em'
+                        }}
+                      >
+                        {mood.method}
+                      </span>
+                      <span style={{ fontSize: '12.5px', color: 'var(--color-ink-muted)', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                        <ShieldCheck size={14} style={{ color: '#27AE60' }} />
+                        Protocolo basado en evidencia (JVPP)
+                      </span>
+                    </div>
 
-              <h3 
-                className="font-serif" 
-                style={{ 
-                  fontSize: 'clamp(20px, 2.4vw, 24px)', 
-                  color: 'var(--color-plum-900)', 
-                  margin: '0 0 10px 0',
-                  lineHeight: 1.3
-                }}
-              >
-                {activeMood.title}: Lo que la ciencia clínica recomienda
-              </h3>
+                    <h3 
+                      className="font-serif" 
+                      style={{ 
+                        fontSize: 'clamp(20px, 2.4vw, 24px)', 
+                        color: 'var(--color-plum-900)', 
+                        margin: '0 0 10px 0',
+                        lineHeight: 1.3
+                      }}
+                    >
+                      {mood.title}: Lo que la ciencia clínica recomienda
+                    </h3>
 
-              <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: '0 0 10px 0' }}>
-                <strong>Comprender la raíz:</strong> {activeMood.diagnostic}
-              </p>
+                    <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: '0 0 10px 0' }}>
+                      <strong>Comprender la raíz:</strong> {mood.diagnostic}
+                    </p>
 
-              <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
-                <strong>Cómo lo abordamos en Centro Amaré:</strong> {activeMood.solution}
-              </p>
-            </div>
+                    <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                      <strong>Cómo lo abordamos en Centro Amaré:</strong> {mood.solution}
+                    </p>
+                  </div>
 
-            {/* Right: Direct Action Box */}
-            <div 
-              style={{
-                background: 'var(--color-canvas)',
-                borderRadius: '18px',
-                padding: '24px',
-                border: '1px solid var(--border-subtle)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '12px'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: 'var(--color-plum-900)' }}>
-                <HeartHandshake size={18} style={{ color: 'var(--color-clay)' }} />
-                <span>Próximo paso recomendado:</span>
-              </div>
+                  {/* Right: Direct Action Box */}
+                  <div 
+                    style={{
+                      background: 'var(--color-canvas)',
+                      borderRadius: '18px',
+                      padding: '24px',
+                      border: '1px solid var(--border-subtle)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '12px'
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: 'var(--color-plum-900)' }}>
+                      <HeartHandshake size={18} style={{ color: 'var(--color-clay)' }} />
+                      <span>Próximo paso recomendado:</span>
+                    </div>
 
-              <a
-                href="/test-de-pareja"
-                className="btn-appointment-pill"
-                style={{
-                  backgroundColor: 'var(--color-clay)',
-                  color: '#FFFFFF',
-                  padding: '13px 20px',
-                  fontSize: '14.5px',
-                  justifyContent: 'center',
-                  boxShadow: '0 6px 20px rgba(183, 89, 64, 0.3)',
-                  textAlign: 'center'
-                }}
-              >
-                <span>Evaluar nuestro caso en el Test (2 min)</span>
-                <ArrowRight size={16} />
-              </a>
+                    <a
+                      href="/test-de-pareja"
+                      className="btn-appointment-pill"
+                      style={{
+                        backgroundColor: 'var(--color-clay)',
+                        color: '#FFFFFF',
+                        padding: '13px 20px',
+                        fontSize: '14.5px',
+                        justifyContent: 'center',
+                        boxShadow: '0 6px 20px rgba(183, 89, 64, 0.3)',
+                        textAlign: 'center'
+                      }}
+                    >
+                      <span>Evaluar nuestro caso en el Test (2 min)</span>
+                      <ArrowRight size={16} />
+                    </a>
 
-              <a
-                href={getWhatsAppUrl(activeMood.whatsappQuery)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-appointment-pill"
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1.5px solid var(--color-plum-900)',
-                  color: 'var(--color-plum-900)',
-                  boxShadow: 'none',
-                  padding: '12px 18px',
-                  fontSize: '14px',
-                  justifyContent: 'center',
-                  textAlign: 'center'
-                }}
-              >
-                <span>Consultar por WhatsApp (30 min gratis)</span>
-              </a>
+                    <a
+                      href={getWhatsAppUrl(mood.whatsappQuery)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-appointment-pill"
+                      style={{
+                        backgroundColor: '#FFFFFF',
+                        border: '1.5px solid var(--color-plum-900)',
+                        color: 'var(--color-plum-900)',
+                        boxShadow: 'none',
+                        padding: '12px 18px',
+                        fontSize: '14px',
+                        justifyContent: 'center',
+                        textAlign: 'center'
+                      }}
+                    >
+                      <span>Consultar por WhatsApp (30 min sin costo)</span>
+                    </a>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: 'var(--color-ink-muted)', marginTop: '2px' }}>
-                <CheckCircle2 size={14} style={{ color: '#27AE60' }} />
-                <span>1ª conversación sin costo con el equipo clínico</span>
-              </div>
-            </div>
-
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: 'var(--color-ink-muted)', marginTop: '2px' }}>
+                      <CheckCircle2 size={14} style={{ color: '#27AE60' }} />
+                      <span>1ª conversación sin costo con el equipo clínico</span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
         </div>

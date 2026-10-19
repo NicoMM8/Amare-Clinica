@@ -1,6 +1,7 @@
 import React from 'react';
 import { Check, Clock, Sparkles, Shield, FileText } from 'lucide-react';
 import { HeroButton } from './cojeev/HeroButton';
+import { PaymentMethodBadges } from './PaymentLogos';
 
 const clinicalPhases = [
   {
@@ -403,31 +404,12 @@ export default function MethodologyAndPricing() {
                   </div>
                 </div>
 
-                {/* Métodos de Pago Internacionales */}
+                {/* Métodos de Pago Internacionales (Logos Reales) */}
                 <div style={{ marginBottom: '16px' }}>
                   <span style={{ display: 'block', fontSize: '11.5px', fontWeight: 600, color: 'var(--color-ink-muted)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                     Pagos directos sin comisiones de remesa:
                   </span>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: '#1A1F71', background: '#F0F3FA', border: '1px solid rgba(26, 31, 113, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>
-                      VISA
-                    </span>
-                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: '#EB001B', background: '#FDF1F0', border: '1px solid rgba(235, 0, 27, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>
-                      Mastercard
-                    </span>
-                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: '#635BFF', background: '#F2F1FF', border: '1px solid rgba(99, 91, 255, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>
-                      Stripe
-                    </span>
-                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: '#003087', background: '#EDF4FC', border: '1px solid rgba(0, 48, 135, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>
-                      PayPal
-                    </span>
-                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: '#7414CA', background: '#F7EDFC', border: '1px solid rgba(116, 20, 202, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>
-                      Zelle / Transferencia
-                    </span>
-                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: '#D97706', background: '#FEF3C7', border: '1px solid rgba(217, 119, 6, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>
-                      Bitcoin / Chivo
-                    </span>
-                  </div>
+                  <PaymentMethodBadges compact={false} />
                 </div>
               </div>
 

@@ -21,8 +21,8 @@ const routes = [
   {
     path: '/',
     file: 'index.html',
-    title: 'Terapia de Pareja El Salvador Online | Centro Amaré — Psicóloga Salvadoreña',
-    description: 'Terapia de pareja en El Salvador y online para la diáspora. Psicóloga clínica colegiada (JVPP). 1ª sesión de 30 min sin costo. Hablamos tu código cultural.',
+    title: 'Terapia de Pareja El Salvador Online | Centro Amaré — Clínica de Psicología',
+    description: 'Clínica de psicología y terapia de pareja en El Salvador y online para la diáspora. Equipo clínico colegiado (JVPP). 1ª sesión de 30 min sin costo. Hablamos tu código cultural.',
     canonical: `${BASE_URL}/`,
   },
   {
@@ -43,7 +43,7 @@ const routes = [
     path: '/terapia-de-pareja',
     file: 'terapia-de-pareja/index.html',
     title: 'Terapia de Pareja en El Salvador Online | Centro Amaré',
-    description: 'Terapia de pareja online con psicóloga salvadoreña especialista. Protocolo clínico en 4 fases para resolver conflictos, infidelidad y desgaste relacional.',
+    description: 'Terapia de pareja online con equipo clínico colegiado especialista. Protocolo clínico en 4 fases para resolver conflictos, infidelidad y desgaste relacional.',
     canonical: `${BASE_URL}/terapia-de-pareja`,
   },
   {
@@ -56,8 +56,8 @@ const routes = [
   {
     path: '/terapia-individual',
     file: 'terapia-individual/index.html',
-    title: 'Psicología Online El Salvador · Psicóloga Clínica JVPP | Centro Amaré',
-    description: 'Terapia individual online en El Salvador para ansiedad, sobrepensamiento, límites y apegos. Enfoque TCC y DBT con base científica.',
+    title: 'Psicología Online El Salvador · Clínica de Psicología JVPP | Centro Amaré',
+    description: 'Terapia individual online en El Salvador con equipo colegiado para ansiedad, sobrepensamiento, límites y apegos. Enfoque TCC y DBT con base científica.',
     canonical: `${BASE_URL}/terapia-individual`,
   },
   {

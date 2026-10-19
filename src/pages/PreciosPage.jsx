@@ -5,6 +5,7 @@ import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import { HeroButton } from '../components/ui/hero-button';
 import { CreditCard, Check, ShieldCheck, Clock, HelpCircle, ArrowRight, FileText } from 'lucide-react';
 import { trackWhatsAppClick } from '../lib/analytics';
+import { PaymentMethodBadges } from '../components/PaymentLogos';
 
 export default function PreciosPage() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vi el Plan Mensual en la web y me gustaría agendar la primera conversación.");
@@ -160,19 +161,12 @@ export default function PreciosPage() {
                     </div>
                   </div>
 
-                  {/* Métodos de Pago */}
+                  {/* Métodos de Pago con Logos Reales */}
                   <div style={{ marginBottom: '24px' }}>
                     <span style={{ display: 'block', fontSize: '11.5px', fontWeight: 600, color: 'var(--color-ink-muted)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                       Pagos sin comisiones de remesa:
                     </span>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#1A1F71', background: '#F0F3FA', border: '1px solid rgba(26, 31, 113, 0.15)', padding: '3px 8px', borderRadius: '5px' }}>VISA</span>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#EB001B', background: '#FDF1F0', border: '1px solid rgba(235, 0, 27, 0.15)', padding: '3px 8px', borderRadius: '5px' }}>Mastercard</span>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#635BFF', background: '#F2F1FF', border: '1px solid rgba(99, 91, 255, 0.15)', padding: '3px 8px', borderRadius: '5px' }}>Stripe</span>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#003087', background: '#EDF4FC', border: '1px solid rgba(0, 48, 135, 0.15)', padding: '3px 8px', borderRadius: '5px' }}>PayPal</span>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#7414CA', background: '#F7EDFC', border: '1px solid rgba(116, 20, 202, 0.15)', padding: '3px 8px', borderRadius: '5px' }}>Zelle</span>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#D97706', background: '#FEF3C7', border: '1px solid rgba(217, 119, 6, 0.15)', padding: '3px 8px', borderRadius: '5px' }}>Bitcoin / Chivo</span>
-                    </div>
+                    <PaymentMethodBadges compact={false} />
                   </div>
                 </div>
 

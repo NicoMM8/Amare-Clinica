@@ -92,6 +92,26 @@ function App({ initialPath = '/' }) {
   // ── Normalización de ruta (soporta con o sin barra final '/') ──
   const cleanPath = (currentPath || '').replace(/\/+$/, '') || '/';
 
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const titles = {
+      '/': 'Terapia de Pareja El Salvador Online | Centro Amaré — Clínica de Psicología',
+      '/test-de-pareja': 'Test de Pareja Online: Autoevaluación Clínica de Relación | Centro Amaré',
+      '/tu-match': 'Test de Pareja Online: Autoevaluación de Relación | Centro Amaré',
+      '/terapia-de-pareja': 'Terapia de Pareja en El Salvador Online | Centro Amaré',
+      '/sexologia-clinica': 'Sexología Clínica y Terapia Sexual en El Salvador | Centro Amaré',
+      '/terapia-individual': 'Psicología Online El Salvador · Clínica de Psicología JVPP | Centro Amaré',
+      '/salvadorenos-en-el-exterior': 'Psicólogos Salvadoreños Online | Terapia en el Exterior — Centro Amaré',
+      '/iris-alarcon': 'Licda. Iris Alarcón | Directora Clínica Centro Amaré (JVPP)',
+      '/precios': 'Precios y Honorarios — Terapia de Pareja El Salvador | Centro Amaré',
+      '/blog': 'Blog & Recursos Clínicos | Centro Amaré',
+      '/privacidad': 'Política de Privacidad y Secreto Profesional | Centro Amaré'
+    };
+    if (titles[cleanPath]) {
+      document.title = titles[cleanPath];
+    }
+  }, [cleanPath]);
+
   // ── Enrutamiento por subpáginas ────────────────────────────
   if (cleanPath === '/test-de-pareja' || cleanPath === '/tu-match' || cleanPath === '/evaluacion-de-pareja') {
     return <CoupleMatchingQuiz onGoHome={() => navigateTo('/')} />;

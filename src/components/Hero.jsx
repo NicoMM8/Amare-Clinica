@@ -1,8 +1,10 @@
 "use client";
 
-import React from 'react';
-import { Globe, HeartHandshake, ShieldCheck, Sparkles, ArrowRight, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import { Globe, HeartHandshake, ShieldCheck, Sparkles, Clock } from 'lucide-react';
 import { PigmentAtmosphere } from './cojeev/PigmentAtmosphere';
+import { HeroButton } from './cojeev/HeroButton';
 
 function WhatsAppIcon({ size = 20, className = "" }) {
   return (
@@ -21,6 +23,7 @@ function WhatsAppIcon({ size = 20, className = "" }) {
 }
 
 export default function Hero() {
+  const [importaHovered, setImportaHovered] = useState(false);
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vengo de la web y me gustaría agendar una primera conversación sin costo.");
 
   return (
@@ -46,13 +49,56 @@ export default function Hero() {
               className="hero-headline font-serif" 
               style={{ 
                 margin: '0 0 14px 0', 
-                fontSize: 'clamp(34px, 4vw, 52px)', 
+                fontSize: 'clamp(36px, 4.4vw, 56px)', 
                 lineHeight: 1.12, 
                 letterSpacing: '-0.025em', 
                 color: 'var(--color-plum-900)' 
               }}
+              onMouseEnter={() => setImportaHovered(true)}
+              onMouseLeave={() => setImportaHovered(false)}
             >
-              Empieza con tu terapeuta online
+              Lo que sientes{' '}
+              <span 
+                style={{ 
+                  position: 'relative', 
+                  display: 'inline-block',
+                  color: 'var(--color-clay)',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={() => setImportaHovered(true)}
+                onMouseLeave={() => setImportaHovered(false)}
+              >
+                importa
+                {/* Hand-drawn organic SVG ink underline from Cojeev */}
+                <svg
+                  viewBox="0 0 120 14"
+                  preserveAspectRatio="none"
+                  style={{
+                    position: 'absolute',
+                    bottom: '-4px',
+                    left: 0,
+                    width: '100%',
+                    height: '8px',
+                    overflow: 'visible',
+                    pointerEvents: 'none'
+                  }}
+                  aria-hidden="true"
+                >
+                  <motion.path
+                    d="M2 9 C 24 3, 40 12, 62 8 S 98 10, 118 4"
+                    fill="none"
+                    stroke="var(--color-clay)"
+                    strokeWidth="3.2"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0.45, opacity: 0.75 }}
+                    animate={{
+                      pathLength: importaHovered ? 1 : 0.45,
+                      opacity: importaHovered ? 1 : 0.75
+                    }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  />
+                </svg>
+              </span>
             </h1>
 
             {/* Empathetic & Clear Subtitle */}
@@ -88,7 +134,7 @@ export default function Hero() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '9px', marginBottom: '26px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14.5px', color: 'var(--color-plum-900)' }}>
                 <span className="hero-bullet-check" aria-hidden="true">✓</span>
-                <span><strong>Equipo clínico colegiado</strong> con +9 años de experiencia (Dirección: Licda. Iris Alarcón · JVPP N.º 47096)</span>
+                <span><strong>Equipo clínico colegiado</strong> con +9 años de experiencia y acreditación sanitaria</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '9px', fontSize: '14.5px', color: 'var(--color-plum-900)' }}>
                 <span className="hero-bullet-check" aria-hidden="true">✓</span>
@@ -101,21 +147,21 @@ export default function Hero() {
             </div>
 
             {/* CTA Action Group */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-start' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-start' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
-                <a
+                <HeroButton
                   href="/test-de-pareja"
-                  className="btn-appointment-pill"
+                  appearance="paper-fold"
+                  variant="clay"
                   style={{
-                    backgroundColor: 'var(--color-clay)',
-                    padding: '14px 26px',
+                    height: '52px',
+                    padding: '0 26px',
                     fontSize: '15.5px',
-                    boxShadow: '0 8px 24px rgba(183, 89, 64, 0.35)',
+                    boxShadow: '0 8px 24px rgba(183, 89, 64, 0.32)',
                   }}
                 >
-                  <span>Evaluar nuestro caso de pareja</span>
-                  <ArrowRight size={17} />
-                </a>
+                  Evaluar nuestro caso de pareja
+                </HeroButton>
 
                 <a
                   href={whatsappUrl}
@@ -127,8 +173,15 @@ export default function Hero() {
                     border: '1.5px solid var(--color-plum-900)',
                     color: 'var(--color-plum-900)',
                     boxShadow: '0 4px 14px rgba(34, 40, 74, 0.08)',
-                    padding: '14px 22px',
+                    height: '52px',
+                    padding: '0 22px',
                     fontSize: '15px',
+                    borderRadius: 'var(--r-pill)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '9px',
+                    textDecoration: 'none',
+                    fontWeight: 600,
                   }}
                 >
                   <span>WhatsApp directo</span>

@@ -56,19 +56,22 @@ export default function Footer() {
           
           {/* Brand Col */}
           <div style={{ maxWidth: '340px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-              <div style={{ 
-                background: 'var(--color-canvas)', 
-                borderRadius: '8px',
-                padding: '4px',
-                display: 'inline-flex'
-              }}>
+            <div style={{ marginBottom: '18px' }}>
+              <picture>
+                <source srcSet="/images/logo-footer.webp" type="image/webp" />
                 <img 
-                  src="/images/logo.png" 
-                  alt="Centro Amaré" 
-                  style={{ height: '36px', width: 'auto', mixBlendMode: 'multiply' }}
+                  src="/images/logo-footer.png" 
+                  alt="Centro Amaré — Terapia de Pareja y Psicología" 
+                  width="142"
+                  height="60"
+                  style={{ 
+                    height: '60px', 
+                    width: 'auto', 
+                    display: 'block',
+                    objectFit: 'contain'
+                  }}
                 />
-              </div>
+              </picture>
             </div>
 
             <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px', lineHeight: 1.6, marginBottom: '20px' }}>

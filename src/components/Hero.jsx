@@ -222,23 +222,20 @@ export default function Hero() {
 
           </div>
 
-          {/* ── RIGHT COLUMN: Full Lifestyle Photography ── */}
+          {/* ── RIGHT COLUMN: Full Team Photography ── */}
           <div className="hero-visual-card">
             <picture style={{ width: '100%', height: '100%', display: 'block' }}>
-              <source srcSet="/images/hero-daniela-960.webp 960w, /images/hero-daniela-480.webp 480w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
-              <source srcSet="/images/hero-daniela-960.jpg" type="image/jpeg" />
+              <source srcSet="/images/equipo-clinico-amare-960.webp 960w, /images/equipo-clinico-amare-480.webp 480w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
+              <source srcSet="/images/equipo-clinico-amare-960.jpg" type="image/jpeg" />
               <img
-                src="/images/hero-daniela-960.jpg"
-                alt="Terapia psicológica online desde casa para salvadoreños — Centro Amaré"
+                src="/images/equipo-clinico-amare-960.jpg"
+                alt="Equipo de psicólogos clínicos y terapia de pareja colegiados — Centro Amaré El Salvador"
                 className="hero-visual-img"
                 fetchPriority="high"
                 width="960"
-                height="720"
+                height="717"
                 style={{
                   width: '100%',
-                  height: '470px',
-                  objectFit: 'cover',
-                  objectPosition: 'center',
                   display: 'block',
                 }}
               />

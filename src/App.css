@@ -158,14 +158,16 @@
 
 .hero-visual-img {
   width: 100%;
-  height: 440px;
+  height: 470px;
   object-fit: cover;
+  object-position: center 18%;
   display: block;
 }
 
 @media (max-width: 600px) {
   .hero-visual-img {
-    height: 320px;
+    height: 330px;
+    object-position: center 15%;
   }
 }
 

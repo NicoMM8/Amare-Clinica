@@ -38,66 +38,85 @@ export default function Hero() {
           {/* ── LEFT COLUMN: Content & Social Proof ── */}
           <div className="hero-content">
             
-            {/* Clinical Specialty Pill */}
-            <div className="badge-pill" style={{ marginBottom: '14px', alignSelf: 'flex-start' }}>
-              <span className="badge-dot" />
-              <span>Terapia de Pareja y Sexología Clínica Online</span>
-            </div>
-
-            {/* Main Headline */}
+            {/* Main SEO H1 (Clinical Eyebrow + Emotional Headline) */}
             <h1 
               className="hero-headline font-serif" 
               style={{ 
-                margin: '0 0 14px 0', 
+                margin: '0 0 16px 0', 
                 fontSize: 'clamp(36px, 4.4vw, 56px)', 
                 lineHeight: 1.12, 
                 letterSpacing: '-0.025em', 
-                color: 'var(--color-plum-900)' 
+                color: 'var(--color-plum-900)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                gap: '14px'
               }}
               onMouseEnter={() => setImportaHovered(true)}
               onMouseLeave={() => setImportaHovered(false)}
             >
-              Lo que sientes{' '}
+              {/* Eyebrow con Palabras Clave SEO: Terapia de Pareja y Sexología Clínica Online en El Salvador y el Exterior */}
               <span 
+                className="badge-pill font-sans" 
                 style={{ 
-                  position: 'relative', 
-                  display: 'inline-block',
-                  color: 'var(--color-clay)',
-                  cursor: 'pointer'
+                  fontSize: '13px', 
+                  fontWeight: 600, 
+                  letterSpacing: 'normal',
+                  textTransform: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  alignSelf: 'flex-start'
                 }}
-                onMouseEnter={() => setImportaHovered(true)}
-                onMouseLeave={() => setImportaHovered(false)}
               >
-                importa
-                {/* Hand-drawn organic SVG ink underline from Cojeev */}
-                <svg
-                  viewBox="0 0 120 14"
-                  preserveAspectRatio="none"
-                  style={{
-                    position: 'absolute',
-                    bottom: '-4px',
-                    left: 0,
-                    width: '100%',
-                    height: '8px',
-                    overflow: 'visible',
-                    pointerEvents: 'none'
+                <span className="badge-dot" aria-hidden="true" />
+                <span>Terapia de Pareja y Sexología Clínica Online en El Salvador y el Exterior</span>
+              </span>
+
+              {/* Titular Emocional de Marca con 'importa' Animado */}
+              <span style={{ display: 'block' }}>
+                Lo que sientes{' '}
+                <span 
+                  style={{ 
+                    position: 'relative', 
+                    display: 'inline-block',
+                    color: 'var(--color-clay)',
+                    cursor: 'pointer'
                   }}
-                  aria-hidden="true"
+                  onMouseEnter={() => setImportaHovered(true)}
+                  onMouseLeave={() => setImportaHovered(false)}
                 >
-                  <motion.path
-                    d="M2 9 C 24 3, 40 12, 62 8 S 98 10, 118 4"
-                    fill="none"
-                    stroke="var(--color-clay)"
-                    strokeWidth="3.2"
-                    strokeLinecap="round"
-                    initial={{ pathLength: 0.45, opacity: 0.75 }}
-                    animate={{
-                      pathLength: importaHovered ? 1 : 0.45,
-                      opacity: importaHovered ? 1 : 0.75
+                  importa
+                  {/* Hand-drawn organic SVG ink underline from Cojeev */}
+                  <svg
+                    viewBox="0 0 120 14"
+                    preserveAspectRatio="none"
+                    style={{
+                      position: 'absolute',
+                      bottom: '-4px',
+                      left: 0,
+                      width: '100%',
+                      height: '8px',
+                      overflow: 'visible',
+                      pointerEvents: 'none'
                     }}
-                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                  />
-                </svg>
+                    aria-hidden="true"
+                  >
+                    <motion.path
+                      d="M2 9 C 24 3, 40 12, 62 8 S 98 10, 118 4"
+                      fill="none"
+                      stroke="var(--color-clay)"
+                      strokeWidth="3.2"
+                      strokeLinecap="round"
+                      initial={{ pathLength: 0.45, opacity: 0.75 }}
+                      animate={{
+                        pathLength: importaHovered ? 1 : 0.45,
+                        opacity: importaHovered ? 1 : 0.75
+                      }}
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    />
+                  </svg>
+                </span>
               </span>
             </h1>
 
@@ -189,7 +208,14 @@ export default function Hero() {
                 </a>
               </div>
 
-              <span style={{ fontSize: '13px', color: 'var(--color-ink-muted)', marginTop: '4px', marginLeft: '2px' }}>
+              <span style={{ 
+                fontSize: '13.5px', 
+                fontWeight: 500, 
+                color: 'rgba(34, 40, 74, 0.75)', 
+                marginTop: '6px', 
+                marginLeft: '2px',
+                lineHeight: 1.45
+              }}>
                 Primera conversación (30 min sin costo) con el equipo clínico · Sin compromiso
               </span>
             </div>

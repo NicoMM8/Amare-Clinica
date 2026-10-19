@@ -68,14 +68,14 @@ export default function Navbar() {
             <span>1ª conversación sin costo →</span>
           </a>
 
-          {/* Hamburger button */}
+          {/* Hamburger button (Solo visible en móvil/tablet) */}
           <button 
             type="button"
+            className="nav-mobile-toggle"
             aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             style={{ 
-              display: 'inline-flex', 
               padding: '8px', 
               color: 'var(--color-plum-900)',
               borderRadius: '8px',

@@ -388,9 +388,19 @@ button {
   color: var(--color-plum-900);
 }
 
+/* Mobile toggle button (oculto en desktop) */
+.nav-mobile-toggle {
+  display: none !important;
+}
+
 @media (max-width: 900px) {
   .nav-links {
     display: none !important;
+  }
+  .nav-mobile-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
   }
 }
 

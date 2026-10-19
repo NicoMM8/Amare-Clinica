@@ -539,3 +539,29 @@
   50% { transform: translate(30px, -20px) scale(1.08); }
   100% { transform: translate(-20px, 30px) scale(0.95); }
 }
+
+/* 000h Payment Method Badges Grid & Capsules */
+.payment-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.payment-badge-pill {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease, border-color 0.18s ease;
+  user-select: none;
+}
+
+.payment-badge-pill:hover {
+  transform: translateY(-1.5px);
+  border-color: rgba(179, 128, 109, 0.5) !important;
+  box-shadow: 0 4px 10px rgba(34, 40, 74, 0.08) !important;
+}
+
+@media (max-width: 360px) {
+  .payment-badges-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+

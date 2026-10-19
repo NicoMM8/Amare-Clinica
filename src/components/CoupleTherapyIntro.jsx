@@ -345,22 +345,22 @@ export default function CoupleTherapyIntro() {
                   height: '36px',
                   borderRadius: '50%',
                   objectFit: 'cover',
-                  border: '2px solid #27AE60',
+                  border: '2px solid var(--color-clay)',
                   flexShrink: 0,
                 }}
               />
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', textAlign: 'left' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                   <span className="animate-radar-dot" style={{ width: '6px', height: '6px' }} />
-                  <span style={{ fontSize: '10.5px', fontWeight: 700, color: '#1E7E34', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                    En sesión · Google Meet
+                  <span style={{ fontSize: '10.5px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                    Consulta Online · Google Meet
                   </span>
                 </div>
                 <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-plum-900)', lineHeight: 1.2 }}>
                   Licda. Iris Alarcón (JVPP N.º 47096)
                 </span>
                 <span style={{ fontSize: '10.5px', color: 'var(--color-ink-muted)' }}>
-                  Videollamada privada y simultánea
+                  Sesión privada y simultánea
                 </span>
               </div>
             </div>

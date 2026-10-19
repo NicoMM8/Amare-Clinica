@@ -182,30 +182,23 @@ export default function Hero() {
                   Evaluar nuestro caso de pareja
                 </HeroButton>
 
-                <a
+                <HeroButton
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-appointment-pill"
+                  variant="whatsapp"
                   style={{
-                    backgroundColor: '#FFFFFF',
-                    border: '1.5px solid var(--color-plum-900)',
-                    color: 'var(--color-plum-900)',
-                    boxShadow: '0 4px 14px rgba(34, 40, 74, 0.08)',
                     height: '52px',
-                    padding: '0 22px',
-                    fontSize: '15px',
-                    borderRadius: 'var(--r-pill)',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '9px',
-                    textDecoration: 'none',
+                    padding: '0 24px',
+                    fontSize: '15.5px',
                     fontWeight: 600,
                   }}
                 >
-                  <span>WhatsApp directo</span>
-                  <WhatsAppIcon size={18} />
-                </a>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    <WhatsAppIcon size={19} />
+                    <span>WhatsApp directo</span>
+                  </span>
+                </HeroButton>
               </div>
 
               <span style={{ 
@@ -240,33 +233,6 @@ export default function Hero() {
                 }}
               />
             </picture>
-
-            {/* Top-Right Floating Live Trust Badge */}
-            <div
-              className="animate-float-delayed"
-              style={{
-                position: 'absolute',
-                top: '18px',
-                right: '18px',
-                background: 'rgba(255, 255, 255, 0.94)',
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
-                borderRadius: 'var(--r-pill)',
-                padding: '7px 15px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                boxShadow: '0 8px 24px rgba(34, 40, 74, 0.12)',
-                border: '1px solid rgba(255, 255, 255, 0.9)',
-                fontSize: '12.5px',
-                fontWeight: 600,
-                color: 'var(--color-plum-900)',
-                zIndex: 2,
-              }}
-            >
-              <Clock size={14} style={{ color: 'var(--color-clay)' }} />
-              <span>Atención en tu propio huso horario</span>
-            </div>
 
             {/* Subtle Ambient Live Badge in the photo */}
             <div

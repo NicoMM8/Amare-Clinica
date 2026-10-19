@@ -184,38 +184,50 @@ export default function CoupleTherapyIntro() {
     {
       iconComponent: IconComunicacion,
       tag: "COMUNICACIÓN EN PAREJA",
-      title: '"Hablamos, pero no nos entendemos"',
+      title: '“Hablamos, pero no nos entendemos”',
       desc: "Sienten que cualquier conversación cotidiana termina en la misma pelea de siempre, en reproches del pasado o en días enteros de silencio para evitar otro conflicto.",
+      whatsappQuery: "Hola, sentimos que cualquier conversación termina en discusión y quisiéramos coordinar la 1ª conversación sin costo.",
+      internalLink: "/terapia-de-pareja"
     },
     {
       iconComponent: IconAceptacion,
       tag: "ACEPTACIÓN Y DIFERENCIAS",
       title: "Querer cambiar al otro",
       desc: "El cansancio de sentir que tu pareja no te entiende como antes, o la frustración constante de esperar que reaccione igual que tú.",
+      whatsappQuery: "Hola, sentimos diferencias en la relación que nos están desgastando y nos gustaría agendar la 1ª conversación sin costo.",
+      internalLink: "/terapia-de-pareja"
     },
     {
       iconComponent: IconRoles,
       tag: "CONVIVENCIA Y ROLES",
       title: "El peso de la rutina, la casa y el dinero",
       desc: "Sentir que uno de los dos carga con todo el peso mental del hogar, los hijos, las finanzas o el apoyo a la familia en El Salvador, acumulando un resentimiento silencioso.",
+      whatsappQuery: "Hola, la carga de la rutina y las finanzas nos están pesando y quisiéramos consultar por la 1ª conversación sin costo.",
+      internalLink: "/terapia-de-pareja"
     },
     {
       iconComponent: IconSexualidad,
       tag: "SEXUALIDAD E INTIMIDAD",
-      title: '"Parecemos compañeros de cuarto"',
+      title: '“Parecemos compañeros de cuarto”',
       desc: "Cuando el cansancio, la rutina o los bloqueos íntimos apagan el deseo. Les cuesta hablar de sexualidad sin incomodidad y extrañan volver a sentirse pareja.",
+      whatsappQuery: "Hola, sentimos frialdad e incomodidad en la intimidad y nos gustaría consultar sobre el abordaje de sexología clínica.",
+      internalLink: "/sexologia-clinica"
     },
     {
       iconComponent: IconInfidelidad,
       tag: "INFIDELIDAD Y CONFIANZA",
       title: "Dolor tras una infidelidad o mentira",
       desc: "Cuando se rompe la confianza y duele seguir, pero también duele soltar. Les acompañamos a sanar la herida y decidir con claridad si es posible reconstruir la relación.",
+      whatsappQuery: "Hola, estamos pasando por un momento difícil de confianza en la pareja y nos gustaría agendar la 1ª conversación sin costo.",
+      internalLink: "/terapia-de-pareja"
     },
     {
       iconComponent: IconCelos,
       tag: "CELOS E INSEGURIDAD",
       title: "Inseguridad, celos y angustia",
       desc: "Vivir revisando el teléfono, con miedo constante o sintiendo que tienes que dar explicaciones de todo. Les ayudamos a recuperar la paz mental y la libertad en el vínculo.",
+      whatsappQuery: "Hola, los celos y la inseguridad nos están haciendo daño y quisiéramos iniciar una primera conversación sin costo.",
+      internalLink: "/terapia-individual"
     },
   ];
 
@@ -241,7 +253,7 @@ export default function CoupleTherapyIntro() {
           }}
           className="intro-banner-grid"
         >
-          {/* Columna Izquierda: Redacción limpia */}
+          {/* Columna Izquierda: Redacción limpia con negritas estratégicas para escaneo */}
           <div className="intro-banner-text">
             <h2
               className="font-serif"
@@ -266,38 +278,92 @@ export default function CoupleTherapyIntro() {
                 margin: 0,
               }}
             >
-              Vivir fuera de El Salvador —entre turnos largos, el cansancio y la distancia con la familia— casi no deja tiempo para sentarse a hablar con calma. Y si viven dentro del país, el ritmo diario y el tráfico hacen que vayan postergando lo importante hasta que el silencio pesa en casa.
+              Vivir fuera de El Salvador —entre <strong>turnos largos, el cansancio y la distancia con la familia</strong>— casi no deja tiempo para sentarse a hablar con calma. Y si viven dentro del país, <strong>el ritmo diario y el tráfico</strong> hacen que vayan postergando lo importante hasta que el silencio pesa en casa.
               <br /><br />
-              Cuando cuesta entenderse o hablar de intimidad, intentar explicárselo en otro idioma a un terapeuta que no conoce tus raíces agota el doble. En Centro Amaré tienes un espacio de terapia de pareja online y en El Salvador donde no necesitas traducir lo que sientes ni justificar tu historia.
+              Cuando cuesta entenderse o hablar de intimidad, <strong>intentar explicárselo en otro idioma a un terapeuta que no conoce tus raíces agota el doble</strong>. En Centro Amaré tienen un espacio de terapia de pareja online y en El Salvador donde <strong>no necesitas traducir lo que sientes</strong> ni justificar tu historia.
             </p>
           </div>
 
-          {/* Columna Derecha: Fotografía real de pareja en terapia online */}
+          {/* Columna Derecha: Fotografía 4:3 de pareja real + Floating UI Card de Google Meet */}
           <div
             style={{
+              position: 'relative',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}
             className="intro-banner-image-container"
           >
-            <img
-              src="/images/pareja-terapia-online.jpg"
-              alt="Pareja participando en sesión de terapia de pareja online vía videollamada — Centro Amaré"
-              width="560"
-              height="315"
-              loading="lazy"
+            <picture style={{ width: '100%', display: 'block' }}>
+              <source srcSet="/images/pareja-terapia-online.webp" type="image/webp" />
+              <img
+                src="/images/pareja-terapia-online.jpg"
+                alt="Pareja participando en sesión de terapia de pareja online vía Google Meet — Centro Amaré"
+                width="990"
+                height="768"
+                loading="lazy"
+                style={{
+                  width: '100%',
+                  maxWidth: '560px',
+                  height: 'auto',
+                  aspectRatio: '4 / 3',
+                  borderRadius: '24px',
+                  display: 'block',
+                  boxShadow: '0 16px 36px rgba(35, 18, 33, 0.12)',
+                  border: '1px solid var(--border-subtle)',
+                  objectFit: 'cover',
+                }}
+              />
+            </picture>
+
+            {/* Floating Live Telehealth UI Card */}
+            <div
+              className="animate-float"
               style={{
-                width: '100%',
-                maxWidth: '560px',
-                height: 'auto',
-                borderRadius: '24px',
-                display: 'block',
-                boxShadow: '0 16px 36px rgba(35, 18, 33, 0.12)',
-                border: '1px solid var(--border-subtle)',
-                objectFit: 'cover',
+                position: 'absolute',
+                bottom: '16px',
+                right: '16px',
+                background: 'rgba(255, 255, 255, 0.96)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                borderRadius: '16px',
+                padding: '9px 13px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                boxShadow: '0 10px 28px rgba(34, 40, 74, 0.18)',
+                border: '1px solid rgba(255, 255, 255, 0.9)',
+                maxWidth: 'calc(100% - 32px)',
+                zIndex: 2,
               }}
-            />
+            >
+              <img
+                src="/images/iris-alarcon.jpg"
+                alt="Licda. Iris Alarcón en videollamada"
+                style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  border: '2px solid #27AE60',
+                  flexShrink: 0,
+                }}
+              />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', textAlign: 'left' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <span className="animate-radar-dot" style={{ width: '6px', height: '6px' }} />
+                  <span style={{ fontSize: '10.5px', fontWeight: 700, color: '#1E7E34', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                    En sesión · Google Meet
+                  </span>
+                </div>
+                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-plum-900)', lineHeight: 1.2 }}>
+                  Licda. Iris Alarcón (JVPP N.º 47096)
+                </span>
+                <span style={{ fontSize: '10.5px', color: 'var(--color-ink-muted)' }}>
+                  Videollamada privada y simultánea
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -334,7 +400,7 @@ export default function CoupleTherapyIntro() {
             </h2>
 
             <p style={{ fontSize: '16.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.65 }}>
-              La mayoría de las parejas no llegan a consulta porque se acabó el amor, sino porque llevan meses "aguantando" el desgaste sin saber cómo salir del mismo círculo.
+              La mayoría de las parejas no llegan a consulta porque se acabó el amor, sino porque llevan meses “aguantando” el desgaste sin saber cómo salir del mismo círculo.
             </p>
           </div>
 
@@ -388,8 +454,9 @@ export default function CoupleTherapyIntro() {
                     <IconComponent />
                   </div>
 
-                  {/* Etiqueta pequeña (Salvia/Terracota) para SEO y limpieza */}
-                  <span
+                  {/* Etiqueta pequeña enlazada para SEO e Interlinking */}
+                  <a
+                    href={prob.internalLink}
                     className="card-tag"
                     style={{
                       display: 'inline-block',
@@ -402,10 +469,13 @@ export default function CoupleTherapyIntro() {
                       padding: '4px 10px',
                       borderRadius: 'var(--r-pill, 999px)',
                       marginBottom: '10px',
+                      textDecoration: 'none',
+                      transition: 'background 0.2s ease, transform 0.2s ease',
                     }}
+                    title={`Ver especialidad: ${prob.tag}`}
                   >
                     {prob.tag}
-                  </span>
+                  </a>
 
                   <h3
                     style={{
@@ -424,11 +494,34 @@ export default function CoupleTherapyIntro() {
                       fontSize: '14.5px',
                       color: 'var(--color-ink-secondary)',
                       lineHeight: 1.65,
-                      margin: 0,
+                      margin: '0 0 16px 0',
                     }}
                   >
                     {prob.desc}
                   </p>
+
+                  {/* Micro-CTA de alta conversión hacia WhatsApp específico */}
+                  <div style={{ marginTop: 'auto', paddingTop: '6px' }}>
+                    <a
+                      href={`https://wa.me/50373184781?text=${encodeURIComponent(prob.whatsappQuery)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontSize: '13.5px',
+                        fontWeight: 600,
+                        color: 'var(--color-clay)',
+                        textDecoration: 'none',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        transition: 'all 0.2s ease',
+                      }}
+                      className="problem-card-cta"
+                    >
+                      <span>Hablar sobre esto</span>
+                      <ArrowRight size={14} />
+                    </a>
+                  </div>
                 </div>
               );
             })}
@@ -489,8 +582,9 @@ export default function CoupleTherapyIntro() {
                 <span>Empieza con una primera conversación (30 min sin costo)</span>
                 <ArrowRight size={16} />
               </a>
-              <span style={{ fontSize: '11.5px', color: 'rgba(255, 255, 255, 0.65)', paddingLeft: '4px' }}>
-                🔒 Te atiende una persona real por WhatsApp · Sin robots
+              <span style={{ fontSize: '11.5px', color: 'rgba(255, 255, 255, 0.7)', paddingLeft: '4px', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                <ShieldCheck size={13} style={{ color: 'var(--color-clay)' }} />
+                <span>Te atiende una persona real por WhatsApp · Sin robots</span>
               </span>
             </div>
           </div>
@@ -501,6 +595,13 @@ export default function CoupleTherapyIntro() {
 
       {/* Responsive adjustments */}
       <style>{`
+        .problem-card:hover .problem-card-cta {
+          gap: 9px !important;
+          color: var(--v-pink-deep, #9A432D) !important;
+        }
+        .problem-card .card-tag:hover {
+          background: rgba(183, 89, 64, 0.18) !important;
+        }
         @media (max-width: 960px) {
           .problems-grid {
             grid-template-columns: repeat(2, 1fr) !important;

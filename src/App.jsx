@@ -15,7 +15,6 @@ import QuizTeaser from './components/QuizTeaser';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Footer from './components/Footer';
 import { CityMarquee } from './components/cojeev/CityMarquee';
-import RelationshipPulse from './components/RelationshipPulse';
 
 // Subpáginas de especialidad y conversión
 import TerapiaParejaPage from './pages/TerapiaParejaPage';
@@ -180,9 +179,6 @@ function App({ initialPath = '/' }) {
 
         {/* 000h Marquee: Presencia transnacional y sellos de confianza */}
         <CityMarquee />
-
-        {/* 1.5. Autoevaluación interactiva y animada: RelationshipPulse */}
-        <RelationshipPulse />
 
         {/* 2. Empatía con el problema: 6 motivos y dinámicas frecuentes + Micro-CTA */}
         <CoupleTherapyIntro />

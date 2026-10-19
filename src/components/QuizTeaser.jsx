@@ -62,7 +62,7 @@ export default function QuizTeaser() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: '13px', color: 'var(--color-ink-primary)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <CheckCircle2 size={16} style={{ color: 'var(--color-clay)' }} />
-                <span>100% Confidencial y anónimo</span>
+                <span>Privacidad y secreto profesional</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <CheckCircle2 size={16} style={{ color: 'var(--color-clay)' }} />

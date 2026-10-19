@@ -37,9 +37,9 @@ const MOODS = [
   },
   {
     id: 'distance',
-    title: 'Amor a distancia / Diáspora',
+    title: 'Pareja a distancia o en el exterior',
     icon: Globe,
-    summary: 'Uno está en EE.UU./Canadá o ambos emigraron',
+    summary: 'Uno vive en El Salvador y otro fuera, o ambos emigraron',
     method: 'Enfoque Transnacional e Identidad',
     tagColor: '#3D5A80',
     diagnostic: 'La distancia geográfica o el estrés de adaptarse a otro país multiplica las dudas, la soledad y la falta de acuerdos claros a futuro.',

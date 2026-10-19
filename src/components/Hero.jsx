@@ -146,7 +146,7 @@ export default function Hero() {
               }}
             >
               <span style={{ color: '#128C7E', fontSize: '18px', lineHeight: 1 }} aria-hidden="true">★</span>
-              <span>Valorado <strong>Excelente</strong> (4.9/5) por parejas y pacientes</span>
+              <span>Valorado <strong>Excelente</strong> (5.0/5) por parejas y pacientes</span>
             </div>
 
             {/* Authority Checklist */}

@@ -261,7 +261,7 @@ export default function PreciosPage() {
               </p>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', background: 'var(--color-surface)', padding: '12px 24px', borderRadius: 'var(--r-pill)', border: '1px solid var(--border-hairline)', fontSize: '13.5px', color: 'var(--color-ink-secondary)' }}>
                 <ShieldCheck size={18} style={{ color: 'var(--color-clay)' }} />
-                <span>Transacciones 100% cifradas · Recibo oficial entregado en cada pago</span>
+                <span>Transacciones con cifrado seguro · Recibo oficial entregado en cada pago</span>
               </div>
             </div>
           </div>

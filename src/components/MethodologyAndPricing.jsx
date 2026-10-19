@@ -66,7 +66,7 @@ export default function MethodologyAndPricing() {
                 Terapia Integral de Pareja (IBCT)
               </strong>
               <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.5, margin: 0 }}>
-                Para transformar patrones de discusión repetitivos y reconstruir la aceptación mutua y el afecto.
+                Para salir de las peleas repetitivas, volver a escucharse y reconstruir el afecto.
               </p>
             </div>
 
@@ -75,7 +75,7 @@ export default function MethodologyAndPricing() {
                 Terapia Cognitivo-Conductual (TCC)
               </strong>
               <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.5, margin: 0 }}>
-                Herramientas claras para gestionar pensamientos intrusivos, rumiación, sobrepensamiento y ansiedad.
+                Herramientas prácticas para calmar la ansiedad, el insomnio y los pensamientos que no se apagan.
               </p>
             </div>
 
@@ -84,7 +84,7 @@ export default function MethodologyAndPricing() {
                 Terapia Dialéctico-Conductual (DBT)
               </strong>
               <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.5, margin: 0 }}>
-                Enfocada en la regulación emocional, desescalada de reactividad y tolerancia al malestar.
+                Para aprender a regular emociones intensas, bajar la tensión y hablar sin herirse.
               </p>
             </div>
 
@@ -93,7 +93,7 @@ export default function MethodologyAndPricing() {
                 Enfoque Humanista
               </strong>
               <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.5, margin: 0 }}>
-                Porque detrás de cada pantalla siempre hay una persona real que te escucha con empatía y sin juzgar.
+                Porque detrás de cada pantalla siempre hay una persona real que te escucha con calidez y sin juzgar.
               </p>
             </div>
           </div>
@@ -265,7 +265,7 @@ export default function MethodologyAndPricing() {
                       <td style={{ padding: '14px', color: 'var(--color-plum-900)', fontWeight: 600 }}>
                         1ª conversación exploratoria
                         <span style={{ display: 'block', fontSize: '12px', color: 'var(--color-ink-muted)', fontWeight: 400 }}>
-                          Evaluación de tu caso y encuadre
+                          Conocernos, evaluar tu caso y trazar un plan
                         </span>
                       </td>
                       <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>30 min</td>

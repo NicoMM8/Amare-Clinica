@@ -315,6 +315,7 @@ const personSchema = {
   givenName: 'Iris',
   familyName: 'Alarcón',
   jobTitle: 'Psicóloga Clínica y Directora Clínica',
+  identifier: 'JVPP N.° 47096',
   description:
     'Psicóloga Clínica salvadoreña con Máster en Terapia de Pareja y Sexología Clínica. Especialista en TCC, terapia de pareja transnacional y atención a personas y parejas en El Salvador y en el exterior.',
   image: `${SITE_URL}/images/iris-alarcon.jpg`,

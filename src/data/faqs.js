@@ -25,7 +25,7 @@ export const FAQS = [
     a: "Es una sesión online de 30 minutos, sin costo y sin compromiso. Sirve para conocernos, evaluar vuestro caso de pareja o individual y explicaros cómo trabajamos. La asistente coordina tu horario y te envía el enlace de Google Meet."
   },
   {
-    q: "¿Es la terapia 100% confidencial y profesional?",
+    q: "¿Cómo se protege nuestra privacidad y confidencialidad clínica?",
     a: "Tu información se trata con estricta confidencialidad médica y bajo el secreto profesional de la psicología clínica acreditada por la JVPP de El Salvador. Las sesiones se realizan a través de Google Meet con conexiones cifradas de extremo a extremo."
   },
   {

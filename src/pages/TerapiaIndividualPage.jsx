@@ -75,7 +75,7 @@ export default function TerapiaIndividualPage() {
 
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap', fontSize: '13.5px', color: 'var(--color-ink-secondary)' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <ShieldCheck size={16} style={{ color: 'var(--color-clay)' }} /> 100% Confidencial
+                  <ShieldCheck size={16} style={{ color: 'var(--color-clay)' }} /> Privacidad y secreto profesional
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <Clock size={16} style={{ color: 'var(--color-clay)' }} /> 30 min iniciales sin costo

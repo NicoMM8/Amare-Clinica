@@ -13,7 +13,7 @@ export default function CulturalConnection() {
             <span>Pertenencia e Identidad Cultural</span>
           </div>
           <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '18px', color: 'var(--color-plum-900)' }}>
-            Lo que sientes importa. Y decirlo con tus propias palabras, también.
+            Hablamos tu idioma. Y también entendemos tu contexto.
           </h2>
           <p style={{ fontSize: '18px', lineHeight: 1.7, color: 'var(--color-ink-secondary)', margin: 0 }}>
             Quienes hemos crecido en El Salvador tenemos códigos familiares, formas de querer y silencios que no siempre se entienden desde fuera.

@@ -17,6 +17,10 @@ export const FAQS = [
     a: "Facilitamos el pago mediante tarjeta de crédito o débito internacional, transferencia bancaria local en El Salvador y enlaces de pago seguros en dólares estadounidenses (USD)."
   },
   {
+    q: "¿Emiten factura médica para reembolso de seguro (en El Salvador, EE. UU. o Canadá)?",
+    a: "Sí. Emitimos factura profesional y recibos clínicos detallados con número de colegiación sanitaria oficial ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP N.º 47096). Puedes presentar esta documentación ante aseguradoras privadas en El Salvador para reembolso de consulta psicológica ambulatoria, así como para pólizas de salud en Estados Unidos y Canadá bajo cobertura de beneficios fuera de red (out-of-network benefits o superbills)."
+  },
+  {
     q: "¿Cómo funciona la primera conversación sin costo en Centro Amaré?",
     a: "Es una sesión online de 30 minutos, sin costo y sin compromiso. Sirve para conocernos, evaluar vuestro caso de pareja o individual y explicaros cómo trabajamos. La asistente coordina tu horario y te envía el enlace de Google Meet."
   },

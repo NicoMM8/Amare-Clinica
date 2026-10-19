@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Clock, Sparkles, Shield } from 'lucide-react';
+import { Check, Clock, Sparkles, Shield, FileText } from 'lucide-react';
 import { HeroButton } from './cojeev/HeroButton';
 
 const clinicalPhases = [
@@ -449,6 +449,67 @@ export default function MethodologyAndPricing() {
               </div>
             </div>
 
+          </div>
+
+          {/* Facturación Oficial y Reembolso de Seguro Médico */}
+          <div style={{
+            marginTop: '28px',
+            background: '#FFFFFF',
+            borderRadius: '20px',
+            padding: '24px 28px',
+            border: '1px solid var(--border-subtle)',
+            boxShadow: 'var(--shadow-xs)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '20px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', maxWidth: '820px' }}>
+              <div style={{ 
+                width: '44px', 
+                height: '44px', 
+                borderRadius: '12px', 
+                background: 'var(--color-clay-subtle)', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                flexShrink: 0,
+                marginTop: '2px'
+              }}>
+                <FileText size={22} style={{ color: 'var(--color-clay)' }} />
+              </div>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '6px' }}>
+                  <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: 'var(--color-plum-900)' }}>
+                    Factura Médica con Registro JVPP para Reembolso de Seguro
+                  </h4>
+                  <span style={{ 
+                    fontSize: '11px', 
+                    fontWeight: 700, 
+                    color: '#27AE60', 
+                    background: 'rgba(39, 174, 96, 0.12)', 
+                    padding: '3px 9px', 
+                    borderRadius: 'var(--r-pill)' 
+                  }}>
+                    Válido en El Salvador, EE. UU. y Canadá
+                  </span>
+                </div>
+                <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.55 }}>
+                  Emitimos factura y recibos clínicos detallados con número de colegiación sanitaria oficial ante la <strong>Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP N.º 47096)</strong>. Si cuentas con póliza privada en El Salvador o seguro internacional en EE. UU. o Canadá con cobertura ambulatoria o beneficios fuera de red (<em>out-of-network / superbills</em>), podrás solicitar tu reintegro directamente con tu aseguradora.
+                </p>
+              </div>
+            </div>
+            
+            <a
+              href="https://wa.me/50373184781?text=Hola,%20quisiera%20consultar%20sobre%20la%20facturaci%C3%B3n%20para%20el%20reembolso%20de%20mi%20seguro%20m%C3%A9dico."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+              style={{ fontSize: '13px', padding: '10px 18px', whiteSpace: 'nowrap' }}
+            >
+              Consultar por tu seguro →
+            </a>
           </div>
         </div>
 

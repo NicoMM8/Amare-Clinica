@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import { HeroButton } from '../components/ui/hero-button';
-import { CreditCard, Check, ShieldCheck, Clock, HelpCircle, ArrowRight } from 'lucide-react';
+import { CreditCard, Check, ShieldCheck, Clock, HelpCircle, ArrowRight, FileText } from 'lucide-react';
 import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function PreciosPage() {
@@ -188,6 +188,69 @@ export default function PreciosPage() {
                 </a>
               </div>
 
+            </div>
+
+            {/* Facturación Oficial y Reembolso de Seguro Médico */}
+            <div style={{
+              marginTop: '40px',
+              maxWidth: '920px',
+              margin: '40px auto 0',
+              background: '#FFFFFF',
+              borderRadius: '24px',
+              padding: '28px 32px',
+              border: '1.5px solid var(--border-subtle)',
+              boxShadow: 'var(--shadow-sm)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', maxWidth: '640px' }}>
+                <div style={{ 
+                  width: '46px', 
+                  height: '46px', 
+                  borderRadius: '14px', 
+                  background: 'var(--color-clay-subtle)', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  flexShrink: 0,
+                  marginTop: '2px'
+                }}>
+                  <FileText size={24} style={{ color: 'var(--color-clay)' }} />
+                </div>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '6px' }}>
+                    <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 700, color: 'var(--color-plum-900)' }}>
+                      Factura Médica para Reembolso de Seguro (JVPP)
+                    </h3>
+                    <span style={{ 
+                      fontSize: '11px', 
+                      fontWeight: 700, 
+                      color: '#27AE60', 
+                      background: 'rgba(39, 174, 96, 0.12)', 
+                      padding: '3px 10px', 
+                      borderRadius: 'var(--r-pill)' 
+                    }}>
+                      El Salvador · EE. UU. · Canadá
+                    </span>
+                  </div>
+                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.6 }}>
+                    Entregamos factura profesional y recibos detallados con registro sanitario oficial de la <strong>Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP N.º 47096)</strong>. Si cuentas con seguro privado de salud en El Salvador o póliza en EE. UU./Canadá con cobertura ambulatoria o beneficios fuera de red (<em>out-of-network / superbills</em>), podrás gestionar tu reembolso sin dificultades.
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href="https://wa.me/50373184781?text=Hola,%20quisiera%20consultar%20sobre%20la%20facturaci%C3%B3n%20para%20el%20reembolso%20de%20mi%20seguro%20m%C3%A9dico."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+                style={{ fontSize: '13.5px', padding: '11px 20px', whiteSpace: 'nowrap' }}
+              >
+                Consultar por tu seguro →
+              </a>
             </div>
           </div>
         </section>

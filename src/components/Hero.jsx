@@ -165,28 +165,57 @@ export default function Hero() {
               />
             </picture>
 
+            {/* Top-Right Floating Live Trust Badge */}
+            <div
+              className="animate-float-delayed"
+              style={{
+                position: 'absolute',
+                top: '18px',
+                right: '18px',
+                background: 'rgba(255, 255, 255, 0.94)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                borderRadius: 'var(--r-pill)',
+                padding: '7px 15px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 8px 24px rgba(34, 40, 74, 0.12)',
+                border: '1px solid rgba(255, 255, 255, 0.9)',
+                fontSize: '12.5px',
+                fontWeight: 600,
+                color: 'var(--color-plum-900)',
+                zIndex: 2,
+              }}
+            >
+              <span style={{ fontSize: '13px' }}>💬</span>
+              <span>Atención en tu propio huso horario</span>
+            </div>
+
             {/* Subtle Ambient Live Badge in the photo */}
             <div
+              className="animate-float"
               style={{
                 position: 'absolute',
                 bottom: '18px',
                 left: '18px',
-                background: 'rgba(255, 255, 255, 0.94)',
+                background: 'rgba(255, 255, 255, 0.95)',
                 backdropFilter: 'blur(10px)',
                 WebkitBackdropFilter: 'blur(10px)',
                 borderRadius: 'var(--r-pill)',
                 padding: '8px 18px',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '8px',
+                gap: '9px',
                 boxShadow: '0 8px 24px rgba(34, 40, 74, 0.14)',
-                border: '1px solid rgba(255, 255, 255, 0.85)',
+                border: '1px solid rgba(255, 255, 255, 0.9)',
                 fontSize: '13px',
                 fontWeight: 600,
                 color: 'var(--color-plum-900)',
+                zIndex: 2,
               }}
             >
-              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#25D366' }} />
+              <span className="animate-radar-dot" />
               <span>Sesiones online por Google Meet · Sin traslados</span>
             </div>
           </div>

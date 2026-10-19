@@ -84,8 +84,8 @@ export default function EnlacesBioPage() {
           boxShadow: '0 8px 24px rgba(34, 40, 74, 0.16)'
         }}>
           <img
-            src="/images/hero-therapist-480.webp"
-            alt="Centro Amaré — Terapia de Pareja El Salvador"
+            src="/images/iris-alarcon.webp"
+            alt="Licda. Iris Alarcón — Directora Clínica Centro Amaré"
             width="90"
             height="90"
             style={{

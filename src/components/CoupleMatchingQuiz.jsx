@@ -317,8 +317,8 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                 <div style={{ textAlign: 'center', margin: '20px 0 16px' }}>
                   <div style={{ position: 'relative', display: 'inline-block', marginBottom: '16px' }}>
                     <img
-                      src="/images/hero-therapist-480.webp"
-                      alt="Iris Alarcón - Psicóloga y Sexóloga Clínica"
+                      src="/images/iris-alarcon.webp"
+                      alt="Licda. Iris Alarcón - Psicóloga y Sexóloga Clínica JVPP"
                       width="96"
                       height="96"
                       style={{
@@ -624,8 +624,8 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                 {/* Perfil del Especialista Ideal: Iris Alarcón */}
                 <div style={{ marginBottom: '28px' }}>
                   <img
-                    src="/images/hero-therapist-480.webp"
-                    alt="Iris Alarcón - Especialista en Terapia de Pareja"
+                    src="/images/iris-alarcon.webp"
+                    alt="Licda. Iris Alarcón - Especialista en Terapia de Pareja JVPP"
                     width="110"
                     height="110"
                     style={{

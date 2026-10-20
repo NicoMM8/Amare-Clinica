@@ -422,27 +422,40 @@
 }
 
 .v-hero-button--clay {
-  background: var(--v-pink);
+  background: var(--color-clay, #AA5A40);
+  color: #FFFFFF;
   border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 14px rgba(183, 89, 64, 0.2);
+  box-shadow: 0 4px 14px rgba(170, 90, 64, 0.25);
+}
+
+.v-hero-button--clay .v-hero-button__label,
+.v-hero-button--clay .v-hero-button__arrow {
+  color: #FFFFFF;
 }
 
 .v-hero-button--clay:hover {
-  background: var(--v-pink-deep);
-  box-shadow: 0 8px 22px rgba(183, 89, 64, 0.3);
+  background: #8D4731;
+  color: #FFFFFF;
+  box-shadow: 0 8px 22px rgba(170, 90, 64, 0.35);
   transform: translateY(-1.5px);
 }
 
 .v-hero-button--whatsapp {
-  background: #25D366;
+  background: #128C7E;
   color: #FFFFFF;
   border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 6px 20px rgba(18, 140, 126, 0.35);
+}
+
+.v-hero-button--whatsapp .v-hero-button__label,
+.v-hero-button--whatsapp .v-hero-button__arrow {
+  color: #FFFFFF;
 }
 
 .v-hero-button--whatsapp:hover {
-  background: #20BA5A;
-  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.55);
+  background: #0E7064;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(18, 140, 126, 0.45);
   transform: translateY(-1.5px);
 }
 

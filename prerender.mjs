@@ -21,8 +21,8 @@ const routes = [
   {
     path: '/',
     file: 'index.html',
-    title: 'Terapia de Pareja El Salvador Online | Centro Amaré — Clínica de Psicología',
-    description: 'Clínica de psicología y terapia de pareja en El Salvador y online para la diáspora. Equipo clínico colegiado (JVPP). 1ª sesión de 30 min sin costo. Hablamos tu código cultural.',
+    title: 'Terapia de Pareja El Salvador Online | 1ª Cita Gratis',
+    description: 'Terapia de pareja e individual online en El Salvador y el exterior con psicólogos colegiados. Recupera tu relación. Agenda tu 1ª sesión de 30 min gratis.',
     canonical: `${BASE_URL}/`,
   },
   {
@@ -202,6 +202,9 @@ async function prerender() {
         pageHtml = pageHtml.replace(/<meta property="og:description" content=".*?" \/>/, `<meta property="og:description" content="${route.description}" />`)
         pageHtml = pageHtml.replace(/<meta name="twitter:description" content=".*?" \/>/, `<meta name="twitter:description" content="${route.description}" />`)
       }
+
+      // Limpiar comentarios HTML en producción para optimizar payload y cumplir auditorías
+      pageHtml = pageHtml.replace(/<!--(?!\[if)[\s\S]*?-->/g, '')
 
       const outFilePath = path.resolve(distPath, route.file)
       const outDir = path.dirname(outFilePath)

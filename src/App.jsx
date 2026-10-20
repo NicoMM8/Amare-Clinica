@@ -29,6 +29,7 @@ import BlogPostPreciosTerapia from './pages/blog/BlogPostPreciosTerapia';
 import BlogPostLimitesFamilia from './pages/blog/BlogPostLimitesFamilia';
 import EnlacesBioPage from './pages/EnlacesBioPage';
 import PrivacidadPage from './pages/PrivacidadPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App({ initialPath = '/' }) {
   const [currentPath, setCurrentPath] = useState(() => {
@@ -163,9 +164,19 @@ function App({ initialPath = '/' }) {
     return <PrivacidadPage />;
   }
 
+  // Si no es la ruta raíz ('/' o ''), se trata de una página no existente (404 real)
+  if (cleanPath !== '/' && cleanPath !== '') {
+    return <NotFoundPage />;
+  }
+
   // ── Landing Page Principal (Estructurada para Máxima Conversión) ─
   return (
     <div className="app-wrapper">
+      {/* Enlace accesible para saltar navegación (WCAG AA) */}
+      <a href="#main-content" className="skip-link">
+        Saltar al contenido principal
+      </a>
+
       {/* ── Datos estructurados JSON-LD (SEO + GEO) ─── */}
       <SchemaMarkup />
 
@@ -173,7 +184,7 @@ function App({ initialPath = '/' }) {
       <Navbar />
 
       {/* Main Content */}
-      <main>
+      <main id="main-content">
         {/* 1. Hero: Propuesta de valor + CTA de alta intención */}
         <Hero />
 

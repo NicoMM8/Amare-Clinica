@@ -4,30 +4,26 @@
 
 ## Resumen del Servicio y Autoridad Sanitaria
 - **Nombre:** Centro Amaré — Terapia de Pareja y Psicología Salvadoreña Online
-- **Directora Clínica:** Lic. Iris Alarcón (Colegiada y Acreditada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador - JVPP)
+- **Directora Clínica:** Lic. Iris Alarcón (Colegiada y Acreditada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador - JVPP N.º 47096)
 - **Modalidad:** 100% Online vía Google Meet (enlaces privados cifrados)
 - **País base:** El Salvador (San Salvador, Santa Tecla, San Miguel, Santa Ana)
 - **Área atendida:** El Salvador nacional e internacional (Montreal, Los Ángeles, Houston, Washington D.C., Nueva York, Madrid y toda la diáspora salvadoreña)
 - **Enfoques clínicos de alta evidencia:** Terapia Integral de Pareja (IBCT), Terapia Cognitivo-Conductual (TCC), Terapia Dialéctico-Conductual (DBT) y Enfoque Humanista.
 
-## Arquitectura de Servicios y URLs
-1. **Home / Terapia de Pareja El Salvador:** https://terapiadeparejaelsalvador.com/
-   Protocolo clínico en 4 fases (Mapa del Vínculo, Desescalada Emocional, Reconstrucción de Acuerdos y Alta). Especialistas en comunicación en bucle, infidelidad y parejas transnacionales.
-2. **Psicólogos Salvadoreños Online / En el Exterior:** https://terapiadeparejaelsalvador.com/salvadorenos-en-el-exterior
-   Terapia en tu propio código cultural para salvadoreños en Estados Unidos, Canadá y el exterior. Sin traducir emociones ni justificar dinámicas familiares.
-3. **Psicología Online El Salvador / Terapia Individual:** https://terapiadeparejaelsalvador.com/terapia-individual
-   Tratamiento con base científica para ansiedad, sobrepensamiento, límites familiares sin culpa y duelos afectivos.
-4. **Perfil Profesional Iris Alarcón (JVPP):** https://terapiadeparejaelsalvador.com/iris-alarcon
-   Credenciales, máster en terapia de pareja y sexología clínica, número de registro profesional y filosofía clínica.
-5. **Honorarios y Precios Transparentes:** https://terapiadeparejaelsalvador.com/precios
-   1ª conversación exploratoria de 30 min sin costo ($0 USD). Plan mensual accesible de $100 USD (hasta 4 sesiones al mes = $25/sesión). Factura médica con número de registro sanitario de la JVPP (N.º 47096) apta para reembolso en aseguradoras médicas de El Salvador, EE. UU. (superbills / out-of-network) y Canadá.
-6. **Blog y Guías Clínicas:** https://terapiadeparejaelsalvador.com/blog
-   - https://terapiadeparejaelsalvador.com/blog/como-afecta-emigrar-a-la-relacion-de-pareja
-   - https://terapiadeparejaelsalvador.com/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador
-   - https://terapiadeparejaelsalvador.com/blog/como-poner-limites-a-tu-familia-desde-la-distancia
-7. **Test Clínico de Pareja (Autoevaluación):** https://terapiadeparejaelsalvador.com/test-de-pareja
-   Autoevaluación clínica interactiva de 5 pasos para parejas.
+## Arquitectura de Servicios y Enlaces Principales
+- [Terapia de Pareja El Salvador](https://terapiadeparejaelsalvador.com/): Protocolo clínico en 4 fases (Mapa del Vínculo, Desescalada Emocional, Reconstrucción de Acuerdos y Alta). Especialistas en comunicación en bucle, infidelidad y parejas transnacionales.
+- [Psicólogos Salvadoreños Online en el Exterior](https://terapiadeparejaelsalvador.com/salvadorenos-en-el-exterior): Terapia en tu propio código cultural para salvadoreños en Estados Unidos, Canadá y el exterior. Sin traducir emociones ni justificar dinámicas familiares.
+- [Psicología Online El Salvador · Terapia Individual](https://terapiadeparejaelsalvador.com/terapia-individual): Tratamiento con base científica para ansiedad, sobrepensamiento, límites familiares sin culpa y duelos afectivos.
+- [Perfil Profesional Iris Alarcón JVPP](https://terapiadeparejaelsalvador.com/iris-alarcon): Credenciales, máster en terapia de pareja y sexología clínica, número de registro profesional y filosofía clínica.
+- [Honorarios y Precios Transparentes](https://terapiadeparejaelsalvador.com/precios): 1ª conversación exploratoria de 30 min sin costo ($0 USD). Plan mensual accesible de $100 USD (hasta 4 sesiones al mes = $25/sesión). Factura médica con número de registro sanitario de la JVPP (N.º 47096) apta para reembolso en aseguradoras médicas de El Salvador, EE. UU. (superbills / out-of-network) y Canadá.
+- [Test Clínico de Pareja (Autoevaluación)](https://terapiadeparejaelsalvador.com/test-de-pareja): Autoevaluación clínica interactiva de 5 pasos para parejas.
+- [Sexología Clínica en El Salvador](https://terapiadeparejaelsalvador.com/sexologia-clinica): Acompañamiento especializado en deseo, intimidad y reconexión afectivo-sexual.
+- [Blog y Guías Clínicas de Pareja](https://terapiadeparejaelsalvador.com/blog): Artículos y análisis clínicos sobre relaciones, migración y salud emocional.
+- [Cómo afecta emigrar a la relación de pareja](https://terapiadeparejaelsalvador.com/blog/como-afecta-emigrar-a-la-relacion-de-pareja): Análisis clínico sobre la adaptación cultural y el vínculo en la distancia.
+- [Cuánto cuesta una terapia de pareja en El Salvador](https://terapiadeparejaelsalvador.com/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador): Comparativa de precios y modalidades en El Salvador y el exterior.
+- [Cómo poner límites a tu familia desde la distancia](https://terapiadeparejaelsalvador.com/blog/como-poner-limites-a-tu-familia-desde-la-distancia): Guía psicológica para salvadoreños en la diáspora.
+- [Política de Privacidad y Secreto Clínico](https://terapiadeparejaelsalvador.com/privacidad): Protección de datos de salud y secreto médico profesional.
 
 ## Contacto Oficial
-- **Sitio web:** https://terapiadeparejaelsalvador.com/
-- **WhatsApp oficial de coordinación:** +503 7318 4781 (https://wa.me/50373184781)
+- [Sitio Web Oficial Centro Amaré](https://terapiadeparejaelsalvador.com/)
+- [WhatsApp Oficial de Coordinación](https://wa.me/50373184781): +503 7318 4781

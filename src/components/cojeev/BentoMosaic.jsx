@@ -157,9 +157,9 @@ export function BentoMosaic() {
                   Pertenencia e Identidad Cultural
                 </span>
               </div>
-              <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--v-text)', marginBottom: '10px' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--v-text)', marginBottom: '10px' }}>
                 En Estados Unidos, Canadá, Europa o El Salvador
-              </h4>
+              </h3>
               <p style={{ fontSize: '14.5px', color: 'var(--v-text-2)', lineHeight: 1.6, margin: 0 }}>
                 Conectas desde tu celular o computadora con alguien que entiende tus raíces sin pagar tarifas de $200 por hora.
               </p>
@@ -196,9 +196,9 @@ export function BentoMosaic() {
                   Primera Conversación
                 </span>
               </div>
-              <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--v-text)', marginBottom: '10px' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--v-text)', marginBottom: '10px' }}>
                 30 minutos sin costo
-              </h4>
+              </h3>
               <p style={{ fontSize: '14.5px', color: 'var(--v-text-2)', lineHeight: 1.6, margin: 0 }}>
                 Antes de pagar nada, conversamos por Google Meet para que nos conozcas, nos cuentes qué te trae y sientas si este es tu lugar.
               </p>

@@ -196,14 +196,17 @@ export default function TheTeam() {
                   overflow: 'hidden',
                   boxShadow: '0 8px 24px rgba(0,0,0,0.18)',
                 }}>
-                  <img
-                    src="/images/iris-alarcon.jpg"
-                    alt="Licda. Iris Alarcón — Directora Clínica y Psicóloga Colegiada JVPP"
-                    width="120"
-                    height="120"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcSet="/images/iris-alarcon.webp" type="image/webp" />
+                    <img
+                      src="/images/iris-alarcon.jpg"
+                      alt="Licda. Iris Alarcón — Directora Clínica y Psicóloga Colegiada JVPP"
+                      width="120"
+                      height="120"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
               </div>
 

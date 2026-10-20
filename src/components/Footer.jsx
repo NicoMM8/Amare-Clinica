@@ -98,9 +98,9 @@ export default function Footer() {
 
           {/* Col 2: Especialidades */}
           <div>
-            <h4 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-clay)', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-clay)', marginBottom: '16px' }}>
               Especialidades
-            </h4>
+            </h3>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)' }}>
               <li><a href="/terapia-de-pareja" style={{ transition: 'color 0.2s' }}>Terapia de Pareja</a></li>
               <li><a href="/sexologia-clinica" style={{ transition: 'color 0.2s' }}>Sexología Clínica</a></li>
@@ -112,14 +112,15 @@ export default function Footer() {
 
           {/* Col 3: Navegación & Blog */}
           <div>
-            <h4 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-clay)', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-clay)', marginBottom: '16px' }}>
               El Centro & Recursos
-            </h4>
+            </h3>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)' }}>
               <li><a href="/test-de-pareja" style={{ color: 'var(--color-clay)', fontWeight: 600 }}>Test de Pareja (2 min)</a></li>
               <li><a href="/iris-alarcon">Iris Alarcón (Sobre Mí)</a></li>
               <li><a href="/blog">Blog & Guías Clínicas</a></li>
-              <li><a href="/privacidad">Privacidad y Secreto Clínico</a></li>
+              <li><a href="/privacidad">Política de Privacidad</a></li>
+              <li><a href="/privacidad#cookies">Política de Cookies</a></li>
               <li><a href="/#faq">Preguntas Frecuentes</a></li>
               <li><a href={whatsappUrl} target="_blank" rel="noopener noreferrer">Contacto con Asistente</a></li>
             </ul>
@@ -127,9 +128,9 @@ export default function Footer() {
 
           {/* Col 4: Compromiso Ético y JVPP */}
           <div>
-            <h4 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-clay)', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-clay)', marginBottom: '16px' }}>
               Acreditación Sanitaria JVPP N.º 47096
-            </h4>
+            </h3>
             <p style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '13px', lineHeight: 1.6, marginBottom: '12px' }}>
               Directora Clínica: <strong>Lic. Iris Alarcón</strong>, Psicóloga Colegiada con <strong>Registro Profesional JVPP N.º 47096</strong> (Junta de Vigilancia de la Profesión en Psicología de El Salvador).
             </p>
@@ -160,7 +161,7 @@ export default function Footer() {
           color: 'rgba(255, 255, 255, 0.6)'
         }}>
           <div>
-            © {new Date().getFullYear()} Centro Amaré · Todos los derechos reservados · Registro Profesional JVPP N.º 47096 · <a href="/privacidad" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Privacidad y Secreto Clínico</a>
+            © {new Date().getFullYear()} Centro Amaré · Todos los derechos reservados · Registro Profesional JVPP N.º 47096 · <a href="/privacidad" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Política de Privacidad</a> · <a href="/privacidad#cookies" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Política de Cookies</a>
           </div>
           <div>
             terapiadeparejaelsalvador.com · San Salvador, El Salvador · Sesiones 100% Online vía Google Meet

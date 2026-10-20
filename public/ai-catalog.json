@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agenticresourcediscovery.org/spec/schema/v1.json",
+  "name": "Centro Amaré",
+  "description": "Clínica de psicología y terapia de pareja online para salvadoreños en el país y en el exterior.",
+  "url": "https://terapiadeparejaelsalvador.com",
+  "version": "1.0.0",
+  "provider": {
+    "name": "Centro Amaré — Clínica de Psicología",
+    "contact": "https://wa.me/50373184781"
+  },
+  "endpoints": [
+    {
+      "name": "Test de Pareja",
+      "description": "Herramienta de autoevaluación clínica en 5 pasos para parejas.",
+      "url": "https://terapiadeparejaelsalvador.com/test-de-pareja",
+      "type": "interactive-assessment"
+    },
+    {
+      "name": "Precios y Honorarios",
+      "description": "Estructura de precios transparente para terapia individual y de pareja.",
+      "url": "https://terapiadeparejaelsalvador.com/precios",
+      "type": "pricing-catalog"
+    }
+  ]
+}

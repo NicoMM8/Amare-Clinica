@@ -94,13 +94,16 @@ export default function IrisAlarconPage() {
                     margin: '0 auto 20px',
                     boxShadow: '0 8px 24px rgba(0,0,0,0.12)'
                   }}>
-                    <img
-                      src="/images/iris-alarcon.jpg"
-                      alt="Licda. Iris Alarcón — Psicóloga Clínica Colegiada JVPP El Salvador"
-                      width="180"
-                      height="180"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
+                    <picture>
+                      <source srcSet="/images/iris-alarcon.webp" type="image/webp" />
+                      <img
+                        src="/images/iris-alarcon.jpg"
+                        alt="Licda. Iris Alarcón — Psicóloga Clínica Colegiada JVPP El Salvador"
+                        width="180"
+                        height="180"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                    </picture>
                   </div>
                   <h2 className="font-serif" style={{ fontSize: '24px', color: 'var(--color-plum-900)', marginBottom: '4px' }}>
                     Lic. Iris Alarcón

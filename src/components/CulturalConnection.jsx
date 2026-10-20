@@ -25,9 +25,9 @@ export default function CulturalConnection() {
           
           {/* Tarjeta 1: Terapia en el extranjero */}
           <div className="comparison-card comparison-negative">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-ink-muted)', marginBottom: '16px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-plum-800)', marginBottom: '16px' }}>
               <ShieldAlert size={20} />
-              <span style={{ fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              <span style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 Hacer terapia en otro idioma o cultura
               </span>
             </div>

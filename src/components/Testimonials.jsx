@@ -138,7 +138,7 @@ export default function Testimonials() {
               style={{
                 fontSize: '12.5px',
                 fontWeight: 600,
-                color: 'var(--color-clay)',
+                color: 'var(--color-clay-text, #8B3822)',
                 textDecoration: 'none',
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -187,7 +187,7 @@ export default function Testimonials() {
                   <span style={{
                     fontSize: '11px',
                     fontWeight: 700,
-                    color: 'var(--color-clay)',
+                    color: 'var(--color-clay-text, #8B3822)',
                     background: 'var(--color-clay-subtle)',
                     padding: '3px 9px',
                     borderRadius: 'var(--r-pill)',
@@ -245,7 +245,7 @@ export default function Testimonials() {
                   padding: '3px 8px',
                   borderRadius: 'var(--r-sm, 6px)'
                 }}>
-                  <CheckCircle size={12} style={{ color: '#27AE60' }} />
+                  <CheckCircle size={12} style={{ color: '#166534' }} />
                   <span>Psico.org</span>
                 </div>
               </div>

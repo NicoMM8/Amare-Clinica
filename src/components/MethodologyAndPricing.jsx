@@ -139,7 +139,7 @@ export default function MethodologyAndPricing() {
                 <span style={{ 
                   fontSize: '11.5px', 
                   fontWeight: 700, 
-                  color: 'var(--color-clay)', 
+                  color: 'var(--color-clay-text, #8B3822)', 
                   background: 'var(--color-clay-subtle)',
                   padding: '3px 9px',
                   borderRadius: 'var(--r-pill)',
@@ -270,7 +270,7 @@ export default function MethodologyAndPricing() {
                       </td>
                       <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>30 min</td>
                       <td style={{ padding: '14px' }}>
-                        <span style={{ color: '#27AE60', fontWeight: 700, background: 'rgba(39, 174, 96, 0.12)', padding: '4px 10px', borderRadius: 'var(--r-pill)', display: 'inline-block', fontSize: '12px' }}>
+                        <span style={{ color: '#166534', fontWeight: 700, background: 'rgba(22, 101, 52, 0.12)', padding: '4px 10px', borderRadius: 'var(--r-pill)', display: 'inline-block', fontSize: '12px' }}>
                           Sin costo ($0)
                         </span>
                       </td>
@@ -317,7 +317,7 @@ export default function MethodologyAndPricing() {
                       </td>
                       <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>50 min</td>
                       <td style={{ padding: '14px' }}>
-                        <span style={{ color: 'var(--color-clay)', fontWeight: 600, background: 'var(--color-clay-subtle)', padding: '4px 10px', borderRadius: 'var(--r-pill)', display: 'inline-block', fontSize: '12px' }}>
+                        <span style={{ color: 'var(--color-clay-text, #8B3822)', fontWeight: 600, background: 'var(--color-clay-subtle)', padding: '4px 10px', borderRadius: 'var(--r-pill)', display: 'inline-block', fontSize: '12px' }}>
                           Incluida en plan
                         </span>
                       </td>
@@ -463,14 +463,14 @@ export default function MethodologyAndPricing() {
               </div>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '6px' }}>
-                  <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: 'var(--color-plum-900)' }}>
+                  <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: 'var(--color-plum-900)' }}>
                     Factura Médica con Registro JVPP para Reembolso de Seguro
-                  </h4>
+                  </h3>
                   <span style={{ 
                     fontSize: '11px', 
                     fontWeight: 700, 
-                    color: '#27AE60', 
-                    background: 'rgba(39, 174, 96, 0.12)', 
+                    color: '#166534', 
+                    background: 'rgba(22, 101, 52, 0.12)', 
                     padding: '3px 9px', 
                     borderRadius: 'var(--r-pill)' 
                   }}>

@@ -15,7 +15,7 @@
   
   --color-ink-primary: #22284A; /* Añil noche para contraste óptimo */
   --color-ink-secondary: #3D456E; /* Añil atenuado */
-  --color-ink-muted: #768B78; /* Secundario: Salvia */
+  --color-ink-muted: #49574B; /* Salvia profundo con contraste WCAG AA (>4.5:1) */
   
   /* Brand Primary / Añil noche */
   --color-plum-900: #22284A; /* Añil noche principal */
@@ -26,12 +26,14 @@
   
   /* Accent / Terracota */
   --color-clay: #AA5A40;
+  --color-clay-text: #8B3822; /* Terracota profundo para texto legible WCAG AA */
   --color-clay-hover: #8D4731;
   --color-clay-subtle: #F6EAE7;
   --color-clay-border: rgba(170, 90, 64, 0.25);
+  --color-success-text: #166534; /* Verde accesible WCAG AA */
   
   /* Illustration Accent */
-  --color-sage: #768B78;
+  --color-sage: #49574B;
   
   /* Borders & Dividers */
   --border-hairline: rgba(34, 40, 74, 0.08);
@@ -706,3 +708,41 @@ button {
     gap: 32px;
   }
 }
+
+/* ═══════════════════════════════════════════════
+   ACCESSIBILITY: SKIP-LINK & REDUCED MOTION (WCAG AA)
+═══════════════════════════════════════════════ */
+.skip-link {
+  position: absolute;
+  top: -120px;
+  left: 20px;
+  background: var(--color-plum-900);
+  color: #FFFFFF;
+  padding: 12px 22px;
+  border-radius: var(--r-md);
+  font-weight: 700;
+  font-size: 14.5px;
+  z-index: 10000;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: top 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skip-link:focus {
+  top: 16px;
+  outline: 3px solid var(--color-clay);
+  outline-offset: 2px;
+}
+
+/* Reducción de movimiento para usuarios con preferencias de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

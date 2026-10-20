@@ -144,6 +144,7 @@ const medicalBusinessSchema = {
   ],
   sameAs: [
     'https://www.psico.org/centro-47096',
+    'https://wa.me/50373184781',
   ],
   aggregateRating: {
     '@type': 'AggregateRating',
@@ -297,10 +298,6 @@ const medicalBusinessSchema = {
       relevantSpecialty: 'https://schema.org/MentalHealth',
       url: `${SITE_URL}/terapia-salvadorenos-en-el-extranjero`,
     },
-  ],
-  sameAs: [
-    `https://wa.me/50373184781`,
-    // TODO: Añadir aquí enlaces reales de Google Business Profile, Instagram, Facebook o LinkedIn cuando estén disponibles
   ],
 };
 

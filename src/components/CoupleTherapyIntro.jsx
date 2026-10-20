@@ -351,8 +351,10 @@ export default function CoupleTherapyIntro() {
               }}
             >
               <img
-                src="/images/iris-alarcon.jpg"
+                src="/images/iris-alarcon.webp"
                 alt="Licda. Iris Alarcón en videollamada"
+                width="36"
+                height="36"
                 style={{
                   width: '36px',
                   height: '36px',
@@ -477,7 +479,7 @@ export default function CoupleTherapyIntro() {
                       fontWeight: 700,
                       letterSpacing: '0.07em',
                       textTransform: 'uppercase',
-                      color: 'var(--color-clay, #B75940)',
+                      color: 'var(--color-clay-text, #8B3822)',
                       background: 'var(--color-clay-subtle, #FDF0EB)',
                       padding: '4px 10px',
                       borderRadius: 'var(--r-pill, 999px)',
@@ -519,10 +521,11 @@ export default function CoupleTherapyIntro() {
                       href={`https://wa.me/50373184781?text=${encodeURIComponent(prob.whatsappQuery)}`}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Hablar por WhatsApp sobre ${prob.title}`}
                       style={{
                         fontSize: '13.5px',
                         fontWeight: 600,
-                        color: 'var(--color-clay)',
+                        color: 'var(--color-clay-text, #8B3822)',
                         textDecoration: 'none',
                         display: 'inline-flex',
                         alignItems: 'center',
@@ -563,9 +566,9 @@ export default function CoupleTherapyIntro() {
                 <ShieldCheck size={14} style={{ color: 'var(--color-clay)' }} />
                 <span>Un espacio sin bandos ni culpables</span>
               </div>
-              <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#FFFFFF', marginBottom: '8px', lineHeight: 1.3 }}>
+              <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#FFFFFF', marginBottom: '8px', lineHeight: 1.3 }}>
                 ¿Sienten que están pasando por algo de esto?
-              </h4>
+              </h3>
               <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.8)', margin: 0, lineHeight: 1.6 }}>
                 No tienen que esperar a estar al límite para pedir ayuda. Empiecen con una primera conversación de 30 minutos sin costo por Google Meet para conocernos y ver cómo podemos acompañarles.
               </p>

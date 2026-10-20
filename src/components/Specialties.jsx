@@ -53,7 +53,7 @@ export default function Specialties() {
                 <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: 'var(--color-clay-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <HeartHandshake size={24} style={{ color: 'var(--color-clay)' }} />
                 </div>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', background: 'var(--color-canvas)', padding: '5px 12px', borderRadius: 'var(--r-pill)' }}>
+                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay-text, #8B3822)', background: 'var(--color-canvas)', padding: '5px 12px', borderRadius: 'var(--r-pill)' }}>
                   Para Parejas (Juntas o a Distancia)
                 </span>
               </div>
@@ -85,7 +85,7 @@ export default function Specialties() {
 
               <a
                 href="/terapia-de-pareja"
-                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-clay)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-clay-text, #8B3822)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
               >
                 <span>Conocer cómo trabajamos en pareja →</span>
               </a>
@@ -111,7 +111,7 @@ export default function Specialties() {
                 <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: 'var(--color-clay-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Brain size={24} style={{ color: 'var(--color-clay)' }} />
                 </div>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', background: 'var(--color-canvas)', padding: '5px 12px', borderRadius: 'var(--r-pill)' }}>
+                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay-text, #8B3822)', background: 'var(--color-canvas)', padding: '5px 12px', borderRadius: 'var(--r-pill)' }}>
                   Para Ti (Proceso Individual)
                 </span>
               </div>
@@ -143,7 +143,7 @@ export default function Specialties() {
 
               <a
                 href="/terapia-individual"
-                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-clay)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-clay-text, #8B3822)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
               >
                 <span>Conocer la terapia individual →</span>
               </a>

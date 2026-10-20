@@ -28,6 +28,7 @@ export function Accordion({ items, defaultOpenIndex = 0 }) {
             }}
           >
             <button
+              id={`accordion-button-${idx}`}
               type="button"
               onClick={() => toggle(idx)}
               aria-expanded={isOpen}
@@ -77,29 +78,26 @@ export function Accordion({ items, defaultOpenIndex = 0 }) {
               </motion.div>
             </button>
 
-            <AnimatePresence initial={false}>
-              {isOpen && (
-                <motion.div
-                  id={`accordion-body-${idx}`}
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                  style={{ overflow: 'hidden' }}
-                >
-                  <div
-                    style={{
-                      padding: '16px 24px 22px',
-                      fontSize: '15px',
-                      lineHeight: 1.68,
-                      color: 'var(--v-text-2, #5D5458)',
-                    }}
-                  >
-                    {item.content}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <div
+              id={`accordion-body-${idx}`}
+              role="region"
+              aria-labelledby={`accordion-button-${idx}`}
+              style={{
+                display: isOpen ? 'block' : 'none',
+                overflow: 'hidden'
+              }}
+            >
+              <div
+                style={{
+                  padding: '16px 24px 22px',
+                  fontSize: '15px',
+                  lineHeight: 1.68,
+                  color: 'var(--v-text-2, #5D5458)',
+                }}
+              >
+                {item.content}
+              </div>
+            </div>
           </div>
         );
       })}

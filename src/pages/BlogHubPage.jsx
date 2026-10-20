@@ -42,7 +42,7 @@ export default function BlogHubPage() {
     <div className="app-wrapper">
       <Navbar />
 
-      <main>
+      <main id="main-content">
         {/* Header */}
         <section className="section" style={{ paddingTop: '40px', paddingBottom: '60px' }}>
           <div className="container">

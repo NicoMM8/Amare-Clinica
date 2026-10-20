@@ -73,6 +73,15 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delayed,
+  .animate-radar-dot,
+  .animate-fade-in {
+    animation: none !important;
+  }
+}
+
 .animate-float {
   animation: floatGentle 5s ease-in-out infinite;
 }
@@ -471,12 +480,12 @@
 .pricing-badge-popular {
   display: inline-block;
   background: var(--color-clay-subtle);
-  color: var(--color-clay);
+  color: var(--color-clay-text, #8B3822);
   border: 1px solid var(--color-clay-border);
   padding: 4px 14px;
   border-radius: var(--r-pill);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 16px;

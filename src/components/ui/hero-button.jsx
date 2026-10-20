@@ -1,5 +1,4 @@
 import * as React from "react";
-import { motion } from "motion/react";
 import { Meta } from "./typography";
 
 export const heroButtonAppearances = [
@@ -124,29 +123,18 @@ export function HeroButton({
       {/* 000h living coiling arrow */}
       <span className="v-hero-button__arrow" aria-hidden="true">
         <svg viewBox="0 0 40 28" width="34" height="24" fill="none">
-          <motion.path
+          <path
             d={arrowStem}
             stroke="currentColor"
             strokeWidth="2.2"
             strokeLinecap="round"
-            initial={false}
-            animate={{
-              d: hovered ? [arrowStem, stemCoil, arrowStem, arrowStem] : arrowStem,
-              pathLength: hovered ? [1, 0.1, 0.8, 1] : 1
-            }}
-            transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
           />
-          <motion.path
+          <path
             d={arrowHead}
             stroke="currentColor"
             strokeWidth="2.2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            initial={false}
-            animate={{
-              d: hovered ? [arrowHead, arrowCoil, arrowOpening, arrowHead] : arrowHead
-            }}
-            transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
           />
         </svg>
       </span>

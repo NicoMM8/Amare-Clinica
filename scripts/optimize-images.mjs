@@ -9,13 +9,15 @@ const imagesDir = path.resolve(__dirname, '../public/images');
 async function optimizeImages() {
   console.log('🖼️  Optimizando imágenes para Lighthouse Performance...');
 
-  // 1. pareja-terapia-online.webp (Lighthouse flagged: 441 KiB -> target < 60 KiB)
+  // 1. pareja-terapia-online.webp (Lighthouse flagged: 130 KiB -> target ~45-55 KiB)
+  const parejaJpgPath = path.join(imagesDir, 'pareja-terapia-online.jpg');
   const parejaPath = path.join(imagesDir, 'pareja-terapia-online.webp');
-  if (fs.existsSync(parejaPath)) {
-    const parejaBuffer = fs.readFileSync(parejaPath);
+  const sourcePareja = fs.existsSync(parejaJpgPath) ? parejaJpgPath : parejaPath;
+  if (fs.existsSync(sourcePareja)) {
+    const parejaBuffer = fs.readFileSync(sourcePareja);
     const optimized = await sharp(parejaBuffer)
-      .resize({ width: 800, withoutEnlargement: true })
-      .webp({ quality: 78, effort: 6 })
+      .resize({ width: 580, withoutEnlargement: true })
+      .webp({ quality: 68, effort: 6 })
       .toBuffer();
     fs.writeFileSync(parejaPath, optimized);
     console.log(`✅ pareja-terapia-online.webp optimizado: ${(optimized.length / 1024).toFixed(1)} KiB`);
@@ -55,13 +57,13 @@ async function optimizeImages() {
     console.log(`✅ equipo-clinico-amare-960.webp optimizado: ${(optimized.length / 1024).toFixed(1)} KiB`);
   }
 
-  // 4. logo-nav.webp (Lighthouse flagged: 13.4 KiB -> target < 8 KiB)
+  // 4. logo-nav.webp (Lighthouse flagged: 13.4 KiB -> target < 5 KiB)
   const logoNavPath = path.join(imagesDir, 'logo-nav.webp');
   if (fs.existsSync(logoNavPath)) {
     const logoBuffer = fs.readFileSync(logoNavPath);
     const optimized = await sharp(logoBuffer)
-      .resize({ width: 228, withoutEnlargement: true })
-      .webp({ quality: 80, effort: 6 })
+      .resize({ width: 200, withoutEnlargement: true })
+      .webp({ quality: 75, effort: 6 })
       .toBuffer();
     fs.writeFileSync(logoNavPath, optimized);
     console.log(`✅ logo-nav.webp optimizado: ${(optimized.length / 1024).toFixed(1)} KiB`);

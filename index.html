@@ -174,11 +174,7 @@
     ═══════════════════════════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..700;1,6..12,300..700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..700;1,6..12,300..700&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..700;1,6..12,300..700&display=swap" />
-    </noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" />
 
     <!-- ═══════════════════════════════════════════════
          ANALYTICS / EVENT TRACKING BOOTSTRAP
@@ -213,6 +209,20 @@
 
   </head>
   <body>
+    <!-- Skip-to-content accesible estándar en primer nivel de body -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Banner de Consentimiento y Política de Cookies (Conforme a RGPD/YMYL) -->
+    <aside id="cookie-consent-banner" role="region" aria-label="Aviso de cookies y privacidad" class="cookie-banner" style="display: none;" data-nosnippet>
+      <div class="cookie-banner-content">
+        <p>En Centro Amaré usamos cookies esenciales y análisis anonimizado para asegurar la confidencialidad y el correcto funcionamiento del centro. Consulta nuestra <a href="/cookies" class="cookie-banner-link">Política de Cookies</a>.</p>
+        <div class="cookie-banner-actions">
+          <button id="accept-cookies-btn" type="button" class="cookie-btn cookie-btn-accept">Aceptar</button>
+          <button id="decline-cookies-btn" type="button" class="cookie-btn cookie-btn-decline">Rechazar no esenciales</button>
+        </div>
+      </div>
+    </aside>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

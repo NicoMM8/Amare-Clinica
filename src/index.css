@@ -25,7 +25,7 @@
   --color-plum-50: #F3F5FA;
   
   /* Accent / Terracota */
-  --color-clay: #AA5A40;
+  --color-clay: #9E4B33;
   --color-clay-text: #8B3822; /* Terracota profundo para texto legible WCAG AA */
   --color-clay-hover: #8D4731;
   --color-clay-subtle: #F6EAE7;
@@ -458,47 +458,47 @@ button {
 
 @media (max-width: 900px) {
   .nav-links {
-    display: none !important;
+    display: none;
   }
   .nav-mobile-toggle {
-    display: inline-flex !important;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 38px;
     height: 38px;
-    border-radius: 50% !important;
-    border: 1.5px solid var(--border-subtle) !important;
-    background: #FFFFFF !important;
-    color: var(--color-plum-900) !important;
+    border-radius: 50%;
+    border: 1.5px solid var(--border-subtle);
+    background: #FFFFFF;
+    color: var(--color-plum-900);
     box-shadow: 0 2px 8px rgba(34, 40, 74, 0.06);
-    padding: 0 !important;
+    padding: 0;
     cursor: pointer;
     transition: all var(--duration-fast) ease;
   }
   .nav-mobile-toggle:hover {
-    background: var(--color-canvas-subtle) !important;
+    background: var(--color-canvas-subtle);
   }
 }
 
 @media (max-width: 600px) {
   .navbar {
-    padding: 6px 14px 6px 16px !important;
+    padding: 6px 14px 6px 16px;
   }
   .nav-cta-text-desktop {
-    display: none !important;
+    display: none;
   }
   .nav-cta-text-mobile {
-    display: inline !important;
+    display: inline;
   }
   .nav-cta-btn {
-    padding: 8px 18px !important;
-    font-size: 13.5px !important;
-    font-weight: 600 !important;
-    border-radius: 999px !important;
-    height: 38px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    padding: 8px 18px;
+    font-size: 13.5px;
+    font-weight: 600;
+    border-radius: 999px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -744,5 +744,81 @@ button {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .cojeev-marquee-track,
+  .v-pigment-blob,
+  .animate-float,
+  .animate-float-delayed,
+  .animate-radar-dot {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   COOKIE CONSENT BANNER (WCAG AA & RGPD Compliance)
+═══════════════════════════════════════════════ */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--color-plum-900);
+  color: #FFFFFF;
+  border-radius: var(--r-xl);
+  padding: 18px 22px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 999999;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.cookie-banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cookie-banner-link {
+  color: #E8BA9B;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookie-btn {
+  padding: 8px 18px;
+  border-radius: var(--r-pill);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.cookie-btn-accept {
+  background: #E8BA9B;
+  color: var(--color-plum-900);
+}
+
+.cookie-btn-accept:hover {
+  opacity: 0.9;
+}
+
+.cookie-btn-decline {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.cookie-btn-decline:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 

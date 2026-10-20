@@ -11,7 +11,7 @@ export default function BlogPostLimitesFamilia() {
     <div className="app-wrapper">
       <Navbar />
 
-      <main>
+      <main id="main-content">
         {/* Header Article */}
         <section className="section" style={{ paddingTop: '40px', paddingBottom: '32px' }}>
           <div className="container" style={{ maxWidth: '820px' }}>

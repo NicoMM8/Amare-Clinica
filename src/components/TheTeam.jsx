@@ -48,7 +48,7 @@ export default function TheTeam() {
               border: '1px solid var(--v-border, rgba(35, 18, 33, 0.08))'
             }}>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '22px', color: 'var(--color-clay)', lineHeight: 1 }}>
+                <div style={{ fontSize: '22px', color: 'var(--color-clay-text, #8B3822)', lineHeight: 1 }}>
                   <AnimatedNumber value={9} suffix="+" />
                 </div>
                 <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
@@ -56,7 +56,7 @@ export default function TheTeam() {
                 </div>
               </div>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '22px', color: 'var(--color-clay)', lineHeight: 1 }}>
+                <div style={{ fontSize: '22px', color: 'var(--color-clay-text, #8B3822)', lineHeight: 1 }}>
                   <AnimatedNumber value={30} suffix=" min" />
                 </div>
                 <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
@@ -64,7 +64,7 @@ export default function TheTeam() {
                 </div>
               </div>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '22px', color: 'var(--color-clay)', lineHeight: 1 }}>
+                <div style={{ fontSize: '22px', color: 'var(--color-clay-text, #8B3822)', lineHeight: 1 }}>
                   <AnimatedNumber value={25} prefix="$" />
                 </div>
                 <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
@@ -72,7 +72,7 @@ export default function TheTeam() {
                 </div>
               </div>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '17px', color: 'var(--color-clay)', lineHeight: 1, fontWeight: 700, letterSpacing: '0.02em' }}>
+                <div style={{ fontSize: '17px', color: 'var(--color-clay-text, #8B3822)', lineHeight: 1, fontWeight: 700, letterSpacing: '0.02em' }}>
                   N.º 47096
                 </div>
                 <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
@@ -169,16 +169,16 @@ export default function TheTeam() {
                   position: 'absolute',
                   top: '20px',
                   left: '20px',
-                  background: 'rgba(255, 255, 255, 0.15)',
+                  background: 'rgba(15, 23, 42, 0.65)',
                   backdropFilter: 'blur(8px)',
-                  color: '#fff',
+                  color: '#FFFFFF',
                   fontSize: '11px',
                   fontWeight: 700,
                   textTransform: 'uppercase',
                   letterSpacing: '0.08em',
                   padding: '5px 12px',
                   borderRadius: 'var(--r-pill)',
-                  border: '1px solid rgba(255,255,255,0.2)'
+                  border: '1px solid rgba(255, 255, 255, 0.25)'
                 }}>
                   Directora Clínica
                 </span>
@@ -215,7 +215,7 @@ export default function TheTeam() {
                 <h3 style={{ fontSize: '26px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '4px' }}>
                   Iris Alarcón
                 </h3>
-                <p style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
+                <p style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-clay-text, #8B3822)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
                   Psicóloga Clínica · Máster en Pareja y Sexología
                 </p>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', fontWeight: 600, color: 'var(--color-plum-900)', background: 'var(--color-clay-subtle)', padding: '3px 10px', borderRadius: 'var(--r-pill)', marginBottom: '16px' }}>

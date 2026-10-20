@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
-import { HeartHandshake, Brain, Globe, Sparkles, CreditCard, ShieldCheck } from 'lucide-react';
+import { HeartHandshake, Brain, Globe, Sparkles } from 'lucide-react';
 import { LivingLink } from './LivingLink';
 
 export function BentoMosaic() {
@@ -17,7 +16,7 @@ export function BentoMosaic() {
             fontWeight: 700, 
             textTransform: 'uppercase', 
             letterSpacing: '0.08em', 
-            color: 'var(--v-pink)',
+            color: 'var(--color-clay-text, #8B3822)',
             background: 'var(--v-pink-soft)',
             padding: '5px 14px',
             borderRadius: 'var(--r-pill)',
@@ -29,8 +28,8 @@ export function BentoMosaic() {
           <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '16px', color: 'var(--v-text)' }}>
             Un espacio pensado para tu tranquilidad, vivas donde vivas
           </h2>
-          <p style={{ fontSize: '16.5px', color: 'var(--v-text-2)' }}>
-            Cada área de tu proceso terapéutico, atendida con rigor científico, calidez humana y sensibilidad cultural. Desde donde estés.
+          <p style={{ fontSize: '17px', color: 'var(--v-text-2)', lineHeight: 1.65 }}>
+            Combinamos rigor clínico colegiado ante la JVPP con la calidez y el entendimiento profundo de nuestra cultura salvadoreña.
           </p>
         </div>
 
@@ -43,9 +42,7 @@ export function BentoMosaic() {
         }}>
           
           {/* Caja 1 (Pareja y Sexología): 7 cols */}
-          <motion.div
-            whileHover={{ y: -3 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          <div
             style={{
               gridColumn: 'span 7',
               background: 'var(--v-blue)',
@@ -57,7 +54,8 @@ export function BentoMosaic() {
               justifyContent: 'space-between',
               position: 'relative',
               overflow: 'hidden',
-              minHeight: '300px'
+              minHeight: '300px',
+              transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
             className="bento-tile-responsive"
           >
@@ -89,12 +87,10 @@ export function BentoMosaic() {
                 Evaluar nuestro caso de pareja
               </LivingLink>
             </div>
-          </motion.div>
+          </div>
 
           {/* Caja 2 (Ansiedad y Descanso): 5 cols */}
-          <motion.div
-            whileHover={{ y: -3 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          <div
             style={{
               gridColumn: 'span 5',
               background: 'var(--v-pink)',
@@ -104,7 +100,8 @@ export function BentoMosaic() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '300px'
+              minHeight: '300px',
+              transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
             className="bento-tile-responsive"
           >
@@ -130,12 +127,10 @@ export function BentoMosaic() {
                 Aprende a calmar tu mente
               </LivingLink>
             </div>
-          </motion.div>
+          </div>
 
           {/* Caja 3 (Pertenencia): 6 cols */}
-          <motion.div
-            whileHover={{ y: -3 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          <div
             style={{
               gridColumn: 'span 6',
               background: 'var(--v-paper)',
@@ -146,12 +141,13 @@ export function BentoMosaic() {
               flexDirection: 'column',
               justifyContent: 'space-between',
               minHeight: '270px',
-              boxShadow: 'var(--shadow-sm)'
+              boxShadow: 'var(--shadow-sm)',
+              transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
             className="bento-tile-responsive"
           >
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--v-pink)', marginBottom: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-clay-text, #8B3822)', marginBottom: '14px' }}>
                 <Globe size={18} />
                 <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   Pertenencia e Identidad Cultural
@@ -170,12 +166,10 @@ export function BentoMosaic() {
                 Por qué importa la cultura
               </LivingLink>
             </div>
-          </motion.div>
+          </div>
 
           {/* Caja 4 (Primera Conversación): 6 cols */}
-          <motion.div
-            whileHover={{ y: -3 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          <div
             style={{
               gridColumn: 'span 6',
               background: 'var(--v-yellow-soft)',
@@ -185,12 +179,13 @@ export function BentoMosaic() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '270px'
+              minHeight: '270px',
+              transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
             className="bento-tile-responsive"
           >
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--v-yellow)', marginBottom: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#975A16', marginBottom: '14px' }}>
                 <Sparkles size={18} />
                 <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   Primera Conversación
@@ -213,8 +208,8 @@ export function BentoMosaic() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '6px',
-                  color: 'var(--v-pink)',
-                  fontWeight: 600,
+                  color: 'var(--color-clay-text, #8B3822)',
+                  fontWeight: 700,
                   textDecoration: 'none',
                   fontSize: '15px'
                 }}
@@ -222,7 +217,7 @@ export function BentoMosaic() {
                 <span>Primera conversación (30 min sin costo) →</span>
               </a>
             </div>
-          </motion.div>
+          </div>
 
         </div>
 

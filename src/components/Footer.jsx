@@ -98,7 +98,7 @@ export default function Footer() {
 
           {/* Col 2: Especialidades */}
           <div>
-            <h3 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-clay)', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#E8BA9B', marginBottom: '16px' }}>
               Especialidades
             </h3>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)' }}>
@@ -112,15 +112,15 @@ export default function Footer() {
 
           {/* Col 3: Navegación & Blog */}
           <div>
-            <h3 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-clay)', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#E8BA9B', marginBottom: '16px' }}>
               El Centro & Recursos
             </h3>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)' }}>
-              <li><a href="/test-de-pareja" style={{ color: 'var(--color-clay)', fontWeight: 600 }}>Test de Pareja (2 min)</a></li>
+              <li><a href="/test-de-pareja" style={{ color: '#F4B8A5', fontWeight: 600 }}>Test de Pareja (2 min)</a></li>
               <li><a href="/iris-alarcon">Iris Alarcón (Sobre Mí)</a></li>
               <li><a href="/blog">Blog & Guías Clínicas</a></li>
               <li><a href="/privacidad">Política de Privacidad</a></li>
-              <li><a href="/privacidad#cookies">Política de Cookies</a></li>
+              <li><a href="/cookies">Política de Cookies</a></li>
               <li><a href="/#faq">Preguntas Frecuentes</a></li>
               <li><a href={whatsappUrl} target="_blank" rel="noopener noreferrer">Contacto con Asistente</a></li>
             </ul>
@@ -128,14 +128,14 @@ export default function Footer() {
 
           {/* Col 4: Compromiso Ético y JVPP */}
           <div>
-            <h3 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-clay)', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#E8BA9B', marginBottom: '16px' }}>
               Acreditación Sanitaria JVPP N.º 47096
             </h3>
             <p style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '13px', lineHeight: 1.6, marginBottom: '12px' }}>
               Directora Clínica: <strong>Lic. Iris Alarcón</strong>, Psicóloga Colegiada con <strong>Registro Profesional JVPP N.º 47096</strong> (Junta de Vigilancia de la Profesión en Psicología de El Salvador).
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'rgba(255, 255, 255, 0.9)', fontSize: '12.5px', marginBottom: '8px' }}>
-              <Shield size={16} style={{ color: 'var(--color-clay)' }} />
+              <Shield size={16} style={{ color: '#E8BA9B' }} />
               <span>Clínica Legalmente Acreditada en El Salvador</span>
             </div>
             <div style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.6)' }}>
@@ -161,7 +161,7 @@ export default function Footer() {
           color: 'rgba(255, 255, 255, 0.6)'
         }}>
           <div>
-            © {new Date().getFullYear()} Centro Amaré · Todos los derechos reservados · Registro Profesional JVPP N.º 47096 · <a href="/privacidad" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Política de Privacidad</a> · <a href="/privacidad#cookies" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Política de Cookies</a>
+            © {new Date().getFullYear()} Centro Amaré · Todos los derechos reservados · Registro Profesional JVPP N.º 47096 · <a href="/privacidad" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Política de Privacidad</a> · <a href="/cookies" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Política de Cookies</a>
           </div>
           <div>
             terapiadeparejaelsalvador.com · San Salvador, El Salvador · Sesiones 100% Online vía Google Meet

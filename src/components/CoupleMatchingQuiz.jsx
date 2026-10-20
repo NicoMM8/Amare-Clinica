@@ -289,6 +289,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
 
       {/* ── CONTENIDO PRINCIPAL ────────────────────────────── */}
       <main
+        id="main-content"
         style={{
           flex: 1,
           display: 'flex',

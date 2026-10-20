@@ -32,7 +32,7 @@ export default function TerapiaIndividualPage() {
     <div className="app-wrapper">
       <Navbar />
 
-      <main>
+      <main id="main-content">
         {/* Hero Section */}
         <section className="section" style={{ paddingTop: '40px', paddingBottom: '60px' }}>
           <div className="container">

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
 import { Globe, HeartHandshake, ShieldCheck, Sparkles, Clock } from 'lucide-react';
 import { PigmentAtmosphere } from './cojeev/PigmentAtmosphere';
 import { HeroButton } from './cojeev/HeroButton';
@@ -103,18 +102,19 @@ export default function Hero() {
                     }}
                     aria-hidden="true"
                   >
-                    <motion.path
+                    <path
                       d="M2 9 C 24 3, 40 12, 62 8 S 98 10, 118 4"
                       fill="none"
                       stroke="var(--color-clay)"
                       strokeWidth="3.2"
                       strokeLinecap="round"
-                      initial={{ pathLength: 0.45, opacity: 0.75 }}
-                      animate={{
-                        pathLength: importaHovered ? 1 : 0.45,
-                        opacity: importaHovered ? 1 : 0.75
+                      pathLength="100"
+                      strokeDasharray="100"
+                      strokeDashoffset={importaHovered ? 0 : 55}
+                      style={{
+                        opacity: importaHovered ? 1 : 0.75,
+                        transition: 'stroke-dashoffset 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease'
                       }}
-                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                     />
                   </svg>
                 </span>

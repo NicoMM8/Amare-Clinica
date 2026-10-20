@@ -95,12 +95,12 @@ export default function QuizTeaser() {
                   width: '54px',
                   height: '54px',
                   borderRadius: '16px',
-                  background: 'rgba(255, 255, 255, 0.12)',
+                  background: 'rgba(232, 186, 155, 0.15)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   margin: '0 auto 18px',
-                  color: 'var(--color-clay)',
+                  color: '#E8BA9B',
                 }}
               >
                 <HeartHandshake size={28} />

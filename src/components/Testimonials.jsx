@@ -53,7 +53,7 @@ export default function Testimonials() {
       tag: "Ansiedad y Bienestar",
       headline: "Muy profesional y humana desde la primera sesión",
       text: "Excelente psicóloga, muy profesional y humana. Desde la primera sesión me hizo sentir cómoda y en confianza. Sus consejos y técnicas me han ayudado muchísimo a manejar la ansiedad y mejorar mi bienestar. La recomiendo con todo mi corazón.",
-      colorPair: ['#768B78', '#FFFFFF'],
+      colorPair: ['#3D5A45', '#FFFFFF'],
     },
     {
       author: "Stephanie A.",
@@ -61,7 +61,7 @@ export default function Testimonials() {
       tag: "Apoyo Personal y Confianza",
       headline: "Me sentí muy cómoda y comprendida",
       text: "Me sentí muy cómoda en las sesiones con Iris, comprendida lo que me dejo ser abierta con ella para que me apoyara con unos problemas personales que tenia.",
-      colorPair: ['#A95A41', '#FFFFFF'],
+      colorPair: ['#8B3822', '#FFFFFF'],
     },
     {
       author: "A.G.S.",
@@ -77,7 +77,7 @@ export default function Testimonials() {
       tag: "Crecimiento Personal",
       headline: "Excelente profesional, muy recomendada",
       text: "Muy recomendada, me ayudo mucho con mi crecimiento personal, excelente profesional.",
-      colorPair: ['#768B78', '#FFFFFF'],
+      colorPair: ['#3D5A45', '#FFFFFF'],
     },
     {
       author: "Laura",
@@ -275,7 +275,7 @@ export default function Testimonials() {
             style={{
               fontSize: '13px',
               fontWeight: 600,
-              color: 'var(--color-clay)',
+              color: 'var(--color-clay-text, #8B3822)',
               textDecoration: 'none',
               display: 'inline-flex',
               alignItems: 'center',

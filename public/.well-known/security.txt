@@ -1,0 +1,6 @@
+Contact: mailto:contacto@terapiadeparejaelsalvador.com
+Expires: 2027-10-20T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://terapiadeparejaelsalvador.com/.well-known/security.txt
+Policy: https://terapiadeparejaelsalvador.com/privacidad
+Acknowledgments: https://terapiadeparejaelsalvador.com/privacidad

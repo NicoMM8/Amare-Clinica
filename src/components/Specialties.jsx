@@ -77,6 +77,7 @@ export default function Specialties() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
+                aria-label="Agendar primera conversación de 30 minutos sin costo para Terapia de Pareja vía WhatsApp"
                 style={{ fontSize: '13.5px', padding: '10px 20px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
               >
                 <MessageCircle size={16} />
@@ -135,6 +136,7 @@ export default function Specialties() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
+                aria-label="Agendar primera conversación de 30 minutos sin costo para Terapia Individual vía WhatsApp"
                 style={{ fontSize: '13.5px', padding: '10px 20px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
               >
                 <MessageCircle size={16} />

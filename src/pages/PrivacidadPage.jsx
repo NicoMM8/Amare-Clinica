@@ -40,7 +40,7 @@ export default function PrivacidadPage() {
       </header>
 
       {/* Main Content */}
-      <main className="container" style={{ maxWidth: '820px', padding: '64px 20px 96px' }}>
+      <main id="main-content" className="container" style={{ maxWidth: '820px', padding: '64px 20px 96px' }}>
         
         {/* Badge & Title */}
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>

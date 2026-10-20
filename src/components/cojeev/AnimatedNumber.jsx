@@ -1,42 +1,52 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useInView, useMotionValue, useSpring } from 'motion/react';
 
 export function AnimatedNumber({
   value,
-  duration = 1.6,
+  duration = 1.2,
   prefix = '',
   suffix = '',
   className = '',
   style = {},
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-40px' });
-  
-  // Start with the target value so SSR / SSG / SEO / no-JS pre-renders the real numbers (9+, 30 min, $25)
   const [displayValue, setDisplayValue] = useState(value);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, {
-    damping: 28,
-    stiffness: 75,
-  });
+  const hasAnimatedRef = useRef(false);
 
   useEffect(() => {
-    if (isInView && !hasAnimated) {
-      setHasAnimated(true);
-      motionValue.set(0);
-      motionValue.set(value);
-    }
-  }, [isInView, value, motionValue, hasAnimated]);
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting && !hasAnimatedRef.current) {
+          hasAnimatedRef.current = true;
+          observer.disconnect();
+          const start = 0;
+          const end = Number(value);
+          if (isNaN(end)) return;
+          const startTime = performance.now();
+          const animDuration = duration * 1000;
 
-  useEffect(() => {
-    if (!hasAnimated) return;
-    const unsubscribe = springValue.on('change', (latest) => {
-      setDisplayValue(Math.floor(latest));
-    });
-    return () => unsubscribe();
-  }, [springValue, hasAnimated]);
+          const step = (now) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / animDuration, 1);
+            // Ease out cubic
+            const ease = 1 - Math.pow(1 - progress, 3);
+            setDisplayValue(Math.floor(start + (end - start) * ease));
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              setDisplayValue(end);
+            }
+          };
+          requestAnimationFrame(step);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [value, duration]);
 
   return (
     <span

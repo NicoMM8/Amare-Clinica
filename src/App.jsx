@@ -160,7 +160,7 @@ function App({ initialPath = '/' }) {
     return <EnlacesBioPage />;
   }
 
-  if (cleanPath === '/privacidad' || cleanPath === '/politica-de-privacidad') {
+  if (cleanPath === '/privacidad' || cleanPath === '/politica-de-privacidad' || cleanPath === '/cookies' || cleanPath === '/politica-de-cookies') {
     return <PrivacidadPage />;
   }
 

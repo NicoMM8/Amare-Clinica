@@ -64,6 +64,11 @@ export function Marquee({
             transform: translateX(calc(-100% - 24px));
           }
         }
+        @media (prefers-reduced-motion: reduce) {
+          .cojeev-marquee-track {
+            animation: none !important;
+          }
+        }
         ${pauseOnHover ? `
           .cojeev-marquee-root:hover .cojeev-marquee-track {
             animation-play-state: paused;

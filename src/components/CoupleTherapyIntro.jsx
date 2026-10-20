@@ -312,8 +312,8 @@ export default function CoupleTherapyIntro() {
               <img
                 src="/images/pareja-terapia-online.jpg"
                 alt="Ilustración tradicional salvadoreña estilo La Palma — Terapia de pareja y pertenencia cultural en Centro Amaré"
-                width="990"
-                height="768"
+                width="580"
+                height="435"
                 loading="lazy"
                 style={{
                   width: '100%',

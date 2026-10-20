@@ -441,21 +441,23 @@
 }
 
 .v-hero-button--whatsapp {
-  background: #128C7E;
-  color: #FFFFFF;
+  background: #075E54;
+  color: #FFFFFF !important;
   border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 6px 20px rgba(18, 140, 126, 0.35);
+  box-shadow: 0 6px 20px rgba(7, 94, 84, 0.35);
 }
 
+.v-hero-button--whatsapp,
+.v-hero-button--whatsapp *,
 .v-hero-button--whatsapp .v-hero-button__label,
 .v-hero-button--whatsapp .v-hero-button__arrow {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .v-hero-button--whatsapp:hover {
-  background: #0E7064;
-  color: #FFFFFF;
-  box-shadow: 0 8px 24px rgba(18, 140, 126, 0.45);
+  background: #054C44;
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 24px rgba(7, 94, 84, 0.45);
   transform: translateY(-1.5px);
 }
 
@@ -553,6 +555,12 @@
   100% { transform: translate(-20px, 30px) scale(0.95); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .v-pigment-blob {
+    animation: none !important;
+  }
+}
+
 /* 000h Payment Method Badges Grid & Capsules */
 .payment-badges-grid {
   display: grid;
@@ -568,13 +576,13 @@
 
 .payment-badge-pill:hover {
   transform: translateY(-1.5px);
-  border-color: rgba(179, 128, 109, 0.5) !important;
-  box-shadow: 0 4px 10px rgba(34, 40, 74, 0.08) !important;
+  border-color: rgba(179, 128, 109, 0.5);
+  box-shadow: 0 4px 10px rgba(34, 40, 74, 0.08);
 }
 
 @media (max-width: 400px) {
   .payment-badges-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

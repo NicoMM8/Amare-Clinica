@@ -576,7 +576,7 @@ export default function CoupleTherapyIntro() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-start' }}>
               <a
-                href={"https://wa.me/50373184781?text=" + encodeURIComponent("Hola Iris, leí los motivos de consulta en la web de Centro Amaré y queremos empezar con una primera conversación de 30 min sin costo.")}
+                href={"https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí los motivos de consulta en la web de Centro Amaré y queremos empezar con una primera conversación de 30 min sin costo.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"

@@ -1,4 +1,4 @@
-import { HeroButton, heroButtonAppearances } from '../ui/hero-button';
+import { HeroButton, heroButtonAppearances, LivingCoilingArrow } from '../ui/hero-button';
 
-export { HeroButton, heroButtonAppearances };
+export { HeroButton, heroButtonAppearances, LivingCoilingArrow };
 export default HeroButton;

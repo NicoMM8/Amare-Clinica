@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { MessageSquare, Menu, X } from 'lucide-react';
 import { trackWhatsAppClick } from '../lib/analytics';
+import { LivingCoilingArrow } from './ui/hero-button';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [navHovered, setNavHovered] = useState(false);
 
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar una primera conversación.");
 
@@ -63,26 +65,21 @@ export default function Navbar() {
             rel="nofollow noopener noreferrer" 
             className="v-nav-cojeev-btn"
             onClick={() => handleWhatsAppClick('navbar')}
+            onMouseEnter={() => setNavHovered(true)}
+            onMouseLeave={() => setNavHovered(false)}
             aria-label="1ª conversación sin costo por WhatsApp"
           >
             <span className="v-hero-button__window">
               <span className="v-hero-button__label">
-                <span className="nav-cta-text-desktop">1ª conversación sin costo →</span>
+                <span className="nav-cta-text-desktop">1ª conversación sin costo</span>
                 <span className="nav-cta-text-mobile">Agendar</span>
               </span>
               <span className="v-hero-button__label v-hero-button__label--clone" aria-hidden="true">
-                <span className="nav-cta-text-desktop">1ª conversación sin costo →</span>
+                <span className="nav-cta-text-desktop">1ª conversación sin costo</span>
                 <span className="nav-cta-text-mobile">Agendar</span>
               </span>
             </span>
-            <span className="v-heart-sprout" aria-hidden="true">
-              <svg className="v-heart-sprout__svg v-heart-1" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-              </svg>
-              <svg className="v-heart-sprout__svg v-heart-2" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-              </svg>
-            </span>
+            <LivingCoilingArrow hovered={navHovered} />
           </a>
 
           {/* Hamburger button (Solo visible en móvil/tablet) */}

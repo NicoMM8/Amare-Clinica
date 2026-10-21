@@ -1,4 +1,5 @@
 import * as React from "react";
+import { motion } from "motion/react";
 import { Meta } from "./typography";
 
 export const heroButtonAppearances = [
@@ -70,15 +71,48 @@ export const heroConcepts = {
 };
 
 // Official 000h Cojeev arrow drawing paths
-const arrowHead = "M24 7C26 9 29 12 32 14C29 16 26 19 24 21";
-const arrowCoil = "M14 12C3 1 3 25 14 23C25 21 21 4 14 12";
-const arrowOpening = "M19 7C24 7 28 10 32 14C29 18 24 21 19 21";
-const arrowStem = "M7 14C15 14 24 14 32 14";
-const stemCoil = "M7 14C7 14 8 14 9 14";
+export const arrowHead = "M24 7C26 9 29 12 32 14C29 16 26 19 24 21";
+export const arrowCoil = "M14 12C3 1 3 25 14 23C25 21 21 4 14 12";
+export const arrowOpening = "M19 7C24 7 28 10 32 14C29 18 24 21 19 21";
+export const arrowStem = "M7 14C15 14 24 14 32 14";
+export const stemCoil = "M7 14C7 14 8 14 9 14";
+
+export function LivingCoilingArrow({ hovered = false, className = "" }) {
+  return (
+    <span className={`v-hero-button__arrow ${className}`.trim()} aria-hidden="true">
+      <svg viewBox="0 0 40 28" width="34" height="24" fill="none">
+        <motion.path
+          d={arrowStem}
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          initial={false}
+          animate={{
+            d: hovered ? [arrowStem, stemCoil, arrowStem, arrowStem] : arrowStem,
+            pathLength: hovered ? [1, 0.1, 0.85, 1] : 1
+          }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        />
+        <motion.path
+          d={arrowHead}
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          initial={false}
+          animate={{
+            d: hovered ? [arrowHead, arrowCoil, arrowOpening, arrowHead] : arrowHead
+          }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        />
+      </svg>
+    </span>
+  );
+}
 
 export function HeroButton({
   children,
-  appearance = "paper-fold",
+  appearance = "organic",
   shape = "organic",
   size = "default",
   variant = "clay",
@@ -111,44 +145,20 @@ export function HeroButton({
   const buttonContent = (
     <>
       {/* 000h Paint layer for paper-fold lifting corner */}
-      <span className="v-hero-button__paint" aria-hidden="true">
-        <i className="v-paper-fold-flap" />
-        <i className="v-paper-fold-shadow" />
-      </span>
+      {isPaperFold && (
+        <span className="v-hero-button__paint" aria-hidden="true">
+          <i className="v-paper-fold-flap" />
+          <i className="v-paper-fold-shadow" />
+        </span>
+      )}
 
       <span className="v-hero-button__window">
         <span className="v-hero-button__label">{children}</span>
         <span className="v-hero-button__label v-hero-button__label--clone" aria-hidden="true">{children}</span>
       </span>
 
-      {/* 000h living coiling arrow */}
-      <span className="v-hero-button__arrow" aria-hidden="true">
-        <svg viewBox="0 0 40 28" width="34" height="24" fill="none">
-          <path
-            d={arrowStem}
-            stroke="currentColor"
-            strokeWidth="2.2"
-            strokeLinecap="round"
-          />
-          <path
-            d={arrowHead}
-            stroke="currentColor"
-            strokeWidth="2.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </span>
-
-      {/* 000h floating heart sprout on hover */}
-      <span className="v-heart-sprout" aria-hidden="true">
-        <svg className="v-heart-sprout__svg v-heart-1" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-        </svg>
-        <svg className="v-heart-sprout__svg v-heart-2" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-        </svg>
-      </span>
+      {/* 000h living coiling arrow with motion path morph */}
+      <LivingCoilingArrow hovered={hovered} />
     </>
   );
 
@@ -195,7 +205,7 @@ export function HeroButton({
 }
 
 export function HeroButtonExample({
-  variant = "paper-fold",
+  variant = "organic",
   size = "default",
   compact,
   href,
@@ -208,8 +218,8 @@ export function HeroButtonExample({
   const [count, setCount] = React.useState(0);
   const appearance = heroButtonAppearances.includes(variant)
     ? variant
-    : "paper-fold";
-  const concept = heroConcepts[variant] ?? heroConcepts["paper-fold"];
+    : "organic";
+  const concept = heroConcepts[variant] ?? heroConcepts.organic;
   
   const label = customLabel || concept.label;
   const cue = customCue || concept.cue;
@@ -234,12 +244,17 @@ export function HeroButtonExample({
         {label}
       </HeroButton>
       <Meta>{cue}</Meta>
+      <Meta role="status" aria-live="polite">
+        {count
+          ? `${count} ${count === 1 ? "local action" : "local actions"}.`
+          : "Hover, focus or activate to try it."}
+      </Meta>
     </div>
   );
 }
 
 export default function Demo() {
   return (
-    <HeroButtonExample variant="paper-fold" />
+    <HeroButtonExample variant="organic" />
   );
 }

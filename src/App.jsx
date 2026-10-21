@@ -28,6 +28,8 @@ import BlogHubPage from './pages/BlogHubPage';
 import BlogPostEmigrarPareja from './pages/blog/BlogPostEmigrarPareja';
 import BlogPostPreciosTerapia from './pages/blog/BlogPostPreciosTerapia';
 import BlogPostLimitesFamilia from './pages/blog/BlogPostLimitesFamilia';
+import BlogPostInfidelidad from './pages/blog/BlogPostInfidelidad';
+import BlogPostFaltaDeseo from './pages/blog/BlogPostFaltaDeseo';
 import EnlacesBioPage from './pages/EnlacesBioPage';
 import PrivacidadPage from './pages/PrivacidadPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -105,6 +107,8 @@ function App({ initialPath = '/' }) {
       '/iris-alarcon': 'Licda. Iris Alarcón | Directora Clínica Centro Amaré (JVPP)',
       '/precios': 'Precios y Honorarios — Terapia de Pareja El Salvador | Centro Amaré',
       '/blog': 'Blog & Recursos Clínicos | Centro Amaré',
+      '/blog/se-puede-perdonar-una-infidelidad-guia-pareja': '¿Se Puede Perdonar una Infidelidad? Guía Clínica de Pareja | Centro Amaré',
+      '/blog/falta-de-deseo-sexual-en-la-pareja-soluciones': 'Falta de Deseo Sexual en la Pareja: Causas y Soluciones | Centro Amaré',
       '/privacidad': 'Política de Privacidad y Secreto Profesional | Centro Amaré'
     };
     if (titles[cleanPath]) {
@@ -143,6 +147,14 @@ function App({ initialPath = '/' }) {
 
   if (cleanPath === '/blog' || cleanPath === '/recursos') {
     return <BlogHubPage />;
+  }
+
+  if (cleanPath === '/blog/se-puede-perdonar-una-infidelidad-guia-pareja') {
+    return <BlogPostInfidelidad />;
+  }
+
+  if (cleanPath === '/blog/falta-de-deseo-sexual-en-la-pareja-soluciones') {
+    return <BlogPostFaltaDeseo />;
   }
 
   if (cleanPath === '/blog/como-afecta-emigrar-a-la-relacion-de-pareja') {

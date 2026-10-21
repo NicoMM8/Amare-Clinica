@@ -6,7 +6,9 @@ import {
   RotateCcw,
   ShieldCheck,
   ArrowRight,
-  Laptop
+  Laptop,
+  MessageSquare,
+  FileText
 } from 'lucide-react';
 import {
   Questionnaire,
@@ -22,16 +24,23 @@ import { Icon } from './ui/icon';
 const STORAGE_KEY = 'amare_quiz_draft_v1';
 
 export default function CoupleMatchingQuiz({ onGoHome }) {
-  const [currentStep, setCurrentStep] = useState(0); // 0: Intro, 1..5: Questions, 6: Result
+  const [currentStep, setCurrentStep] = useState(0); // 0: Intro, 1..7: Questions, 8: Open Notes, 9: Result
   const [answers, setAnswers] = useState({
     situation: '',
+    situationShort: '',
     reason: '',
+    reasonShort: '',
+    conflictStyle: '',
+    conflictStyleShort: '',
     duration: '',
     durationShort: '',
+    therapyHistory: '',
+    therapyHistoryShort: '',
     location: '',
     locationShort: '',
     goal: '',
     goalShort: '',
+    notes: '',
   });
 
   const headings = useRef([]);
@@ -46,7 +55,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
         if (parsed.answers) {
           setAnswers(parsed.answers);
         }
-        if (typeof parsed.step === 'number' && parsed.step > 0 && parsed.step <= 6) {
+        if (typeof parsed.step === 'number' && parsed.step > 0 && parsed.step <= 9) {
           setCurrentStep(parsed.step);
         }
       }
@@ -92,6 +101,17 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       ],
     },
     {
+      id: 'conflictStyle',
+      title: '¿Cómo suelen terminar sus discusiones o momentos de desacuerdo?',
+      subtitle: 'Entender el ciclo de conflicto es clave para desactivar la escalada del dolor.',
+      options: [
+        { label: 'Discusión intensa con reproches dolorosos o gritos', sub: 'Cuesta frenar la conversación antes de herirnos', short: 'Discusión intensa / reproches' },
+        { label: 'Ley del hielo, silencios prolongados o distanciamiento por días', sub: 'Uno se encierra y la otra persona siente ansiedad o frustración', short: 'Ley del hielo y distanciamiento' },
+        { label: 'Sensación de caminar sobre cáscaras de huevo', sub: 'Evitamos temas importantes por miedo a la reacción del otro', short: 'Evitación por miedo a pelear' },
+        { label: 'Desconexión fría y resignación', sub: 'Ya casi no peleamos, pero convivimos como extraños', short: 'Desconexión y resignación' },
+      ],
+    },
+    {
       id: 'duration',
       title: '¿Cuánto tiempo llevan sintiendo este desgaste?',
       subtitle: 'Conocer la duración ayuda a dimensionar la intervención terapéutica.',
@@ -99,6 +119,16 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
         { label: 'Menos de 6 meses', sub: 'Es una crisis reciente o un problema específico', short: 'Menos de 6 meses' },
         { label: 'Entre 6 meses y 2 años', sub: 'Los patrones se han vuelto repetitivos y crónicos', short: 'De 6 meses a 2 años' },
         { label: 'Más de 2 años', sub: 'Hemos intentado todo y necesitamos orientación profesional', short: 'Más de 2 años' },
+      ],
+    },
+    {
+      id: 'therapyHistory',
+      title: '¿Han recibido ayuda psicológica o de pareja anteriormente?',
+      subtitle: 'Nos orienta sobre el nivel de experiencia previa en procesos terapéuticos.',
+      options: [
+        { label: 'Es nuestra primera vez en terapia', sub: 'Buscamos una guía profesional clara y sin juzgarnos', short: 'Primera vez en terapia' },
+        { label: 'Hemos tenido terapia individual por separado', sub: 'Nos sirvió a nivel personal, pero falta trabajar el vínculo de pareja', short: 'Terapia individual previa' },
+        { label: 'Intentamos terapia de pareja antes sin los resultados esperados', sub: 'Buscamos un método más estructurado, cálido y práctico', short: 'Experiencia previa sin éxito' },
       ],
     },
     {
@@ -155,7 +185,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
           focusNext.current = true;
           return prev + 1;
         } else {
-          return questions.length + 1; // Pantalla de resultado
+          return questions.length + 1; // Paso de notas personales abiertas
         }
       });
     }, 320);
@@ -173,13 +203,20 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
     } catch {}
     setAnswers({
       situation: '',
+      situationShort: '',
       reason: '',
+      reasonShort: '',
+      conflictStyle: '',
+      conflictStyleShort: '',
       duration: '',
       durationShort: '',
+      therapyHistory: '',
+      therapyHistoryShort: '',
       location: '',
       locationShort: '',
       goal: '',
       goalShort: '',
+      notes: '',
     });
     move(0);
   };
@@ -196,8 +233,23 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
     if (answers.reasonShort || answers.reason) {
       msg += `• Motivo principal: ${answers.reasonShort || answers.reason}\n`;
     }
+    if (answers.conflictStyleShort || answers.conflictStyle) {
+      msg += `• Dinámica de discusión: ${answers.conflictStyleShort || answers.conflictStyle}\n`;
+    }
+    if (answers.durationShort || answers.duration) {
+      msg += `• Tiempo de desgaste: ${answers.durationShort || answers.duration}\n`;
+    }
+    if (answers.therapyHistoryShort || answers.therapyHistory) {
+      msg += `• Experiencia previa: ${answers.therapyHistoryShort || answers.therapyHistory}\n`;
+    }
     if (answers.locationShort || answers.location) {
       msg += `• Ubicación: ${answers.locationShort || answers.location}\n`;
+    }
+    if (answers.goalShort || answers.goal) {
+      msg += `• Prioridad: ${answers.goalShort || answers.goal}\n`;
+    }
+    if (answers.notes && answers.notes.trim()) {
+      msg += `• En nuestras palabras: "${answers.notes.trim()}"\n`;
     }
     return encodeURIComponent(msg);
   };
@@ -533,8 +585,8 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                         type="submit"
                         disabled={!answers[currentQ.id]}
                       >
-                        Ver resultado y especialista
-                        <Icon name="arrow-up-right" size="sm" />
+                        Siguiente: Espacio para escribir
+                        <Icon name="arrow-right" size="sm" />
                       </Button>
                     )}
 
@@ -548,16 +600,109 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
 
                   <p className="v-questionnaire-example__result" role="status">
                     {currentStep === questions.length && answers[currentQ.id]
-                      ? "Tus 5 respuestas están listas. Pulsa para ver tu perfil y especialista recomendada."
-                      : `Paso ${currentStep} de ${questions.length} · ${questions.length - currentStep} ${questions.length - currentStep === 1 ? 'pregunta restante' : 'preguntas restantes'}. Puedes cambiar cualquier respuesta.`}
+                      ? "Has respondido las 7 preguntas clínicas. Puedes continuar para compartir un detalle en tus palabras o ver directamente tu recomendación."
+                      : `Pregunta ${currentStep} de ${questions.length} · ${questions.length - currentStep} ${questions.length - currentStep === 1 ? 'pregunta restante' : 'preguntas restantes'}.`}
                   </p>
                 </Questionnaire>
               </form>
             </div>
           )}
 
-          {/* ══════════════ STEP 6: RESULTADO (MATCH CONFIRMADO) ══════════════ */}
-          {currentStep > questions.length && (
+          {/* ══════════════ STEP 8: MENSAJE PERSONAL / CUÉNTANOS TU CASO (OPCIONAL) ══════════════ */}
+          {currentStep === questions.length + 1 && (
+            <div className="v-questionnaire-example" style={{ maxWidth: '680px', margin: '0 auto', width: '100%' }}>
+              <Questionnaire presentation="journey">
+                <header className="v-questionnaire-example__intro">
+                  <span className="v-questionnaire-example__tab" aria-hidden="true" style={{ background: 'var(--v-pink-soft)', color: 'var(--v-pink)' }}>
+                    <MessageSquare size={20} />
+                  </span>
+                  <div>
+                    <span className="pill-badge pill-badge-clay" style={{ marginBottom: '6px', display: 'inline-block', fontSize: '11px' }}>
+                      Paso Opcional · Espacio de Confianza
+                    </span>
+                    <h2 className="font-serif" style={{ fontSize: 'clamp(20px, 3.2vw, 26px)', lineHeight: 1.25, color: 'var(--color-plum-900)', margin: '4px 0 6px' }}>
+                      ¿Deseas compartir algo más o qué es lo que más te duele de esta situación?
+                    </h2>
+                    <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', margin: 0 }}>
+                      Puedes escribir con tus propias palabras lo que consideres importante. Tu terapeuta lo leerá con total confidencialidad antes de su primera conversación.
+                    </p>
+                  </div>
+                </header>
+
+                <div style={{ marginTop: '20px', marginBottom: '24px' }}>
+                  <textarea
+                    value={answers.notes || ''}
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      const updated = { ...answers, notes: val };
+                      setAnswers(updated);
+                      saveToStorage(updated, currentStep);
+                    }}
+                    placeholder="Ejemplo: Nos queremos mucho pero sentimos que cualquier desacuerdo termina en reproches o silencios de días. Nos gustaría volver a sentirnos tranquilos y cercanos..."
+                    rows={5}
+                    style={{
+                      width: '100%',
+                      padding: '16px 18px',
+                      borderRadius: '16px',
+                      border: '1.5px solid var(--v-border)',
+                      backgroundColor: '#FFFFFF',
+                      fontSize: '15px',
+                      lineHeight: '1.6',
+                      color: 'var(--v-text)',
+                      resize: 'vertical',
+                      fontFamily: 'inherit',
+                      boxShadow: 'inset 0 2px 4px rgba(35, 18, 33, 0.04)',
+                      outline: 'none',
+                      transition: 'border-color 0.2s, box-shadow 0.2s',
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = 'var(--v-pink)';
+                      e.target.style.boxShadow = '0 0 0 3px var(--v-pink-soft)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = 'var(--v-border)';
+                      e.target.style.boxShadow = 'inset 0 2px 4px rgba(35, 18, 33, 0.04)';
+                    }}
+                  />
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px', fontSize: '12.5px', color: 'var(--color-ink-muted)' }}>
+                    <span>Confidencial y protegido por secreto profesional</span>
+                    <span>{answers.notes?.length ? `${answers.notes.length} caracteres` : 'Opcional'}</span>
+                  </div>
+                </div>
+
+                <footer className="v-questionnaire-example__footer" style={{ gap: '12px', flexWrap: 'wrap' }}>
+                  <Button
+                    variant="ghost"
+                    onClick={() => move(questions.length)}
+                  >
+                    <Icon name="arrow-left" size="sm" />
+                    Atrás
+                  </Button>
+
+                  <Button
+                    variant="accent"
+                    onClick={() => move(questions.length + 2)}
+                  >
+                    Ver resultado y especialista
+                    <Icon name="arrow-up-right" size="sm" />
+                  </Button>
+
+                  {!answers.notes?.trim() && (
+                    <Button
+                      variant="ghost"
+                      onClick={() => move(questions.length + 2)}
+                      style={{ fontSize: '13px' }}
+                    >
+                      Saltar este paso
+                    </Button>
+                  )}
+                </footer>
+              </Questionnaire>
+            </div>
+          )}
+
+          {/* ══════════════ STEP 9: RESULTADO (MATCH CONFIRMADO) ══════════════ */}
+          {currentStep > questions.length + 1 && (
             <div className="v-questionnaire-example" style={{ maxWidth: '680px', margin: '0 auto' }}>
               <div
                 style={{
@@ -691,6 +836,12 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     <CheckCircle2 size={16} style={{ color: 'var(--v-pink)', flexShrink: 0 }} />
                     <span><strong>Primer paso:</strong> Sesión inicial de 30 minutos sin costo ni compromiso económico</span>
                   </div>
+                  {answers.notes && answers.notes.trim() && (
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', paddingTop: '8px', borderTop: '1px dashed var(--v-border)' }}>
+                      <FileText size={16} style={{ color: 'var(--v-pink)', flexShrink: 0, marginTop: '2px' }} />
+                      <span style={{ fontSize: '13px' }}><strong>Mensaje para la terapeuta:</strong> &ldquo;{answers.notes.trim()}&rdquo;</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Botón principal a WhatsApp */}

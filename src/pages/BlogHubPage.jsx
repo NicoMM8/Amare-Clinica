@@ -2,9 +2,29 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
-import { BookOpen, Clock, ArrowRight, ShieldCheck, HeartHandshake, DollarSign, Compass } from 'lucide-react';
+import { BookOpen, Clock, ArrowRight, ShieldCheck, HeartHandshake, DollarSign, Compass, Sparkles } from 'lucide-react';
 
 export const BLOG_POSTS = [
+  {
+    slug: 'se-puede-perdonar-una-infidelidad-guia-pareja',
+    title: '¿Se puede perdonar una infidelidad? Fases clínicas para sanar o cerrar en paz',
+    excerpt: 'Shock inicial, obsesión por los detalles y la posibilidad real de reconstruir la confianza. Qué dice la psicología clínica sobre el perdón y cuándo es momento de soltar.',
+    readTime: '7 min de lectura',
+    category: 'Infidelidad & Confianza',
+    date: 'Actualizado 2026',
+    author: 'Equipo Clínico Centro Amaré',
+    icon: ShieldCheck
+  },
+  {
+    slug: 'falta-de-deseo-sexual-en-la-pareja-soluciones',
+    title: 'Falta de deseo sexual en la pareja: Por qué se apaga la intimidad y cómo reactivarla',
+    excerpt: 'Deseo espontáneo vs. receptivo, la sobrecarga cotidiana y la paradoja del erotismo en parejas estables. Claves de sexología clínica para reconectar sin presión.',
+    readTime: '6 min de lectura',
+    category: 'Sexología Clínica & Deseo',
+    date: 'Actualizado 2026',
+    author: 'Equipo Clínico Centro Amaré',
+    icon: Sparkles
+  },
   {
     slug: 'como-afecta-emigrar-a-la-relacion-de-pareja',
     title: 'Cómo afecta emigrar a la relación de pareja: Guía para salvadoreños en EE. UU. y Canadá',

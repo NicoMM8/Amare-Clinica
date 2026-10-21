@@ -209,21 +209,22 @@ export default function Hero() {
 
           </div>
 
-          {/* ── RIGHT COLUMN: Full Team Photography ── */}
+          {/* ── RIGHT COLUMN: Clinical Psychology Consultation Photography ── */}
           <div className="hero-visual-card">
             <picture style={{ width: '100%', height: '100%', display: 'block' }}>
-              <source srcSet="/images/equipo-clinico-amare-960.webp 960w, /images/equipo-clinico-amare-480.webp 480w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
-              <source srcSet="/images/equipo-clinico-amare-960.jpg" type="image/jpeg" />
+              <source srcSet="/images/hero-therapist-960.webp 960w, /images/hero-therapist-480.webp 480w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
+              <source srcSet="/images/hero-therapist-960.jpg" type="image/jpeg" />
               <img
-                src="/images/equipo-clinico-amare-960.jpg"
-                alt="Equipo de psicólogos clínicos y terapia de pareja colegiados — Centro Amaré El Salvador"
+                src="/images/hero-therapist-960.jpg"
+                alt="Sesión de psicoterapia de pareja y consulta clínica online — Centro Amaré El Salvador"
                 className="hero-visual-img"
                 fetchPriority="high"
                 width="960"
-                height="717"
+                height="960"
                 style={{
                   width: '100%',
                   display: 'block',
+                  objectFit: 'cover',
                 }}
               />
             </picture>

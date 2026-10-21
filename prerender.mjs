@@ -103,6 +103,20 @@ const routes = [
     canonical: `${BASE_URL}/blog`,
   },
   {
+    path: '/blog/se-puede-perdonar-una-infidelidad-guia-pareja',
+    file: 'blog/se-puede-perdonar-una-infidelidad-guia-pareja/index.html',
+    title: '¿Se Puede Perdonar una Infidelidad? Guía Clínica | Centro Amaré',
+    description: 'Fases clínicas para sanar la herida de un engaño o cerrar en paz. Transparencia radical, cese de hipervigilancia y reconstrucción del apego en terapia de pareja.',
+    canonical: `${BASE_URL}/blog/se-puede-perdonar-una-infidelidad-guia-pareja`,
+  },
+  {
+    path: '/blog/falta-de-deseo-sexual-en-la-pareja-soluciones',
+    file: 'blog/falta-de-deseo-sexual-en-la-pareja-soluciones/index.html',
+    title: 'Falta de Deseo Sexual en la Pareja: Causas y Soluciones | Centro Amaré',
+    description: 'Deseo espontáneo vs. receptivo, la rutina y la sobrecarga cotidiana. Pautas de sexología clínica para reactivar la intimidad y el erotismo sin presiones.',
+    canonical: `${BASE_URL}/blog/falta-de-deseo-sexual-en-la-pareja-soluciones`,
+  },
+  {
     path: '/blog/como-afecta-emigrar-a-la-relacion-de-pareja',
     file: 'blog/como-afecta-emigrar-a-la-relacion-de-pareja/index.html',
     title: 'Cómo Afecta Emigrar a la Pareja | Centro Amaré',

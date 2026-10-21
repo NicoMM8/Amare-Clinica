@@ -74,10 +74,6 @@ export default function Navbar() {
                 <span className="nav-cta-text-desktop">1ª conversación sin costo</span>
                 <span className="nav-cta-text-mobile">Agendar</span>
               </span>
-              <span className="v-hero-button__label v-hero-button__label--clone" aria-hidden="true">
-                <span className="nav-cta-text-desktop">1ª conversación sin costo</span>
-                <span className="nav-cta-text-mobile">Agendar</span>
-              </span>
             </span>
             <LivingCoilingArrow hovered={navHovered} />
           </a>

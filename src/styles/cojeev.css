@@ -396,8 +396,8 @@
 
 .v-hero-button:hover {
   background: var(--color-plum-800, #2C345F);
-  box-shadow: 0 10px 28px rgba(34, 40, 74, 0.32);
-  transform: translateY(-2.5px) scale(1.015);
+  box-shadow: 0 8px 24px rgba(34, 40, 74, 0.28);
+  transform: translateY(-1px);
 }
 
 .v-hero-button:active {
@@ -405,34 +405,16 @@
   box-shadow: 0 4px 12px rgba(34, 40, 74, 0.18);
 }
 
-/* Rolling Text Slot-Machine Window */
+/* Standard Cojeev Hero Button Label */
 .v-hero-button__window {
   position: relative;
-  z-index: 2;
-  display: inline-flex;
-  flex-direction: column;
-  height: 1.35em;
-  line-height: 1.35em;
-  overflow: hidden;
+  z-index: 1;
+  display: block;
 }
 
 .v-hero-button__label {
   display: block;
-  transform: translateY(0%);
-  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
-}
-
-.v-hero-button__label--clone {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.v-hero-button:hover .v-hero-button__label {
-  transform: translateY(-100%);
 }
 
 /* Cojeev Living Arrow with Spring Recoil */
@@ -472,8 +454,8 @@
 .v-hero-button--clay:hover {
   background: var(--color-clay-hover, #8D4731);
   color: #FFFFFF;
-  box-shadow: 0 12px 32px rgba(158, 75, 51, 0.42);
-  transform: translateY(-2.5px) scale(1.015);
+  box-shadow: 0 8px 24px rgba(158, 75, 51, 0.35);
+  transform: translateY(-1px);
 }
 
 /* Variant: WhatsApp Emerald Green */
@@ -494,8 +476,8 @@
 .v-hero-button--whatsapp:hover {
   background: #0B5C48;
   color: #FFFFFF !important;
-  box-shadow: 0 12px 30px rgba(14, 112, 88, 0.42);
-  transform: translateY(-2.5px) scale(1.015);
+  box-shadow: 0 8px 24px rgba(14, 112, 88, 0.35);
+  transform: translateY(-1px);
 }
 
 /* Cojeev Navbar Button Styling with rolling text */
@@ -521,22 +503,13 @@
 
 .v-nav-cojeev-btn:hover {
   background: var(--color-plum-800, #2C345F);
-  box-shadow: 0 8px 22px rgba(34, 40, 74, 0.28);
-  transform: translateY(-1.5px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(34, 40, 74, 0.24);
+  transform: translateY(-1px);
 }
 
 .v-nav-cojeev-btn:active {
   transform: translateY(0.5px) scale(0.985);
   box-shadow: 0 3px 10px rgba(34, 40, 74, 0.15);
-}
-
-.v-nav-cojeev-btn .v-hero-button__window {
-  height: 1.35em;
-  line-height: 1.35em;
-}
-
-.v-nav-cojeev-btn:hover .v-hero-button__label {
-  transform: translateY(-100%);
 }
 
 /* Paint layer hidden */

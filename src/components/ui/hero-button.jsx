@@ -118,6 +118,7 @@ export function HeroButton({
 
       <span className="v-hero-button__window">
         <span className="v-hero-button__label">{children}</span>
+        <span className="v-hero-button__label v-hero-button__label--clone" aria-hidden="true">{children}</span>
       </span>
 
       {/* 000h living coiling arrow */}

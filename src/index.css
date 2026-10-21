@@ -215,22 +215,30 @@ button {
 
 .btn-primary:hover {
   background: var(--color-plum-700);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(35, 18, 33, 0.22);
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 10px 28px rgba(35, 18, 33, 0.26);
 }
 
 .btn-primary:active {
-  transform: translateY(0);
+  transform: translateY(0.5px) scale(0.985);
+  box-shadow: 0 4px 12px rgba(35, 18, 33, 0.16);
 }
 
 .btn-clay {
   background: var(--color-clay);
-  box-shadow: 0 4px 16px rgba(183, 89, 64, 0.25);
+  box-shadow: 0 6px 20px rgba(183, 89, 64, 0.28);
+  transition: all var(--duration-normal) var(--ease-spring);
 }
 
 .btn-clay:hover {
   background: var(--color-clay-hover);
-  box-shadow: 0 8px 24px rgba(183, 89, 64, 0.35);
+  box-shadow: 0 12px 32px rgba(183, 89, 64, 0.4);
+  transform: translateY(-2px) scale(1.015);
+}
+
+.btn-clay:active {
+  transform: translateY(0.5px) scale(0.985);
+  box-shadow: 0 4px 12px rgba(183, 89, 64, 0.2);
 }
 
 /* Custom Pill Appointment Button (Opción A: Terracota cálido con texto blanco e icono WhatsApp) */

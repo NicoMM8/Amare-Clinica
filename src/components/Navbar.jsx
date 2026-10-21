@@ -61,11 +61,20 @@ export default function Navbar() {
             href={whatsappUrl} 
             target="_blank" 
             rel="nofollow noopener noreferrer" 
-            className="btn-primary nav-cta-btn"
+            className="v-nav-cojeev-btn"
             onClick={() => handleWhatsAppClick('navbar')}
+            aria-label="1ª conversación sin costo por WhatsApp"
           >
-            <span className="nav-cta-text-desktop">1ª conversación sin costo →</span>
-            <span className="nav-cta-text-mobile">Agendar</span>
+            <span className="v-hero-button__window">
+              <span className="v-hero-button__label">
+                <span className="nav-cta-text-desktop">1ª conversación sin costo →</span>
+                <span className="nav-cta-text-mobile">Agendar</span>
+              </span>
+              <span className="v-hero-button__label v-hero-button__label--clone" aria-hidden="true">
+                <span className="nav-cta-text-desktop">1ª conversación sin costo →</span>
+                <span className="nav-cta-text-mobile">Agendar</span>
+              </span>
+            </span>
           </a>
 
           {/* Hamburger button (Solo visible en móvil/tablet) */}

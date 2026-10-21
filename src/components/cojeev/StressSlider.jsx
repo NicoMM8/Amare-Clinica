@@ -200,7 +200,7 @@ export function StressSlider() {
           variant="clay"
           href={whatsappUrl}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
         >
           <span>Primera conversación (30 min sin costo)</span>
         </HeroButton>

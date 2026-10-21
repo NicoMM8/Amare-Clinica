@@ -334,7 +334,7 @@ Me gustaría coordinar mi sesión inicial gratuita de 30 minutos por Google Meet
                     variant="clay"
                     href={getWhatsAppSummary()}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="nofollow noopener noreferrer"
                   >
                     <span>Enviar respuestas y coordinar 30 min sin costo</span>
                   </HeroButton>

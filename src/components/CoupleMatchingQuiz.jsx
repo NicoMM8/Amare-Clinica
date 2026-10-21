@@ -309,8 +309,13 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     <Heart size={20} style={{ color: 'var(--v-pink)' }} />
                   </span>
                   <div>
-                    <p>Test Clínico de Pareja (2-3 min)</p>
-                    <h3>Merecen una especialista que realmente entienda su historia de pareja</h3>
+                    <span className="pill-badge pill-badge-clay" style={{ marginBottom: '6px', display: 'inline-block', fontSize: '11px' }}>Autoevaluación Clínica (2-3 min)</span>
+                    <h1 className="font-serif" style={{ fontSize: 'clamp(22px, 3.5vw, 32px)', lineHeight: 1.25, color: 'var(--color-plum-900)', margin: '4px 0 6px' }}>
+                      Test de Pareja Online: Autoevaluación Clínica
+                    </h1>
+                    <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', margin: 0 }}>
+                      Descubran el estado de su vínculo y reciban orientación clínica personalizada
+                    </p>
                   </div>
                 </header>
 
@@ -692,7 +697,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                 <a
                   href={whatsappMatchUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   className="v-button v-button--accent"
                   style={{
                     padding: '16px 32px',
@@ -737,7 +742,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     <a
                       href="https://wa.me/50373184781"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="nofollow noopener noreferrer"
                       style={{ color: 'var(--v-pink)', fontWeight: 700, textDecoration: 'none' }}
                     >
                       +503 7318 4781

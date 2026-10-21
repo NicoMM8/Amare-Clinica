@@ -59,7 +59,7 @@ export default function TerapiaIndividualPage() {
                   variant="clay"
                   href={whatsappUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   onClick={() => trackWhatsAppClick('page_individual_hero', '1ª sesión gratis')}
                 >
                   <span>Agendar 1ª sesión de 30 min sin costo</span>
@@ -128,7 +128,7 @@ export default function TerapiaIndividualPage() {
               <a
                 href={whatsappUrl}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="btn-clay"
                 style={{ display: 'inline-flex', padding: '14px 28px', borderRadius: 'var(--r-pill)', textDecoration: 'none', color: '#fff', fontWeight: 600 }}
                 onClick={() => trackWhatsAppClick('page_individual_mid', 'Primera conversación 30 min')}

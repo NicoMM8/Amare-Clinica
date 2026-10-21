@@ -41,7 +41,7 @@ export default function PreciosPage() {
                   variant="clay"
                   href={whatsappUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   onClick={() => trackWhatsAppClick('page_precios_hero', '1ª sesión gratis')}
                 >
                   <span>Agendar 1ª conversación de 30 min sin costo</span>
@@ -112,7 +112,7 @@ export default function PreciosPage() {
                 <a
                   href={whatsappUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   className="btn-secondary"
                   style={{ width: '100%', textAlign: 'center', padding: '13px' }}
                   onClick={() => trackWhatsAppClick('page_precios_free_card', 'Agendar gratis')}
@@ -173,7 +173,7 @@ export default function PreciosPage() {
                 <a
                   href={whatsappUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   className="btn-clay"
                   style={{ width: '100%', textAlign: 'center', padding: '13px', borderRadius: 'var(--r-pill)', color: '#fff', textDecoration: 'none', fontWeight: 600 }}
                   onClick={() => trackWhatsAppClick('page_precios_monthly_card', 'Comenzar plan')}
@@ -239,7 +239,7 @@ export default function PreciosPage() {
               <a
                 href="https://wa.me/50373184781?text=Hola,%20quisiera%20consultar%20sobre%20la%20facturaci%C3%B3n%20para%20el%20reembolso%20de%20mi%20seguro%20m%C3%A9dico."
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="btn-secondary"
                 style={{ fontSize: '13.5px', padding: '11px 20px', whiteSpace: 'nowrap' }}
               >

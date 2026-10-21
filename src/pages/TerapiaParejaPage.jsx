@@ -66,7 +66,7 @@ export default function TerapiaParejaPage() {
                   variant="clay"
                   href={whatsappUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   onClick={() => trackWhatsAppClick('page_terapia_pareja_hero', '1ª sesión sin costo')}
                 >
                   <span>Agendar 1ª sesión de 30 min sin costo</span>
@@ -167,7 +167,7 @@ export default function TerapiaParejaPage() {
               <a
                 href={whatsappUrl}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="btn-clay"
                 style={{ display: 'inline-flex', padding: '14px 28px', borderRadius: 'var(--r-pill)', textDecoration: 'none', color: '#fff', fontWeight: 600 }}
                 onClick={() => trackWhatsAppClick('page_terapia_pareja_mid', 'Primera conversación 30 min')}

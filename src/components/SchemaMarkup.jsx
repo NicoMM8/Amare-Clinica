@@ -112,19 +112,35 @@ const medicalBusinessSchema = {
     height: 630,
   },
   telephone: '+50373184781',
+  email: 'contacto@terapiadeparejaelsalvador.com',
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+50373184781',
     contactType: 'customer service',
     contactOption: 'TollFree',
-    availableLanguage: ['Spanish'],
+    availableLanguage: ['Spanish', 'English'],
   },
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Calle El Mirador y 89 Av. Norte, Colonia Escalón',
     addressLocality: 'San Salvador',
     addressRegion: 'San Salvador',
+    postalCode: '1101',
     addressCountry: 'SV',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 13.7013,
+    longitude: -89.2244,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '08:00',
+      closes: '20:00',
+    },
+  ],
   areaServed: [
     { '@type': 'Country', name: 'El Salvador' },
     { '@type': 'City', name: 'San Salvador' },

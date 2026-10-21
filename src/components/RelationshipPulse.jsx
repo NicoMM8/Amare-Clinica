@@ -340,7 +340,7 @@ export default function RelationshipPulse() {
                     <a
                       href={getWhatsAppUrl(mood.whatsappQuery)}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="nofollow noopener noreferrer"
                       className="btn-appointment-pill"
                       style={{
                         backgroundColor: '#FFFFFF',

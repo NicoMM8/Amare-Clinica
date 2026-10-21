@@ -27,7 +27,7 @@ export default function Footer() {
           <a
             href={whatsappUrl}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             className="btn-clay"
             style={{
               display: 'inline-flex',
@@ -81,7 +81,7 @@ export default function Footer() {
             <a 
               href={whatsappUrl}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -122,7 +122,7 @@ export default function Footer() {
               <li><a href="/privacidad">Política de Privacidad</a></li>
               <li><a href="/cookies">Política de Cookies</a></li>
               <li><a href="/#faq">Preguntas Frecuentes</a></li>
-              <li><a href={whatsappUrl} target="_blank" rel="noopener noreferrer">Contacto con Asistente</a></li>
+              <li><a href={whatsappUrl} target="_blank" rel="nofollow noopener noreferrer">Contacto con Asistente</a></li>
             </ul>
           </div>
 

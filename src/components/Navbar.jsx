@@ -60,7 +60,7 @@ export default function Navbar() {
           <a 
             href={whatsappUrl} 
             target="_blank" 
-            rel="noopener noreferrer" 
+            rel="nofollow noopener noreferrer" 
             className="btn-primary nav-cta-btn"
             onClick={() => handleWhatsAppClick('navbar')}
           >
@@ -109,7 +109,7 @@ export default function Navbar() {
           <a 
             href={whatsappUrl} 
             target="_blank" 
-            rel="noopener noreferrer" 
+            rel="nofollow noopener noreferrer" 
             className="btn-clay"
             onClick={() => handleWhatsAppClick('navbar_mobile_drawer')}
             style={{ width: '100%', padding: '14px', borderRadius: 'var(--r-pill)', color: '#fff', textAlign: 'center', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}

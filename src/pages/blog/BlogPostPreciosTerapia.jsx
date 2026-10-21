@@ -139,7 +139,7 @@ export default function BlogPostPreciosTerapia() {
                   <a
                     href={whatsappUrl}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="nofollow noopener noreferrer"
                     className="btn-primary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >

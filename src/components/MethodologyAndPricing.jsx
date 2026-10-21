@@ -420,7 +420,7 @@ export default function MethodologyAndPricing() {
                   variant="clay"
                   href={whatsappUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                 >
                   <span>Escríbenos por WhatsApp</span>
                 </HeroButton>
@@ -486,7 +486,7 @@ export default function MethodologyAndPricing() {
             <a
               href="https://wa.me/50373184781?text=Hola,%20quisiera%20consultar%20sobre%20la%20facturaci%C3%B3n%20para%20el%20reembolso%20de%20mi%20seguro%20m%C3%A9dico."
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               className="btn-secondary"
               style={{ fontSize: '13px', padding: '10px 18px', whiteSpace: 'nowrap' }}
             >

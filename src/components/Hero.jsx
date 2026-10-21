@@ -172,7 +172,7 @@ export default function Hero() {
                 <HeroButton
                   href={whatsappUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   variant="whatsapp"
                   style={{
                     height: '52px',

@@ -203,7 +203,7 @@ export function BentoMosaic() {
               <a 
                 href={whatsappUrl} 
                 target="_blank" 
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',

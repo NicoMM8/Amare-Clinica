@@ -370,7 +370,7 @@ export default function TheTeam() {
             <a
               href={whatsappUrl}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               className="btn-primary"
               style={{ display: 'inline-flex', gap: '10px', textDecoration: 'none', padding: '14px 24px', fontSize: '15px' }}
             >

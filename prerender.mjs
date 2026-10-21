@@ -103,6 +103,20 @@ const routes = [
     canonical: `${BASE_URL}/blog`,
   },
   {
+    path: '/blog/duelo-migratorio-que-es-como-manejarlo',
+    file: 'blog/duelo-migratorio-que-es-como-manejarlo/index.html',
+    title: 'Duelo Migratorio: Qué Es y Cómo Manejarlo | Centro Amaré',
+    description: 'Pérdidas acumuladas, culpa por irse y cómo integrar dos mundos sin perder tu origen. Orientación psicológica clínica para migrantes salvadoreños.',
+    canonical: `${BASE_URL}/blog/duelo-migratorio-que-es-como-manejarlo`,
+  },
+  {
+    path: '/blog/fortalecer-relacion-pareja-ayuda-profesional',
+    file: 'blog/fortalecer-relacion-pareja-ayuda-profesional/index.html',
+    title: 'Cómo Fortalecer tu Relación de Pareja con Ayuda Profesional | Centro Amaré',
+    description: 'Ciclos de discusión, reparación emocional y acuerdos clave. Guía de terapia de pareja basada en evidencia para parejas en El Salvador y el exterior.',
+    canonical: `${BASE_URL}/blog/fortalecer-relacion-pareja-ayuda-profesional`,
+  },
+  {
     path: '/blog/se-puede-perdonar-una-infidelidad-guia-pareja',
     file: 'blog/se-puede-perdonar-una-infidelidad-guia-pareja/index.html',
     title: '¿Se Puede Perdonar una Infidelidad? Guía Clínica | Centro Amaré',

@@ -30,6 +30,8 @@ import BlogPostPreciosTerapia from './pages/blog/BlogPostPreciosTerapia';
 import BlogPostLimitesFamilia from './pages/blog/BlogPostLimitesFamilia';
 import BlogPostInfidelidad from './pages/blog/BlogPostInfidelidad';
 import BlogPostFaltaDeseo from './pages/blog/BlogPostFaltaDeseo';
+import BlogPostDueloMigratorio from './pages/blog/BlogPostDueloMigratorio';
+import BlogPostFortalecerPareja from './pages/blog/BlogPostFortalecerPareja';
 import EnlacesBioPage from './pages/EnlacesBioPage';
 import PrivacidadPage from './pages/PrivacidadPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -109,6 +111,8 @@ function App({ initialPath = '/' }) {
       '/blog': 'Blog & Recursos Clínicos | Centro Amaré',
       '/blog/se-puede-perdonar-una-infidelidad-guia-pareja': '¿Se Puede Perdonar una Infidelidad? Guía Clínica de Pareja | Centro Amaré',
       '/blog/falta-de-deseo-sexual-en-la-pareja-soluciones': 'Falta de Deseo Sexual en la Pareja: Causas y Soluciones | Centro Amaré',
+      '/blog/duelo-migratorio-que-es-como-manejarlo': 'Duelo Migratorio: Qué Es y Cómo Manejarlo | Centro Amaré',
+      '/blog/fortalecer-relacion-pareja-ayuda-profesional': 'Cómo Fortalecer tu Relación de Pareja con Ayuda Profesional | Centro Amaré',
       '/privacidad': 'Política de Privacidad y Secreto Profesional | Centro Amaré'
     };
     if (titles[cleanPath]) {
@@ -147,6 +151,14 @@ function App({ initialPath = '/' }) {
 
   if (cleanPath === '/blog' || cleanPath === '/recursos') {
     return <BlogHubPage />;
+  }
+
+  if (cleanPath === '/blog/duelo-migratorio-que-es-como-manejarlo') {
+    return <BlogPostDueloMigratorio />;
+  }
+
+  if (cleanPath === '/blog/fortalecer-relacion-pareja-ayuda-profesional') {
+    return <BlogPostFortalecerPareja />;
   }
 
   if (cleanPath === '/blog/se-puede-perdonar-una-infidelidad-guia-pareja') {

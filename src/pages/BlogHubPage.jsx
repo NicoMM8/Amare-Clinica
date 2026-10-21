@@ -2,9 +2,29 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
-import { BookOpen, Clock, ArrowRight, ShieldCheck, HeartHandshake, DollarSign, Compass, Sparkles } from 'lucide-react';
+import { BookOpen, Clock, ArrowRight, ShieldCheck, HeartHandshake, DollarSign, Compass, Sparkles, Heart } from 'lucide-react';
 
 export const BLOG_POSTS = [
+  {
+    slug: 'duelo-migratorio-que-es-como-manejarlo',
+    title: 'Duelo migratorio: qué es, sus fases y cómo manejarlo en el extranjero',
+    excerpt: 'Pérdidas acumuladas, culpa por irse y la paradoja de no encajar ni allá ni acá. Estrategias psicológicas clínicas para la diáspora salvadoreña.',
+    readTime: '6 min de lectura',
+    category: 'Duelo & Diáspora',
+    date: 'Actualizado 2026',
+    author: 'Equipo Clínico Centro Amaré',
+    icon: Compass
+  },
+  {
+    slug: 'fortalecer-relacion-pareja-ayuda-profesional',
+    title: 'Cómo fortalecer tu relación de pareja con ayuda profesional: Guía clínica',
+    excerpt: 'Desactivar ciclos de discusión repetitivos, reparar tras el conflicto y cuidar la complicidad. Por qué no hay que esperar a una crisis terminal para consultar.',
+    readTime: '5 min de lectura',
+    category: 'Terapia Preventiva',
+    date: 'Actualizado 2026',
+    author: 'Equipo Clínico Centro Amaré',
+    icon: Heart
+  },
   {
     slug: 'se-puede-perdonar-una-infidelidad-guia-pareja',
     title: '¿Se puede perdonar una infidelidad? Fases clínicas para sanar o cerrar en paz',

@@ -8,7 +8,7 @@
 
 export const GA_MEASUREMENT_ID = typeof window !== 'undefined' && window.__GA_ID__ 
   ? window.__GA_ID__ 
-  : 'G-XXXXXXXXXX'; // Reemplaza aquí por tu ID real de GA4 cuando lo tengas
+  : 'G-7RM70HX1YH';
 
 /**
  * Registra un evento de conversión personalizado

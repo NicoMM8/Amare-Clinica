@@ -147,11 +147,13 @@ export function HeroButton({
   };
 
   if (href) {
+    const isExternal = href.startsWith('http');
+    const effectiveRel = rel || (isExternal ? "nofollow noopener noreferrer" : undefined);
     return (
       <a
         href={href}
-        target={target}
-        rel={rel}
+        target={target || (isExternal ? "_blank" : undefined)}
+        rel={effectiveRel}
         data-hero-appearance={appearance}
         data-hero-shape={shape}
         className={btnClass}

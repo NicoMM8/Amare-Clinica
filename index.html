@@ -86,16 +86,25 @@
     </script>
 
     <!-- ═══════════════════════════════════════════════
+         PRECONNECT TO REQUIRED ORIGINS (Core Web Vitals)
+    ═══════════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.clarity.ms" />
+
+    <!-- ═══════════════════════════════════════════════
          PRELOAD CRITICAL ASSETS (Core Web Vitals / LCP)
     ═══════════════════════════════════════════════ -->
     <link rel="preload" as="image" href="/images/hero-daniela-960.webp" type="image/webp" fetchpriority="high" />
 
     <!-- ═══════════════════════════════════════════════
-         GOOGLE FONTS — Fraunces & Nunito Sans (Optimizado sin bloqueo)
+         GOOGLE FONTS — Fraunces & Nunito Sans (0ms Render-Blocking)
     ═══════════════════════════════════════════════ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" />
+    </noscript>
 
     <!-- ═══════════════════════════════════════════════
          ANALYTICS / EVENT TRACKING BOOTSTRAP

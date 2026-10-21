@@ -134,7 +134,7 @@ export default function Testimonials() {
             <a
               href={psicoOrgUrl}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               style={{
                 fontSize: '12.5px',
                 fontWeight: 600,
@@ -271,7 +271,7 @@ export default function Testimonials() {
           <a
             href={psicoOrgUrl}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             style={{
               fontSize: '13px',
               fontWeight: 600,

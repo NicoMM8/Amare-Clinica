@@ -13,11 +13,14 @@ export function LivingLink({
 }) {
   const [hovered, setHovered] = useState(false);
 
+  const isExternal = href && href.startsWith('http');
+  const effectiveRel = rel || (isExternal ? "nofollow noopener noreferrer" : undefined);
+
   return (
     <a
       href={href}
-      target={target}
-      rel={rel}
+      target={target || (isExternal ? "_blank" : undefined)}
+      rel={effectiveRel}
       className={`v-living-link ${className}`}
       style={{
         display: 'inline-flex',

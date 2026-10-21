@@ -191,7 +191,7 @@ async function prerender() {
         const cssFileName = cssFiles[0]
         const cssContent = fs.readFileSync(path.join(assetsDir, cssFileName), 'utf-8')
         const cssLinkRegex = new RegExp(`<link rel="stylesheet"[^>]*href="[^"]*${cssFileName}"[^>]*>`, 'i')
-        const inlineReplacement = `<style id="critical-css">${cssContent}</style><link rel="preload" as="style" href="/assets/${cssFileName}" /><link rel="stylesheet" href="/assets/${cssFileName}" />`
+        const inlineReplacement = `<style id="critical-css">${cssContent}</style><link rel="preload" as="style" href="/assets/${cssFileName}" /><link rel="stylesheet" href="/assets/${cssFileName}" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="/assets/${cssFileName}" /></noscript>`
         baseTemplateProcessed = baseTemplateProcessed.replace(cssLinkRegex, inlineReplacement)
         console.log(`⚡  Inlined critical CSS (${(cssContent.length / 1024).toFixed(1)} kB) — 0ms render-blocking`)
       }

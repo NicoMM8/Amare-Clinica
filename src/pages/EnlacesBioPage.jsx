@@ -136,7 +136,7 @@ export default function EnlacesBioPage() {
               key={idx}
               href={link.href}
               target={link.isExternal ? "_blank" : undefined}
-              rel={link.isExternal ? "noopener noreferrer" : undefined}
+              rel={link.isExternal ? "nofollow noopener noreferrer" : undefined}
               onClick={() => {
                 if (link.isExternal) trackWhatsAppClick('enlaces_bio', link.title);
               }}

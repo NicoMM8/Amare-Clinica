@@ -135,6 +135,33 @@ export default function BlogPostLimitesFamilia() {
                 </div>
               </div>
 
+              {/* Artículos Relacionados */}
+              <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid var(--border-subtle)' }}>
+                <h3 className="font-serif" style={{ fontSize: '20px', color: 'var(--color-plum-900)', marginBottom: '18px' }}>
+                  Artículos relacionados del blog
+                </h3>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+                  <a
+                    href="/blog/como-afecta-emigrar-a-la-relacion-de-pareja"
+                    style={{ textDecoration: 'none', background: '#FFFFFF', padding: '20px', borderRadius: '16px', border: '1px solid var(--border-subtle)', display: 'block' }}
+                  >
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase' }}>Pareja y Migración</span>
+                    <h4 style={{ fontSize: '16px', color: 'var(--color-plum-900)', margin: '8px 0 0', fontWeight: 700, lineHeight: 1.4 }}>
+                      Cómo afecta emigrar a la relación de pareja: Guía para salvadoreños
+                    </h4>
+                  </a>
+                  <a
+                    href="/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador"
+                    style={{ textDecoration: 'none', background: '#FFFFFF', padding: '20px', borderRadius: '16px', border: '1px solid var(--border-subtle)', display: 'block' }}
+                  >
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase' }}>Honorarios y Guía</span>
+                    <h4 style={{ fontSize: '16px', color: 'var(--color-plum-900)', margin: '8px 0 0', fontWeight: 700, lineHeight: 1.4 }}>
+                      ¿Cuánto cuesta una terapia de pareja en El Salvador?
+                    </h4>
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>

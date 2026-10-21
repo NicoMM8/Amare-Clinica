@@ -6,5 +6,19 @@ Disallow: /src/
 Disallow: /node_modules/
 Disallow: /*.mjs$
 
+# Motores de búsqueda e IA (Bing, Copilot, Google)
+User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
 # Sitemap
 Sitemap: https://terapiadeparejaelsalvador.com/sitemap.xml
+

@@ -91,7 +91,7 @@ const websiteSchema = {
 // ─────────────────────────────────────────────
 const medicalBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'MedicalBusiness',
+  '@type': ['LocalBusiness', 'MedicalBusiness'],
   '@id': `${SITE_URL}/#organization`,
   name: 'Centro Amaré',
   alternateName: 'Centro Amaré Psicoterapia Online Salvadoreña',
@@ -133,6 +133,7 @@ const medicalBusinessSchema = {
     latitude: 13.7013,
     longitude: -89.2244,
   },
+  openingHours: 'Mo,Tu,We,Th,Fr,Sa 08:00-20:00',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',

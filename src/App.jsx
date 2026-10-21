@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import './App.css';
 import SchemaMarkup from './components/SchemaMarkup';
 import Navbar from './components/Navbar';
@@ -221,6 +222,9 @@ function App({ initialPath = '/' }) {
 
       {/* Floating WhatsApp Quick Action */}
       <FloatingWhatsApp />
+
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
     </div>
   );
 }

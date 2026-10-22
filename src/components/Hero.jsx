@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { Globe, HeartHandshake, ShieldCheck, Sparkles, Clock, Play, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { Globe, HeartHandshake, ShieldCheck, Sparkles } from 'lucide-react';
 import { PigmentAtmosphere } from './cojeev/PigmentAtmosphere';
 import { HeroButton } from './cojeev/HeroButton';
 
@@ -23,24 +23,7 @@ function WhatsAppIcon({ size = 20, className = "" }) {
 
 export default function Hero() {
   const [importaHovered, setImportaHovered] = useState(false);
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vengo de la web y me gustaría agendar una primera conversación sin costo.");
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') setIsVideoModalOpen(false);
-    };
-    if (isVideoModalOpen) {
-      window.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = '';
-    };
-  }, [isVideoModalOpen]);
 
   return (
     <section className="hero-section" id="inicio">
@@ -269,50 +252,6 @@ export default function Hero() {
               <span className="animate-radar-dot" />
               <span>Consulta Online · Google Meet</span>
             </div>
-
-            {/* Video Lightbox Trigger Button */}
-            <button
-              type="button"
-              onClick={() => setIsVideoModalOpen(true)}
-              className="hero-video-pill-btn"
-              aria-label="Ver video de identidad de Centro Amaré"
-              style={{
-                position: 'absolute',
-                bottom: '18px',
-                right: '18px',
-                background: 'rgba(34, 40, 74, 0.92)',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
-                borderRadius: 'var(--r-pill, 999px)',
-                padding: '7px 15px 7px 9px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                boxShadow: '0 8px 24px rgba(34, 40, 74, 0.25)',
-                border: '1px solid rgba(255, 255, 255, 0.25)',
-                fontSize: '12px',
-                fontWeight: 600,
-                color: '#FFFFFF',
-                cursor: 'pointer',
-                zIndex: 2,
-                transition: 'all 0.25s ease',
-              }}
-            >
-              <span
-                style={{
-                  width: '22px',
-                  height: '22px',
-                  borderRadius: '50%',
-                  background: 'var(--color-clay, #B75940)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <Play size={10} fill="#FFFFFF" color="#FFFFFF" style={{ marginLeft: '1px' }} />
-              </span>
-              <span>Ver identidad animada (10s)</span>
-            </button>
           </div>
 
         </div>
@@ -361,107 +300,6 @@ export default function Hero() {
         </div>
 
       </div>
-
-      {/* ── VIDEO MODAL LIGHTBOX ── */}
-      {isVideoModalOpen && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label="Video de identidad Centro Amaré"
-          onClick={() => setIsVideoModalOpen(false)}
-          style={{
-            position: 'fixed',
-            inset: 0,
-            zIndex: 99999,
-            backgroundColor: 'rgba(20, 15, 25, 0.82)',
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px',
-          }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              position: 'relative',
-              width: '100%',
-              maxWidth: '680px',
-              backgroundColor: '#FAF7F2',
-              borderRadius: '24px',
-              overflow: 'hidden',
-              boxShadow: '0 25px 60px rgba(0, 0, 0, 0.4)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-            }}
-          >
-            {/* Modal Header */}
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '16px 22px',
-                borderBottom: '1px solid rgba(35, 18, 33, 0.08)',
-                background: '#FAF7F2',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-plum-900)' }}>
-                  Centro Amaré · Identidad y Filosofía
-                </span>
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsVideoModalOpen(false)}
-                aria-label="Cerrar video"
-                style={{
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: '50%',
-                  border: 'none',
-                  background: 'rgba(35, 18, 33, 0.08)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  cursor: 'pointer',
-                  color: 'var(--color-plum-900)',
-                  transition: 'background 0.2s ease',
-                }}
-              >
-                <X size={18} />
-              </button>
-            </div>
-
-            {/* Video Player */}
-            <video
-              src="/videos/motion-graphic-centro-amare.mp4"
-              autoPlay
-              controls
-              playsInline
-              style={{
-                width: '100%',
-                display: 'block',
-                maxHeight: '460px',
-                backgroundColor: '#FAF7F2',
-              }}
-            />
-
-            {/* Modal Footer Caption */}
-            <div
-              style={{
-                padding: '14px 22px',
-                textAlign: 'center',
-                fontSize: '13px',
-                color: 'var(--color-ink-secondary)',
-                background: '#FAF7F2',
-              }}
-            >
-              Un espacio para sentir, comprender y transformar · Desde El Salvador al mundo
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

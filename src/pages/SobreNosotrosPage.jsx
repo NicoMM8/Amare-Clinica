@@ -228,63 +228,93 @@ export default function SobreNosotrosPage() {
           </div>
         </section>
 
-        {/* ── 2. VIDEO EDITORIAL SHOWCASE (MOTION GRAPHIC DEL LOGO) ──── */}
+        {/* ── 2. VIDEO EDITORIAL SHOWCASE (CINEMATIC BRAND CENTERPIECE) ──── */}
         <section 
           className="section"
           style={{ 
-            backgroundColor: 'var(--color-surface, #FFFFFF)', 
-            paddingTop: '60px', 
-            paddingBottom: '80px',
+            background: 'linear-gradient(180deg, var(--color-surface, #FFFFFF) 0%, #FAF7F2 100%)', 
+            paddingTop: '80px', 
+            paddingBottom: '96px',
             borderTop: '1px solid var(--border-hairline, rgba(35, 18, 33, 0.08))',
             borderBottom: '1px solid var(--border-hairline, rgba(35, 18, 33, 0.08))',
           }}
         >
           <div className="container">
-            <div style={{ maxWidth: '920px', margin: '0 auto' }}>
+            <div style={{ maxWidth: '1060px', margin: '0 auto' }}>
               
-              <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-                <span 
+              {/* Header con presencia editorial */}
+              <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                <div 
+                  className="pill-badge pill-badge-clay" 
                   style={{ 
-                    fontSize: '12px', 
-                    fontWeight: 700, 
-                    color: 'var(--color-clay)', 
-                    textTransform: 'uppercase', 
-                    letterSpacing: '0.08em',
-                    display: 'block',
-                    marginBottom: '8px'
+                    marginBottom: '14px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px'
                   }}
                 >
-                  Nuestra Identidad Visual
-                </span>
+                  <Sparkles size={14} style={{ color: 'var(--color-clay)' }} />
+                  <span>Símbolo & Identidad en Movimiento · 10 Segundos</span>
+                </div>
+                
                 <h2 
                   className="font-serif" 
                   style={{ 
-                    fontSize: 'clamp(24px, 3.2vw, 36px)', 
+                    fontSize: 'clamp(28px, 3.8vw, 44px)', 
                     color: 'var(--color-plum-900)',
-                    lineHeight: 1.25 
+                    lineHeight: 1.2,
+                    marginBottom: '14px',
+                    letterSpacing: '-0.01em'
                   }}
                 >
-                  El alma de Centro Amaré en movimiento
+                  El alma de Centro Amaré: del mándala al trazo orgánico
                 </h2>
-                <p style={{ fontSize: '15.5px', color: 'var(--color-ink-secondary)', marginTop: '8px' }}>
-                  De aquel primer mándala de 2017 a trazos orgánicos inspirados en la calidez de nuestra tierra.
+
+                <p style={{ fontSize: '17px', color: 'var(--color-ink-secondary)', maxWidth: '720px', margin: '0 auto', lineHeight: 1.65 }}>
+                  Una animación que sintetiza nuestra evolución: el sol de nuestra tierra, la calma de ser escuchado sin juicio y la apertura de dos vidas que florecen juntas.
                 </p>
               </div>
 
-              {/* Video Player Card */}
+              {/* Cinematic Video Showcase Card (Ample size & Warm Ambient Shadow) */}
               <div 
                 style={{
                   position: 'relative',
                   backgroundColor: '#FAF7F2',
-                  borderRadius: '24px',
-                  border: '1px solid rgba(158, 75, 51, 0.18)',
-                  boxShadow: '0 20px 45px rgba(35, 18, 33, 0.08)',
+                  borderRadius: '28px',
+                  border: '1.5px solid rgba(158, 75, 51, 0.22)',
+                  boxShadow: '0 32px 85px -15px rgba(158, 75, 51, 0.22), 0 12px 35px -8px rgba(35, 18, 33, 0.12)',
                   overflow: 'hidden',
-                  maxWidth: '820px',
-                  margin: '0 auto',
+                  maxWidth: '980px',
+                  margin: '0 auto 48px',
                 }}
               >
-                <div style={{ position: 'relative', minHeight: '320px', backgroundColor: '#FAF7F2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                {/* Top Ambient Bar inside player */}
+                <div 
+                  style={{
+                    position: 'absolute',
+                    top: '18px',
+                    left: '20px',
+                    zIndex: 10,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    backgroundColor: 'rgba(255, 255, 255, 0.88)',
+                    backdropFilter: 'blur(10px)',
+                    WebkitBackdropFilter: 'blur(10px)',
+                    padding: '6px 14px',
+                    borderRadius: 'var(--r-pill, 999px)',
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    color: 'var(--color-plum-900)',
+                    boxShadow: '0 4px 14px rgba(0, 0, 0, 0.06)',
+                    border: '1px solid rgba(255, 255, 255, 0.6)'
+                  }}
+                >
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-clay)' }} />
+                  <span>Identidad Clínica Oficial · Centro Amaré</span>
+                </div>
+
+                <div style={{ position: 'relative', minHeight: '360px', backgroundColor: '#FAF7F2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <video
                     ref={videoRef}
                     src="/videos/motion-graphic-centro-amare.mp4"
@@ -299,7 +329,7 @@ export default function SobreNosotrosPage() {
                     style={{
                       width: '100%',
                       display: 'block',
-                      maxHeight: '480px',
+                      maxHeight: '520px',
                       objectFit: 'contain',
                       backgroundColor: '#FAF7F2',
                     }}
@@ -315,24 +345,24 @@ export default function SobreNosotrosPage() {
                         top: '50%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
-                        width: '68px',
-                        height: '68px',
+                        width: '74px',
+                        height: '74px',
                         borderRadius: '50%',
                         backgroundColor: 'var(--color-clay, #9E4B33)',
                         color: '#FFFFFF',
                         border: '3px solid #FAF7F2',
-                        boxShadow: '0 8px 30px rgba(35, 18, 33, 0.25)',
+                        boxShadow: '0 10px 32px rgba(35, 18, 33, 0.3)',
                         cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         zIndex: 10,
-                        transition: 'transform 0.2s ease, background-color 0.2s ease',
+                        transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.08)'}
                       onMouseLeave={(e) => e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1)'}
                     >
-                      <Play size={28} style={{ marginLeft: '4px' }} />
+                      <Play size={32} style={{ marginLeft: '4px' }} />
                     </button>
                   )}
 
@@ -340,8 +370,8 @@ export default function SobreNosotrosPage() {
                   <div
                     style={{
                       position: 'absolute',
-                      bottom: '16px',
-                      right: '16px',
+                      bottom: '18px',
+                      right: '20px',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '10px',
@@ -355,18 +385,20 @@ export default function SobreNosotrosPage() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        width: '40px',
-                        height: '40px',
+                        width: '42px',
+                        height: '42px',
                         borderRadius: '50%',
-                        backgroundColor: 'rgba(35, 18, 33, 0.82)',
+                        backgroundColor: 'rgba(35, 18, 33, 0.85)',
                         color: '#FFFFFF',
                         border: 'none',
                         cursor: 'pointer',
                         backdropFilter: 'blur(8px)',
                         transition: 'transform 0.2s ease',
                       }}
+                      onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.08)'}
+                      onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                     >
-                      {isPlaying ? <Pause size={17} /> : <Play size={17} style={{ marginLeft: '2px' }} />}
+                      {isPlaying ? <Pause size={18} /> : <Play size={18} style={{ marginLeft: '2px' }} />}
                     </button>
 
                     <button
@@ -376,41 +408,108 @@ export default function SobreNosotrosPage() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        width: '40px',
-                        height: '40px',
+                        width: '42px',
+                        height: '42px',
                         borderRadius: '50%',
-                        backgroundColor: 'rgba(35, 18, 33, 0.82)',
+                        backgroundColor: 'rgba(35, 18, 33, 0.85)',
                         color: '#FFFFFF',
                         border: 'none',
                         cursor: 'pointer',
                         backdropFilter: 'blur(8px)',
                         transition: 'transform 0.2s ease',
                       }}
+                      onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.08)'}
+                      onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                     >
-                      {isMuted ? <VolumeX size={17} /> : <Volume2 size={17} />}
+                      {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
                     </button>
                   </div>
                 </div>
 
-                {/* Editorial Caption */}
+                {/* Editorial Caption Bar */}
                 <div 
                   style={{ 
-                    padding: '16px 24px', 
+                    padding: '18px 28px', 
                     backgroundColor: '#FAF7F2',
-                    borderTop: '1px solid rgba(35, 18, 33, 0.06)',
+                    borderTop: '1px solid rgba(35, 18, 33, 0.08)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     flexWrap: 'wrap',
-                    gap: '12px'
+                    gap: '14px'
                   }}
                 >
-                  <span style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', fontStyle: 'italic' }}>
+                  <span style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', fontStyle: 'italic' }}>
                     “Desde El Salvador al mundo: ciencia, calidez y pertenencia cultural.”
                   </span>
-                  <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-clay)', letterSpacing: '0.04em' }}>
-                    CENTRO AMARÉ · CLÍNICA DIGITAL
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+                    MANIFIESTO VISUAL · CENTRO AMARÉ
                   </span>
+                </div>
+              </div>
+
+              {/* 3-Column Visual Metaphor Row (Tríptico del Símbolo) */}
+              <div 
+                style={{ 
+                  display: 'grid', 
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+                  gap: '24px',
+                  maxWidth: '980px',
+                  margin: '0 auto'
+                }}
+              >
+                <div 
+                  style={{ 
+                    backgroundColor: 'var(--color-surface, #FFFFFF)', 
+                    padding: '24px 22px', 
+                    borderRadius: '20px', 
+                    border: '1px solid var(--border-hairline)',
+                    boxShadow: 'var(--shadow-sm)'
+                  }}
+                >
+                  <div style={{ color: 'var(--color-clay)', fontWeight: 700, fontSize: '14px', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-clay)' }} />
+                    El Rostro Sereno
+                  </div>
+                  <p style={{ fontSize: '13.8px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                    La tranquilidad de ser escuchado por primera vez sin juicio, con rigor clínico y respeto absoluto por tu dolor.
+                  </p>
+                </div>
+
+                <div 
+                  style={{ 
+                    backgroundColor: 'var(--color-surface, #FFFFFF)', 
+                    padding: '24px 22px', 
+                    borderRadius: '20px', 
+                    border: '1px solid var(--border-hairline)',
+                    boxShadow: 'var(--shadow-sm)'
+                  }}
+                >
+                  <div style={{ color: 'var(--color-clay)', fontWeight: 700, fontSize: '14px', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-clay)' }} />
+                    El Sol y la Semilla
+                  </div>
+                  <p style={{ fontSize: '13.8px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                    Nuestras raíces salvadoreñas: un puente cultural que une a quienes viven en el país y a quienes migraron a la diáspora.
+                  </p>
+                </div>
+
+                <div 
+                  style={{ 
+                    backgroundColor: 'var(--color-surface, #FFFFFF)', 
+                    padding: '24px 22px', 
+                    borderRadius: '20px', 
+                    border: '1px solid var(--border-hairline)',
+                    boxShadow: 'var(--shadow-sm)'
+                  }}
+                >
+                  <div style={{ color: 'var(--color-clay)', fontWeight: 700, fontSize: '14px', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-clay)' }} />
+                    Las Hojas Orgánicas
+                  </div>
+                  <p style={{ fontSize: '13.8px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                    Dos vidas que se encuentran, aprenden a desactivar el conflicto y florecen juntas hacia un vínculo consciente.
+                  </p>
                 </div>
               </div>
 

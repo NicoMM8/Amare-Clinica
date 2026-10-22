@@ -30,8 +30,20 @@ const aboutPageSchema = {
   "url": "https://terapiadeparejaelsalvador.com/sobre-nosotros",
   "description": "Historia, misión y pilares clínicos de Centro Amaré. Clínica de psicología y terapia de pareja fundada en 2017 en El Salvador.",
   "mainEntity": {
-    "@type": "MedicalBusiness",
+    "@type": ["LocalBusiness", "MedicalBusiness"],
+    "@id": "https://terapiadeparejaelsalvador.com/#organization",
     "name": "Centro Amaré",
+    "url": "https://terapiadeparejaelsalvador.com",
+    "image": "https://terapiadeparejaelsalvador.com/og-preview-amare.jpg",
+    "telephone": "+50373184781",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle El Mirador y 89 Av. Norte, Colonia Escalón",
+      "addressLocality": "San Salvador",
+      "addressRegion": "San Salvador",
+      "postalCode": "1101",
+      "addressCountry": "SV"
+    },
     "foundingDate": "2017",
     "founder": {
       "@type": "Person",

@@ -382,7 +382,8 @@ async function prerender() {
               }
             },
             'publisher': {
-              '@type': 'MedicalBusiness',
+              '@type': 'Organization',
+              '@id': `${BASE_URL}/#organization`,
               'name': 'Centro Amaré',
               'url': `${BASE_URL}/`,
               'logo': {

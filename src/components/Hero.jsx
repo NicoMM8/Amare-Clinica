@@ -217,7 +217,7 @@ export default function Hero() {
               </div>
 
               <span className="hero-cta-guarantee">
-                Primera conversación (30 min sin costo) con el equipo clínico · Sin compromiso
+                1ª sesión de 30 min gratis con el equipo clínico · Sin compromiso ni costo
               </span>
             </div>
 

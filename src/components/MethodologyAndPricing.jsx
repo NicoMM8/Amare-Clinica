@@ -285,7 +285,7 @@ export default function MethodologyAndPricing() {
                       </td>
                       <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>50 - 60 min</td>
                       <td style={{ padding: '14px' }}>
-                        <strong style={{ color: 'var(--color-plum-900)', fontSize: '14px' }}>$25 USD / sesión</strong>
+                        <span style={{ fontWeight: 700, color: 'var(--color-plum-900)', fontSize: '14px' }}>$25 USD por sesión</span>
                         <span style={{ display: 'block', fontSize: '11.5px', color: 'var(--color-ink-muted)' }}>
                           en plan mensual ($100/mes)
                         </span>
@@ -301,7 +301,7 @@ export default function MethodologyAndPricing() {
                       </td>
                       <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>50 min</td>
                       <td style={{ padding: '14px' }}>
-                        <strong style={{ color: 'var(--color-plum-900)', fontSize: '14px' }}>$25 USD / sesión</strong>
+                        <span style={{ fontWeight: 700, color: 'var(--color-plum-900)', fontSize: '14px' }}>Tarifa fija ($25/sesión)</span>
                         <span style={{ display: 'block', fontSize: '11.5px', color: 'var(--color-ink-muted)' }}>
                           en plan mensual ($100/mes)
                         </span>
@@ -478,7 +478,7 @@ export default function MethodologyAndPricing() {
                   </span>
                 </div>
                 <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.55 }}>
-                  Emitimos factura y recibos clínicos detallados con número de colegiación sanitaria oficial ante la <strong>Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP N.º 47096)</strong>. Si cuentas con póliza privada en El Salvador o seguro internacional en EE. UU. o Canadá con cobertura ambulatoria o beneficios fuera de red (<em>out-of-network / superbills</em>), podrás solicitar tu reintegro directamente con tu aseguradora.
+                  Emitimos factura y recibos clínicos detallados con número de colegiación sanitaria oficial ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (<strong>JVPP N.º 47096</strong>). Si cuentas con póliza privada en El Salvador o seguro internacional en EE. UU. o Canadá con cobertura ambulatoria o beneficios fuera de red (<em>out-of-network / superbills</em>), podrás solicitar tu reintegro directamente con tu aseguradora.
                 </p>
               </div>
             </div>

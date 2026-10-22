@@ -21,7 +21,7 @@ const routes = [
   {
     path: '/',
     file: 'index.html',
-    title: 'Terapia de Pareja El Salvador Online | 1ª Cita Gratis',
+    title: 'Terapia de Pareja El Salvador Online | 1ª Sesión Gratis',
     description: 'Terapia de pareja e individual online en El Salvador y el exterior con psicólogos colegiados. Recupera tu relación. Agenda tu 1ª sesión de 30 min gratis.',
     canonical: `${BASE_URL}/`,
   },
@@ -244,8 +244,6 @@ async function prerender() {
       if (route.canonical) {
         pageHtml = pageHtml.replace(/<link rel="canonical" href=".*?" \/>/, `<link rel="canonical" href="${route.canonical}" />`)
         pageHtml = pageHtml.replace(/<link rel="alternate" hreflang="es" href=".*?" \/>/, `<link rel="alternate" hreflang="es" href="${route.canonical}" />`)
-        pageHtml = pageHtml.replace(/<link rel="alternate" hreflang="es-SV" href=".*?" \/>/, `<link rel="alternate" hreflang="es-SV" href="${route.canonical}" />`)
-        pageHtml = pageHtml.replace(/<link rel="alternate" hreflang="x-default" href=".*?" \/>/, `<link rel="alternate" hreflang="x-default" href="${route.canonical}" />`)
         pageHtml = pageHtml.replace(/<meta property="og:url" content=".*?" \/>/, `<meta property="og:url" content="${route.canonical}" />`)
       }
 

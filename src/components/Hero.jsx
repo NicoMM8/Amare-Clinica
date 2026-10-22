@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Globe, HeartHandshake, ShieldCheck, Sparkles, Clock } from 'lucide-react';
+import { Globe, HeartHandshake, ShieldCheck, Sparkles, Clock, Play } from 'lucide-react';
 import { PigmentAtmosphere } from './cojeev/PigmentAtmosphere';
 import { HeroButton } from './cojeev/HeroButton';
 
@@ -23,6 +23,7 @@ function WhatsAppIcon({ size = 20, className = "" }) {
 
 export default function Hero() {
   const [importaHovered, setImportaHovered] = useState(false);
+  const [mediaTab, setMediaTab] = useState('photo'); // 'photo' | 'video'
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vengo de la web y me gustaría agendar una primera conversación sin costo.");
 
   return (
@@ -209,52 +210,136 @@ export default function Hero() {
 
           </div>
 
-          {/* ── RIGHT COLUMN: Clinical Psychology Consultation Photography ── */}
+          {/* ── RIGHT COLUMN: Clinical Psychology Consultation Photography & Motion Graphic ── */}
           <div className="hero-visual-card">
-            <picture style={{ width: '100%', height: '100%', display: 'block' }}>
-              <source srcSet="/images/hero-therapist-960.webp 960w, /images/hero-therapist-480.webp 480w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
-              <source srcSet="/images/hero-therapist-960.jpg" type="image/jpeg" />
-              <img
-                src="/images/hero-therapist-960.jpg"
-                alt="Sesión de psicoterapia de pareja y consulta clínica online — Centro Amaré El Salvador"
-                className="hero-visual-img"
-                fetchPriority="high"
-                width="960"
-                height="960"
-                style={{
-                  width: '100%',
-                  display: 'block',
-                  objectFit: 'cover',
-                }}
-              />
-            </picture>
-
-            {/* Subtle Ambient Live Badge in the photo */}
+            {/* Media Selector Tabs: Espacio Clínico vs Video Animado */}
             <div
-              className="animate-float"
               style={{
                 position: 'absolute',
-                bottom: '18px',
-                left: '18px',
-                background: 'rgba(255, 255, 255, 0.95)',
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
-                borderRadius: 'var(--r-pill)',
-                padding: '8px 18px',
+                top: '14px',
+                right: '14px',
+                zIndex: 4,
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '9px',
-                boxShadow: '0 8px 24px rgba(34, 40, 74, 0.14)',
+                background: 'rgba(255, 255, 255, 0.94)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                padding: '4px',
+                borderRadius: 'var(--r-pill, 999px)',
+                boxShadow: '0 6px 20px rgba(35, 18, 33, 0.14)',
                 border: '1px solid rgba(255, 255, 255, 0.9)',
-                fontSize: '13px',
-                fontWeight: 600,
-                color: 'var(--color-plum-900)',
-                zIndex: 2,
+                gap: '4px',
               }}
             >
-              <span className="animate-radar-dot" />
-              <span>Sesiones online por Google Meet · Sin traslados</span>
+              <button
+                type="button"
+                onClick={() => setMediaTab('photo')}
+                aria-label="Ver fotografía del espacio clínico"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '6px 14px',
+                  borderRadius: 'var(--r-pill, 999px)',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  background: mediaTab === 'photo' ? 'var(--color-plum-900)' : 'transparent',
+                  color: mediaTab === 'photo' ? '#FFFFFF' : 'var(--color-plum-900)',
+                }}
+              >
+                <span>Espacio Clínico</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setMediaTab('video')}
+                aria-label="Ver logo animado oficial de Centro Amaré"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '6px 14px',
+                  borderRadius: 'var(--r-pill, 999px)',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  background: mediaTab === 'video' ? 'var(--color-clay)' : 'transparent',
+                  color: mediaTab === 'video' ? '#FFFFFF' : 'var(--color-plum-900)',
+                }}
+              >
+                <Play size={12} fill="currentColor" />
+                <span>Logo Animado</span>
+              </button>
             </div>
+
+            {mediaTab === 'photo' ? (
+              <picture style={{ width: '100%', height: '100%', display: 'block' }}>
+                <source srcSet="/images/hero-amare-collage-1200.webp 1200w, /images/hero-amare-collage-800.webp 800w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
+                <source srcSet="/images/hero-amare-collage-1200.jpg" type="image/jpeg" />
+                <img
+                  src="/images/hero-amare-collage-1200.jpg"
+                  alt="Centro Amaré — Terapia de pareja, intimidad y psicología clínica en El Salvador y el exterior"
+                  className="hero-visual-img"
+                  fetchPriority="high"
+                  width="1200"
+                  height="800"
+                  style={{
+                    width: '100%',
+                    display: 'block',
+                    objectFit: 'cover',
+                  }}
+                />
+              </picture>
+            ) : (
+              <video
+                src="/videos/motion-graphic-centro-amare.mp4"
+                className="hero-visual-video"
+                autoPlay
+                loop
+                playsInline
+                controls
+                style={{
+                  width: '100%',
+                  height: '470px',
+                  objectFit: 'cover',
+                  display: 'block',
+                  backgroundColor: '#FBF8F4',
+                }}
+              />
+            )}
+
+            {/* Subtle Ambient Live Badge in the photo */}
+            {mediaTab === 'photo' && (
+              <div
+                className="animate-float"
+                style={{
+                  position: 'absolute',
+                  bottom: '18px',
+                  left: '18px',
+                  background: 'rgba(255, 255, 255, 0.95)',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  borderRadius: 'var(--r-pill)',
+                  padding: '8px 18px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '9px',
+                  boxShadow: '0 8px 24px rgba(34, 40, 74, 0.14)',
+                  border: '1px solid rgba(255, 255, 255, 0.9)',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  color: 'var(--color-plum-900)',
+                  zIndex: 2,
+                }}
+              >
+                <span className="animate-radar-dot" />
+                <span>Sesiones online por Google Meet · Sin traslados</span>
+              </div>
+            )}
           </div>
 
         </div>

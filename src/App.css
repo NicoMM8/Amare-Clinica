@@ -616,3 +616,120 @@
   }
 }
 
+/* ── Team Specialist Cards ("Como Ellas" Reference Design) ── */
+.team-pro-card {
+  background: #FFFFFF;
+  border-radius: 22px;
+  border: 1px solid var(--border-subtle, rgba(35, 18, 33, 0.08));
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(35, 18, 33, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.team-pro-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(35, 18, 33, 0.12);
+}
+.team-pro-img-container {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  background: #F4ECE4;
+  overflow: hidden;
+}
+.team-pro-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.team-pro-card:hover .team-pro-img {
+  transform: scale(1.03);
+}
+.team-pro-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+.team-pro-badge--purple {
+  background: #6339F0;
+}
+.team-pro-badge--teal {
+  background: #0A8F6A;
+}
+.team-pro-badge--clay {
+  background: #9E4B33;
+}
+.team-pro-body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.team-pro-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-plum-900, #22284A);
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+.team-pro-role {
+  font-size: 13.5px;
+  color: var(--color-ink-secondary, #5D5458);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.team-pro-license {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #059669;
+  margin-bottom: 14px;
+}
+.team-pro-desc {
+  font-size: 13.5px;
+  color: var(--color-ink-secondary, #5D5458);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.team-pro-whatsapp-btn {
+  width: 100%;
+  height: 46px;
+  border-radius: 999px;
+  background: #00C853;
+  color: #FFFFFF !important;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 18px rgba(0, 200, 83, 0.30);
+}
+.team-pro-whatsapp-btn:hover {
+  background: #00B248;
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 24px rgba(0, 200, 83, 0.42);
+  color: #FFFFFF !important;
+}
+.team-pro-whatsapp-btn:active {
+  transform: translateY(0);
+}
+
+

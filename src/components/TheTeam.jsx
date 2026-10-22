@@ -1,9 +1,27 @@
 import React from 'react';
-import { CheckCircle2, MessageCircle, Award, BookOpen, Calendar, UserCheck, ShieldCheck } from 'lucide-react';
+import { Check, CheckCircle2, MessageCircle, Award, BookOpen, Calendar, UserCheck, ShieldCheck } from 'lucide-react';
 import { AnimatedNumber } from './cojeev/AnimatedNumber';
+
+function WhatsAppIcon({ size = 18 }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 24 24" 
+      fill="currentColor" 
+      aria-hidden="true"
+      style={{ flexShrink: 0 }}
+    >
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.68C7.02 10.88 7.89 12.04 8.01 12.2C8.13 12.37 9.71 14.81 12.13 15.86C14.15 16.73 14.56 16.55 15 16.51C15.44 16.47 16.41 15.94 16.61 15.36C16.82 14.79 16.82 14.3 16.76 14.2C16.7 14.1 16.53 14.04 16.28 13.91C16.03 13.79 14.8 13.18 14.57 13.1C14.34 13.01 14.18 12.97 14.01 13.22C13.85 13.47 13.38 14.02 13.24 14.18C13.1 14.34 12.96 14.36 12.71 14.24C12.46 14.12 11.66 13.85 10.71 13C9.97 12.34 9.47 11.53 9.33 11.28C9.18 11.03 9.31 10.9 9.44 10.77C9.55 10.66 9.69 10.48 9.81 10.33C9.94 10.19 9.98 10.08 10.06 9.92C10.14 9.75 10.1 9.61 10.04 9.49C9.98 9.36 9.5 8.18 9.3 7.69C9.1 7.21 8.9 7.27 8.75 7.26L8.53 7.33Z" />
+    </svg>
+  );
+}
 
 export default function TheTeam() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera agendar la primera conversación de 30 minutos sin costo con el equipo de Centro Amaré.");
+  const irisWhatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría consultar la disponibilidad de la Mtra. Iris Alarcón en Centro Amaré.");
+  const ernestoWhatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar la primera sesión de terapia con el Lic. Ernesto Mejía en Centro Amaré.");
+  const rafaelWhatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar una consulta con el Mtro. Rafael Franco en Centro Amaré.");
 
   return (
     <section className="section" id="equipo" style={{ background: 'var(--color-surface)', padding: '96px 0' }}>
@@ -82,245 +100,140 @@ export default function TheTeam() {
         }} className="team-cards-grid">
 
           {/* Card 1: Iris Alarcón (Directora Clínica) */}
-          <div style={{
-            background: '#FFFFFF',
-            borderRadius: '24px',
-            border: '1px solid var(--border-hairline)',
-            overflow: 'hidden',
-            boxShadow: '0 12px 36px rgba(35, 18, 33, 0.06)',
-            display: 'flex',
-            flexDirection: 'column'
-          }}>
-            <div style={{
-              background: 'linear-gradient(150deg, var(--color-plum-900) 0%, var(--color-plum-700) 100%)',
-              height: '140px',
-              position: 'relative',
-              padding: '16px'
-            }}>
-              <span style={{
-                position: 'absolute',
-                top: '14px',
-                left: '14px',
-                background: 'rgba(15, 23, 42, 0.75)',
-                backdropFilter: 'blur(8px)',
-                color: '#FFFFFF',
-                fontSize: '10.5px',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                padding: '4px 10px',
-                borderRadius: 'var(--r-pill)',
-                border: '1px solid rgba(255, 255, 255, 0.25)'
-              }}>
-                Dirección & Supervisión
+          <div className="team-pro-card">
+            <div className="team-pro-img-container">
+              <span className="team-pro-badge team-pro-badge--purple">
+                Psicología & Sexología
               </span>
-
-              <div style={{
-                position: 'absolute',
-                bottom: '-42px',
-                left: '20px',
-                width: '92px',
-                height: '92px',
-                borderRadius: '18px',
-                border: '3px solid #FFFFFF',
-                background: 'var(--color-canvas-subtle)',
-                overflow: 'hidden',
-                boxShadow: '0 6px 20px rgba(0,0,0,0.16)'
-              }}>
-                <picture>
-                  <source srcSet="/images/iris-alarcon.webp" type="image/webp" />
-                  <img
-                    src="/images/iris-alarcon.jpg"
-                    alt="Mtra. Iris Alarcón — Directora Clínica y Psicóloga Colegiada JVPP"
-                    width="92"
-                    height="92"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
+              <picture>
+                <source srcSet="/images/equipo-iris-alarcon.webp" type="image/webp" />
+                <img
+                  src="/images/equipo-iris-alarcon.jpg"
+                  alt="Mtra. Iris Alarcón — Directora Clínica y Psicóloga Colegiada JVPP"
+                  width="700"
+                  height="525"
+                  className="team-pro-img"
+                  loading="lazy"
+                />
+              </picture>
             </div>
 
-            <div style={{ padding: '54px 22px 24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontSize: '21px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '4px' }}>
+            <div className="team-pro-body">
+              <h3 className="team-pro-name">
                 Mtra. Iris Alarcón
               </h3>
-              <p style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay-text, #8B3822)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
-                Directora Clínica · Fundadora
+              <p className="team-pro-role">
+                Directora Clínica y Fundadora
               </p>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 600, color: 'var(--color-plum-900)', background: 'var(--color-clay-subtle)', padding: '2px 8px', borderRadius: 'var(--r-pill)', width: 'fit-content', marginBottom: '14px' }}>
-                <span>Registro JVPP N.º 47096</span>
+              <div className="team-pro-license">
+                <Check size={15} strokeWidth={2.8} />
+                <span>JVPP 47096</span>
               </div>
-              <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, marginBottom: '16px', flex: 1 }}>
-                Máster en Terapia de Pareja y Sexología Clínica. Supervisa la formulación de cada caso clínico y garantiza el rigor bioético y científico de la clínica.
+              <p className="team-pro-desc">
+                Máster en Terapia de Pareja y Sexología Clínica. Supervisa la formulación de cada caso clínico y garantiza el rigor bioético y científico del equipo.
               </p>
               <a
-                href="/iris-alarcon"
-                style={{ fontSize: '12.5px', fontWeight: 600, color: 'var(--color-clay)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+                href={irisWhatsappUrl}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="team-pro-whatsapp-btn"
+                aria-label="Agendar con la Mtra. Iris Alarcón por WhatsApp"
               >
-                <span>Ver credenciales y perfil →</span>
+                <WhatsAppIcon size={18} />
+                <span>Agendar con Iris</span>
               </a>
             </div>
           </div>
 
-          {/* Card 2: Lic. Ernesto Mejía (Terapeuta Activo Principal) */}
-          <div style={{
-            background: '#FFFFFF',
-            borderRadius: '24px',
-            border: '2px solid var(--color-clay-subtle)',
-            overflow: 'hidden',
-            boxShadow: '0 16px 40px rgba(158, 75, 51, 0.10)',
-            display: 'flex',
-            flexDirection: 'column',
-            position: 'relative'
-          }}>
-            <div style={{
-              background: 'linear-gradient(150deg, #9E4B33 0%, #7A3622 100%)',
-              height: '140px',
-              position: 'relative',
-              padding: '16px'
-            }}>
-              <span style={{
-                position: 'absolute',
-                top: '14px',
-                left: '14px',
-                background: 'rgba(15, 23, 42, 0.75)',
-                backdropFilter: 'blur(8px)',
-                color: '#FFFFFF',
-                fontSize: '10.5px',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                padding: '4px 10px',
-                borderRadius: 'var(--r-pill)',
-                border: '1px solid rgba(255, 255, 255, 0.25)'
-              }}>
-                Atención Clínica Activa
+          {/* Card 2: Lic. Ernesto Mejía (Psicólogo Clínico Colegiado) */}
+          <div className="team-pro-card">
+            <div className="team-pro-img-container">
+              <span className="team-pro-badge team-pro-badge--clay">
+                Terapia de Pareja
               </span>
-
-              <div style={{
-                position: 'absolute',
-                bottom: '-42px',
-                left: '20px',
-                width: '92px',
-                height: '92px',
-                borderRadius: '18px',
-                border: '3px solid #FFFFFF',
-                background: 'var(--color-canvas-subtle)',
-                overflow: 'hidden',
-                boxShadow: '0 6px 20px rgba(0,0,0,0.16)'
-              }}>
-                <picture>
-                  <source srcSet="/images/ernesto-mejia.webp" type="image/webp" />
-                  <img
-                    src="/images/ernesto-mejia.jpg"
-                    alt="Lic. Ernesto Mejía — Psicólogo Clínico de Centro Amaré"
-                    width="92"
-                    height="92"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
+              <picture>
+                <source srcSet="/images/equipo-ernesto-mejia.webp" type="image/webp" />
+                <img
+                  src="/images/equipo-ernesto-mejia.jpg"
+                  alt="Lic. Ernesto Mejía — Psicólogo Clínico de Centro Amaré"
+                  width="700"
+                  height="525"
+                  className="team-pro-img"
+                  loading="lazy"
+                />
+              </picture>
             </div>
 
-            <div style={{ padding: '54px 22px 24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontSize: '21px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '4px' }}>
+            <div className="team-pro-body">
+              <h3 className="team-pro-name">
                 Lic. Ernesto Mejía
               </h3>
-              <p style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay-text, #8B3822)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
+              <p className="team-pro-role">
                 Psicólogo Clínico Colegiado
               </p>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 600, color: 'var(--color-plum-900)', background: 'var(--color-clay-subtle)', padding: '2px 8px', borderRadius: 'var(--r-pill)', width: 'fit-content', marginBottom: '14px' }}>
-                <span>Acreditado JVPP El Salvador</span>
+              <div className="team-pro-license">
+                <Check size={15} strokeWidth={2.8} />
+                <span>JVPP Acreditado El Salvador</span>
               </div>
-              <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, marginBottom: '16px', flex: 1 }}>
-                Terapeuta de cabecera en Centro Amaré para sesiones online. Especializado en terapia vincular de parejas, gestión de conflictos y salud emocional individual.
+              <p className="team-pro-desc">
+                Terapeuta de cabecera en Centro Amaré para sesiones online. Especializado en terapia vincular de parejas, desescalada de conflictos y apego.
               </p>
-              <div style={{
-                background: 'var(--color-canvas)',
-                borderLeft: '3px solid var(--color-clay)',
-                padding: '8px 12px',
-                borderRadius: '0 8px 8px 0',
-                fontSize: '12px',
-                fontStyle: 'italic',
-                color: 'var(--color-plum-900)',
-                lineHeight: 1.5
-              }}>
-                "Un espacio de escucha empática para traducir reclamos en acuerdos duraderos."
-              </div>
+              <a
+                href={ernestoWhatsappUrl}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="team-pro-whatsapp-btn"
+                aria-label="Agendar con el Lic. Ernesto Mejía por WhatsApp"
+              >
+                <WhatsAppIcon size={18} />
+                <span>Agendar con Ernesto</span>
+              </a>
             </div>
           </div>
 
-          {/* Card 3: Rafael Franco (Especialista Clínico) */}
-          <div style={{
-            background: '#FFFFFF',
-            borderRadius: '24px',
-            border: '1px solid var(--border-hairline)',
-            overflow: 'hidden',
-            boxShadow: '0 12px 36px rgba(35, 18, 33, 0.06)',
-            display: 'flex',
-            flexDirection: 'column'
-          }}>
-            <div style={{
-              background: 'linear-gradient(150deg, var(--color-plum-800) 0%, var(--color-plum-950) 100%)',
-              height: '140px',
-              position: 'relative',
-              padding: '16px'
-            }}>
-              <span style={{
-                position: 'absolute',
-                top: '14px',
-                left: '14px',
-                background: 'rgba(15, 23, 42, 0.75)',
-                backdropFilter: 'blur(8px)',
-                color: '#FFFFFF',
-                fontSize: '10.5px',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                padding: '4px 10px',
-                borderRadius: 'var(--r-pill)',
-                border: '1px solid rgba(255, 255, 255, 0.25)'
-              }}>
-                Cuadro Clínico Especialista
+          {/* Card 3: Mtro. Rafael Franco (Psicólogo Clínico Psicoterapeuta) */}
+          <div className="team-pro-card">
+            <div className="team-pro-img-container">
+              <span className="team-pro-badge team-pro-badge--teal">
+                Psicología Clínica
               </span>
-
-              <div style={{
-                position: 'absolute',
-                bottom: '-42px',
-                left: '20px',
-                width: '92px',
-                height: '92px',
-                borderRadius: '18px',
-                border: '3px solid #FFFFFF',
-                background: 'var(--color-clay-subtle)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 6px 20px rgba(0,0,0,0.16)'
-              }}>
-                <span style={{ fontSize: '26px', fontWeight: 700, color: 'var(--color-clay)' }}>RF</span>
-              </div>
+              <picture>
+                <source srcSet="/images/equipo-rafael-franco.webp" type="image/webp" />
+                <img
+                  src="/images/equipo-rafael-franco.jpg"
+                  alt="Mtro. Rafael Franco — Psicólogo Clínico y Psicoterapeuta"
+                  width="700"
+                  height="525"
+                  className="team-pro-img"
+                  loading="lazy"
+                />
+              </picture>
             </div>
 
-            <div style={{ padding: '54px 22px 24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontSize: '21px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '4px' }}>
+            <div className="team-pro-body">
+              <h3 className="team-pro-name">
                 Mtro. Rafael Franco
               </h3>
-              <p style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay-text, #8B3822)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
-                Psicólogo Clínico · Psicoterapeuta
+              <p className="team-pro-role">
+                Psicólogo Clínico y Psicoterapeuta
               </p>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 600, color: 'var(--color-plum-900)', background: 'var(--color-clay-subtle)', padding: '2px 8px', borderRadius: 'var(--r-pill)', width: 'fit-content', marginBottom: '14px' }}>
-                <span>Acreditado JVPP El Salvador</span>
+              <div className="team-pro-license">
+                <Check size={15} strokeWidth={2.8} />
+                <span>JVPP Acreditado El Salvador</span>
               </div>
-              <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, marginBottom: '16px', flex: 1 }}>
-                Maestro en psicología clínica con sólida trayectoria en psicoterapia de adultos y procesos afectivos complejos, aportando rigor al cuadro interdisciplinar.
+              <p className="team-pro-desc">
+                Maestro en psicología clínica con amplia trayectoria en psicoterapia de adultos, procesos afectivos complejos y asesoría clínica interdisciplinar.
               </p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: 'var(--color-ink-muted)' }}>
-                <ShieldCheck size={14} style={{ color: 'var(--color-clay)' }} />
-                <span>Interconsulta y asesoría clínica</span>
-              </div>
+              <a
+                href={rafaelWhatsappUrl}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="team-pro-whatsapp-btn"
+                aria-label="Agendar con el Mtro. Rafael Franco por WhatsApp"
+              >
+                <WhatsAppIcon size={18} />
+                <span>Agendar con Rafael</span>
+              </a>
             </div>
           </div>
 

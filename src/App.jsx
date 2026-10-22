@@ -24,6 +24,7 @@ import TerapiaIndividualPage from './pages/TerapiaIndividualPage';
 import TerapiaDiasporaPage from './pages/TerapiaDiasporaPage';
 import PreciosPage from './pages/PreciosPage';
 import IrisAlarconPage from './pages/IrisAlarconPage';
+import SobreNosotrosPage from './pages/SobreNosotrosPage';
 import BlogHubPage from './pages/BlogHubPage';
 import BlogPostEmigrarPareja from './pages/blog/BlogPostEmigrarPareja';
 import BlogPostPreciosTerapia from './pages/blog/BlogPostPreciosTerapia';
@@ -117,6 +118,7 @@ function App({ initialPath = '/' }) {
       '/terapia-individual': 'Psicólogos en El Salvador · Clínica Psicológica Online | Centro Amaré',
       '/salvadorenos-en-el-exterior': 'Psicólogos Salvadoreños Online | Terapia en el Exterior — Centro Amaré',
       '/iris-alarcon': 'Licda. Iris Alarcón | Directora Clínica Centro Amaré (JVPP)',
+      '/sobre-nosotros': 'Sobre Centro Amaré | Historia y Misión Clínica en El Salvador y el Mundo',
       '/precios': 'Precios y Honorarios — Terapia de Pareja El Salvador | Centro Amaré',
       '/blog': 'Blog & Recursos Clínicos | Centro Amaré',
       '/blog/cuando-ir-a-terapia-de-pareja': '¿Cuándo ir a Terapia de Pareja? 8 Señales de Alerta | Centro Amaré',
@@ -163,6 +165,10 @@ function App({ initialPath = '/' }) {
 
   if (cleanPath === '/iris-alarcon') {
     return <IrisAlarconPage />;
+  }
+
+  if (cleanPath === '/sobre-nosotros' || cleanPath === '/sobre-centro-amare' || cleanPath === '/quienes-somos') {
+    return <SobreNosotrosPage />;
   }
 
   if (cleanPath === '/precios') {

@@ -50,11 +50,11 @@ export default function Navbar() {
         {/* Desktop Links */}
         <ul className="nav-links">
           <li><a href="/#especialidades" className="nav-link">Especialidades</a></li>
+          <li><a href="/sobre-nosotros" className="nav-link">Sobre Amaré</a></li>
           <li><a href="/salvadorenos-en-el-exterior" className="nav-link">Salvadoreños en el Exterior</a></li>
           <li><a href="/#equipo" className="nav-link">Equipo Clínico</a></li>
           <li><a href="/precios" className="nav-link">Honorarios</a></li>
           <li><a href="/blog" className="nav-link">Guías</a></li>
-          <li><a href="/#faq" className="nav-link">Preguntas</a></li>
         </ul>
 
         {/* Action Button & Menu */}
@@ -109,6 +109,7 @@ export default function Navbar() {
           zIndex: 101
         }}>
           <a href="/#especialidades" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Especialidades Clínicas</a>
+          <a href="/sobre-nosotros" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Sobre Centro Amaré (Nuestra Historia)</a>
           <a href="/test-de-pareja" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-clay)' }}>Test de Pareja (2 min)</a>
           <a href="/salvadorenos-en-el-exterior" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Salvadoreños en el Exterior</a>
           <a href="/#equipo" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Equipo Clínico</a>

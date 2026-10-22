@@ -90,6 +90,13 @@ const routes = [
     canonical: `${BASE_URL}/iris-alarcon`,
   },
   {
+    path: '/sobre-nosotros',
+    file: 'sobre-nosotros/index.html',
+    title: 'Sobre Centro Amaré | Historia y Misión Clínica en El Salvador y el Mundo',
+    description: 'Conoce la historia de Centro Amaré. Fundado en 2017 por la Mtra. Iris Alarcón en San Salvador, somos la clínica de psicología digital que promueve el bienestar de parejas y adultos en El Salvador y la diáspora.',
+    canonical: `${BASE_URL}/sobre-nosotros`,
+  },
+  {
     path: '/precios',
     file: 'precios/index.html',
     title: 'Precios y Honorarios — Terapia de Pareja | Centro Amaré',

@@ -117,6 +117,7 @@ export default function Footer() {
             </div>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)' }}>
               <li><a href="/test-de-pareja" style={{ color: '#F4B8A5', fontWeight: 600 }}>Test de Pareja (2 min)</a></li>
+              <li><a href="/sobre-nosotros" style={{ color: '#F4B8A5', fontWeight: 600 }}>Sobre Centro Amaré (Historia)</a></li>
               <li><a href="/iris-alarcon">Iris Alarcón (Sobre Mí)</a></li>
               <li><a href="/blog">Blog & Guías Clínicas</a></li>
               <li><a href="/privacidad">Política de Privacidad</a></li>

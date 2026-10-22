@@ -7,7 +7,7 @@ import { HeartHandshake, ShieldCheck, CheckCircle2, Clock, Globe, ArrowRight, Sp
 import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function TerapiaParejaPage() {
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, me interesa agendar una sesión inicial gratuita de 30 minutos para Terapia de Pareja.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me interesa agendar una sesión inicial gratuita de 30 minutos para Terapia de Pareja.");
 
   const reasons = [
     {

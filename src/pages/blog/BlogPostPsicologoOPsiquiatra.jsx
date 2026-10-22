@@ -5,7 +5,7 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp';
 import { ArrowLeft, Clock, Stethoscope, CheckCircle2, MessageCircle, HelpCircle } from 'lucide-react';
 
 export default function BlogPostPsicologoOPsiquiatra() {
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí la guía de diferencias entre psicólogo y psiquiatra en Centro Amaré y me gustaría orientación para saber qué especialista necesito.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí la guía de diferencias entre psicólogo y psiquiatra en Centro Amaré y me gustaría orientación para saber qué especialista necesito.");
 
   return (
     <div className="app-wrapper">

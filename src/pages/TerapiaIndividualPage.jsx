@@ -7,7 +7,7 @@ import { Brain, ShieldCheck, CheckCircle2, Clock, Globe, ArrowRight, Sparkles, A
 import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function TerapiaIndividualPage() {
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, quisiera agendar mi primera sesión de orientación de 30 minutos sin costo para Terapia Individual en Centro Amaré.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera agendar mi primera sesión de orientación de 30 minutos sin costo para Terapia Individual en Centro Amaré.");
 
   const problems = [
     {

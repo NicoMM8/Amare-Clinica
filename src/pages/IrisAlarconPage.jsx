@@ -8,7 +8,7 @@ import { Award, BookOpen, CheckCircle2, ShieldCheck, HeartHandshake, Brain, Cloc
 import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function IrisAlarconPage() {
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, me gustaría agendar la primera conversación de 30 minutos sin costo con la psicóloga Iris Alarcón.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar la primera conversación de 30 minutos sin costo con la psicóloga Iris Alarcón.");
 
   return (
     <div className="app-wrapper">

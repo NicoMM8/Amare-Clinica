@@ -2,7 +2,7 @@ import React from 'react';
 import { Shield, Lock, EyeOff, FileText, CheckCircle2, ArrowLeft, MessageCircle } from 'lucide-react';
 
 export default function PrivacidadPage() {
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí su política de privacidad y quisiera realizar una consulta previa.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí su política de privacidad y quisiera realizar una consulta previa.");
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-canvas)', color: 'var(--color-ink-primary)' }}>

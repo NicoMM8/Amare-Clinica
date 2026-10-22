@@ -23,7 +23,7 @@ function WhatsAppIcon({ size = 20, className = "" }) {
 
 export default function Hero() {
   const [importaHovered, setImportaHovered] = useState(false);
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, vengo de la web y me gustaría agendar una primera conversación sin costo.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vengo de la web y me gustaría agendar una primera conversación sin costo.");
 
   return (
     <section className="hero-section" id="inicio">

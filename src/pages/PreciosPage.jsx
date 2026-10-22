@@ -8,7 +8,7 @@ import { trackWhatsAppClick } from '../lib/analytics';
 import { PaymentMethodBadges } from '../components/PaymentLogos';
 
 export default function PreciosPage() {
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, vi el Plan Mensual en la web y me gustaría agendar la primera conversación.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vi el Plan Mensual en la web y me gustaría agendar la primera conversación.");
 
   return (
     <div className="app-wrapper">
@@ -237,7 +237,7 @@ export default function PreciosPage() {
               </div>
 
               <a
-                href="/chat?text=Hola,%20quisiera%20consultar%20sobre%20la%20facturaci%C3%B3n%20para%20el%20reembolso%20de%20mi%20seguro%20m%C3%A9dico."
+                href="https://wa.me/50373184781?text=Hola,%20quisiera%20consultar%20sobre%20la%20facturaci%C3%B3n%20para%20el%20reembolso%20de%20mi%20seguro%20m%C3%A9dico."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"

@@ -5,7 +5,7 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp';
 import { ArrowLeft, Clock, Heart, ShieldAlert, CheckCircle2, MessageCircle, Sparkles } from 'lucide-react';
 
 export default function BlogPostDependenciaEmocional() {
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí el artículo sobre dependencia emocional en Centro Amaré y quisiera agendar una sesión inicial de orientación.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí el artículo sobre dependencia emocional en Centro Amaré y quisiera agendar una sesión inicial de orientación.");
 
   return (
     <div className="app-wrapper">

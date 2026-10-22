@@ -5,7 +5,7 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp';
 import { ArrowLeft, Clock, Users, ShieldCheck, CheckCircle2, MessageCircle, HelpCircle } from 'lucide-react';
 
 export default function BlogPostPrimeraSesionPareja() {
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí el artículo sobre qué pasa en la primera sesión de terapia de pareja en Centro Amaré y quisiera agendar la sesión inicial sin costo.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí el artículo sobre qué pasa en la primera sesión de terapia de pareja en Centro Amaré y quisiera agendar la sesión inicial sin costo.");
 
   return (
     <div className="app-wrapper">

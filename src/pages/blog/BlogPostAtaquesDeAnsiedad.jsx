@@ -5,7 +5,7 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp';
 import { ArrowLeft, Clock, ShieldAlert, CheckCircle2, MessageCircle, AlertTriangle, HeartPulse } from 'lucide-react';
 
 export default function BlogPostAtaquesDeAnsiedad() {
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí el artículo sobre ataques de ansiedad y pánico en Centro Amaré y quisiera consultar por una sesión diagnóstica.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí el artículo sobre ataques de ansiedad y pánico en Centro Amaré y quisiera consultar por una sesión diagnóstica.");
 
   return (
     <div className="app-wrapper">

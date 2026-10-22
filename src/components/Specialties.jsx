@@ -4,8 +4,8 @@ import React from 'react';
 import { HeartHandshake, Brain, MessageCircle } from 'lucide-react';
 
 export default function Specialties() {
-  const whatsappPareja = "/chat?text=" + encodeURIComponent("Hola, me gustaría agendar la sesión exploratoria de 30 minutos sin costo para Terapia de Pareja.");
-  const whatsappIndividual = "/chat?text=" + encodeURIComponent("Hola, me gustaría agendar la sesión exploratoria de 30 minutos sin costo para Terapia Individual.");
+  const whatsappPareja = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar la sesión exploratoria de 30 minutos sin costo para Terapia de Pareja.");
+  const whatsappIndividual = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar la sesión exploratoria de 30 minutos sin costo para Terapia Individual.");
 
   return (
     <section className="section" id="especialidades" style={{ background: 'var(--color-surface)' }}>

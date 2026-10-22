@@ -3,7 +3,7 @@ import { MessageCircle, HeartHandshake, DollarSign, BookOpen, Globe, ShieldCheck
 import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function EnlacesBioPage() {
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, vi el perfil en Instagram y me gustaría agendar la primera conversación de 30 min sin costo.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vi el perfil en Instagram y me gustaría agendar la primera conversación de 30 min sin costo.");
 
   const links = [
     {

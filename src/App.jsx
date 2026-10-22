@@ -46,7 +46,6 @@ import BlogPostCrianzaPareja from './pages/blog/BlogPostCrianzaPareja';
 import EnlacesBioPage from './pages/EnlacesBioPage';
 import PrivacidadPage from './pages/PrivacidadPage';
 import CookiesPage from './pages/CookiesPage';
-import ChatRedirectPage from './pages/ChatRedirectPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App({ initialPath = '/' }) {
@@ -301,10 +300,6 @@ function App({ initialPath = '/' }) {
 
   if (cleanPath === '/cookies' || cleanPath === '/politica-de-cookies') {
     return <CookiesPage />;
-  }
-
-  if (cleanPath === '/chat') {
-    return <ChatRedirectPage />;
   }
 
   // Si no es la ruta raíz ('/' o ''), se trata de una página no existente (404 real)

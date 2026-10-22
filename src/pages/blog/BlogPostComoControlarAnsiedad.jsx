@@ -5,7 +5,7 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp';
 import { ArrowLeft, Clock, Activity, ShieldCheck, CheckCircle2, MessageCircle, AlertCircle } from 'lucide-react';
 
 export default function BlogPostComoControlarAnsiedad() {
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí la guía clínica sobre cómo controlar la ansiedad en Centro Amaré y quisiera consultar por una sesión de evaluación sin costo.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí la guía clínica sobre cómo controlar la ansiedad en Centro Amaré y quisiera consultar por una sesión de evaluación sin costo.");
 
   return (
     <div className="app-wrapper">

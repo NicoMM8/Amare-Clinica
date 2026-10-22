@@ -3,11 +3,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/chat",
-      "destination": "https://wa.me/50373184781",
-      "permanent": false
-    },
-    {
       "source": "/:path*",
       "has": [
         {

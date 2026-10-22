@@ -74,7 +74,7 @@ export default function RelationshipPulse() {
   const [selectedId, setSelectedId] = useState('loop');
 
   const getWhatsAppUrl = (msg) => {
-    return `/chat?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/50373184781?text=${encodeURIComponent(msg)}`;
   };
 
   const handleSelectMood = (moodId) => {

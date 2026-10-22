@@ -4,7 +4,7 @@ import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function FloatingWhatsApp() {
   const [isVisible, setIsVisible] = useState(false);
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, tengo una consulta rápida sobre la terapia online en Centro Amaré.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, tengo una consulta rápida sobre la terapia online en Centro Amaré.");
 
   useEffect(() => {
     const handleScroll = () => {

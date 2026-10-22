@@ -7,7 +7,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navHovered, setNavHovered] = useState(false);
 
-  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, me gustaría agendar una primera conversación.");
+  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar una primera conversación.");
 
   const handleWhatsAppClick = (location) => {
     trackWhatsAppClick(location, 'Primera sesión gratis');

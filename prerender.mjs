@@ -326,6 +326,119 @@ async function prerender() {
         pageHtml = pageHtml.replace('<head>', '<head>\n    <meta name="robots" content="noindex, follow" />')
       }
 
+      // ── Datos Estructurados enriquecidos (BreadcrumbList y BlogPosting YMYL) ──
+      const cleanTitle = route.title ? route.title.split('|')[0].trim() : ''
+      const routeSchemas = []
+
+      if (route.path !== '/' && !route.noindex) {
+        if (route.path.startsWith('/blog/')) {
+          // Breadcrumbs para artículos del Blog
+          routeSchemas.push({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Inicio',
+                'item': `${BASE_URL}/`
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Blog',
+                'item': `${BASE_URL}/blog`
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': cleanTitle,
+                'item': route.canonical
+              }
+            ]
+          })
+
+          // BlogPosting con Autoría Médica E-E-A-T
+          routeSchemas.push({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            '@id': `${route.canonical}#article`,
+            'mainEntityOfPage': {
+              '@type': 'WebPage',
+              '@id': route.canonical
+            },
+            'headline': cleanTitle,
+            'description': route.description,
+            'image': `${BASE_URL}/og-preview-amare.jpg`,
+            'author': {
+              '@type': 'Person',
+              'name': 'Mtra. Iris Alarcón',
+              'jobTitle': 'Directora Clínica y Psicóloga Colegiada',
+              'url': `${BASE_URL}/iris-alarcon`,
+              'hasCredential': {
+                '@type': 'EducationalOccupationalCredential',
+                'credentialCategory': 'license',
+                'name': 'Registro Profesional Sanitario JVPP N.º 47096'
+              }
+            },
+            'publisher': {
+              '@type': 'MedicalBusiness',
+              'name': 'Centro Amaré',
+              'url': `${BASE_URL}/`,
+              'logo': {
+                '@type': 'ImageObject',
+                'url': `${BASE_URL}/images/logo-nav.png`
+              }
+            },
+            'datePublished': '2026-01-15T08:00:00-06:00',
+            'dateModified': '2026-10-22T12:00:00-06:00',
+            'inLanguage': 'es'
+          })
+        } else {
+          // Breadcrumbs para subpáginas principales de servicio
+          const pageNames = {
+            '/terapia-de-pareja': 'Terapia de Pareja',
+            '/sexologia-clinica': 'Sexología Clínica',
+            '/terapia-individual': 'Terapia Individual',
+            '/salvadorenos-en-el-exterior': 'Salvadoreños en el Exterior',
+            '/iris-alarcon': 'Mtra. Iris Alarcón (JVPP)',
+            '/sobre-nosotros': 'Sobre Nosotros',
+            '/precios': 'Precios y Honorarios',
+            '/blog': 'Blog de Psicología',
+            '/test-de-pareja': 'Test de Pareja Online',
+            '/privacidad': 'Política de Privacidad',
+            '/cookies': 'Política de Cookies'
+          }
+
+          const pageName = pageNames[route.path] || cleanTitle
+          routeSchemas.push({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Inicio',
+                'item': `${BASE_URL}/`
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': pageName,
+                'item': route.canonical
+              }
+            ]
+          })
+        }
+      }
+
+      if (routeSchemas.length > 0) {
+        const schemaScripts = routeSchemas
+          .map(s => `\n    <script type="application/ld+json">${JSON.stringify(s)}</script>`)
+          .join('')
+        pageHtml = pageHtml.replace('</head>', `${schemaScripts}\n  </head>`)
+      }
+
       // Limpiar comentarios HTML en producción para optimizar payload y cumplir auditorías
       pageHtml = pageHtml.replace(/<!--(?!\[if)[\s\S]*?-->/g, '')
 

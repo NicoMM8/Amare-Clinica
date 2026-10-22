@@ -405,6 +405,16 @@
   box-shadow: 0 4px 12px rgba(34, 40, 74, 0.18);
 }
 
+.v-hero-button:disabled,
+.v-hero-button[disabled],
+.v-hero-button--disabled {
+  opacity: 0.42;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
 /* Standard Cojeev Hero Button Label */
 .v-hero-button__window {
   position: relative;

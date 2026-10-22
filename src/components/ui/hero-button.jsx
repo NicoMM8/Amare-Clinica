@@ -121,7 +121,10 @@ export function HeroButton({
   target,
   rel,
   className = "",
-  style = {}
+  style = {},
+  disabled = false,
+  type = "button",
+  ...rest
 }) {
   const [hovered, setHovered] = React.useState(false);
 
@@ -140,7 +143,8 @@ export function HeroButton({
     : (effectiveVariant === "whatsapp" || effectiveVariant === "green") 
       ? "v-hero-button--whatsapp" 
       : "";
-  const btnClass = `v-hero-button ${variantClass} ${sizeClasses} ${className}`.trim();
+  const disabledClass = disabled ? "v-hero-button--disabled" : "";
+  const btnClass = `v-hero-button ${variantClass} ${sizeClasses} ${disabledClass} ${className}`.trim();
 
   const buttonContent = (
     <>
@@ -157,7 +161,7 @@ export function HeroButton({
       </span>
 
       {/* 000h living coiling arrow with motion path morph */}
-      <LivingCoilingArrow hovered={hovered} />
+      <LivingCoilingArrow hovered={!disabled && hovered} />
     </>
   );
 
@@ -171,16 +175,18 @@ export function HeroButton({
     const effectiveRel = rel || (isExternal ? "nofollow noopener noreferrer" : undefined);
     return (
       <a
-        href={href}
+        href={disabled ? undefined : href}
         target={target || (isExternal ? "_blank" : undefined)}
         rel={effectiveRel}
         data-hero-appearance={appearance}
         data-hero-shape={shape}
+        aria-disabled={disabled || undefined}
         className={btnClass}
         style={combinedStyle}
-        onClick={onClick}
-        onMouseEnter={() => setHovered(true)}
+        onClick={disabled ? (e) => e.preventDefault() : onClick}
+        onMouseEnter={() => !disabled && setHovered(true)}
         onMouseLeave={() => setHovered(false)}
+        {...rest}
       >
         {buttonContent}
       </a>
@@ -189,14 +195,16 @@ export function HeroButton({
 
   return (
     <button
-      type="button"
+      type={type}
+      disabled={disabled}
       data-hero-appearance={appearance}
       data-hero-shape={shape}
       className={btnClass}
       style={combinedStyle}
-      onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
+      onClick={disabled ? undefined : onClick}
+      onMouseEnter={() => !disabled && setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      {...rest}
     >
       {buttonContent}
     </button>

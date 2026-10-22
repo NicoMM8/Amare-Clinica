@@ -30,7 +30,7 @@ const getToneColor = (toneName) => {
   if (toneName === "blue" || toneName === "ink") return "var(--color-plum-900, #22284A)";
   if (toneName === "olive") return "var(--color-moss, #768B78)";
   if (toneName === "yellow") return "var(--color-gold, #D4A373)";
-  return "var(--color-clay, #AA5A40)";
+  return "var(--color-clay, #9E4B33)";
 };
 
 // Context for QuestionnaireOptions
@@ -38,11 +38,11 @@ const OptionsContext = React.createContext({
   name: "",
   value: "",
   onValueChange: () => {},
-  selectorShape: "organic",
+  selectorShape: "circle",
   selectorSize: "default",
-  selectorIndicator: "flower",
+  selectorIndicator: "check",
   showSelectorIndicator: true,
-  selectorTone: "pink"
+  selectorTone: "clay"
 });
 
 export function Questionnaire({
@@ -105,11 +105,11 @@ export function QuestionnaireOptions({
   name,
   value,
   onValueChange,
-  selectorShape = "organic",
+  selectorShape = "circle",
   selectorSize = "default",
-  selectorIndicator = "flower",
+  selectorIndicator = "check",
   showSelectorIndicator = true,
-  selectorTone = "pink",
+  selectorTone = "clay",
   className = "",
   ...props
 }) {
@@ -152,10 +152,10 @@ export function QuestionnaireOption({
 }) {
   const ctx = React.useContext(OptionsContext);
   const isSelected = ctx.value === optionValue;
-  const shape = selectorShape || ctx.selectorShape || "organic";
-  const tone = selectorTone || ctx.selectorTone || "pink";
+  const shape = selectorShape || ctx.selectorShape || "circle";
+  const tone = selectorTone || ctx.selectorTone || "clay";
   const size = selectorSize || ctx.selectorSize || "default";
-  const indicator = selectorIndicator || ctx.selectorIndicator || "flower";
+  const indicator = selectorIndicator || ctx.selectorIndicator || "check";
   const showIndicator = showSelectorIndicator !== undefined ? showSelectorIndicator : (ctx.showSelectorIndicator !== false);
   const sizePx = size === "sm" ? 26 : size === "lg" ? 38 : 32;
 

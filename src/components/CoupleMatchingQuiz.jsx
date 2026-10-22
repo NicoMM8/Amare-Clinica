@@ -19,6 +19,7 @@ import {
   QuestionnaireOptionBody,
 } from './ui/questionnaire';
 import { Button } from './ui/button';
+import { HeroButton } from './cojeev/HeroButton';
 import { Icon } from './ui/icon';
 
 const STORAGE_KEY = 'amare_quiz_draft_v1';
@@ -437,19 +438,19 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     Un equipo clínico con Máster en Pareja y Sexología que comprende su contexto cultural, el desgaste que atraviesan y la forma en la que quieren sanar su vínculo.
                   </p>
 
-                  <Button
-                    variant="accent"
-                    size="lg"
+                  <HeroButton
+                    appearance="paper-fold"
+                    variant="clay"
                     onClick={() => move(1)}
                     style={{
-                      padding: '16px 36px',
-                      fontSize: '16px',
-                      boxShadow: '0 8px 24px rgba(183, 89, 64, 0.28)',
+                      height: '52px',
+                      padding: '0 28px',
+                      fontSize: '15.5px',
+                      boxShadow: '0 8px 24px rgba(183, 89, 64, 0.32)',
                     }}
                   >
                     Evaluar nuestro caso de pareja
-                    <Icon name="arrow-right" size="sm" />
-                  </Button>
+                  </HeroButton>
 
                   <div
                     style={{
@@ -549,11 +550,11 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                                 handleSelectOption(question.id, foundOpt);
                               }
                             }}
-                            selectorShape="organic"
+                            selectorShape="circle"
                             selectorSize="default"
-                            selectorIndicator="flower"
+                            selectorIndicator="check"
                             showSelectorIndicator={true}
-                            selectorTone={index % 2 === 0 ? "pink" : "blue"}
+                            selectorTone="clay"
                           >
                             {question.options.map((opt) => (
                               <QuestionnaireOption
@@ -573,7 +574,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     })}
                   </div>
 
-                  {/* Footer de navegación Cojeev UI */}
+                  {/* Footer de navegación Cojeev UI con HeroButton auténtico */}
                   <footer className="v-questionnaire-example__footer">
                     <Button
                       variant="ghost"
@@ -584,28 +585,41 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     </Button>
 
                     {currentStep < questions.length ? (
-                      <Button
-                        variant="secondary"
+                      <HeroButton
+                        appearance="paper-fold"
+                        variant="clay"
                         onClick={() => move(currentStep + 1)}
                         disabled={!answers[currentQ.id]}
+                        style={{
+                          height: '48px',
+                          padding: '0 24px',
+                          fontSize: '15px',
+                          boxShadow: answers[currentQ.id] ? '0 8px 24px rgba(183, 89, 64, 0.32)' : 'none',
+                        }}
                       >
                         Siguiente pregunta
-                        <Icon name="arrow-right" size="sm" />
-                      </Button>
+                      </HeroButton>
                     ) : (
-                      <Button
-                        variant="accent"
+                      <HeroButton
+                        appearance="paper-fold"
+                        variant="clay"
                         type="submit"
                         disabled={!answers[currentQ.id]}
+                        style={{
+                          height: '48px',
+                          padding: '0 24px',
+                          fontSize: '15px',
+                          boxShadow: answers[currentQ.id] ? '0 8px 24px rgba(183, 89, 64, 0.32)' : 'none',
+                        }}
                       >
                         Siguiente: Espacio para escribir
-                        <Icon name="arrow-right" size="sm" />
-                      </Button>
+                      </HeroButton>
                     )}
 
                     <Button
                       variant="ghost"
-                      type="reset"
+                      type="button"
+                      onClick={startAgain}
                     >
                       Reiniciar
                     </Button>
@@ -692,13 +706,19 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     Atrás
                   </Button>
 
-                  <Button
-                    variant="accent"
+                  <HeroButton
+                    appearance="paper-fold"
+                    variant="clay"
                     onClick={() => move(questions.length + 2)}
+                    style={{
+                      height: '48px',
+                      padding: '0 24px',
+                      fontSize: '15px',
+                      boxShadow: '0 8px 24px rgba(183, 89, 64, 0.32)',
+                    }}
                   >
                     Ver resultado y especialista
-                    <Icon name="arrow-up-right" size="sm" />
-                  </Button>
+                  </HeroButton>
 
                   {!answers.notes?.trim() && (
                     <Button

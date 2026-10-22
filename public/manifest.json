@@ -1,0 +1,23 @@
+{
+  "name": "Centro Amaré — Terapia de Pareja y Psicología Online",
+  "short_name": "Centro Amaré",
+  "description": "Centro de psicoterapia clínica basada en evidencia para parejas y adultos en El Salvador y la diáspora.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#231221",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/favicon.png?v=3",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-32x32.png?v=3",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}

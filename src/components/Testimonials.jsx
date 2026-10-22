@@ -199,9 +199,9 @@ export default function Testimonials() {
                 </div>
 
                 {/* Titular interpretativo */}
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '10px', lineHeight: 1.35 }}>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '10px', lineHeight: 1.35 }}>
                   "{item.headline}"
-                </h3>
+                </div>
 
                 {/* Texto textual exacto del paciente */}
                 <p style={{

@@ -78,6 +78,7 @@ html {
   color: var(--color-ink-primary);
   line-height: 1.6;
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height, 80px);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -85,6 +86,7 @@ html {
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
   background-color: var(--color-canvas);
   background-image: 

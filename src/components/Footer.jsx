@@ -98,9 +98,9 @@ export default function Footer() {
 
           {/* Col 2: Especialidades */}
           <div>
-            <h3 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#E8BA9B', marginBottom: '16px' }}>
+            <div style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#E8BA9B', marginBottom: '16px' }}>
               Especialidades
-            </h3>
+            </div>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)' }}>
               <li><a href="/terapia-de-pareja" style={{ transition: 'color 0.2s' }}>Terapia de Pareja</a></li>
               <li><a href="/sexologia-clinica" style={{ transition: 'color 0.2s' }}>Sexología Clínica</a></li>
@@ -112,9 +112,9 @@ export default function Footer() {
 
           {/* Col 3: Navegación & Blog */}
           <div>
-            <h3 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#E8BA9B', marginBottom: '16px' }}>
+            <div style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#E8BA9B', marginBottom: '16px' }}>
               El Centro & Recursos
-            </h3>
+            </div>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)' }}>
               <li><a href="/test-de-pareja" style={{ color: '#F4B8A5', fontWeight: 600 }}>Test de Pareja (2 min)</a></li>
               <li><a href="/iris-alarcon">Iris Alarcón (Sobre Mí)</a></li>
@@ -128,9 +128,9 @@ export default function Footer() {
 
           {/* Col 4: Compromiso Ético y JVPP */}
           <div>
-            <h3 style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#E8BA9B', marginBottom: '16px' }}>
+            <div style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#E8BA9B', marginBottom: '16px' }}>
               Acreditación Sanitaria JVPP N.º 47096
-            </h3>
+            </div>
             <p style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '13px', lineHeight: 1.6, marginBottom: '12px' }}>
               Directora Clínica: <strong>Lic. Iris Alarcón</strong>, Psicóloga Colegiada con <strong>Registro Profesional JVPP N.º 47096</strong> (Junta de Vigilancia de la Profesión en Psicología de El Salvador).
             </p>

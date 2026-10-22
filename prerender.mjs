@@ -240,9 +240,12 @@ async function prerender() {
         pageHtml = pageHtml.replace(/<meta name="twitter:title" content=".*?" \/>/, `<meta name="twitter:title" content="${route.title}" />`)
       }
 
-      // Canonical
+      // Canonical & Hreflang
       if (route.canonical) {
         pageHtml = pageHtml.replace(/<link rel="canonical" href=".*?" \/>/, `<link rel="canonical" href="${route.canonical}" />`)
+        pageHtml = pageHtml.replace(/<link rel="alternate" hreflang="es" href=".*?" \/>/, `<link rel="alternate" hreflang="es" href="${route.canonical}" />`)
+        pageHtml = pageHtml.replace(/<link rel="alternate" hreflang="es-SV" href=".*?" \/>/, `<link rel="alternate" hreflang="es-SV" href="${route.canonical}" />`)
+        pageHtml = pageHtml.replace(/<link rel="alternate" hreflang="x-default" href=".*?" \/>/, `<link rel="alternate" hreflang="x-default" href="${route.canonical}" />`)
         pageHtml = pageHtml.replace(/<meta property="og:url" content=".*?" \/>/, `<meta property="og:url" content="${route.canonical}" />`)
       }
 

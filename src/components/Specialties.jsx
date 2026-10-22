@@ -126,7 +126,7 @@ export default function Specialties() {
               </p>
 
               <div style={{ fontSize: '13px', color: 'var(--color-plum-900)', background: 'var(--color-canvas)', padding: '10px 14px', borderRadius: '12px', marginBottom: '24px' }}>
-                <strong>Base científica:</strong> Terapia Cognitivo-Conductual (TCC) y Regulación Emocional (DBT)
+                <strong>Metodología basada en evidencia:</strong> Terapia Cognitivo-Conductual (TCC) y Regulación Emocional (DBT)
               </div>
             </div>
 

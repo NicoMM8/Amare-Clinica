@@ -149,7 +149,7 @@ export default function CoupleTherapyIntro() {
             >
               Vivir fuera de El Salvador —entre <strong>turnos largos, el cansancio y la distancia con la familia</strong>— casi no deja tiempo para sentarse a hablar con calma. Y si viven dentro del país, <strong>el ritmo diario y el tráfico</strong> hacen que vayan postergando lo importante hasta que el silencio pesa en casa.
               <br /><br />
-              Cuando cuesta entenderse o hablar de intimidad, <strong>intentar explicárselo en otro idioma a un terapeuta que no conoce tus raíces agota el doble</strong>. En Centro Amaré tienen un espacio de terapia de pareja online y en El Salvador donde <strong>no necesitas traducir lo que sientes</strong> ni justificar tu historia.
+              Cuando cuesta entenderse o hablar de intimidad, intentar explicárselo en otro idioma a un terapeuta ajeno a tus raíces <strong>agota el doble</strong>. En Centro Amaré tienen un espacio de terapia de pareja online y en El Salvador donde <strong>no necesitas traducir lo que sientes</strong> ni justificar tu historia.
             </p>
           </div>
 

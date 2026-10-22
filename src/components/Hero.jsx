@@ -54,45 +54,42 @@ export default function Hero() {
           {/* ── LEFT COLUMN: Content & Social Proof ── */}
           <div className="hero-content">
             
-            {/* Main SEO H1 (Clinical Eyebrow + Emotional Headline) */}
+            {/* Eyebrow de Especialidad Clínica Colegiada */}
+            <div 
+              className="badge-pill font-sans hero-eyebrow-pill" 
+              style={{ 
+                fontSize: '13px', 
+                fontWeight: 600, 
+                letterSpacing: 'normal',
+                textTransform: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                alignSelf: 'flex-start',
+                marginBottom: '14px'
+              }}
+            >
+              <span className="badge-dot" aria-hidden="true" />
+              <span className="hero-eyebrow-desktop">Terapia de Pareja y Sexología Clínica Online en El Salvador y el Exterior</span>
+              <span className="hero-eyebrow-mobile">Terapia de Pareja y Sexología Clínica</span>
+            </div>
+
+            {/* Main SEO H1 (Consonante con el título de la página y el contenido) */}
             <h1 
               className="hero-headline font-serif" 
               style={{ 
                 margin: '0 0 16px 0', 
-                fontSize: 'clamp(36px, 4.4vw, 56px)', 
-                lineHeight: 1.12, 
+                fontSize: 'clamp(34px, 4.2vw, 54px)', 
+                lineHeight: 1.14, 
                 letterSpacing: '-0.025em', 
                 color: 'var(--color-plum-900)',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-                gap: '14px'
               }}
               onMouseEnter={() => setImportaHovered(true)}
               onMouseLeave={() => setImportaHovered(false)}
             >
-              {/* Eyebrow con Palabras Clave SEO: Terapia de Pareja y Sexología Clínica Online en El Salvador y el Exterior */}
-              <span 
-                className="badge-pill font-sans hero-eyebrow-pill" 
-                style={{ 
-                  fontSize: '13px', 
-                  fontWeight: 600, 
-                  letterSpacing: 'normal',
-                  textTransform: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  alignSelf: 'flex-start'
-                }}
-              >
-                <span className="badge-dot" aria-hidden="true" />
-                <span className="hero-eyebrow-desktop">Terapia de Pareja y Sexología Clínica Online en El Salvador y el Exterior</span>
-                <span className="hero-eyebrow-mobile">Terapia de Pareja y Sexología Clínica</span>
-              </span>
-
-              {/* Titular Emocional de Marca con 'importa' Animado */}
-              <span style={{ display: 'block' }}>
-                Lo que sientes{' '}
+              Terapia de pareja en El Salvador y online:{' '}
+              <span style={{ display: 'inline', whiteSpace: 'nowrap' }}>
+                lo que sientes{' '}
                 <span 
                   style={{ 
                     position: 'relative', 

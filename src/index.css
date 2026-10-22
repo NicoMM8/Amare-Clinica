@@ -455,7 +455,7 @@ button {
 
 /* Mobile toggle button (oculto en desktop) */
 .nav-mobile-toggle {
-  display: none !important;
+  display: none;
 }
 
 .nav-cta-text-mobile {
@@ -471,7 +471,7 @@ button {
     display: none;
   }
   .nav-mobile-toggle {
-    display: inline-flex;
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
     width: 38px;
@@ -483,6 +483,7 @@ button {
     box-shadow: 0 2px 8px rgba(34, 40, 74, 0.06);
     padding: 0;
     cursor: pointer;
+    flex-shrink: 0;
     transition: all var(--duration-fast) ease;
   }
   .nav-mobile-toggle:hover {

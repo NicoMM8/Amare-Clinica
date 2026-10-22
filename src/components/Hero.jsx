@@ -206,24 +206,23 @@ export default function Hero() {
 
           {/* ── RIGHT COLUMN: Clinical Psychology Consultation Photography ── */}
           <div className="hero-visual-card">
-            {/* Ambient Warm Aura that connects the photo with the page canvas */}
-            <div className="hero-visual-aura" aria-hidden="true" />
-
-            {/* Seamless blended frame */}
-            <div className="hero-visual-frame">
-              <picture style={{ width: '100%', height: '100%', display: 'block' }}>
-                <source srcSet="/images/hero-amare-collage-1200.webp 1200w, /images/hero-amare-collage-800.webp 800w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
-                <source srcSet="/images/hero-amare-collage-1200.jpg" type="image/jpeg" />
-                <img
-                  src="/images/hero-amare-collage-1200.jpg"
-                  alt="Centro Amaré — Terapia de pareja, intimidad y consulta clínica en El Salvador y el exterior"
-                  className="hero-visual-img"
-                  fetchPriority="high"
-                  width="1200"
-                  height="800"
-                />
-              </picture>
-            </div>
+            <picture style={{ width: '100%', height: '100%', display: 'block' }}>
+              <source srcSet="/images/hero-amare-collage-1200.webp 1200w, /images/hero-amare-collage-800.webp 800w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
+              <source srcSet="/images/hero-amare-collage-1200.jpg" type="image/jpeg" />
+              <img
+                src="/images/hero-amare-collage-1200.jpg"
+                alt="Centro Amaré — Terapia de pareja, intimidad y consulta clínica en El Salvador y el exterior"
+                className="hero-visual-img"
+                fetchPriority="high"
+                width="1200"
+                height="800"
+                style={{
+                  width: '100%',
+                  display: 'block',
+                  objectFit: 'cover',
+                }}
+              />
+            </picture>
 
             {/* Subtle Ambient Live Badge in the photo */}
             <div

@@ -216,6 +216,47 @@ export default function IrisAlarconPage() {
                 </p>
               </div>
             </div>
+
+            {/* Preguntas frecuentes sobre la atención clínica de Iris Alarcón */}
+            <div style={{ marginTop: '56px', maxWidth: '840px', margin: '56px auto 0' }}>
+              <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+                <h2 className="font-serif" style={{ fontSize: 'clamp(24px, 3.2vw, 32px)', color: 'var(--color-plum-900)', marginBottom: '10px' }}>
+                  Preguntas frecuentes sobre la consulta con la Mtra. Iris Alarcón
+                </h2>
+                <p style={{ fontSize: '15px', color: 'var(--color-ink-secondary)' }}>
+                  Todo lo que necesitas saber antes de iniciar tu proceso terapéutico.
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ background: '#FFFFFF', borderRadius: '18px', padding: '24px', border: '1px solid var(--border-subtle)' }}>
+                  <h3 style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '8px' }}>
+                    ¿Cómo atiende a salvadoreños residentes en Estados Unidos u otros países?
+                  </h3>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.65, margin: 0 }}>
+                    Las sesiones se coordinan de manera 100% online por Google Meet con horarios adaptados a las zonas horarias de Estados Unidos (Este, Centro, Montaña y Pacífico) y Canadá. Hablamos en tu propio código cultural salvadoreño, comprendiendo las dinámicas migratorias familiares y sin barreras de lenguaje ni de comprensión.
+                  </p>
+                </div>
+
+                <div style={{ background: '#FFFFFF', borderRadius: '18px', padding: '24px', border: '1px solid var(--border-subtle)' }}>
+                  <h3 style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '8px' }}>
+                    ¿Qué respaldo y garantía profesional ofrece la acreditación de la JVPP?
+                  </h3>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.65, margin: 0 }}>
+                    La Junta de Vigilancia de la Profesión en Psicología (JVPP) de El Salvador regula y certifica el ejercicio legal de la psicoterapia en el país. El registro N.° 47096 certifica título universitario homologado, idoneidad profesional y apego estricto al código de bioética médica y secreto profesional.
+                  </p>
+                </div>
+
+                <div style={{ background: '#FFFFFF', borderRadius: '18px', padding: '24px', border: '1px solid var(--border-subtle)' }}>
+                  <h3 style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '8px' }}>
+                    ¿En qué consiste la primera conversación de 30 minutos sin costo?
+                  </h3>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.65, margin: 0 }}>
+                    Es un primer encuentro inicial por videollamada para conocer tu motivo de consulta o el de tu pareja, explicarte la metodología de trabajo y acordar si iniciamos un plan de acompañamiento. No genera ningún compromiso de contratación posterior.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

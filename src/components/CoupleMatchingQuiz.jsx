@@ -8,7 +8,8 @@ import {
   ArrowRight,
   Laptop,
   MessageSquare,
-  FileText
+  FileText,
+  HelpCircle
 } from 'lucide-react';
 import {
   Questionnaire,
@@ -471,6 +472,202 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   </div>
                 </div>
               </Questionnaire>
+
+              {/* ── GUÍA CLÍNICA DE AUTOEVALUACIÓN Y PREGUNTAS FRECUENTES ── */}
+              <section
+                style={{
+                  marginTop: '56px',
+                  textAlign: 'left',
+                  borderTop: '1px solid var(--border-subtle)',
+                  paddingTop: '48px',
+                }}
+                aria-label="Guía clínica sobre el test de pareja y terapia"
+              >
+                <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+                  <h2
+                    className="font-serif"
+                    style={{
+                      fontSize: 'clamp(22px, 3.2vw, 28px)',
+                      color: 'var(--color-plum-900)',
+                      lineHeight: 1.3,
+                      marginBottom: '12px',
+                    }}
+                  >
+                    ¿Qué evalúa este test clínico de relación de pareja?
+                  </h2>
+                  <p
+                    style={{
+                      fontSize: '15px',
+                      color: 'var(--color-ink-secondary)',
+                      maxWidth: '560px',
+                      margin: '0 auto',
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    Diseñado por terapeutas de pareja colegiados ante la JVPP en El Salvador para identificar las dinámicas relacionales prioritarias.
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                    gap: '20px',
+                    marginBottom: '40px',
+                  }}
+                >
+                  <div
+                    style={{
+                      background: '#FFFFFF',
+                      borderRadius: '18px',
+                      padding: '24px',
+                      border: '1px solid var(--border-subtle)',
+                      boxShadow: 'var(--shadow-sm)',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                      <CheckCircle2 size={18} style={{ color: 'var(--color-clay)' }} />
+                      <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-plum-900)', margin: 0 }}>
+                        Patrones de Comunicación
+                      </h3>
+                    </div>
+                    <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                      Detecta si existen discusiones en bucle, reproches defensivos, escaladas verbales o silencios prolongados (ley del hielo) que bloquean los acuerdos cotidianos.
+                    </p>
+                  </div>
+
+                  <div
+                    style={{
+                      background: '#FFFFFF',
+                      borderRadius: '18px',
+                      padding: '24px',
+                      border: '1px solid var(--border-subtle)',
+                      boxShadow: 'var(--shadow-sm)',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                      <Heart size={18} style={{ color: 'var(--color-clay)' }} />
+                      <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-plum-900)', margin: 0 }}>
+                        Conexión Emocional e Intimidad
+                      </h3>
+                    </div>
+                    <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                      Evalúa el nivel de reciprocidad afectiva, la presencia de distancia emocional y el bienestar en la vida erótica o sexual de la pareja.
+                    </p>
+                  </div>
+
+                  <div
+                    style={{
+                      background: '#FFFFFF',
+                      borderRadius: '18px',
+                      padding: '24px',
+                      border: '1px solid var(--border-subtle)',
+                      boxShadow: 'var(--shadow-sm)',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                      <ShieldCheck size={18} style={{ color: 'var(--color-clay)' }} />
+                      <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-plum-900)', margin: 0 }}>
+                        Confianza y Reparación Vincular
+                      </h3>
+                    </div>
+                    <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                      Analiza la seguridad mutua tras episodios de infidelidad, mentiras, celos, sospechas o heridas del pasado no resueltas.
+                    </p>
+                  </div>
+
+                  <div
+                    style={{
+                      background: '#FFFFFF',
+                      borderRadius: '18px',
+                      padding: '24px',
+                      border: '1px solid var(--border-subtle)',
+                      boxShadow: 'var(--shadow-sm)',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                      <Laptop size={18} style={{ color: 'var(--color-clay)' }} />
+                      <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-plum-900)', margin: 0 }}>
+                        Entorno, Migración y Cargas
+                      </h3>
+                    </div>
+                    <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                      Examina el impacto de la distancia geográfica, el estrés de la diáspora salvadoreña, la crianza de hijos y la intervención de las familias de origen.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Privacidad por diseño */}
+                <div
+                  style={{
+                    background: 'rgba(158, 75, 51, 0.05)',
+                    border: '1px solid rgba(158, 75, 51, 0.2)',
+                    borderRadius: '18px',
+                    padding: '24px 28px',
+                    marginBottom: '40px',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '16px',
+                  }}
+                >
+                  <ShieldCheck size={24} style={{ color: 'var(--color-clay)', flexShrink: 0, marginTop: '2px' }} />
+                  <div>
+                    <h3 style={{ fontSize: '15.5px', fontWeight: 700, color: 'var(--color-plum-900)', margin: '0 0 6px 0' }}>
+                      100% Anónimo y Confidencial · Privacidad por Diseño
+                    </h3>
+                    <p style={{ fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                      No solicitamos registro de usuario, contraseñas ni datos bancarios. Sus respuestas son procesadas de manera anónima y sólo se utilizan para ofrecerles una orientación clínica personalizada de acuerdo con la ética médica y el secreto profesional.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Preguntas frecuentes sobre el test y la terapia */}
+                <div style={{ marginBottom: '20px' }}>
+                  <h3
+                    className="font-serif"
+                    style={{
+                      fontSize: '20px',
+                      color: 'var(--color-plum-900)',
+                      marginBottom: '20px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                    }}
+                  >
+                    <HelpCircle size={20} style={{ color: 'var(--color-clay)' }} />
+                    Preguntas frecuentes sobre la evaluación de pareja
+                  </h3>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                    <div style={{ background: '#FFFFFF', borderRadius: '14px', padding: '18px 22px', border: '1px solid var(--border-subtle)' }}>
+                      <h4 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-plum-900)', margin: '0 0 8px 0' }}>
+                        ¿Qué pasa si mi pareja no está lista para responder el test o acudir a terapia?
+                      </h4>
+                      <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                        Es muy frecuente que uno de los miembros de la pareja sienta la necesidad de ayuda antes que el otro. El test contempla la opción individual: podemos comenzar con un enfoque vincular individual con uno de ustedes para entender la dinámica y generar cambios saludables en la interacción sin presionar a la otra parte.
+                      </p>
+                    </div>
+
+                    <div style={{ background: '#FFFFFF', borderRadius: '14px', padding: '18px 22px', border: '1px solid var(--border-subtle)' }}>
+                      <h4 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-plum-900)', margin: '0 0 8px 0' }}>
+                        ¿Este test sustituye el diagnóstico de un psicólogo profesional?
+                      </h4>
+                      <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                        No. Se trata de una herramienta clínica de autoevaluación y orientación inicial que estructura sus motivos de consulta para facilitar el primer contacto con nuestro equipo acreditado por la JVPP en El Salvador.
+                      </p>
+                    </div>
+
+                    <div style={{ background: '#FFFFFF', borderRadius: '14px', padding: '18px 22px', border: '1px solid var(--border-subtle)' }}>
+                      <h4 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-plum-900)', margin: '0 0 8px 0' }}>
+                        ¿Cómo funciona la primera sesión gratuita de 30 minutos?
+                      </h4>
+                      <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                        Al completar el cuestionario, pueden solicitar una conversación de orientación de 30 minutos sin costo por videollamada. En ella evaluamos su situación particular, resolvemos dudas sobre la metodología y establecemos si la terapia de pareja es el abordaje más indicado.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
           )}
 

@@ -195,10 +195,30 @@ export default function EnlacesBioPage() {
         })}
       </div>
 
+      {/* Clinical About snippet */}
+      <div style={{
+        marginTop: '32px',
+        maxWidth: '460px',
+        width: '100%',
+        background: '#FFFFFF',
+        borderRadius: '16px',
+        padding: '20px 22px',
+        border: '1px solid var(--border-subtle)',
+        textAlign: 'center',
+        boxShadow: 'var(--shadow-xs)'
+      }}>
+        <p style={{ fontSize: '13px', color: 'var(--color-plum-900)', fontWeight: 700, margin: '0 0 6px 0' }}>
+          Clínica Psicológica Especializada · Centro Amaré
+        </p>
+        <p style={{ fontSize: '12px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+          Atención psicológica online para parejas y adultos en El Salvador, Estados Unidos, Canadá y el exterior. Profesionales acreditados ante la Junta de Vigilancia de la Profesión en Psicología (JVPP).
+        </p>
+      </div>
+
       {/* Footer */}
-      <div style={{ marginTop: '36px', textAlign: 'center', fontSize: '12px', color: 'var(--color-ink-muted)' }}>
+      <div style={{ marginTop: '28px', textAlign: 'center', fontSize: '12px', color: 'var(--color-ink-muted)' }}>
         <p style={{ margin: '0 0 4px' }}>
-          Centro Amaré · Lic. Iris Alarcón
+          Centro Amaré · Licda. Iris Alarcón (JVPP N.º 47096)
         </p>
         <p style={{ margin: 0 }}>
           terapiadeparejaelsalvador.com · San Salvador, El Salvador

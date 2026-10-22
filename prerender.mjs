@@ -38,6 +38,7 @@ const routes = [
     title: 'Test de Pareja Online: Autoevaluación Clínica | Centro Amaré',
     description: 'Cuestionario clínico interactivo de 5 pasos para parejas.',
     canonical: `${BASE_URL}/test-de-pareja`,
+    noindex: true,
   },
   {
     path: '/terapia-de-pareja',
@@ -227,6 +228,7 @@ const routes = [
     title: 'Enlaces Oficiales y Cita Online | Centro Amaré',
     description: 'Acceso directo a la primera sesión gratuita de 30 min, test de pareja, honorarios y recursos clínicos de Centro Amaré.',
     canonical: `${BASE_URL}/enlaces`,
+    noindex: true,
   },
   {
     path: '/privacidad',
@@ -280,20 +282,8 @@ async function prerender() {
     const { render } = await import(pathToFileURL(ssrEntryPath).href)
     const baseTemplate = fs.readFileSync(templatePath, 'utf-8')
 
-    // Inlining del CSS crítico para eliminar la advertencia de 'render-blocking resources' en Lighthouse
-    let baseTemplateProcessed = baseTemplate
-    const assetsDir = path.resolve(distPath, 'assets')
-    if (fs.existsSync(assetsDir)) {
-      const cssFiles = fs.readdirSync(assetsDir).filter(f => f.startsWith('index-') && f.endsWith('.css'))
-      if (cssFiles.length > 0) {
-        const cssFileName = cssFiles[0]
-        const cssContent = fs.readFileSync(path.join(assetsDir, cssFileName), 'utf-8')
-        const cssLinkRegex = new RegExp(`<link rel="stylesheet"[^>]*href="[^"]*${cssFileName}"[^>]*>`, 'i')
-        const inlineReplacement = `<style id="critical-css">${cssContent}</style><link rel="preload" as="style" href="/assets/${cssFileName}" /><link rel="stylesheet" href="/assets/${cssFileName}" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="/assets/${cssFileName}" /></noscript>`
-        baseTemplateProcessed = baseTemplateProcessed.replace(cssLinkRegex, inlineReplacement)
-        console.log(`⚡  Inlined critical CSS (${(cssContent.length / 1024).toFixed(1)} kB) — 0ms render-blocking`)
-      }
-    }
+    // Usamos el stylesheet externo para maximizar el cacheo en navegador y mantener un ratio texto/HTML óptimo en auditorías SEO
+    const baseTemplateProcessed = baseTemplate
 
     // 3. Renderizar cada una de las 17 rutas con su metadata personalizada
     for (const route of routes) {
@@ -322,6 +312,11 @@ async function prerender() {
         pageHtml = pageHtml.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${route.description}" />`)
         pageHtml = pageHtml.replace(/<meta property="og:description" content=".*?" \/>/, `<meta property="og:description" content="${route.description}" />`)
         pageHtml = pageHtml.replace(/<meta name="twitter:description" content=".*?" \/>/, `<meta name="twitter:description" content="${route.description}" />`)
+      }
+
+      // Robots / Noindex
+      if (route.noindex) {
+        pageHtml = pageHtml.replace('<head>', '<head>\n    <meta name="robots" content="noindex, follow" />')
       }
 
       // Limpiar comentarios HTML en producción para optimizar payload y cumplir auditorías

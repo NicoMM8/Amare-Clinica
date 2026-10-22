@@ -660,16 +660,18 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   color: #FFFFFF;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
-}
-.team-pro-badge--purple {
-  background: #6339F0;
-}
-.team-pro-badge--teal {
-  background: #0A8F6A;
+  background: var(--color-clay, #9E4B33);
+  box-shadow: 0 4px 12px rgba(158, 75, 51, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 .team-pro-badge--clay {
-  background: #9E4B33;
+  background: var(--color-clay, #9E4B33);
+}
+.team-pro-badge--plum {
+  background: var(--color-plum-900, #22284A);
+}
+.team-pro-badge--sage {
+  background: var(--color-sage, #49574B);
 }
 .team-pro-body {
   padding: 22px 22px 24px;

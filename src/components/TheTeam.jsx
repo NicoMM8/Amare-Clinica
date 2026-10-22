@@ -102,7 +102,7 @@ export default function TheTeam() {
           {/* Card 1: Iris Alarcón (Directora Clínica) */}
           <div className="team-pro-card">
             <div className="team-pro-img-container">
-              <span className="team-pro-badge team-pro-badge--purple">
+              <span className="team-pro-badge team-pro-badge--clay">
                 Psicología & Sexología
               </span>
               <picture>
@@ -194,7 +194,7 @@ export default function TheTeam() {
           {/* Card 3: Mtro. Rafael Franco (Psicólogo Clínico Psicoterapeuta) */}
           <div className="team-pro-card">
             <div className="team-pro-img-container">
-              <span className="team-pro-badge team-pro-badge--teal">
+              <span className="team-pro-badge team-pro-badge--clay">
                 Psicología Clínica
               </span>
               <picture>

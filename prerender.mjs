@@ -49,8 +49,8 @@ const routes = [
   {
     path: '/sexologia-clinica',
     file: 'sexologia-clinica/index.html',
-    title: 'Sexología Clínica y Terapia Sexual en El Salvador | Centro Amaré',
-    description: 'Consulta de sexología clínica online médica y libre de tabúes. Abordaje de dificultades de deseo, bloqueos y reconexión íntima para parejas e individuos.',
+    title: 'Sexóloga en El Salvador | Sexología Clínica & Terapia Sexual · Centro Amaré',
+    description: 'Consulta con sexóloga clínica colegiada en El Salvador (JVPP 3218) y online. Tratamiento de falta de deseo, bloqueos y reconexión íntima. 1ª sesión de 30 min gratis.',
     canonical: `${BASE_URL}/sexologia-clinica`,
   },
   {

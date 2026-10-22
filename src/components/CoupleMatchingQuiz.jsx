@@ -354,22 +354,35 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
 
           {/* ══════════════ STEP 0: INTRO ESTILO COJEEV UI ══════════════ */}
           {currentStep === 0 && (
-            <div className="v-questionnaire-example" style={{ maxWidth: '680px', margin: '0 auto' }}>
+            <div className="v-questionnaire-example" style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
               <Questionnaire presentation="journey">
-                <header className="v-questionnaire-example__intro">
-                  <span className="v-questionnaire-example__tab" aria-hidden="true">
-                    <Heart size={20} style={{ color: 'var(--v-pink)' }} />
-                  </span>
-                  <div>
-                    <span className="pill-badge pill-badge-clay" style={{ marginBottom: '6px', display: 'inline-block', fontSize: '11px' }}>Autoevaluación Clínica (2-3 min)</span>
-                    <h1 className="font-serif" style={{ fontSize: 'clamp(22px, 3.5vw, 32px)', lineHeight: 1.25, color: 'var(--color-plum-900)', margin: '4px 0 6px' }}>
-                      Test de Pareja Online: Autoevaluación Clínica
-                    </h1>
-                    <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', margin: 0 }}>
-                      Descubran el estado de su vínculo y reciban orientación clínica personalizada
-                    </p>
+                {/* Cabecera Centrada y Equilibrada */}
+                <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+                  <div
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      background: 'rgba(183, 89, 64, 0.08)',
+                      padding: '6px 14px',
+                      borderRadius: 'var(--r-pill, 999px)',
+                      marginBottom: '14px',
+                    }}
+                  >
+                    <Heart size={13} style={{ color: 'var(--color-clay)' }} fill="var(--color-clay)" />
+                    <span style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-clay)', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                      Autoevaluación Clínica · 2 a 3 min
+                    </span>
                   </div>
-                </header>
+
+                  <h1 className="font-serif" style={{ fontSize: 'clamp(24px, 3.6vw, 34px)', lineHeight: 1.25, color: 'var(--color-plum-900)', margin: '0 0 10px 0' }}>
+                    Test de Pareja Online: Autoevaluación Clínica
+                  </h1>
+
+                  <p style={{ fontSize: '15px', color: 'var(--color-ink-secondary)', margin: '0 auto', maxWidth: '520px', lineHeight: 1.55, textTransform: 'none', letterSpacing: 'normal' }}>
+                    Descubran el estado actual de su vínculo y reciban orientación clínica personalizada sin costo.
+                  </p>
+                </div>
 
                 {/* Avatar cápsula Iris Alarcón */}
                 <div style={{ textAlign: 'center', margin: '20px 0 16px' }}>

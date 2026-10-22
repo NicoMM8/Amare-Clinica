@@ -264,7 +264,7 @@ const medicalBusinessSchema = {
       hasCredential: {
         '@type': 'EducationalOccupationalCredential',
         credentialCategory: 'license',
-        name: 'Registro Profesional Sanitario JVPP N.º 4102',
+        name: 'Psicólogo Clínico Colegiado JVPP El Salvador',
       },
     },
     {
@@ -274,7 +274,7 @@ const medicalBusinessSchema = {
       hasCredential: {
         '@type': 'EducationalOccupationalCredential',
         credentialCategory: 'license',
-        name: 'Registro Profesional Sanitario JVPP N.º 5144',
+        name: 'Psicólogo Clínico Colegiado JVPP El Salvador',
       },
     },
   ],

@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw design assets / brand book (kept locally, not needed in production)
+Brand Book Centro Amaré/

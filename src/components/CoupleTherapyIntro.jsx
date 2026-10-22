@@ -1,201 +1,21 @@
 import React from 'react';
 import { Sparkles, MessageCircle, ArrowRight, ShieldCheck } from 'lucide-react';
-
-/* ── 1. Icono La Palma: Comunicación (Dos Torogoces frente a frente con flor de diálogo) ── */
-function IconComunicacion() {
-  return (
-    <svg width="86" height="86" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Medallón artesanal La Palma */}
-      <circle cx="42" cy="42" r="39" fill="#FFF8F0" stroke="#E29D38" strokeWidth="2" strokeDasharray="3 3" />
-      <circle cx="42" cy="42" r="35" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.5" />
-      
-      {/* Sol naciente en el fondo */}
-      <path d="M30 42C30 35.37 35.37 30 42 30C48.63 30 54 42 54 42H30Z" fill="#F4CF68" />
-      
-      {/* Ave Torogoz izquierda */}
-      <path d="M19 46C19 39 24 35 28 36C32 37 33 42 33 47C33 52 27 54 23 54C20 54 19 50 19 46Z" fill="#3B5B88" stroke="#2A2128" strokeWidth="1.6" />
-      <path d="M28 36L34 35L30 38" stroke="#2A2128" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="#E29D38" />
-      <circle cx="26" cy="38" r="1.5" fill="#2A2128" />
-      {/* Ala izquierda */}
-      <path d="M22 44C24 44 27 46 26 50C23 50 21 47 22 44Z" fill="#5F7D64" stroke="#2A2128" strokeWidth="1.2" />
-      
-      {/* Ave Torogoz derecha */}
-      <path d="M65 46C65 39 60 35 56 36C52 37 51 42 51 47C51 52 57 54 61 54C64 54 65 50 65 46Z" fill="#5F7D64" stroke="#2A2128" strokeWidth="1.6" />
-      <path d="M56 36L50 35L54 38" stroke="#2A2128" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="#E29D38" />
-      <circle cx="58" cy="38" r="1.5" fill="#2A2128" />
-      {/* Ala derecha */}
-      <path d="M62 44C60 44 57 46 58 50C61 50 63 47 62 44Z" fill="#3B5B88" stroke="#2A2128" strokeWidth="1.2" />
-      
-      {/* Corazón / Flor central de conexión */}
-      <path d="M42 34C40.5 30 35.5 30 34.5 34C33 40 40 44.5 42 46.5C44 44.5 51 40 49.5 34C48.5 30 43.5 30 42 34Z" fill="#B75940" stroke="#2A2128" strokeWidth="1.5" />
-      
-      {/* Rama de cafeto en la base */}
-      <path d="M22 60C32 57 52 57 62 60" stroke="#2A2128" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="34" cy="58" r="2.5" fill="#B75940" stroke="#2A2128" strokeWidth="1" />
-      <circle cx="50" cy="58" r="2.5" fill="#B75940" stroke="#2A2128" strokeWidth="1" />
-      <path d="M42 58V50" stroke="#5F7D64" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-/* ── 2. Icono La Palma: Aceptación y Diferencias (Dos perfiles folclóricos y sol de armonía) ── */
-function IconAceptacion() {
-  return (
-    <svg width="86" height="86" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Medallón artesanal La Palma */}
-      <circle cx="42" cy="42" r="39" fill="#FFF8F0" stroke="#B75940" strokeWidth="2" strokeDasharray="3 3" />
-      <circle cx="42" cy="42" r="35" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.5" />
-
-      {/* Sol de La Palma en la cima */}
-      <circle cx="42" cy="24" r="7" fill="#F4CF68" stroke="#2A2128" strokeWidth="1.5" />
-      <path d="M42 13V16M33 18L35 20M51 18L49 20M42 32V34" stroke="#2A2128" strokeWidth="1.5" strokeLinecap="round" />
-
-      {/* Perfil izquierdo (mujer / cabello estilizado) */}
-      <path d="M24 58C24 48 29 42 34 42C35 45 35 48 33 50C31 52 30 55 31 58H24Z" fill="#3B5B88" stroke="#2A2128" strokeWidth="1.5" />
-      <circle cx="30" cy="46" r="1.5" fill="#FFF8F0" />
-
-      {/* Perfil derecho (hombre / sombrero campesino) */}
-      <path d="M60 58C60 48 55 42 50 42C49 45 49 48 51 50C53 52 54 55 53 58H60Z" fill="#5F7D64" stroke="#2A2128" strokeWidth="1.5" />
-      <circle cx="54" cy="46" r="1.5" fill="#FFF8F0" />
-      <path d="M48 40C52 38 56 38 60 40" stroke="#2A2128" strokeWidth="1.8" strokeLinecap="round" />
-
-      {/* Corazón artesanal en el centro que une ambos */}
-      <path d="M42 42C40.5 37 34 37 33 42C31.5 48 40 54 42 56C44 54 52.5 48 51 42C50 37 43.5 37 42 42Z" fill="#B75940" stroke="#2A2128" strokeWidth="1.5" />
-      <path d="M42 40V55" stroke="#FAF0E6" strokeWidth="1.4" strokeDasharray="2 2" />
-
-      {/* Base de tierra / colina */}
-      <path d="M18 64C30 60 54 60 66 64" stroke="#2A2128" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-/* ── 3. Icono La Palma: Convivencia y Roles (Casita tradicional de teja y cafetal en flor) ── */
-function IconRoles() {
-  return (
-    <svg width="86" height="86" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Medallón artesanal La Palma */}
-      <circle cx="42" cy="42" r="39" fill="#FFF8F0" stroke="#5F7D64" strokeWidth="2" strokeDasharray="3 3" />
-      <circle cx="42" cy="42" r="35" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.5" />
-
-      {/* Techo de teja tradicional */}
-      <path d="M26 36L42 22L58 36H26Z" fill="#B75940" stroke="#2A2128" strokeWidth="1.8" strokeLinejoin="round" />
-      <path d="M34 29L38 36M46 29L42 36M50 33L54 36" stroke="#FAF0E6" strokeWidth="1.2" strokeLinecap="round" />
-
-      {/* Fachada de la casita */}
-      <rect x="30" y="36" width="24" height="24" fill="#FFF8F0" stroke="#2A2128" strokeWidth="1.8" />
-      {/* Puerta rústica con arco */}
-      <path d="M38 60V48C38 46 40 44 42 44C44 44 46 46 46 48V60H38Z" fill="#3B5B88" stroke="#2A2128" strokeWidth="1.4" />
-      
-      {/* Cafeto izquierdo con fruto */}
-      <path d="M23 60V46C23 44 26 42 28 44" stroke="#5F7D64" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="24" cy="48" r="2.2" fill="#B75940" stroke="#2A2128" strokeWidth="1" />
-      <circle cx="28" cy="44" r="2.2" fill="#B75940" stroke="#2A2128" strokeWidth="1" />
-
-      {/* Cafeto derecho con fruto */}
-      <path d="M61 60V46C61 44 58 42 56 44" stroke="#5F7D64" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="60" cy="48" r="2.2" fill="#B75940" stroke="#2A2128" strokeWidth="1" />
-      <circle cx="56" cy="44" r="2.2" fill="#B75940" stroke="#2A2128" strokeWidth="1" />
-
-      {/* Suelo / colina base */}
-      <path d="M16 63C28 60 56 60 68 63" stroke="#2A2128" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-/* ── 4. Icono La Palma: Sexualidad e Intimidad (Flor tradicional en floración y luna de La Palma) ── */
-function IconSexualidad() {
-  return (
-    <svg width="86" height="86" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Medallón artesanal La Palma */}
-      <circle cx="42" cy="42" r="39" fill="#FFF8F0" stroke="#B75940" strokeWidth="2" strokeDasharray="3 3" />
-      <circle cx="42" cy="42" r="35" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.5" />
-
-      {/* Luna dorada artesanal en la esquina superior */}
-      <path d="M54 20C50 20 46 23 46 27C46 31 50 34 54 34C51 34 49 31 49 27C49 23 51 20 54 20Z" fill="#F4CF68" stroke="#2A2128" strokeWidth="1.4" />
-      <circle cx="34" cy="24" r="1.5" fill="#E29D38" />
-      <circle cx="38" cy="28" r="1.2" fill="#E29D38" />
-
-      {/* Flor central estilizada de La Palma */}
-      {/* Pétalo central */}
-      <path d="M42 34C39 40 39 48 42 54C45 48 45 40 42 34Z" fill="#B75940" stroke="#2A2128" strokeWidth="1.5" />
-      {/* Pétalos laterales izquierdos */}
-      <path d="M40 44C32 40 27 46 32 52C36 53 39 48 40 44Z" fill="#E29D38" stroke="#2A2128" strokeWidth="1.4" />
-      {/* Pétalos laterales derechos */}
-      <path d="M44 44C52 40 57 46 52 52C48 53 45 48 44 44Z" fill="#E29D38" stroke="#2A2128" strokeWidth="1.4" />
-      {/* Corazón en el núcleo de la flor */}
-      <circle cx="42" cy="46" r="4.5" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.4" />
-      <circle cx="42" cy="46" r="2" fill="#B75940" />
-
-      {/* Hojas verdes en la base */}
-      <path d="M42 54V64M34 58C37 57 40 58 42 61M50 58C47 57 44 58 42 61" stroke="#5F7D64" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-/* ── 5. Icono La Palma: Infidelidad y Confianza (Corazón artesanal restaurado con brote de vida) ── */
-function IconInfidelidad() {
-  return (
-    <svg width="86" height="86" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Medallón artesanal La Palma */}
-      <circle cx="42" cy="42" r="39" fill="#FFF8F0" stroke="#3B5B88" strokeWidth="2" strokeDasharray="3 3" />
-      <circle cx="42" cy="42" r="35" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.5" />
-
-      {/* Mitad izquierda del corazón (añil/terracota) */}
-      <path d="M40 28C35 22 25 24 23 32C20 42 34 52 40 58V28Z" fill="#B75940" stroke="#2A2128" strokeWidth="1.6" />
-      {/* Mitad derecha del corazón (añil suave) */}
-      <path d="M44 28C49 22 59 24 61 32C64 42 50 52 44 58V28Z" fill="#D97A62" stroke="#2A2128" strokeWidth="1.6" />
-
-      {/* Puntadas artesanales de reparación (Kintsugi / bordado salvadoreño) */}
-      <path d="M38 34L46 32M37 42L47 40M39 50L45 48" stroke="#FAF0E6" strokeWidth="2" strokeLinecap="round" />
-
-      {/* Brote verde que renace del centro */}
-      <path d="M42 26V16" stroke="#5F7D64" strokeWidth="2" strokeLinecap="round" />
-      <path d="M42 18C38 16 38 13 41 13C43 13 43 16 42 18Z" fill="#5F7D64" stroke="#2A2128" strokeWidth="1.2" />
-      <path d="M42 16C46 14 46 11 43 11C41 11 41 14 42 16Z" fill="#5F7D64" stroke="#2A2128" strokeWidth="1.2" />
-
-      {/* Base decorativa */}
-      <path d="M24 64C34 61 50 61 60 64" stroke="#2A2128" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-/* ── 6. Icono La Palma: Celos e Inseguridad (Ventana artesanal que se abre hacia la libertad y calma) ── */
-function IconCelos() {
-  return (
-    <svg width="86" height="86" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Medallón artesanal La Palma */}
-      <circle cx="42" cy="42" r="39" fill="#FFF8F0" stroke="#E29D38" strokeWidth="2" strokeDasharray="3 3" />
-      <circle cx="42" cy="42" r="35" fill="#FAF0E6" stroke="#2A2128" strokeWidth="1.5" />
-
-      {/* Sol radiante de fondo */}
-      <circle cx="56" cy="24" r="6" fill="#F4CF68" stroke="#2A2128" strokeWidth="1.4" />
-      <path d="M56 15V17M48 20L50 21M63 20L61 21" stroke="#2A2128" strokeWidth="1.3" strokeLinecap="round" />
-
-      {/* Paloma de La Palma volando libre */}
-      <path d="M48 30C48 26 43 23 39 24C36 25 35 28 36 31C37 34 42 36 45 35L48 30Z" fill="#FFF8F0" stroke="#2A2128" strokeWidth="1.5" />
-      {/* Ala alzada */}
-      <path d="M42 27L46 18C42 18 39 22 42 27Z" fill="#FFF8F0" stroke="#2A2128" strokeWidth="1.4" />
-      <circle cx="39" cy="26" r="1.2" fill="#2A2128" />
-
-      {/* Ventana / cerrojo rústico abierto abajo */}
-      <rect x="26" y="44" width="32" height="18" rx="2" fill="#FFF8F0" stroke="#2A2128" strokeWidth="1.6" />
-      {/* postigo izquierdo abierto */}
-      <path d="M26 44L18 42V60L26 62V44Z" fill="#3B5B88" stroke="#2A2128" strokeWidth="1.5" />
-      {/* postigo derecho abierto */}
-      <path d="M58 44L66 42V60L58 62V44Z" fill="#3B5B88" stroke="#2A2128" strokeWidth="1.5" />
-      {/* corazón central en la ventana */}
-      <path d="M42 49C40.5 46 37 46 36 49C35 53 41 57 42 58C43 57 49 53 48 49C47 46 43.5 46 42 49Z" fill="#B75940" />
-
-      {/* Suelo */}
-      <path d="M18 64C30 62 54 62 66 64" stroke="#2A2128" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-}
+import {
+  IconComunicacion,
+  IconEscuchaActiva,
+  IconPertenencia,
+  IconIntimidad,
+  IconPrivacidad,
+  IconAnsiedad,
+  IconDosHusosHorarios,
+  IconTerapiaPareja,
+} from './icons/AmareArtisanIcons';
 
 export default function CoupleTherapyIntro() {
   const commonProblems = [
     {
       iconComponent: IconComunicacion,
+      caption: "comunicación · diálogo",
       tag: "COMUNICACIÓN EN PAREJA",
       title: '“Hablamos, pero no nos entendemos”',
       desc: "Sienten que cualquier conversación cotidiana termina en la misma pelea de siempre, en reproches del pasado o en días enteros de silencio para evitar otro conflicto.",
@@ -203,7 +23,8 @@ export default function CoupleTherapyIntro() {
       internalLink: "/terapia-de-pareja"
     },
     {
-      iconComponent: IconAceptacion,
+      iconComponent: IconEscuchaActiva,
+      caption: "escucha activa · comprensión",
       tag: "ACEPTACIÓN Y DIFERENCIAS",
       title: "Querer cambiar al otro",
       desc: "El cansancio de sentir que tu pareja no te entiende como antes, o la frustración constante de esperar que reaccione igual que tú.",
@@ -211,7 +32,8 @@ export default function CoupleTherapyIntro() {
       internalLink: "/terapia-de-pareja"
     },
     {
-      iconComponent: IconRoles,
+      iconComponent: IconPertenencia,
+      caption: "pertenencia · hogar",
       tag: "CONVIVENCIA Y ROLES",
       title: "El peso de la rutina, la casa y el dinero",
       desc: "Sentir que uno de los dos carga con todo el peso mental del hogar, los hijos, las finanzas o el apoyo a la familia en El Salvador, acumulando un resentimiento silencioso.",
@@ -219,7 +41,8 @@ export default function CoupleTherapyIntro() {
       internalLink: "/terapia-de-pareja"
     },
     {
-      iconComponent: IconSexualidad,
+      iconComponent: IconIntimidad,
+      caption: "intimidad · vínculo",
       tag: "SEXUALIDAD E INTIMIDAD",
       title: '“Parecemos compañeros de cuarto”',
       desc: "Cuando el cansancio, la rutina o los bloqueos íntimos apagan el deseo. Les cuesta hablar de sexualidad sin incomodidad y extrañan volver a sentirse pareja.",
@@ -227,7 +50,8 @@ export default function CoupleTherapyIntro() {
       internalLink: "/sexologia-clinica"
     },
     {
-      iconComponent: IconInfidelidad,
+      iconComponent: IconPrivacidad,
+      caption: "privacidad · confianza",
       tag: "INFIDELIDAD Y CONFIANZA",
       title: "Dolor tras una infidelidad o mentira",
       desc: "Cuando se rompe la confianza y duele seguir, pero también duele soltar. Les acompañamos a sanar la herida y decidir con claridad si es posible reconstruir la relación.",
@@ -235,7 +59,8 @@ export default function CoupleTherapyIntro() {
       internalLink: "/terapia-de-pareja"
     },
     {
-      iconComponent: IconCelos,
+      iconComponent: IconAnsiedad,
+      caption: "ansiedad · pensamientos",
       tag: "CELOS E INSEGURIDAD",
       title: "Inseguridad, celos y angustia",
       desc: "Vivir revisando el teléfono, con miedo constante o sintiendo que tienes que dar explicaciones de todo. Les ayudamos a recuperar la paz mental y la libertad en el vínculo.",
@@ -268,6 +93,31 @@ export default function CoupleTherapyIntro() {
         >
           {/* Columna Izquierda: Redacción limpia con negritas estratégicas para escaneo */}
           <div className="intro-banner-text">
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                marginBottom: '14px',
+                background: 'rgba(183, 89, 64, 0.08)',
+                padding: '6px 14px',
+                borderRadius: 'var(--r-pill, 999px)',
+              }}
+            >
+              <IconDosHusosHorarios size={22} color="var(--color-clay)" />
+              <span
+                style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-clay)',
+                  letterSpacing: '0.04em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Dos husos horarios · Una conversación
+              </span>
+            </div>
+
             <h2
               className="font-serif"
               style={{
@@ -457,17 +307,43 @@ export default function CoupleTherapyIntro() {
                     e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
                   }}
                 >
-                  {/* Icono de estilo dibujo / ilustración vectorial */}
+                  {/* Icono artesanal dibujado a mano sobre mosaico terracota */}
                   <div
                     style={{
-                      marginBottom: '16px',
+                      width: '74px',
+                      height: '74px',
+                      borderRadius: '20px',
+                      backgroundColor: 'var(--color-clay, #B75940)',
+                      color: '#FFF8F2',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
+                      marginBottom: '12px',
+                      boxShadow: '0 8px 20px rgba(183, 89, 64, 0.22)',
+                      transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease',
+                      flexShrink: 0,
                     }}
+                    className="artisan-icon-badge"
                   >
-                    <IconComponent />
+                    <IconComponent size={46} color="#FFF8F2" />
                   </div>
+
+                  {/* Subtítulo artesanal de la ilustración */}
+                  {prob.caption && (
+                    <span
+                      style={{
+                        fontSize: '11.5px',
+                        letterSpacing: '0.04em',
+                        color: 'var(--color-clay, #B75940)',
+                        fontWeight: 600,
+                        marginBottom: '10px',
+                        textTransform: 'lowercase',
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      {prob.caption}
+                    </span>
+                  )}
 
                   {/* Etiqueta pequeña enlazada para SEO e Interlinking */}
                   <a
@@ -611,6 +487,10 @@ export default function CoupleTherapyIntro() {
 
       {/* Responsive adjustments */}
       <style>{`
+        .problem-card:hover .artisan-icon-badge {
+          transform: translateY(-2px) scale(1.05);
+          box-shadow: 0 12px 26px rgba(183, 89, 64, 0.35) !important;
+        }
         .problem-card:hover .problem-card-cta {
           gap: 9px !important;
           color: var(--v-pink-deep, #9A432D) !important;

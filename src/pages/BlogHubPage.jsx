@@ -18,7 +18,8 @@ export const BLOG_POSTS = [
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
     author: 'Mtra. Iris Alarcón (JVPP 3218)',
-    icon: AlertTriangle
+    icon: AlertTriangle,
+    image: '/images/blog/cuando-terapia.webp'
   },
   {
     slug: 'primera-sesion-terapia-de-pareja',
@@ -29,7 +30,8 @@ export const BLOG_POSTS = [
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
     author: 'Mtra. Iris Alarcón (JVPP 3218)',
-    icon: Users
+    icon: Users,
+    image: '/images/blog/primera-sesion.webp'
   },
   {
     slug: 'dependencia-emocional-como-superarla',
@@ -40,7 +42,8 @@ export const BLOG_POSTS = [
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
     author: 'Lic. Ernesto Mejía (JVPP 4102)',
-    icon: Heart
+    icon: Heart,
+    image: '/images/blog/controlar-ansiedad.webp'
   },
   {
     slug: 'se-puede-perdonar-una-infidelidad-guia-pareja',
@@ -51,7 +54,8 @@ export const BLOG_POSTS = [
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
     author: 'Mtra. Iris Alarcón (JVPP 3218)',
-    icon: ShieldCheck
+    icon: ShieldCheck,
+    image: '/images/blog/infidelidad-perdon.webp'
   },
   {
     slug: 'falta-de-deseo-sexual-en-la-pareja-soluciones',
@@ -62,7 +66,8 @@ export const BLOG_POSTS = [
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
     author: 'Mtra. Iris Alarcón (JVPP 3218)',
-    icon: Sparkles
+    icon: Sparkles,
+    image: '/images/blog/deseo-sexual.webp'
   },
   {
     slug: 'fortalecer-relacion-pareja-ayuda-profesional',
@@ -73,7 +78,8 @@ export const BLOG_POSTS = [
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
     author: 'Equipo Clínico Centro Amaré',
-    icon: HeartHandshake
+    icon: HeartHandshake,
+    image: '/images/blog/cuando-terapia.webp'
   },
   {
     slug: 'crianza-en-pareja-desacuerdos-hijos-soluciones',
@@ -84,7 +90,8 @@ export const BLOG_POSTS = [
     filterGroup: 'diaspora',
     date: 'Actualizado 2026',
     author: 'Mtra. Iris Alarcón (JVPP 3218)',
-    icon: Users
+    icon: Users,
+    image: '/images/blog/crianza-en-pareja.webp'
   },
   {
     slug: 'como-controlar-la-ansiedad',
@@ -95,7 +102,8 @@ export const BLOG_POSTS = [
     filterGroup: 'ansiedad',
     date: 'Actualizado 2026',
     author: 'Lic. Ernesto Mejía (JVPP 4102)',
-    icon: Activity
+    icon: Activity,
+    image: '/images/blog/controlar-ansiedad.webp'
   },
   {
     slug: 'ataques-de-ansiedad',
@@ -106,7 +114,8 @@ export const BLOG_POSTS = [
     filterGroup: 'ansiedad',
     date: 'Actualizado 2026',
     author: 'Mtro. Rafael Franco (JVPP 5144)',
-    icon: AlertTriangle
+    icon: AlertTriangle,
+    image: '/images/blog/ataques-panico.webp'
   },
   {
     slug: 'burnout-o-depresion-diferencias',
@@ -117,7 +126,8 @@ export const BLOG_POSTS = [
     filterGroup: 'ansiedad',
     date: 'Actualizado 2026',
     author: 'Mtro. Rafael Franco (JVPP 5144)',
-    icon: BatteryCharging
+    icon: BatteryCharging,
+    image: '/images/blog/burnout-depresion.webp'
   },
   {
     slug: 'como-mejorar-la-autoestima-sin-frases-hechas',
@@ -128,7 +138,8 @@ export const BLOG_POSTS = [
     filterGroup: 'ansiedad',
     date: 'Actualizado 2026',
     author: 'Lic. Ernesto Mejía (JVPP 4102)',
-    icon: Sparkles
+    icon: Sparkles,
+    image: '/images/blog/burnout-depresion.webp'
   },
   {
     slug: 'como-elegir-un-psicologo-en-el-salvador',
@@ -139,7 +150,8 @@ export const BLOG_POSTS = [
     filterGroup: 'ayuda',
     date: 'Actualizado 2026',
     author: 'Mtra. Iris Alarcón (JVPP 3218)',
-    icon: Award
+    icon: Award,
+    image: '/images/blog/primera-sesion.webp'
   },
   {
     slug: 'psicologo-o-psiquiatra-diferencias',
@@ -150,7 +162,8 @@ export const BLOG_POSTS = [
     filterGroup: 'ayuda',
     date: 'Actualizado 2026',
     author: 'Equipo Clínico Centro Amaré',
-    icon: Stethoscope
+    icon: Stethoscope,
+    image: '/images/blog/primera-sesion.webp'
   },
   {
     slug: 'cuanto-cuesta-una-terapia-de-pareja-en-el-salvador',
@@ -161,7 +174,8 @@ export const BLOG_POSTS = [
     filterGroup: 'ayuda',
     date: 'Actualizado 2026',
     author: 'Mtra. Iris Alarcón (JVPP 3218)',
-    icon: DollarSign
+    icon: DollarSign,
+    image: '/images/blog/cuando-terapia.webp'
   },
   {
     slug: 'duelo-migratorio-que-es-como-manejarlo',
@@ -172,7 +186,8 @@ export const BLOG_POSTS = [
     filterGroup: 'diaspora',
     date: 'Actualizado 2026',
     author: 'Equipo Clínico Centro Amaré',
-    icon: Compass
+    icon: Compass,
+    image: '/images/blog/duelo-migratorio.webp'
   },
   {
     slug: 'como-afecta-emigrar-a-la-relacion-de-pareja',
@@ -183,7 +198,8 @@ export const BLOG_POSTS = [
     filterGroup: 'diaspora',
     date: 'Actualizado 2026',
     author: 'Mtra. Iris Alarcón (JVPP 3218)',
-    icon: Compass
+    icon: Compass,
+    image: '/images/blog/emigrar-pareja.webp'
   },
   {
     slug: 'como-poner-limites-a-tu-familia-desde-la-distancia',
@@ -194,7 +210,8 @@ export const BLOG_POSTS = [
     filterGroup: 'diaspora',
     date: 'Actualizado 2026',
     author: 'Mtra. Iris Alarcón (JVPP 3218)',
-    icon: HeartHandshake
+    icon: HeartHandshake,
+    image: '/images/blog/duelo-migratorio.webp'
   }
 ];
 
@@ -278,10 +295,11 @@ export default function BlogHubPage() {
                 return (
                   <article 
                     key={idx}
+                    className="blog-card-article"
                     style={{
                       background: '#FFFFFF',
                       borderRadius: '24px',
-                      padding: '36px 30px',
+                      overflow: 'hidden',
                       border: '1px solid var(--border-subtle)',
                       boxShadow: 'var(--shadow-sm)',
                       display: 'flex',
@@ -290,46 +308,74 @@ export default function BlogHubPage() {
                       transition: 'transform 0.2s ease, box-shadow 0.2s ease'
                     }}
                   >
-                    <div>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px' }}>
-                        <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', background: 'var(--color-canvas)', padding: '5px 12px', borderRadius: 'var(--r-pill)' }}>
-                          {post.category}
-                        </span>
-                        <span style={{ fontSize: '12px', color: 'var(--color-ink-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                          <Clock size={13} /> {post.readTime}
-                        </span>
+                    {/* Imagen Ilustrada Editorial de Cabecera */}
+                    {post.image && (
+                      <div style={{ position: 'relative', width: '100%', height: '210px', overflow: 'hidden', background: 'var(--color-surface)' }}>
+                        <a href={`/blog/${post.slug}`} tabIndex={-1} aria-hidden="true">
+                          <picture>
+                            <source srcSet={post.image} type="image/webp" />
+                            <img
+                              src={post.image.replace('.webp', '.jpg')}
+                              alt={post.title}
+                              width="720"
+                              height="405"
+                              loading="lazy"
+                              style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                display: 'block',
+                                transition: 'transform 0.35s ease'
+                              }}
+                              className="blog-card-img"
+                            />
+                          </picture>
+                        </a>
+                      </div>
+                    )}
+
+                    <div style={{ padding: '26px 26px 28px', display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+                      <div>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+                          <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', background: 'var(--color-canvas)', padding: '5px 12px', borderRadius: 'var(--r-pill)' }}>
+                            {post.category}
+                          </span>
+                          <span style={{ fontSize: '12px', color: 'var(--color-ink-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                            <Clock size={13} /> {post.readTime}
+                          </span>
+                        </div>
+
+                        <h2 className="font-serif" style={{ fontSize: '21px', color: 'var(--color-plum-900)', lineHeight: 1.35, marginBottom: '12px' }}>
+                          <a href={`/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            {post.title}
+                          </a>
+                        </h2>
+
+                        <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, marginBottom: '22px' }}>
+                          {post.excerpt}
+                        </p>
                       </div>
 
-                      <h2 className="font-serif" style={{ fontSize: '22px', color: 'var(--color-plum-900)', lineHeight: 1.35, marginBottom: '14px' }}>
-                        <a href={`/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                          {post.title}
+                      <div style={{ paddingTop: '16px', borderTop: '1px solid var(--border-hairline)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <span style={{ fontSize: '12px', color: 'var(--color-ink-muted)' }}>
+                          {post.author}
+                        </span>
+                        <a 
+                          href={`/blog/${post.slug}`}
+                          style={{
+                            fontSize: '14px',
+                            fontWeight: 700,
+                            color: 'var(--color-clay)',
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px'
+                          }}
+                        >
+                          <span>Leer guía</span>
+                          <ArrowRight size={16} />
                         </a>
-                      </h2>
-
-                      <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.65, marginBottom: '24px' }}>
-                        {post.excerpt}
-                      </p>
-                    </div>
-
-                    <div style={{ paddingTop: '18px', borderTop: '1px solid var(--border-hairline)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <span style={{ fontSize: '12px', color: 'var(--color-ink-muted)' }}>
-                        {post.author}
-                      </span>
-                      <a 
-                        href={`/blog/${post.slug}`}
-                        style={{
-                          fontSize: '14px',
-                          fontWeight: 700,
-                          color: 'var(--color-clay)',
-                          textDecoration: 'none',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '6px'
-                        }}
-                      >
-                        <span>Leer guía</span>
-                        <ArrowRight size={16} />
-                      </a>
+                      </div>
                     </div>
                   </article>
                 );

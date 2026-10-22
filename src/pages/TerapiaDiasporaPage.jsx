@@ -8,7 +8,7 @@ import { Globe, ShieldCheck, CheckCircle2, Clock, Check, X, ArrowRight } from 'l
 import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function TerapiaDiasporaPage() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vivo en el extranjero y quisiera información para agendar la sesión inicial sin costo de 30 minutos en Centro Amaré.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, vivo en el extranjero y quisiera información para agendar la sesión inicial sin costo de 30 minutos en Centro Amaré.");
 
   return (
     <div className="app-wrapper">

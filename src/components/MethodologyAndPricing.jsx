@@ -39,7 +39,7 @@ const clinicalPhases = [
 ];
 
 export default function MethodologyAndPricing() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiéramos empezar con una primera conversación de 30 min sin costo con el equipo de Centro Amaré.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, quisiéramos empezar con una primera conversación de 30 min sin costo con el equipo de Centro Amaré.");
 
   return (
     <section className="section" id="honorarios">
@@ -489,7 +489,7 @@ export default function MethodologyAndPricing() {
             </div>
             
             <a
-              href="https://wa.me/50373184781?text=Hola,%20quisiera%20consultar%20sobre%20la%20facturaci%C3%B3n%20para%20el%20reembolso%20de%20mi%20seguro%20m%C3%A9dico."
+              href="/chat?text=Hola,%20quisiera%20consultar%20sobre%20la%20facturaci%C3%B3n%20para%20el%20reembolso%20de%20mi%20seguro%20m%C3%A9dico."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"

@@ -5,7 +5,7 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp';
 import { ArrowLeft, Clock, Users, CheckCircle2, MessageCircle, AlertCircle, Heart } from 'lucide-react';
 
 export default function BlogPostCrianzaPareja() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí el artículo sobre crianza en pareja y desacuerdos con los hijos en Centro Amaré y quisiera agendar una primera sesión sin costo.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí el artículo sobre crianza en pareja y desacuerdos con los hijos en Centro Amaré y quisiera agendar una primera sesión sin costo.");
 
   return (
     <div className="app-wrapper">

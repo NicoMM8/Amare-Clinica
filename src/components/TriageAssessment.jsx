@@ -135,7 +135,7 @@ export function QuestionnaireExample({
 
 Me gustaría coordinar mi sesión inicial gratuita de 30 minutos por Google Meet.`;
 
-    return "https://wa.me/50373184781?text=" + encodeURIComponent(message);
+    return "/chat?text=" + encodeURIComponent(message);
   };
 
   return (

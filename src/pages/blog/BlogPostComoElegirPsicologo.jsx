@@ -5,7 +5,7 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp';
 import { ArrowLeft, Clock, Award, ShieldCheck, CheckCircle2, MessageCircle, AlertTriangle } from 'lucide-react';
 
 export default function BlogPostComoElegirPsicologo() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí la guía sobre cómo elegir un psicólogo en El Salvador en Centro Amaré y quisiera agendar una primera sesión de evaluación sin costo.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí la guía sobre cómo elegir un psicólogo en El Salvador en Centro Amaré y quisiera agendar una primera sesión de evaluación sin costo.");
 
   return (
     <div className="app-wrapper">

@@ -18,10 +18,10 @@ function WhatsAppIcon({ size = 18 }) {
 }
 
 export default function TheTeam() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera agendar la primera conversación de 30 minutos sin costo con el equipo de Centro Amaré.");
-  const irisWhatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría consultar la disponibilidad de la Mtra. Iris Alarcón en Centro Amaré.");
-  const ernestoWhatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar la primera sesión de terapia con el Lic. Ernesto Mejía en Centro Amaré.");
-  const rafaelWhatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar una consulta con el Mtro. Rafael Franco en Centro Amaré.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, quisiera agendar la primera conversación de 30 minutos sin costo con el equipo de Centro Amaré.");
+  const irisWhatsappUrl = "/chat?text=" + encodeURIComponent("Hola, me gustaría consultar la disponibilidad de la Mtra. Iris Alarcón en Centro Amaré.");
+  const ernestoWhatsappUrl = "/chat?text=" + encodeURIComponent("Hola, me gustaría agendar la primera sesión de terapia con el Lic. Ernesto Mejía en Centro Amaré.");
+  const rafaelWhatsappUrl = "/chat?text=" + encodeURIComponent("Hola, me gustaría agendar una consulta con el Mtro. Rafael Franco en Centro Amaré.");
 
   return (
     <section className="section" id="equipo" style={{ background: 'var(--color-surface)', padding: '96px 0' }}>

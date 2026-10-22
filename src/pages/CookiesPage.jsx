@@ -2,7 +2,7 @@ import React from 'react';
 import { Shield, Cookie, CheckCircle2, ArrowLeft, MessageCircle, Settings, Eye } from 'lucide-react';
 
 export default function CookiesPage() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, tengo una pregunta sobre la privacidad y cookies de Centro Amaré.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, tengo una pregunta sobre la privacidad y cookies de Centro Amaré.");
 
   const resetCookieConsent = () => {
     try {

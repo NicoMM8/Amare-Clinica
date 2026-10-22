@@ -1,10 +1,16 @@
 User-agent: *
 Allow: /
 
-# Bloquear recursos de desarrollo
+# Bloquear recursos de desarrollo y trampolín de mensajería (evitar rate limit 429 en crawlers)
 Disallow: /src/
 Disallow: /node_modules/
 Disallow: /*.mjs$
+Disallow: /chat
+
+# Auditoría técnica (SemrushBot)
+User-agent: SemrushBot
+Disallow: /chat
+Allow: /
 
 # Motores de búsqueda tradicionales
 User-agent: Googlebot

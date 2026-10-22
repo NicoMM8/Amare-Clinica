@@ -35,7 +35,7 @@ export function StressSlider() {
   };
 
   const current = getDiagnosis(value);
-  const whatsappUrl = `https://wa.me/50373184781?text=${encodeURIComponent(`Hola, usé el termómetro clínico en la web (nivel de tensión: ${value}% - ${current.level}). Quisiera agendar mi sesión inicial gratuita de 30 min.`)}`;
+  const whatsappUrl = `/chat?text=${encodeURIComponent(`Hola, usé el termómetro clínico en la web (nivel de tensión: ${value}% - ${current.level}). Quisiera agendar mi sesión inicial gratuita de 30 min.`)}`;
 
   return (
     <div style={{

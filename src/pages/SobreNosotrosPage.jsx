@@ -73,7 +73,7 @@ const aboutPageSchema = {
 };
 
 export default function SobreNosotrosPage() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí sobre la historia de Centro Amaré y me gustaría coordinar la primera conversación de valoración de 30 minutos sin costo.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí sobre la historia de Centro Amaré y me gustaría coordinar la primera conversación de valoración de 30 minutos sin costo.");
 
   // Video State
   const videoRef = useRef(null);

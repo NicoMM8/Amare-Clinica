@@ -7,7 +7,7 @@ import { Sparkles, ShieldCheck, CheckCircle2, Clock, Heart, Award, ArrowRight, H
 import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function SexologiaClinicaPage() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera agendar una primera sesión de 30 minutos sin costo para consulta con la sexóloga clínica.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, quisiera agendar una primera sesión de 30 minutos sin costo para consulta con la sexóloga clínica.");
 
   const areas = [
     {

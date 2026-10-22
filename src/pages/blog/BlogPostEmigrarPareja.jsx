@@ -6,7 +6,7 @@ import { HeroButton } from '../../components/ui/hero-button';
 import { ArrowLeft, Clock, ShieldCheck, HeartHandshake, CheckCircle2, MessageCircle } from 'lucide-react';
 
 export default function BlogPostEmigrarPareja() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí el artículo sobre migración y pareja en Centro Amaré y me gustaría agendar la sesión gratuita de 30 minutos.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí el artículo sobre migración y pareja en Centro Amaré y me gustaría agendar la sesión gratuita de 30 minutos.");
 
   return (
     <div className="app-wrapper">

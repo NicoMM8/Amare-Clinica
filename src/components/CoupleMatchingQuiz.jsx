@@ -275,7 +275,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
     return encodeURIComponent(msg);
   };
 
-  const whatsappMatchUrl = `https://wa.me/50373184781?text=${buildWhatsAppMessage()}`;
+  const whatsappMatchUrl = `/chat?text=${buildWhatsAppMessage()}`;
 
   return (
     <div
@@ -1140,7 +1140,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   <div style={{ marginTop: '4px' }}>
                     Escríbenos directo desde tu celular al{' '}
                     <a
-                      href="https://wa.me/50373184781"
+                      href="/chat"
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ color: 'var(--v-pink)', fontWeight: 700, textDecoration: 'none' }}

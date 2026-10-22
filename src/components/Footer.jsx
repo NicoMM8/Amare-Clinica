@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowUpRight, MessageCircle, Shield } from 'lucide-react';
 
 export default function Footer() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera dar el primer paso y agendar una primera conversación.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, quisiera dar el primer paso y agendar una primera conversación.");
 
   return (
     <footer style={{ background: 'var(--color-plum-900)', color: '#FFFFFF', paddingTop: '72px', paddingBottom: '40px' }}>

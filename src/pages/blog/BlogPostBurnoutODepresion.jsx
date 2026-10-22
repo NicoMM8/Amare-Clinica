@@ -5,7 +5,7 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp';
 import { ArrowLeft, Clock, BatteryCharging, AlertTriangle, CheckCircle2, MessageCircle, HelpCircle } from 'lucide-react';
 
 export default function BlogPostBurnoutODepresion() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí el artículo sobre burnout y depresión en Centro Amaré y quisiera agendar una primera sesión de evaluación sin costo.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí el artículo sobre burnout y depresión en Centro Amaré y quisiera agendar una primera sesión de evaluación sin costo.");
 
   return (
     <div className="app-wrapper">

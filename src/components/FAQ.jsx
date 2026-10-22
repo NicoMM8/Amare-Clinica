@@ -6,7 +6,7 @@ import { trackWhatsAppClick } from '../lib/analytics';
 import { Accordion } from './cojeev/Accordion';
 
 export default function FAQ() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, tengo una pregunta antes de agendar mi primera conversación sin costo en Centro Amaré.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, tengo una pregunta antes de agendar mi primera conversación sin costo en Centro Amaré.");
 
   const accordionItems = FAQS.map((faq) => ({
     title: faq.q,

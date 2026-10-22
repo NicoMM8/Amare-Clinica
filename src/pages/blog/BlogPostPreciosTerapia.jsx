@@ -5,7 +5,7 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp';
 import { ArrowLeft, Clock, DollarSign, CheckCircle2, MessageCircle, AlertCircle } from 'lucide-react';
 
 export default function BlogPostPreciosTerapia() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí la guía de precios de terapia de pareja en Centro Amaré y quisiera agendar la sesión inicial gratuita de 30 minutos.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí la guía de precios de terapia de pareja en Centro Amaré y quisiera agendar la sesión inicial gratuita de 30 minutos.");
 
   return (
     <div className="app-wrapper">

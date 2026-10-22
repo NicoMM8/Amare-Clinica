@@ -5,7 +5,7 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp';
 import { ArrowLeft, Clock, Sparkles, CheckCircle2, MessageCircle, Heart } from 'lucide-react';
 
 export default function BlogPostAutoestimaReal() {
-  const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí el artículo sobre autoestima y autocompasión en Centro Amaré y quisiera agendar una primera sesión de evaluación sin costo.");
+  const whatsappUrl = "/chat?text=" + encodeURIComponent("Hola, leí el artículo sobre autoestima y autocompasión en Centro Amaré y quisiera agendar una primera sesión de evaluación sin costo.");
 
   return (
     <div className="app-wrapper">

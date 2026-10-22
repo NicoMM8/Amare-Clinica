@@ -32,6 +32,16 @@ import BlogPostInfidelidad from './pages/blog/BlogPostInfidelidad';
 import BlogPostFaltaDeseo from './pages/blog/BlogPostFaltaDeseo';
 import BlogPostDueloMigratorio from './pages/blog/BlogPostDueloMigratorio';
 import BlogPostFortalecerPareja from './pages/blog/BlogPostFortalecerPareja';
+import BlogPostCuandoIrTerapiaPareja from './pages/blog/BlogPostCuandoIrTerapiaPareja';
+import BlogPostPrimeraSesionPareja from './pages/blog/BlogPostPrimeraSesionPareja';
+import BlogPostDependenciaEmocional from './pages/blog/BlogPostDependenciaEmocional';
+import BlogPostComoControlarAnsiedad from './pages/blog/BlogPostComoControlarAnsiedad';
+import BlogPostAtaquesDeAnsiedad from './pages/blog/BlogPostAtaquesDeAnsiedad';
+import BlogPostComoElegirPsicologo from './pages/blog/BlogPostComoElegirPsicologo';
+import BlogPostPsicologoOPsiquiatra from './pages/blog/BlogPostPsicologoOPsiquiatra';
+import BlogPostBurnoutODepresion from './pages/blog/BlogPostBurnoutODepresion';
+import BlogPostAutoestimaReal from './pages/blog/BlogPostAutoestimaReal';
+import BlogPostCrianzaPareja from './pages/blog/BlogPostCrianzaPareja';
 import EnlacesBioPage from './pages/EnlacesBioPage';
 import PrivacidadPage from './pages/PrivacidadPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -109,6 +119,16 @@ function App({ initialPath = '/' }) {
       '/iris-alarcon': 'Licda. Iris Alarcón | Directora Clínica Centro Amaré (JVPP)',
       '/precios': 'Precios y Honorarios — Terapia de Pareja El Salvador | Centro Amaré',
       '/blog': 'Blog & Recursos Clínicos | Centro Amaré',
+      '/blog/cuando-ir-a-terapia-de-pareja': '¿Cuándo ir a Terapia de Pareja? 8 Señales de Alerta | Centro Amaré',
+      '/blog/primera-sesion-terapia-de-pareja': 'Qué Pasa en la Primera Sesión de Terapia de Pareja | Centro Amaré',
+      '/blog/dependencia-emocional-como-superarla': 'Dependencia Emocional en la Pareja: Cómo Superarla | Centro Amaré',
+      '/blog/como-controlar-la-ansiedad': 'Cómo Controlar la Ansiedad según la Psicología Clínica (TCC) | Centro Amaré',
+      '/blog/ataques-de-ansiedad': 'Ataques de Pánico y Ansiedad: Síntomas Físicos y Qué Hacer | Centro Amaré',
+      '/blog/como-elegir-un-psicologo-en-el-salvador': 'Cómo Elegir un Psicólogo en El Salvador (JVPP) | Centro Amaré',
+      '/blog/psicologo-o-psiquiatra-diferencias': 'Psicólogo o Psiquiatra: Diferencias y Cuándo Consultar | Centro Amaré',
+      '/blog/burnout-o-depresion-diferencias': 'Burnout o Depresión: Cómo Diferenciarlos | Centro Amaré',
+      '/blog/como-mejorar-la-autoestima-sin-frases-hechas': 'Cómo Mejorar la Autoestima sin Frases Hechas | Centro Amaré',
+      '/blog/crianza-en-pareja-desacuerdos-hijos-soluciones': 'Crianza en Pareja: Resolver Desacuerdos con los Hijos | Centro Amaré',
       '/blog/se-puede-perdonar-una-infidelidad-guia-pareja': '¿Se Puede Perdonar una Infidelidad? Guía Clínica de Pareja | Centro Amaré',
       '/blog/falta-de-deseo-sexual-en-la-pareja-soluciones': 'Falta de Deseo Sexual en la Pareja: Causas y Soluciones | Centro Amaré',
       '/blog/duelo-migratorio-que-es-como-manejarlo': 'Duelo Migratorio: Qué Es y Cómo Manejarlo | Centro Amaré',
@@ -151,6 +171,46 @@ function App({ initialPath = '/' }) {
 
   if (cleanPath === '/blog' || cleanPath === '/recursos') {
     return <BlogHubPage />;
+  }
+
+  if (cleanPath === '/blog/cuando-ir-a-terapia-de-pareja') {
+    return <BlogPostCuandoIrTerapiaPareja />;
+  }
+
+  if (cleanPath === '/blog/primera-sesion-terapia-de-pareja') {
+    return <BlogPostPrimeraSesionPareja />;
+  }
+
+  if (cleanPath === '/blog/dependencia-emocional-como-superarla') {
+    return <BlogPostDependenciaEmocional />;
+  }
+
+  if (cleanPath === '/blog/como-controlar-la-ansiedad') {
+    return <BlogPostComoControlarAnsiedad />;
+  }
+
+  if (cleanPath === '/blog/ataques-de-ansiedad' || cleanPath === '/blog/ataques-de-ansiedad-sintomas-que-hacer') {
+    return <BlogPostAtaquesDeAnsiedad />;
+  }
+
+  if (cleanPath === '/blog/como-elegir-un-psicologo-en-el-salvador' || cleanPath === '/blog/como-elegir-psicologo-en-el-salvador') {
+    return <BlogPostComoElegirPsicologo />;
+  }
+
+  if (cleanPath === '/blog/psicologo-o-psiquiatra-diferencias' || cleanPath === '/blog/psicologo-o-psiquiatra') {
+    return <BlogPostPsicologoOPsiquiatra />;
+  }
+
+  if (cleanPath === '/blog/burnout-o-depresion-diferencias' || cleanPath === '/blog/burnout-o-depresion') {
+    return <BlogPostBurnoutODepresion />;
+  }
+
+  if (cleanPath === '/blog/como-mejorar-la-autoestima-sin-frases-hechas' || cleanPath === '/blog/como-mejorar-la-autoestima') {
+    return <BlogPostAutoestimaReal />;
+  }
+
+  if (cleanPath === '/blog/crianza-en-pareja-desacuerdos-hijos-soluciones') {
+    return <BlogPostCrianzaPareja />;
   }
 
   if (cleanPath === '/blog/duelo-migratorio-que-es-como-manejarlo') {

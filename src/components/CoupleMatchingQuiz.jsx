@@ -161,12 +161,23 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       headings.current[currentStep - 1]?.focus();
       focusNext.current = false;
     }
+    // Asegurar scroll al tope en cada cambio de paso del test
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
   }, [currentStep, questions.length]);
 
   const move = (next) => {
     focusNext.current = true;
     setCurrentStep(next);
     saveToStorage(answers, next);
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
   };
 
   const handleSelectOption = (field, opt) => {
@@ -183,6 +194,9 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
     // Micro-delay suave para que el usuario aprecie la animación orgánica Cojeev antes de avanzar
     setTimeout(() => {
       setCurrentStep(prev => {
+        if (typeof window !== 'undefined') {
+          window.scrollTo(0, 0);
+        }
         if (prev < questions.length) {
           focusNext.current = true;
           return prev + 1;
@@ -221,6 +235,11 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       notes: '',
     });
     move(0);
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
   };
 
   const buildWhatsAppMessage = () => {

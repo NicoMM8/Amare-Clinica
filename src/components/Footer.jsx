@@ -145,8 +145,13 @@ export default function Footer() {
 
         </div>
 
+        {/* Local SEO Cobertura El Salvador & Diáspora */}
+        <div style={{ paddingTop: '28px', paddingBottom: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.08)', fontSize: '12.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.7, textAlign: 'center' }}>
+          <strong>Clínica Psicológica con Cobertura Online en El Salvador:</strong> San Salvador · Santa Tecla · Antiguo Cuscatlán · San Miguel · Santa Ana · Sonsonate · La Libertad | <strong>Diáspora:</strong> Estados Unidos (California, Texas, Virginia, Maryland), Canadá y España.
+        </div>
+
         {/* Ethical Disclaimer */}
-        <div style={{ paddingTop: '28px', paddingBottom: '20px', fontSize: '12px', color: 'rgba(255, 255, 255, 0.5)', lineHeight: 1.6 }}>
+        <div style={{ paddingTop: '12px', paddingBottom: '20px', fontSize: '12px', color: 'rgba(255, 255, 255, 0.5)', lineHeight: 1.6 }}>
           Aviso importante: El servicio de Centro Amaré se orienta a psicoterapia ambulatoria para adultos. No constituye un servicio de urgencias médicas ni psiquiátricas de riesgo vital. Si te encuentras en una crisis de riesgo inminente, por favor ponte en contacto inmediato con el número de emergencias o de prevención de tu país o ciudad de residencia.
         </div>
 

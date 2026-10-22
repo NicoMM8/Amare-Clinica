@@ -56,8 +56,8 @@ const routes = [
   {
     path: '/terapia-individual',
     file: 'terapia-individual/index.html',
-    title: 'Psicología Online El Salvador · Clínica JVPP | Centro Amaré',
-    description: 'Terapia individual online en El Salvador con equipo colegiado para ansiedad, sobrepensamiento, límites y apegos. Enfoque TCC y DBT con base científica.',
+    title: 'Psicólogos en El Salvador · Clínica Psicológica Online | Centro Amaré',
+    description: 'Psicólogos en El Salvador colegiados ante la JVPP. Consulta de clínica psicológica online en San Salvador y el exterior para ansiedad, estrés y límites. 1ª sesión de 30 min gratis.',
     canonical: `${BASE_URL}/terapia-individual`,
   },
   {

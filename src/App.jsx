@@ -114,7 +114,7 @@ function App({ initialPath = '/' }) {
       '/tu-match': 'Test de Pareja Online: Autoevaluación de Relación | Centro Amaré',
       '/terapia-de-pareja': 'Terapia de Pareja en El Salvador Online | Centro Amaré',
       '/sexologia-clinica': 'Sexóloga en El Salvador | Sexología Clínica & Terapia Sexual · Centro Amaré',
-      '/terapia-individual': 'Psicología Online El Salvador · Clínica de Psicología JVPP | Centro Amaré',
+      '/terapia-individual': 'Psicólogos en El Salvador · Clínica Psicológica Online | Centro Amaré',
       '/salvadorenos-en-el-exterior': 'Psicólogos Salvadoreños Online | Terapia en el Exterior — Centro Amaré',
       '/iris-alarcon': 'Licda. Iris Alarcón | Directora Clínica Centro Amaré (JVPP)',
       '/precios': 'Precios y Honorarios — Terapia de Pareja El Salvador | Centro Amaré',

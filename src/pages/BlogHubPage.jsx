@@ -17,7 +17,7 @@ export const BLOG_POSTS = [
     category: 'Terapia de Pareja',
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 3218)',
+    author: 'Mtra. Iris Alarcón (JVPP 47096)',
     icon: AlertTriangle,
     image: '/images/blog/cuando-terapia.webp'
   },
@@ -29,7 +29,7 @@ export const BLOG_POSTS = [
     category: 'Terapia de Pareja',
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 3218)',
+    author: 'Mtra. Iris Alarcón (JVPP 47096)',
     icon: Users,
     image: '/images/blog/primera-sesion.webp'
   },
@@ -53,7 +53,7 @@ export const BLOG_POSTS = [
     category: 'Infidelidad & Confianza',
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 3218)',
+    author: 'Mtra. Iris Alarcón (JVPP 47096)',
     icon: ShieldCheck,
     image: '/images/blog/infidelidad-perdon.webp'
   },
@@ -65,7 +65,7 @@ export const BLOG_POSTS = [
     category: 'Sexología Clínica',
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 3218)',
+    author: 'Mtra. Iris Alarcón (JVPP 47096)',
     icon: Sparkles,
     image: '/images/blog/deseo-sexual.webp'
   },
@@ -89,7 +89,7 @@ export const BLOG_POSTS = [
     category: 'Crianza & Pareja',
     filterGroup: 'diaspora',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 3218)',
+    author: 'Mtra. Iris Alarcón (JVPP 47096)',
     icon: Users,
     image: '/images/blog/crianza-en-pareja.webp'
   },
@@ -149,7 +149,7 @@ export const BLOG_POSTS = [
     category: 'Orientación Legal & Clínica',
     filterGroup: 'ayuda',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 3218)',
+    author: 'Mtra. Iris Alarcón (JVPP 47096)',
     icon: Award,
     image: '/images/blog/primera-sesion.webp'
   },
@@ -173,7 +173,7 @@ export const BLOG_POSTS = [
     category: 'Honorarios & Precios',
     filterGroup: 'ayuda',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 3218)',
+    author: 'Mtra. Iris Alarcón (JVPP 47096)',
     icon: DollarSign,
     image: '/images/blog/cuando-terapia.webp'
   },
@@ -197,7 +197,7 @@ export const BLOG_POSTS = [
     category: 'Pareja y Migración',
     filterGroup: 'diaspora',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 3218)',
+    author: 'Mtra. Iris Alarcón (JVPP 47096)',
     icon: Compass,
     image: '/images/blog/emigrar-pareja.webp'
   },
@@ -209,7 +209,7 @@ export const BLOG_POSTS = [
     category: 'Familia & Límites',
     filterGroup: 'diaspora',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 3218)',
+    author: 'Mtra. Iris Alarcón (JVPP 47096)',
     icon: HeartHandshake,
     image: '/images/blog/duelo-migratorio.webp'
   }

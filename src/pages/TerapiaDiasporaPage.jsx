@@ -38,7 +38,7 @@ export default function TerapiaDiasporaPage() {
                   variant="clay"
                   href={whatsappUrl}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick('page_diaspora_hero', '1ª sesión sin costo')}
                 >
                   <span>Agendar 1ª sesión de 30 min sin costo</span>
@@ -191,8 +191,57 @@ export default function TerapiaDiasporaPage() {
           </div>
         </section>
 
-        {/* Bento Mosaic Transcultural & Especialidades */}
-        <BentoMosaic />
+        {/* Guías clínicas y recursos para la diáspora */}
+        <section className="section" style={{ backgroundColor: 'var(--color-surface)', paddingTop: '64px', paddingBottom: '64px' }}>
+          <div className="container" style={{ maxWidth: '960px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+              <div className="pill-badge pill-badge-clay" style={{ marginBottom: '10px' }}>
+                <span>Lecturas y Recursos Clínicos</span>
+              </div>
+              <h3 className="font-serif" style={{ fontSize: '28px', color: 'var(--color-plum-900)' }}>
+                Guías de psicología transcultural para salvadoreños en el exterior
+              </h3>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
+              <a
+                href="/blog/duelo-migratorio-que-es-como-manejarlo"
+                style={{ textDecoration: 'none', background: '#FFFFFF', padding: '22px', borderRadius: '18px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)', display: 'block' }}
+              >
+                <span style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Identidad & Migración</span>
+                <h4 style={{ fontSize: '16.5px', color: 'var(--color-plum-900)', margin: '8px 0 6px', fontWeight: 700, lineHeight: 1.35 }}>
+                  Duelo migratorio: qué es, cómo se manifiesta y cómo manejarlo sin perder tu raíz
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.5 }}>
+                  Pérdidas acumuladas, soledad no dicha y cómo conciliar dos mundos sin culpa con apoyo clínico profesional.
+                </p>
+              </a>
+              <a
+                href="/blog/como-poner-limites-a-tu-familia-desde-la-distancia"
+                style={{ textDecoration: 'none', background: '#FFFFFF', padding: '22px', borderRadius: '18px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)', display: 'block' }}
+              >
+                <span style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Familia & Límites</span>
+                <h4 style={{ fontSize: '16.5px', color: 'var(--color-plum-900)', margin: '8px 0 6px', fontWeight: 700, lineHeight: 1.35 }}>
+                  Cómo poner límites a tu familia desde la distancia sin culpa ni resentimiento
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.5 }}>
+                  Manejo de remesas, expectativas afectivas y preservación de tu propia autonomía económica y emocional.
+                </p>
+              </a>
+              <a
+                href="/blog/como-afecta-emigrar-a-la-relacion-de-pareja"
+                style={{ textDecoration: 'none', background: '#FFFFFF', padding: '22px', borderRadius: '18px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)', display: 'block' }}
+              >
+                <span style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Pareja en la Distancia</span>
+                <h4 style={{ fontSize: '16.5px', color: 'var(--color-plum-900)', margin: '8px 0 6px', fontWeight: 700, lineHeight: 1.35 }}>
+                  Cómo afecta emigrar a la relación de pareja: desafíos y soluciones clínicas
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.5 }}>
+                  Acompañamiento a parejas binacionales o transnacionales enfrentadas al choque cultural y el desgaste.
+                </p>
+              </a>
+            </div>
+          </div>
+        </section>
 
         {/* Banner CTA */}
         <section className="section" style={{ paddingTop: '72px', paddingBottom: '72px' }}>
@@ -207,7 +256,7 @@ export default function TerapiaDiasporaPage() {
               <a
                 href={whatsappUrl}
                 target="_blank"
-                rel="nofollow noopener noreferrer"
+                rel="noopener noreferrer"
                 className="btn-clay"
                 style={{ display: 'inline-flex', padding: '14px 28px', borderRadius: 'var(--r-pill)', textDecoration: 'none', color: '#fff', fontWeight: 600 }}
                 onClick={() => trackWhatsAppClick('page_diaspora_mid', 'Agendar 30 min')}

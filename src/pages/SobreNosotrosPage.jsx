@@ -23,6 +23,43 @@ import {
 } from 'lucide-react';
 import { trackWhatsAppClick } from '../lib/analytics';
 
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Sobre Centro Amaré — Historia y Misión Clínica",
+  "url": "https://terapiadeparejaelsalvador.com/sobre-nosotros",
+  "description": "Historia, misión y pilares clínicos de Centro Amaré. Clínica de psicología y terapia de pareja fundada en 2017 en El Salvador.",
+  "mainEntity": {
+    "@type": "MedicalBusiness",
+    "name": "Centro Amaré",
+    "foundingDate": "2017",
+    "founder": {
+      "@type": "Person",
+      "name": "Mtra. Iris Alarcón",
+      "jobTitle": "Directora Clínica y Fundadora",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Registro Profesional Sanitario JVPP N.º 47096"
+      }
+    },
+    "knowsAbout": [
+      "Terapia de Pareja",
+      "Sexología Clínica",
+      "Terapia Cognitivo-Conductual (TCC)",
+      "Terapia Dialéctico-Conductual (DBT)",
+      "Terapia Integral de Parejas (IBCT)",
+      "Duelo Migratorio y Terapia para la Diáspora Salvadoreña"
+    ],
+    "areaServed": [
+      { "@type": "Country", "name": "El Salvador" },
+      { "@type": "Country", "name": "Estados Unidos" },
+      { "@type": "Country", "name": "Canadá" },
+      { "@type": "Country", "name": "España" },
+      { "@type": "Country", "name": "Australia" }
+    ]
+  }
+};
+
 export default function SobreNosotrosPage() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí sobre la historia de Centro Amaré y me gustaría coordinar la primera conversación de valoración de 30 minutos sin costo.");
 
@@ -32,7 +69,7 @@ export default function SobreNosotrosPage() {
   const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
-    // Dynamic SEO Metadata for About Page
+    // Dynamic SEO Metadata for About Page (navegación en cliente)
     document.title = "Sobre Centro Amaré | Historia y Misión Clínica en El Salvador y el Mundo";
     
     let metaDesc = document.querySelector('meta[name="description"]');
@@ -42,53 +79,6 @@ export default function SobreNosotrosPage() {
       document.head.appendChild(metaDesc);
     }
     metaDesc.content = "Conoce la historia de Centro Amaré. Fundado en 2017 por la Mtra. Iris Alarcón en San Salvador, somos la clínica de psicología digital que promueve el bienestar de parejas y adultos en El Salvador y la diáspora.";
-
-    // Schema JSON-LD for AboutPage + MedicalBusiness
-    const schemaScript = document.createElement('script');
-    schemaScript.type = 'application/ld+json';
-    schemaScript.id = 'schema-about-page';
-    schemaScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "name": "Sobre Centro Amaré — Historia y Misión Clínica",
-      "url": "https://terapiadeparejaelsalvador.com/sobre-nosotros",
-      "description": "Historia, misión y pilares clínicos de Centro Amaré. Clínica de psicología y terapia de pareja fundada en 2017 en El Salvador.",
-      "mainEntity": {
-        "@type": "MedicalBusiness",
-        "name": "Centro Amaré",
-        "foundingDate": "2017",
-        "founder": {
-          "@type": "Person",
-          "name": "Mtra. Iris Alarcón",
-          "jobTitle": "Directora Clínica y Fundadora",
-          "hasCredential": {
-            "@type": "EducationalOccupationalCredential",
-            "name": "Registro Profesional Sanitario JVPP N.º 47096"
-          }
-        },
-        "knowsAbout": [
-          "Terapia de Pareja",
-          "Sexología Clínica",
-          "Terapia Cognitivo-Conductual (TCC)",
-          "Terapia Dialéctico-Conductual (DBT)",
-          "Terapia Integral de Parejas (IBCT)",
-          "Duelo Migratorio y Terapia para la Diáspora Salvadoreña"
-        ],
-        "areaServed": [
-          { "@type": "Country", "name": "El Salvador" },
-          { "@type": "Country", "name": "Estados Unidos" },
-          { "@type": "Country", "name": "Canadá" },
-          { "@type": "Country", "name": "España" },
-          { "@type": "Country", "name": "Australia" }
-        ]
-      }
-    });
-    document.head.appendChild(schemaScript);
-
-    return () => {
-      const existing = document.getElementById('schema-about-page');
-      if (existing) existing.remove();
-    };
   }, []);
 
   useEffect(() => {
@@ -119,6 +109,11 @@ export default function SobreNosotrosPage() {
 
   return (
     <div className="app-wrapper">
+      {/* Schema JSON-LD disponible para SSR / SSG y Googlebot */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
       <Navbar />
 
       <main id="main-content">
@@ -187,7 +182,7 @@ export default function SobreNosotrosPage() {
                   variant="clay"
                   href={whatsappUrl}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick('sobre_nosotros_hero', '1ª sesión gratis')}
                 >
                   <span>1ª conversación sin costo (30 min)</span>
@@ -925,7 +920,7 @@ export default function SobreNosotrosPage() {
                   variant="clay"
                   href={whatsappUrl}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick('sobre_nosotros_cta_final', '1ª sesión gratis')}
                 >
                   <span>Agendar 1ª conversación de 30 min sin costo</span>

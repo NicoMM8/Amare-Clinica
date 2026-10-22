@@ -223,7 +223,7 @@ export default function PrivacidadPage() {
           <a
             href={whatsappUrl}
             target="_blank"
-            rel="nofollow noopener noreferrer"
+            rel="noopener noreferrer"
             className="btn-clay"
             style={{
               display: 'inline-flex',

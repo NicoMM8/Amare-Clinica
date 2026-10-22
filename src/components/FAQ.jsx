@@ -58,7 +58,7 @@ export default function FAQ() {
           <a 
             href={whatsappUrl}
             target="_blank"
-            rel="nofollow noopener noreferrer"
+            rel="noopener noreferrer"
             className="btn-secondary"
             style={{ fontSize: '14px', padding: '10px 20px' }}
             onClick={() => trackWhatsAppClick('faq_footer', 'Consultar por WhatsApp')}

@@ -23,7 +23,7 @@ export default function FloatingWhatsApp() {
     <a 
       href={whatsappUrl} 
       target="_blank" 
-      rel="nofollow noopener noreferrer" 
+      rel="noopener noreferrer" 
       className={`floating-whatsapp ${isVisible ? 'floating-whatsapp--visible' : ''}`}
       aria-label="Hablar con la asistente de Centro Amaré por WhatsApp"
       onClick={() => trackWhatsAppClick('floating_button', 'WhatsApp flotante')}

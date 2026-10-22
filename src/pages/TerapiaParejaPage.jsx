@@ -66,7 +66,7 @@ export default function TerapiaParejaPage() {
                   variant="clay"
                   href={whatsappUrl}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick('page_terapia_pareja_hero', '1ª sesión sin costo')}
                 >
                   <span>Agendar 1ª sesión de 30 min sin costo</span>
@@ -156,6 +156,56 @@ export default function TerapiaParejaPage() {
               ))}
             </div>
 
+            {/* Guías clínicas y recursos de lectura */}
+            <div style={{ marginTop: '56px', paddingTop: '40px', borderTop: '1px solid var(--border-subtle)' }}>
+              <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+                <span className="pill-badge pill-badge-clay" style={{ marginBottom: '10px' }}>
+                  <span>Lecturas y Recursos Clínicos</span>
+                </span>
+                <h3 className="font-serif" style={{ fontSize: '26px', color: 'var(--color-plum-900)' }}>
+                  Guías recomendadas por nuestro equipo de terapeutas
+                </h3>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
+                <a
+                  href="/blog/crianza-en-pareja-desacuerdos-hijos-soluciones"
+                  style={{ textDecoration: 'none', background: '#FFFFFF', padding: '22px', borderRadius: '18px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)', display: 'block' }}
+                >
+                  <span style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Crianza & Familia</span>
+                  <h4 style={{ fontSize: '16.5px', color: 'var(--color-plum-900)', margin: '8px 0 6px', fontWeight: 700, lineHeight: 1.35 }}>
+                    Crianza en pareja: resolver desacuerdos con los hijos sin desgastar el vínculo
+                  </h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.5 }}>
+                    Estrategias clínicas para alinear criterios educativos y evitar que los hijos se conviertan en frente de batalla.
+                  </p>
+                </a>
+                <a
+                  href="/blog/cuando-ir-a-terapia-de-pareja"
+                  style={{ textDecoration: 'none', background: '#FFFFFF', padding: '22px', borderRadius: '18px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)', display: 'block' }}
+                >
+                  <span style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Prevención & Diagnóstico</span>
+                  <h4 style={{ fontSize: '16.5px', color: 'var(--color-plum-900)', margin: '8px 0 6px', fontWeight: 700, lineHeight: 1.35 }}>
+                    ¿Cuándo ir a terapia de pareja? 8 señales de alerta antes del punto de no retorno
+                  </h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.5 }}>
+                    Identifica a tiempo los patrones de silencio, reproche o frialdad antes de que el desgaste sea irreversible.
+                  </p>
+                </a>
+                <a
+                  href="/blog/se-puede-perdonar-una-infidelidad-guia-pareja"
+                  style={{ textDecoration: 'none', background: '#FFFFFF', padding: '22px', borderRadius: '18px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-xs)', display: 'block' }}
+                >
+                  <span style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Confianza & Crisis</span>
+                  <h4 style={{ fontSize: '16.5px', color: 'var(--color-plum-900)', margin: '8px 0 6px', fontWeight: 700, lineHeight: 1.35 }}>
+                    ¿Se puede perdonar una infidelidad? Guía clínica para reconstruir la confianza
+                  </h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.5 }}>
+                    Protocolo en etapas para procesar el dolor, transparentar dudas y decidir con madurez el futuro de la relación.
+                  </p>
+                </a>
+              </div>
+            </div>
+
             {/* Banner CTA */}
             <div style={{ marginTop: '56px', textAlign: 'center', background: 'var(--color-plum-900)', borderRadius: '24px', padding: '44px 32px', color: '#fff' }}>
               <h3 className="font-serif" style={{ fontSize: '28px', color: '#fff', marginBottom: '12px' }}>
@@ -167,7 +217,7 @@ export default function TerapiaParejaPage() {
               <a
                 href={whatsappUrl}
                 target="_blank"
-                rel="nofollow noopener noreferrer"
+                rel="noopener noreferrer"
                 className="btn-clay"
                 style={{ display: 'inline-flex', padding: '14px 28px', borderRadius: 'var(--r-pill)', textDecoration: 'none', color: '#fff', fontWeight: 600 }}
                 onClick={() => trackWhatsAppClick('page_terapia_pareja_mid', 'Primera conversación 30 min')}

@@ -31,7 +31,7 @@ export default function BlogPostCrianzaPareja() {
             </h1>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap', fontSize: '13.5px', color: 'var(--color-ink-muted)', paddingBottom: '24px', borderBottom: '1px solid var(--border-subtle)' }}>
-              <span>Por <strong>Mtra. Iris Alarcón</strong> · Directora Clínica Centro Amaré (JVPP 3218)</span>
+              <span>Por <strong>Mtra. Iris Alarcón</strong> · Directora Clínica Centro Amaré (JVPP 47096)</span>
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> 6 min de lectura</span>
               <span>•</span>
@@ -109,7 +109,7 @@ export default function BlogPostCrianzaPareja() {
                   <a
                     href={whatsappUrl}
                     target="_blank"
-                    rel="nofollow noopener noreferrer"
+                    rel="noopener noreferrer"
                     className="btn-primary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >

@@ -59,7 +59,7 @@ export default function SexologiaClinicaPage() {
               
               <div className="pill-badge pill-badge-clay" style={{ marginBottom: '18px' }}>
                 <Award size={15} style={{ color: 'var(--color-clay)' }} />
-                <span>Sexóloga Clínica Colegiada en El Salvador · Registro JVPP 3218</span>
+                <span>Sexóloga Clínica Colegiada en El Salvador · Registro JVPP 47096</span>
               </div>
 
               <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 4.5vw, 54px)', lineHeight: 1.18, color: 'var(--color-plum-900)', marginBottom: '22px' }}>
@@ -79,7 +79,7 @@ export default function SexologiaClinicaPage() {
                   variant="clay"
                   href={whatsappUrl}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick('page_sexologia_hero', '1ª sesión gratis')}
                 >
                   <span>Agendar 1ª sesión de 30 min sin costo</span>
@@ -126,7 +126,7 @@ export default function SexologiaClinicaPage() {
                   Mtra. Iris Alarcón · Sexóloga Clínica y Terapeuta de Pareja
                 </h3>
                 <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', margin: '0 0 12px', lineHeight: 1.6 }}>
-                  Licenciada en Psicología y Máster en Sexología Clínica y Terapia de Pareja. Colegiada ante la <strong>Junta de Vigilancia de la Profesión Psicológica de El Salvador (JVPP N.º 3218)</strong>. Más de 9 años de experiencia clínica acompañando a personas y parejas en San Salvador, todo El Salvador y compatriotas en EE. UU., Canadá y Europa.
+                  Licenciada en Psicología y Máster en Sexología Clínica y Terapia de Pareja. Colegiada ante la <strong>Junta de Vigilancia de la Profesión Psicológica de El Salvador (JVPP N.º 47096)</strong>. Más de 9 años de experiencia clínica acompañando a personas y parejas en San Salvador, todo El Salvador y compatriotas en EE. UU., Canadá y Europa.
                 </p>
                 <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '13px', fontWeight: 600, color: 'var(--color-plum-900)' }}>
                   <span>✓ Enfoque biopsicosocial basado en evidencia</span>
@@ -217,7 +217,7 @@ export default function SexologiaClinicaPage() {
                 <a
                   href={whatsappUrl}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="noopener noreferrer"
                   className="btn-clay"
                   style={{ display: 'inline-flex', padding: '14px 28px', borderRadius: 'var(--r-pill)', textDecoration: 'none', color: '#fff', fontWeight: 600 }}
                   onClick={() => trackWhatsAppClick('page_sexologia_mid', 'Agendar 30 min')}

@@ -1097,7 +1097,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                 <a
                   href={whatsappMatchUrl}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="noopener noreferrer"
                   className="v-button v-button--accent"
                   style={{
                     padding: '16px 32px',
@@ -1142,7 +1142,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     <a
                       href="https://wa.me/50373184781"
                       target="_blank"
-                      rel="nofollow noopener noreferrer"
+                      rel="noopener noreferrer"
                       style={{ color: 'var(--v-pink)', fontWeight: 700, textDecoration: 'none' }}
                     >
                       +503 7318 4781

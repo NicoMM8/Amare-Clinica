@@ -172,7 +172,7 @@ export function HeroButton({
 
   if (href) {
     const isExternal = href.startsWith('http');
-    const effectiveRel = rel || (isExternal ? "nofollow noopener noreferrer" : undefined);
+    const effectiveRel = rel || (isExternal ? "noopener noreferrer" : undefined);
     return (
       <a
         href={disabled ? undefined : href}

@@ -6,7 +6,10 @@ Disallow: /src/
 Disallow: /node_modules/
 Disallow: /*.mjs$
 
-# Motores de búsqueda e IA (Bing, Copilot, Google)
+# Motores de búsqueda tradicionales
+User-agent: Googlebot
+Allow: /
+
 User-agent: Bingbot
 Allow: /
 
@@ -16,9 +19,24 @@ Allow: /
 User-agent: msnbot
 Allow: /
 
-User-agent: Googlebot
+# Motores de Búsqueda de IA Generativa (GEO - Generative Engine Optimization)
+User-agent: GPTBot
 Allow: /
 
-# Sitemap
-Sitemap: https://terapiadeparejaelsalvador.com/sitemap.xml
+User-agent: ChatGPT-User
+Allow: /
 
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap XML
+Sitemap: https://terapiadeparejaelsalvador.com/sitemap.xml

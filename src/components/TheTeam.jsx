@@ -135,7 +135,7 @@ export default function TheTeam() {
               <a
                 href={irisWhatsappUrl}
                 target="_blank"
-                rel="nofollow noopener noreferrer"
+                rel="noopener noreferrer"
                 className="team-pro-whatsapp-btn"
                 aria-label="Agendar con la Mtra. Iris Alarcón por WhatsApp"
               >
@@ -181,7 +181,7 @@ export default function TheTeam() {
               <a
                 href={ernestoWhatsappUrl}
                 target="_blank"
-                rel="nofollow noopener noreferrer"
+                rel="noopener noreferrer"
                 className="team-pro-whatsapp-btn"
                 aria-label="Agendar con el Lic. Ernesto Mejía por WhatsApp"
               >
@@ -227,7 +227,7 @@ export default function TheTeam() {
               <a
                 href={rafaelWhatsappUrl}
                 target="_blank"
-                rel="nofollow noopener noreferrer"
+                rel="noopener noreferrer"
                 className="team-pro-whatsapp-btn"
                 aria-label="Agendar con el Mtro. Rafael Franco por WhatsApp"
               >
@@ -283,7 +283,7 @@ export default function TheTeam() {
             <a
               href={whatsappUrl}
               target="_blank"
-              rel="nofollow noopener noreferrer"
+              rel="noopener noreferrer"
               className="btn-primary"
               style={{ display: 'inline-flex', gap: '10px', textDecoration: 'none', padding: '14px 24px', fontSize: '15px' }}
             >

@@ -75,7 +75,7 @@ export default function Specialties() {
               <a
                 href={whatsappPareja}
                 target="_blank"
-                rel="nofollow noopener noreferrer"
+                rel="noopener noreferrer"
                 className="btn-primary"
                 aria-label="Agendar primera conversación de 30 minutos sin costo para Terapia de Pareja vía WhatsApp"
                 style={{ fontSize: '13.5px', padding: '10px 20px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
@@ -134,7 +134,7 @@ export default function Specialties() {
               <a
                 href={whatsappIndividual}
                 target="_blank"
-                rel="nofollow noopener noreferrer"
+                rel="noopener noreferrer"
                 className="btn-primary"
                 aria-label="Agendar primera conversación de 30 minutos sin costo para Terapia Individual vía WhatsApp"
                 style={{ fontSize: '13.5px', padding: '10px 20px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}

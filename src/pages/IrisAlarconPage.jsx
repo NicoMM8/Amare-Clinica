@@ -41,7 +41,7 @@ export default function IrisAlarconPage() {
                   variant="clay"
                   href={whatsappUrl}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick('page_iris_hero', '1ª sesión gratis con Iris')}
                 >
                   <span>Agendar 1ª conversación de 30 min sin costo</span>
@@ -151,7 +151,7 @@ export default function IrisAlarconPage() {
                 <a
                   href={whatsappUrl}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="noopener noreferrer"
                   className="btn-primary"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}
                 >

@@ -124,7 +124,7 @@ export default function BlogPostDueloMigratorio() {
                   <a
                     href={whatsappUrl}
                     target="_blank"
-                    rel="nofollow noopener noreferrer"
+                    rel="noopener noreferrer"
                     className="btn-primary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >

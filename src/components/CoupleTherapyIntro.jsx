@@ -414,7 +414,7 @@ export default function CoupleTherapyIntro() {
                     <a
                       href={`https://wa.me/50373184781?text=${encodeURIComponent(prob.whatsappQuery)}`}
                       target="_blank"
-                      rel="nofollow noopener noreferrer"
+                      rel="noopener noreferrer"
                       aria-label={`Hablar por WhatsApp sobre ${prob.title}`}
                       style={{
                         fontSize: '13.5px',
@@ -472,7 +472,7 @@ export default function CoupleTherapyIntro() {
               <a
                 href={"https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí los motivos de consulta en la web de Centro Amaré y queremos empezar con una primera conversación de 30 min sin costo.")}
                 target="_blank"
-                rel="nofollow noopener noreferrer"
+                rel="noopener noreferrer"
                 className="btn-primary"
                 style={{
                   display: 'inline-flex',

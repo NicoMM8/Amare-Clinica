@@ -31,7 +31,7 @@ export default function BlogPostCuandoIrTerapiaPareja() {
             </h1>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap', fontSize: '13.5px', color: 'var(--color-ink-muted)', paddingBottom: '24px', borderBottom: '1px solid var(--border-subtle)' }}>
-              <span>Por <strong>Mtra. Iris Alarcón</strong> · Directora Clínica Centro Amaré (JVPP 3218)</span>
+              <span>Por <strong>Mtra. Iris Alarcón</strong> · Directora Clínica Centro Amaré (JVPP 47096)</span>
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> 6 min de lectura</span>
               <span>•</span>
@@ -175,7 +175,7 @@ export default function BlogPostCuandoIrTerapiaPareja() {
                   <a
                     href={whatsappUrl}
                     target="_blank"
-                    rel="nofollow noopener noreferrer"
+                    rel="noopener noreferrer"
                     className="btn-primary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >
@@ -214,6 +214,15 @@ export default function BlogPostCuandoIrTerapiaPareja() {
                     <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase' }}>Apego & Vínculos</span>
                     <h4 style={{ fontSize: '16px', color: 'var(--color-plum-900)', margin: '8px 0 0', fontWeight: 700, lineHeight: 1.4 }}>
                       Dependencia emocional en la pareja: cómo reconocerla y sanar sin perderte
+                    </h4>
+                  </a>
+                  <a
+                    href="/blog/crianza-en-pareja-desacuerdos-hijos-soluciones"
+                    style={{ textDecoration: 'none', background: '#FFFFFF', padding: '20px', borderRadius: '16px', border: '1px solid var(--border-subtle)', display: 'block' }}
+                  >
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase' }}>Crianza & Desacuerdos</span>
+                    <h4 style={{ fontSize: '16px', color: 'var(--color-plum-900)', margin: '8px 0 0', fontWeight: 700, lineHeight: 1.4 }}>
+                      Crianza en pareja: resolver desacuerdos con los hijos sin desgastar el vínculo
                     </h4>
                   </a>
                 </div>

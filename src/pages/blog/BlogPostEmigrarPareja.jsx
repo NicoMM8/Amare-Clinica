@@ -122,7 +122,7 @@ export default function BlogPostEmigrarPareja() {
                   <a
                     href={whatsappUrl}
                     target="_blank"
-                    rel="nofollow noopener noreferrer"
+                    rel="noopener noreferrer"
                     className="btn-primary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >
@@ -161,6 +161,15 @@ export default function BlogPostEmigrarPareja() {
                     <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase' }}>Honorarios y Guía</span>
                     <h4 style={{ fontSize: '16px', color: 'var(--color-plum-900)', margin: '8px 0 0', fontWeight: 700, lineHeight: 1.4 }}>
                       ¿Cuánto cuesta una terapia de pareja en El Salvador?
+                    </h4>
+                  </a>
+                  <a
+                    href="/blog/duelo-migratorio-que-es-como-manejarlo"
+                    style={{ textDecoration: 'none', background: '#FFFFFF', padding: '20px', borderRadius: '16px', border: '1px solid var(--border-subtle)', display: 'block' }}
+                  >
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase' }}>Identidad & Migración</span>
+                    <h4 style={{ fontSize: '16px', color: 'var(--color-plum-900)', margin: '8px 0 0', fontWeight: 700, lineHeight: 1.4 }}>
+                      Duelo migratorio: qué es, síntomas y cómo manejarlo sin perder tu raíz
                     </h4>
                   </a>
                 </div>

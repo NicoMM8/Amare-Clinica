@@ -39,20 +39,19 @@ export default function Hero() {
             
             {/* Eyebrow de Especialidad Clínica Colegiada */}
             <div 
-              className="badge-pill font-sans hero-eyebrow-pill" 
+              className="font-sans hero-eyebrow" 
               style={{ 
                 fontSize: '13px', 
                 fontWeight: 600, 
-                letterSpacing: 'normal',
-                textTransform: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                alignSelf: 'flex-start',
-                marginBottom: '14px'
+                color: 'var(--color-clay)',
+                letterSpacing: '0.04em',
+                textTransform: 'uppercase',
+                display: 'block',
+                margin: '0 0 14px 0',
+                padding: '0',
+                textAlign: 'left'
               }}
             >
-              <span className="badge-dot" aria-hidden="true" />
               <span className="hero-eyebrow-desktop">Terapia de Pareja y Sexología Clínica Online en El Salvador y el Exterior</span>
               <span className="hero-eyebrow-mobile">Terapia de Pareja y Sexología Clínica</span>
             </div>
@@ -143,7 +142,6 @@ export default function Hero() {
                 marginBottom: '20px' 
               }}
             >
-              <span style={{ color: '#128C7E', fontSize: '18px', lineHeight: 1 }} aria-hidden="true">★</span>
               <span>Valorado <strong>Excelente</strong> (5.0/5) por parejas y pacientes</span>
             </div>
 

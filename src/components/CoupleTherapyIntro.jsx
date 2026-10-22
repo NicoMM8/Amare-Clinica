@@ -14,7 +14,7 @@ import {
 export default function CoupleTherapyIntro() {
   const commonProblems = [
     {
-      iconComponent: IconComunicacion,
+      iconSrc: '/images/iconos-amare/terracota/comunicacion.webp',
       caption: "comunicación · diálogo",
       tag: "COMUNICACIÓN EN PAREJA",
       title: '“Hablamos, pero no nos entendemos”',
@@ -23,7 +23,7 @@ export default function CoupleTherapyIntro() {
       internalLink: "/terapia-de-pareja"
     },
     {
-      iconComponent: IconEscuchaActiva,
+      iconSrc: '/images/iconos-amare/terracota/escucha-activa.webp',
       caption: "escucha activa · comprensión",
       tag: "ACEPTACIÓN Y DIFERENCIAS",
       title: "Querer cambiar al otro",
@@ -32,7 +32,7 @@ export default function CoupleTherapyIntro() {
       internalLink: "/terapia-de-pareja"
     },
     {
-      iconComponent: IconPertenencia,
+      iconSrc: '/images/iconos-amare/terracota/pertenencia.webp',
       caption: "pertenencia · hogar",
       tag: "CONVIVENCIA Y ROLES",
       title: "El peso de la rutina, la casa y el dinero",
@@ -41,7 +41,7 @@ export default function CoupleTherapyIntro() {
       internalLink: "/terapia-de-pareja"
     },
     {
-      iconComponent: IconIntimidad,
+      iconSrc: '/images/iconos-amare/terracota/intimidad.webp',
       caption: "intimidad · vínculo",
       tag: "SEXUALIDAD E INTIMIDAD",
       title: '“Parecemos compañeros de cuarto”',
@@ -50,7 +50,7 @@ export default function CoupleTherapyIntro() {
       internalLink: "/sexologia-clinica"
     },
     {
-      iconComponent: IconPrivacidad,
+      iconSrc: '/images/iconos-amare/terracota/privacidad.webp',
       caption: "privacidad · confianza",
       tag: "INFIDELIDAD Y CONFIANZA",
       title: "Dolor tras una infidelidad o mentira",
@@ -59,7 +59,7 @@ export default function CoupleTherapyIntro() {
       internalLink: "/terapia-de-pareja"
     },
     {
-      iconComponent: IconAnsiedad,
+      iconSrc: '/images/iconos-amare/terracota/ansiedad.webp',
       caption: "ansiedad · pensamientos",
       tag: "CELOS E INSEGURIDAD",
       title: "Inseguridad, celos y angustia",
@@ -100,11 +100,17 @@ export default function CoupleTherapyIntro() {
                 gap: '8px',
                 marginBottom: '14px',
                 background: 'rgba(183, 89, 64, 0.08)',
-                padding: '6px 14px',
+                padding: '5px 14px 5px 6px',
                 borderRadius: 'var(--r-pill, 999px)',
               }}
             >
-              <IconDosHusosHorarios size={22} color="var(--color-clay)" />
+              <img
+                src="/images/iconos-amare/terracota/dos-husos-horarios.webp"
+                alt="Dos husos horarios"
+                width="24"
+                height="24"
+                style={{ borderRadius: '50%', objectFit: 'cover' }}
+              />
               <span
                 style={{
                   fontSize: '12px',
@@ -307,25 +313,37 @@ export default function CoupleTherapyIntro() {
                     e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
                   }}
                 >
-                  {/* Icono artesanal dibujado a mano sobre mosaico terracota */}
+                  {/* Icono artesanal ORIGINAL extraído del Brand Book con textura terracota */}
                   <div
                     style={{
                       width: '74px',
                       height: '74px',
                       borderRadius: '20px',
+                      overflow: 'hidden',
                       backgroundColor: 'var(--color-clay, #B75940)',
-                      color: '#FFF8F2',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
                       marginBottom: '12px',
                       boxShadow: '0 8px 20px rgba(183, 89, 64, 0.22)',
                       transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease',
                       flexShrink: 0,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                     }}
                     className="artisan-icon-badge"
                   >
-                    <IconComponent size={46} color="#FFF8F2" />
+                    <img
+                      src={prob.iconSrc}
+                      alt={prob.caption}
+                      width="74"
+                      height="74"
+                      loading="lazy"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        display: 'block',
+                      }}
+                    />
                   </div>
 
                   {/* Subtítulo artesanal de la ilustración */}

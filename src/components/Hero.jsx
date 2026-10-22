@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Globe, HeartHandshake, ShieldCheck, Sparkles, Clock, Play } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Globe, HeartHandshake, ShieldCheck, Sparkles, Clock, Play, X } from 'lucide-react';
 import { PigmentAtmosphere } from './cojeev/PigmentAtmosphere';
 import { HeroButton } from './cojeev/HeroButton';
 
@@ -23,8 +23,24 @@ function WhatsAppIcon({ size = 20, className = "" }) {
 
 export default function Hero() {
   const [importaHovered, setImportaHovered] = useState(false);
-  const [mediaTab, setMediaTab] = useState('photo'); // 'photo' | 'video'
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vengo de la web y me gustaría agendar una primera conversación sin costo.");
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsVideoModalOpen(false);
+    };
+    if (isVideoModalOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isVideoModalOpen]);
 
   return (
     <section className="hero-section" id="inicio">
@@ -210,136 +226,96 @@ export default function Hero() {
 
           </div>
 
-          {/* ── RIGHT COLUMN: Clinical Psychology Consultation Photography & Motion Graphic ── */}
+          {/* ── RIGHT COLUMN: Clinical Psychology Consultation Photography ── */}
           <div className="hero-visual-card">
-            {/* Media Selector Tabs: Espacio Clínico vs Video Animado */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '14px',
-                right: '14px',
-                zIndex: 4,
-                display: 'inline-flex',
-                alignItems: 'center',
-                background: 'rgba(255, 255, 255, 0.94)',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
-                padding: '4px',
-                borderRadius: 'var(--r-pill, 999px)',
-                boxShadow: '0 6px 20px rgba(35, 18, 33, 0.14)',
-                border: '1px solid rgba(255, 255, 255, 0.9)',
-                gap: '4px',
-              }}
-            >
-              <button
-                type="button"
-                onClick={() => setMediaTab('photo')}
-                aria-label="Ver fotografía del espacio clínico"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  padding: '6px 14px',
-                  borderRadius: 'var(--r-pill, 999px)',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  border: 'none',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  background: mediaTab === 'photo' ? 'var(--color-plum-900)' : 'transparent',
-                  color: mediaTab === 'photo' ? '#FFFFFF' : 'var(--color-plum-900)',
-                }}
-              >
-                <span>Espacio Clínico</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setMediaTab('video')}
-                aria-label="Ver logo animado oficial de Centro Amaré"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  padding: '6px 14px',
-                  borderRadius: 'var(--r-pill, 999px)',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  border: 'none',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  background: mediaTab === 'video' ? 'var(--color-clay)' : 'transparent',
-                  color: mediaTab === 'video' ? '#FFFFFF' : 'var(--color-plum-900)',
-                }}
-              >
-                <Play size={12} fill="currentColor" />
-                <span>Logo Animado</span>
-              </button>
-            </div>
-
-            {mediaTab === 'photo' ? (
-              <picture style={{ width: '100%', height: '100%', display: 'block' }}>
-                <source srcSet="/images/hero-amare-collage-1200.webp 1200w, /images/hero-amare-collage-800.webp 800w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
-                <source srcSet="/images/hero-amare-collage-1200.jpg" type="image/jpeg" />
-                <img
-                  src="/images/hero-amare-collage-1200.jpg"
-                  alt="Centro Amaré — Terapia de pareja, intimidad y psicología clínica en El Salvador y el exterior"
-                  className="hero-visual-img"
-                  fetchPriority="high"
-                  width="1200"
-                  height="800"
-                  style={{
-                    width: '100%',
-                    display: 'block',
-                    objectFit: 'cover',
-                  }}
-                />
-              </picture>
-            ) : (
-              <video
-                src="/videos/motion-graphic-centro-amare.mp4"
-                className="hero-visual-video"
-                autoPlay
-                loop
-                playsInline
-                controls
+            <picture style={{ width: '100%', height: '100%', display: 'block' }}>
+              <source srcSet="/images/hero-amare-collage-1200.webp 1200w, /images/hero-amare-collage-800.webp 800w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
+              <source srcSet="/images/hero-amare-collage-1200.jpg" type="image/jpeg" />
+              <img
+                src="/images/hero-amare-collage-1200.jpg"
+                alt="Centro Amaré — Terapia de pareja, intimidad y consulta clínica en El Salvador y el exterior"
+                className="hero-visual-img"
+                fetchPriority="high"
+                width="1200"
+                height="800"
                 style={{
                   width: '100%',
-                  height: '470px',
-                  objectFit: 'cover',
                   display: 'block',
-                  backgroundColor: '#FBF8F4',
+                  objectFit: 'cover',
                 }}
               />
-            )}
+            </picture>
 
             {/* Subtle Ambient Live Badge in the photo */}
-            {mediaTab === 'photo' && (
-              <div
-                className="animate-float"
+            <div
+              className="animate-float hero-live-badge-desktop"
+              style={{
+                position: 'absolute',
+                bottom: '18px',
+                left: '18px',
+                background: 'rgba(255, 255, 255, 0.95)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                borderRadius: 'var(--r-pill)',
+                padding: '8px 16px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 8px 24px rgba(34, 40, 74, 0.14)',
+                border: '1px solid rgba(255, 255, 255, 0.9)',
+                fontSize: '12.5px',
+                fontWeight: 600,
+                color: 'var(--color-plum-900)',
+                zIndex: 2,
+              }}
+            >
+              <span className="animate-radar-dot" />
+              <span>Consulta Online · Google Meet</span>
+            </div>
+
+            {/* Video Lightbox Trigger Button */}
+            <button
+              type="button"
+              onClick={() => setIsVideoModalOpen(true)}
+              className="hero-video-pill-btn"
+              aria-label="Ver video de identidad de Centro Amaré"
+              style={{
+                position: 'absolute',
+                bottom: '18px',
+                right: '18px',
+                background: 'rgba(34, 40, 74, 0.92)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                borderRadius: 'var(--r-pill, 999px)',
+                padding: '7px 15px 7px 9px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 8px 24px rgba(34, 40, 74, 0.25)',
+                border: '1px solid rgba(255, 255, 255, 0.25)',
+                fontSize: '12px',
+                fontWeight: 600,
+                color: '#FFFFFF',
+                cursor: 'pointer',
+                zIndex: 2,
+                transition: 'all 0.25s ease',
+              }}
+            >
+              <span
                 style={{
-                  position: 'absolute',
-                  bottom: '18px',
-                  left: '18px',
-                  background: 'rgba(255, 255, 255, 0.95)',
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
-                  borderRadius: 'var(--r-pill)',
-                  padding: '8px 18px',
-                  display: 'inline-flex',
+                  width: '22px',
+                  height: '22px',
+                  borderRadius: '50%',
+                  background: 'var(--color-clay, #B75940)',
+                  display: 'flex',
                   alignItems: 'center',
-                  gap: '9px',
-                  boxShadow: '0 8px 24px rgba(34, 40, 74, 0.14)',
-                  border: '1px solid rgba(255, 255, 255, 0.9)',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                  color: 'var(--color-plum-900)',
-                  zIndex: 2,
+                  justifyContent: 'center',
                 }}
               >
-                <span className="animate-radar-dot" />
-                <span>Sesiones online por Google Meet · Sin traslados</span>
-              </div>
-            )}
+                <Play size={10} fill="#FFFFFF" color="#FFFFFF" style={{ marginLeft: '1px' }} />
+              </span>
+              <span>Ver identidad animada (10s)</span>
+            </button>
           </div>
 
         </div>
@@ -388,6 +364,107 @@ export default function Hero() {
         </div>
 
       </div>
+
+      {/* ── VIDEO MODAL LIGHTBOX ── */}
+      {isVideoModalOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Video de identidad Centro Amaré"
+          onClick={() => setIsVideoModalOpen(false)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 99999,
+            backgroundColor: 'rgba(20, 15, 25, 0.82)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '20px',
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '680px',
+              backgroundColor: '#FAF7F2',
+              borderRadius: '24px',
+              overflow: 'hidden',
+              boxShadow: '0 25px 60px rgba(0, 0, 0, 0.4)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+            }}
+          >
+            {/* Modal Header */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '16px 22px',
+                borderBottom: '1px solid rgba(35, 18, 33, 0.08)',
+                background: '#FAF7F2',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-plum-900)' }}>
+                  Centro Amaré · Identidad y Filosofía
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsVideoModalOpen(false)}
+                aria-label="Cerrar video"
+                style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  border: 'none',
+                  background: 'rgba(35, 18, 33, 0.08)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  color: 'var(--color-plum-900)',
+                  transition: 'background 0.2s ease',
+                }}
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* Video Player */}
+            <video
+              src="/videos/motion-graphic-centro-amare.mp4"
+              autoPlay
+              controls
+              playsInline
+              style={{
+                width: '100%',
+                display: 'block',
+                maxHeight: '460px',
+                backgroundColor: '#FAF7F2',
+              }}
+            />
+
+            {/* Modal Footer Caption */}
+            <div
+              style={{
+                padding: '14px 22px',
+                textAlign: 'center',
+                fontSize: '13px',
+                color: 'var(--color-ink-secondary)',
+                background: '#FAF7F2',
+              }}
+            >
+              Un espacio para sentir, comprender y transformar · Desde El Salvador al mundo
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

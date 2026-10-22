@@ -1,18 +1,49 @@
 <!doctype html>
 <html lang="es" dir="ltr">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7RM70HX1YH"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ═══════════════════════════════════════════════
+         ANALYTICS & PRIVACIDAD (Google Tag Manager & Clarity sin bloqueo de hilo)
+    ═══════════════════════════════════════════════ -->
     <script>
+      window.__DNT_ACTIVE__ = (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true);
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-7RM70HX1YH');
-    </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      function __initThirdParties__() {
+        if (window.__THIRD_PARTIES_LOADED__) return;
+        window.__THIRD_PARTIES_LOADED__ = true;
+
+        // Cargar Google Tag Manager de manera no bloqueante
+        var gtm = document.createElement('script');
+        gtm.async = true;
+        gtm.src = 'https://www.googletagmanager.com/gtag/js?id=G-7RM70HX1YH';
+        document.head.appendChild(gtm);
+
+        // Cargar Microsoft Clarity respetando DNT/GPC
+        if (!window.__DNT_ACTIVE__) {
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", window.__CLARITY_ID__ || "r0z1m8amare");
+        }
+      }
+
+      // Cargar tras primera interacción o cuando la CPU esté libre (preserva 100% Core Web Vitals)
+      ['scroll', 'touchstart', 'mousemove', 'click', 'keydown'].forEach(function(ev) {
+        window.addEventListener(ev, __initThirdParties__, { once: true, passive: true });
+      });
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() { setTimeout(__initThirdParties__, 2200); }, { timeout: 4000 });
+      } else {
+        window.addEventListener('load', function() { setTimeout(__initThirdParties__, 2200); });
+      }
+    </script>
 
     <!-- ═══════════════════════════════════════════════
          FAVICON & ICONS
@@ -34,12 +65,6 @@
 
     <!-- URL Canónica -->
     <link rel="canonical" href="https://terapiadeparejaelsalvador.com/" />
-
-
-    <!-- Respeto a señales de privacidad Global Privacy Control (GPC) y Do-Not-Track (DNT) -->
-    <script>
-      window.__DNT_ACTIVE__ = (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true);
-    </script>
 
     <!-- ═══════════════════════════════════════════════
          GEO / LOCALIZACIÓN
@@ -84,20 +109,6 @@
     <meta property="og:phone_number" content="+50373184781" />
 
     <!-- ═══════════════════════════════════════════════
-         MICROSOFT CLARITY (Mapas de Calor y Grabaciones Anónimas)
-         Privacidad YMYL: Text masking habilitado para proteger datos de pacientes
-    ═══════════════════════════════════════════════ -->
-    <script type="text/javascript">
-      if (!window.__DNT_ACTIVE__) {
-        (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", window.__CLARITY_ID__ || "r0z1m8amare");
-      }
-    </script>
-
-    <!-- ═══════════════════════════════════════════════
          PRECONNECT TO REQUIRED ORIGINS (Core Web Vitals)
     ═══════════════════════════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -108,7 +119,8 @@
     <!-- ═══════════════════════════════════════════════
          PRELOAD CRITICAL ASSETS (Core Web Vitals / LCP)
     ═══════════════════════════════════════════════ -->
-    <link rel="preload" as="image" href="/images/hero-therapist-960.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/hero-amare-collage-800.webp" type="image/webp" media="(max-width: 600px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/hero-amare-collage-1200.webp" type="image/webp" media="(min-width: 601px)" fetchpriority="high" />
 
     <!-- ═══════════════════════════════════════════════
          GOOGLE FONTS — Fraunces & Nunito Sans (0ms Render-Blocking)

@@ -93,37 +93,41 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div style={{
-          position: 'absolute',
-          top: 'calc(100% + 8px)',
-          left: '16px',
-          right: '16px',
-          background: '#FFFFFF',
-          borderRadius: '20px',
-          border: '1px solid var(--border-subtle)',
-          boxShadow: 'var(--shadow-lg)',
-          padding: '24px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '16px',
-          zIndex: 101
-        }}>
-          <a href="/#especialidades" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Especialidades Clínicas</a>
-          <a href="/sobre-nosotros" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Sobre Centro Amaré (Nuestra Historia)</a>
-          <a href="/test-de-pareja" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-clay)' }}>Test de Pareja (2 min)</a>
-          <a href="/salvadorenos-en-el-exterior" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Salvadoreños en el Exterior</a>
-          <a href="/#equipo" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Equipo Clínico</a>
-          <a href="/precios" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Honorarios y Modalidades</a>
-          <a href="/blog" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Guías y Recursos</a>
-          <a href="/#faq" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-plum-900)' }}>Preguntas Frecuentes</a>
-          <hr style={{ border: 'none', borderTop: '1px solid var(--border-hairline)', margin: '4px 0' }} />
+        <div 
+          className="nav-mobile-drawer"
+          style={{
+            position: 'absolute',
+            top: 'calc(100% + 8px)',
+            left: '16px',
+            right: '16px',
+            background: '#FFFFFF',
+            borderRadius: '20px',
+            border: '1px solid var(--border-subtle)',
+            boxShadow: '0 16px 40px rgba(35, 18, 33, 0.18)',
+            padding: '18px 16px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '4px',
+            zIndex: 9999,
+            pointerEvents: 'auto',
+          }}
+        >
+          <a href="/#especialidades" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Especialidades Clínicas</a>
+          <a href="/sobre-nosotros" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Sobre Centro Amaré (Nuestra Historia)</a>
+          <a href="/test-de-pareja" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link nav-mobile-drawer-link--highlight">Test de Pareja (2 min)</a>
+          <a href="/salvadorenos-en-el-exterior" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Salvadoreños en el Exterior</a>
+          <a href="/#equipo" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Equipo Clínico</a>
+          <a href="/precios" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Honorarios y Modalidades</a>
+          <a href="/blog" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Guías y Recursos</a>
+          <a href="/#faq" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Preguntas Frecuentes</a>
+          <hr style={{ border: 'none', borderTop: '1px solid var(--border-hairline)', margin: '8px 0' }} />
           <a 
             href={whatsappUrl} 
             target="_blank" 
             rel="nofollow noopener noreferrer" 
             className="btn-clay"
             onClick={() => handleWhatsAppClick('navbar_mobile_drawer')}
-            style={{ width: '100%', padding: '14px', borderRadius: 'var(--r-pill)', color: '#fff', textAlign: 'center', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+            style={{ width: '100%', padding: '14px', borderRadius: 'var(--r-pill)', color: '#fff', textAlign: 'center', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', pointerEvents: 'auto' }}
           >
             <MessageSquare size={18} />
             <span>1ª conversación sin costo</span>

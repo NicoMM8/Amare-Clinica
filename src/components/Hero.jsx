@@ -206,62 +206,52 @@ export default function Hero() {
 
           </div>
 
-          {/* ── RIGHT COLUMN: Authentic Photography Mosaic (Mood Clinic style) ── */}
-          <div className="hero-mosaic-container">
-            {/* Top Row: Two smiling licensed psychologists */}
-            <div className="hero-mosaic-top">
-              {/* Card 1: Mtra. Iris Alarcón */}
-              <div className="hero-mosaic-card hero-mosaic-card--iris">
-                <img
-                  src="/images/iris-alarcon-portrait.webp"
-                  alt="Mtra. Iris Alarcón — Directora Clínica de Centro Amaré"
-                  className="hero-mosaic-img"
-                  width="480"
-                  height="480"
-                  loading="eager"
-                />
-                <div className="hero-mosaic-caption">
-                  <span className="hero-mosaic-name">Mtra. Iris Alarcón</span>
-                  <span className="hero-mosaic-role">Directora Clínica</span>
-                </div>
-              </div>
+          {/* ── RIGHT COLUMN: Clinical Psychology Consultation Photography ── */}
+          <div className="hero-visual-card">
+            {/* Ambient Warm Aura that connects the photo with the page canvas */}
+            <div className="hero-visual-aura" aria-hidden="true" />
 
-              {/* Card 2: Lic. Ernesto Mejía */}
-              <div className="hero-mosaic-card hero-mosaic-card--pro">
+            {/* Seamless blended frame */}
+            <div className="hero-visual-frame">
+              <picture style={{ width: '100%', height: '100%', display: 'block' }}>
+                <source srcSet="/images/hero-amare-collage-1200.webp 1200w, /images/hero-amare-collage-800.webp 800w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
+                <source srcSet="/images/hero-amare-collage-1200.jpg" type="image/jpeg" />
                 <img
-                  src="/images/equipo-ernesto-mejia.webp"
-                  alt="Lic. Ernesto Mejía — Psicólogo Clínico Colegiado JVPP"
-                  className="hero-mosaic-img"
-                  width="480"
-                  height="480"
-                  loading="eager"
+                  src="/images/hero-amare-collage-1200.jpg"
+                  alt="Centro Amaré — Terapia de pareja, intimidad y consulta clínica en El Salvador y el exterior"
+                  className="hero-visual-img"
+                  fetchPriority="high"
+                  width="1200"
+                  height="800"
                 />
-                {/* Live Badge like Mood Clinic */}
-                <div className="hero-mosaic-badge">
-                  <span className="animate-radar-dot" />
-                  <span>Respondemos hoy</span>
-                </div>
-                <div className="hero-mosaic-caption">
-                  <span className="hero-mosaic-name">Lic. Ernesto Mejía</span>
-                  <span className="hero-mosaic-role">Psicólogo Clínico</span>
-                </div>
-              </div>
+              </picture>
             </div>
 
-            {/* Bottom Row: Widescreen consultation session with laptop */}
-            <div className="hero-mosaic-card hero-mosaic-card--bottom">
-              <img
-                src="/images/hero-therapist-960.webp"
-                alt="Sesión de terapia de pareja y consulta clínica online en Centro Amaré"
-                className="hero-mosaic-img hero-mosaic-img--wide"
-                width="960"
-                height="540"
-                fetchPriority="high"
-              />
-              <div className="hero-mosaic-bottom-badge">
-                <span className="animate-radar-dot" />
-                <span>Consulta Online en vivo · Google Meet</span>
-              </div>
+            {/* Subtle Ambient Live Badge in the photo */}
+            <div
+              className="animate-float hero-live-badge-desktop"
+              style={{
+                position: 'absolute',
+                bottom: '18px',
+                left: '18px',
+                background: 'rgba(255, 255, 255, 0.95)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                borderRadius: 'var(--r-pill)',
+                padding: '8px 16px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 8px 24px rgba(34, 40, 74, 0.14)',
+                border: '1px solid rgba(255, 255, 255, 0.9)',
+                fontSize: '12.5px',
+                fontWeight: 600,
+                color: 'var(--color-plum-900)',
+                zIndex: 2,
+              }}
+            >
+              <span className="animate-radar-dot" />
+              <span>Consulta Online · Google Meet</span>
             </div>
           </div>
 

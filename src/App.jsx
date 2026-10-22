@@ -45,6 +45,7 @@ import BlogPostAutoestimaReal from './pages/blog/BlogPostAutoestimaReal';
 import BlogPostCrianzaPareja from './pages/blog/BlogPostCrianzaPareja';
 import EnlacesBioPage from './pages/EnlacesBioPage';
 import PrivacidadPage from './pages/PrivacidadPage';
+import CookiesPage from './pages/CookiesPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App({ initialPath = '/' }) {
@@ -293,8 +294,12 @@ function App({ initialPath = '/' }) {
     return <EnlacesBioPage />;
   }
 
-  if (cleanPath === '/privacidad' || cleanPath === '/politica-de-privacidad' || cleanPath === '/cookies' || cleanPath === '/politica-de-cookies') {
+  if (cleanPath === '/privacidad' || cleanPath === '/politica-de-privacidad') {
     return <PrivacidadPage />;
+  }
+
+  if (cleanPath === '/cookies' || cleanPath === '/politica-de-cookies') {
+    return <CookiesPage />;
   }
 
   // Si no es la ruta raíz ('/' o ''), se trata de una página no existente (404 real)

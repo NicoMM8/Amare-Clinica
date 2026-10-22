@@ -530,3 +530,89 @@
     grid-column: span 12 !important;
   }
 }
+
+/* ── Cojeev Marquee Keyframes & Hover ── */
+@keyframes cojeevMarqueeScroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(calc(-100% - 24px));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cojeev-marquee-track {
+    animation: none !important;
+  }
+}
+.cojeev-marquee-root:hover .cojeev-marquee-track {
+  animation-play-state: paused;
+}
+
+/* ── TheTeam Responsive ── */
+@media (max-width: 960px) {
+  .team-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* ── QuizTeaser Responsive ── */
+@media (max-width: 860px) {
+  .quiz-teaser-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 28px !important;
+    padding: 32px 24px !important;
+  }
+  .quiz-teaser-grid p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .quiz-teaser-grid > div:first-child > div:last-child {
+    justify-content: center;
+  }
+}
+
+/* ── CoupleTherapyIntro Responsive & Hover ── */
+.problem-card:hover .artisan-icon-badge {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 26px rgba(183, 89, 64, 0.35) !important;
+}
+.problem-card:hover .problem-card-cta {
+  gap: 9px !important;
+  color: var(--v-pink-deep, #9A432D) !important;
+}
+.problem-card .card-tag:hover {
+  background: rgba(183, 89, 64, 0.18) !important;
+}
+@media (max-width: 960px) {
+  .problems-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+@media (max-width: 860px) {
+  .intro-banner-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    text-align: center;
+  }
+  .intro-banner-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .intro-banner-image-container img {
+    max-width: 440px !important;
+  }
+}
+@media (max-width: 600px) {
+  .problems-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .problem-card {
+    padding: 28px 20px !important;
+  }
+}
+

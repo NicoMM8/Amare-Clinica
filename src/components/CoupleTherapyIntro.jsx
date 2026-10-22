@@ -503,49 +503,6 @@ export default function CoupleTherapyIntro() {
 
       </div>
 
-      {/* Responsive adjustments */}
-      <style>{`
-        .problem-card:hover .artisan-icon-badge {
-          transform: translateY(-2px) scale(1.05);
-          box-shadow: 0 12px 26px rgba(183, 89, 64, 0.35) !important;
-        }
-        .problem-card:hover .problem-card-cta {
-          gap: 9px !important;
-          color: var(--v-pink-deep, #9A432D) !important;
-        }
-        .problem-card .card-tag:hover {
-          background: rgba(183, 89, 64, 0.18) !important;
-        }
-        @media (max-width: 960px) {
-          .problems-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 20px !important;
-          }
-        }
-        @media (max-width: 860px) {
-          .intro-banner-grid {
-            grid-template-columns: 1fr !important;
-            gap: 28px !important;
-            text-align: center;
-          }
-          .intro-banner-text p {
-            margin-left: auto;
-            margin-right: auto;
-          }
-          .intro-banner-image-container img {
-            max-width: 440px !important;
-          }
-        }
-        @media (max-width: 600px) {
-          .problems-grid {
-            grid-template-columns: 1fr !important;
-            gap: 16px !important;
-          }
-          .problem-card {
-            padding: 28px 20px !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

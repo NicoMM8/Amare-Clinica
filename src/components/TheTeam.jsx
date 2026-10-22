@@ -385,15 +385,6 @@ export default function TheTeam() {
 
       </div>
 
-      {/* Responsive styles */}
-      <style>{`
-        @media (max-width: 960px) {
-          .team-cards-grid {
-            grid-template-columns: 1fr !important;
-            gap: 24px !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

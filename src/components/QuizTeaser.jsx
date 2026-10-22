@@ -141,23 +141,6 @@ export default function QuizTeaser() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 860px) {
-          .quiz-teaser-grid {
-            grid-template-columns: 1fr !important;
-            text-align: center;
-            gap: 28px !important;
-            padding: 32px 24px !important;
-          }
-          .quiz-teaser-grid p {
-            margin-left: auto;
-            margin-right: auto;
-          }
-          .quiz-teaser-grid > div:first-child > div:last-child {
-            justify-content: center;
-          }
-        }
-      `}</style>
     </section>
   );
 }

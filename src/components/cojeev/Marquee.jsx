@@ -54,27 +54,6 @@ export function Marquee({
       >
         {children}
       </div>
-
-      <style>{`
-        @keyframes cojeevMarqueeScroll {
-          from {
-            transform: translateX(0%);
-          }
-          to {
-            transform: translateX(calc(-100% - 24px));
-          }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .cojeev-marquee-track {
-            animation: none !important;
-          }
-        }
-        ${pauseOnHover ? `
-          .cojeev-marquee-root:hover .cojeev-marquee-track {
-            animation-play-state: paused;
-          }
-        ` : ''}
-      `}</style>
     </div>
   );
 }

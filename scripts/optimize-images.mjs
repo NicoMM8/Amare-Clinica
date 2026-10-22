@@ -9,15 +9,15 @@ const imagesDir = path.resolve(__dirname, '../public/images');
 async function optimizeImages() {
   console.log('🖼️  Optimizando imágenes para Lighthouse Performance...');
 
-  // 1. pareja-terapia-online.webp (Lighthouse flagged: 130 KiB -> target ~45-55 KiB)
+  // 1. pareja-terapia-online.webp (Lighthouse flagged: target ~38 KiB)
   const parejaJpgPath = path.join(imagesDir, 'pareja-terapia-online.jpg');
   const parejaPath = path.join(imagesDir, 'pareja-terapia-online.webp');
   const sourcePareja = fs.existsSync(parejaJpgPath) ? parejaJpgPath : parejaPath;
   if (fs.existsSync(sourcePareja)) {
     const parejaBuffer = fs.readFileSync(sourcePareja);
     const optimized = await sharp(parejaBuffer)
-      .resize({ width: 560, withoutEnlargement: true })
-      .webp({ quality: 60, effort: 6 })
+      .resize({ width: 500, withoutEnlargement: true })
+      .webp({ quality: 50, effort: 6 })
       .toBuffer();
     fs.writeFileSync(parejaPath, optimized);
     console.log(`✅ pareja-terapia-online.webp optimizado: ${(optimized.length / 1024).toFixed(1)} KiB`);
@@ -73,20 +73,20 @@ async function optimizeImages() {
   if (fs.existsSync(collage1200Path)) {
     const buf = fs.readFileSync(collage1200Path);
     const optimized = await sharp(buf)
-      .resize({ width: 1200, withoutEnlargement: true })
-      .webp({ quality: 72, effort: 6 })
+      .resize({ width: 960, withoutEnlargement: true })
+      .webp({ quality: 62, effort: 6 })
       .toBuffer();
     fs.writeFileSync(collage1200Path, optimized);
     console.log(`✅ hero-amare-collage-1200.webp optimizado: ${(optimized.length / 1024).toFixed(1)} KiB`);
   }
 
-  // 5. logo-nav.webp (Lighthouse flagged: 11.8 KiB -> target ~3-4 KiB)
+  // 5. logo-nav.webp (Lighthouse flagged: target ~3-4 KiB)
   const logoNavPath = path.join(imagesDir, 'logo-nav.webp');
   if (fs.existsSync(logoNavPath)) {
     const logoBuffer = fs.readFileSync(logoNavPath);
     const optimized = await sharp(logoBuffer)
-      .resize({ width: 228, height: 96, fit: 'inside', withoutEnlargement: true })
-      .webp({ quality: 65, effort: 6 })
+      .resize({ width: 180, withoutEnlargement: true })
+      .webp({ quality: 55, effort: 6 })
       .toBuffer();
     fs.writeFileSync(logoNavPath, optimized);
     console.log(`✅ logo-nav.webp optimizado: ${(optimized.length / 1024).toFixed(1)} KiB`);

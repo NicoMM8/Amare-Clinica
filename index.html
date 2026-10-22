@@ -35,13 +35,13 @@
       }
 
       // Cargar tras primera interacción o cuando la CPU esté libre (preserva 100% Core Web Vitals)
-      ['scroll', 'touchstart', 'mousemove', 'click', 'keydown'].forEach(function(ev) {
+      ['scroll', 'touchstart', 'pointerdown', 'click', 'keydown'].forEach(function(ev) {
         window.addEventListener(ev, __initThirdParties__, { once: true, passive: true });
       });
       if ('requestIdleCallback' in window) {
-        requestIdleCallback(function() { setTimeout(__initThirdParties__, 2200); }, { timeout: 4000 });
+        requestIdleCallback(function() { setTimeout(__initThirdParties__, 5000); }, { timeout: 8000 });
       } else {
-        window.addEventListener('load', function() { setTimeout(__initThirdParties__, 2200); });
+        window.addEventListener('load', function() { setTimeout(__initThirdParties__, 5000); });
       }
     </script>
 

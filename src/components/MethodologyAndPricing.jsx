@@ -185,7 +185,7 @@ export default function MethodologyAndPricing() {
                 Espacio neutral e imparcial
               </strong>
               <span style={{ fontSize: '13px', color: 'var(--color-ink-secondary)', lineHeight: 1.5 }}>
-                La psicóloga nunca toma bandos. Es una mediadora científica para sanar el vínculo.
+                Nuestro equipo clínico nunca toma bandos. Actuamos como mediadores científicos para desactivar el conflicto y sanar el vínculo.
               </span>
             </div>
           </div>
@@ -199,7 +199,7 @@ export default function MethodologyAndPricing() {
                 1ª Sesión de 30 min sin costo
               </strong>
               <span style={{ fontSize: '13px', color: 'var(--color-ink-secondary)', lineHeight: 1.5 }}>
-                Conocen a su psicóloga y evalúan la química profesional antes de cualquier compromiso.
+                Conocen a su terapeuta especialista y evalúan la química profesional antes de asumir cualquier compromiso.
               </span>
             </div>
           </div>
@@ -213,7 +213,7 @@ export default function MethodologyAndPricing() {
                 Flexibilidad horaria real
               </strong>
               <span style={{ fontSize: '13px', color: 'var(--color-ink-secondary)', lineHeight: 1.5 }}>
-                Google Meet privado con horarios adaptados a El Salvador, EE.UU., Canadá y Europa.
+                Sesiones privadas por Google Meet con horarios adaptados a El Salvador, EE. UU., Canadá y Europa (incluyendo tardes y fines de semana).
               </span>
             </div>
           </div>
@@ -379,9 +379,14 @@ export default function MethodologyAndPricing() {
                   gap: '10px'
                 }}>
                   <Sparkles size={16} style={{ color: 'var(--color-clay)', flexShrink: 0, marginTop: '2px' }} />
-                  <p style={{ fontSize: '12.5px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.5 }}>
-                    <strong>¿Qué pasa en esos primeros 30 minutos?</strong> No tienes que contarlo todo de golpe. Nos conocemos por Google Meet, me cuentan brevemente qué les preocupa, resolvemos dudas y vemos si hacen "clic" conmigo antes de decidir empezar.
-                  </p>
+                  <div>
+                    <p style={{ fontSize: '12.5px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.5 }}>
+                      <strong>¿Qué pasa en esos primeros 30 minutos?</strong> No tienen que contarlo todo de golpe. Nos conocemos por Google Meet, nos cuentan brevemente qué les preocupa, resolvemos sus dudas y vemos si hacen "clic" con el terapeuta de nuestro equipo asignado a su caso antes de decidir empezar.
+                    </p>
+                    <p style={{ fontSize: '12.5px', color: 'var(--color-ink-secondary)', margin: '8px 0 0 0', lineHeight: 1.5 }}>
+                      <strong>¿Cómo funciona el pago del Plan Mensual ($100 USD)?</strong> Incluye tus 4 sesiones del mes ($25 USD por sesión), ya sea en modalidad de pareja o individual. Puedes abonarlo de forma segura desde El Salvador o el exterior (tarjeta o transferencia local sin comisiones de remesa), o consultar con coordinación la tarifa por sesión individual suelta si prefieres avanzar quincenalmente.
+                    </p>
+                  </div>
                 </div>
 
                 {/* Checklist */}

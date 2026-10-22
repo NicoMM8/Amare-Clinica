@@ -245,9 +245,39 @@ const medicalBusinessSchema = {
   priceRange: '$$',
   currenciesAccepted: 'USD',
   paymentAccepted: 'Credit Card, Debit Card, Bank Transfer (Banco Agrícola, BAC, Cuscatlán), International Transfer',
-  employee: {
-    '@id': `${SITE_URL}/#iris-alarcon`,
-  },
+  employee: [
+    {
+      '@type': 'Person',
+      name: 'Mtra. Iris Alarcón',
+      jobTitle: 'Directora Clínica y Fundadora',
+      url: `${SITE_URL}/iris-alarcon`,
+      hasCredential: {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'license',
+        name: 'Registro Profesional Sanitario JVPP N.º 47096',
+      },
+    },
+    {
+      '@type': 'Person',
+      name: 'Lic. Ernesto Mejía',
+      jobTitle: 'Psicólogo Clínico Colegiado',
+      hasCredential: {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'license',
+        name: 'Registro Profesional Sanitario JVPP N.º 4102',
+      },
+    },
+    {
+      '@type': 'Person',
+      name: 'Mtro. Rafael Franco',
+      jobTitle: 'Psicólogo Clínico y Psicoterapeuta',
+      hasCredential: {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'license',
+        name: 'Registro Profesional Sanitario JVPP N.º 5144',
+      },
+    },
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Servicios de Psicoterapia Online — Centro Amaré',

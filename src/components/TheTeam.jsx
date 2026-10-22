@@ -173,7 +173,7 @@ export default function TheTeam() {
               </p>
               <div className="team-pro-license">
                 <Check size={15} strokeWidth={2.8} />
-                <span>JVPP Acreditado El Salvador</span>
+                <span>JVPP 4102</span>
               </div>
               <p className="team-pro-desc">
                 Terapeuta de cabecera en Centro Amaré para sesiones online. Especializado en terapia vincular de parejas, desescalada de conflictos y apego.
@@ -219,7 +219,7 @@ export default function TheTeam() {
               </p>
               <div className="team-pro-license">
                 <Check size={15} strokeWidth={2.8} />
-                <span>JVPP Acreditado El Salvador</span>
+                <span>JVPP 5144</span>
               </div>
               <p className="team-pro-desc">
                 Maestro en psicología clínica con amplia trayectoria en psicoterapia de adultos, procesos afectivos complejos y asesoría clínica interdisciplinar.

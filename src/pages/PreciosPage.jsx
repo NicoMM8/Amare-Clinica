@@ -90,13 +90,13 @@ export default function PreciosPage() {
                     color: 'var(--color-ink-secondary)',
                     lineHeight: 1.5
                   }}>
-                    <strong>¿Qué pasa en estos 30 min?</strong> No tienes que contarlo todo de golpe. Nos conocemos por videollamada, me cuentan brevemente qué les preocupa y vemos si hacen "clic" conmigo antes de decidir empezar.
+                    <strong>¿Qué pasa en estos 30 min?</strong> No tienen que contarlo todo de golpe. Nos conocemos por Google Meet, nos cuentan brevemente qué les preocupa, resolvemos sus dudas y vemos si hacen "clic" con el terapeuta de nuestro equipo asignado a su caso antes de decidir empezar.
                   </div>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
                       <Check size={18} style={{ color: 'var(--color-clay)' }} />
-                      <span>30 minutos con la psicóloga</span>
+                      <span>30 minutos con un terapeuta del equipo</span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-ink-primary)' }}>
                       <Check size={18} style={{ color: 'var(--color-clay)' }} />

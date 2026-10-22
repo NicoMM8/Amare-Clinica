@@ -10,15 +10,15 @@ export const FAQS = [
   },
   {
     q: "¿Atienden a parejas que viven dentro de El Salvador (San Salvador, Santa Tecla, San Miguel)?",
-    a: "Sí. Aunque nuestra modalidad es 100% digital para ofrecerte total privacidad y ahorrar el tráfico de San Salvador, atendemos a diario a parejas residentes en El Salvador y a salvadoreños en el exterior."
+    a: "Sí. Atendemos a parejas y adultos en todo el territorio nacional (San Salvador, Santa Tecla, Antiguo Cuscatlán, Nuevo Cuscatlán, San Miguel, Santa Ana, Sonsonate y La Libertad). La modalidad 100% online por Google Meet les permite conectarse desde casa o la oficina, ahorrando hasta dos horas de tráfico diario y garantizando total discreción."
   },
   {
     q: "¿Qué métodos de pago aceptan desde el extranjero y desde El Salvador?",
-    a: "Facilitamos el pago mediante tarjeta de crédito o débito internacional, transferencia bancaria local en El Salvador y enlaces de pago seguros en dólares estadounidenses (USD)."
+    a: "Ofrecemos métodos de pago directos, seguros y sin comisiones de remesa. Desde El Salvador aceptamos transferencias bancarias locales y tarjetas de crédito o débito. Desde Estados Unidos, Canadá y Europa pueden abonar sus sesiones en dólares (USD) mediante enlace de pago seguro con tarjeta internacional, evitando recargos por envío de dinero."
   },
   {
     q: "¿Emiten factura médica para reembolso de seguro (en El Salvador, EE. UU. o Canadá)?",
-    a: "Sí. Emitimos factura profesional y recibos clínicos detallados con número de colegiación sanitaria oficial ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP N.º 47096). Puedes presentar esta documentación ante aseguradoras privadas en El Salvador para reembolso de consulta psicológica ambulatoria, así como para pólizas de salud en Estados Unidos y Canadá bajo cobertura de beneficios fuera de red (out-of-network benefits o superbills)."
+    a: "Sí. Al ser una clínica acreditada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP N.º 47096), emitimos facturas y recibos clínicos detallados (superbills) con diagnóstico CIE-10/DSM-5 cuando la aseguradora lo requiere. Esto permite tramitar el reembolso en pólizas médicas privadas de El Salvador y en seguros de EE. UU. o Canadá con cobertura out-of-network."
   },
   {
     q: "¿Cómo funciona la primera conversación sin costo en Centro Amaré?",
@@ -30,7 +30,7 @@ export const FAQS = [
   },
   {
     q: "¿Y si mi pareja no quiere venir a terapia o tiene dudas?",
-    a: "Es muy habitual que la iniciativa nazca de uno de los dos. Si tu pareja no se siente lista, puedes iniciar el proceso de forma individual. En la primera conversación comprobamos que la terapia no es un tribunal para buscar culpables, lo que con frecuencia anima a la otra persona a sumarse con total tranquilidad."
+    a: "Es una situación muy frecuente. Pueden agendar la primera conversación gratuita de 30 minutos sin ningún compromiso para que tu pareja conozca el enfoque neutral de la clínica sin sentirse juzgada. Si aun así decide no participar, puedes iniciar un proceso de Terapia Individual (TCC/DBT) a la misma tarifa ($25 USD/sesión en plan mensual) para ganar claridad, poner límites sanos y tomar decisiones sobre tu relación."
   },
   {
     q: "¿Qué ocurre después de completar el proceso de terapia?",

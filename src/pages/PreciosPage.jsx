@@ -44,7 +44,7 @@ export default function PreciosPage() {
                   rel="nofollow noopener noreferrer"
                   onClick={() => trackWhatsAppClick('page_precios_hero', '1ª sesión gratis')}
                 >
-                  <span>Agendar 1ª conversación de 30 min sin costo</span>
+                  <span>1ª conversación sin costo (30 min)</span>
                 </HeroButton>
 
                 <HeroButton

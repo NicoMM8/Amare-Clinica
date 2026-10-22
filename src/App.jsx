@@ -56,21 +56,41 @@ function App({ initialPath = '/' }) {
   });
 
   useEffect(() => {
+    // Desactiva la restauración automática del scroll del navegador para evitar saltar al final
+    if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
     const handleLocationChange = () => {
       setCurrentPath(window.location.pathname);
     };
 
     window.addEventListener('popstate', handleLocationChange);
 
-    // Intercepta clicks en enlaces internos para navegación SPA suave
+    // Intercepta clicks en enlaces internos para navegación SPA suave y precisa
     const handleGlobalClick = (e) => {
       const target = e.target.closest('a');
       if (target) {
         const href = target.getAttribute('href');
         // Si es una ruta interna (no ancla hash puro ni enlace externo)
-        if (href && href.startsWith('/') && !href.startsWith('//')) {
-          const [path, hash] = href.split('#');
-          // Si es navegación a otra página
+        if (href && (href.startsWith('/') || href.startsWith('#')) && !href.startsWith('//')) {
+          const [rawPath, hash] = href.split('#');
+          const path = rawPath || window.location.pathname;
+
+          // Caso 1: Enlace a sección con hash en la misma página
+          if (hash && (rawPath === '' || rawPath === window.location.pathname)) {
+            e.preventDefault();
+            window.history.pushState({}, '', href);
+            const el = document.getElementById(hash);
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+            } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            return;
+          }
+
+          // Caso 2: Navegación a otra página
           if (path && path !== window.location.pathname) {
             e.preventDefault();
             window.history.pushState({}, '', href);
@@ -78,10 +98,14 @@ function App({ initialPath = '/' }) {
             if (hash) {
               setTimeout(() => {
                 const el = document.getElementById(hash);
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
+                if (el) {
+                  el.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.scrollTo(0, 0);
+                }
+              }, 150);
             } else {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              window.scrollTo(0, 0);
             }
           }
         }
@@ -100,12 +124,30 @@ function App({ initialPath = '/' }) {
     if (typeof window !== 'undefined') {
       window.history.pushState({}, '', path);
       setCurrentPath(path);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo(0, 0);
     }
   };
 
   // ── Normalización de ruta (soporta con o sin barra final '/') ──
   const cleanPath = (currentPath || '').replace(/\/+$/, '') || '/';
+
+  // Scroll to top determinista al cambiar de ruta
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const hash = (window.location.hash || '').replace('#', '');
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo(0, 0);
+        }
+      }, 150);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [cleanPath]);
 
   useEffect(() => {
     if (typeof document === 'undefined') return;

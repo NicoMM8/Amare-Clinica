@@ -156,8 +156,12 @@ const medicalBusinessSchema = {
     { '@type': 'AdministrativeArea', name: 'Los Angeles, California' },
     { '@type': 'AdministrativeArea', name: 'Washington, D.C.' },
   ],
-  medicalSpecialty: [
-    'https://schema.org/MentalHealth',
+  knowsAbout: [
+    'Salud Mental',
+    'Terapia de Pareja',
+    'Psicoterapia Clínica',
+    'Sexología Clínica',
+    'Duelo Migratorio'
   ],
   sameAs: [
     'https://www.psico.org/centro-47096',
@@ -276,46 +280,44 @@ const medicalBusinessSchema = {
           { '@type': 'Country', name: 'Spain' },
         ],
       },
+      {
+        '@type': 'Offer',
+        name: 'Terapia de Pareja Online',
+        description: 'Terapia de pareja online basada en evidencia (Terapia Integral de Pareja + TCC) estructurada en 4 fases clínicas para salvadoreños en el país y en el exterior.',
+        url: `${SITE_URL}/terapia-de-pareja`,
+        price: '100',
+        priceCurrency: 'USD',
+        billingPeriod: 'P1M',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Terapia Individual (TCC y DBT)',
+        description: 'Terapia individual online para adultos: ansiedad, rumiación, apegos, rupturas y regulación emocional.',
+        url: `${SITE_URL}/terapia-individual`,
+        price: '100',
+        priceCurrency: 'USD',
+        billingPeriod: 'P1M',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Sexología Clínica y Terapia de Intimidad',
+        description: 'Abordaje riguroso, científico y libre de tabúes de la intimidad y sexualidad para parejas e individuos.',
+        url: `${SITE_URL}/sexologia-clinica`,
+        price: '100',
+        priceCurrency: 'USD',
+        billingPeriod: 'P1M',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Psicoterapia Transcultural — Diáspora Salvadoreña',
+        description: 'Atención especializada para salvadoreños en Montreal, Los Ángeles, Washington, Madrid y todo el mundo con terapeuta que comparte tu contexto cultural.',
+        url: `${SITE_URL}/salvadorenos-en-el-exterior`,
+        price: '100',
+        priceCurrency: 'USD',
+        billingPeriod: 'P1M',
+      },
     ],
   },
-  availableService: [
-    {
-      '@type': 'MedicalTherapy',
-      name: 'Terapia de Pareja Online',
-      alternateName: ['Terapia Integral de Pareja', 'Couple Therapy Online'],
-      description:
-        'Terapia de pareja online estructurada en 4 fases clínicas (Evaluación y Mapa del Vínculo, Desescalada Emocional, Reconstrucción de Intimidad y Acuerdos, Consolidación y Alta). Enfoque basado en evidencia (Terapia Integral de Pareja + TCC) para salvadoreños en el país y en el exterior.',
-      relevantSpecialty: 'https://schema.org/MentalHealth',
-      url: `${SITE_URL}/terapia-de-pareja`,
-    },
-    {
-      '@type': 'MedicalTherapy',
-      name: 'Terapia Individual (TCC)',
-      alternateName: ['Terapia Cognitivo Conductual', 'Individual Therapy Online'],
-      description:
-        'Terapia individual para adultos: ansiedad, rumiación, apegos, rupturas y regulación emocional. Enfoque TCC y DBT con base científica.',
-      relevantSpecialty: 'https://schema.org/MentalHealth',
-      url: `${SITE_URL}/terapia-individual`,
-    },
-    {
-      '@type': 'MedicalTherapy',
-      name: 'Sexología Clínica',
-      alternateName: ['Clinical Sexology', 'Sexología Médica'],
-      description:
-        'Abordaje riguroso, científico y libre de tabúes de la sexualidad humana. Espacio privado y profesional para parejas e individuos.',
-      relevantSpecialty: 'https://schema.org/MentalHealth',
-      url: `${SITE_URL}/sexologia-clinica`,
-    },
-    {
-      '@type': 'MedicalTherapy',
-      name: 'Psicoterapia Transcultural — Diáspora Salvadoreña',
-      alternateName: ['Duelo Migratorio', 'Terapia para Migrantes', 'Transcultural Therapy'],
-      description:
-        'Atención especializada para salvadoreños en Montreal, Los Ángeles, Washington, Madrid y el mundo. Terapeuta que comparte tu código cultural, sin necesidad de explicar el contexto.',
-      relevantSpecialty: 'https://schema.org/MentalHealth',
-      url: `${SITE_URL}/terapia-salvadorenos-en-el-extranjero`,
-    },
-  ],
 };
 
 // ─────────────────────────────────────────────

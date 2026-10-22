@@ -73,6 +73,7 @@ export default function Hero() {
               <span style={{ display: 'inline', whiteSpace: 'nowrap' }}>
                 lo que sientes{' '}
                 <span 
+                  className="hero-underline-interactive"
                   style={{ 
                     position: 'relative', 
                     display: 'inline-block',
@@ -83,7 +84,7 @@ export default function Hero() {
                   onMouseLeave={() => setImportaHovered(false)}
                 >
                   importa
-                  {/* Hand-drawn organic SVG ink underline from Cojeev */}
+                  {/* Hand-drawn organic SVG ink underline from Cojeev (Auto-draw en móvil y escritorio) */}
                   <svg
                     viewBox="0 0 120 14"
                     preserveAspectRatio="none"
@@ -99,6 +100,7 @@ export default function Hero() {
                     aria-hidden="true"
                   >
                     <path
+                      className="hero-underline-path"
                       d="M2 9 C 24 3, 40 12, 62 8 S 98 10, 118 4"
                       fill="none"
                       stroke="var(--color-clay)"
@@ -106,11 +108,6 @@ export default function Hero() {
                       strokeLinecap="round"
                       pathLength="100"
                       strokeDasharray="100"
-                      strokeDashoffset={importaHovered ? 0 : 55}
-                      style={{
-                        opacity: importaHovered ? 1 : 0.75,
-                        transition: 'stroke-dashoffset 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease'
-                      }}
                     />
                   </svg>
                 </span>

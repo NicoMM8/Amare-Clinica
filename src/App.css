@@ -73,6 +73,32 @@
   }
 }
 
+/* ── Auto-dibujado orgánico del trazo "importa" en móvil y escritorio ── */
+@keyframes heroUnderlineDraw {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.85;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.95;
+  }
+}
+
+.hero-underline-path {
+  stroke-dashoffset: 0;
+  animation: heroUnderlineDraw 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+  transition: stroke-width 0.25s ease, opacity 0.25s ease;
+}
+
+.hero-underline-interactive:hover .hero-underline-path {
+  opacity: 1;
+  stroke-width: 3.8px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-float,
   .animate-float-delayed,

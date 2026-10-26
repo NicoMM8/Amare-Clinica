@@ -54,7 +54,89 @@
     </script>
 
     <!-- ═══════════════════════════════════════════════
-         FAVICON & ICONS
+         WEBMCP (Web Model Context Protocol) para Agentes de IA
+    ═══════════════════════════════════════════════ -->
+    <script>
+      (function() {
+        var mc = (typeof document !== 'undefined' && document.modelContext) || 
+                 (typeof navigator !== 'undefined' && navigator.modelContext);
+        if (!mc) {
+          mc = {
+            tools: new Map(),
+            registerTool: function(tool) {
+              this.tools.set(tool.name, tool);
+              return Promise.resolve(tool);
+            },
+            unregisterTool: function(name) {
+              this.tools.delete(name);
+              return Promise.resolve(true);
+            }
+          };
+          try {
+            if (typeof document !== 'undefined' && !document.modelContext) document.modelContext = mc;
+            if (typeof navigator !== 'undefined' && !navigator.modelContext) navigator.modelContext = mc;
+          } catch(e) {}
+        }
+
+        var agendarTool = {
+          name: "agendar_consulta_psicologica",
+          description: "Agendar una consulta clínica inicial confidencial de 30 minutos de cortesía con psicólogos colegiados por la JVPP en El Salvador (pareja, individual o sexología)",
+          inputSchema: {
+            type: "object",
+            properties: {
+              nombre: { type: "string", description: "Nombre de la persona o pareja consultante" },
+              modalidad: { type: "string", enum: ["pareja", "individual", "sexologia"], description: "Especialidad requerida" },
+              pais_residencia: { type: "string", description: "País o ciudad de residencia (ej: El Salvador, EE.UU.)" }
+            },
+            required: ["nombre"]
+          },
+          execute: function(params) {
+            var msg = encodeURIComponent("Hola, me gustaría agendar la sesión inicial de orientación clínica en Centro Amaré.");
+            window.open("https://wa.me/50373184781?text=" + msg, "_blank");
+            return Promise.resolve({
+              status: "success",
+              clinica: "Centro Amaré",
+              whatsapp: "+503 7318-4781",
+              mensaje: "Recepción clínica activada con confidencialidad profesional."
+            });
+          }
+        };
+
+        var consultarPreciosTool = {
+          name: "consultar_tarifas_y_planes",
+          description: "Obtener las tarifas transparentes de terapia psicológica en El Salvador con psicólogos colegiados JVPP",
+          inputSchema: {
+            type: "object",
+            properties: {
+              servicio: { type: "string", enum: ["terapia_pareja", "terapia_individual", "sexologia_clinica"], description: "Tipo de servicio a cotizar" }
+            }
+          },
+          execute: function(params) {
+            return Promise.resolve({
+              moneda: "USD (Dólares)",
+              sesion_individual: "$35 - $45 por sesión",
+              sesion_pareja: "$45 - $55 por sesión",
+              primera_sesion: "30 minutos de cortesía y encuadre clínico inicial",
+              credenciales: "Psicólogos colegiados con acreditación oficial de la Junta de Vigilancia de la Profesión Psicológica (JVPP El Salvador)",
+              reembolso_seguros: "Se entregan facturas y constancias médicas para reembolso en aseguradoras privadas"
+            });
+          }
+        };
+
+        try {
+          if (document.modelContext && typeof document.modelContext.registerTool === 'function') {
+            document.modelContext.registerTool(agendarTool);
+            document.modelContext.registerTool(consultarPreciosTool);
+          } else if (navigator.modelContext && typeof navigator.modelContext.registerTool === 'function') {
+            navigator.modelContext.registerTool(agendarTool);
+            navigator.modelContext.registerTool(consultarPreciosTool);
+          }
+        } catch(e) {}
+      })();
+    </script>
+
+    <!-- ═══════════════════════════════════════════════
+         FAVICON & ICONS & AGENT DISCOVERY
     ═══════════════════════════════════════════════ -->
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=3" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3" />
@@ -64,6 +146,8 @@
     <link rel="manifest" href="/manifest.json" />
     <link rel="ai-catalog" type="application/json" href="/.well-known/ai-catalog.json" />
     <link rel="help" type="text/plain" href="/llms.txt" />
+    <link rel="auth-metadata" type="text/markdown" href="/auth.md" />
+    <link rel="oauth-protected-resource" type="application/json" href="/.well-known/oauth-protected-resource" />
     <meta name="theme-color" content="#231221" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -177,6 +261,14 @@
 
     <!-- Skip-to-content accesible estándar en primer nivel de body -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Declarative WebMCP Form para Agentes de IA -->
+    <form toolname="agendar_consulta_psicologica" tooldescription="Agendar sesión clínica confidencial con psicólogos colegiados en El Salvador" style="display:none;" aria-hidden="true" action="https://wa.me/50373184781" method="GET">
+      <input type="text" name="nombre" toolparamdescription="Nombre del consultante o pareja" />
+      <input type="text" name="modalidad" toolparamdescription="Modalidad: pareja, individual o sexologia" />
+      <input type="text" name="telefono" toolparamdescription="Número de WhatsApp o teléfono de contacto" />
+      <button type="submit">Agendar Consulta</button>
+    </form>
 
     <!-- Banner de Consentimiento y Política de Cookies (Conforme a RGPD/YMYL) -->
     <aside id="cookie-consent-banner" role="region" aria-label="Aviso de cookies y privacidad" class="cookie-banner" style="display: none;" data-nosnippet>

@@ -1,12 +1,12 @@
 {
   "specVersion": "1.0",
   "host": {
-    "name": "Centro Amaré",
-    "domain": "terapiadeparejaelsalvador.com"
+    "displayName": "Centro Amaré",
+    "identifier": "did:web:terapiadeparejaelsalvador.com"
   },
   "entries": [
     {
-      "id": "urn:air:terapiadeparejaelsalvador.com:service:terapia-pareja",
+      "identifier": "urn:air:terapiadeparejaelsalvador.com:service:terapia-pareja",
       "displayName": "Terapia de Pareja Online en El Salvador",
       "type": "text/html",
       "url": "https://terapiadeparejaelsalvador.com/terapia-de-pareja",
@@ -17,7 +17,7 @@
       ]
     },
     {
-      "id": "urn:air:terapiadeparejaelsalvador.com:service:terapia-individual",
+      "identifier": "urn:air:terapiadeparejaelsalvador.com:service:terapia-individual",
       "displayName": "Terapia Individual para Adultos",
       "type": "text/html",
       "url": "https://terapiadeparejaelsalvador.com/terapia-individual",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "id": "urn:air:terapiadeparejaelsalvador.com:service:sexologia-clinica",
+      "identifier": "urn:air:terapiadeparejaelsalvador.com:service:sexologia-clinica",
       "displayName": "Sexología Clínica & Terapia Sexual",
       "type": "text/html",
       "url": "https://terapiadeparejaelsalvador.com/sexologia-clinica",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "id": "urn:air:terapiadeparejaelsalvador.com:service:test-pareja",
+      "identifier": "urn:air:terapiadeparejaelsalvador.com:service:test-pareja",
       "displayName": "Test de Pareja Clínico Online",
       "type": "text/html",
       "url": "https://terapiadeparejaelsalvador.com/test-de-pareja",
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "id": "urn:air:terapiadeparejaelsalvador.com:service:precios",
+      "identifier": "urn:air:terapiadeparejaelsalvador.com:service:precios",
       "displayName": "Precios y Honorarios Clínicos",
       "type": "text/html",
       "url": "https://terapiadeparejaelsalvador.com/precios",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "urn:air:terapiadeparejaelsalvador.com:doc:llms",
+      "identifier": "urn:air:terapiadeparejaelsalvador.com:doc:llms",
       "displayName": "Contexto Maestro Clínico para LLMs",
       "type": "text/plain",
       "url": "https://terapiadeparejaelsalvador.com/llms.txt",

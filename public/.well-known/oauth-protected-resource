@@ -1,0 +1,15 @@
+{
+  "resource": "https://terapiadeparejaelsalvador.com",
+  "authorization_servers": [
+    "https://terapiadeparejaelsalvador.com"
+  ],
+  "scopes_supported": [
+    "public:read",
+    "appointment:request",
+    "clinical:catalog"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ],
+  "resource_documentation": "https://terapiadeparejaelsalvador.com/auth.md"
+}

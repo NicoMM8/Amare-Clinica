@@ -63,7 +63,7 @@ export default function Specialties() {
               </h3>
 
               <p style={{ fontSize: '15px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '22px' }}>
-                Para parejas que sienten que solo discuten, que han perdido el deseo o la complicidad, que atraviesan una infidelidad o que sufren el desgaste de emigrar. Dejen de "aguantar" y aprendan a comunicarse con calma.
+                Atención con psicóloga y <strong>sexóloga en El Salvador</strong> para parejas que discuten a menudo, han perdido el deseo o atraviesan una infidelidad. Dejen de aguantar y aprendan a comunicarse con calma.
               </p>
 
               <div style={{ fontSize: '13px', color: 'var(--color-plum-900)', background: 'var(--color-canvas)', padding: '10px 14px', borderRadius: '12px', marginBottom: '24px' }}>

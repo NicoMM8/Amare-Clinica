@@ -12,38 +12,38 @@ export default function SexologiaClinicaPage() {
   const areas = [
     {
       title: "Discrepancia en el deseo sexual",
-      desc: "Cuando un miembro de la pareja desea mayor frecuencia o intimidad que el otro, provocando sentimientos de culpa, rechazo acumulado, presión y silencios incómodos."
+      desc: "Ocurre cuando uno de los dos desea mayor intimidad que el otro. Te ayudamos a frenar la culpa, la presión y los silencios incómodos en la pareja."
     },
     {
       title: "Dificultades y bloqueos íntimos",
-      desc: "Tratamiento clínico de la anorgasmia, dolor durante la relación (vaginismo / dispareunia), eyaculación precoz o disfunción eréctil desde una perspectiva biopsicosocial sin fármacos invasivos."
+      desc: "Abordamos anorgasmia, dolor durante la relación, eyaculación rápida o disfunción eréctil. Aplicamos pautas psicológicas prácticas, sin fármacos invasivos ni exámenes físicos."
     },
     {
-      title: "Reconexión tras etapas de crisis o crianza",
-      desc: "Recuperar el erotismo y la intimidad conyugal después de tener hijos, periodos de estrés laboral prolongado, menopausia o secuelas emocionales de una infidelidad."
+      title: "Reconexión tras etapas de crisis",
+      desc: "Recupera la cercanía y el erotismo con tu pareja después de tener hijos, periodos de estrés laboral o tras superar una infidelidad."
     },
     {
-      title: "Tabúes, educación sexual y límites sanos",
-      desc: "Un espacio 100% privado, laico y libre de prejuicios morales para conversar sobre fantasías, comunicación erótica y acuerdos de pareja sin culpa ni vergüenza."
+      title: "Espacio privado y libre de tabúes",
+      desc: "Conversa con tranquilidad sobre dudas íntimas, comunicación erótica y acuerdos de pareja. Un entorno profesional, laico y 100% confidencial."
     }
   ];
 
   const faqs = [
     {
-      q: "¿Qué hace una sexóloga clínica en El Salvador?",
-      a: "Una sexóloga clínica es una profesional de la psicología con formación especializada de posgrado en salud sexual y relacional. Diagnostica y trata bloqueos emocionales, dificultades de deseo, dolor o disfunciones íntimas mediante pautas científicas y ejercicios prácticos, sin necesidad de exámenes físicos en consulta."
+      q: "¿Qué hace una sexóloga en El Salvador y cuándo consultar?",
+      a: "Una sexóloga clínica es una psicóloga con posgrado en salud sexual y relacional. Ayuda a resolver problemas de deseo, bloqueos o falta de intimidad con técnicas científicas. La consulta es conversacional, cómoda y no requiere exámenes físicos."
     },
     {
       q: "¿La consulta de sexología se realiza en pareja o de forma individual?",
-      a: "Puedes acudir en pareja o de forma individual. Si el motivo de consulta involucra la dinámica conyugal (como la discrepancia de deseo o la falta de intimidad), el trabajo conjunto suele ser muy enriquecedor, pero también es habitual iniciar sesiones individuales para trabajar bloqueos personales."
+      a: "Puedes elegir la modalidad que prefieras. Si el motivo involucra la convivencia o el deseo mutuo, hacerlo en pareja es muy efectivo. También puedes iniciar sesiones individuales si deseas tratar dudas personales primero."
     },
     {
       q: "¿Cómo se garantiza la confidencialidad médica?",
-      a: "Todas las sesiones se realizan bajo estricto secreto profesional regulado por el Código de Ética de la Junta de Vigilancia de la Profesión Psicológica (JVPP) de El Salvador. Las videollamadas están cifradas de extremo a extremo y tus datos nunca se comparten con terceros."
+      a: "Todas las consultas tienen secreto profesional médico según la ley de El Salvador (JVPP 47096). Las videollamadas por Google Meet están cifradas de punto a punto y tus datos nunca se comparten con terceros."
     },
     {
-      q: "¿Cuánto cuesta la consulta y cómo funciona la primera sesión?",
-      a: "En Centro Amaré ofrecemos una primera sesión de orientación de 30 minutos sin costo. Posteriormente, contamos con sesiones individuales o de pareja y planes mensuales accesibles de $100 USD (4 sesiones al mes = $25/sesión)."
+      q: "¿Cuánto cuesta la consulta y cómo se agenda?",
+      a: "Inicias con una primera sesión de 30 minutos sin costo. Si decides continuar, el plan mensual accesible es de $100 USD (4 sesiones al mes, equivalentes a $25 por sesión)."
     }
   ];
 
@@ -70,7 +70,7 @@ export default function SexologiaClinicaPage() {
               </h1>
 
               <p style={{ fontSize: '18px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-                La salud íntima es un derecho y un pilar esencial del bienestar personal y de pareja. Consulta con la <strong>Mtra. Iris Alarcón</strong>, sexóloga clínica colegiada ante la JVPP: abordaje científico, cálido y 100% libre de tabúes para El Salvador y la diáspora en el exterior.
+                Si buscas atención con una <strong>sexóloga en El Salvador</strong>, en Centro Amaré te acompañamos con método científico y total discreción. La <strong>Mtra. Iris Alarcón</strong> (Registro Sanitario JVPP 47096) te ofrece un espacio seguro, cálido y libre de tabúes para personas y parejas en el país y en el exterior.
               </p>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '36px' }}>

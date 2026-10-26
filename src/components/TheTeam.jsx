@@ -74,10 +74,10 @@ export default function TheTeam() {
             </div>
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontSize: '24px', color: 'var(--color-clay-text, #8B3822)', lineHeight: 1, fontWeight: 700 }}>
-                <AnimatedNumber value={25} prefix="$" />
+                <AnimatedNumber value={100} suffix="%" />
               </div>
               <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
-                USD / sesión en plan
+                Online y Confidencial
               </div>
             </div>
             <div style={{ textAlign: 'center' }}>
@@ -132,16 +132,23 @@ export default function TheTeam() {
               <p className="team-pro-desc">
                 Máster en Terapia de Pareja y Sexología Clínica. Supervisa la formulación de cada caso clínico y garantiza el rigor bioético y científico del equipo.
               </p>
-              <a
-                href={irisWhatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="team-pro-whatsapp-btn"
-                aria-label="Agendar con la Mtra. Iris Alarcón por WhatsApp"
-              >
-                <WhatsAppIcon size={18} />
-                <span>Agendar con Iris</span>
-              </a>
+              <div style={{
+                marginTop: '16px',
+                padding: '10px 14px',
+                borderRadius: '12px',
+                background: 'rgba(183, 89, 64, 0.08)',
+                color: 'var(--color-clay-text, #8B3822)',
+                fontSize: '12.5px',
+                fontWeight: 600,
+                textAlign: 'center',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px'
+              }}>
+                <ShieldCheck size={16} />
+                <span>Supervisión y Dirección Clínica</span>
+              </div>
             </div>
           </div>
 
@@ -178,16 +185,23 @@ export default function TheTeam() {
               <p className="team-pro-desc">
                 Terapeuta de cabecera en Centro Amaré para sesiones online. Especializado en terapia vincular de parejas, desescalada de conflictos y apego.
               </p>
-              <a
-                href={ernestoWhatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="team-pro-whatsapp-btn"
-                aria-label="Agendar con el Lic. Ernesto Mejía por WhatsApp"
-              >
-                <WhatsAppIcon size={18} />
-                <span>Agendar con Ernesto</span>
-              </a>
+              <div style={{
+                marginTop: '16px',
+                padding: '10px 14px',
+                borderRadius: '12px',
+                background: 'rgba(35, 18, 33, 0.05)',
+                color: 'var(--color-plum-900)',
+                fontSize: '12.5px',
+                fontWeight: 600,
+                textAlign: 'center',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px'
+              }}>
+                <ShieldCheck size={16} />
+                <span>Consulta Online y Parejas</span>
+              </div>
             </div>
           </div>
 
@@ -224,16 +238,23 @@ export default function TheTeam() {
               <p className="team-pro-desc">
                 Maestro en psicología clínica con amplia trayectoria en psicoterapia de adultos, procesos afectivos complejos y asesoría clínica interdisciplinar.
               </p>
-              <a
-                href={rafaelWhatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="team-pro-whatsapp-btn"
-                aria-label="Agendar con el Mtro. Rafael Franco por WhatsApp"
-              >
-                <WhatsAppIcon size={18} />
-                <span>Agendar con Rafael</span>
-              </a>
+              <div style={{
+                marginTop: '16px',
+                padding: '10px 14px',
+                borderRadius: '12px',
+                background: 'rgba(35, 18, 33, 0.05)',
+                color: 'var(--color-plum-900)',
+                fontSize: '12.5px',
+                fontWeight: 600,
+                textAlign: 'center',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px'
+              }}>
+                <ShieldCheck size={16} />
+                <span>Psicoterapia y Procesos de Adultos</span>
+              </div>
             </div>
           </div>
 

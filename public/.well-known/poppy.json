@@ -1,0 +1,11 @@
+{
+  "protocol_version": "0.1",
+  "organization": {
+    "name": "Centro Amaré",
+    "domain": "terapiadeparejaelsalvador.com"
+  },
+  "web": {
+    "description": "Clínica de psicología y terapia de pareja online para salvadoreños en el país y en el exterior",
+    "service_url": "https://terapiadeparejaelsalvador.com"
+  }
+}

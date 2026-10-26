@@ -1,0 +1,19 @@
+{
+  "serverInfo": {
+    "name": "Centro Amaré MCP",
+    "version": "1.0.0",
+    "description": "Recursos de psicología clínica, terapia de pareja y autoevaluación interactiva de Centro Amaré El Salvador"
+  },
+  "capabilities": {
+    "resources": {
+      "list": true
+    },
+    "prompts": {
+      "list": true
+    }
+  },
+  "endpoints": {
+    "web": "https://terapiadeparejaelsalvador.com",
+    "docs": "https://terapiadeparejaelsalvador.com/llms.txt"
+  }
+}

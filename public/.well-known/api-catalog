@@ -1,0 +1,19 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://terapiadeparejaelsalvador.com/",
+      "service-doc": [
+        {
+          "href": "https://terapiadeparejaelsalvador.com/llms.txt",
+          "type": "text/plain"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://terapiadeparejaelsalvador.com/",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}

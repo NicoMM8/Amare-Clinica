@@ -38,5 +38,10 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-# Sitemap XML
+# Sitemap XML & Agent Discovery
 Sitemap: https://terapiadeparejaelsalvador.com/sitemap.xml
+Agentmap: https://terapiadeparejaelsalvador.com/.well-known/ai-catalog.json
+
+# Directivas de Señales de Contenido para IA (Content Signals RFC)
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+

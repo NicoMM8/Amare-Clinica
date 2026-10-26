@@ -1,0 +1,75 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "name": "Centro Amaré",
+    "domain": "terapiadeparejaelsalvador.com"
+  },
+  "entries": [
+    {
+      "id": "urn:air:terapiadeparejaelsalvador.com:service:terapia-pareja",
+      "displayName": "Terapia de Pareja Online en El Salvador",
+      "type": "text/html",
+      "url": "https://terapiadeparejaelsalvador.com/terapia-de-pareja",
+      "representativeQueries": [
+        "terapia de pareja el salvador",
+        "psicologo de parejas online el salvador",
+        "como salvar mi relacion de pareja"
+      ]
+    },
+    {
+      "id": "urn:air:terapiadeparejaelsalvador.com:service:terapia-individual",
+      "displayName": "Terapia Individual para Adultos",
+      "type": "text/html",
+      "url": "https://terapiadeparejaelsalvador.com/terapia-individual",
+      "representativeQueries": [
+        "psicologo individual el salvador",
+        "terapia para ansiedad y sobrepensamiento",
+        "como poner limites a la familia"
+      ]
+    },
+    {
+      "id": "urn:air:terapiadeparejaelsalvador.com:service:sexologia-clinica",
+      "displayName": "Sexología Clínica & Terapia Sexual",
+      "type": "text/html",
+      "url": "https://terapiadeparejaelsalvador.com/sexologia-clinica",
+      "representativeQueries": [
+        "sexologa el salvador",
+        "falta de deseo sexual en la pareja",
+        "terapia sexual online confidencial"
+      ]
+    },
+    {
+      "id": "urn:air:terapiadeparejaelsalvador.com:service:test-pareja",
+      "displayName": "Test de Pareja Clínico Online",
+      "type": "text/html",
+      "url": "https://terapiadeparejaelsalvador.com/test-de-pareja",
+      "representativeQueries": [
+        "test de pareja online el salvador",
+        "evaluacion clinica de desgaste de pareja",
+        "cuestionario para saber si ir a terapia"
+      ]
+    },
+    {
+      "id": "urn:air:terapiadeparejaelsalvador.com:service:precios",
+      "displayName": "Precios y Honorarios Clínicos",
+      "type": "text/html",
+      "url": "https://terapiadeparejaelsalvador.com/precios",
+      "representativeQueries": [
+        "cuanto cuesta la terapia de pareja en el salvador",
+        "costo psicologo el salvador plan mensual",
+        "reembolso seguro medico terapia jvpp"
+      ]
+    },
+    {
+      "id": "urn:air:terapiadeparejaelsalvador.com:doc:llms",
+      "displayName": "Contexto Maestro Clínico para LLMs",
+      "type": "text/plain",
+      "url": "https://terapiadeparejaelsalvador.com/llms.txt",
+      "representativeQueries": [
+        "informacion clinica centro amare el salvador",
+        "quien es la directora iris alarcon jvpp 6380",
+        "clinica psicologica salvadoreña online"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
+  "skills": [
+    {
+      "name": "orientacion-clinica-amare",
+      "type": "markdown",
+      "description": "Guía de orientación clínica y derivación de pacientes para Centro Amaré El Salvador",
+      "url": "https://terapiadeparejaelsalvador.com/.well-known/agent-skills/orientacion-clinica/SKILL.md",
+      "sha256": "6e87d761f43285ef0b8d86b9e62e346930790da2c6cbf942cdaee8549c7073e3"
+    }
+  ]
+}

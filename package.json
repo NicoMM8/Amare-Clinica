@@ -8,6 +8,7 @@
     "build": "vite build",
     "postbuild": "node prerender.mjs",
     "lint": "oxlint",
+    "indexnow": "node scripts/submit-indexnow.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

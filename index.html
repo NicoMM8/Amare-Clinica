@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- ═══════════════════════════════════════════════
-         ANALYTICS & PRIVACIDAD (Google Tag Manager & Clarity sin bloqueo de hilo)
+         ANALYTICS & PRIVACIDAD (Google Tag Manager & Clarity)
     ═══════════════════════════════════════════════ -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TX23HRJH');</script>
+    <!-- End Google Tag Manager -->
+
     <script>
       window.__DNT_ACTIVE__ = (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true);
       window.dataLayer = window.dataLayer || [];
@@ -18,11 +26,11 @@
         if (window.__THIRD_PARTIES_LOADED__) return;
         window.__THIRD_PARTIES_LOADED__ = true;
 
-        // Cargar Google Tag Manager de manera no bloqueante
-        var gtm = document.createElement('script');
-        gtm.async = true;
-        gtm.src = 'https://www.googletagmanager.com/gtag/js?id=G-7RM70HX1YH';
-        document.head.appendChild(gtm);
+        // Cargar Google Analytics 4 directo de apoyo
+        var ga4 = document.createElement('script');
+        ga4.async = true;
+        ga4.src = 'https://www.googletagmanager.com/gtag/js?id=G-7RM70HX1YH';
+        document.head.appendChild(ga4);
 
         // Cargar Microsoft Clarity respetando DNT/GPC
         if (!window.__DNT_ACTIVE__) {
@@ -160,6 +168,11 @@
 
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TX23HRJH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <!-- Skip-to-content accesible estándar en primer nivel de body -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 

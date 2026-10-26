@@ -17,6 +17,15 @@ export const GA_MEASUREMENT_ID = typeof window !== 'undefined' && window.__GA_ID
  */
 export function trackEvent(action, params = {}) {
   try {
+    // Disparo nativo para Google Tag Manager (GTM triggers)
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: action,
+        ...params,
+      });
+    }
+
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
       window.gtag('event', action, {
         ...params,

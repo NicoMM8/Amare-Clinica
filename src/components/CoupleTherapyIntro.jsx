@@ -167,7 +167,7 @@ export default function CoupleTherapyIntro() {
               <source srcSet="/images/pareja-terapia-online.webp" type="image/webp" />
               <img
                 src="/images/pareja-terapia-online.jpg"
-                alt="Ilustración tradicional salvadoreña estilo La Palma — Terapia de pareja y pertenencia cultural en Centro Amaré"
+                alt="Pareja en sesión de terapia online confidencial desde casa — Centro Amaré El Salvador"
                 width="580"
                 height="435"
                 loading="lazy"
@@ -228,7 +228,7 @@ export default function CoupleTherapyIntro() {
                   </span>
                 </div>
                 <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-plum-900)', lineHeight: 1.2 }}>
-                  Licda. Iris Alarcón (JVPP N.º 47096)
+                  Licda. Iris Alarcón (JVPP N.º 6380)
                 </span>
                 <span style={{ fontSize: '10.5px', color: 'var(--color-ink-muted)' }}>
                   Sesión privada y simultánea

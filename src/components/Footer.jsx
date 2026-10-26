@@ -130,10 +130,10 @@ export default function Footer() {
           {/* Col 4: Compromiso Ético y JVPP */}
           <div>
             <div style={{ fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#E8BA9B', marginBottom: '16px' }}>
-              Acreditación Sanitaria JVPP N.º 47096
+              Acreditación Sanitaria JVPP N.º 6380
             </div>
             <p style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '13px', lineHeight: 1.6, marginBottom: '12px' }}>
-              Directora Clínica: <strong>Lic. Iris Alarcón</strong>, Psicóloga Colegiada con <strong>Registro Profesional JVPP N.º 47096</strong> (Junta de Vigilancia de la Profesión en Psicología de El Salvador).
+              Directora Clínica: <strong>Lic. Iris Alarcón</strong>, Psicóloga Colegiada con <strong>Registro Profesional JVPP N.º 6380</strong> (Junta de Vigilancia de la Profesión en Psicología de El Salvador).
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'rgba(255, 255, 255, 0.9)', fontSize: '12.5px', marginBottom: '8px' }}>
               <Shield size={16} style={{ color: '#E8BA9B' }} />
@@ -167,7 +167,7 @@ export default function Footer() {
           color: 'rgba(255, 255, 255, 0.6)'
         }}>
           <div>
-            © {new Date().getFullYear()} Centro Amaré · Todos los derechos reservados · Registro Profesional JVPP N.º 47096 · <a href="/privacidad" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Política de Privacidad</a> · <a href="/cookies" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Política de Cookies</a>
+            © {new Date().getFullYear()} Centro Amaré · Todos los derechos reservados · Registro Profesional JVPP N.º 6380 · <a href="/privacidad" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Política de Privacidad</a> · <a href="/cookies" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'underline' }}>Política de Cookies</a>
           </div>
           <div>
             terapiadeparejaelsalvador.com · San Salvador, El Salvador · Sesiones 100% Online vía Google Meet

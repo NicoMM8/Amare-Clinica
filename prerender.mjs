@@ -51,7 +51,7 @@ const routes = [
     path: '/sexologia-clinica',
     file: 'sexologia-clinica/index.html',
     title: 'Sexóloga en El Salvador | Sexología Clínica & Terapia Sexual · Centro Amaré',
-    description: 'Consulta con sexóloga clínica colegiada en El Salvador (JVPP 47096) y online. Tratamiento de falta de deseo, bloqueos y reconexión íntima. 1ª sesión de 30 min gratis.',
+    description: 'Consulta con sexóloga clínica colegiada en El Salvador (JVPP 6380) y online. Tratamiento de falta de deseo, bloqueos y reconexión íntima. 1ª sesión de 30 min gratis.',
     canonical: `${BASE_URL}/sexologia-clinica`,
   },
   {
@@ -378,7 +378,7 @@ async function prerender() {
               'hasCredential': {
                 '@type': 'EducationalOccupationalCredential',
                 'credentialCategory': 'license',
-                'name': 'Registro Profesional Sanitario JVPP N.º 47096'
+                'name': 'Registro Profesional Sanitario JVPP N.º 6380'
               }
             },
             'publisher': {

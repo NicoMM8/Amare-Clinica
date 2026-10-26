@@ -218,7 +218,7 @@ export default function EnlacesBioPage() {
       {/* Footer */}
       <div style={{ marginTop: '28px', textAlign: 'center', fontSize: '12px', color: 'var(--color-ink-muted)' }}>
         <p style={{ margin: '0 0 4px' }}>
-          Centro Amaré · Licda. Iris Alarcón (JVPP N.º 47096)
+          Centro Amaré · Licda. Iris Alarcón (JVPP N.º 6380)
         </p>
         <p style={{ margin: 0 }}>
           terapiadeparejaelsalvador.com · San Salvador, El Salvador

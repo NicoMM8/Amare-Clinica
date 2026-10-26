@@ -31,7 +31,7 @@ export default function BlogPostAtaquesDeAnsiedad() {
             </h1>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap', fontSize: '13.5px', color: 'var(--color-ink-muted)', paddingBottom: '24px', borderBottom: '1px solid var(--border-subtle)' }}>
-              <span>Por <strong>Mtro. Rafael Franco</strong> · Psicólogo Clínico Centro Amaré (JVPP 5144)</span>
+              <span>Por <strong>Mtro. Rafael Franco</strong> · Psicólogo Clínico Centro Amaré (JVPP 3856)</span>
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> 7 min de lectura</span>
               <span>•</span>

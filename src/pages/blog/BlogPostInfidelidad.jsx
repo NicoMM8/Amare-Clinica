@@ -31,7 +31,7 @@ export default function BlogPostInfidelidad() {
             </h1>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap', fontSize: '13.5px', color: 'var(--color-ink-muted)', paddingBottom: '24px', borderBottom: '1px solid var(--border-subtle)' }}>
-              <span>Por <strong>Equipo Clínico Centro Amaré</strong> · Dirección: Licda. Iris Alarcón (JVPP N.º 47096)</span>
+              <span>Por <strong>Equipo Clínico Centro Amaré</strong> · Dirección: Licda. Iris Alarcón (JVPP N.º 6380)</span>
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> 7 min de lectura</span>
               <span>•</span>

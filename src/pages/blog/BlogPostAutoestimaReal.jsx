@@ -31,7 +31,7 @@ export default function BlogPostAutoestimaReal() {
             </h1>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap', fontSize: '13.5px', color: 'var(--color-ink-muted)', paddingBottom: '24px', borderBottom: '1px solid var(--border-subtle)' }}>
-              <span>Por <strong>Lic. Ernesto Mejía</strong> · Psicólogo Clínico Centro Amaré (JVPP 4102)</span>
+              <span>Por <strong>Lic. Ernesto Mejía</strong> · Psicólogo Clínico Centro Amaré (JVPP 9314)</span>
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> 6 min de lectura</span>
               <span>•</span>

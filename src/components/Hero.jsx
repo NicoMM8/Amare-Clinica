@@ -52,8 +52,8 @@ export default function Hero() {
                 textAlign: 'left'
               }}
             >
-              <span className="hero-eyebrow-desktop">Terapia de Pareja y Sexología Clínica Online en El Salvador y el Exterior</span>
-              <span className="hero-eyebrow-mobile">Terapia de Pareja y Sexología Clínica</span>
+              <span className="hero-eyebrow-desktop">Terapia de Pareja, Individual y Sexología Clínica · El Salvador & Exterior</span>
+              <span className="hero-eyebrow-mobile">Terapia de Pareja · Individual · Sexología</span>
             </div>
 
             {/* Main SEO H1 (Consonante con el título de la página y el contenido) */}
@@ -197,6 +197,20 @@ export default function Hero() {
               <span className="hero-cta-guarantee">
                 1ª sesión de 30 min gratis con el equipo clínico · Sin compromiso ni costo
               </span>
+
+              <div style={{ marginTop: '14px', fontSize: '13.5px', color: 'var(--color-ink-secondary)' }}>
+                ¿Buscas apoyo individual para ti?{' '}
+                <a
+                  href="/terapia-individual"
+                  style={{
+                    color: 'var(--color-clay)',
+                    fontWeight: 600,
+                    textDecoration: 'underline',
+                  }}
+                >
+                  También atendemos ansiedad, límites familiares y autoestima →
+                </a>
+              </div>
             </div>
 
           </div>

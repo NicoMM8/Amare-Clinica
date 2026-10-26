@@ -39,7 +39,7 @@ export default function SexologiaClinicaPage() {
     },
     {
       q: "¿Cómo se garantiza la confidencialidad médica?",
-      a: "Todas las consultas tienen secreto profesional médico según la ley de El Salvador (JVPP 47096). Las videollamadas por Google Meet están cifradas de punto a punto y tus datos nunca se comparten con terceros."
+      a: "Todas las consultas tienen secreto profesional médico según la ley de El Salvador (JVPP 6380). Las videollamadas por Google Meet están cifradas de punto a punto y tus datos nunca se comparten con terceros."
     },
     {
       q: "¿Cuánto cuesta la consulta y cómo se agenda?",
@@ -59,7 +59,7 @@ export default function SexologiaClinicaPage() {
               
               <div className="pill-badge pill-badge-clay" style={{ marginBottom: '18px' }}>
                 <Award size={15} style={{ color: 'var(--color-clay)' }} />
-                <span>Sexóloga Clínica Colegiada en El Salvador · Registro JVPP 47096</span>
+                <span>Sexóloga Clínica Colegiada en El Salvador · Registro JVPP 6380</span>
               </div>
 
               <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 4.5vw, 54px)', lineHeight: 1.18, color: 'var(--color-plum-900)', marginBottom: '22px' }}>
@@ -70,7 +70,7 @@ export default function SexologiaClinicaPage() {
               </h1>
 
               <p style={{ fontSize: '18px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-                Si buscas atención con una <strong>sexóloga en El Salvador</strong>, en Centro Amaré te acompañamos con método científico y total discreción. La <strong>Mtra. Iris Alarcón</strong> (Registro Sanitario JVPP 47096) te ofrece un espacio seguro, cálido y libre de tabúes para personas y parejas en el país y en el exterior.
+                Si buscas atención con una <strong>sexóloga en El Salvador</strong>, en Centro Amaré te acompañamos con método científico y total discreción. La <strong>Mtra. Iris Alarcón</strong> (Registro Sanitario JVPP 6380) te ofrece un espacio seguro, cálido y libre de tabúes para personas y parejas en el país y en el exterior.
               </p>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '36px' }}>
@@ -126,7 +126,7 @@ export default function SexologiaClinicaPage() {
                   Mtra. Iris Alarcón · Sexóloga Clínica y Terapeuta de Pareja
                 </h3>
                 <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', margin: '0 0 12px', lineHeight: 1.6 }}>
-                  Licenciada en Psicología y Máster en Sexología Clínica y Terapia de Pareja. Colegiada ante la <strong>Junta de Vigilancia de la Profesión Psicológica de El Salvador (JVPP N.º 47096)</strong>. Más de 9 años de experiencia clínica acompañando a personas y parejas en San Salvador, todo El Salvador y compatriotas en EE. UU., Canadá y Europa.
+                  Licenciada en Psicología y Máster en Sexología Clínica y Terapia de Pareja. Colegiada ante la <strong>Junta de Vigilancia de la Profesión Psicológica de El Salvador (JVPP N.º 6380)</strong>. Más de 9 años de experiencia clínica acompañando a personas y parejas en San Salvador, todo El Salvador y compatriotas en EE. UU., Canadá y Europa.
                 </p>
                 <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '13px', fontWeight: 600, color: 'var(--color-plum-900)' }}>
                   <span>✓ Enfoque biopsicosocial basado en evidencia</span>

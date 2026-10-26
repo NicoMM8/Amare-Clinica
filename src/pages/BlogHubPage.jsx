@@ -17,7 +17,7 @@ export const BLOG_POSTS = [
     category: 'Terapia de Pareja',
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 47096)',
+    author: 'Mtra. Iris Alarcón (JVPP 6380)',
     icon: AlertTriangle,
     image: '/images/blog/cuando-terapia.webp'
   },
@@ -29,7 +29,7 @@ export const BLOG_POSTS = [
     category: 'Terapia de Pareja',
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 47096)',
+    author: 'Mtra. Iris Alarcón (JVPP 6380)',
     icon: Users,
     image: '/images/blog/primera-sesion.webp'
   },
@@ -41,7 +41,7 @@ export const BLOG_POSTS = [
     category: 'Vínculos & Apego',
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
-    author: 'Lic. Ernesto Mejía (JVPP 4102)',
+    author: 'Lic. Ernesto Mejía (JVPP 9314)',
     icon: Heart,
     image: '/images/blog/controlar-ansiedad.webp'
   },
@@ -53,7 +53,7 @@ export const BLOG_POSTS = [
     category: 'Infidelidad & Confianza',
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 47096)',
+    author: 'Mtra. Iris Alarcón (JVPP 6380)',
     icon: ShieldCheck,
     image: '/images/blog/infidelidad-perdon.webp'
   },
@@ -65,7 +65,7 @@ export const BLOG_POSTS = [
     category: 'Sexología Clínica',
     filterGroup: 'pareja',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 47096)',
+    author: 'Mtra. Iris Alarcón (JVPP 6380)',
     icon: Sparkles,
     image: '/images/blog/deseo-sexual.webp'
   },
@@ -89,7 +89,7 @@ export const BLOG_POSTS = [
     category: 'Crianza & Pareja',
     filterGroup: 'diaspora',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 47096)',
+    author: 'Mtra. Iris Alarcón (JVPP 6380)',
     icon: Users,
     image: '/images/blog/crianza-en-pareja.webp'
   },
@@ -101,7 +101,7 @@ export const BLOG_POSTS = [
     category: 'Ansiedad & Emociones',
     filterGroup: 'ansiedad',
     date: 'Actualizado 2026',
-    author: 'Lic. Ernesto Mejía (JVPP 4102)',
+    author: 'Lic. Ernesto Mejía (JVPP 9314)',
     icon: Activity,
     image: '/images/blog/controlar-ansiedad.webp'
   },
@@ -113,7 +113,7 @@ export const BLOG_POSTS = [
     category: 'Ansiedad & Pánico',
     filterGroup: 'ansiedad',
     date: 'Actualizado 2026',
-    author: 'Mtro. Rafael Franco (JVPP 5144)',
+    author: 'Mtro. Rafael Franco (JVPP 3856)',
     icon: AlertTriangle,
     image: '/images/blog/ataques-panico.webp'
   },
@@ -125,7 +125,7 @@ export const BLOG_POSTS = [
     category: 'Estrés & Bienestar',
     filterGroup: 'ansiedad',
     date: 'Actualizado 2026',
-    author: 'Mtro. Rafael Franco (JVPP 5144)',
+    author: 'Mtro. Rafael Franco (JVPP 3856)',
     icon: BatteryCharging,
     image: '/images/blog/burnout-depresion.webp'
   },
@@ -137,7 +137,7 @@ export const BLOG_POSTS = [
     category: 'Autoestima Real',
     filterGroup: 'ansiedad',
     date: 'Actualizado 2026',
-    author: 'Lic. Ernesto Mejía (JVPP 4102)',
+    author: 'Lic. Ernesto Mejía (JVPP 9314)',
     icon: Sparkles,
     image: '/images/blog/burnout-depresion.webp'
   },
@@ -149,7 +149,7 @@ export const BLOG_POSTS = [
     category: 'Orientación Legal & Clínica',
     filterGroup: 'ayuda',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 47096)',
+    author: 'Mtra. Iris Alarcón (JVPP 6380)',
     icon: Award,
     image: '/images/blog/primera-sesion.webp'
   },
@@ -173,7 +173,7 @@ export const BLOG_POSTS = [
     category: 'Honorarios & Precios',
     filterGroup: 'ayuda',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 47096)',
+    author: 'Mtra. Iris Alarcón (JVPP 6380)',
     icon: DollarSign,
     image: '/images/blog/cuando-terapia.webp'
   },
@@ -197,7 +197,7 @@ export const BLOG_POSTS = [
     category: 'Pareja y Migración',
     filterGroup: 'diaspora',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 47096)',
+    author: 'Mtra. Iris Alarcón (JVPP 6380)',
     icon: Compass,
     image: '/images/blog/emigrar-pareja.webp'
   },
@@ -209,7 +209,7 @@ export const BLOG_POSTS = [
     category: 'Familia & Límites',
     filterGroup: 'diaspora',
     date: 'Actualizado 2026',
-    author: 'Mtra. Iris Alarcón (JVPP 47096)',
+    author: 'Mtra. Iris Alarcón (JVPP 6380)',
     icon: HeartHandshake,
     image: '/images/blog/duelo-migratorio.webp'
   }

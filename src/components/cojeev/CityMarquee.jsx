@@ -6,7 +6,7 @@ const marqueeItems = [
   { icon: Globe, text: "San Salvador · Montreal · Los Ángeles · Houston · Madrid" },
   { icon: Video, text: "100% Online vía Google Meet Cifrado" },
   { icon: ShieldCheck, text: "Respaldo Clínico Oficial · Registro JVPP El Salvador" },
-  { icon: Heart, text: "Terapia de Pareja y Sexología Clínica" },
+  { icon: Heart, text: "Terapia de Pareja, Individual y Sexología Clínica" },
   { icon: Sparkles, text: "1ª conversación (30 min sin costo)" },
   { icon: Clock, text: "Plan mensual sin permanencia ($100 USD / mes)" },
   { icon: CheckCircle, text: "Sin traducir tus emociones ni justificar tus raíces" },

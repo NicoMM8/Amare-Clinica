@@ -50,8 +50,8 @@ export default function Navbar() {
         {/* Desktop Links */}
         <ul className="nav-links">
           <li><a href="/#especialidades" className="nav-link">Especialidades</a></li>
-          <li><a href="/sobre-nosotros" className="nav-link">Sobre Amaré</a></li>
-          <li><a href="/salvadorenos-en-el-exterior" className="nav-link">Salvadoreños en el Exterior</a></li>
+          <li><a href="/terapia-individual" className="nav-link">Terapia Individual</a></li>
+          <li><a href="/salvadorenos-en-el-exterior" className="nav-link">En el Exterior</a></li>
           <li><a href="/#equipo" className="nav-link">Equipo Clínico</a></li>
           <li><a href="/precios" className="nav-link">Honorarios</a></li>
           <li><a href="/blog" className="nav-link">Guías</a></li>
@@ -113,9 +113,11 @@ export default function Navbar() {
           }}
         >
           <a href="/#especialidades" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Especialidades Clínicas</a>
-          <a href="/sobre-nosotros" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Sobre Centro Amaré (Nuestra Historia)</a>
+          <a href="/terapia-individual" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Terapia Individual (Ansiedad, Autoestima)</a>
+          <a href="/sexologia-clinica" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Sexología Clínica</a>
           <a href="/test-de-pareja" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link nav-mobile-drawer-link--highlight">Test de Pareja (2 min)</a>
           <a href="/salvadorenos-en-el-exterior" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Salvadoreños en el Exterior</a>
+          <a href="/sobre-nosotros" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Sobre Centro Amaré</a>
           <a href="/#equipo" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Equipo Clínico</a>
           <a href="/precios" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Honorarios y Modalidades</a>
           <a href="/blog" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Guías y Recursos</a>

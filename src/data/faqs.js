@@ -18,7 +18,7 @@ export const FAQS = [
   },
   {
     q: "¿Emiten factura médica para reembolso de seguro (en El Salvador, EE. UU. o Canadá)?",
-    a: "Sí. Al ser una clínica acreditada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP N.º 47096), emitimos facturas y recibos clínicos detallados (superbills) con diagnóstico CIE-10/DSM-5 cuando la aseguradora lo requiere. Esto permite tramitar el reembolso en pólizas médicas privadas de El Salvador y en seguros de EE. UU. o Canadá con cobertura out-of-network."
+    a: "Sí. Al ser una clínica acreditada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP N.º 6380), emitimos facturas y recibos clínicos detallados (superbills) con diagnóstico CIE-10/DSM-5 cuando la aseguradora lo requiere. Esto permite tramitar el reembolso en pólizas médicas privadas de El Salvador y en seguros de EE. UU. o Canadá con cobertura out-of-network."
   },
   {
     q: "¿Cómo funciona la primera conversación sin costo en Centro Amaré?",

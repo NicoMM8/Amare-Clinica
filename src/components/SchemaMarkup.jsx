@@ -261,7 +261,7 @@ const medicalBusinessSchema = {
       hasCredential: {
         '@type': 'EducationalOccupationalCredential',
         credentialCategory: 'license',
-        name: 'Registro Profesional Sanitario JVPP N.º 47096',
+        name: 'Registro Profesional Sanitario JVPP N.º 6380',
       },
     },
     {
@@ -271,7 +271,7 @@ const medicalBusinessSchema = {
       hasCredential: {
         '@type': 'EducationalOccupationalCredential',
         credentialCategory: 'license',
-        name: 'Psicólogo Clínico Colegiado JVPP El Salvador',
+        name: 'Registro Profesional Sanitario JVPP N.º 9314',
       },
     },
     {
@@ -281,7 +281,7 @@ const medicalBusinessSchema = {
       hasCredential: {
         '@type': 'EducationalOccupationalCredential',
         credentialCategory: 'license',
-        name: 'Psicólogo Clínico Colegiado JVPP El Salvador',
+        name: 'Registro Profesional Sanitario JVPP N.º 3856',
       },
     },
   ],
@@ -368,7 +368,7 @@ const personSchema = {
   givenName: 'Iris',
   familyName: 'Alarcón',
   jobTitle: 'Psicóloga Clínica y Directora Clínica',
-  identifier: 'JVPP N.° 47096',
+  identifier: 'JVPP N.° 6380',
   description:
     'Psicóloga Clínica salvadoreña con Máster en Terapia de Pareja y Sexología Clínica. Especialista en TCC, terapia de pareja transnacional y atención a personas y parejas en El Salvador y en el exterior.',
   image: `${SITE_URL}/images/iris-alarcon.jpg`,
@@ -395,7 +395,7 @@ const personSchema = {
     {
       '@type': 'EducationalOccupationalCredential',
       credentialCategory: 'license',
-      name: 'Registro Profesional Sanitario JVPP N.º 47096',
+      name: 'Registro Profesional Sanitario JVPP N.º 6380',
       recognizedBy: {
         '@type': 'Organization',
         name: 'Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP)',

@@ -244,34 +244,21 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
 
   const buildWhatsAppMessage = () => {
     const greeting = isIndividualInitiative
-      ? 'Hola, completé el Test de Pareja en la web y me gustaría agendar la primera conversación de 30 min sin costo.'
-      : 'Hola, acabamos de completar el Test de Pareja en la web y nos gustaría agendar la primera conversación de 30 min sin costo.';
+      ? 'Hola, completé el test de autoevaluación en la web y me gustaría agendar la 1ª conversación de 30 min sin costo.'
+      : 'Hola, completamos el test de autoevaluación en la web y nos gustaría agendar la 1ª conversación de 30 min sin costo.';
 
     let msg = `${greeting}\n\n`;
     if (answers.situationShort || answers.situation) {
-      msg += `• Situación: ${answers.situationShort || answers.situation}\n`;
+      msg += `• Modalidad solicitada: ${answers.situationShort || answers.situation}\n`;
     }
     if (answers.reasonShort || answers.reason) {
-      msg += `• Motivo principal: ${answers.reasonShort || answers.reason}\n`;
-    }
-    if (answers.conflictStyleShort || answers.conflictStyle) {
-      msg += `• Dinámica de discusión: ${answers.conflictStyleShort || answers.conflictStyle}\n`;
-    }
-    if (answers.durationShort || answers.duration) {
-      msg += `• Tiempo de desgaste: ${answers.durationShort || answers.duration}\n`;
-    }
-    if (answers.therapyHistoryShort || answers.therapyHistory) {
-      msg += `• Experiencia previa: ${answers.therapyHistoryShort || answers.therapyHistory}\n`;
+      msg += `• Motivo de consulta: ${answers.reasonShort || answers.reason}\n`;
     }
     if (answers.locationShort || answers.location) {
-      msg += `• Ubicación: ${answers.locationShort || answers.location}\n`;
+      msg += `• Ubicación / Huso horario: ${answers.locationShort || answers.location}\n`;
     }
-    if (answers.goalShort || answers.goal) {
-      msg += `• Prioridad: ${answers.goalShort || answers.goal}\n`;
-    }
-    if (answers.notes && answers.notes.trim()) {
-      msg += `• En nuestras palabras: "${answers.notes.trim()}"\n`;
-    }
+    msg += `• Formato: Online (Google Meet)\n\n`;
+    msg += `(Detalles íntimos reservados para la sesión con la psicóloga bajo secreto profesional legal JVPP).`;
     return encodeURIComponent(msg);
   };
 
@@ -1051,7 +1038,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     Equipo Clínico de Centro Amaré
                   </h3>
                   <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--v-pink)', marginBottom: '8px' }}>
-                    Dirección Clínica: Licda. Iris Alarcón · Registro JVPP N.º 47096
+                    Dirección Clínica: Licda. Iris Alarcón · Registro JVPP N.º 6380
                   </div>
                   <p style={{ fontSize: '14px', color: 'var(--v-text-2)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.6 }}>
                     Las respuestas de su autoevaluación indican que su caso se beneficia de nuestro protocolo de intervención en comunicación, acuerdos y reconexión emocional. Les asignaremos la terapeuta del equipo idónea según su motivo de consulta y huso horario.
@@ -1088,7 +1075,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   {answers.notes && answers.notes.trim() && (
                     <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', paddingTop: '8px', borderTop: '1px dashed var(--v-border)' }}>
                       <FileText size={16} style={{ color: 'var(--v-pink)', flexShrink: 0, marginTop: '2px' }} />
-                      <span style={{ fontSize: '13px' }}><strong>Mensaje para la terapeuta:</strong> &ldquo;{answers.notes.trim()}&rdquo;</span>
+                      <span style={{ fontSize: '13px' }}><strong>Nota para la terapeuta:</strong> &ldquo;{answers.notes.trim()}&rdquo; <em style={{ fontSize: '11.5px', color: 'var(--v-text-2)' }}>(confidencial para la sesión)</em></span>
                     </div>
                   )}
                 </div>
@@ -1105,7 +1092,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     textDecoration: 'none',
                     width: '100%',
                     maxWidth: '460px',
-                    marginBottom: '16px',
+                    marginBottom: '12px',
                     display: 'inline-flex',
                   }}
                 >
@@ -1116,6 +1103,26 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   </span>
                   <ArrowRight size={18} />
                 </a>
+
+                {/* Garantía de Privacidad y Secreto Profesional */}
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    fontSize: '12.5px',
+                    color: 'var(--v-text-2)',
+                    maxWidth: '480px',
+                    margin: '0 auto 20px',
+                    lineHeight: 1.5,
+                  }}
+                >
+                  <ShieldCheck size={16} style={{ color: 'var(--v-pink)', flexShrink: 0 }} />
+                  <span>
+                    <strong>Privacidad clínica garantizada:</strong> Tus respuestas y notas personales están bajo secreto profesional (JVPP). La asistente solo recibirá la información básica para coordinar tu cita.
+                  </span>
+                </div>
 
                 {/* Botón de respaldo para Desktop sin WhatsApp Web */}
                 <div

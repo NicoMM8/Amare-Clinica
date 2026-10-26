@@ -30,7 +30,7 @@ export default function TheTeam() {
         {/* Header */}
         <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 48px' }}>
           <div className="pill-badge" style={{ marginBottom: '18px' }}>
-            <span>Respaldo Clínico Oficial · Registro JVPP N.º 47096 El Salvador</span>
+            <span>Respaldo Clínico Oficial · Registros Sanitarios JVPP El Salvador</span>
           </div>
 
           <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '18px', lineHeight: 1.25 }}>
@@ -82,10 +82,10 @@ export default function TheTeam() {
             </div>
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontSize: '19px', color: 'var(--color-clay-text, #8B3822)', lineHeight: 1, fontWeight: 700, letterSpacing: '0.02em' }}>
-                N.º 47096
+                N.º 6380
               </div>
               <div style={{ fontSize: '11px', color: 'var(--color-ink-secondary)', marginTop: '4px', fontWeight: 600 }}>
-                Registro JVPP Oficial
+                Reg. JVPP Directora
               </div>
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function TheTeam() {
               </p>
               <div className="team-pro-license">
                 <Check size={15} strokeWidth={2.8} />
-                <span>JVPP 47096</span>
+                <span>JVPP 6380 · El Salvador</span>
               </div>
               <p className="team-pro-desc">
                 Máster en Terapia de Pareja y Sexología Clínica. Supervisa la formulación de cada caso clínico y garantiza el rigor bioético y científico del equipo.
@@ -173,7 +173,7 @@ export default function TheTeam() {
               </p>
               <div className="team-pro-license">
                 <Check size={15} strokeWidth={2.8} />
-                <span>JVPP Acreditado El Salvador</span>
+                <span>JVPP 9314 · El Salvador</span>
               </div>
               <p className="team-pro-desc">
                 Terapeuta de cabecera en Centro Amaré para sesiones online. Especializado en terapia vincular de parejas, desescalada de conflictos y apego.
@@ -219,7 +219,7 @@ export default function TheTeam() {
               </p>
               <div className="team-pro-license">
                 <Check size={15} strokeWidth={2.8} />
-                <span>JVPP Acreditado El Salvador</span>
+                <span>JVPP 3856 · El Salvador</span>
               </div>
               <p className="team-pro-desc">
                 Maestro en psicología clínica con amplia trayectoria en psicoterapia de adultos, procesos afectivos complejos y asesoría clínica interdisciplinar.

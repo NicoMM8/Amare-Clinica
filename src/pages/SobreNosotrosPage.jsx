@@ -51,7 +51,7 @@ const aboutPageSchema = {
       "jobTitle": "Directora Clínica y Fundadora",
       "hasCredential": {
         "@type": "EducationalOccupationalCredential",
-        "name": "Registro Profesional Sanitario JVPP N.º 47096"
+        "name": "Registro Profesional Sanitario JVPP N.º 6380"
       }
     },
     "knowsAbout": [

@@ -231,7 +231,7 @@ export default function PreciosPage() {
                     </span>
                   </div>
                   <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-ink-secondary)', lineHeight: 1.6 }}>
-                    Entregamos factura profesional y recibos detallados con registro sanitario oficial de la <strong>Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP N.º 47096)</strong>. Si cuentas con seguro privado de salud en El Salvador o póliza en EE. UU./Canadá con cobertura ambulatoria o beneficios fuera de red (<em>out-of-network / superbills</em>), podrás gestionar tu reembolso sin dificultades.
+                    Entregamos factura profesional y recibos detallados con registro sanitario oficial de la <strong>Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP N.º 6380)</strong>. Si cuentas con seguro privado de salud en El Salvador o póliza en EE. UU./Canadá con cobertura ambulatoria o beneficios fuera de red (<em>out-of-network / superbills</em>), podrás gestionar tu reembolso sin dificultades.
                   </p>
                 </div>
               </div>

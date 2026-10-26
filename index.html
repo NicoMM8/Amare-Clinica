@@ -15,6 +15,15 @@
     })(window,document,'script','dataLayer','GTM-TX23HRJH');</script>
     <!-- End Google Tag Manager -->
 
+    <!-- Microsoft Clarity (Bing Webmaster Tools) -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "z3w27l9jr8");
+    </script>
+
     <script>
       window.__DNT_ACTIVE__ = (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true);
       window.dataLayer = window.dataLayer || [];
@@ -31,15 +40,6 @@
         ga4.async = true;
         ga4.src = 'https://www.googletagmanager.com/gtag/js?id=G-7RM70HX1YH';
         document.head.appendChild(ga4);
-
-        // Cargar Microsoft Clarity respetando DNT/GPC
-        if (!window.__DNT_ACTIVE__) {
-          (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", window.__CLARITY_ID__ || "r0z1m8amare");
-        }
       }
 
       // Cargar tras primera interacción o cuando la CPU esté libre (preserva 100% Core Web Vitals)

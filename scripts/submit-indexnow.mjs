@@ -7,7 +7,7 @@
  */
 
 const HOST = 'terapiadeparejaelsalvador.com';
-const KEY = 'e6b9c9e54a3249769850c99a83856638';
+const KEY = '360854d6b715473a8b0aefd55929bbbf';
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 const URLS = [

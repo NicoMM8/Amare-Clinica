@@ -24,8 +24,8 @@ export default function EnlacesBioPage() {
       badge: "Sin costo"
     },
     {
-      title: "Honorarios y Plan Mensual ($100 USD)",
-      subtitle: "Hasta 4 sesiones al mes ($25/sesión) · Sin permanencia",
+      title: "Honorarios y Planes Mensuales",
+      subtitle: "Planes accesibles adaptados a tu país · Sin permanencia",
       href: "/precios",
       isPrimary: false,
       icon: DollarSign,

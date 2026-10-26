@@ -35,7 +35,7 @@ export default function TerapiaIndividualPage() {
     },
     {
       q: "¿Ofrecen ayuda psicológica gratuita o de bajo costo?",
-      a: "En Centro Amaré brindamos una primera sesión de evaluación diagnóstica de 30 minutos 100% gratuita y sin compromiso. Para el tratamiento continuo, disponemos de un plan mensual solidario de $100 USD (4 sesiones al mes = $25 por sesión), haciéndolo muy accesible frente a tarifas tradicionales."
+      a: "En Centro Amaré brindamos una primera sesión de evaluación diagnóstica de 30 minutos 100% gratuita y sin compromiso. Para el tratamiento continuo, disponemos de planes mensuales accesibles y estructurados según tu país de residencia y necesidad clínica."
     },
     {
       q: "¿Qué credenciales tienen los psicólogos de Centro Amaré?",

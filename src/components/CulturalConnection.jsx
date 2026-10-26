@@ -78,7 +78,7 @@ export default function CulturalConnection() {
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                 <Check size={18} style={{ color: '#1B873F', flexShrink: 0, marginTop: '2px' }} />
-                <span>Un costo justo para sostener tu proceso: Plan mensual de $100 USD (hasta 4 sesiones al mes, $25 por sesión), sin ataduras.</span>
+                <span>Un costo justo para sostener tu proceso: Planes mensuales accesibles adaptados a tu país y sin contratos de permanencia.</span>
               </li>
             </ul>
           </div>

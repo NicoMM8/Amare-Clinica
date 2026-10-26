@@ -285,9 +285,9 @@ export default function MethodologyAndPricing() {
                       </td>
                       <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>50 - 60 min</td>
                       <td style={{ padding: '14px' }}>
-                        <span style={{ fontWeight: 700, color: 'var(--color-plum-900)', fontSize: '14px' }}>$25 USD por sesión</span>
+                        <span style={{ fontWeight: 700, color: 'var(--color-plum-900)', fontSize: '14px' }}>Planes Accesibles</span>
                         <span style={{ display: 'block', fontSize: '11.5px', color: 'var(--color-ink-muted)' }}>
-                          en plan mensual ($100/mes)
+                          Tarifas según país de residencia
                         </span>
                       </td>
                     </tr>
@@ -301,9 +301,9 @@ export default function MethodologyAndPricing() {
                       </td>
                       <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>50 min</td>
                       <td style={{ padding: '14px' }}>
-                        <span style={{ fontWeight: 700, color: 'var(--color-plum-900)', fontSize: '14px' }}>Tarifa fija ($25/sesión)</span>
+                        <span style={{ fontWeight: 700, color: 'var(--color-plum-900)', fontSize: '14px' }}>Plan Personalizado</span>
                         <span style={{ display: 'block', fontSize: '11.5px', color: 'var(--color-ink-muted)' }}>
-                          en plan mensual ($100/mes)
+                          Tarifas según país de residencia
                         </span>
                       </td>
                     </tr>
@@ -328,29 +328,36 @@ export default function MethodologyAndPricing() {
 
               <div style={{ marginTop: '20px', paddingTop: '16px', borderTop: '1px solid var(--border-hairline)', fontSize: '12.5px', color: 'var(--color-ink-muted)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Shield size={16} style={{ color: 'var(--color-clay)', flexShrink: 0 }} />
-                <span>Precios en USD para El Salvador, Estados Unidos, Canadá y Europa.</span>
+                <span>Planes y facilidades de pago en USD para El Salvador, Estados Unidos, Canadá y Europa.</span>
               </div>
             </div>
 
-            {/* Columna Derecha: Tarjeta Plan Mensual $100 USD */}
+            {/* Columna Derecha: Tarjeta Plan Mensual Adaptado */}
             <div className="pricing-card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '32px' }}>
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '16px', marginBottom: '14px' }}>
                   <div>
-                    <span className="pricing-badge-popular">Plan mensual transparente</span>
+                    <span className="pricing-badge-popular">Acompañamiento clínico accesible</span>
                     <h3 className="font-serif" style={{ fontSize: '24px', color: 'var(--color-plum-900)', marginTop: '4px', marginBottom: '6px' }}>
-                      Plan Mensual Cómodo y Accesible
+                      Planes Flexibles y Personalizados
                     </h3>
                   </div>
 
                   <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                    <div className="price-display" style={{ justifyContent: 'flex-end', margin: '0 0 2px' }}>
-                      <span className="price-currency" style={{ fontSize: '22px' }}>$</span>
-                      <span className="price-amount" style={{ fontSize: '44px' }}>100</span>
-                      <span className="price-frequency" style={{ fontSize: '13px' }}>USD / mes</span>
+                    <div style={{ 
+                      background: 'rgba(22, 101, 52, 0.10)', 
+                      color: '#166534', 
+                      padding: '6px 14px', 
+                      borderRadius: 'var(--r-pill)', 
+                      fontWeight: 700, 
+                      fontSize: '13px',
+                      display: 'inline-block',
+                      marginBottom: '4px'
+                    }}>
+                      1ª Sesión: $0 Sin Costo
                     </div>
-                    <span style={{ fontSize: '12px', color: 'var(--color-clay)', fontWeight: 600 }}>
-                      Hasta 4 sesiones ($25/sesión)
+                    <span style={{ display: 'block', fontSize: '12px', color: 'var(--color-ink-secondary)', fontWeight: 600 }}>
+                      Planes según tu país
                     </span>
                   </div>
                 </div>
@@ -363,7 +370,7 @@ export default function MethodologyAndPricing() {
                   border: '1px solid var(--border-hairline)'
                 }}>
                   <p style={{ fontSize: '13px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.55 }}>
-                    <strong>Misma tarifa para Pareja o Individual:</strong> $100 USD al mes incluye hasta 4 sesiones semanales de 50 a 60 minutos por Google Meet ($25/sesión). Sin recargo adicional para terapia de pareja y sin permanencia: pausan o terminan cuando quieran.
+                    <strong>Tarifas justas y transparentes:</strong> Adaptamos los aranceles mensuales y modalidades según tu país de residencia (El Salvador o exterior) y necesidad clínica. Empiezas con una sesión inicial de 30 minutos sin costo para evaluar tu caso sin presiones ni cobros por adelantado.
                   </p>
                 </div>
 
@@ -384,7 +391,7 @@ export default function MethodologyAndPricing() {
                       <strong>¿Qué pasa en esos primeros 30 minutos?</strong> No tienen que contarlo todo de golpe. Nos conocemos por Google Meet, nos cuentan brevemente qué les preocupa, resolvemos sus dudas y vemos si hacen "clic" con el terapeuta de nuestro equipo asignado a su caso antes de decidir empezar.
                     </p>
                     <p style={{ fontSize: '12.5px', color: 'var(--color-ink-secondary)', margin: '8px 0 0 0', lineHeight: 1.5 }}>
-                      <strong>¿Cómo funciona el pago del Plan Mensual ($100 USD)?</strong> Incluye tus 4 sesiones del mes ($25 USD por sesión), ya sea en modalidad de pareja o individual. Puedes abonarlo de forma segura desde El Salvador o el exterior (tarjeta o transferencia local sin comisiones de remesa), o consultar con coordinación la tarifa por sesión individual suelta si prefieres avanzar quincenalmente.
+                      <strong>¿Cómo se definen los honorarios?</strong> Te presentamos las opciones exactas y planes mensuales en tu llamada de 30 minutos de cortesía con el equipo. Cuentas con facilidades de pago seguras (tarjeta, transferencia local o internacional) y sin permanencia forzosa: avanzas o pausas según tus tiempos.
                     </p>
                   </div>
                 </div>

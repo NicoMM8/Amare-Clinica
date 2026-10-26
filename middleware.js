@@ -44,9 +44,8 @@ const MARKDOWN_CONTENT = `# Centro Amaré — Documento Maestro de Contexto Clí
 
 ## 3. Honorarios y Planes Accesibles
 - **1ª Sesión de Evaluación (30 min):** Totalmente sin costo ($0 USD).
-- **Plan Mensual Accesible:** $100 USD al mes (incluye hasta 4 sesiones de 50-60 min = $25 USD por sesión).
-- **Sesión Individual Suelta:** $35 - $45 USD.
-- **Reembolso de Seguros:** Facturas y constancias médicas aptas para reembolso con aseguradoras en El Salvador y superbills para EE. UU. y Canadá.
+- **Planes Mensuales Adaptados:** Estructurados según país de residencia (El Salvador o exterior) y modalidad clínica (pareja, individual o sexología), sin contratos de permanencia mínima.
+- **Reembolso de Seguros:** Facturas y constancias médicas con registro JVPP aptas para reembolso con aseguradoras en El Salvador y superbills para EE. UU. y Canadá.
 
 ---
 

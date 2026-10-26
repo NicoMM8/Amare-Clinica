@@ -43,7 +43,7 @@ export default function SexologiaClinicaPage() {
     },
     {
       q: "¿Cuánto cuesta la consulta y cómo se agenda?",
-      a: "Inicias con una primera sesión de 30 minutos sin costo. Si decides continuar, el plan mensual accesible es de $100 USD (4 sesiones al mes, equivalentes a $25 por sesión)."
+      a: "Inicias con una primera sesión de 30 minutos sin costo. Si decides continuar, te ofrecemos planes mensuales accesibles y estructurados según tu país de residencia y necesidad clínica."
     }
   ];
 

@@ -306,7 +306,7 @@ const medicalBusinessSchema = {
         '@type': 'Offer',
         name: 'Plan Mensual — Hasta 4 Sesiones de 50-60 min',
         description:
-          'Hasta 4 sesiones terapéuticas mensuales de 50-60 minutos por Google Meet ($25 USD por sesión). Incluye tareas clínicas entre sesiones y coordinación directa con asistente. Sin permanencia mínima.',
+          'Hasta 4 sesiones terapéuticas mensuales de 50-60 minutos por Google Meet. Incluye tareas clínicas entre sesiones y coordinación directa con asistente. Sin permanencia mínima.',
         price: '100',
         priceCurrency: 'USD',
         billingPeriod: 'P1M',

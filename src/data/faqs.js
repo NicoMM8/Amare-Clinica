@@ -30,7 +30,7 @@ export const FAQS = [
   },
   {
     q: "¿Y si mi pareja no quiere venir a terapia o tiene dudas?",
-    a: "Es una situación muy frecuente. Pueden agendar la primera conversación gratuita de 30 minutos sin ningún compromiso para que tu pareja conozca el enfoque neutral de la clínica sin sentirse juzgada. Si aun así decide no participar, puedes iniciar un proceso de Terapia Individual (TCC/DBT) a la misma tarifa ($25 USD/sesión en plan mensual) para ganar claridad, poner límites sanos y tomar decisiones sobre tu relación."
+    a: "Es una situación muy frecuente. Pueden agendar la primera conversación gratuita de 30 minutos sin ningún compromiso para que tu pareja conozca el enfoque neutral de la clínica sin sentirse juzgada. Si aun así decide no participar, puedes iniciar un proceso de Terapia Individual (TCC/DBT) con un plan mensual accesible y adaptado para ganar claridad, poner límites sanos y tomar decisiones sobre tu relación."
   },
   {
     q: "¿Qué ocurre después de completar el proceso de terapia?",

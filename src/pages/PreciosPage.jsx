@@ -132,14 +132,14 @@ export default function PreciosPage() {
                     Paso 2 · Proceso Clínico
                   </span>
                   <h3 className="font-serif" style={{ fontSize: '26px', color: 'var(--color-plum-900)', marginTop: '16px', marginBottom: '10px' }}>
-                    Plan Mensual Cómodo
+                    Planes Mensuales Adaptados
                   </h3>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginBottom: '16px' }}>
-                    <span style={{ fontSize: '42px', fontWeight: 700, color: 'var(--color-clay)' }}>$100</span>
-                    <span style={{ fontSize: '15px', color: 'var(--color-ink-muted)' }}>USD / mes</span>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '16px' }}>
+                    <span style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-clay)' }}>Tarifas por País</span>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-ink-muted)' }}>· El Salvador & Exterior</span>
                   </div>
                   <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
-                    Hasta 4 sesiones mensuales de 50 a 60 minutos (equivalente a <strong>$25 USD por sesión</strong>). <strong>Misma tarifa fija para Terapia de Pareja o Individual</strong>, sin costes ocultos ni permanencia.
+                    Planes mensuales estructurados de forma accesible según tu <strong>país de residencia</strong> y modalidad clínica (Pareja o Individual). Sin permanencia ni costes ocultos.
                   </p>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>

@@ -82,7 +82,7 @@ export default function SobreNosotrosPage() {
 
   useEffect(() => {
     // Dynamic SEO Metadata for About Page (navegación en cliente)
-    document.title = "Sobre Centro Amaré | Historia y Misión Clínica en El Salvador y el Mundo";
+    document.title = "Sobre Centro Amaré | Misión y Equipo en El Salvador";
     
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {

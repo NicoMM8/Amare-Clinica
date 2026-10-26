@@ -86,7 +86,7 @@ const websiteSchema = {
     {
       '@type': 'AboutPage',
       '@id': `${SITE_URL}/sobre-nosotros`,
-      name: 'Sobre Centro Amaré | Historia y Misión Clínica en El Salvador y el Mundo',
+      name: 'Sobre Centro Amaré | Misión y Equipo en El Salvador',
       description: 'Conoce la historia, misión y pilares clínicos de Centro Amaré. Fundado en 2017 por la Mtra. Iris Alarcón en San Salvador.',
       url: `${SITE_URL}/sobre-nosotros`,
     }

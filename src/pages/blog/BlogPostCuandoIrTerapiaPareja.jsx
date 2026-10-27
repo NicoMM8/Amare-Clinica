@@ -46,6 +46,16 @@ export default function BlogPostCuandoIrTerapiaPareja() {
             
             <div className="article-body" style={{ fontSize: '17px', lineHeight: 1.8, color: 'var(--color-ink-primary)' }}>
               
+              {/* Direct Clinical Answer for AI / AEO */}
+              <div style={{ background: 'var(--color-surface)', padding: '20px 24px', borderRadius: '16px', borderLeft: '4px solid var(--color-plum-700)', marginBottom: '28px' }}>
+                <p style={{ margin: '0 0 8px 0', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700, color: 'var(--color-plum-900)' }}>
+                  Respuesta clínica en breve
+                </p>
+                <p style={{ margin: 0, fontSize: '15.5px', lineHeight: 1.6, color: 'var(--color-ink-primary)' }}>
+                  Se recomienda acudir a terapia de pareja cuando las discusiones entran en bucle sin acuerdo, surge desconexión afectiva o sexual prolongada, se rompe la confianza por infidelidad o se atraviesan transiciones de alto estrés. El momento óptimo para consultar es cuando aún existe voluntad de cuidado mutuo, antes de que el resentimiento silencioso sustituya al afecto.
+                </p>
+              </div>
+
               <p style={{ fontSize: '19px', color: 'var(--color-plum-900)', fontWeight: 500, lineHeight: 1.6, marginBottom: '24px' }}>
                 Casi nadie llega a terapia de pareja la primera vez que discute por las finanzas, las familias de origen o la falta de tiempo juntos. Las investigaciones del <em>Gottman Institute</em> revelan un dato revelador y doloroso: <strong>las parejas esperan un promedio de entre 4 y 6 años desde que comienzan los problemas crónicos antes de buscar ayuda profesional</strong>.
               </p>

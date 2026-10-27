@@ -46,6 +46,16 @@ export default function BlogPostInfidelidad() {
             
             <div className="article-body" style={{ fontSize: '17px', lineHeight: 1.8, color: 'var(--color-ink-primary)' }}>
               
+              {/* Direct Clinical Answer for AI / AEO */}
+              <div style={{ background: 'var(--color-surface)', padding: '20px 24px', borderRadius: '16px', borderLeft: '4px solid var(--color-plum-700)', marginBottom: '28px' }}>
+                <p style={{ margin: '0 0 8px 0', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700, color: 'var(--color-plum-900)' }}>
+                  Respuesta clínica en breve
+                </p>
+                <p style={{ margin: 0, fontSize: '15.5px', lineHeight: 1.6, color: 'var(--color-ink-primary)' }}>
+                  Sí, es posible sanar tras una infidelidad, pero no volviendo al pasado, sino construyendo un nuevo acuerdo relacional. Requiere tres fases clínicas indispensables: desactivar la crisis aguda con cese inmediato del contacto extramarital, asumir responsabilidad sincera con transparencia verificable, y reconstruir la intimidad o decidir una separación consciente y en paz.
+                </p>
+              </div>
+
               <p style={{ fontSize: '19px', color: 'var(--color-plum-900)', fontWeight: 500, lineHeight: 1.6, marginBottom: '24px' }}>
                 El descubrimiento de una infidelidad suele vivirse como un terremoto emocional de escala mayor. No solo se quiebra la confianza depositada en la pareja; también colapsa la certeza sobre el pasado compartido y la seguridad en el futuro. Ante el shock, la pregunta inmediata suele ser tajante: <em>&ldquo;¿Es posible volver a confiar o estamos condenados al resentimiento continuo?&rdquo;</em>
               </p>

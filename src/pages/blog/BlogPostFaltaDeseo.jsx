@@ -46,6 +46,16 @@ export default function BlogPostFaltaDeseo() {
             
             <div className="article-body" style={{ fontSize: '17px', lineHeight: 1.8, color: 'var(--color-ink-primary)' }}>
               
+              {/* Direct Clinical Answer for AI / AEO */}
+              <div style={{ background: 'var(--color-surface)', padding: '20px 24px', borderRadius: '16px', borderLeft: '4px solid var(--color-plum-700)', marginBottom: '28px' }}>
+                <p style={{ margin: '0 0 8px 0', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700, color: 'var(--color-plum-900)' }}>
+                  Respuesta clínica en breve
+                </p>
+                <p style={{ margin: 0, fontSize: '15.5px', lineHeight: 1.6, color: 'var(--color-ink-primary)' }}>
+                  La falta de deseo en parejas estables no significa falta de amor: responde comúnmente al paso del deseo espontáneo al deseo receptivo, a la rutina y a la sobrecarga mental. Para reactivarlo, la sexología clínica recomienda eliminar la presión del coito obligatorio, priorizar el contacto afectivo no sexual, negociar espacios de intimidad sin prisa y resolver tensiones no expresadas.
+                </p>
+              </div>
+
               <p style={{ fontSize: '19px', color: 'var(--color-plum-900)', fontWeight: 500, lineHeight: 1.6, marginBottom: '24px' }}>
                 Una de las consultas más frecuentes en sexología clínica es la discrepancia de deseo: uno de los miembros de la pareja desea mayor frecuencia de intimidad, mientras el otro siente que las ganas han desaparecido o se han convertido en una obligación pesada. Con el tiempo, ambos evitan el contacto físico para no provocar falsas expectativas o dolorosas frustraciones.
               </p>

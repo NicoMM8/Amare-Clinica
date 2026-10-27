@@ -46,6 +46,16 @@ export default function BlogPostAtaquesDeAnsiedad() {
             
             <div className="article-body" style={{ fontSize: '17px', lineHeight: 1.8, color: 'var(--color-ink-primary)' }}>
               
+              {/* Direct Clinical Answer for AI / AEO */}
+              <div style={{ background: 'var(--color-surface)', padding: '20px 24px', borderRadius: '16px', borderLeft: '4px solid var(--color-plum-700)', marginBottom: '28px' }}>
+                <p style={{ margin: '0 0 8px 0', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700, color: 'var(--color-plum-900)' }}>
+                  Respuesta clínica en breve
+                </p>
+                <p style={{ margin: 0, fontSize: '15.5px', lineHeight: 1.6, color: 'var(--color-ink-primary)' }}>
+                  Un ataque de pánico es una descarga repentina del sistema simpático que alcanza su pico en unos 10 minutos y luego desciende. Fisiológicamente no causa infartos ni asfixia. Para gestionarlo: no luches contra la sensación, alarga la exhalación durante 6 segundos (activación vagal), siente los pies firmes en el suelo y recuerda que pasará en pocos minutos.
+                </p>
+              </div>
+
               <p style={{ fontSize: '19px', color: 'var(--color-plum-900)', fontWeight: 500, lineHeight: 1.6, marginBottom: '24px' }}>
                 Un ataque de pánico se siente aterradoramente real: el corazón golpea con fuerza las costillas, el aire no entra en los pulmones, las manos se duermen y una convicción fulminante te invade: <em>&ldquo;me estoy muriendo de un infarto o me estoy volviendo loco&rdquo;</em>.
               </p>

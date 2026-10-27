@@ -54,13 +54,13 @@ export default function TerapiaDiasporaPage() {
 
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap', fontSize: '13.5px', color: 'var(--color-ink-secondary)' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <Globe size={16} style={{ color: 'var(--color-clay)' }} /> Montreal, Los Ángeles, Washington, Madrid
+                  <Globe size={16} style={{ color: 'var(--color-clay)' }} /> Los Ángeles, Houston, Dallas, DMV, Montreal, Madrid
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <Clock size={16} style={{ color: 'var(--color-clay)' }} /> Adaptado a tu huso horario
+                  <Clock size={16} style={{ color: 'var(--color-clay)' }} /> Adaptado a tu huso horario (EST, CST, PST, CET)
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <ShieldCheck size={16} style={{ color: 'var(--color-clay)' }} /> $100 USD/mes vs $200/h fuera
+                  <ShieldCheck size={16} style={{ color: 'var(--color-clay)' }} /> Planes adaptados a tu país vs $150-250/h fuera
                 </span>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function TerapiaDiasporaPage() {
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                     <Check size={18} style={{ color: '#1B873F', flexShrink: 0, marginTop: '2px' }} />
-                    <span><strong>Plan mensual de $100 USD:</strong> Hasta 4 sesiones mensuales para que el costo no sea obstáculo.</span>
+                    <span><strong>Planes accesibles adaptados:</strong> Diseñados según tu país de residencia para que el costo no impida sostener el proceso completo.</span>
                   </li>
                 </ul>
               </div>
@@ -145,7 +145,7 @@ export default function TerapiaDiasporaPage() {
                   Zona Este (EST)
                 </h3>
                 <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', marginBottom: '10px', lineHeight: 1.5 }}>
-                  <strong>Montreal, Washington D.C., Nueva York, Miami.</strong>
+                  <strong>Washington D.C., Maryland, Virginia, Nueva York, Miami, Montreal, Toronto.</strong>
                 </p>
                 <span style={{ fontSize: '12.5px', color: 'var(--color-clay)', fontWeight: 600 }}>
                   Sesiones desde las 6:00 PM o mañanas de sábado.
@@ -157,7 +157,7 @@ export default function TerapiaDiasporaPage() {
                   Zona Centro (CST)
                 </h3>
                 <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', marginBottom: '10px', lineHeight: 1.5 }}>
-                  <strong>Houston, Dallas, Chicago, San Salvador.</strong>
+                  <strong>Houston, Dallas, Austin, Chicago, San Salvador.</strong>
                 </p>
                 <span style={{ fontSize: '12.5px', color: 'var(--color-clay)', fontWeight: 600 }}>
                   Mismo huso horario o 1 hora de diferencia.
@@ -169,7 +169,7 @@ export default function TerapiaDiasporaPage() {
                   Zona Pacífico (PST)
                 </h3>
                 <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', marginBottom: '10px', lineHeight: 1.5 }}>
-                  <strong>Los Ángeles, San Francisco, Seattle.</strong>
+                  <strong>Los Ángeles, San Francisco, Seattle, Vancouver.</strong>
                 </p>
                 <span style={{ fontSize: '12.5px', color: 'var(--color-clay)', fontWeight: 600 }}>
                   Horarios de tarde y fin de semana disponibles.
@@ -181,7 +181,7 @@ export default function TerapiaDiasporaPage() {
                   Europa Central (CET)
                 </h3>
                 <p style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)', marginBottom: '10px', lineHeight: 1.5 }}>
-                  <strong>Madrid, Barcelona, Milán, París.</strong>
+                  <strong>Madrid, Barcelona, Valencia, Milán, París.</strong>
                 </p>
                 <span style={{ fontSize: '12.5px', color: 'var(--color-clay)', fontWeight: 600 }}>
                   Franjas adaptadas al mediodía y tarde noche europea.

@@ -31,6 +31,7 @@ if (typeof window !== 'undefined') {
     const consent = localStorage.getItem('amare_cookie_consent')
     if (!consent) {
       banner.style.display = 'block'
+      document.body.classList.add('has-cookie-banner')
     }
     const acceptBtn = document.getElementById('accept-cookies-btn')
     const declineBtn = document.getElementById('decline-cookies-btn')
@@ -38,12 +39,14 @@ if (typeof window !== 'undefined') {
       acceptBtn.addEventListener('click', () => {
         localStorage.setItem('amare_cookie_consent', 'accepted')
         banner.style.display = 'none'
+        document.body.classList.remove('has-cookie-banner')
       })
     }
     if (declineBtn) {
       declineBtn.addEventListener('click', () => {
         localStorage.setItem('amare_cookie_consent', 'declined')
         banner.style.display = 'none'
+        document.body.classList.remove('has-cookie-banner')
       })
     }
   }

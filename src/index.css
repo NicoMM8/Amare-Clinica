@@ -801,14 +801,17 @@ button {
    COOKIE CONSENT BANNER (WCAG AA & RGPD Compliance)
 ═══════════════════════════════════════════════ */
 .cookie-banner {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  max-width: 420px;
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  left: auto !important;
+  margin: 0 !important;
+  max-width: 410px !important;
+  width: calc(100% - 48px);
   background: #FFFFFF;
   color: var(--color-ink-primary, #22284A);
   border-radius: 20px;
-  padding: 20px 22px;
+  padding: 18px 20px;
   box-shadow: 0 16px 48px rgba(35, 18, 33, 0.18), 0 2px 8px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(34, 40, 74, 0.12);
   z-index: 99999;
@@ -826,6 +829,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  text-align: left;
 }
 
 .cookie-banner-header {
@@ -850,6 +854,7 @@ button {
   font-size: 13px !important;
   line-height: 1.55 !important;
   margin: 0 !important;
+  text-align: left !important;
 }
 
 .cookie-banner-link {
@@ -862,6 +867,7 @@ button {
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: flex-start;
   margin-top: 4px;
   flex-wrap: wrap;
 }
@@ -903,6 +909,16 @@ button {
     bottom: 16px !important;
     max-width: calc(100% - 32px) !important;
     padding: 16px 18px !important;
+  }
+}
+
+/* Si el banner de cookies está activo y el usuario hace scroll, WhatsApp se eleva para no colisionar */
+body.has-cookie-banner .floating-whatsapp {
+  bottom: 215px !important;
+}
+@media (max-width: 640px) {
+  body.has-cookie-banner .floating-whatsapp {
+    bottom: 200px !important;
   }
 }
 

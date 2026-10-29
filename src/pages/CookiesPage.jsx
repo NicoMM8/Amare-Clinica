@@ -11,6 +11,7 @@ export default function CookiesPage() {
       const banner = document.getElementById('cookie-consent-banner');
       if (banner) {
         banner.style.display = 'block';
+        document.body.classList.add('has-cookie-banner');
       }
       alert('Tus preferencias de cookies han sido restablecidas. Puedes volver a configurarlas en el aviso inferior.');
     } catch {

@@ -167,7 +167,7 @@ export default function CoupleTherapyIntro() {
               <source srcSet="/images/pareja-terapia-online.webp" type="image/webp" />
               <img
                 src="/images/pareja-terapia-online.jpg"
-                alt="Pareja en sesión de terapia online confidencial desde casa — Centro Amaré El Salvador"
+                alt="Dar el paso hacia la terapia de pareja online confidencial — Centro Amaré El Salvador"
                 width="580"
                 height="435"
                 loading="lazy"

@@ -43,7 +43,7 @@ export const BLOG_POSTS = [
     date: 'Actualizado 2026',
     author: 'Lic. Ernesto Mejía (JVPP 9314)',
     icon: Heart,
-    image: '/images/blog/controlar-ansiedad.webp'
+    image: '/images/blog/dependencia-emocional.webp'
   },
   {
     slug: 'se-puede-perdonar-una-infidelidad-guia-pareja',
@@ -79,7 +79,7 @@ export const BLOG_POSTS = [
     date: 'Actualizado 2026',
     author: 'Equipo Clínico Centro Amaré',
     icon: HeartHandshake,
-    image: '/images/blog/cuando-terapia.webp'
+    image: '/images/blog/fortalecer-pareja.webp'
   },
   {
     slug: 'crianza-en-pareja-desacuerdos-hijos-soluciones',
@@ -139,7 +139,7 @@ export const BLOG_POSTS = [
     date: 'Actualizado 2026',
     author: 'Lic. Ernesto Mejía (JVPP 9314)',
     icon: Sparkles,
-    image: '/images/blog/burnout-depresion.webp'
+    image: '/images/blog/autoestima-autocompasion.webp'
   },
   {
     slug: 'como-elegir-un-psicologo-en-el-salvador',
@@ -151,7 +151,7 @@ export const BLOG_POSTS = [
     date: 'Actualizado 2026',
     author: 'Mtra. Iris Alarcón (JVPP 6380)',
     icon: Award,
-    image: '/images/blog/primera-sesion.webp'
+    image: '/images/blog/elegir-psicologo.webp'
   },
   {
     slug: 'psicologo-o-psiquiatra-diferencias',
@@ -163,7 +163,7 @@ export const BLOG_POSTS = [
     date: 'Actualizado 2026',
     author: 'Equipo Clínico Centro Amaré',
     icon: Stethoscope,
-    image: '/images/blog/primera-sesion.webp'
+    image: '/images/blog/psicologo-vs-psiquiatra.webp'
   },
   {
     slug: 'cuanto-cuesta-una-terapia-de-pareja-en-el-salvador',
@@ -175,7 +175,7 @@ export const BLOG_POSTS = [
     date: 'Actualizado 2026',
     author: 'Mtra. Iris Alarcón (JVPP 6380)',
     icon: DollarSign,
-    image: '/images/blog/cuando-terapia.webp'
+    image: '/images/blog/precio-terapia-pareja.webp'
   },
   {
     slug: 'duelo-migratorio-que-es-como-manejarlo',
@@ -211,7 +211,7 @@ export const BLOG_POSTS = [
     date: 'Actualizado 2026',
     author: 'Mtra. Iris Alarcón (JVPP 6380)',
     icon: HeartHandshake,
-    image: '/images/blog/duelo-migratorio.webp'
+    image: '/images/blog/limites-familia-distancia.webp'
   }
 ];
 

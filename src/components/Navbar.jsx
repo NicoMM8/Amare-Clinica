@@ -53,6 +53,7 @@ export default function Navbar() {
           <li><a href="/terapia-individual" className="nav-link">Individual</a></li>
           <li><a href="/sexologia-clinica" className="nav-link">Sexología</a></li>
           <li><a href="/salvadorenos-en-el-exterior" className="nav-link">En el Exterior</a></li>
+          <li><a href="/sobre-nosotros" className="nav-link">Nuestra Historia</a></li>
           <li><a href="/#equipo" className="nav-link">Equipo</a></li>
           <li><a href="/precios" className="nav-link">Honorarios</a></li>
           <li><a href="/blog" className="nav-link">Guías</a></li>
@@ -118,7 +119,7 @@ export default function Navbar() {
           <a href="/sexologia-clinica" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Sexología Clínica</a>
           <a href="/test-de-pareja" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link nav-mobile-drawer-link--highlight">Test de Pareja (2 min)</a>
           <a href="/salvadorenos-en-el-exterior" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Salvadoreños en el Exterior</a>
-          <a href="/sobre-nosotros" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Sobre Centro Amaré</a>
+          <a href="/sobre-nosotros" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Nuestra Historia (Sobre Centro Amaré)</a>
           <a href="/#equipo" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Equipo Clínico</a>
           <a href="/precios" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Honorarios y Modalidades</a>
           <a href="/blog" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-drawer-link">Guías y Recursos</a>

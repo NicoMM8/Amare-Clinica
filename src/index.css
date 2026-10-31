@@ -438,15 +438,17 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: clamp(10px, 1.4vw, 22px);
   list-style: none;
+  white-space: nowrap;
 }
 
 .nav-link {
-  font-size: 14px;
+  font-size: clamp(13px, 0.95vw, 14px);
   font-weight: 500;
   color: var(--color-ink-secondary);
   transition: color var(--duration-fast) ease;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -466,7 +468,7 @@ button {
   display: inline;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1040px) {
   .nav-links {
     display: none;
   }

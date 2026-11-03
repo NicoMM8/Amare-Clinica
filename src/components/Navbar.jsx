@@ -54,7 +54,6 @@ export default function Navbar() {
           <li><a href="/sexologia-clinica" className="nav-link">Sexología</a></li>
           <li><a href="/salvadorenos-en-el-exterior" className="nav-link">En el Exterior</a></li>
           <li><a href="/sobre-nosotros" className="nav-link">Nuestra Historia</a></li>
-          <li><a href="/#equipo" className="nav-link">Equipo</a></li>
           <li><a href="/precios" className="nav-link">Honorarios</a></li>
           <li><a href="/blog" className="nav-link">Guías</a></li>
         </ul>

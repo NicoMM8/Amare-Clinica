@@ -8,7 +8,7 @@
  * 3. Abre WhatsApp con mensaje clínico precargado para contacto en caliente
  */
 
-export const CLINIC_EMAIL = 'contacto@terapiadeparejaelsalvador.com';
+export const CLINIC_EMAIL = 'daroxbrandmaker@gmail.com';
 export const CLINIC_WHATSAPP_PHONE = '50373184781';
 
 export const COUNTRY_CODES = [
@@ -93,11 +93,39 @@ export async function sendLeadEmail({
     }
   }
 
-  // 3. Envío asíncrono con timeout de 7 segundos
+  // 3. Envío asíncrono resiliente (ShipMyForm + fallback FormSubmit)
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 7000);
 
   try {
+    // 3.1 Intentar primero vía ShipMyForm (respuesta en <500ms y alta disponibilidad)
+    const formData = new URLSearchParams();
+    for (const [key, value] of Object.entries(payload)) {
+      if (!key.startsWith('_')) {
+        formData.append(key, String(value));
+      }
+    }
+    formData.append('_subject', payload._subject);
+    if (email) formData.append('email', email);
+
+    try {
+      const shipRes = await fetch(`https://shipmyform.com/to/${CLINIC_EMAIL}`, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: formData,
+        signal: controller.signal,
+      });
+      if (shipRes.ok) {
+        clearTimeout(timer);
+        return { success: true, provider: 'shipmyform' };
+      }
+    } catch {
+      // Si ShipMyForm falla, continúa al fallback
+    }
+
+    // 3.2 Fallback FormSubmit AJAX
     const response = await fetch(`https://formsubmit.co/ajax/${CLINIC_EMAIL}`, {
       method: 'POST',
       headers: {
@@ -109,7 +137,7 @@ export async function sendLeadEmail({
     });
 
     clearTimeout(timer);
-    return { success: response.ok };
+    return { success: response.ok, provider: 'formsubmit' };
   } catch (err) {
     clearTimeout(timer);
     console.warn('Envío de correo diferido o bloqueado por red local:', err?.message || err);

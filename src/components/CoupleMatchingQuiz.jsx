@@ -9,8 +9,14 @@ import {
   Laptop,
   MessageSquare,
   FileText,
-  HelpCircle
+  HelpCircle,
+  Send,
+  Loader2,
+  Mail,
+  Phone,
+  User
 } from 'lucide-react';
+import { sendLeadEmail, openWhatsAppChat, COUNTRY_CODES } from '../lib/leadService';
 import {
   Questionnaire,
   QuestionnaireProgress,
@@ -44,6 +50,14 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
     goalShort: '',
     notes: '',
   });
+
+  const [leadName, setLeadName] = useState('');
+  const [leadCountryCode, setLeadCountryCode] = useState('+503');
+  const [leadPhone, setLeadPhone] = useState('');
+  const [leadEmail, setLeadEmail] = useState('');
+  const [isLeadSubmitting, setIsLeadSubmitting] = useState(false);
+  const [isLeadSuccess, setIsLeadSuccess] = useState(false);
+  const [leadError, setLeadError] = useState('');
 
   const headings = useRef([]);
   const focusNext = useRef(false);
@@ -234,11 +248,71 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       goalShort: '',
       notes: '',
     });
+    setLeadName('');
+    setLeadPhone('');
+    setLeadEmail('');
+    setIsLeadSubmitting(false);
+    setIsLeadSuccess(false);
+    setLeadError('');
     move(0);
     if (typeof window !== 'undefined') {
       window.scrollTo(0, 0);
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
+    }
+  };
+
+  const handleLeadSubmit = async (e) => {
+    if (e) e.preventDefault();
+    if (!leadName.trim()) {
+      setLeadError('Por favor, indica tu nombre o el de ambos.');
+      return;
+    }
+    if (!leadPhone.trim()) {
+      setLeadError('Por favor, indica tu número de WhatsApp.');
+      return;
+    }
+    setLeadError('');
+    setIsLeadSubmitting(true);
+
+    const fullPhone = leadCountryCode ? `${leadCountryCode} ${leadPhone.trim()}` : leadPhone.trim();
+
+    try {
+      // 1. Notificación asíncrona por correo al equipo clínico con todo el desglose
+      await sendLeadEmail({
+        name: leadName.trim(),
+        whatsapp: fullPhone,
+        email: leadEmail.trim(),
+        service: isIndividualInitiative ? 'Terapia Individual (Test)' : 'Terapia de Pareja (Test)',
+        source: 'Test de Pareja (Paso Final)',
+        notes: answers.notes,
+        answers: answers,
+      });
+
+      // 2. Apertura simultánea de WhatsApp para contacto inmediato
+      openWhatsAppChat({
+        name: leadName.trim(),
+        whatsapp: fullPhone,
+        service: isIndividualInitiative ? 'Terapia Individual' : 'Terapia de Pareja',
+        notes: answers.notes,
+        answers: answers,
+        isIndividualInitiative,
+      });
+
+      setIsLeadSuccess(true);
+    } catch (err) {
+      console.warn('Fallback al abrir WhatsApp:', err);
+      openWhatsAppChat({
+        name: leadName.trim(),
+        whatsapp: fullPhone,
+        service: isIndividualInitiative ? 'Terapia Individual' : 'Terapia de Pareja',
+        notes: answers.notes,
+        answers: answers,
+        isIndividualInitiative,
+      });
+      setIsLeadSuccess(true);
+    } finally {
+      setIsLeadSubmitting(false);
     }
   };
 
@@ -1080,29 +1154,320 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   )}
                 </div>
 
-                {/* Botón principal a WhatsApp */}
-                <a
-                  href={whatsappMatchUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="v-button v-button--accent"
-                  style={{
-                    padding: '16px 32px',
-                    fontSize: '16px',
-                    textDecoration: 'none',
-                    width: '100%',
-                    maxWidth: '460px',
-                    marginBottom: '12px',
-                    display: 'inline-flex',
-                  }}
-                >
-                  <span>
-                    {isIndividualInitiative 
-                      ? 'Agendar mi conversación exploratoria (30 min)' 
-                      : 'Agendar nuestra primera conversación con el equipo (30 min)'}
-                  </span>
-                  <ArrowRight size={18} />
-                </a>
+                {/* ══════════════ CAPTURA DUAL DE CONTACTO (EMAIL + WHATSAPP) ══════════════ */}
+                {isLeadSuccess ? (
+                  <div
+                    style={{
+                      maxWidth: '520px',
+                      margin: '0 auto 28px',
+                      padding: '24px 22px',
+                      backgroundColor: '#FFFFFF',
+                      borderRadius: 'var(--r-card)',
+                      border: '1.5px solid #10B981',
+                      boxShadow: '0 4px 20px rgba(16, 185, 129, 0.12)',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '48px',
+                        height: '48px',
+                        borderRadius: '50%',
+                        backgroundColor: 'rgba(16, 185, 129, 0.12)',
+                        color: '#059669',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginBottom: '12px',
+                      }}
+                    >
+                      <CheckCircle2 size={26} />
+                    </div>
+                    <h4
+                      className="font-serif"
+                      style={{
+                        fontSize: '20px',
+                        fontWeight: 700,
+                        color: 'var(--v-text)',
+                        marginBottom: '6px',
+                      }}
+                    >
+                      ¡Solicitud registrada con éxito!
+                    </h4>
+                    <p
+                      style={{
+                        fontSize: '13.5px',
+                        color: 'var(--v-text-2)',
+                        lineHeight: 1.55,
+                        marginBottom: '18px',
+                      }}
+                    >
+                      Hemos notificado a la dirección clínica de Centro Amaré con el resumen de tu test. Si la ventana de WhatsApp no se abrió automáticamente, puedes continuar desde aquí:
+                    </p>
+
+                    <a
+                      href={whatsappMatchUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="v-button v-button--accent"
+                      style={{
+                        padding: '14px 28px',
+                        fontSize: '15px',
+                        textDecoration: 'none',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        width: '100%',
+                        boxSizing: 'border-box',
+                      }}
+                    >
+                      <MessageSquare size={17} />
+                      <span>Abrir chat de WhatsApp con la clínica</span>
+                    </a>
+                  </div>
+                ) : (
+                  <form
+                    onSubmit={handleLeadSubmit}
+                    style={{
+                      maxWidth: '520px',
+                      margin: '0 auto 28px',
+                      padding: '24px 22px',
+                      backgroundColor: '#FFFFFF',
+                      borderRadius: 'var(--r-card)',
+                      border: '1px solid var(--v-border)',
+                      boxShadow: '0 4px 20px rgba(35, 18, 33, 0.05)',
+                      textAlign: 'left',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                      <Sparkles size={18} style={{ color: 'var(--v-pink)' }} />
+                      <h4
+                        className="font-serif"
+                        style={{
+                          fontSize: '18px',
+                          fontWeight: 700,
+                          color: 'var(--v-text)',
+                          margin: 0,
+                        }}
+                      >
+                        Coordinar 1ª conversación (30 min sin costo)
+                      </h4>
+                    </div>
+
+                    <p
+                      style={{
+                        fontSize: '13px',
+                        color: 'var(--v-text-2)',
+                        lineHeight: 1.5,
+                        margin: '0 0 16px 0',
+                      }}
+                    >
+                      Déjanos tus datos para preparar tu expediente clínico y asignarte a la terapeuta idónea. Te contactaremos de inmediato por WhatsApp.
+                    </p>
+
+                    {leadError && (
+                      <div
+                        style={{
+                          padding: '10px 12px',
+                          borderRadius: '8px',
+                          backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                          color: '#DC2626',
+                          fontSize: '12.5px',
+                          fontWeight: 600,
+                          marginBottom: '14px',
+                        }}
+                      >
+                        {leadError}
+                      </div>
+                    )}
+
+                    {/* Nombre */}
+                    <div style={{ marginBottom: '14px' }}>
+                      <label
+                        style={{
+                          display: 'block',
+                          fontSize: '12.5px',
+                          fontWeight: 600,
+                          color: 'var(--v-text)',
+                          marginBottom: '5px',
+                        }}
+                      >
+                        Tu nombre o el de ambos <span style={{ color: 'var(--v-pink)' }}>*</span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Ej. Sofía y Carlos"
+                        value={leadName}
+                        onChange={(e) => setLeadName(e.target.value)}
+                        style={{
+                          width: '100%',
+                          padding: '11px 13px',
+                          borderRadius: '10px',
+                          border: '1px solid var(--v-border)',
+                          backgroundColor: 'var(--v-canvas)',
+                          color: 'var(--v-text)',
+                          fontSize: '13.5px',
+                          outline: 'none',
+                          boxSizing: 'border-box',
+                          fontFamily: 'inherit',
+                        }}
+                      />
+                    </div>
+
+                    {/* WhatsApp */}
+                    <div style={{ marginBottom: '14px' }}>
+                      <label
+                        style={{
+                          display: 'block',
+                          fontSize: '12.5px',
+                          fontWeight: 600,
+                          color: 'var(--v-text)',
+                          marginBottom: '5px',
+                        }}
+                      >
+                        WhatsApp de contacto <span style={{ color: 'var(--v-pink)' }}>*</span>
+                      </label>
+                      <div style={{ display: 'flex', gap: '8px' }}>
+                        <select
+                          value={leadCountryCode}
+                          onChange={(e) => setLeadCountryCode(e.target.value)}
+                          style={{
+                            width: '130px',
+                            flexShrink: 0,
+                            padding: '11px 8px',
+                            borderRadius: '10px',
+                            border: '1px solid var(--v-border)',
+                            backgroundColor: 'var(--v-canvas)',
+                            color: 'var(--v-text)',
+                            fontSize: '12.5px',
+                            outline: 'none',
+                            boxSizing: 'border-box',
+                            cursor: 'pointer',
+                            fontFamily: 'inherit',
+                          }}
+                        >
+                          {COUNTRY_CODES.map((item) => (
+                            <option key={item.code} value={item.code}>
+                              {item.label}
+                            </option>
+                          ))}
+                        </select>
+                        <input
+                          type="tel"
+                          required
+                          placeholder="7318-4781"
+                          value={leadPhone}
+                          onChange={(e) => setLeadPhone(e.target.value)}
+                          style={{
+                            flex: 1,
+                            padding: '11px 13px',
+                            borderRadius: '10px',
+                            border: '1px solid var(--v-border)',
+                            backgroundColor: 'var(--v-canvas)',
+                            color: 'var(--v-text)',
+                            fontSize: '13.5px',
+                            outline: 'none',
+                            boxSizing: 'border-box',
+                            fontFamily: 'inherit',
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Email (opcional / respaldo) */}
+                    <div style={{ marginBottom: '18px' }}>
+                      <label
+                        style={{
+                          display: 'block',
+                          fontSize: '12.5px',
+                          fontWeight: 600,
+                          color: 'var(--v-text)',
+                          marginBottom: '5px',
+                        }}
+                      >
+                        Correo electrónico <span style={{ fontSize: '11.5px', color: 'var(--v-text-2)', fontWeight: 'normal' }}>(para enlace Google Meet)</span>
+                      </label>
+                      <input
+                        type="email"
+                        placeholder="tu-correo@ejemplo.com"
+                        value={leadEmail}
+                        onChange={(e) => setLeadEmail(e.target.value)}
+                        style={{
+                          width: '100%',
+                          padding: '11px 13px',
+                          borderRadius: '10px',
+                          border: '1px solid var(--v-border)',
+                          backgroundColor: 'var(--v-canvas)',
+                          color: 'var(--v-text)',
+                          fontSize: '13.5px',
+                          outline: 'none',
+                          boxSizing: 'border-box',
+                          fontFamily: 'inherit',
+                        }}
+                      />
+                    </div>
+
+                    {/* Botón Principal Submit */}
+                    <button
+                      type="submit"
+                      disabled={isLeadSubmitting}
+                      className="v-button v-button--accent"
+                      style={{
+                        padding: '15px 24px',
+                        fontSize: '15.5px',
+                        fontWeight: 700,
+                        width: '100%',
+                        cursor: isLeadSubmitting ? 'not-allowed' : 'pointer',
+                        opacity: isLeadSubmitting ? 0.75 : 1,
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        border: 'none',
+                        boxSizing: 'border-box',
+                      }}
+                    >
+                      {isLeadSubmitting ? (
+                        <>
+                          <Loader2 size={18} className="animate-spin" />
+                          <span>Guardando y conectando...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>
+                            {isIndividualInitiative 
+                              ? 'Enviar y abrir WhatsApp (1ª sesión gratis)' 
+                              : 'Enviar y abrir WhatsApp con la clínica'}
+                          </span>
+                          <ArrowRight size={18} />
+                        </>
+                      )}
+                    </button>
+
+                    {/* Enlace alternativo directo a WhatsApp */}
+                    <div style={{ textAlign: 'center', marginTop: '12px' }}>
+                      <a
+                        href={whatsappMatchUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontSize: '12.5px',
+                          color: 'var(--v-text-2)',
+                          textDecoration: 'underline',
+                          textUnderlineOffset: '2px',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '5px',
+                        }}
+                      >
+                        <MessageSquare size={13} style={{ color: 'var(--v-pink)' }} />
+                        <span>O abrir WhatsApp directamente sin dejar correo</span>
+                      </a>
+                    </div>
+                  </form>
+                )}
 
                 {/* Garantía de Privacidad y Secreto Profesional */}
                 <div

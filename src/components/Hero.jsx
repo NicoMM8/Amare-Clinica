@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Globe, HeartHandshake, ShieldCheck, Sparkles } from 'lucide-react';
+import { Globe, HeartHandshake, ShieldCheck, Sparkles, Mail } from 'lucide-react';
 import { PigmentAtmosphere } from './cojeev/PigmentAtmosphere';
 import { HeroButton } from './cojeev/HeroButton';
+import QuickContactModal from './QuickContactModal';
 
 function WhatsAppIcon({ size = 20, className = "" }) {
   return (
@@ -23,6 +24,7 @@ function WhatsAppIcon({ size = 20, className = "" }) {
 
 export default function Hero() {
   const [importaHovered, setImportaHovered] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, vengo de la web y me gustaría agendar una primera conversación sin costo.");
 
   return (
@@ -198,6 +200,31 @@ export default function Hero() {
                 1ª sesión de 30 min gratis con el equipo clínico · Sin compromiso ni costo
               </span>
 
+              <div style={{ marginTop: '6px' }}>
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(true)}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    color: 'var(--color-clay, #B75940)',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '3px',
+                    cursor: 'pointer',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '5px',
+                    fontFamily: 'inherit',
+                  }}
+                >
+                  <Mail size={13} />
+                  <span>¿Prefieres que te contactemos por WhatsApp? Déjanos tus datos aquí</span>
+                </button>
+              </div>
+
               <div style={{ marginTop: '14px', fontSize: '13.5px', color: 'var(--color-ink-secondary)' }}>
                 ¿Buscas apoyo individual para ti?{' '}
                 <a
@@ -309,6 +336,8 @@ export default function Hero() {
         </div>
 
       </div>
+
+      <QuickContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

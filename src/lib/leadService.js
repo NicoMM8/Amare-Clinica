@@ -8,7 +8,7 @@
  * 3. Abre WhatsApp con mensaje clínico precargado para contacto en caliente
  */
 
-export const CLINIC_EMAIL = 'daroxbrandmaker@gmail.com';
+export const CLINIC_EMAIL = 'centroamare.elsalvador@gmail.com';
 export const CLINIC_WHATSAPP_PHONE = '50373184781';
 
 export const COUNTRY_CODES = [

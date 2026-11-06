@@ -16,7 +16,7 @@ import {
   Phone,
   User
 } from 'lucide-react';
-import { sendLeadEmail, openWhatsAppChat, COUNTRY_CODES } from '../lib/leadService';
+import { sendLeadEmail, openWhatsAppChat, COUNTRY_CODES, CLINIC_EMAIL } from '../lib/leadService';
 import {
   Questionnaire,
   QuestionnaireProgress,
@@ -1521,10 +1521,10 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     </a>
                     {' '}o agenda por correo a{' '}
                     <a
-                      href="mailto:contacto@terapiadeparejaelsalvador.com?subject=Consulta%20Test%20de%20Pareja"
+                      href={`mailto:${CLINIC_EMAIL}?subject=Consulta%20Test%20de%20Pareja`}
                       style={{ color: 'var(--v-text)', textDecoration: 'underline', fontWeight: 600 }}
                     >
-                      contacto@terapiadeparejaelsalvador.com
+                      {CLINIC_EMAIL}
                     </a>
                   </div>
                 </div>

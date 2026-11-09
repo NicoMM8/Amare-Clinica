@@ -204,8 +204,8 @@ const routes = [
   {
     path: '/blog/psicologo-o-psiquiatra-diferencias',
     file: 'blog/psicologo-o-psiquiatra-diferencias/index.html',
-    title: 'Psicólogo o Psiquiatra: Diferencias y Cuándo Consultar | Centro Amaré',
-    description: 'Diferencias clave entre psicólogo y psiquiatra. Cuándo la psicoterapia es primera línea y cuándo es necesaria la interconsulta médica ética.',
+    title: 'Psicólogo, Psicoanalista o Psiquiatra: Diferencias | Centro Amaré',
+    description: 'Diferencia entre psicólogo, psicoanalista y psiquiatra: formación, quién receta medicación y a cuál acudir primero en crisis emocionales o de pareja.',
     canonical: `${BASE_URL}/blog/psicologo-o-psiquiatra-diferencias`,
   },
   {

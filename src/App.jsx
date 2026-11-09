@@ -170,7 +170,7 @@ function App({ initialPath = '/' }) {
       '/blog/como-controlar-la-ansiedad': 'Cómo Controlar la Ansiedad con Técnicas TCC | Centro Amaré',
       '/blog/ataques-de-ansiedad': 'Ataques de Pánico y Ansiedad: Qué Hacer | Centro Amaré',
       '/blog/como-elegir-un-psicologo-en-el-salvador': 'Cómo Elegir un Psicólogo en El Salvador (JVPP) | Amaré',
-      '/blog/psicologo-o-psiquiatra-diferencias': 'Psicólogo o Psiquiatra: Cuándo Consultar | Centro Amaré',
+      '/blog/psicologo-o-psiquiatra-diferencias': 'Psicólogo, Psicoanalista o Psiquiatra: Diferencias | Centro Amaré',
       '/blog/burnout-o-depresion-diferencias': 'Burnout o Depresión: Cómo Diferenciarlos | Centro Amaré',
       '/blog/como-mejorar-la-autoestima-sin-frases-hechas': 'Cómo Mejorar la Autoestima sin Frases Hechas | Centro Amaré',
       '/blog/crianza-en-pareja-desacuerdos-hijos-soluciones': 'Crianza en Pareja: Resolver Desacuerdos | Centro Amaré',

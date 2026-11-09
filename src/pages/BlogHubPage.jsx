@@ -155,9 +155,9 @@ export const BLOG_POSTS = [
   },
   {
     slug: 'psicologo-o-psiquiatra-diferencias',
-    title: 'Psicólogo o Psiquiatra: diferencias clave, a quién consultar primero y cómo se complementan',
-    excerpt: 'Cuándo la psicoterapia es el tratamiento de primera línea y cuándo es necesaria la evaluación médica psicofarmacológica coordinada sin tabúes.',
-    readTime: '6 min de lectura',
+    title: 'Psicólogo, Psicoanalista o Psiquiatra: diferencias clave y a quién acudir primero',
+    excerpt: 'Cuándo la psicoterapia basada en evidencia es primera línea, qué hace el psicoanalista y cuándo es necesaria la evaluación psiquiátrica sin tabúes.',
+    readTime: '7 min de lectura',
     category: 'Orientación Clínica',
     filterGroup: 'ayuda',
     date: 'Actualizado 2026',

@@ -7,7 +7,7 @@
  */
 
 const HOST = 'terapiadeparejaelsalvador.com';
-const KEY = '360854d6b715473a8b0aefd55929bbbf';
+const KEY = 'e6b9c9e54a3249769850c99a83856638';
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 const URLS = [
@@ -64,7 +64,8 @@ async function submitToIndexNow() {
     if (res.status === 200 || res.status === 202) {
       console.log(`✅ IndexNow: ${res.status} OK — Notificación exitosa a Bing y Copilot.`);
     } else {
-      console.log(`ℹ️ IndexNow respuesta HTTP: ${res.status} ${res.statusText}`);
+      const body = await res.text().catch(() => '');
+      console.log(`ℹ️ IndexNow respuesta HTTP: ${res.status} ${res.statusText}${body ? ` — ${body}` : ''}`);
     }
   } catch (err) {
     console.error('⚠️ Error al conectar con IndexNow:', err.message);

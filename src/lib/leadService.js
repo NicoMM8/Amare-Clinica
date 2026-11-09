@@ -3,13 +3,14 @@
  * Centro Amaré Psicoterapia Online
  * 
  * Funcionalidad:
- * 1. Envía notificación inmediata por correo a contacto@terapiadeparejaelsalvador.com
+ * 1. Envía notificación inmediata por correo vía Web3Forms (99.99% uptime)
  * 2. Guarda copia de seguridad en localStorage por resiliencia
  * 3. Abre WhatsApp con mensaje clínico precargado para contacto en caliente
  */
 
 export const CLINIC_EMAIL = 'centroamare.elsalvador@gmail.com';
 export const CLINIC_WHATSAPP_PHONE = '50373184781';
+export const WEB3FORMS_ACCESS_KEY = '0616396a-bb08-4b74-94ff-bd523e8ed1e3';
 
 export const COUNTRY_CODES = [
   { code: '+503', label: '🇸🇻 El Salvador (+503)' },
@@ -53,12 +54,11 @@ export async function sendLeadEmail({
     // Silencioso en caso de modo incógnito restrictivo
   }
 
-  // 2. Preparar el cuerpo del correo estructurado
-  const payload = {
-    _subject: `🔔 Nueva solicitud de cita: ${name || 'Paciente'} (${service})`,
-    _template: 'table',
-    _captcha: 'false',
-    _replyto: email || undefined,
+  // 2. Preparar el payload estructurado para Web3Forms
+  const web3Payload = {
+    access_key: WEB3FORMS_ACCESS_KEY,
+    subject: `🔔 Nueva solicitud de cita: ${name || 'Paciente'} (${service})`,
+    from_name: 'Centro Amaré Web',
     Nombre: name || 'No especificado',
     'WhatsApp / Teléfono': whatsapp || 'No especificado',
     'Correo Electrónico': email || 'No especificado',
@@ -67,77 +67,54 @@ export async function sendLeadEmail({
     'Fecha y Hora': new Date().toLocaleString('es-SV', { timeZone: 'America/El_Salvador' }) + ' (El Salvador)',
   };
 
+  if (email && email.includes('@')) {
+    web3Payload.replyto = email.trim();
+  }
+
   if (notes && notes.trim()) {
-    payload['Notas / Situación'] = notes.trim();
+    web3Payload['Notas / Situación'] = notes.trim();
   }
 
   // Si proviene del Test de Pareja, adjuntamos el detalle clínico
   if (answers && typeof answers === 'object') {
     if (answers.situationShort || answers.situation) {
-      payload['Test: Situación'] = answers.situationShort || answers.situation;
+      web3Payload['Test: Situación'] = answers.situationShort || answers.situation;
     }
     if (answers.reasonShort || answers.reason) {
-      payload['Test: Motivo principal'] = answers.reasonShort || answers.reason;
+      web3Payload['Test: Motivo principal'] = answers.reasonShort || answers.reason;
     }
     if (answers.conflictStyleShort || answers.conflictStyle) {
-      payload['Test: Estilo de conflicto'] = answers.conflictStyleShort || answers.conflictStyle;
+      web3Payload['Test: Estilo de conflicto'] = answers.conflictStyleShort || answers.conflictStyle;
     }
     if (answers.durationShort || answers.duration) {
-      payload['Test: Tiempo de desgaste'] = answers.durationShort || answers.duration;
+      web3Payload['Test: Tiempo de desgaste'] = answers.durationShort || answers.duration;
     }
     if (answers.locationShort || answers.location) {
-      payload['Test: Ubicación / Huso horario'] = answers.locationShort || answers.location;
+      web3Payload['Test: Ubicación / Huso horario'] = answers.locationShort || answers.location;
     }
     if (answers.goalShort || answers.goal) {
-      payload['Test: Meta terapéutica'] = answers.goalShort || answers.goal;
+      web3Payload['Test: Meta terapéutica'] = answers.goalShort || answers.goal;
     }
   }
 
-  // 3. Envío asíncrono resiliente (ShipMyForm + fallback FormSubmit)
+  // 3. Envío asíncrono directo vía Web3Forms API
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 7000);
+  const timer = setTimeout(() => controller.abort(), 8000);
 
   try {
-    // 3.1 Intentar primero vía ShipMyForm (respuesta en <500ms y alta disponibilidad)
-    const formData = new URLSearchParams();
-    for (const [key, value] of Object.entries(payload)) {
-      if (!key.startsWith('_')) {
-        formData.append(key, String(value));
-      }
-    }
-    formData.append('_subject', payload._subject);
-    if (email) formData.append('email', email);
-
-    try {
-      const shipRes = await fetch(`https://shipmyform.com/to/${CLINIC_EMAIL}`, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-        },
-        body: formData,
-        signal: controller.signal,
-      });
-      if (shipRes.ok) {
-        clearTimeout(timer);
-        return { success: true, provider: 'shipmyform' };
-      }
-    } catch {
-      // Si ShipMyForm falla, continúa al fallback
-    }
-
-    // 3.2 Fallback FormSubmit AJAX
-    const response = await fetch(`https://formsubmit.co/ajax/${CLINIC_EMAIL}`, {
+    const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(web3Payload),
       signal: controller.signal,
     });
 
     clearTimeout(timer);
-    return { success: response.ok, provider: 'formsubmit' };
+    const result = await response.json().catch(() => ({}));
+    return { success: Boolean(response.ok && result.success), provider: 'web3forms' };
   } catch (err) {
     clearTimeout(timer);
     console.warn('Envío de correo diferido o bloqueado por red local:', err?.message || err);

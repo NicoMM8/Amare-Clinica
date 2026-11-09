@@ -1,0 +1,15 @@
+# Local agent tooling & brand source assets
+.agents/
+skills-lock.json
+.claude/
+.cursor/
+.gemini/
+Brand Book Centro Amaré/
+
+# Local development & one-off utility scripts (not needed to build or serve dist/)
+scripts/
+remove-hero-bg.mjs
+remove-logo-bg.mjs
+README.md
+*.log
+

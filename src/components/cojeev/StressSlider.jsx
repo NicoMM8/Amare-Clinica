@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, MessageCircle } from 'lucide-react';
 import { HeroButton } from './HeroButton';
+import { trackWhatsAppClick } from '../../lib/analytics';
 
 export function StressSlider() {
   const [value, setValue] = useState(65);
@@ -201,6 +202,7 @@ export function StressSlider() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsAppClick('stress_slider', current.level, { tension_pct: value })}
         >
           <span>Primera conversación (30 min sin costo)</span>
         </HeroButton>

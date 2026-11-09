@@ -21,7 +21,7 @@ export default function PreciosPage() {
             <div style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
               <div className="pill-badge pill-badge-clay" style={{ marginBottom: '18px' }}>
                 <CreditCard size={15} style={{ color: 'var(--color-clay)' }} />
-                <span>Precios y Honorarios Transparentes</span>
+                <span>Honorarios Adaptados · 1ª Sesión Gratis</span>
               </div>
 
               <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 4.5vw, 54px)', lineHeight: 1.18, color: 'var(--color-plum-900)', marginBottom: '22px' }}>
@@ -32,7 +32,7 @@ export default function PreciosPage() {
               </h1>
 
               <p style={{ fontSize: '18px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-                Sin sorpresas, sin permanencia obligatoria ni deudas posteriores. Un modelo accesible para cuidar la salud de tu vínculo con el máximo rigor profesional.
+                Sin sorpresas, sin permanencia obligatoria ni deudas posteriores. Aranceles mensuales adaptados a tu país de residencia y situación clínica para cuidar la salud de tu vínculo con el máximo rigor profesional.
               </p>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '36px' }}>
@@ -69,9 +69,9 @@ export default function PreciosPage() {
                   <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--color-ink-muted)', background: 'var(--color-canvas)', padding: '4px 10px', borderRadius: 'var(--r-pill)' }}>
                     Paso 1 · Sin compromiso
                   </span>
-                  <h3 className="font-serif" style={{ fontSize: '26px', color: 'var(--color-plum-900)', marginTop: '16px', marginBottom: '10px' }}>
+                  <h2 className="font-serif" style={{ fontSize: '26px', color: 'var(--color-plum-900)', marginTop: '16px', marginBottom: '10px' }}>
                     Primera Conversación
-                  </h3>
+                  </h2>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginBottom: '16px' }}>
                     <span style={{ fontSize: '42px', fontWeight: 700, color: 'var(--color-plum-900)' }}>$0</span>
                     <span style={{ fontSize: '15px', color: 'var(--color-ink-muted)' }}>USD / 30 minutos</span>
@@ -131,15 +131,15 @@ export default function PreciosPage() {
                   <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--color-clay)', background: 'var(--color-clay-subtle)', padding: '4px 10px', borderRadius: 'var(--r-pill)' }}>
                     Paso 2 · Proceso Clínico
                   </span>
-                  <h3 className="font-serif" style={{ fontSize: '26px', color: 'var(--color-plum-900)', marginTop: '16px', marginBottom: '10px' }}>
+                  <h2 className="font-serif" style={{ fontSize: '26px', color: 'var(--color-plum-900)', marginTop: '16px', marginBottom: '10px' }}>
                     Planes Mensuales Adaptados
-                  </h3>
+                  </h2>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '16px' }}>
                     <span style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-clay)' }}>Tarifas por País</span>
                     <span style={{ fontSize: '13.5px', color: 'var(--color-ink-muted)' }}>· El Salvador & Exterior</span>
                   </div>
                   <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
-                    Planes mensuales estructurados de forma accesible según tu <strong>país de residencia</strong> y modalidad clínica (Pareja o Individual). Sin permanencia ni costes ocultos.
+                    Planes mensuales estructurados de forma justa según tu <strong>país de residencia</strong> (El Salvador o exterior), capacidad y modalidad clínica (Pareja o Individual). Definimos contigo el arancel exacto en tu sesión gratuita de 30 min, sin permanencia ni costos ocultos.
                   </p>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
@@ -216,9 +216,9 @@ export default function PreciosPage() {
                 </div>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '6px' }}>
-                    <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 700, color: 'var(--color-plum-900)' }}>
+                    <h2 style={{ margin: 0, fontSize: '18px', fontWeight: 700, color: 'var(--color-plum-900)' }}>
                       Factura Médica para Reembolso de Seguro (JVPP)
-                    </h3>
+                    </h2>
                     <span style={{ 
                       fontSize: '11px', 
                       fontWeight: 700, 
@@ -240,6 +240,7 @@ export default function PreciosPage() {
                 href="https://wa.me/50373184781?text=Hola,%20quisiera%20consultar%20sobre%20la%20facturaci%C3%B3n%20para%20el%20reembolso%20de%20mi%20seguro%20m%C3%A9dico."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('page_precios_insurance', 'Consultar seguro JVPP')}
                 className="btn-secondary"
                 style={{ fontSize: '13.5px', padding: '11px 20px', whiteSpace: 'nowrap' }}
               >
@@ -250,7 +251,7 @@ export default function PreciosPage() {
         </section>
 
         {/* Formas de Pago */}
-        <section className="section" style={{ paddingTop: '60px', paddingBottom: '70px' }}>
+        <section className="section" style={{ paddingTop: '60px', paddingBottom: '56px' }}>
           <div className="container">
             <div style={{ maxWidth: '780px', margin: '0 auto', textAlign: 'center' }}>
               <h2 className="font-serif" style={{ fontSize: '30px', color: 'var(--color-plum-900)', marginBottom: '14px' }}>
@@ -262,6 +263,50 @@ export default function PreciosPage() {
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', background: 'var(--color-surface)', padding: '12px 24px', borderRadius: 'var(--r-pill)', border: '1px solid var(--border-hairline)', fontSize: '13.5px', color: 'var(--color-ink-secondary)' }}>
                 <ShieldCheck size={18} style={{ color: 'var(--color-clay)' }} />
                 <span>Transacciones con cifrado seguro · Recibo oficial entregado en cada pago</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Breve sobre Honorarios */}
+        <section className="section" style={{ backgroundColor: 'var(--color-surface)', paddingTop: '56px', paddingBottom: '72px' }}>
+          <div className="container" style={{ maxWidth: '840px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+              <div className="pill-badge pill-badge-clay" style={{ marginBottom: '12px' }}>
+                <HelpCircle size={15} style={{ color: 'var(--color-clay)' }} />
+                <span>Dudas Frecuentes sobre Pagos y Planes</span>
+              </div>
+              <h2 className="font-serif" style={{ fontSize: '28px', color: 'var(--color-plum-900)', margin: 0 }}>
+                Preguntas sobre aranceles y modalidad mensual
+              </h2>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', padding: '22px 24px', borderRadius: '18px', border: '1px solid var(--border-subtle)' }}>
+                <h3 style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-plum-900)', margin: '0 0 8px' }}>
+                  ¿Por qué adaptan las tarifas según el país de residencia?
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Creemos que el acceso a psicoterapia especializada con respaldo sanitario JVPP debe ser viable tanto para familias que viven dentro de El Salvador como para compatriotas que residen en EE. UU., Canadá o Europa. Ajustar el arancel mensual según tu país, modalidad y momento actual permite sostener el proceso clínico completo sin interrupciones por razones económicas.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '22px 24px', borderRadius: '18px', border: '1px solid var(--border-subtle)' }}>
+                <h3 style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-plum-900)', margin: '0 0 8px' }}>
+                  ¿En qué momento conocemos el precio exacto de nuestro plan?
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Durante tu primera conversación exploratoria de 30 minutos por Google Meet —totalmente sin costo y sin ingresar ninguna tarjeta— escuchamos tu motivo de consulta, te asignamos al profesional idóneo y te confirmamos con claridad la cuota mensual exacta antes de que tomes cualquier decisión.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '22px 24px', borderRadius: '18px', border: '1px solid var(--border-subtle)' }}>
+                <h3 style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-plum-900)', margin: '0 0 8px' }}>
+                  ¿Hay permanencia mínima o penalización si decidimos pausar?
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Ninguna. Se abona mes a mes e incluye la entrega de factura clínica oficial JVPP apta para reembolso de seguros privados. Pueden pausar o cerrar su proceso con libertad una vez alcanzados los objetivos terapéuticos.
+                </p>
               </div>
             </div>
           </div>

@@ -38,7 +38,7 @@ const websiteSchema = {
       '@type': 'WebPage',
       '@id': `${SITE_URL}/test-de-pareja`,
       name: 'Test de Pareja Online: Autoevaluación Clínica',
-      description: 'Cuestionario clínico interactivo de 5 pasos para evaluar la situación de la pareja y recibir una recomendación terapéutica personalizada.',
+      description: 'Cuestionario clínico interactivo de 7 preguntas para evaluar la situación de la pareja y recibir una recomendación terapéutica personalizada.',
       url: `${SITE_URL}/test-de-pareja`,
     },
     {
@@ -74,7 +74,7 @@ const websiteSchema = {
     {
       '@type': 'WebPage',
       '@id': `${SITE_URL}/precios`,
-      name: 'Precios y Honorarios — Terapia de Pareja El Salvador',
+      name: 'Honorarios y Planes Adaptados — Centro Amaré',
       url: `${SITE_URL}/precios`,
     },
     {
@@ -94,17 +94,17 @@ const websiteSchema = {
 };
 
 // ─────────────────────────────────────────────
-// 2. MedicalBusiness Schema
+// 2. Organization / MedicalBusiness Schema (100% Online)
 // ─────────────────────────────────────────────
 const medicalBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': ['LocalBusiness', 'MedicalBusiness'],
+  '@type': ['Organization', 'MedicalBusiness'],
   '@id': `${SITE_URL}/#organization`,
   name: 'Centro Amaré',
   alternateName: 'Centro Amaré Psicoterapia Online Salvadoreña',
   legalName: 'Centro Amaré',
   description:
-    'Centro de psicoterapia clínica basada en evidencia para adultos y parejas. Especialistas en terapia de pareja, sexología clínica y atención transcultural a la diáspora salvadoreña en Canadá, EE.UU. y Europa.',
+    'Centro de psicoterapia 100% online basada en evidencia para adultos y parejas. Especialistas en terapia de pareja, sexología clínica y atención transcultural a la diáspora salvadoreña en Canadá, EE.UU. y Europa.',
   url: SITE_URL,
   logo: {
     '@type': 'ImageObject',
@@ -114,7 +114,7 @@ const medicalBusinessSchema = {
   },
   image: {
     '@type': 'ImageObject',
-    url: `${SITE_URL}/images/og-image.jpg`,
+    url: `${SITE_URL}/og-preview-amare.jpg`,
     width: 1200,
     height: 630,
   },
@@ -124,21 +124,23 @@ const medicalBusinessSchema = {
     '@type': 'ContactPoint',
     telephone: '+50373184781',
     contactType: 'customer service',
-    contactOption: 'TollFree',
     availableLanguage: ['Spanish', 'English'],
   },
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Calle El Mirador y 89 Av. Norte, Colonia Escalón',
     addressLocality: 'San Salvador',
     addressRegion: 'San Salvador',
-    postalCode: '1101',
     addressCountry: 'SV',
   },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 13.7013,
-    longitude: -89.2244,
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: SITE_URL,
+    availableLanguage: ['Spanish', 'English'],
+    serviceLocation: {
+      '@type': 'VirtualLocation',
+      name: 'Videoconsulta confidencial por Google Meet (100% Online)',
+      url: SITE_URL,
+    },
   },
   openingHours: 'Mo,Tu,We,Th,Fr,Sa 08:00-20:00',
   openingHoursSpecification: [
@@ -251,7 +253,7 @@ const medicalBusinessSchema = {
   ],
   priceRange: '$$',
   currenciesAccepted: 'USD',
-  paymentAccepted: 'Credit Card, Debit Card, Bank Transfer (Banco Agrícola, BAC, Cuscatlán), International Transfer',
+  paymentAccepted: 'Credit Card, Debit Card, PayPal, Zelle, Bank Transfer (Banco Agrícola, BAC, Cuscatlán), International Transfer',
   employee: [
     {
       '@type': 'Person',
@@ -293,7 +295,7 @@ const medicalBusinessSchema = {
         '@type': 'Offer',
         name: 'Primera conversación de valoración — Sin costo (30 min)',
         description:
-          'Primera conversación de 30 minutos sin costo por Google Meet. La psicóloga evalúa tu caso y te explica el plan de trabajo con honestidad. Sin compromiso.',
+          'Primera conversación de 30 minutos sin costo por Google Meet. Nuestro equipo clínico colegiado evalúa tu caso, presenta las opciones de arancel según tu país y traza la hoja de ruta. Sin compromiso.',
         price: '0',
         priceCurrency: 'USD',
         eligibleRegion: [
@@ -304,12 +306,10 @@ const medicalBusinessSchema = {
       },
       {
         '@type': 'Offer',
-        name: 'Plan Mensual — Hasta 4 Sesiones de 50-60 min',
+        name: 'Planes Mensuales Adaptados — Hasta 4 Sesiones de 50-60 min',
         description:
-          'Hasta 4 sesiones terapéuticas mensuales de 50-60 minutos por Google Meet. Incluye tareas clínicas entre sesiones y coordinación directa con asistente. Sin permanencia mínima.',
-        price: '100',
-        priceCurrency: 'USD',
-        billingPeriod: 'P1M',
+          'Hasta 4 sesiones terapéuticas mensuales de 50-60 minutos por Google Meet con honorarios adaptados según tu país de residencia (El Salvador o exterior), capacidad y modalidad clínica. Incluye ejercicios entre sesiones y coordinación directa. Sin permanencia mínima.',
+        url: `${SITE_URL}/precios`,
         eligibleRegion: [
           { '@type': 'Country', name: 'El Salvador' },
           { '@type': 'Country', name: 'Canada' },
@@ -320,38 +320,26 @@ const medicalBusinessSchema = {
       {
         '@type': 'Offer',
         name: 'Terapia de Pareja Online',
-        description: 'Terapia de pareja online basada en evidencia (Terapia Integral de Pareja + TCC) estructurada en 4 fases clínicas para salvadoreños en el país y en el exterior.',
+        description: 'Terapia de pareja online basada en evidencia (Terapia Integral de Pareja + TCC) estructurada en 4 fases clínicas para salvadoreños en el país y en el exterior. Honorarios por plan mensual adaptado cotizado en la 1ª llamada gratuita.',
         url: `${SITE_URL}/terapia-de-pareja`,
-        price: '100',
-        priceCurrency: 'USD',
-        billingPeriod: 'P1M',
       },
       {
         '@type': 'Offer',
         name: 'Terapia Individual (TCC y DBT)',
-        description: 'Terapia individual online para adultos: ansiedad, rumiación, apegos, rupturas y regulación emocional.',
+        description: 'Terapia individual online para adultos: ansiedad, rumiación, apegos, rupturas y regulación emocional. Plan mensual adaptado según país de residencia definido en la 1ª consulta sin costo.',
         url: `${SITE_URL}/terapia-individual`,
-        price: '100',
-        priceCurrency: 'USD',
-        billingPeriod: 'P1M',
       },
       {
         '@type': 'Offer',
         name: 'Sexología Clínica y Terapia de Intimidad',
-        description: 'Abordaje riguroso, científico y libre de tabúes de la intimidad y sexualidad para parejas e individuos.',
+        description: 'Abordaje riguroso, científico y libre de tabúes de la intimidad y sexualidad para parejas e individuos. Plan mensual adaptado según país y modalidad.',
         url: `${SITE_URL}/sexologia-clinica`,
-        price: '100',
-        priceCurrency: 'USD',
-        billingPeriod: 'P1M',
       },
       {
         '@type': 'Offer',
         name: 'Psicoterapia Transcultural — Diáspora Salvadoreña',
-        description: 'Atención especializada para salvadoreños en Montreal, Los Ángeles, Washington, Madrid y todo el mundo con terapeuta que comparte tu contexto cultural.',
+        description: 'Atención especializada para salvadoreños en Montreal, Los Ángeles, Washington, Madrid y todo el mundo con terapeuta que comparte tu contexto cultural. Aranceles adaptados al exterior cotizados sin compromiso en la 1ª sesión gratuita.',
         url: `${SITE_URL}/salvadorenos-en-el-exterior`,
-        price: '100',
-        priceCurrency: 'USD',
-        billingPeriod: 'P1M',
       },
     ],
   },
@@ -372,7 +360,7 @@ const personSchema = {
   description:
     'Psicóloga Clínica salvadoreña con Máster en Terapia de Pareja y Sexología Clínica. Especialista en TCC, terapia de pareja transnacional y atención a personas y parejas en El Salvador y en el exterior.',
   image: `${SITE_URL}/images/iris-alarcon.jpg`,
-  url: `${SITE_URL}/#equipo`,
+  url: `${SITE_URL}/iris-alarcon`,
   sameAs: [
     'https://www.psico.org/centro-47096',
   ],

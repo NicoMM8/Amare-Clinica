@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, CheckCircle2, ShieldCheck, MessageSquare, Send, Sparkles } from 'lucide-react';
 import { sendLeadEmail, openWhatsAppChat, COUNTRY_CODES } from '../lib/leadService';
+import { trackLeadGenerated } from '../lib/analytics';
 
 export default function QuickContactModal({ isOpen, onClose, initialService = 'Terapia de Pareja' }) {
   const [name, setName] = useState('');
@@ -11,11 +12,13 @@ export default function QuickContactModal({ isOpen, onClose, initialService = 'T
   const [notes, setNotes] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [emailDelivered, setEmailDelivered] = useState(true);
 
   useEffect(() => {
     if (isOpen) {
       setIsSuccess(false);
       setIsSubmitting(false);
+      setEmailDelivered(true);
       setService(initialService);
       document.body.style.overflow = 'hidden';
     } else {
@@ -40,14 +43,14 @@ export default function QuickContactModal({ isOpen, onClose, initialService = 'T
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name.trim()) return;
+    if (!name.trim() || !phoneNumber.trim()) return;
 
     const fullPhone = countryCode ? `${countryCode} ${phoneNumber.trim()}` : phoneNumber.trim();
 
     setIsSubmitting(true);
 
-    // 1. Envío asíncrono al correo de la clínica (en segundo plano)
-    await sendLeadEmail({
+    // 1. Envío asíncrono al correo de la clínica (con estado real de entrega)
+    const emailResult = await sendLeadEmail({
       name: name.trim(),
       whatsapp: fullPhone,
       email: email.trim(),
@@ -55,8 +58,18 @@ export default function QuickContactModal({ isOpen, onClose, initialService = 'T
       source: 'Modal Rápido - Hero',
       notes: notes.trim(),
     });
+    const delivered = Boolean(emailResult?.success);
+    setEmailDelivered(delivered);
 
-    // 2. Apertura simultánea de WhatsApp
+    // 2. Telemetría verificada tras envío del lead (sin PII)
+    trackLeadGenerated({
+      formName: 'quick_contact_modal',
+      serviceType: service,
+      emailDelivered: delivered,
+      location: 'hero_modal',
+    });
+
+    // 3. Apertura simultánea de WhatsApp
     openWhatsAppChat({
       name: name.trim(),
       whatsapp: fullPhone,
@@ -159,7 +172,9 @@ export default function QuickContactModal({ isOpen, onClose, initialService = 'T
             </h3>
 
             <p style={{ fontSize: '15px', color: 'var(--color-ink-secondary, #5D5458)', lineHeight: 1.6, marginBottom: '22px' }}>
-              Tus datos han quedado registrados en la clínica. Te hemos abierto WhatsApp para acordar el horario de tu sesión de 30 minutos sin costo.
+              {emailDelivered
+                ? 'Tus datos han quedado registrados en la clínica. Te hemos abierto WhatsApp para acordar el horario de tu sesión de 30 minutos sin costo.'
+                : 'Guardamos una copia segura de tu solicitud y te abrimos WhatsApp para coordinar de inmediato tu sesión de 30 minutos sin costo.'}
             </p>
 
             <div

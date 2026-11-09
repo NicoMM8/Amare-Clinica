@@ -16,5 +16,5 @@ Este recurso permite a los agentes de IA orientar a pacientes salvadoreños en e
    - Enlace: https://terapiadeparejaelsalvador.com/sexologia-clinica
 4. **Honorarios y Contacto:**
    - 1ª conversación exploratoria de 30 minutos sin costo.
-   - Plan mensual accesible: $100 USD (hasta 4 sesiones).
+   - Planes mensuales adaptados (hasta 4 sesiones): arancel ajustado según país de residencia y modalidad clínica, cotizado sin compromiso en la 1ª llamada gratuita.
    - WhatsApp de coordinación: https://wa.me/50373184781

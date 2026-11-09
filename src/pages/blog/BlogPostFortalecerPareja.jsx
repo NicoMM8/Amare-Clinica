@@ -2,10 +2,13 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp';
+import { trackWhatsAppClick } from '../../lib/analytics';
+import { BLOG_POST_BY_SLUG } from '../../data/blogMeta';
 import { ArrowLeft, Clock, Heart, ShieldCheck, HeartHandshake, CheckCircle2, MessageCircle } from 'lucide-react';
 
 export default function BlogPostFortalecerPareja() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí el artículo sobre cómo fortalecer la relación de pareja en Centro Amaré y me gustaría agendar la sesión de 30 minutos sin costo.");
+  const postMeta = BLOG_POST_BY_SLUG['fortalecer-relacion-pareja-ayuda-profesional'];
 
   return (
     <div className="app-wrapper">
@@ -35,7 +38,7 @@ export default function BlogPostFortalecerPareja() {
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> 5 min de lectura</span>
               <span>•</span>
-              <span>Actualizado 2026</span>
+              <time dateTime={postMeta.dateModified}>{postMeta.dateLabel}</time>
             </div>
           </div>
         </section>
@@ -57,7 +60,7 @@ export default function BlogPostFortalecerPareja() {
                 En la mayoría de los conflictos de pareja opera una dinámica predecible: una persona insiste o reclama porque teme no ser tomada en cuenta, mientras la otra se retira o se encierra en el silencio porque se siente juzgada o abrumada. Cuanto más insiste una, más se distancia la otra.
               </p>
               <p>
-                Nombrar este ciclo en consulta permite comprender que ambas reacciones intentan proteger algo importante (la conexión o la calma), aunque terminen produciendo el efecto contrario: más soledad y distancia. La terapeuta ayuda a desacelerar el diálogo, separar los hechos de las interpretaciones subjetivas y expresar necesidades profundas sin convertirlas en acusaciones.
+                Nombrar este ciclo en consulta permite comprender que ambas reacciones intentan proteger algo importante (la conexión o la calma), aunque terminen produciendo el efecto contrario: más soledad y distancia. El especialista ayuda a desacelerar el diálogo, separar los hechos de las interpretaciones subjetivas y expresar necesidades profundas sin convertirlas en acusaciones.
               </p>
 
               <div style={{ background: 'var(--color-surface)', padding: '24px', borderRadius: '18px', borderLeft: '4px solid var(--color-clay)', margin: '28px 0' }}>
@@ -121,13 +124,14 @@ export default function BlogPostFortalecerPareja() {
                   ¿Quieren fortalecer su complicidad de pareja?
                 </h3>
                 <p style={{ fontSize: '15.5px', color: 'var(--color-ink-secondary)', maxWidth: '580px', margin: '0 auto 24px', lineHeight: 1.6 }}>
-                  En Centro Amaré les acompañamos mediante la Terapia Integral de Pareja (IBCT), con psicólogas colegiadas y en sesiones online adaptadas a sus horarios.
+                  En Centro Amaré les acompañamos mediante la Terapia Integral de Pareja (IBCT), con psicólogos clínicos colegiados y en sesiones online adaptadas a sus horarios.
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
                   <a
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick('blog_cta', 'fortalecer-relacion-pareja-ayuda-profesional')}
                     className="btn-primary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >

@@ -2,10 +2,13 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp';
+import { trackWhatsAppClick } from '../../lib/analytics';
+import { BLOG_POST_BY_SLUG } from '../../data/blogMeta';
 import { ArrowLeft, Clock, Heart, AlertTriangle, CheckCircle2, MessageCircle, HelpCircle } from 'lucide-react';
 
 export default function BlogPostCuandoIrTerapiaPareja() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí el artículo sobre cuándo ir a terapia de pareja en Centro Amaré y me gustaría consultar sobre una primera sesión sin costo.");
+  const postMeta = BLOG_POST_BY_SLUG['cuando-ir-a-terapia-de-pareja'];
 
   return (
     <div className="app-wrapper">
@@ -35,7 +38,7 @@ export default function BlogPostCuandoIrTerapiaPareja() {
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> 6 min de lectura</span>
               <span>•</span>
-              <span>Actualizado 2026</span>
+              <time dateTime={postMeta.dateModified}>{postMeta.dateLabel}</time>
             </div>
           </div>
         </section>
@@ -186,6 +189,7 @@ export default function BlogPostCuandoIrTerapiaPareja() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick('blog_cta', 'cuando-ir-a-terapia-de-pareja')}
                     className="btn-primary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >

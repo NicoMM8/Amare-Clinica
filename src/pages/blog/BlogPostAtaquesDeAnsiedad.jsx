@@ -2,10 +2,13 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp';
+import { trackWhatsAppClick } from '../../lib/analytics';
+import { BLOG_POST_BY_SLUG } from '../../data/blogMeta';
 import { ArrowLeft, Clock, ShieldAlert, CheckCircle2, MessageCircle, AlertTriangle, HeartPulse } from 'lucide-react';
 
 export default function BlogPostAtaquesDeAnsiedad() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí el artículo sobre ataques de ansiedad y pánico en Centro Amaré y quisiera consultar por una sesión diagnóstica.");
+  const postMeta = BLOG_POST_BY_SLUG['ataques-de-ansiedad'];
 
   return (
     <div className="app-wrapper">
@@ -35,7 +38,7 @@ export default function BlogPostAtaquesDeAnsiedad() {
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> 7 min de lectura</span>
               <span>•</span>
-              <span>Actualizado 2026</span>
+              <time dateTime={postMeta.dateModified}>{postMeta.dateLabel}</time>
             </div>
           </div>
         </section>
@@ -155,6 +158,7 @@ export default function BlogPostAtaquesDeAnsiedad() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick('blog_cta', 'ataques-de-ansiedad')}
                     className="btn-primary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >

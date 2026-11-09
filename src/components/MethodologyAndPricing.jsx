@@ -2,6 +2,7 @@ import React from 'react';
 import { Check, Clock, Sparkles, Shield, FileText } from 'lucide-react';
 import { HeroButton } from './cojeev/HeroButton';
 import { PaymentMethodBadges } from './PaymentLogos';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 const clinicalPhases = [
   {
@@ -223,17 +224,17 @@ export default function MethodologyAndPricing() {
         <div style={{ maxWidth: '1180px', margin: '0 auto 40px' }}>
           <div style={{ textAlign: 'center', marginBottom: '36px' }}>
             <div className="pill-badge pill-badge-clay" style={{ marginBottom: '12px' }}>
-              <span>Transparencia Total · Sin Letra Pequeña</span>
+              <span>Planes a Tu Medida · Sin Letra Pequeña</span>
             </div>
             <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 3.8vw, 42px)', color: 'var(--color-plum-900)', marginBottom: '12px' }}>
               Honorarios y modalidades de atención psicológica
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-ink-secondary)', maxWidth: '640px', margin: '0 auto' }}>
-              Tarifas claras en dólares estadounidenses (USD) para quienes viven en El Salvador o en el exterior:
+              Aranceles en dólares (USD) adaptados según tu país de residencia (El Salvador o exterior), acordados en tu 1ª llamada sin costo:
             </p>
           </div>
 
-          {/* 2-Column Desktop Grid: Tabla Comparativa + Plan Mensual $100 */}
+          {/* 2-Column Desktop Grid: Tabla Comparativa + Plan Mensual Adaptado */}
           <div className="pricing-dual-grid">
             
             {/* Columna Izquierda: Tabla Estructurada para Google Featured Snippets y Motores de IA */}
@@ -285,9 +286,9 @@ export default function MethodologyAndPricing() {
                       </td>
                       <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>50 - 60 min</td>
                       <td style={{ padding: '14px' }}>
-                        <span style={{ fontWeight: 700, color: 'var(--color-plum-900)', fontSize: '14px' }}>Planes Accesibles</span>
+                        <span style={{ fontWeight: 700, color: 'var(--color-plum-900)', fontSize: '14px' }}>Planes Adaptados por País</span>
                         <span style={{ display: 'block', fontSize: '11.5px', color: 'var(--color-ink-muted)' }}>
-                          Tarifas según país de residencia
+                          Cotizado en la 1ª llamada ($0)
                         </span>
                       </td>
                     </tr>
@@ -301,9 +302,9 @@ export default function MethodologyAndPricing() {
                       </td>
                       <td style={{ padding: '14px', whiteSpace: 'nowrap' }}>50 min</td>
                       <td style={{ padding: '14px' }}>
-                        <span style={{ fontWeight: 700, color: 'var(--color-plum-900)', fontSize: '14px' }}>Plan Personalizado</span>
+                        <span style={{ fontWeight: 700, color: 'var(--color-plum-900)', fontSize: '14px' }}>Plan Individual Adaptado</span>
                         <span style={{ display: 'block', fontSize: '11.5px', color: 'var(--color-ink-muted)' }}>
-                          Tarifas según país de residencia
+                          Cotizado en la 1ª llamada ($0)
                         </span>
                       </td>
                     </tr>
@@ -370,7 +371,7 @@ export default function MethodologyAndPricing() {
                   border: '1px solid var(--border-hairline)'
                 }}>
                   <p style={{ fontSize: '13px', color: 'var(--color-ink-secondary)', margin: 0, lineHeight: 1.55 }}>
-                    <strong>Tarifas justas y transparentes:</strong> Adaptamos los aranceles mensuales y modalidades según tu país de residencia (El Salvador o exterior) y necesidad clínica. Empiezas con una sesión inicial de 30 minutos sin costo para evaluar tu caso sin presiones ni cobros por adelantado.
+                    <strong>Tarifas justas por país:</strong> Adaptamos los aranceles mensuales y modalidades según tu país de residencia (El Salvador o exterior), capacidad y necesidad clínica. Empiezas con una sesión inicial de 30 minutos sin costo para evaluar tu caso sin presiones ni cobros por adelantado.
                   </p>
                 </div>
 
@@ -433,6 +434,7 @@ export default function MethodologyAndPricing() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick('methodology_pricing_card', 'Escríbenos WhatsApp')}
                 >
                   <span>Escríbenos por WhatsApp</span>
                 </HeroButton>
@@ -499,6 +501,7 @@ export default function MethodologyAndPricing() {
               href="https://wa.me/50373184781?text=Hola,%20quisiera%20consultar%20sobre%20la%20facturaci%C3%B3n%20para%20el%20reembolso%20de%20mi%20seguro%20m%C3%A9dico."
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('methodology_insurance', 'Consultar seguro JVPP')}
               className="btn-secondary"
               style={{ fontSize: '13px', padding: '10px 18px', whiteSpace: 'nowrap' }}
             >

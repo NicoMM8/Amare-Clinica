@@ -114,12 +114,22 @@ export async function sendLeadEmail({
 
     clearTimeout(timer);
     const result = await response.json().catch(() => ({}));
-    return { success: Boolean(response.ok && result.success), provider: 'web3forms' };
+    const delivered = Boolean(response.ok && result.success);
+    return {
+      success: delivered,
+      provider: 'web3forms',
+      error: delivered ? null : (result?.message || `HTTP ${response.status}`),
+    };
   } catch (err) {
     clearTimeout(timer);
     console.warn('Envío de correo diferido o bloqueado por red local:', err?.message || err);
-    // Siempre devolvemos success: true para no bloquear el flujo hacia WhatsApp
-    return { success: true, offline: true };
+    // Informamos fallo real de envío remoto conservando copia local sin bloquear WhatsApp
+    return {
+      success: false,
+      offline: true,
+      backupSaved: true,
+      error: err?.message || 'network_error',
+    };
   }
 }
 
@@ -171,7 +181,7 @@ export function buildWhatsAppUrl({
   }
 
   message += `\n• Formato: Online (Google Meet)\n`;
-  message += `(Detalles íntimos reservados para la sesión con la psicóloga bajo secreto profesional legal JVPP).`;
+  message += `(Detalles íntimos reservados para la sesión con tu terapeuta asignado bajo secreto profesional legal JVPP).`;
 
   return `https://wa.me/${CLINIC_WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
 }

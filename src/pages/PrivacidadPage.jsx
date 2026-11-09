@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, Lock, EyeOff, FileText, CheckCircle2, ArrowLeft, MessageCircle } from 'lucide-react';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function PrivacidadPage() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí su política de privacidad y quisiera realizar una consulta previa.");
@@ -161,7 +162,7 @@ export default function PrivacidadPage() {
             1. Responsable del Tratamiento y Acreditación Profesional
           </h2>
           <p style={{ marginBottom: '24px' }}>
-            El sitio web <strong>terapiadeparejaelsalvador.com</strong> opera bajo la dirección clínica de la <strong>Licda. Iris Alarcón</strong>, psicóloga clínica legalmente acreditada e inscrita ante la <strong>Junta de Vigilancia de la Profesión en Psicología (JVPP) de la República de El Salvador</strong>. El ejercicio profesional se rige por la legislación de salud salvadoreña y los principios universales de la bioética médica.
+            El sitio web <strong>terapiadeparejaelsalvador.com</strong> opera bajo la dirección clínica de la <strong>Mtra. Iris Alarcón</strong>, psicóloga clínica legalmente acreditada e inscrita ante la <strong>Junta de Vigilancia de la Profesión en Psicología (JVPP) de la República de El Salvador</strong>. El ejercicio profesional se rige por la legislación de salud salvadoreña y los principios universales de la bioética médica.
           </p>
 
           <h2 className="font-serif" style={{ fontSize: '22px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '12px' }}>
@@ -173,7 +174,7 @@ export default function PrivacidadPage() {
           <ul style={{ paddingLeft: '24px', marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <li><strong>Procesamiento local:</strong> Las respuestas del test se computan temporalmente en la memoria de tu propio dispositivo.</li>
             <li><strong>Sin almacenamiento en bases de datos públicas:</strong> No guardamos tus respuestas en servidores de tracking accesibles a terceros.</li>
-            <li><strong>Envío voluntario:</strong> La información solo se comparte con la terapeuta si tú o tu pareja deciden presionar conscientemente el botón para enviar el resultado a través de WhatsApp.</li>
+            <li><strong>Envío voluntario:</strong> La información solo se comparte con el equipo clínico si tú o tu pareja deciden presionar conscientemente el botón para enviar el resultado a través de WhatsApp.</li>
           </ul>
 
           <h2 className="font-serif" style={{ fontSize: '22px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '12px' }}>
@@ -192,7 +193,7 @@ export default function PrivacidadPage() {
             4. Transparencia en Pagos y Tarifas Internacionales
           </h2>
           <p style={{ marginBottom: '24px' }}>
-            La primera sesión exploratoria de 30 minutos es 100% gratuita y no requiere introducir ningún dato de tarjeta bancaria. Para los planes mensuales posteriores ($100 USD / mes), los pagos se procesan a través de proveedores financieros certificados (transferencias bancarias directas, Wompi/Banco Agrícola en El Salvador, o plataformas con certificación PCI-DSS para el extranjero). Centro Amaré nunca tiene acceso ni almacena los números completos de tus tarjetas bancarias.
+            La primera sesión exploratoria de 30 minutos es 100% gratuita y no requiere introducir ningún dato de tarjeta bancaria. Para los planes mensuales posteriores (acordados de forma personalizada según país de residencia y modalidad clínica), los pagos se procesan a través de proveedores financieros certificados (transferencias bancarias directas, Wompi/Banco Agrícola en El Salvador, o plataformas con certificación PCI-DSS para el extranjero). Centro Amaré nunca tiene acceso ni almacena los números completos de tus tarjetas bancarias.
           </p>
 
           <h2 className="font-serif" style={{ fontSize: '22px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '12px' }}>
@@ -224,6 +225,7 @@ export default function PrivacidadPage() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick('page_privacidad_cta', 'Consultar privacidad')}
             className="btn-clay"
             style={{
               display: 'inline-flex',

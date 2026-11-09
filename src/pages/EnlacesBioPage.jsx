@@ -17,7 +17,7 @@ export default function EnlacesBioPage() {
     },
     {
       title: "Test Clínico de Pareja",
-      subtitle: "Autoevaluación de tu relación en 5 pasos (2 min sin costo)",
+      subtitle: "Autoevaluación de tu relación en 7 preguntas (2 min sin costo)",
       href: "/test-de-pareja",
       isPrimary: false,
       icon: Sparkles,
@@ -85,7 +85,7 @@ export default function EnlacesBioPage() {
         }}>
           <img
             src="/images/iris-alarcon.webp"
-            alt="Licda. Iris Alarcón — Directora Clínica Centro Amaré"
+            alt="Mtra. Iris Alarcón — Directora Clínica Centro Amaré"
             width="90"
             height="90"
             style={{
@@ -218,7 +218,7 @@ export default function EnlacesBioPage() {
       {/* Footer */}
       <div style={{ marginTop: '28px', textAlign: 'center', fontSize: '12px', color: 'var(--color-ink-muted)' }}>
         <p style={{ margin: '0 0 4px' }}>
-          Centro Amaré · Licda. Iris Alarcón (JVPP N.º 6380)
+          Centro Amaré · Mtra. Iris Alarcón (JVPP N.º 6380)
         </p>
         <p style={{ margin: 0 }}>
           terapiadeparejaelsalvador.com · San Salvador, El Salvador

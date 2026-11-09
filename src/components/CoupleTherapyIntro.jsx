@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sparkles, MessageCircle, ArrowRight, ShieldCheck } from 'lucide-react';
+import { trackWhatsAppClick } from '../lib/analytics';
 import {
   IconComunicacion,
   IconEscuchaActiva,
@@ -208,7 +209,7 @@ export default function CoupleTherapyIntro() {
             >
               <img
                 src="/images/iris-alarcon.webp"
-                alt="Licda. Iris Alarcón en videollamada"
+                alt="Mtra. Iris Alarcón en videollamada"
                 width="36"
                 height="36"
                 style={{
@@ -228,7 +229,7 @@ export default function CoupleTherapyIntro() {
                   </span>
                 </div>
                 <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-plum-900)', lineHeight: 1.2 }}>
-                  Licda. Iris Alarcón (JVPP N.º 6380)
+                  Mtra. Iris Alarcón (JVPP N.º 6380)
                 </span>
                 <span style={{ fontSize: '10.5px', color: 'var(--color-ink-muted)' }}>
                   Sesión privada y simultánea
@@ -415,6 +416,7 @@ export default function CoupleTherapyIntro() {
                       href={`https://wa.me/50373184781?text=${encodeURIComponent(prob.whatsappQuery)}`}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackWhatsAppClick('intro_problem_card', prob.tag)}
                       aria-label={`Hablar por WhatsApp sobre ${prob.title}`}
                       style={{
                         fontSize: '13.5px',
@@ -473,6 +475,7 @@ export default function CoupleTherapyIntro() {
                 href={"https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí los motivos de consulta en la web de Centro Amaré y queremos empezar con una primera conversación de 30 min sin costo.")}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('intro_banner', 'Empieza 30 min sin costo')}
                 className="btn-primary"
                 style={{
                   display: 'inline-flex',

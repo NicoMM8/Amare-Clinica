@@ -66,7 +66,7 @@ const svgCard = `
     <!-- Pillar 1 -->
     <circle cx="40" cy="42" r="14" fill="#A95A41" fill-opacity="0.12"/>
     <text x="40" y="47" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#A95A41" text-anchor="middle">✓</text>
-    <text x="66" y="38" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#22284A">Lic. Iris Alarcón</text>
+    <text x="66" y="38" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#22284A">Mtra. Iris Alarcón</text>
     <text x="66" y="56" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#6B6B78">Acreditada JVPP El Salvador</text>
 
     <!-- Divider 1 -->
@@ -76,7 +76,7 @@ const svgCard = `
     <circle cx="320" cy="42" r="14" fill="#25D366" fill-opacity="0.15"/>
     <text x="320" y="47" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#128C7E" text-anchor="middle">★</text>
     <text x="346" y="38" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#22284A">1ª Sesión de 30 min sin costo</text>
-    <text x="346" y="56" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#6B6B78">Plan mensual: $25 USD / sesión</text>
+    <text x="346" y="56" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#6B6B78">Planes adaptados según tu país</text>
 
     <!-- Divider 2 -->
     <line x1="620" y1="20" x2="620" y2="64" stroke="#E5E0D4" stroke-width="1.5"/>

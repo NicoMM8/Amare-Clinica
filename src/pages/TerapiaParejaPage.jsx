@@ -57,7 +57,7 @@ export default function TerapiaParejaPage() {
               </h1>
 
               <p style={{ fontSize: '18px', color: 'var(--color-ink-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
-                Nuestro servicio especializado de <a href="/" style={{ color: 'var(--color-clay)', fontWeight: 600, textDecoration: 'underline' }}>terapia de pareja en El Salvador</a> y online para quienes viven en el exterior ofrece un acompañamiento riguroso para desactivar el conflicto, sanar el desgaste acumulado y recuperar la complicidad con una psicóloga clínica acreditada por la JVPP.
+                Nuestro servicio especializado de <a href="/" style={{ color: 'var(--color-clay)', fontWeight: 600, textDecoration: 'underline' }}>terapia de pareja en El Salvador</a> y online para quienes viven en el exterior ofrece un acompañamiento riguroso para desactivar el conflicto, sanar el desgaste acumulado y recuperar la complicidad con nuestro equipo clínico acreditado ante la JVPP.
               </p>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '36px' }}>
@@ -88,7 +88,7 @@ export default function TerapiaParejaPage() {
                   <Clock size={16} style={{ color: 'var(--color-clay)' }} /> 1ª sesión de 30 min sin costo
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <Globe size={16} style={{ color: 'var(--color-clay)' }} /> Plan mensual de $100 USD
+                  <Globe size={16} style={{ color: 'var(--color-clay)' }} /> Planes mensuales adaptados por país
                 </span>
               </div>
             </div>
@@ -212,7 +212,7 @@ export default function TerapiaParejaPage() {
                 ¿Quieren saber cómo se aplicaría a su situación?
               </h3>
               <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.85)', maxWidth: '580px', margin: '0 auto 28px', lineHeight: 1.6 }}>
-                En la primera sesión de 30 minutos sin costo por Google Meet, la terapeuta escucha su contexto y les entrega una hoja de ruta clara.
+                En la primera sesión de 30 minutos sin costo por Google Meet, el especialista de nuestro equipo escucha su contexto y les entrega una hoja de ruta clara.
               </p>
               <a
                 href={whatsappUrl}

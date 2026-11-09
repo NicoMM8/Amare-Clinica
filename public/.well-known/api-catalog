@@ -6,6 +6,26 @@
         {
           "href": "https://terapiadeparejaelsalvador.com/llms.txt",
           "type": "text/plain"
+        },
+        {
+          "href": "https://terapiadeparejaelsalvador.com/llms-full.txt",
+          "type": "text/markdown"
+        }
+      ],
+      "service-desc": [
+        {
+          "href": "https://terapiadeparejaelsalvador.com/.well-known/ai-catalog.json",
+          "type": "application/json"
+        }
+      ],
+      "related": [
+        {
+          "href": "https://terapiadeparejaelsalvador.com/rss.xml",
+          "type": "application/rss+xml"
+        },
+        {
+          "href": "https://terapiadeparejaelsalvador.com/sitemap.xml",
+          "type": "application/xml"
         }
       ],
       "status": [

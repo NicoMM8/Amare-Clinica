@@ -2,10 +2,13 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp';
+import { trackWhatsAppClick } from '../../lib/analytics';
+import { BLOG_POST_BY_SLUG } from '../../data/blogMeta';
 import { ArrowLeft, Clock, Sparkles, HeartHandshake, CheckCircle2, MessageCircle } from 'lucide-react';
 
 export default function BlogPostFaltaDeseo() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí el artículo sobre falta de deseo e intimidad en Centro Amaré y me gustaría agendar la sesión de 30 minutos sin costo.");
+  const postMeta = BLOG_POST_BY_SLUG['falta-de-deseo-sexual-en-la-pareja-soluciones'];
 
   return (
     <div className="app-wrapper">
@@ -31,11 +34,11 @@ export default function BlogPostFaltaDeseo() {
             </h1>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap', fontSize: '13.5px', color: 'var(--color-ink-muted)', paddingBottom: '24px', borderBottom: '1px solid var(--border-subtle)' }}>
-              <span>Por <strong>Equipo Clínico Centro Amaré</strong> · Sexología Clínica y Terapia de Pareja</span>
+              <span>Por <strong>Mtra. Iris Alarcón</strong> · Directora Clínica y Sexóloga (JVPP N.º 6380)</span>
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> 6 min de lectura</span>
               <span>•</span>
-              <span>Actualizado 2026</span>
+              <time dateTime={postMeta.dateModified}>{postMeta.dateLabel}</time>
             </div>
           </div>
         </section>
@@ -119,6 +122,7 @@ export default function BlogPostFaltaDeseo() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick('blog_cta', 'falta-de-deseo-sexual-en-la-pareja-soluciones')}
                     className="btn-primary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >

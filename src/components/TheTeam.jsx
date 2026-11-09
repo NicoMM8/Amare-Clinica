@@ -1,6 +1,7 @@
 import React from 'react';
 import { Check, CheckCircle2, MessageCircle, Award, BookOpen, Calendar, UserCheck, ShieldCheck } from 'lucide-react';
 import { AnimatedNumber } from './cojeev/AnimatedNumber';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 function WhatsAppIcon({ size = 18 }) {
   return (
@@ -305,6 +306,7 @@ export default function TheTeam() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('team_damaris_banner', 'Coordinación Agenda')}
               className="btn-primary"
               style={{ display: 'inline-flex', gap: '10px', textDecoration: 'none', padding: '14px 24px', fontSize: '15px' }}
             >

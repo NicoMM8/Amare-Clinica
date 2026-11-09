@@ -89,7 +89,7 @@ export default function TerapiaIndividualPage() {
                   appearance="ink-sweep"
                   href="/precios"
                 >
-                  <span>Ver plan mensual ($100/mes)</span>
+                  <span>Ver planes y modalidades</span>
                 </HeroButton>
               </div>
 
@@ -116,9 +116,9 @@ export default function TerapiaIndividualPage() {
                 <Gift size={28} />
               </div>
               <div style={{ flex: 1, minWidth: '260px' }}>
-                <h3 className="font-serif" style={{ fontSize: '20px', color: 'var(--color-plum-900)', margin: '0 0 6px' }}>
+                <h2 className="font-serif" style={{ fontSize: '20px', color: 'var(--color-plum-900)', margin: '0 0 6px' }}>
                   ¿Buscas orientación psicológica inicial sin costo?
-                </h3>
+                </h2>
                 <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', margin: '0 0 12px', lineHeight: 1.6 }}>
                   Sabemos que dar el primer paso puede generar dudas económicas. En Centro Amaré ofrecemos una <strong>primera llamada de 30 minutos 100% gratuita</strong> para evaluar tu caso con un psicólogo colegiado, responder tus preguntas y trazar una propuesta personalizada sin ningún compromiso.
                 </p>
@@ -126,6 +126,7 @@ export default function TerapiaIndividualPage() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick('page_individual_mid_callout', 'Orientación gratuita')}
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '14px', fontWeight: 700, color: 'var(--color-clay)', textDecoration: 'none' }}
                 >
                   <span>Solicitar mi sesión de orientación gratuita por WhatsApp</span>

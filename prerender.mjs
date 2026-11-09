@@ -2,7 +2,8 @@
  * prerender.mjs — SSG Script para Centro Amaré
  * 
  * Pre-renderiza el HTML de todas las rutas estáticas usando Vite SSR + React renderToString.
- * Genera HTML completo para cada ruta con su propio title, description, canonical y OG tags:
+ * Genera HTML completo para cada ruta con su propio title, description, canonical, OG tags,
+ * datos estructurados JSON-LD por tipo de página y feed RSS 2.0 (`/rss.xml`):
  *  - Googlebot (indexación SEO óptima y sin canibalización de URLs)
  *  - Motores de IA generativa como ChatGPT, Gemini, Perplexity (GEO)
  * 
@@ -13,9 +14,461 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { build } from 'vite'
+import { BLOG_POSTS, BLOG_POST_BY_SLUG } from './src/data/blogMeta.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const BASE_URL = 'https://terapiadeparejaelsalvador.com'
+
+function escapeAttr(str = '') {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+}
+
+function escapeXml(str = '') {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;')
+}
+
+const VIRTUAL_SERVICE_CHANNEL = {
+  '@type': 'ServiceChannel',
+  serviceUrl: BASE_URL,
+  availableLanguage: ['Spanish', 'English'],
+  serviceLocation: {
+    '@type': 'VirtualLocation',
+    name: 'Videoconsulta confidencial por Google Meet (100% Online)',
+    url: BASE_URL,
+  },
+}
+
+const AREA_SERVED_ONLINE = [
+  { '@type': 'Country', name: 'El Salvador' },
+  { '@type': 'Country', name: 'United States' },
+  { '@type': 'Country', name: 'Canada' },
+  { '@type': 'Country', name: 'Spain' },
+]
+
+function buildSubpageSchemas(route, cleanTitle) {
+  const schemas = []
+
+  if (route.path === '/terapia-de-pareja') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': ['Service', 'MedicalTherapy'],
+      name: 'Terapia de Pareja Online — Centro Amaré',
+      serviceType: 'Psicoterapia de Pareja Basada en Evidencia (IBCT y TCC)',
+      description: route.description,
+      url: route.canonical,
+      provider: { '@id': `${BASE_URL}/#organization` },
+      availableChannel: VIRTUAL_SERVICE_CHANNEL,
+      areaServed: AREA_SERVED_ONLINE,
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Primera sesión de valoración de pareja (30 min)',
+          price: '0',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/OnlineOnly',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Plan Mensual Adaptado de Terapia de Pareja',
+          description: 'Hasta 4 sesiones mensuales de 50-60 minutos por Google Meet con honorarios adaptados según país de residencia.',
+          url: `${BASE_URL}/precios`,
+          availability: 'https://schema.org/OnlineOnly',
+        },
+      ],
+    })
+  } else if (route.path === '/terapia-individual') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': ['Service', 'MedicalTherapy'],
+      name: 'Terapia Psicológica Individual Online — Centro Amaré',
+      serviceType: 'Psicoterapia Clínica Individual para Adultos (TCC, ACT y DBT)',
+      description: route.description,
+      url: route.canonical,
+      provider: { '@id': `${BASE_URL}/#organization` },
+      availableChannel: VIRTUAL_SERVICE_CHANNEL,
+      areaServed: AREA_SERVED_ONLINE,
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Primera sesión de evaluación diagnóstica individual (30 min)',
+          price: '0',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/OnlineOnly',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Plan Mensual Adaptado de Terapia Individual',
+          description: 'Sesiones semanales por Google Meet con arancel adaptado según país de residencia.',
+          url: `${BASE_URL}/precios`,
+          availability: 'https://schema.org/OnlineOnly',
+        },
+      ],
+    })
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: '¿Cómo saber si necesito consultar con un psicólogo en El Salvador?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Si el sobrepensamiento, la ansiedad, la tristeza o los problemas de relación te impiden disfrutar tu día a día o sientes que tus herramientas habituales ya no alcanzan, la ayuda psicológica profesional te ofrece un marco estructurado y seguro para recuperar el equilibrio.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Ofrecen ayuda psicológica gratuita o de bajo costo?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'En Centro Amaré brindamos una primera sesión de evaluación diagnóstica de 30 minutos 100% gratuita y sin compromiso. Para el tratamiento continuo, disponemos de planes mensuales accesibles y estructurados según tu país de residencia y necesidad clínica.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Qué credenciales tienen los psicólogos de Centro Amaré?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Todo nuestro equipo clínico cuenta con titulación universitaria de licenciatura, maestrías de posgrado en psicoterapia clínica y registro oficial activo ante la Junta de Vigilancia de la Profesión Psicológica (JVPP) de El Salvador.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Atienden a personas en San Salvador y otros departamentos?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Sí, al trabajar en modalidad online mediante videollamada cifrada, atendemos a pacientes en San Salvador, Santa Tecla, Antiguo Cuscatlán, San Miguel, Santa Ana y a toda la diáspora salvadoreña en Estados Unidos, Canadá y Europa.',
+          },
+        },
+      ],
+    })
+  } else if (route.path === '/sexologia-clinica') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': ['Service', 'MedicalTherapy'],
+      name: 'Sexología Clínica y Terapia Sexual Online — Centro Amaré',
+      serviceType: 'Sexología Clínica y Terapia Sexual Conversacional',
+      description: route.description,
+      url: route.canonical,
+      provider: { '@id': `${BASE_URL}/#organization` },
+      availableChannel: VIRTUAL_SERVICE_CHANNEL,
+      areaServed: AREA_SERVED_ONLINE,
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Primera sesión de orientación en sexología clínica (30 min)',
+          price: '0',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/OnlineOnly',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Plan Mensual Adaptado de Sexología Clínica',
+          description: 'Atención en pareja o individual 100% online adaptada por país de residencia.',
+          url: `${BASE_URL}/precios`,
+          availability: 'https://schema.org/OnlineOnly',
+        },
+      ],
+    })
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: '¿Qué hace una sexóloga en El Salvador y cuándo consultar?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Una sexóloga clínica es una psicóloga con posgrado en salud sexual y relacional. Ayuda a resolver problemas de deseo, bloqueos o falta de intimidad con técnicas científicas. La consulta es conversacional, cómoda y no requiere exámenes físicos.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿La consulta de sexología se realiza en pareja o de forma individual?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Puedes elegir la modalidad que prefieras. Si el motivo involucra la convivencia o el deseo mutuo, hacerlo en pareja es muy efectivo. También puedes iniciar sesiones individuales si deseas tratar dudas personales primero.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Cómo se garantiza la confidencialidad médica?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Todas las consultas tienen secreto profesional médico según la ley de El Salvador (JVPP 6380). Las videollamadas por Google Meet están cifradas de punto a punto y tus datos nunca se comparten con terceros.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Cuánto cuesta la consulta y cómo se agenda?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Inicias con una primera sesión de 30 minutos sin costo. Si decides continuar, te ofrecemos planes mensuales accesibles y estructurados según tu país de residencia y necesidad clínica.',
+          },
+        },
+      ],
+    })
+  } else if (route.path === '/salvadorenos-en-el-exterior') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': ['Service', 'MedicalTherapy'],
+      name: 'Psicólogos Salvadoreños Online en el Exterior — Centro Amaré',
+      serviceType: 'Psicoterapia Online Transcultural para la Diáspora Salvadoreña',
+      description: route.description,
+      url: route.canonical,
+      provider: { '@id': `${BASE_URL}/#organization` },
+      availableChannel: VIRTUAL_SERVICE_CHANNEL,
+      areaServed: AREA_SERVED_ONLINE,
+      offers: {
+        '@type': 'Offer',
+        name: 'Primera sesión de orientación para salvadoreños en el exterior (30 min)',
+        price: '0',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/OnlineOnly',
+      },
+    })
+  } else if (route.path === '/precios') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': ['Service', 'MedicalTherapy'],
+      name: 'Honorarios y Planes Mensuales Adaptados — Centro Amaré',
+      description: route.description,
+      url: route.canonical,
+      provider: { '@id': `${BASE_URL}/#organization` },
+      availableChannel: VIRTUAL_SERVICE_CHANNEL,
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Primera Conversación Clínica (30 minutos)',
+          price: '0',
+          priceCurrency: 'USD',
+          description: 'Espacio privado por Google Meet para escuchar su motivo de consulta, conocer al terapeuta asignado y definir el arancel mensual según país de residencia.',
+          availability: 'https://schema.org/OnlineOnly',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Planes Mensuales Adaptados por País (Hasta 4 sesiones al mes de 50-60 min)',
+          description: 'Planes mensuales flexibles válidos para terapia de pareja o individual en El Salvador y el exterior, sin permanencia mínima y con factura JVPP apta para reembolso.',
+          url: route.canonical,
+          availability: 'https://schema.org/OnlineOnly',
+        },
+      ],
+    })
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: '¿Por qué adaptan las tarifas según el país de residencia?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Creemos que el acceso a psicoterapia especializada con respaldo sanitario JVPP debe ser viable tanto para familias que viven dentro de El Salvador como para compatriotas que residen en EE. UU., Canadá o Europa. Ajustar el arancel mensual según tu país, modalidad y momento actual permite sostener el proceso clínico completo sin interrupciones por razones económicas.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿En qué momento conocemos el precio exacto de nuestro plan?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Durante tu primera conversación exploratoria de 30 minutos por Google Meet —totalmente sin costo y sin ingresar ninguna tarjeta— escuchamos tu motivo de consulta, te asignamos al profesional idóneo y te confirmamos con claridad la cuota mensual exacta antes de que tomes cualquier decisión.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Hay permanencia mínima o penalización si decidimos pausar?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Ninguna. Se abona mes a mes e incluye la entrega de factura clínica oficial JVPP apta para reembolso de seguros privados. Pueden pausar o cerrar su proceso con libertad una vez alcanzados los objetivos terapéuticos.',
+          },
+        },
+      ],
+    })
+  } else if (route.path === '/iris-alarcon') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      '@id': `${BASE_URL}/iris-alarcon#person`,
+      name: 'Mtra. Iris Alarcón',
+      givenName: 'Iris',
+      familyName: 'Alarcón',
+      jobTitle: 'Directora Clínica, Psicóloga Clínica y Sexóloga',
+      identifier: 'JVPP N.° 6380',
+      description: route.description,
+      image: `${BASE_URL}/images/iris-alarcon.jpg`,
+      url: route.canonical,
+      sameAs: ['https://www.psico.org/centro-47096'],
+      worksFor: { '@id': `${BASE_URL}/#organization` },
+      hasCredential: [
+        {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'license',
+          name: 'Registro Profesional Sanitario JVPP N.º 6380',
+          recognizedBy: {
+            '@type': 'Organization',
+            name: 'Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP)',
+          },
+        },
+        {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'postgraduate',
+          name: 'Máster en Terapia de Pareja y Sexología Clínica',
+        },
+      ],
+    })
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: '¿Cómo atiende a salvadoreños residentes en Estados Unidos u otros países?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Las sesiones se coordinan de manera 100% online por Google Meet con horarios adaptados a las zonas horarias de Estados Unidos (Este, Centro, Montaña y Pacífico) y Canadá. Hablamos en tu propio código cultural salvadoreño, comprendiendo las dinámicas migratorias familiares y sin barreras de lenguaje ni de comprensión.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Qué respaldo y garantía profesional ofrece la acreditación de la JVPP?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'La Junta de Vigilancia de la Profesión en Psicología (JVPP) de El Salvador regula y certifica el ejercicio legal de la psicoterapia en el país. El registro N.° 6380 certifica título universitario homologado, idoneidad profesional y apego estricto al código de bioética médica y secreto profesional.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿En qué consiste la primera conversación de 30 minutos sin costo?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Es un primer encuentro inicial por videollamada para conocer tu motivo de consulta o el de tu pareja, explicarte la metodología de trabajo y acordar si iniciamos un plan de acompañamiento. No genera ningún compromiso de contratación posterior.',
+          },
+        },
+      ],
+    })
+  } else if (route.path === '/test-de-pareja') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: cleanTitle,
+      url: route.canonical,
+      applicationCategory: 'HealthApplication',
+      operatingSystem: 'All',
+      inLanguage: 'es',
+      provider: { '@id': `${BASE_URL}/#organization` },
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+    })
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: '¿Qué pasa si mi pareja no está lista para responder el test o acudir a terapia?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Es muy frecuente que uno de los miembros de la pareja sienta la necesidad de ayuda antes que el otro. El test contempla la opción individual: podemos comenzar con un enfoque vincular individual con uno de ustedes para entender la dinámica y generar cambios saludables en la interacción sin presionar a la otra parte.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Este test sustituye el diagnóstico de un psicólogo profesional?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'No. Se trata de una herramienta clínica de autoevaluación y orientación inicial que estructura sus motivos de consulta para facilitar el primer contacto con nuestro equipo acreditado por la JVPP en El Salvador.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Cómo funciona la primera sesión gratuita de 30 minutos?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Al completar el cuestionario, pueden solicitar una conversación de orientación de 30 minutos sin costo por videollamada. En ella evaluamos su situación particular, resolvemos dudas sobre la metodología y establecemos si la terapia de pareja es el abordaje más indicado.',
+          },
+        },
+      ],
+    })
+  } else if (route.path === '/blog') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      '@id': `${BASE_URL}/blog#blog`,
+      name: 'Blog & Guías de Psicología — Centro Amaré',
+      description: route.description,
+      url: route.canonical,
+      inLanguage: 'es',
+      publisher: { '@id': `${BASE_URL}/#organization` },
+      blogPost: BLOG_POSTS.map((post) => ({
+        '@type': 'BlogPosting',
+        headline: post.title,
+        url: `${BASE_URL}/blog/${post.slug}`,
+        datePublished: `${post.datePublished}T08:00:00-06:00`,
+        dateModified: `${post.dateModified}T12:00:00-06:00`,
+        author:
+          post.authorType === 'Organization'
+            ? { '@type': 'Organization', name: post.authorName, url: `${BASE_URL}${post.authorUrl}` }
+            : { '@type': 'Person', name: post.authorName, url: `${BASE_URL}${post.authorUrl}` },
+      })),
+    })
+  }
+
+  return schemas
+}
+
+function generateRssXml() {
+  const sortedPosts = [...BLOG_POSTS].sort((a, b) =>
+    b.dateModified.localeCompare(a.dateModified)
+  )
+  const lastBuildDate = new Date('2026-11-09T14:00:00Z').toUTCString()
+
+  const itemsXml = sortedPosts
+    .map((post) => {
+      const postUrl = `${BASE_URL}/blog/${post.slug}`
+      const pubDate = new Date(`${post.datePublished}T14:00:00Z`).toUTCString()
+      const enclosureUrl = post.image
+        ? `${BASE_URL}${post.image.replace('.webp', '.jpg')}`
+        : `${BASE_URL}/og-preview-amare.jpg`
+
+      return `    <item>
+      <title>${escapeXml(post.title)}</title>
+      <link>${escapeXml(postUrl)}</link>
+      <guid isPermaLink="true">${escapeXml(postUrl)}</guid>
+      <pubDate>${pubDate}</pubDate>
+      <category>${escapeXml(post.category)}</category>
+      <author>contacto@terapiadeparejaelsalvador.com (${escapeXml(post.authorName)})</author>
+      <description>${escapeXml(post.excerpt)}</description>
+      <enclosure url="${escapeXml(enclosureUrl)}" type="image/jpeg" />
+    </item>`
+    })
+    .join('\n')
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog Clínico Centro Amaré — Terapia de Pareja y Psicología</title>
+    <link>${BASE_URL}/blog</link>
+    <description>Guías clínicas escritas por psicólogos colegiados JVPP sobre terapia de pareja, ansiedad, sexología clínica, límites familiares y duelo migratorio.</description>
+    <language>es</language>
+    <lastBuildDate>${lastBuildDate}</lastBuildDate>
+    <atom:link href="${BASE_URL}/rss.xml" rel="self" type="application/rss+xml" />
+${itemsXml}
+  </channel>
+</rss>
+`
+}
 
 const routes = [
   {
@@ -29,14 +482,14 @@ const routes = [
     path: '/test-de-pareja',
     file: 'test-de-pareja/index.html',
     title: 'Test de Pareja Online: Autoevaluación Clínica | Centro Amaré',
-    description: 'Cuestionario clínico interactivo de 5 pasos para parejas. Evalúa el nivel de desgaste, la comunicación y recibe una orientación psicológica personalizada.',
+    description: 'Cuestionario clínico interactivo de 7 preguntas para parejas. Evalúa el nivel de desgaste, la comunicación y recibe orientación psicológica personalizada.',
     canonical: `${BASE_URL}/test-de-pareja`,
   },
   {
     path: '/tu-match',
     file: 'tu-match/index.html',
     title: 'Test de Pareja Online: Autoevaluación Clínica | Centro Amaré',
-    description: 'Cuestionario clínico interactivo de 5 pasos para parejas.',
+    description: 'Cuestionario clínico interactivo de 7 preguntas para parejas.',
     canonical: `${BASE_URL}/test-de-pareja`,
     noindex: true,
   },
@@ -51,21 +504,21 @@ const routes = [
     path: '/sexologia-clinica',
     file: 'sexologia-clinica/index.html',
     title: 'Sexóloga en El Salvador | Sexología Clínica · Centro Amaré',
-    description: 'Consulta con sexóloga clínica colegiada en El Salvador (JVPP 6380) y online. Tratamiento de falta de deseo, bloqueos y reconexión íntima. 1ª sesión de 30 min gratis.',
+    description: 'Consulta con sexóloga clínica colegiada en El Salvador (JVPP 6380) y online para deseo, bloqueos y reconexión íntima. 1ª sesión de 30 min gratis.',
     canonical: `${BASE_URL}/sexologia-clinica`,
   },
   {
     path: '/terapia-individual',
     file: 'terapia-individual/index.html',
     title: 'Psicólogos en El Salvador · Clínica Online | Centro Amaré',
-    description: 'Psicólogos en El Salvador colegiados ante la JVPP. Consulta de clínica psicológica online en San Salvador y el exterior para ansiedad, estrés y límites. 1ª sesión de 30 min gratis.',
+    description: 'Psicólogos colegiados ante la JVPP en El Salvador. Terapia clínica online para ansiedad, estrés y límites. Agenda tu 1ª sesión de 30 min sin costo.',
     canonical: `${BASE_URL}/terapia-individual`,
   },
   {
     path: '/salvadorenos-en-el-exterior',
     file: 'salvadorenos-en-el-exterior/index.html',
     title: 'Psicólogos Salvadoreños Online en el Exterior | Centro Amaré',
-    description: 'Psicólogos salvadoreños online para quienes viven fuera. Terapia de pareja e individual en EE. UU., Canadá y Europa. Tarifas accesibles de $100/mes ($25/sesión).',
+    description: 'Psicólogos salvadoreños online para quienes viven fuera. Terapia en EE. UU., Canadá y Europa con planes adaptados por país y 1ª sesión gratis.',
     canonical: `${BASE_URL}/salvadorenos-en-el-exterior`,
   },
   {
@@ -86,28 +539,28 @@ const routes = [
     path: '/iris-alarcon',
     file: 'iris-alarcon/index.html',
     title: 'Psicóloga Iris Alarcón El Salvador · JVPP | Centro Amaré',
-    description: 'Conoce a Iris Alarcón, Directora Clínica de Centro Amaré. Psicóloga colegiada ante la JVPP de El Salvador, máster en pareja y sexología con +9 años de experiencia.',
+    description: 'Conoce a la Mtra. Iris Alarcón, Directora Clínica de Centro Amaré. Psicóloga JVPP El Salvador, máster en pareja y sexología con +9 años de experiencia.',
     canonical: `${BASE_URL}/iris-alarcon`,
   },
   {
     path: '/sobre-nosotros',
     file: 'sobre-nosotros/index.html',
     title: 'Sobre Centro Amaré | Misión y Equipo en El Salvador',
-    description: 'Conoce la historia de Centro Amaré. Fundado en 2017 por la Mtra. Iris Alarcón en San Salvador, somos la clínica de psicología digital que promueve el bienestar de parejas y adultos en El Salvador y la diáspora.',
+    description: 'Conoce Centro Amaré, fundado en 2017 por la Mtra. Iris Alarcón en San Salvador. Psicología online con respaldo JVPP en El Salvador y la diáspora.',
     canonical: `${BASE_URL}/sobre-nosotros`,
   },
   {
     path: '/precios',
     file: 'precios/index.html',
     title: 'Precios y Honorarios — Terapia de Pareja | Centro Amaré',
-    description: 'Precios transparentes de psicoterapia y terapia de pareja: 1ª sesión de 30 min sin costo. Plan mensual de $100 USD (hasta 4 sesiones al mes = $25/sesión).',
+    description: 'Honorarios de terapia de pareja e individual en El Salvador y el exterior: 1ª sesión de 30 min sin costo y planes mensuales adaptados a tu país.',
     canonical: `${BASE_URL}/precios`,
   },
   {
     path: '/blog',
     file: 'blog/index.html',
     title: 'Blog de Psicología y Pareja en El Salvador | Centro Amaré',
-    description: 'Recursos, guías clínicas y respuestas transparentes sobre precios, migración y terapia de pareja por psicóloga colegiada en El Salvador.',
+    description: 'Recursos, guías clínicas y respuestas claras sobre costos, migración y terapia de pareja por psicólogos colegiados en El Salvador.',
     canonical: `${BASE_URL}/blog`,
   },
   {
@@ -128,7 +581,7 @@ const routes = [
     path: '/blog/se-puede-perdonar-una-infidelidad-guia-pareja',
     file: 'blog/se-puede-perdonar-una-infidelidad-guia-pareja/index.html',
     title: '¿Se Puede Perdonar una Infidelidad? Guía Clínica | Amaré',
-    description: 'Fases clínicas para sanar la herida de un engaño o cerrar en paz. Transparencia radical, cese de hipervigilancia y reconstrucción del apego en terapia de pareja.',
+    description: 'Fases clínicas para sanar tras un engaño o cerrar en paz. Transparencia radical, cese de hipervigilancia y reconstrucción en terapia de pareja.',
     canonical: `${BASE_URL}/blog/se-puede-perdonar-una-infidelidad-guia-pareja`,
   },
   {
@@ -149,7 +602,7 @@ const routes = [
     path: '/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador',
     file: 'blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador/index.html',
     title: 'Cuánto Cuesta una Terapia de Pareja en El Salvador | Amaré',
-    description: 'Comparativa de costos de terapia de pareja en San Salvador, clínicas privadas y centros online. Cuánto invertir y plan mensual de $100 USD.',
+    description: 'Comparativa de costos de terapia de pareja en San Salvador, EE. UU. y modalidades online. Cómo funcionan los planes adaptados de Centro Amaré.',
     canonical: `${BASE_URL}/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador`,
   },
   {
@@ -288,11 +741,9 @@ async function prerender() {
 
     const { render } = await import(pathToFileURL(ssrEntryPath).href)
     const baseTemplate = fs.readFileSync(templatePath, 'utf-8')
-
-    // Usamos el stylesheet externo para maximizar el cacheo en navegador y mantener un ratio texto/HTML óptimo en auditorías SEO
     const baseTemplateProcessed = baseTemplate
 
-    // 3. Renderizar cada una de las 17 rutas con su metadata personalizada
+    // 3. Renderizar cada ruta con su metadata y schemas estructurados
     for (const route of routes) {
       const appHtml = render(route.path)
       let pageHtml = baseTemplateProcessed.replace(
@@ -300,14 +751,14 @@ async function prerender() {
         `<div id="root">${appHtml}</div>`
       )
 
-      // Title
+      // Title & OG/Twitter titles
       if (route.title) {
-        pageHtml = pageHtml.replace(/<title>.*?<\/title>/, `<title>${route.title}</title>`)
-        pageHtml = pageHtml.replace(/<meta property="og:title" content=".*?" \/>/, `<meta property="og:title" content="${route.title}" />`)
-        pageHtml = pageHtml.replace(/<meta name="twitter:title" content=".*?" \/>/, `<meta name="twitter:title" content="${route.title}" />`)
+        pageHtml = pageHtml.replace(/<title>.*?<\/title>/, `<title>${escapeXml(route.title)}</title>`)
+        pageHtml = pageHtml.replace(/<meta property="og:title" content=".*?" \/>/, `<meta property="og:title" content="${escapeAttr(route.title)}" />`)
+        pageHtml = pageHtml.replace(/<meta name="twitter:title" content=".*?" \/>/, `<meta name="twitter:title" content="${escapeAttr(route.title)}" />`)
       }
 
-      // Canonical & Hreflang
+      // Canonical & Hreflang & OG URL
       if (route.canonical) {
         pageHtml = pageHtml.replace(/<link rel="canonical" href=".*?" \/>/, `<link rel="canonical" href="${route.canonical}" />`)
         pageHtml = pageHtml.replace(/<link rel="alternate" hreflang="es" href=".*?" \/>/, `<link rel="alternate" hreflang="es" href="${route.canonical}" />`)
@@ -316,22 +767,60 @@ async function prerender() {
 
       // Description
       if (route.description) {
-        pageHtml = pageHtml.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${route.description}" />`)
-        pageHtml = pageHtml.replace(/<meta property="og:description" content=".*?" \/>/, `<meta property="og:description" content="${route.description}" />`)
-        pageHtml = pageHtml.replace(/<meta name="twitter:description" content=".*?" \/>/, `<meta name="twitter:description" content="${route.description}" />`)
+        pageHtml = pageHtml.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${escapeAttr(route.description)}" />`)
+        pageHtml = pageHtml.replace(/<meta property="og:description" content=".*?" \/>/, `<meta property="og:description" content="${escapeAttr(route.description)}" />`)
+        pageHtml = pageHtml.replace(/<meta name="twitter:description" content=".*?" \/>/, `<meta name="twitter:description" content="${escapeAttr(route.description)}" />`)
       }
 
-      // Robots / Noindex
+      // Robots / Noindex (reemplazo único para evitar doble etiqueta meta robots)
       if (route.noindex) {
-        pageHtml = pageHtml.replace('<head>', '<head>\n    <meta name="robots" content="noindex, follow" />')
+        pageHtml = pageHtml.replace(
+          /<meta name="robots"[^>]*\/>/,
+          '<meta name="robots" content="noindex, follow" />'
+        )
       }
 
-      // ── Datos Estructurados enriquecidos (BreadcrumbList y BlogPosting YMYL) ──
+      // ── Datos Estructurados & OpenGraph específicos por tipo de página ──
       const cleanTitle = route.title ? route.title.split('|')[0].trim() : ''
       const routeSchemas = []
+      const extraHeadTags = []
 
       if (route.path !== '/' && !route.noindex) {
         if (route.path.startsWith('/blog/')) {
+          const slug = route.path.replace('/blog/', '')
+          const meta = BLOG_POST_BY_SLUG[slug]
+          if (!meta) {
+            throw new Error(`Falta metadata en blogMeta.js para la ruta ${route.path}`)
+          }
+
+          const articleImgJpg = meta.image
+            ? `${BASE_URL}${meta.image.replace('.webp', '.jpg')}`
+            : `${BASE_URL}/og-preview-amare.jpg`
+
+          pageHtml = pageHtml.replace(
+            '<meta property="og:type" content="website" />',
+            '<meta property="og:type" content="article" />'
+          )
+          pageHtml = pageHtml.replace(
+            /<meta property="og:image" content=".*?" \/>/,
+            `<meta property="og:image" content="${articleImgJpg}" />`
+          )
+          pageHtml = pageHtml.replace(
+            /<meta property="og:image:secure_url" content=".*?" \/>/,
+            `<meta property="og:image:secure_url" content="${articleImgJpg}" />`
+          )
+          pageHtml = pageHtml.replace(
+            /<meta name="twitter:image" content=".*?" \/>/,
+            `<meta name="twitter:image" content="${articleImgJpg}" />`
+          )
+
+          extraHeadTags.push(
+            `<meta property="article:published_time" content="${meta.datePublished}T08:00:00-06:00" />`,
+            `<meta property="article:modified_time" content="${meta.dateModified}T12:00:00-06:00" />`,
+            `<meta property="article:author" content="${escapeAttr(meta.authorName)}" />`,
+            `<meta property="article:section" content="${escapeAttr(meta.category)}" />`
+          )
+
           // Breadcrumbs para artículos del Blog
           routeSchemas.push({
             '@context': 'https://schema.org',
@@ -352,35 +841,45 @@ async function prerender() {
               {
                 '@type': 'ListItem',
                 'position': 3,
-                'name': cleanTitle,
+                'name': meta.title,
                 'item': route.canonical
               }
             ]
           })
 
-          // BlogPosting con Autoría Médica E-E-A-T
+          // BlogPosting con autoría clínica real sincronizada con blogMeta.js
+          const authorEntity = meta.authorType === 'Organization'
+            ? {
+                '@type': 'Organization',
+                '@id': `${BASE_URL}/#organization`,
+                'name': meta.authorName,
+                'url': `${BASE_URL}${meta.authorUrl}`
+              }
+            : {
+                '@type': 'Person',
+                'name': meta.authorName,
+                'jobTitle': meta.authorJobTitle,
+                'url': `${BASE_URL}${meta.authorUrl}`,
+                'hasCredential': {
+                  '@type': 'EducationalOccupationalCredential',
+                  'credentialCategory': 'license',
+                  'name': meta.authorJvpp
+                }
+              }
+
           routeSchemas.push({
             '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
+            '@type': ['BlogPosting', 'Article'],
             '@id': `${route.canonical}#article`,
             'mainEntityOfPage': {
               '@type': 'WebPage',
               '@id': route.canonical
             },
-            'headline': cleanTitle,
-            'description': route.description,
-            'image': `${BASE_URL}/og-preview-amare.jpg`,
-            'author': {
-              '@type': 'Person',
-              'name': 'Mtra. Iris Alarcón',
-              'jobTitle': 'Directora Clínica y Psicóloga Colegiada',
-              'url': `${BASE_URL}/iris-alarcon`,
-              'hasCredential': {
-                '@type': 'EducationalOccupationalCredential',
-                'credentialCategory': 'license',
-                'name': 'Registro Profesional Sanitario JVPP N.º 6380'
-              }
-            },
+            'headline': meta.title,
+            'description': meta.excerpt || route.description,
+            'articleSection': meta.category,
+            'image': [articleImgJpg, `${BASE_URL}/og-preview-amare.jpg`],
+            'author': authorEntity,
             'publisher': {
               '@type': 'Organization',
               '@id': `${BASE_URL}/#organization`,
@@ -391,12 +890,12 @@ async function prerender() {
                 'url': `${BASE_URL}/images/logo-nav.png`
               }
             },
-            'datePublished': '2026-01-15T08:00:00-06:00',
-            'dateModified': '2026-10-22T12:00:00-06:00',
+            'datePublished': `${meta.datePublished}T08:00:00-06:00`,
+            'dateModified': `${meta.dateModified}T12:00:00-06:00`,
             'inLanguage': 'es'
           })
         } else {
-          // Breadcrumbs para subpáginas principales de servicio
+          // Breadcrumbs para subpáginas principales
           const pageNames = {
             '/terapia-de-pareja': 'Terapia de Pareja',
             '/sexologia-clinica': 'Sexología Clínica',
@@ -430,14 +929,18 @@ async function prerender() {
               }
             ]
           })
+
+          // Schemas específicos de servicio, perfil clínico, FAQ (AEO/GEO) o Blog
+          routeSchemas.push(...buildSubpageSchemas(route, cleanTitle))
         }
       }
 
-      if (routeSchemas.length > 0) {
+      if (extraHeadTags.length > 0 || routeSchemas.length > 0) {
+        const metaBlock = extraHeadTags.map(t => `\n    ${t}`).join('')
         const schemaScripts = routeSchemas
           .map(s => `\n    <script type="application/ld+json">${JSON.stringify(s)}</script>`)
           .join('')
-        pageHtml = pageHtml.replace('</head>', `${schemaScripts}\n  </head>`)
+        pageHtml = pageHtml.replace('</head>', `${metaBlock}${schemaScripts}\n  </head>`)
       }
 
       // Limpiar comentarios HTML en producción para optimizar payload y cumplir auditorías
@@ -453,10 +956,16 @@ async function prerender() {
       console.log(`✅  Pre-rendering → dist/${route.file} (${kbSize} kB)`)
     }
 
-    // 4. Limpiar el directorio SSR temporal
+    // 4. Generar Feed RSS 2.0 en dist/rss.xml y public/rss.xml
+    const rssXml = generateRssXml()
+    fs.writeFileSync(path.resolve(distPath, 'rss.xml'), rssXml, 'utf-8')
+    fs.writeFileSync(path.resolve(__dirname, 'public/rss.xml'), rssXml, 'utf-8')
+    console.log('✅  RSS 2.0 generado → dist/rss.xml y public/rss.xml (17 artículos)')
+
+    // 5. Limpiar el directorio SSR temporal
     fs.rmSync(path.resolve(__dirname, 'dist-ssr'), { recursive: true, force: true })
 
-    console.log(`\n🎉 Total: ${routes.length} páginas prerenderizadas listas para Googlebot e IAs.\n`)
+    console.log(`\n🎉 Total: ${routes.length} páginas prerenderizadas + rss.xml listos para Googlebot e IAs.\n`)
 
   } catch (err) {
     console.error('❌  Error durante el pre-rendering:')
@@ -465,6 +974,7 @@ async function prerender() {
     if (fs.existsSync(ssrDir)) {
       fs.rmSync(ssrDir, { recursive: true, force: true })
     }
+    process.exitCode = 1
   }
 }
 

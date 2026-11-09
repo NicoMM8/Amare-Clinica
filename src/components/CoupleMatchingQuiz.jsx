@@ -10,13 +10,10 @@ import {
   MessageSquare,
   FileText,
   HelpCircle,
-  Send,
   Loader2,
-  Mail,
-  Phone,
-  User
 } from 'lucide-react';
 import { sendLeadEmail, openWhatsAppChat, COUNTRY_CODES, CLINIC_EMAIL } from '../lib/leadService';
+import { trackEvent, trackLeadGenerated, trackWhatsAppClick } from '../lib/analytics';
 import {
   Questionnaire,
   QuestionnaireProgress,
@@ -30,6 +27,15 @@ import { HeroButton } from './cojeev/HeroButton';
 import { Icon } from './ui/icon';
 
 const STORAGE_KEY = 'amare_quiz_draft_v1';
+const QUIZ_QUESTION_IDS = [
+  'situation',
+  'reason',
+  'conflictStyle',
+  'duration',
+  'therapyHistory',
+  'location',
+  'goal',
+];
 
 export default function CoupleMatchingQuiz({ onGoHome }) {
   const [currentStep, setCurrentStep] = useState(0); // 0: Intro, 1..7: Questions, 8: Open Notes, 9: Result
@@ -57,10 +63,19 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
   const [leadEmail, setLeadEmail] = useState('');
   const [isLeadSubmitting, setIsLeadSubmitting] = useState(false);
   const [isLeadSuccess, setIsLeadSuccess] = useState(false);
+  const [emailDelivered, setEmailDelivered] = useState(true);
   const [leadError, setLeadError] = useState('');
 
   const headings = useRef([]);
   const focusNext = useRef(false);
+  const trackedStartRef = useRef(false);
+  const trackedStepsRef = useRef(new Set());
+  const trackedCompleteRef = useRef(false);
+  const latestAnswersRef = useRef(answers);
+
+  useEffect(() => {
+    latestAnswersRef.current = answers;
+  }, [answers]);
 
   // Restaurar progreso previo de localStorage si el usuario recarga la página
   useEffect(() => {
@@ -171,17 +186,51 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
   ];
 
   useEffect(() => {
-    if (focusNext.current && currentStep >= 1 && currentStep <= questions.length) {
+    const totalQuestions = QUIZ_QUESTION_IDS.length;
+    if (focusNext.current && currentStep >= 1 && currentStep <= totalQuestions) {
       headings.current[currentStep - 1]?.focus();
       focusNext.current = false;
     }
+
+    // Telemetría única por paso sin PII ni duplicados en re-renders
+    if (currentStep >= 1 && currentStep <= totalQuestions) {
+      if (!trackedStepsRef.current.has(currentStep)) {
+        trackedStepsRef.current.add(currentStep);
+        trackEvent('quiz_step', {
+          quiz_name: 'couple_matching_quiz',
+          step_number: currentStep,
+          question_id: QUIZ_QUESTION_IDS[currentStep - 1] || `step_${currentStep}`,
+        });
+      }
+    } else if (currentStep === totalQuestions + 1) {
+      if (!trackedStepsRef.current.has(currentStep)) {
+        trackedStepsRef.current.add(currentStep);
+        trackEvent('quiz_step', {
+          quiz_name: 'couple_matching_quiz',
+          step_number: currentStep,
+          question_id: 'open_notes',
+        });
+      }
+    } else if (currentStep > totalQuestions + 1 && !trackedCompleteRef.current) {
+      trackedCompleteRef.current = true;
+      const currentAnswers = latestAnswersRef.current;
+      const individualInit =
+        currentAnswers.situationShort === 'Iniciativa individual (pareja con dudas)' ||
+        currentAnswers.situation.includes('Solo yo tengo iniciativa');
+      trackEvent('quiz_complete', {
+        quiz_name: 'couple_matching_quiz',
+        initiative: individualInit ? 'individual' : 'couple',
+        has_notes: Boolean(currentAnswers.notes && currentAnswers.notes.trim()),
+      });
+    }
+
     // Asegurar scroll al tope en cada cambio de paso del test
     if (typeof window !== 'undefined') {
       window.scrollTo(0, 0);
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
     }
-  }, [currentStep, questions.length]);
+  }, [currentStep]);
 
   const move = (next) => {
     focusNext.current = true;
@@ -253,7 +302,11 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
     setLeadEmail('');
     setIsLeadSubmitting(false);
     setIsLeadSuccess(false);
+    setEmailDelivered(true);
     setLeadError('');
+    trackedStartRef.current = false;
+    trackedStepsRef.current = new Set();
+    trackedCompleteRef.current = false;
     move(0);
     if (typeof window !== 'undefined') {
       window.scrollTo(0, 0);
@@ -276,20 +329,31 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
     setIsLeadSubmitting(true);
 
     const fullPhone = leadCountryCode ? `${leadCountryCode} ${leadPhone.trim()}` : leadPhone.trim();
+    const serviceLabel = isIndividualInitiative ? 'Terapia Individual (Test)' : 'Terapia de Pareja (Test)';
 
     try {
-      // 1. Notificación asíncrona por correo al equipo clínico con todo el desglose
-      await sendLeadEmail({
+      // 1. Notificación asíncrona por correo al equipo clínico con estado real de entrega
+      const emailResult = await sendLeadEmail({
         name: leadName.trim(),
         whatsapp: fullPhone,
         email: leadEmail.trim(),
-        service: isIndividualInitiative ? 'Terapia Individual (Test)' : 'Terapia de Pareja (Test)',
+        service: serviceLabel,
         source: 'Test de Pareja (Paso Final)',
         notes: answers.notes,
         answers: answers,
       });
+      const delivered = Boolean(emailResult?.success);
+      setEmailDelivered(delivered);
 
-      // 2. Apertura simultánea de WhatsApp para contacto inmediato
+      // 2. Conversión verificada tras envío del formulario (sin PII)
+      trackLeadGenerated({
+        formName: 'couple_matching_quiz',
+        serviceType: serviceLabel,
+        emailDelivered: delivered,
+        location: 'test_de_pareja_result',
+      });
+
+      // 3. Apertura simultánea de WhatsApp para contacto inmediato
       openWhatsAppChat({
         name: leadName.trim(),
         whatsapp: fullPhone,
@@ -302,6 +366,13 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       setIsLeadSuccess(true);
     } catch (err) {
       console.warn('Fallback al abrir WhatsApp:', err);
+      setEmailDelivered(false);
+      trackLeadGenerated({
+        formName: 'couple_matching_quiz',
+        serviceType: serviceLabel,
+        emailDelivered: false,
+        location: 'test_de_pareja_result',
+      });
       openWhatsAppChat({
         name: leadName.trim(),
         whatsapp: fullPhone,
@@ -332,7 +403,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
       msg += `• Ubicación / Huso horario: ${answers.locationShort || answers.location}\n`;
     }
     msg += `• Formato: Online (Google Meet)\n\n`;
-    msg += `(Detalles íntimos reservados para la sesión con la psicóloga bajo secreto profesional legal JVPP).`;
+    msg += `(Detalles íntimos reservados para la sesión con tu terapeuta asignado bajo secreto profesional legal JVPP).`;
     return encodeURIComponent(msg);
   };
 
@@ -471,7 +542,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   <div style={{ position: 'relative', display: 'inline-block', marginBottom: '16px' }}>
                     <img
                       src="/images/iris-alarcon.webp"
-                      alt="Licda. Iris Alarcón - Psicóloga y Sexóloga Clínica JVPP"
+                      alt="Mtra. Iris Alarcón - Psicóloga y Sexóloga Clínica JVPP"
                       width="96"
                       height="96"
                       style={{
@@ -522,7 +593,16 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   <HeroButton
                     appearance="paper-fold"
                     variant="clay"
-                    onClick={() => move(1)}
+                    onClick={() => {
+                      if (!trackedStartRef.current) {
+                        trackedStartRef.current = true;
+                        trackEvent('quiz_start', {
+                          quiz_name: 'couple_matching_quiz',
+                          location: 'test_de_pareja_intro',
+                        });
+                      }
+                      move(1);
+                    }}
                     style={{
                       height: '52px',
                       padding: '0 28px',
@@ -747,6 +827,29 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     </div>
                   </div>
                 </div>
+
+                {/* Enlaces internos útiles de exploración clínica */}
+                <nav
+                  aria-label="Explora también en Centro Amaré"
+                  style={{
+                    marginTop: '32px',
+                    paddingTop: '24px',
+                    borderTop: '1px solid var(--border-subtle)',
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    gap: '10px 18px',
+                    fontSize: '13px',
+                  }}
+                >
+                  <a href="/" style={{ color: 'var(--color-clay)', fontWeight: 600, textDecoration: 'none' }}>Inicio</a>
+                  <a href="/terapia-de-pareja" style={{ color: 'var(--color-plum-900)', fontWeight: 600, textDecoration: 'none' }}>Terapia de Pareja</a>
+                  <a href="/sexologia-clinica" style={{ color: 'var(--color-plum-900)', fontWeight: 600, textDecoration: 'none' }}>Sexología Clínica</a>
+                  <a href="/terapia-individual" style={{ color: 'var(--color-plum-900)', fontWeight: 600, textDecoration: 'none' }}>Terapia Individual</a>
+                  <a href="/precios" style={{ color: 'var(--color-plum-900)', fontWeight: 600, textDecoration: 'none' }}>Honorarios y Planes</a>
+                  <a href="/sobre-nosotros" style={{ color: 'var(--color-plum-900)', fontWeight: 600, textDecoration: 'none' }}>Sobre Nosotros</a>
+                  <a href="/privacidad" style={{ color: 'var(--color-plum-900)', fontWeight: 600, textDecoration: 'none' }}>Política de Privacidad</a>
+                </nav>
               </section>
             </div>
           )}
@@ -1086,7 +1189,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                 <div style={{ marginBottom: '28px' }}>
                   <img
                     src="/images/iris-alarcon.webp"
-                    alt="Licda. Iris Alarcón - Especialista en Terapia de Pareja JVPP"
+                    alt="Mtra. Iris Alarcón - Directora Clínica de Centro Amaré JVPP"
                     width="110"
                     height="110"
                     style={{
@@ -1112,10 +1215,10 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     Equipo Clínico de Centro Amaré
                   </h3>
                   <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--v-pink)', marginBottom: '8px' }}>
-                    Dirección Clínica: Licda. Iris Alarcón · Registro JVPP N.º 6380
+                    Dirección Clínica: Mtra. Iris Alarcón · Registro JVPP N.º 6380
                   </div>
                   <p style={{ fontSize: '14px', color: 'var(--v-text-2)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.6 }}>
-                    Las respuestas de su autoevaluación indican que su caso se beneficia de nuestro protocolo de intervención en comunicación, acuerdos y reconexión emocional. Les asignaremos la terapeuta del equipo idónea según su motivo de consulta y huso horario.
+                    Las respuestas de su autoevaluación indican que su caso se beneficia de nuestro protocolo de intervención en comunicación, acuerdos y reconexión emocional. Les asignaremos al especialista del equipo idóneo según su motivo de consulta y huso horario.
                   </p>
                 </div>
 
@@ -1149,7 +1252,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   {answers.notes && answers.notes.trim() && (
                     <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', paddingTop: '8px', borderTop: '1px dashed var(--v-border)' }}>
                       <FileText size={16} style={{ color: 'var(--v-pink)', flexShrink: 0, marginTop: '2px' }} />
-                      <span style={{ fontSize: '13px' }}><strong>Nota para la terapeuta:</strong> &ldquo;{answers.notes.trim()}&rdquo; <em style={{ fontSize: '11.5px', color: 'var(--v-text-2)' }}>(confidencial para la sesión)</em></span>
+                      <span style={{ fontSize: '13px' }}><strong>Nota para el especialista:</strong> &ldquo;{answers.notes.trim()}&rdquo; <em style={{ fontSize: '11.5px', color: 'var(--v-text-2)' }}>(confidencial para la sesión)</em></span>
                     </div>
                   )}
                 </div>
@@ -1202,13 +1305,16 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                         marginBottom: '18px',
                       }}
                     >
-                      Hemos notificado a la dirección clínica de Centro Amaré con el resumen de tu test. Si la ventana de WhatsApp no se abrió automáticamente, puedes continuar desde aquí:
+                      {emailDelivered
+                        ? 'Hemos notificado a la dirección clínica de Centro Amaré con el resumen de tu test. Si la ventana de WhatsApp no se abrió automáticamente, puedes continuar desde aquí:'
+                        : 'Guardamos una copia local segura de tu evaluación y te abrimos WhatsApp para que nuestro equipo reciba el resumen al instante (el envío automático por correo estuvo bloqueado en tu red):'}
                     </p>
 
                     <a
                       href={whatsappMatchUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackWhatsAppClick('quiz_result_fallback', 'Abrir chat post-submit')}
                       className="v-button v-button--accent"
                       style={{
                         padding: '14px 28px',
@@ -1263,7 +1369,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                         margin: '0 0 16px 0',
                       }}
                     >
-                      Déjanos tus datos para preparar tu expediente clínico y asignarte a la terapeuta idónea. Te contactaremos de inmediato por WhatsApp.
+                      Déjanos tus datos para preparar tu expediente clínico y asignarte al especialista idóneo. Te contactaremos de inmediato por WhatsApp.
                     </p>
 
                     {leadError && (
@@ -1452,6 +1558,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                         href={whatsappMatchUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackWhatsAppClick('quiz_result_direct_skip', 'WhatsApp sin dejar correo')}
                         style={{
                           fontSize: '12.5px',
                           color: 'var(--v-text-2)',
@@ -1468,26 +1575,6 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                     </div>
                   </form>
                 )}
-
-                {/* Garantía de Privacidad y Secreto Profesional */}
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px',
-                    fontSize: '12.5px',
-                    color: 'var(--v-text-2)',
-                    maxWidth: '480px',
-                    margin: '0 auto 20px',
-                    lineHeight: 1.5,
-                  }}
-                >
-                  <ShieldCheck size={16} style={{ color: 'var(--v-pink)', flexShrink: 0 }} />
-                  <span>
-                    <strong>Privacidad clínica garantizada:</strong> Tus respuestas y notas personales están bajo secreto profesional (JVPP). La asistente solo recibirá la información básica para coordinar tu cita.
-                  </span>
-                </div>
 
                 {/* Botón de respaldo para Desktop sin WhatsApp Web */}
                 <div
@@ -1515,6 +1602,7 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                       href="https://wa.me/50373184781"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackWhatsAppClick('quiz_desktop_fallback', 'Número desktop')}
                       style={{ color: 'var(--v-pink)', fontWeight: 700, textDecoration: 'none' }}
                     >
                       +503 7318 4781
@@ -1529,22 +1617,30 @@ export default function CoupleMatchingQuiz({ onGoHome }) {
                   </div>
                 </div>
 
-                {/* Garantía de Confidencialidad y Privacidad YMYL */}
-                <div style={{
-                  maxWidth: '480px',
-                  margin: '0 auto 20px',
-                  padding: '12px 16px',
-                  backgroundColor: 'rgba(34, 40, 74, 0.04)',
-                  borderRadius: '12px',
-                  border: '1px solid rgba(34, 40, 74, 0.08)',
-                  fontSize: '12.5px',
-                  color: 'var(--v-text-2)',
-                  lineHeight: 1.5,
-                  textAlign: 'center'
-                }}>
+                {/* Garantía Única de Privacidad, Confidencialidad y Secreto Profesional JVPP */}
+                <div
+                  style={{
+                    maxWidth: '480px',
+                    margin: '0 auto 20px',
+                    padding: '12px 16px',
+                    backgroundColor: 'rgba(34, 40, 74, 0.04)',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(34, 40, 74, 0.08)',
+                    fontSize: '12.5px',
+                    color: 'var(--v-text-2)',
+                    lineHeight: 1.55,
+                    textAlign: 'center',
+                  }}
+                >
                   <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: '6px' }}>
                     <ShieldCheck size={16} style={{ color: 'var(--v-pink)', flexShrink: 0, marginTop: '2px' }} />
-                    <span><strong>Confidencialidad médica garantizada:</strong> Tus respuestas se evalúan en privado dentro de tu navegador y no se guardan en servidores públicos. Solo se envían a la terapeuta si decides remitir el mensaje vía WhatsApp. Consulta nuestra <a href="/privacidad" style={{ color: 'var(--v-pink)', textDecoration: 'underline', fontWeight: 600 }}>Política de Privacidad y Secreto Clínico</a>.</span>
+                    <span>
+                      <strong>Privacidad y secreto profesional (JVPP):</strong> Tus respuestas se evalúan en tu navegador y la coordinación solo recibe lo necesario para agendar; tus notas confidenciales llegan únicamente a tu especialista asignado. Consulta nuestra{' '}
+                      <a href="/privacidad" style={{ color: 'var(--v-pink)', textDecoration: 'underline', fontWeight: 600 }}>
+                        Política de Privacidad y Secreto Clínico
+                      </a>
+                      .
+                    </span>
                   </div>
                 </div>
 

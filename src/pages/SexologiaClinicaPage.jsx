@@ -122,9 +122,9 @@ export default function SexologiaClinicaPage() {
                 <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Especialista a Cargo
                 </span>
-                <h3 className="font-serif" style={{ fontSize: '22px', color: 'var(--color-plum-900)', margin: '4px 0 8px' }}>
+                <h2 className="font-serif" style={{ fontSize: '22px', color: 'var(--color-plum-900)', margin: '4px 0 8px' }}>
                   Mtra. Iris Alarcón · Sexóloga Clínica y Terapeuta de Pareja
-                </h3>
+                </h2>
                 <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', margin: '0 0 12px', lineHeight: 1.6 }}>
                   Licenciada en Psicología y Máster en Sexología Clínica y Terapia de Pareja. Colegiada ante la <strong>Junta de Vigilancia de la Profesión Psicológica de El Salvador (JVPP N.º 6380)</strong>. Más de 9 años de experiencia clínica acompañando a personas y parejas en San Salvador, todo El Salvador y compatriotas en EE. UU., Canadá y Europa.
                 </p>

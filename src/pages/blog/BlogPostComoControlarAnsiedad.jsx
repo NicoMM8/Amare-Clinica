@@ -2,10 +2,13 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp';
+import { trackWhatsAppClick } from '../../lib/analytics';
+import { BLOG_POST_BY_SLUG } from '../../data/blogMeta';
 import { ArrowLeft, Clock, Activity, ShieldCheck, CheckCircle2, MessageCircle, AlertCircle } from 'lucide-react';
 
 export default function BlogPostComoControlarAnsiedad() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí la guía clínica sobre cómo controlar la ansiedad en Centro Amaré y quisiera consultar por una sesión de evaluación sin costo.");
+  const postMeta = BLOG_POST_BY_SLUG['como-controlar-la-ansiedad'];
 
   return (
     <div className="app-wrapper">
@@ -35,7 +38,7 @@ export default function BlogPostComoControlarAnsiedad() {
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> 7 min de lectura</span>
               <span>•</span>
-              <span>Actualizado 2026</span>
+              <time dateTime={postMeta.dateModified}>{postMeta.dateLabel}</time>
             </div>
           </div>
         </section>
@@ -147,6 +150,7 @@ export default function BlogPostComoControlarAnsiedad() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick('blog_cta', 'como-controlar-la-ansiedad')}
                     className="btn-primary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >

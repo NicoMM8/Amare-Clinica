@@ -1,29 +1,23 @@
 # Centro Amaré — auth.md
 
-Protocolo de autenticación, descubrimiento y registro de agentes de IA para Centro Amaré (https://terapiadeparejaelsalvador.com).
+Política de acceso y descubrimiento de recursos públicos para agentes de IA y rastreadores en Centro Amaré (https://terapiadeparejaelsalvador.com).
 
 ## 1. Identificación del Servicio
 - **Entidad:** Centro Amaré — Terapia de Pareja y Psicología Salvadoreña Online
 - **Dirección Canónica:** https://terapiadeparejaelsalvador.com
 - **Directora Clínica:** Mtra. Iris Alarcón (Colegiada JVPP N.º 6380, El Salvador)
+- **Modalidad:** Atención clínica 100% online por Google Meet (El Salvador y diáspora salvadoreña)
 - **Contacto de Coordinación Asistencial:** WhatsApp +503 7318 4781
 
-## 2. Política de Acceso para Agentes Autónomos y LLMs
-- **Acceso a Información Clínica Pública:** No requiere autenticación. Todo el catálogo de servicios, perfiles de psicólogos colegiados por la Junta de Vigilancia de la Profesión en Psicología (JVPP), aranceles/precios, y recursos educativos están disponibles públicamente bajo protocolo HTTP GET y Content Negotiation (`Accept: text/markdown` o `application/json`).
-- **Coordinación de Citas:** Las solicitudes de agendamiento y orientación de casos se gestionan mediante el canal directo de recepción clínica confidencial vía WhatsApp (+503 7318 4781) o el formulario web seguro.
+## 2. Política de Acceso Público (Sin OAuth ni Tokens Bearer)
+- **Acceso Abierto de Lectura (`GET`):** Todo el contenido clínico público, catálogo de servicios, credenciales del equipo JVPP, estructura de honorarios (1ª sesión de 30 min sin costo y planes mensuales adaptados por país) y guías del blog está disponible de forma pública sin registro, sin OAuth (`/auth/authorize` no aplica) y sin tokens Bearer.
+- **Negociación de Contenido:** Las rutas principales responden en HTML pre-renderizado (`text/html`) o en Markdown estructurado mediante negociación HTTP (`Accept: text/markdown`).
+- **Coordinación de Citas Clínicas:** Por confidencialidad médica y secreto profesional (JVPP El Salvador), la coordinación de citas se realiza únicamente mediante recepción humana por WhatsApp (+503 7318 4781) o a través de los formularios cifrados de la web (`QuickContactModal` y `/test-de-pareja`).
 
-## 3. Metadatos de Descubrimiento OAuth 2.0 y Recursos Protegidos
-- **OAuth Protected Resource Metadata (RFC 9728):**
-  `https://terapiadeparejaelsalvador.com/.well-known/oauth-protected-resource`
-- **OAuth Authorization Server Metadata (RFC 8414):**
-  `https://terapiadeparejaelsalvador.com/.well-known/oauth-authorization-server`
-- **OpenID Connect Discovery:**
-  `https://terapiadeparejaelsalvador.com/.well-known/openid-configuration`
-- **Agent Resource Discovery (ARD):**
-  `https://terapiadeparejaelsalvador.com/.well-known/ai-catalog.json`
-
-## 4. Registro y Credenciales para Agentes (Agent Auth)
-- **Métodos Soportados:** `anonymous`, `identity_assertion` (ID-JAG / RFC 9728), `client_credentials`
-- **Endpoint de Registro / Consulta:** `https://terapiadeparejaelsalvador.com/auth.md`
-- **Scopes Disponibles:** `public:read`, `appointment:request`, `clinical:catalog`
-- **Tipo de Credenciales:** `bearer_token`
+## 3. Puntos de Descubrimiento Activos
+- **API / Resource Catalog (RFC 9727):** `https://terapiadeparejaelsalvador.com/.well-known/api-catalog`
+- **Catálogo de Servicios IA:** `https://terapiadeparejaelsalvador.com/.well-known/ai-catalog.json`
+- **Agent Skills:** `https://terapiadeparejaelsalvador.com/.well-known/agent-skills/index.json`
+- **Contexto Maestro LLM:** `https://terapiadeparejaelsalvador.com/llms.txt` y `https://terapiadeparejaelsalvador.com/llms-full.txt`
+- **Feed RSS Editorial:** `https://terapiadeparejaelsalvador.com/rss.xml`
+- **Mapa del Sitio:** `https://terapiadeparejaelsalvador.com/sitemap.xml`

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, MessageCircle, Shield } from 'lucide-react';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function Footer() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera dar el primer paso y agendar una primera conversación.");
@@ -28,6 +29,7 @@ export default function Footer() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick('footer_banner', 'Primera conversación')}
             className="btn-clay"
             style={{
               display: 'inline-flex',
@@ -82,6 +84,7 @@ export default function Footer() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('footer_phone', '+503 7318 4781')}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -123,7 +126,7 @@ export default function Footer() {
               <li><a href="/privacidad">Política de Privacidad</a></li>
               <li><a href="/cookies">Política de Cookies</a></li>
               <li><a href="/#faq">Preguntas Frecuentes</a></li>
-              <li><a href={whatsappUrl} target="_blank" rel="noopener noreferrer">Contacto con Asistente</a></li>
+              <li><a href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick('footer_nav', 'Contacto Asistente')}>Contacto con Asistente</a></li>
             </ul>
           </div>
 
@@ -133,7 +136,7 @@ export default function Footer() {
               Acreditación Sanitaria JVPP N.º 6380
             </div>
             <p style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '13px', lineHeight: 1.6, marginBottom: '12px' }}>
-              Directora Clínica: <strong>Lic. Iris Alarcón</strong>, Psicóloga Colegiada con <strong>Registro Profesional JVPP N.º 6380</strong> (Junta de Vigilancia de la Profesión en Psicología de El Salvador).
+              Directora Clínica: <strong>Mtra. Iris Alarcón</strong>, Psicóloga Colegiada con <strong>Registro Profesional JVPP N.º 6380</strong> (Junta de Vigilancia de la Profesión en Psicología de El Salvador).
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'rgba(255, 255, 255, 0.9)', fontSize: '12.5px', marginBottom: '8px' }}>
               <Shield size={16} style={{ color: '#E8BA9B' }} />

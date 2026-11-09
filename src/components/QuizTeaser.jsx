@@ -56,7 +56,7 @@ export default function QuizTeaser() {
                 maxWidth: '540px',
               }}
             >
-              Cada pareja vive una etapa distinta. Respondan 5 preguntas breves en nuestro test clínico interactivo y reciban una orientación personalizada sobre el abordaje terapéutico ideal para su situación.
+              Cada pareja vive una etapa distinta. Respondan 7 preguntas breves en nuestro test clínico interactivo y reciban una orientación personalizada sobre el abordaje terapéutico ideal para su situación.
             </p>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: '13px', color: 'var(--color-ink-primary)' }}>

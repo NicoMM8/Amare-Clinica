@@ -5,7 +5,7 @@
   <!-- 1. Home — Centro Amaré (EMD Principal) -->
   <url>
     <loc>https://terapiadeparejaelsalvador.com/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/" />
@@ -27,7 +27,7 @@
   <!-- 3. Precios y Honorarios Transparentes -->
   <url>
     <loc>https://terapiadeparejaelsalvador.com/precios</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/precios" />
@@ -49,7 +49,7 @@
   <!-- Sobre Centro Amaré — Historia y Misión Clínica -->
   <url>
     <loc>https://terapiadeparejaelsalvador.com/sobre-nosotros</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/sobre-nosotros" />
@@ -60,7 +60,7 @@
   <!-- 5. Test Clínico de Pareja (Autoevaluación) -->
   <url>
     <loc>https://terapiadeparejaelsalvador.com/test-de-pareja</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/test-de-pareja" />
@@ -104,7 +104,7 @@
   <!-- 9. Blog Hub & Recursos -->
   <url>
     <loc>https://terapiadeparejaelsalvador.com/blog</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/blog" />
@@ -115,7 +115,7 @@
   <!-- 10. Pilar 1: Cuánto cuesta una terapia de pareja en El Salvador -->
   <url>
     <loc>https://terapiadeparejaelsalvador.com/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador" />
@@ -313,7 +313,7 @@
   <!-- 14. Política de Cookies -->
   <url>
     <loc>https://terapiadeparejaelsalvador.com/cookies</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.50</priority>
     <xhtml:link rel="alternate" hreflang="es-SV" href="https://terapiadeparejaelsalvador.com/cookies" />

@@ -6,7 +6,6 @@ import { HeroButton } from '../components/ui/hero-button';
 import { 
   Building2, 
   Sparkles, 
-  Award, 
   HeartHandshake, 
   Globe, 
   Clock, 
@@ -28,9 +27,9 @@ const aboutPageSchema = {
   "@type": "AboutPage",
   "name": "Sobre Centro Amaré — Historia y Misión Clínica",
   "url": "https://terapiadeparejaelsalvador.com/sobre-nosotros",
-  "description": "Historia, misión y pilares clínicos de Centro Amaré. Clínica de psicología y terapia de pareja fundada en 2017 en El Salvador.",
+  "description": "Historia, misión y pilares clínicos de Centro Amaré. Clínica digital de psicología y terapia de pareja 100% online fundada en 2017 en El Salvador.",
   "mainEntity": {
-    "@type": ["LocalBusiness", "MedicalBusiness"],
+    "@type": ["Organization", "MedicalBusiness"],
     "@id": "https://terapiadeparejaelsalvador.com/#organization",
     "name": "Centro Amaré",
     "url": "https://terapiadeparejaelsalvador.com",
@@ -38,11 +37,19 @@ const aboutPageSchema = {
     "telephone": "+50373184781",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Calle El Mirador y 89 Av. Norte, Colonia Escalón",
       "addressLocality": "San Salvador",
       "addressRegion": "San Salvador",
-      "postalCode": "1101",
       "addressCountry": "SV"
+    },
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://terapiadeparejaelsalvador.com",
+      "availableLanguage": ["Spanish", "English"],
+      "serviceLocation": {
+        "@type": "VirtualLocation",
+        "name": "Videoconsulta confidencial por Google Meet (100% Online)",
+        "url": "https://terapiadeparejaelsalvador.com"
+      }
     },
     "foundingDate": "2017",
     "founder": {
@@ -942,7 +949,7 @@ export default function SobreNosotrosPage() {
                   appearance="ink-sweep"
                   href="/precios"
                 >
-                  <span>Ver honorarios y plan mensual ($100 USD)</span>
+                  <span>Ver honorarios y planes adaptados</span>
                 </HeroButton>
               </div>
 

@@ -11,6 +11,7 @@ import {
   HeartHandshake, 
   CheckCircle2 
 } from 'lucide-react';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 const MOODS = [
   {
@@ -341,6 +342,7 @@ export default function RelationshipPulse() {
                       href={getWhatsAppUrl(mood.whatsappQuery)}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackWhatsAppClick('relationship_pulse', mood.id)}
                       className="btn-appointment-pill"
                       style={{
                         backgroundColor: '#FFFFFF',

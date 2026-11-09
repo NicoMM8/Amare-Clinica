@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { HeartHandshake, Brain, MessageCircle } from 'lucide-react';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 export default function Specialties() {
   const whatsappPareja = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, me gustaría agendar la sesión exploratoria de 30 minutos sin costo para Terapia de Pareja.");
@@ -76,6 +77,7 @@ export default function Specialties() {
                 href={whatsappPareja}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('specialties_pareja', '1ª conversación Pareja')}
                 className="btn-primary"
                 aria-label="Agendar primera conversación de 30 minutos sin costo para Terapia de Pareja vía WhatsApp"
                 style={{ fontSize: '13.5px', padding: '10px 20px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
@@ -135,6 +137,7 @@ export default function Specialties() {
                 href={whatsappIndividual}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('specialties_individual', '1ª conversación Individual')}
                 className="btn-primary"
                 aria-label="Agendar primera conversación de 30 minutos sin costo para Terapia Individual vía WhatsApp"
                 style={{ fontSize: '13.5px', padding: '10px 20px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}

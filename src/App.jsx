@@ -160,7 +160,7 @@ function App({ initialPath = '/' }) {
       '/sexologia-clinica': 'Sexóloga en El Salvador | Sexología Clínica · Centro Amaré',
       '/terapia-individual': 'Psicólogos en El Salvador · Clínica Online | Centro Amaré',
       '/salvadorenos-en-el-exterior': 'Psicólogos Salvadoreños Online en el Exterior | Centro Amaré',
-      '/iris-alarcon': 'Licda. Iris Alarcón | Directora Clínica Centro Amaré (JVPP)',
+      '/iris-alarcon': 'Mtra. Iris Alarcón | Directora Clínica Centro Amaré (JVPP)',
       '/sobre-nosotros': 'Sobre Centro Amaré | Misión y Equipo en El Salvador',
       '/precios': 'Precios y Honorarios — Terapia de Pareja | Centro Amaré',
       '/blog': 'Blog & Recursos Clínicos | Centro Amaré',
@@ -178,7 +178,11 @@ function App({ initialPath = '/' }) {
       '/blog/falta-de-deseo-sexual-en-la-pareja-soluciones': 'Falta de Deseo Sexual en Pareja: Soluciones | Centro Amaré',
       '/blog/duelo-migratorio-que-es-como-manejarlo': 'Duelo Migratorio: Qué Es y Cómo Manejarlo | Centro Amaré',
       '/blog/fortalecer-relacion-pareja-ayuda-profesional': 'Fortalecer la Relación de Pareja con Terapia | Centro Amaré',
-      '/privacidad': 'Política de Privacidad y Secreto Profesional | Centro Amaré'
+      '/blog/como-afecta-emigrar-a-la-relacion-de-pareja': 'Cómo Afecta Emigrar a la Pareja | Centro Amaré',
+      '/blog/cuanto-cuesta-una-terapia-de-pareja-en-el-salvador': 'Cuánto Cuesta una Terapia de Pareja en El Salvador | Amaré',
+      '/blog/como-poner-limites-a-tu-familia-desde-la-distancia': 'Poner Límites a la Familia a la Distancia | Centro Amaré',
+      '/privacidad': 'Política de Privacidad y Secreto Profesional | Centro Amaré',
+      '/cookies': 'Política de Cookies y Privacidad Digital | Centro Amaré'
     };
     if (titles[cleanPath]) {
       document.title = titles[cleanPath];
@@ -310,11 +314,6 @@ function App({ initialPath = '/' }) {
   // ── Landing Page Principal (Estructurada para Máxima Conversión) ─
   return (
     <div className="app-wrapper">
-      {/* Enlace accesible para saltar navegación (WCAG AA) */}
-      <a href="#main-content" className="skip-link">
-        Saltar al contenido principal
-      </a>
-
       {/* ── Datos estructurados JSON-LD (SEO + GEO) ─── */}
       <SchemaMarkup />
 

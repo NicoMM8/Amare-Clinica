@@ -9,6 +9,7 @@ export function LivingLink({
   className = '',
   target,
   rel,
+  onClick,
   style = {}
 }) {
   const [hovered, setHovered] = useState(false);
@@ -21,6 +22,7 @@ export function LivingLink({
       href={href}
       target={target || (isExternal ? "_blank" : undefined)}
       rel={effectiveRel}
+      onClick={onClick}
       className={`v-living-link ${className}`}
       style={{
         display: 'inline-flex',

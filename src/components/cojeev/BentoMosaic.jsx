@@ -1,6 +1,7 @@
 import React from 'react';
 import { HeartHandshake, Brain, Globe, Sparkles } from 'lucide-react';
 import { LivingLink } from './LivingLink';
+import { trackWhatsAppClick } from '../../lib/analytics';
 
 export function BentoMosaic() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiéramos empezar con una primera conversación de 30 min sin costo con el equipo de Centro Amaré.");
@@ -123,7 +124,12 @@ export function BentoMosaic() {
             </div>
 
             <div style={{ paddingTop: '20px' }}>
-              <LivingLink href={whatsappUrl} target="_blank" style={{ color: '#FFFFFF' }}>
+              <LivingLink
+                href={whatsappUrl}
+                target="_blank"
+                onClick={() => trackWhatsAppClick('bento_anxiety', 'Aprende a calmar tu mente')}
+                style={{ color: '#FFFFFF' }}
+              >
                 Aprende a calmar tu mente
               </LivingLink>
             </div>
@@ -204,6 +210,7 @@ export function BentoMosaic() {
                 href={whatsappUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('bento_first_chat', '30 min sin costo')}
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',

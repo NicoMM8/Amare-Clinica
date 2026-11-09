@@ -2,10 +2,13 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp';
+import { trackWhatsAppClick } from '../../lib/analytics';
+import { BLOG_POST_BY_SLUG } from '../../data/blogMeta';
 import { ArrowLeft, Clock, DollarSign, CheckCircle2, MessageCircle, AlertCircle } from 'lucide-react';
 
 export default function BlogPostPreciosTerapia() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí la guía de precios de terapia de pareja en Centro Amaré y quisiera agendar la sesión inicial gratuita de 30 minutos.");
+  const postMeta = BLOG_POST_BY_SLUG['cuanto-cuesta-una-terapia-de-pareja-en-el-salvador'];
 
   return (
     <div className="app-wrapper">
@@ -31,11 +34,11 @@ export default function BlogPostPreciosTerapia() {
             </h1>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap', fontSize: '13.5px', color: 'var(--color-ink-muted)', paddingBottom: '24px', borderBottom: '1px solid var(--border-subtle)' }}>
-              <span>Por <strong>Lic. Iris Alarcón</strong> (Registro JVPP El Salvador)</span>
+              <span>Por <strong>Mtra. Iris Alarcón</strong> (Registro JVPP El Salvador)</span>
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> 5 min de lectura</span>
               <span>•</span>
-              <span>Actualizado 2026</span>
+              <time dateTime={postMeta.dateModified}>{postMeta.dateLabel}</time>
             </div>
           </div>
         </section>
@@ -47,11 +50,11 @@ export default function BlogPostPreciosTerapia() {
             <div className="article-body" style={{ fontSize: '17px', lineHeight: 1.8, color: 'var(--color-ink-primary)' }}>
               
               <p style={{ fontSize: '19px', color: 'var(--color-plum-900)', fontWeight: 500, lineHeight: 1.6, marginBottom: '24px' }}>
-                Una de las preguntas más frecuentes antes de dar el paso hacia la terapia es: <em>¿cuánto me va a costar realmente?</em> En El Salvador y para quienes residen fuera en Estados Unidos o Canadá, la falta de información transparente genera incertidumbre y muchas parejas retrasan su atención por temor a incurrir en gastos inasumibles.
+                Una de las preguntas más frecuentes antes de dar el paso hacia la terapia es: <em>¿cuánto me va a costar realmente?</em> En El Salvador y para quienes residen fuera en Estados Unidos o Canadá, la falta de información clara genera incertidumbre y muchas parejas retrasan su atención por temor a incurrir en gastos inasumibles.
               </p>
 
               <p>
-                En esta guía desglosamos los costos promedio del mercado salvadoreño en 2026, los honorarios de clínicas presenciales, plataformas internacionales y cómo nuestro modelo de plan mensual hace que la salud mental sea accesible y sostenible.
+                En esta guía desglosamos los costos promedio del mercado salvadoreño en 2026, los honorarios de clínicas presenciales, plataformas internacionales y cómo nuestro modelo de planes mensuales adaptados por país hace que la salud mental sea accesible y sostenible.
               </p>
 
               <h2 className="font-serif" style={{ fontSize: '26px', color: 'var(--color-plum-900)', marginTop: '36px', marginBottom: '16px' }}>
@@ -89,8 +92,8 @@ export default function BlogPostPreciosTerapia() {
                     </tr>
                     <tr style={{ background: 'var(--color-canvas)' }}>
                       <td style={{ padding: '12px', fontWeight: 700, color: 'var(--color-plum-900)' }}>Centro Amaré (Plan Mensual Especializado)</td>
-                      <td style={{ padding: '12px', fontWeight: 700, color: 'var(--color-clay)' }}>$25 USD / sesión</td>
-                      <td style={{ padding: '12px', fontWeight: 700, color: 'var(--color-clay)' }}>$100 USD / mes (hasta 4 sesiones)</td>
+                      <td style={{ padding: '12px', fontWeight: 700, color: 'var(--color-clay)' }}>Según país y modalidad</td>
+                      <td style={{ padding: '12px', fontWeight: 700, color: 'var(--color-clay)' }}>1ª sesión gratis ($0) · Plan mensual adaptado (hasta 4 ses.)</td>
                     </tr>
                   </tbody>
                 </table>
@@ -107,23 +110,23 @@ export default function BlogPostPreciosTerapia() {
               </p>
 
               <h2 className="font-serif" style={{ fontSize: '26px', color: 'var(--color-plum-900)', marginTop: '36px', marginBottom: '16px' }}>
-                3. El modelo de Centro Amaré: Tarifa fija y primera sesión gratis
+                3. El modelo de Centro Amaré: Arancel adaptado por país y primera sesión gratis
               </h2>
               <p>
-                Para eliminar la incertidumbre, en <a href="/" style={{ color: 'var(--color-clay)', fontWeight: 600 }}>Centro Amaré</a> hemos estructurado un esquema transparente:
+                Para eliminar la incertidumbre, en <a href="/" style={{ color: 'var(--color-clay)', fontWeight: 600 }}>Centro Amaré</a> hemos estructurado un esquema claro:
               </p>
               <ul style={{ paddingLeft: '24px', marginBottom: '24px' }}>
                 <li style={{ marginBottom: '12px' }}>
-                  <strong>1ª Conversación Exploratoria (30 min): Sin costo ($0 USD).</strong> Sirve para que conozcan a la psicóloga Iris Alarcón, expongan su caso y comprueben si el espacio se ajusta a lo que necesitan antes de pagar un solo dólar.
+                  <strong>1ª Conversación Exploratoria (30 min): Sin costo ($0 USD).</strong> Sirve para que conozcan al especialista de Centro Amaré asignado a su caso, expongan su situación y definan el arancel mensual exacto adaptado a su país antes de pagar un solo dólar.
                 </li>
                 <li style={{ marginBottom: '12px' }}>
-                  <strong>Plan Mensual Fijo de $100 USD:</strong> Incluye hasta 4 sesiones mensuales de 50 a 60 minutos por Google Meet (lo que representa solo $25 USD por sesión).
+                  <strong>Planes Mensuales Adaptados (hasta 4 sesiones/mes):</strong> Sesiones de 50 a 60 minutos por Google Meet con una cuota ajustada de forma justa según si resides en El Salvador o en el exterior y tu modalidad clínica.
                 </li>
                 <li style={{ marginBottom: '12px' }}>
                   <strong>Sin contratos de permanencia:</strong> Se abona mes a mes. Pueden pausar o cerrar el proceso cuando hayan alcanzado los objetivos clínicos.
                 </li>
                 <li style={{ marginBottom: '12px' }}>
-                  <strong>Pagos seguros internacionales:</strong> Aceptamos tarjetas internacionales de crédito/débito y transferencias bancarias en El Salvador (Banco Agrícola, BAC, Cuscatlán).
+                  <strong>Pagos seguros internacionales:</strong> Aceptamos tarjetas internacionales de crédito/débito, PayPal, Zelle y transferencias bancarias en El Salvador (Banco Agrícola, BAC, Cuscatlán).
                 </li>
               </ul>
 
@@ -140,6 +143,7 @@ export default function BlogPostPreciosTerapia() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick('blog_cta', 'cuanto-cuesta-una-terapia-de-pareja-en-el-salvador')}
                     className="btn-primary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >
@@ -151,7 +155,7 @@ export default function BlogPostPreciosTerapia() {
                     className="btn-secondary"
                     style={{ textDecoration: 'none', padding: '12px 24px' }}
                   >
-                    <span>Ver tabla completa de honorarios</span>
+                    <span>Ver modalidades y formas de pago</span>
                   </a>
                 </div>
               </div>

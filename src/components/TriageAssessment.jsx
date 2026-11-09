@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import { HeroButton } from "@/components/ui/hero-button";
+import { trackEvent, trackWhatsAppClick } from "@/lib/analytics";
 
 export function QuestionnaireExample({
   variant = "journey",
@@ -26,6 +27,7 @@ export function QuestionnaireExample({
   const [saved, setSaved] = React.useState(false);
   const headings = React.useRef([]);
   const focusNext = React.useRef(false);
+  const trackedStartRef = React.useRef(false);
 
   const presentation =
     variant === "journey" || variant === "worksheet" ? variant : "stacked";
@@ -114,11 +116,16 @@ export function QuestionnaireExample({
   const startAgain = () => {
     setAnswers(["", "", ""]);
     setSaved(false);
+    trackedStartRef.current = false;
     move(0);
   };
 
   const save = () => {
     if (completed < totalQuestions) return;
+    trackEvent('triage_complete', {
+      triage_name: 'triage_assessment',
+      modality: answers[0] || 'unspecified',
+    });
     setSaved(true);
   };
 
@@ -204,6 +211,13 @@ Me gustaría coordinar mi sesión inicial gratuita de 30 minutos por Google Meet
                         aria-describedby={`${id}-hint-${index}`}
                         value={answers[index]}
                         onValueChange={(value) => {
+                          if (!trackedStartRef.current) {
+                            trackedStartRef.current = true;
+                            trackEvent('triage_start', {
+                              triage_name: 'triage_assessment',
+                              first_step: index + 1,
+                            });
+                          }
                           setAnswers((current) =>
                             current.map((answer, position) =>
                               position === index ? value : answer,
@@ -300,7 +314,7 @@ Me gustaría coordinar mi sesión inicial gratuita de 30 minutos por Google Meet
                     Tu perfil clínico está listo para ser valorado.
                   </h3>
                   <p style={{ fontSize: "15px", lineHeight: 1.6, color: "var(--v-text-2)" }}>
-                    Hemos configurado tu pre-evaluación según tus respuestas. En la sesión inicial de 30 minutos por Google Meet, la psicóloga te explicará la hoja de ruta terapéutica y responderá todas tus dudas sin compromiso.
+                    Hemos configurado tu pre-evaluación según tus respuestas. En la sesión inicial de 30 minutos por Google Meet, el especialista de nuestro equipo asignado a tu caso te explicará la hoja de ruta terapéutica y responderá todas tus dudas sin compromiso.
                   </p>
                 </div>
 
@@ -335,6 +349,7 @@ Me gustaría coordinar mi sesión inicial gratuita de 30 minutos por Google Meet
                     href={getWhatsAppSummary()}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick('triage_result', answers[0] || 'triage')}
                   >
                     <span>Enviar respuestas y coordinar 30 min sin costo</span>
                   </HeroButton>

@@ -25,3 +25,17 @@ dist-ssr
 
 # Raw design assets / brand book (kept locally, not needed in production)
 Brand Book Centro Amaré/
+
+# AI agent skills & local tooling (kept locally, not versioned)
+.agents/skills/
+.agents/mcp_config.json
+skills-lock.json
+.claude/
+.cursor/
+.gemini/
+
+# Vercel local cache & environment variables
+.vercel
+.env
+.env.*
+!.env.example

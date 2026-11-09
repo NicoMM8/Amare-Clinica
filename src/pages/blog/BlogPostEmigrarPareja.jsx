@@ -2,11 +2,14 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp';
+import { trackWhatsAppClick } from '../../lib/analytics';
+import { BLOG_POST_BY_SLUG } from '../../data/blogMeta';
 import { HeroButton } from '../../components/ui/hero-button';
 import { ArrowLeft, Clock, ShieldCheck, HeartHandshake, CheckCircle2, MessageCircle } from 'lucide-react';
 
 export default function BlogPostEmigrarPareja() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, leí el artículo sobre migración y pareja en Centro Amaré y me gustaría agendar la sesión gratuita de 30 minutos.");
+  const postMeta = BLOG_POST_BY_SLUG['como-afecta-emigrar-a-la-relacion-de-pareja'];
 
   return (
     <div className="app-wrapper">
@@ -32,11 +35,11 @@ export default function BlogPostEmigrarPareja() {
             </h1>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap', fontSize: '13.5px', color: 'var(--color-ink-muted)', paddingBottom: '24px', borderBottom: '1px solid var(--border-subtle)' }}>
-              <span>Por <strong>Lic. Iris Alarcón</strong> (Registro JVPP El Salvador)</span>
+              <span>Por <strong>Mtra. Iris Alarcón</strong> (Registro JVPP El Salvador)</span>
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> 6 min de lectura</span>
               <span>•</span>
-              <span>Actualizado 2026</span>
+              <time dateTime={postMeta.dateModified}>{postMeta.dateLabel}</time>
             </div>
           </div>
         </section>
@@ -116,13 +119,14 @@ export default function BlogPostEmigrarPareja() {
                   ¿Están viviendo este desgaste en su relación?
                 </h3>
                 <p style={{ fontSize: '15.5px', color: 'var(--color-ink-secondary)', maxWidth: '580px', margin: '0 auto 24px', lineHeight: 1.6 }}>
-                  En Centro Amaré ofrecemos terapia de pareja online con horarios vespertinos y de fin de semana adaptados a EST/CST/PST (Estados Unidos y Canadá) y CET (España), con la psicóloga clínica Iris Alarcón, acreditada ante la JVPP (Reg. N.º 6380).
+                  En Centro Amaré ofrecemos terapia de pareja online con horarios vespertinos y de fin de semana adaptados a EST/CST/PST (Estados Unidos y Canadá) y CET (España), con nuestro equipo clínico liderado por la Mtra. Iris Alarcón, acreditada ante la JVPP (Reg. N.º 6380).
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
                   <a
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick('blog_cta', 'como-afecta-emigrar-a-la-relacion-de-pareja')}
                     className="btn-primary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}
                   >

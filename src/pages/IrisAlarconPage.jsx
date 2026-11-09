@@ -27,7 +27,7 @@ export default function IrisAlarconPage() {
               <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 4.5vw, 54px)', lineHeight: 1.18, color: 'var(--color-plum-900)', marginBottom: '22px' }}>
                 Psicóloga Iris Alarcón · El Salvador <br />
                 <span style={{ fontStyle: 'italic', color: 'var(--color-clay)' }}>
-                  Terapeuta de Pareja Certificada y Sexología Clínica
+                  Especialista en Terapia de Pareja y Sexología Clínica
                 </span>
               </h1>
 
@@ -98,7 +98,7 @@ export default function IrisAlarconPage() {
                       <source srcSet="/images/iris-alarcon.webp" type="image/webp" />
                       <img
                         src="/images/iris-alarcon.jpg"
-                        alt="Licda. Iris Alarcón — Psicóloga Clínica Colegiada JVPP El Salvador"
+                        alt="Mtra. Iris Alarcón — Psicóloga Clínica Colegiada JVPP El Salvador"
                         width="180"
                         height="180"
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -106,7 +106,7 @@ export default function IrisAlarconPage() {
                     </picture>
                   </div>
                   <h2 className="font-serif" style={{ fontSize: '24px', color: 'var(--color-plum-900)', marginBottom: '4px' }}>
-                    Lic. Iris Alarcón
+                    Mtra. Iris Alarcón
                   </h2>
                   <p style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-clay)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '14px' }}>
                     Psicóloga Clínica Colegiada · Registro JVPP N.º 6380 El Salvador
@@ -152,6 +152,7 @@ export default function IrisAlarconPage() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick('page_iris_mid', 'Hablar con Iris')}
                   className="btn-primary"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}
                 >

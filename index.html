@@ -4,53 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ═══════════════════════════════════════════════
-         ANALYTICS & PRIVACIDAD (Google Tag Manager & Clarity)
-    ═══════════════════════════════════════════════ -->
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TX23HRJH');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Microsoft Clarity (Bing Webmaster Tools) -->
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "z3w27l9jr8");
-    </script>
-
+    <!-- ANALYTICS & PRIVACIDAD (Consent Mode v2 + DNT/GPC + GTM-TX23HRJH) -->
     <script>
-      window.__DNT_ACTIVE__ = (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-7RM70HX1YH');
+      (function() {
+        var dnt = (
+          navigator.doNotTrack === '1' ||
+          window.doNotTrack === '1' ||
+          navigator.globalPrivacyControl === true
+        );
+        window.__DNT_ACTIVE__ = dnt;
 
-      function __initThirdParties__() {
-        if (window.__THIRD_PARTIES_LOADED__) return;
-        window.__THIRD_PARTIES_LOADED__ = true;
+        var storedConsent = null;
+        try {
+          storedConsent = localStorage.getItem('amare_cookie_consent');
+        } catch (e) {}
 
-        // Cargar Google Analytics 4 directo de apoyo
-        var ga4 = document.createElement('script');
-        ga4.async = true;
-        ga4.src = 'https://www.googletagmanager.com/gtag/js?id=G-7RM70HX1YH';
-        document.head.appendChild(ga4);
-      }
+        var analyticsGranted = !dnt && storedConsent === 'accepted';
+        var canLoadContainer = !dnt && storedConsent !== 'declined';
 
-      // Cargar tras primera interacción o cuando la CPU esté libre (preserva 100% Core Web Vitals)
-      ['scroll', 'touchstart', 'pointerdown', 'click', 'keydown'].forEach(function(ev) {
-        window.addEventListener(ev, __initThirdParties__, { once: true, passive: true });
-      });
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(function() { setTimeout(__initThirdParties__, 5000); }, { timeout: 8000 });
-      } else {
-        window.addEventListener('load', function() { setTimeout(__initThirdParties__, 5000); });
-      }
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() { window.dataLayer.push(arguments); };
+        window.gtag('consent', 'default', {
+          analytics_storage: analyticsGranted ? 'granted' : 'denied',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          wait_for_update: canLoadContainer ? 500 : 0
+        });
+
+        window.clarity = window.clarity || function() {
+          (window.clarity.q = window.clarity.q || []).push(arguments);
+        };
+        window.clarity('consentv2', {
+          analytics_storage: analyticsGranted ? 'granted' : 'denied',
+          ad_storage: 'denied'
+        });
+
+        window.__loadAmareGTM = function __loadAmareGTM() {
+          if (window.__GTM_LOADED__) return;
+          var currentConsent = null;
+          try {
+            currentConsent = localStorage.getItem('amare_cookie_consent');
+          } catch (e) {}
+          if (window.__DNT_ACTIVE__ || currentConsent === 'declined') return;
+
+          window.__GTM_LOADED__ = true;
+          window.dataLayer.push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+          });
+
+          var firstScript = document.getElementsByTagName('script')[0];
+          var gtmScript = document.createElement('script');
+          gtmScript.async = true;
+          gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TX23HRJH';
+          if (firstScript && firstScript.parentNode) {
+            firstScript.parentNode.insertBefore(gtmScript, firstScript);
+          } else {
+            document.head.appendChild(gtmScript);
+          }
+        };
+
+        if (canLoadContainer) {
+          ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function(ev) {
+            window.addEventListener(ev, window.__loadAmareGTM, { once: true, passive: true, capture: true });
+          });
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(function() {
+              setTimeout(window.__loadAmareGTM, 1200);
+            }, { timeout: 2500 });
+          } else {
+            window.addEventListener('load', function() {
+              setTimeout(window.__loadAmareGTM, 1200);
+            });
+          }
+        }
+      })();
     </script>
 
     <!-- ═══════════════════════════════════════════════
@@ -91,6 +120,25 @@
             required: ["nombre"]
           },
           execute: function(params) {
+            try {
+              var consentNow = null;
+              try { consentNow = localStorage.getItem('amare_cookie_consent'); } catch (e) {}
+              if (!window.__DNT_ACTIVE__ && consentNow !== 'declined') {
+                var modality = (params && typeof params.modalidad === 'string' && params.modalidad) ? params.modalidad : 'unspecified';
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                  event: 'webmcp_booking_intent',
+                  modality: modality,
+                  method: 'webmcp'
+                });
+                if (typeof window.gtag === 'function') {
+                  window.gtag('event', 'webmcp_booking_intent', {
+                    modality: modality,
+                    method: 'webmcp'
+                  });
+                }
+              }
+            } catch (e) {}
             var msg = encodeURIComponent("Hola, me gustaría agendar la sesión inicial de orientación clínica en Centro Amaré.");
             window.open("https://wa.me/50373184781?text=" + msg, "_blank");
             return Promise.resolve({
@@ -104,21 +152,20 @@
 
         var consultarPreciosTool = {
           name: "consultar_tarifas_y_planes",
-          description: "Obtener las tarifas transparentes de terapia psicológica en El Salvador con psicólogos colegiados JVPP",
+          description: "Consultar cómo funcionan la 1ª sesión gratuita y los planes mensuales adaptados por país de Centro Amaré (psicólogos colegiados JVPP El Salvador)",
           inputSchema: {
             type: "object",
             properties: {
-              servicio: { type: "string", enum: ["terapia_pareja", "terapia_individual", "sexologia_clinica"], description: "Tipo de servicio a cotizar" }
+              servicio: { type: "string", enum: ["terapia_pareja", "terapia_individual", "sexologia_clinica"], description: "Tipo de servicio a consultar" }
             }
           },
           execute: function(params) {
             return Promise.resolve({
               moneda: "USD (Dólares)",
-              sesion_individual: "$35 - $45 por sesión",
-              sesion_pareja: "$45 - $55 por sesión",
-              primera_sesion: "30 minutos de cortesía y encuadre clínico inicial",
-              credenciales: "Psicólogos colegiados con acreditación oficial de la Junta de Vigilancia de la Profesión Psicológica (JVPP El Salvador)",
-              reembolso_seguros: "Se entregan facturas y constancias médicas para reembolso en aseguradoras privadas"
+              primera_sesion: "30 minutos sin costo ($0 USD), sin compromiso ni tarjeta de crédito",
+              modelo_honorarios: "Planes mensuales adaptados según país de residencia (El Salvador o exterior), capacidad y modalidad clínica (hasta 4 sesiones/mes de 50-60 min). El arancel exacto se define de forma transparente en la primera llamada gratuita.",
+              credenciales: "Psicólogos colegiados con acreditación oficial de la Junta de Vigilancia de la Profesión en Psicología (JVPP El Salvador)",
+              reembolso_seguros: "Se entregan facturas y constancias médicas para reembolso en aseguradoras privadas (El Salvador, EE. UU. / superbills y Canadá)"
             });
           }
         };
@@ -144,10 +191,11 @@
     <link rel="apple-touch-icon" href="/favicon.png?v=3" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="api-catalog" type="application/linkset+json" href="/.well-known/api-catalog" />
     <link rel="ai-catalog" type="application/json" href="/.well-known/ai-catalog.json" />
     <link rel="help" type="text/plain" href="/llms.txt" />
     <link rel="auth-metadata" type="text/markdown" href="/auth.md" />
-    <link rel="oauth-protected-resource" type="application/json" href="/.well-known/oauth-protected-resource" />
+    <link rel="alternate" type="application/rss+xml" title="Blog Clínico Centro Amaré" href="/rss.xml" />
     <meta name="theme-color" content="#231221" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -229,28 +277,6 @@
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" />
     </noscript>
-
-
-    <!-- ═══════════════════════════════════════════════
-         META PIXEL (Facebook / Instagram Ads)
-         ───────────────────────────────────────────────
-         ⚙️  Para activar: reemplaza XXXXXXXXXXXXXXXX por tu Pixel ID
-    ═══════════════════════════════════════════════ -->
-    <!--
-    <script>
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-      document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'XXXXXXXXXXXXXXXX');
-      fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXXX&ev=PageView&noscript=1"/>
-    </noscript>
-    -->
 
   </head>
   <body>

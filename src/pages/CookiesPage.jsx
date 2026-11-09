@@ -1,19 +1,19 @@
 import React from 'react';
 import { Shield, Cookie, CheckCircle2, ArrowLeft, MessageCircle, Settings, Eye } from 'lucide-react';
+import { resetAnalyticsConsent, trackWhatsAppClick } from '../lib/analytics';
 
 export default function CookiesPage() {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, tengo una pregunta sobre la privacidad y cookies de Centro Amaré.");
 
   const resetCookieConsent = () => {
     try {
-      localStorage.removeItem('amare_cookie_consent');
-      sessionStorage.removeItem('amare_cookie_consent');
+      resetAnalyticsConsent();
       const banner = document.getElementById('cookie-consent-banner');
       if (banner) {
         banner.style.display = 'block';
         document.body.classList.add('has-cookie-banner');
       }
-      alert('Tus preferencias de cookies han sido restablecidas. Puedes volver a configurarlas en el aviso inferior.');
+      alert('Tus preferencias de cookies han sido restablecidas y la analítica opcional quedó pausada hasta que vuelvas a elegir en el aviso inferior.');
     } catch {
       // ignore
     }
@@ -288,6 +288,7 @@ export default function CookiesPage() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
+            onClick={() => trackWhatsAppClick('page_cookies_cta', 'Consultar privacidad cookies')}
             style={{
               textDecoration: 'none',
               display: 'inline-flex',

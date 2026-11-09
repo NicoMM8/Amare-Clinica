@@ -8,7 +8,7 @@ const marqueeItems = [
   { icon: ShieldCheck, text: "Respaldo Clínico Oficial · Registro JVPP El Salvador" },
   { icon: Heart, text: "Terapia de Pareja, Individual y Sexología Clínica" },
   { icon: Sparkles, text: "1ª conversación (30 min sin costo)" },
-  { icon: Clock, text: "Plan mensual sin permanencia ($100 USD / mes)" },
+  { icon: Clock, text: "Planes mensuales adaptados por país · Sin permanencia" },
   { icon: CheckCircle, text: "Sin traducir tus emociones ni justificar tus raíces" },
 ];
 

@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import { grantAnalyticsConsent, denyAnalyticsConsent } from './lib/analytics'
 
 const rootElement = document.getElementById('root')
 
@@ -37,14 +38,14 @@ if (typeof window !== 'undefined') {
     const declineBtn = document.getElementById('decline-cookies-btn')
     if (acceptBtn) {
       acceptBtn.addEventListener('click', () => {
-        localStorage.setItem('amare_cookie_consent', 'accepted')
+        grantAnalyticsConsent()
         banner.style.display = 'none'
         document.body.classList.remove('has-cookie-banner')
       })
     }
     if (declineBtn) {
       declineBtn.addEventListener('click', () => {
-        localStorage.setItem('amare_cookie_consent', 'declined')
+        denyAnalyticsConsent()
         banner.style.display = 'none'
         document.body.classList.remove('has-cookie-banner')
       })

@@ -5,6 +5,7 @@ import { Globe, HeartHandshake, ShieldCheck, Sparkles, Mail } from 'lucide-react
 import { PigmentAtmosphere } from './cojeev/PigmentAtmosphere';
 import { HeroButton } from './cojeev/HeroButton';
 import QuickContactModal from './QuickContactModal';
+import { trackEvent, trackWhatsAppClick } from '../lib/analytics';
 
 function WhatsAppIcon({ size = 20, className = "" }) {
   return (
@@ -126,7 +127,7 @@ export default function Hero() {
                 maxWidth: '520px' 
               }}
             >
-              Centro Amaré es la clínica de psicología y terapia de pareja para salvadoreños en el país y en el exterior. Para hablar de lo difícil en tu idioma, con método científico y profesionales colegiadas al otro lado.
+              Centro Amaré es la clínica de psicología y terapia de pareja para salvadoreños en el país y en el exterior. Para hablar de lo difícil en tu idioma, con método científico y psicólogos clínicos colegiados al otro lado.
             </p>
 
             {/* Social Proof / Rating */}
@@ -168,6 +169,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="whatsapp"
+                  onClick={() => trackWhatsAppClick('hero_primary', 'WhatsApp directo')}
                   style={{
                     height: '52px',
                     padding: '0 24px',
@@ -200,43 +202,46 @@ export default function Hero() {
                 1ª sesión de 30 min gratis con el equipo clínico · Sin compromiso ni costo
               </span>
 
-              <div style={{ marginTop: '6px' }}>
+              <div style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 <button
                   type="button"
-                  onClick={() => setIsModalOpen(true)}
+                  onClick={() => {
+                    trackEvent('lead_form_open', { form_name: 'quick_contact_modal', location: 'hero' });
+                    setIsModalOpen(true);
+                  }}
                   style={{
                     background: 'none',
                     border: 'none',
                     padding: 0,
                     color: 'var(--color-clay, #B75940)',
-                    fontSize: '13px',
+                    fontSize: '13.5px',
                     fontWeight: 600,
                     textDecoration: 'underline',
                     textUnderlineOffset: '3px',
                     cursor: 'pointer',
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '5px',
+                    gap: '6px',
                     fontFamily: 'inherit',
                   }}
                 >
-                  <Mail size={13} />
-                  <span>¿Prefieres que te contactemos por WhatsApp? Déjanos tus datos aquí</span>
+                  <Mail size={14} />
+                  <span>¿En computadora o prefieres que te escribamos? Déjanos tus datos aquí</span>
                 </button>
-              </div>
 
-              <div style={{ marginTop: '14px', fontSize: '13.5px', color: 'var(--color-ink-secondary)' }}>
-                ¿Buscas apoyo individual para ti?{' '}
-                <a
-                  href="/terapia-individual"
-                  style={{
-                    color: 'var(--color-clay)',
-                    fontWeight: 600,
-                    textDecoration: 'underline',
-                  }}
-                >
-                  También atendemos ansiedad, límites familiares y autoestima →
-                </a>
+                <div style={{ fontSize: '13px', color: 'var(--color-ink-secondary)' }}>
+                  ¿Buscas terapia individual (ansiedad, límites o duelo)?{' '}
+                  <a
+                    href="/terapia-individual"
+                    style={{
+                      color: 'var(--color-plum-900)',
+                      fontWeight: 600,
+                      textDecoration: 'underline',
+                    }}
+                  >
+                    Ver atención individual →
+                  </a>
+                </div>
               </div>
             </div>
 

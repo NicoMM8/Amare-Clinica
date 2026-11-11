@@ -107,7 +107,13 @@ export default function TerapiaParejaPage() {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+              gap: '24px',
+              maxWidth: '960px',
+              margin: '0 auto'
+            }}>
               {reasons.map((r, i) => (
                 <div key={i} className="card-panel" style={{ padding: '28px' }}>
                   <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'var(--color-clay-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
@@ -229,7 +235,7 @@ export default function TerapiaParejaPage() {
         </section>
       </main>
 
-      <Footer />
+      <Footer hideBanner={true} />
       <FloatingWhatsApp />
     </div>
   );

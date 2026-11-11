@@ -963,7 +963,7 @@ export default function SobreNosotrosPage() {
 
       </main>
 
-      <Footer />
+      <Footer hideBanner={true} />
       <FloatingWhatsApp />
     </div>
   );

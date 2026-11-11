@@ -2,50 +2,52 @@ import React from 'react';
 import { ArrowUpRight, MessageCircle, Shield } from 'lucide-react';
 import { trackWhatsAppClick } from '../lib/analytics';
 
-export default function Footer() {
+export default function Footer({ hideBanner = false }) {
   const whatsappUrl = "https://wa.me/50373184781?text=" + encodeURIComponent("Hola, quisiera dar el primer paso y agendar una primera conversación.");
 
   return (
-    <footer style={{ background: 'var(--color-plum-900)', color: '#FFFFFF', paddingTop: '72px', paddingBottom: '40px' }}>
+    <footer style={{ background: 'var(--color-plum-900)', color: '#FFFFFF', paddingTop: hideBanner ? '56px' : '72px', paddingBottom: '40px' }}>
       <div className="container">
         
         {/* Footer CTA Banner (Brand Guide) */}
-        <div style={{
-          background: 'rgba(255, 255, 255, 0.04)',
-          border: '1px solid rgba(255, 255, 255, 0.12)',
-          borderRadius: 'var(--r-2xl)',
-          padding: '44px 32px',
-          textAlign: 'center',
-          maxWidth: '780px',
-          margin: '0 auto 64px'
-        }}>
-          <h2 className="font-serif" style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', color: '#FFFFFF', marginBottom: '12px' }}>
-            No eres la única persona que atraviesa esto.
-          </h2>
-          <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '17px', marginBottom: '26px' }}>
-            Da el primer paso hacia relaciones más sanas.
-          </p>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackWhatsAppClick('footer_banner', 'Primera conversación')}
-            className="btn-clay"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '10px',
-              padding: '14px 28px',
-              borderRadius: 'var(--r-pill)',
-              color: '#FFFFFF',
-              fontWeight: 600,
-              fontSize: '15px',
-              textDecoration: 'none'
-            }}
-          >
-            <span>Empieza con una primera conversación</span>
-          </a>
-        </div>
+        {!hideBanner && (
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.04)',
+            border: '1px solid rgba(255, 255, 255, 0.12)',
+            borderRadius: 'var(--r-2xl)',
+            padding: '44px 32px',
+            textAlign: 'center',
+            maxWidth: '780px',
+            margin: '0 auto 64px'
+          }}>
+            <h2 className="font-serif" style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', color: '#FFFFFF', marginBottom: '12px' }}>
+              No eres la única persona que atraviesa esto.
+            </h2>
+            <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '17px', marginBottom: '26px' }}>
+              Da el primer paso hacia relaciones más sanas.
+            </p>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('footer_banner', 'Primera conversación')}
+              className="btn-clay"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '14px 28px',
+                borderRadius: 'var(--r-pill)',
+                color: '#FFFFFF',
+                fontWeight: 600,
+                fontSize: '15px',
+                textDecoration: 'none'
+              }}
+            >
+              <span>Empieza con una primera conversación</span>
+            </a>
+          </div>
+        )}
 
         {/* Main Footer Row */}
         <div style={{ 

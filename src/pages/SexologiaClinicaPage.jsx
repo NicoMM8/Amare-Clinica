@@ -12,19 +12,23 @@ export default function SexologiaClinicaPage() {
   const areas = [
     {
       title: "Discrepancia en el deseo sexual",
-      desc: "Ocurre cuando uno de los dos desea mayor intimidad que el otro. Te ayudamos a frenar la culpa, la presión y los silencios incómodos en la pareja."
+      desc: "Ocurre cuando uno de los dos desea mayor intimidad que el otro. Te ayudamos a frenar la culpa, la presión y los silencios incómodos en la pareja.",
+      icon: Heart
     },
     {
       title: "Dificultades y bloqueos íntimos",
-      desc: "Abordamos anorgasmia, dolor durante la relación, eyaculación rápida o disfunción eréctil. Aplicamos pautas psicológicas prácticas, sin fármacos invasivos ni exámenes físicos."
+      desc: "Abordamos anorgasmia, dolor durante la relación, eyaculación rápida o disfunción eréctil. Aplicamos pautas psicológicas prácticas, sin fármacos invasivos ni exámenes físicos.",
+      icon: ShieldCheck
     },
     {
       title: "Reconexión tras etapas de crisis",
-      desc: "Recupera la cercanía y el erotismo con tu pareja después de tener hijos, periodos de estrés laboral o tras superar una infidelidad."
+      desc: "Recupera la cercanía y el erotismo con tu pareja después de tener hijos, periodos de estrés laboral o tras superar una infidelidad.",
+      icon: Sparkles
     },
     {
       title: "Espacio privado y libre de tabúes",
-      desc: "Conversa con tranquilidad sobre dudas íntimas, comunicación erótica y acuerdos de pareja. Un entorno profesional, laico y 100% confidencial."
+      desc: "Conversa con tranquilidad sobre dudas íntimas, comunicación erótica y acuerdos de pareja. Un entorno profesional, laico y 100% confidencial.",
+      icon: Lock
     }
   ];
 
@@ -149,17 +153,38 @@ export default function SexologiaClinicaPage() {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
-              {areas.map((a, i) => (
-                <div key={i} className="card-panel" style={{ padding: '28px', background: '#FFFFFF', borderRadius: '20px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-sm)' }}>
-                  <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '10px' }}>
-                    {a.title}
-                  </h3>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
-                    {a.desc}
-                  </p>
-                </div>
-              ))}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+              gap: '24px',
+              maxWidth: '960px',
+              margin: '0 auto'
+            }}>
+              {areas.map((a, i) => {
+                const IconComponent = a.icon;
+                return (
+                  <div key={i} className="card-panel" style={{ padding: '28px', background: '#FFFFFF', borderRadius: '20px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-sm)' }}>
+                    <div style={{
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: '12px',
+                      background: 'var(--color-clay-subtle)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '16px'
+                    }}>
+                      <IconComponent size={20} style={{ color: 'var(--color-clay)' }} />
+                    </div>
+                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '10px' }}>
+                      {a.title}
+                    </h3>
+                    <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                      {a.desc}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
 
             {/* Enlace al artículo de blog de apoyo */}
@@ -230,7 +255,7 @@ export default function SexologiaClinicaPage() {
         </section>
       </main>
 
-      <Footer />
+      <Footer hideBanner={true} />
       <FloatingWhatsApp />
     </div>
   );

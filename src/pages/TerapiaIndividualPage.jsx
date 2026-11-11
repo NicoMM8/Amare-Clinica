@@ -12,19 +12,23 @@ export default function TerapiaIndividualPage() {
   const problems = [
     {
       title: "Ansiedad, estrés y agotamiento (Clínica Antiestrés)",
-      desc: "Rumiación nocturna constante, hipervigilancia, crisis de pánico, miedo al futuro y dificultad para desconectar la mente del trabajo y el estrés cotidiano."
+      desc: "Rumiación nocturna constante, hipervigilancia, crisis de pánico, miedo al futuro y dificultad para desconectar la mente del trabajo y el estrés cotidiano.",
+      icon: Brain
     },
     {
       title: "Poner límites y superar la culpa",
-      desc: "Dificultad para decir 'no', miedo al rechazo o abandono, asumir culpas ajenas y desgaste emocional severo por priorizar siempre las demandas de los demás."
+      desc: "Dificultad para decir 'no', miedo al rechazo o abandono, asumir culpas ajenas y desgaste emocional severo por priorizar siempre las demandas de los demás.",
+      icon: ShieldCheck
     },
     {
       title: "Rupturas amorosas, duelo y apego afectivo",
-      desc: "Procesar el dolor de una separación, desarmar apegos dependientes y reconstruir la identidad personal con herramientas clínicas estructuradas."
+      desc: "Procesar el dolor de una separación, desarmar apegos dependientes y reconstruir la identidad personal con herramientas clínicas estructuradas.",
+      icon: Sparkles
     },
     {
       title: "Regulación emocional y depresión",
-      desc: "Tratamiento de la desmotivación profunda, apatía, autocrítica destructiva, síndrome del impostor y dificultades para encontrar sentido vital."
+      desc: "Tratamiento de la desmotivación profunda, apatía, autocrítica destructiva, síndrome del impostor y dificultades para encontrar sentido vital.",
+      icon: Clock
     }
   ];
 
@@ -149,17 +153,38 @@ export default function TerapiaIndividualPage() {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
-              {problems.map((p, i) => (
-                <div key={i} className="card-panel" style={{ padding: '28px', background: '#FFFFFF', borderRadius: '20px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-sm)' }}>
-                  <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '10px' }}>
-                    {p.title}
-                  </h3>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
-                    {p.desc}
-                  </p>
-                </div>
-              ))}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+              gap: '24px',
+              maxWidth: '960px',
+              margin: '0 auto'
+            }}>
+              {problems.map((p, i) => {
+                const IconComponent = p.icon;
+                return (
+                  <div key={i} className="card-panel" style={{ padding: '28px', background: '#FFFFFF', borderRadius: '20px', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-sm)' }}>
+                    <div style={{
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: '12px',
+                      background: 'var(--color-clay-subtle)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '16px'
+                    }}>
+                      <IconComponent size={20} style={{ color: 'var(--color-clay)' }} />
+                    </div>
+                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-plum-900)', marginBottom: '10px' }}>
+                      {p.title}
+                    </h3>
+                    <p style={{ fontSize: '14.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.6, margin: 0 }}>
+                      {p.desc}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
 
             {/* Enlaces de interés a guías clínicas */}
@@ -253,7 +278,7 @@ export default function TerapiaIndividualPage() {
         </section>
       </main>
 
-      <Footer />
+      <Footer hideBanner={true} />
       <FloatingWhatsApp />
     </div>
   );

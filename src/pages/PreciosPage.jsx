@@ -249,7 +249,7 @@ export default function PreciosPage() {
         </section>
       </main>
 
-      <Footer />
+      <Footer hideBanner={true} />
       <FloatingWhatsApp />
     </div>
   );

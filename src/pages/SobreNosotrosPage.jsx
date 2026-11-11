@@ -550,12 +550,12 @@ export default function SobreNosotrosPage() {
                   marginBottom: '28px' 
                 }}
               >
-                De un pequeño chalet familiar a un centro sin barreras de distancia
+                De una pequeña casa familiar a un centro sin barreras de distancia
               </h2>
 
               <div style={{ fontSize: '16.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '22px' }}>
                 <p>
-                  En el año <strong>2017</strong>, Centro Amaré nació como una pequeña consulta privada en San Salvador. Era apenas un despacho dentro de un chalet donde convivían otros proyectos de mi familia, cada quien empujando su propio emprendimiento. En aquel inicio, la identidad tenía colores púrpura y rojo, y el logo era un mándala dibujado con la ilusión de crear un espacio donde las personas fueran recibidas con verdadera dignidad.
+                  En el año <strong>2017</strong>, Centro Amaré nació como una pequeña consulta privada en San Salvador. Era apenas un despacho dentro de una casa familiar donde convivían otros proyectos de mi familia, cada quien empujando su propio emprendimiento. En aquel inicio, la identidad tenía colores púrpura y rojo, y el logo era un mándala dibujado con la ilusión de crear un espacio donde las personas fueran recibidas con verdadera dignidad.
                 </p>
 
                 <p>

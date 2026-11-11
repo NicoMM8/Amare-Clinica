@@ -103,7 +103,7 @@ export default function Testimonials() {
           </div>
 
           <h2 className="font-serif" style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: '16px', color: 'var(--color-plum-900)', lineHeight: 1.25 }}>
-            Experiencias reales de quienes se atendieron con Iris Alarcón
+            Experiencias reales de quienes se atendieron con Centro Amaré
           </h2>
 
           <p style={{ fontSize: '16.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.65, maxWidth: '680px', margin: '0 auto 24px' }}>

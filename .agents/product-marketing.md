@@ -12,7 +12,7 @@
 **What it does:** Ofrece acompañamiento psicoterapéutico online por videollamada cifrada (Google Meet) con psicólogos clínicos colegiados ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP), combinando un mismo código cultural salvadoreño con protocolos estructurados y un primer encuentro exploratorio gratuito de 30 minutos.
 **Product category:** Clínica de Psicología Clínica, Terapia de Pareja y Sexología Online (Telesalud / Salud Mental YMYL).
 **Product type:** Servicio profesional clínico B2C / Telepsicología ambulatoria para parejas y adultos (no es servicio de urgencias psiquiátricas).
-**Business model:** Sesión inicial exploratoria sin costo (`30 min`, `$0 USD`) → Planes mensuales adaptados sin permanencia obligatoria (hasta 4 sesiones mensuales de `50–60 min`) cotizados según país de residencia (El Salvador vs. diáspora en EE. UU., Canadá o Europa), modalidad y disponibilidad durante la llamada inicial de 30 min, con facturación clínica oficial JVPP apta para reembolso de seguros. *(Confirmado por dirección: sin precios fijos públicos por defecto; toda tarifa se acuerda antes de iniciar o realizar cualquier pago).*
+**Business model:** Sesión inicial exploratoria sin costo (`30 min`, `$0 USD`) → Planes mensuales adaptados sin permanencia obligatoria (hasta 4 sesiones mensuales de `50–60 min`) cotizados según país de residencia (El Salvador vs. diáspora en EE. UU., Canadá o Europa), modalidad y disponibilidad durante la llamada inicial de 30 min, con facturación clínica oficial con registro sanitario de la JVPP. *(Confirmado por dirección: sin precios fijos públicos por defecto; toda tarifa se acuerda antes de iniciar o realizar cualquier pago).*
 
 ---
 
@@ -39,7 +39,7 @@
 | Persona | What they care about | Challenge | Value we promise |
 |---|---|---|---|
 | **Pareja en El Salvador en crisis o desgaste** | Neutralidad del terapeuta ("que no tome bandos"), discreción absoluta y no perder horas en tráfico. | Postergar ayuda de 4 a 6 años hasta acumular resentimiento; miedo al costo o a que el terapeuta regañe. | Protocolo estructurado en 4 fases (IBCT + TCC), neutralidad clínica y 1ª sesión de 30 min gratis online por Google Meet. |
-| **Salvadoreño/a en la diáspora (EE. UU., Canadá, Europa)** | Terapeuta salvadoreño en su mismo código cultural, horarios nocturnos/fin de semana (`EST/CST/PST/CET`) y tarifa viable. | Terapia en inglés/francés se siente fría o ajena a sus raíces; honorarios locales de `\$150–\$250 USD/sesión` obligan a abandonar; culpa por remesas/límites. | Psicólogos colegiados en El Salvador en tu lengua materna y huso horario, con factura JVPP para reembolso *out-of-network* / *superbills*. |
+| **Salvadoreño/a en la diáspora (EE. UU., Canadá, Europa)** | Terapeuta salvadoreño en su mismo código cultural, horarios nocturnos/fin de semana (`EST/CST/PST/CET`) y tarifa viable. | Terapia en inglés/francés se siente fría o ajena a sus raíces; honorarios locales de `\$150–\$250 USD/sesión` obligan a abandonar; culpa por remesas/límites. | Psicólogos colegiados en El Salvador en tu lengua materna y huso horario, con factura profesional con registro legal y sanitario de la JVPP. |
 | **Consultante por iniciativa propia / Adulto individual** | Claridad mental, regulación emocional sin frases hechas de autoayuda y espacio seguro si la pareja no quiere ir todavía. | Querer empezar pero sentir rechazo de la pareja, miedo a dependencia eterna en terapia o confusión frente a coaching/psicoanálisis sin método. | Inicio individual vincular (TCC/DBT), metas claras y cierre planificado (`16–20` sesiones aprox. + refuerzo a los 3 meses). |
 
 ---
@@ -67,7 +67,7 @@
 - **Mismo código cultural y lengua materna:** Comprensión nativa de la familia salvadoreña, el duelo migratorio y la dinámica de remesas sin explicaciones extra.
 - **Respaldo sanitario legal verificable (JVPP / CSSP El Salvador):** Dirección Clínica de la Mtra. Iris Alarcón (`JVPP N.º 6380`, +9 años) supervisando protocolos junto a equipo clínico colegiado (`Lic. Ernesto Mejía JVPP 9314`, `Mtro. Rafael Franco JVPP 3856`).
 - **Enfoque basado en evidencia + cero dependencia:** Integración de IBCT, TCC, DBT y Sexología Clínica en 4 fases con cierre planificado y sesión de refuerzo a los 3 meses.
-- **Prueba sin riesgo + reembolso de seguros:** Primera sesión exploratoria de 30 min sin costo (`\$0`) y emisión de facturas/superbills con diagnóstico CIE-10/DSM-5 cuando la aseguradora lo exige.
+- **Prueba sin riesgo + facturación oficial:** Primera sesión exploratoria de 30 min sin costo (`\$0`) y emisión de facturas profesionales con registro sanitario oficial de la JVPP.
 **How we do it differently:** En lugar de sesiones sueltas interminables o charlas informales, se inicia con una valoración gratuita de 30 min para mapear el caso, asignar al profesional idóneo del equipo y continuar con un plan mensual estructurado con ejercicios entre sesiones.
 **Why that's better:** Reduce la barrera económica semanal, garantiza continuidad clínica durante las primeras 6–8 semanas críticas y adapta la atención a dos husos horarios distintos en simultáneo.
 **Why customers choose us:** Confianza en reseñas verificables (`5.0/5` en Psico.org), calidez salvadoreña unida a método científico claro, y facilidad para empezar por WhatsApp o autoevaluación previa sin costo.
@@ -80,7 +80,7 @@
 | *"Mi pareja no quiere venir a terapia o siente que lo van a regañar"* | La clínica trabaja con neutralidad estricta (sin bandos ni culpables). Pueden entrar a la 1ª conversación de 30 min sin costo solo para conocerse, o puedes iniciar terapia individual vincular (TCC/DBT) para recuperar claridad y límites. |
 | *"¿Cómo sé que no son coaches ni estafa online?"* | Todos los psicólogos cuentan con registro sanitario oficial verificable ante la JVPP / CSSP de El Salvador (`JVPP 6380`, `9314`, `3856`), atención clínica 100% online acreditada en El Salvador y reseñas públicas auditables en Psico.org. |
 | *"La terapia es muy cara o me va a amarrar meses"* | La 1ª sesión de 30 min es gratuita y sin tarjeta; el plan mensual no tiene permanencia mínima y el proceso busca el alta terapéutica autónoma (aprox. 16–20 sesiones), no retener indefinidamente. |
-| *"¿Y si mi seguro en EE. UU./Canadá/El Salvador cubre terapia?"* | Entregamos facturas y recibos detallados (*superbills*) con registro JVPP y codificación clínica para gestionar reembolsos *out-of-network* o en pólizas privadas. |
+| *"¿Emiten factura profesional con validez legal?"* | Entregamos facturas y recibos detallados con registro profesional y sanitario oficial de la JVPP (N.º 6380). |
 | *"Nuestros datos o lo que hablemos íntimamente puede filtrarse"* | Secreto profesional médico-sanitario regulado por ley salvadoreña, Google Meet cifrado y prohibición estricta de grabación sin consentimiento mutuo por escrito. |
 
 **Anti-persona:**

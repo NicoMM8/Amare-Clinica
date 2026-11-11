@@ -8,12 +8,7 @@ export default function CookiesPage() {
   const resetCookieConsent = () => {
     try {
       resetAnalyticsConsent();
-      const banner = document.getElementById('cookie-consent-banner');
-      if (banner) {
-        banner.style.display = 'block';
-        document.body.classList.add('has-cookie-banner');
-      }
-      alert('Tus preferencias de cookies han sido restablecidas y la analítica opcional quedó pausada hasta que vuelvas a elegir en el aviso inferior.');
+      alert('Tus preferencias de cookies y navegación han sido restablecidas correctamente.');
     } catch {
       // ignore
     }
@@ -244,7 +239,7 @@ export default function CookiesPage() {
                 ¿Deseas cambiar tu preferencia de consentimiento en esta web?
               </strong>
               <span style={{ fontSize: '13.5px', color: 'var(--color-ink-secondary)' }}>
-                Haz clic en el botón para borrar tu elección y volver a ver el aviso de cookies.
+                Haz clic en el botón para borrar cualquier preferencia temporal almacenada en tu navegador.
               </span>
             </div>
             <button

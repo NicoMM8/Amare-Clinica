@@ -17,8 +17,8 @@ export const FAQS = [
     a: "Ofrecemos métodos de pago directos, seguros y sin comisiones de remesa. Desde El Salvador aceptamos transferencias bancarias locales y tarjetas de crédito o débito. Desde Estados Unidos, Canadá y Europa pueden abonar sus sesiones en dólares (USD) mediante enlace de pago seguro con tarjeta internacional, evitando recargos por envío de dinero."
   },
   {
-    q: "¿Emiten factura médica para reembolso de seguro (en El Salvador, EE. UU. o Canadá)?",
-    a: "Sí. Al ser una clínica acreditada ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP N.º 6380), emitimos facturas y recibos clínicos detallados (superbills) con diagnóstico CIE-10/DSM-5 cuando la aseguradora lo requiere. Esto permite tramitar el reembolso en pólizas médicas privadas de El Salvador y en seguros de EE. UU. o Canadá con cobertura out-of-network."
+    q: "¿Emiten factura profesional con registro legal y sanitario?",
+    a: "Sí. Emitimos comprobantes y facturas clínicas detalladas con número de colegiación sanitaria oficial ante la Junta de Vigilancia de la Profesión en Psicología de El Salvador (JVPP N.º 6380), garantizando el ejercicio legal y bioético de la profesión."
   },
   {
     q: "¿Cómo funciona la primera conversación sin costo en Centro Amaré?",

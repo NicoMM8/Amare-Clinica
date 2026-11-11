@@ -257,7 +257,7 @@ function buildSubpageSchemas(route, cleanTitle) {
         {
           '@type': 'Offer',
           name: 'Planes Mensuales Adaptados por País (Hasta 4 sesiones al mes de 50-60 min)',
-          description: 'Planes mensuales flexibles válidos para terapia de pareja o individual en El Salvador y el exterior, sin permanencia mínima y con factura JVPP apta para reembolso.',
+          description: 'Planes mensuales flexibles válidos para terapia de pareja o individual en El Salvador y el exterior, sin permanencia mínima y con factura profesional oficial con registro JVPP.',
           url: route.canonical,
           availability: 'https://schema.org/OnlineOnly',
         },
@@ -288,7 +288,7 @@ function buildSubpageSchemas(route, cleanTitle) {
           name: '¿Hay permanencia mínima o penalización si decidimos pausar?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Ninguna. Se abona mes a mes e incluye la entrega de factura clínica oficial JVPP apta para reembolso de seguros privados. Pueden pausar o cerrar su proceso con libertad una vez alcanzados los objetivos terapéuticos.',
+            text: 'Ninguna. Se abona mes a mes e incluye la entrega de factura clínica oficial con registro sanitario de la JVPP. Pueden pausar o cerrar su proceso con libertad una vez alcanzados los objetivos terapéuticos.',
           },
         },
       ],

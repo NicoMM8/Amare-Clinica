@@ -48,7 +48,7 @@ const MASTER_OVERVIEW = `# Centro Amaré — Documento Maestro de Contexto Clín
 ## 3. Honorarios y Planes Accesibles
 - **1ª Sesión de Evaluación (30 min):** Totalmente sin costo ($0 USD), sin compromiso ni tarjeta de crédito.
 - **Planes Mensuales Adaptados:** Hasta 4 sesiones al mes de 50-60 min, estructurados según país de residencia (El Salvador o exterior), capacidad y modalidad clínica (pareja, individual o sexología), cotizados con claridad en la primera llamada gratuita y sin permanencia mínima.
-- **Reembolso de Seguros:** Facturas y constancias médicas con registro JVPP aptas para reembolso con aseguradoras en El Salvador y superbills para EE. UU. y Canadá.
+- **Facturación Profesional Oficial:** Facturas y constancias profesionales con número de colegiación sanitaria oficial ante la JVPP (N.º 6380).
 
 ---
 
@@ -79,8 +79,8 @@ URL: ${BASE_URL}/precios
 - Incluye hasta 4 sesiones mensuales de 50 a 60 minutos, ejercicios guiados entre sesiones y cero permanencia mínima.
 - Medios de pago sin comisiones de remesa: Transferencia bancaria en El Salvador (Banco Agrícola, BAC Credomatic, Banco Cuscatlán), Visa, Mastercard, Stripe, PayPal y Zelle.
 
-## Reembolso de Seguros Médicos (JVPP)
-- Se emite factura clínica oficial con registro sanitario de la JVPP (N.º 6380) apta para seguros médicos en El Salvador y *superbills / out-of-network* en EE. UU. y Canadá.
+## Facturación Profesional (JVPP)
+- Se emite factura profesional oficial con número de registro sanitario de la JVPP (N.º 6380).
 
 - **Agendar 1ª conversación sin costo:** https://wa.me/50373184781
 `,

@@ -943,9 +943,6 @@ async function prerender() {
         pageHtml = pageHtml.replace('</head>', `${metaBlock}${schemaScripts}\n  </head>`)
       }
 
-      // Limpiar comentarios HTML en producción para optimizar payload y cumplir auditorías
-      pageHtml = pageHtml.replace(/<!--(?!\[if)[\s\S]*?-->/g, '')
-
       const outFilePath = path.resolve(distPath, route.file)
       const outDir = path.dirname(outFilePath)
       if (!fs.existsSync(outDir)) {

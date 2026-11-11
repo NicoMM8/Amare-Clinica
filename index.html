@@ -71,11 +71,11 @@
           });
           if ('requestIdleCallback' in window) {
             requestIdleCallback(function() {
-              setTimeout(window.__loadAmareGTM, 1200);
-            }, { timeout: 2500 });
+              setTimeout(window.__loadAmareGTM, 2800);
+            }, { timeout: 4000 });
           } else {
             window.addEventListener('load', function() {
-              setTimeout(window.__loadAmareGTM, 1200);
+              setTimeout(window.__loadAmareGTM, 2800);
             });
           }
         }

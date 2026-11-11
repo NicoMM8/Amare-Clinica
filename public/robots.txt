@@ -40,8 +40,9 @@ Allow: /
 
 # Sitemap XML & Agent Discovery
 Sitemap: https://terapiadeparejaelsalvador.com/sitemap.xml
-Agentmap: https://terapiadeparejaelsalvador.com/.well-known/ai-catalog.json
+# Agentmap (verificado en /.well-known/ai-catalog.json y llms.txt):
+# Agentmap: https://terapiadeparejaelsalvador.com/.well-known/ai-catalog.json
 
-# Directivas de Señales de Contenido para IA (Content Signals RFC)
-Content-Signal: search=yes, ai-input=yes, ai-train=yes
+# Directivas de Señales de Contenido para IA (RFC Content Signals)
+# Content-Signal: search=yes, ai-input=yes, ai-train=yes
 

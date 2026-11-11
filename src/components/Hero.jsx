@@ -250,7 +250,7 @@ export default function Hero() {
           {/* ── RIGHT COLUMN: Clinical Psychology Consultation Photography ── */}
           <div className="hero-visual-card">
             <picture style={{ width: '100%', height: '100%', display: 'block' }}>
-              <source srcSet="/images/hero-amare-collage-1200.webp 1200w, /images/hero-amare-collage-800.webp 800w" sizes="(max-width: 600px) 100vw, 560px" type="image/webp" />
+              <source srcSet="/images/hero-amare-collage-800.webp 800w, /images/hero-amare-collage-1200.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 560px" type="image/webp" />
               <source srcSet="/images/hero-amare-collage-1200.jpg" type="image/jpeg" />
               <img
                 src="/images/hero-amare-collage-1200.jpg"

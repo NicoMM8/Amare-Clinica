@@ -208,7 +208,7 @@ export default function CoupleTherapyIntro() {
               }}
             >
               <img
-                src="/images/iris-alarcon.webp"
+                src="/images/iris-alarcon-thumb.webp"
                 alt="Mtra. Iris Alarcón en videollamada"
                 width="36"
                 height="36"
